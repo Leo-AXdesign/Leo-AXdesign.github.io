@@ -44,17 +44,19 @@ terms = fields(block("GLOSSARY"), ["term", "en"])
 today = datetime.date.today().isoformat()
 
 # ---------- sitemap.xml ----------
-# 해시(#) 주소는 검색엔진이 별도 페이지로 보지 않으므로 대표 주소만 넣습니다.
-sitemap = f"""<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>{SITE}</loc>
-    <lastmod>{today}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-</urlset>
-"""
+# 해시(#) 주소는 검색엔진이 별도 페이지로 보지 않으므로, 실제 파일이 있는 주소만 넣습니다.
+PAGE_SLUGS = ["ui-ux", "graphic", "color", "font", "assets", "dev", "tools",
+              "freelance", "jobs", "ai", "community", "creators",
+              "styles", "trends", "glossary"]
+urls = [(SITE, "1.0")] + [(SITE + s + "/", "0.8") for s in PAGE_SLUGS]
+body = "\n".join(
+    f"  <url>\n    <loc>{u}</loc>\n    <lastmod>{today}</lastmod>\n"
+    f"    <changefreq>weekly</changefreq>\n    <priority>{pr}</priority>\n  </url>"
+    for u, pr in urls
+)
+sitemap = ('<?xml version="1.0" encoding="UTF-8"?>\n'
+           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+           + body + "\n</urlset>\n")
 (ROOT / "sitemap.xml").write_text(sitemap, encoding="utf-8")
 
 # ---------- JSON-LD ----------
@@ -100,31 +102,24 @@ jsonld_html = ('  <script type="application/ld+json">\n'
                + "\n  </script>")
 
 # ---------- noscript ----------
+# 전체 목록은 카테고리 페이지가 담당합니다. 여기서는 중복을 피해 안내와 링크만 둡니다.
+PAGE_TITLES = [
+    ("ui-ux", "UI/UX 레퍼런스"), ("graphic", "그래픽 · 브랜딩"), ("color", "컬러 가이드"),
+    ("font", "타이포 · 폰트"), ("assets", "아이콘 · 에셋"), ("dev", "디자인 개발"),
+    ("tools", "디자인 툴"), ("freelance", "외주 · 프리랜서"), ("jobs", "채용공고"),
+    ("ai", "AI 툴"), ("community", "커뮤니티 · 매거진"), ("creators", "크리에이터 · 채널"),
+    ("styles", "디자인 스타일 사전"), ("trends", "2026 디자인 트렌드"), ("glossary", "디자인 용어 사전"),
+]
 e = html.escape
-parts = ['  <noscript>', '    <div class="wrap noscript-seo">',
-         '      <h2>디자인 레퍼런스 사이트 모음</h2>',
-         f'      <p>자바스크립트가 꺼져 있어 목록만 표시합니다. 전체 {len(sites)}개 사이트와 검색·필터 기능은 자바스크립트를 켜면 사용할 수 있습니다.</p>']
-for c in cats:
-    items = [s for s in sites if s.get("cat") == c["id"]]
-    if not items:
-        continue
-    parts.append(f'      <h3>{e(c["label"])} ({len(items)})</h3>')
-    parts.append(f'      <p>{e(c.get("desc", ""))}</p>')
-    parts.append("      <ul>")
-    for s in items:
-        parts.append(f'        <li><a href="{e(s["url"])}" rel="noopener nofollow">{e(s["name"])}</a> — {e(s.get("desc", ""))}</li>')
-    parts.append("      </ul>")
-parts.append(f'      <h3>디자인 스타일 사전 ({len(styles)})</h3>')
-parts.append("      <ul>")
-for s in styles:
-    parts.append(f'        <li>{e(s["name"])} ({e(s.get("en", ""))}, {e(s.get("era", ""))})</li>')
-parts.append("      </ul>")
-parts.append(f'      <h3>디자인 용어 사전 ({len(terms)})</h3>')
-parts.append("      <ul>")
-for t in terms:
-    parts.append(f'        <li>{e(t["term"])} — {e(t.get("en", ""))}</li>')
-parts.append("      </ul>")
-parts += ["    </div>", "  </noscript>"]
+parts = ["  <noscript>", '    <div class="wrap noscript-seo">',
+         "      <h2>디자인 레퍼런스 사이트 모음</h2>",
+         f"      <p>디자이너를 위한 사이트 {len(sites)}개를 {len(cats)}개 카테고리로 정리했습니다. "
+         f"디자인 스타일 사전 {len(styles)}가지, 2026 트렌드, 용어 사전 {len(terms)}개도 함께 제공합니다. "
+         "검색과 필터 기능은 자바스크립트를 켜면 사용할 수 있습니다.</p>",
+         "      <h3>목록 바로가기</h3>", "      <ul>"]
+for slug, label in PAGE_TITLES:
+    parts.append(f'        <li><a href="{SITE}{slug}/">{e(label)}</a></li>')
+parts += ["      </ul>", "    </div>", "  </noscript>"]
 noscript_html = "\n".join(parts)
 
 # ---------- index.html 교체 ----------

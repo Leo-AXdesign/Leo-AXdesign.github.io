@@ -14,7 +14,9 @@
 ├── favicon.svg, favicon.ico      # 파비콘
 ├── og-image.png                  # 공유 미리보기 이미지 (1200×630)
 ├── robots.txt, sitemap.xml       # 검색엔진 수집용
-├── tools/build-seo.py            # data.js 로부터 위 파일과 JSON-LD 를 다시 생성
+├── ui-ux/, ai/, font/ ...        # 카테고리별 정적 페이지 (자동 생성, 직접 수정하지 마세요)
+├── tools/build-seo.py            # sitemap, JSON-LD, noscript 생성
+├── tools/build-pages.py          # 카테고리별 정적 페이지 생성
 ├── .nojekyll                     # GitHub Pages 가 Jekyll 처리를 건너뛰도록
 └── .github/workflows/deploy.yml  # main 에 push 하면 Pages 로 자동 배포
 ```
@@ -117,13 +119,26 @@ git config user.name "이름" && git config user.email "메일주소"
 
 ### 데이터를 고친 뒤에는
 
-사이트를 추가·수정했다면 아래를 실행해 검색엔진용 파일을 다시 만든 다음 push 하세요.
+사이트를 추가·수정했다면 아래 두 줄을 실행해 검색엔진용 파일과 카테고리 페이지를 다시 만든 다음 push 하세요.
 
 ```bash
-python3 tools/build-seo.py
+python3 tools/build-pages.py && python3 tools/build-seo.py
 ```
 
-`sitemap.xml` 의 날짜와 `index.html` 안의 JSON-LD·목록이 `js/data.js` 기준으로 갱신됩니다.
+`js/data.js` 기준으로 카테고리 페이지, `sitemap.xml`, JSON-LD 가 모두 갱신됩니다.
+
+### 카테고리별 정적 페이지
+
+`#ai` 같은 해시 주소는 검색엔진이 별도 페이지로 보지 않아, 그대로 두면 색인되는 주소가 하나뿐입니다. 그래서 카테고리마다 진짜 주소를 따로 만들어 검색 노출을 늘렸습니다.
+
+| 주소 | 내용 |
+|---|---|
+| `/ui-ux/` `/graphic/` `/color/` `/font/` `/assets/` | 분야별 사이트 목록 |
+| `/dev/` `/tools/` `/freelance/` `/jobs/` `/ai/` | |
+| `/community/` `/creators/` | |
+| `/styles/` `/trends/` `/glossary/` | 스타일 사전 · 트렌드 · 용어 사전 |
+
+각 폴더는 `tools/build-pages.py` 가 만들어 냅니다. 직접 고치면 다음 실행 때 덮어쓰이니, 내용은 `js/data.js` 에서 고치세요. 주소 슬러그와 페이지 제목은 스크립트 상단의 `PAGE_META` 에서 바꿉니다.
 
 ### 알아둘 점
 

@@ -430,6 +430,45 @@ mark { background: none; color: inherit; text-decoration: underline; text-underl
 .noscript-seo a { font-weight: 600; color: var(--ink); }
 .noscript-seo a:hover { text-decoration: underline; text-underline-offset: 3px; }
 
+
+/* ================= 정적 카테고리 페이지 (/ai/, /font/ ...) ================= */
+.footer__nav { display: flex; flex-wrap: wrap; gap: 6px 16px; padding-bottom: 18px; margin-bottom: 18px; border-bottom: 1px solid var(--line); }
+.footer__nav a { font-size: 12.5px; color: var(--ink-2); }
+.footer__nav a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+
+.page .top__inner { gap: 16px; }
+.page__crumb { font-size: 13px; color: var(--ink-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.page__crumb a { color: var(--ink-2); }
+.page__crumb a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+
+.page__main { padding: 48px 0 100px; max-width: 860px; }
+.page__title { font-size: clamp(28px, 4vw, 44px); font-weight: 800; letter-spacing: -0.04em; line-height: 1.1; margin: 0 0 16px; }
+.page__intro { margin: 0 0 10px; font-size: 16px; color: var(--ink-2); line-height: 1.65; }
+.page__cta { margin: 0 0 8px; font-size: 14px; }
+.page__cta a { font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }
+
+.psub { font-size: 15px; font-weight: 700; letter-spacing: -0.02em; margin: 44px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--line-strong); }
+.psub span { font-size: 12px; font-weight: 500; color: var(--ink-3); margin-left: 4px; }
+
+.plist { list-style: none; margin: 0; padding: 0; }
+.plist__item { padding: 16px 0; border-bottom: 1px solid var(--line); }
+.plist__name { font-size: 15.5px; font-weight: 600; letter-spacing: -0.015em; }
+a.plist__name:hover { text-decoration: underline; text-underline-offset: 3px; }
+.plist__host { font-size: 12px; color: var(--ink-3); margin-left: 8px; }
+.plist__sub { font-size: 11px; color: var(--ink-3); margin-left: 8px; padding: 2px 7px; border: 1px solid var(--line); border-radius: 999px; }
+.plist__desc { margin: 5px 0 0; font-size: 13.5px; color: var(--ink-2); line-height: 1.6; }
+.plist__meta { margin: 4px 0 0; font-size: 12px; color: var(--ink-3); line-height: 1.5; }
+
+.page__nav { margin-top: 56px; }
+.page__navlinks { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.page__navlinks a { font-size: 13px; padding: 7px 13px; border: 1px solid var(--line); border-radius: 999px; color: var(--ink-2); }
+.page__navlinks a:hover { border-color: var(--ink); color: var(--ink); }
+
+@media (max-width: 640px) {
+  .page__crumb { display: none; }
+  .page__main { padding: 32px 0 72px; }
+}
+
 /* ================= Footer ================= */
 .footer { border-top: 1px solid var(--line); padding: 28px 0 40px; color: var(--ink-2); font-size: 12.5px; }
 .footer__inner { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
