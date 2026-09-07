@@ -146,6 +146,17 @@ python3 tools/build-pages.py && python3 tools/build-seo.py
 - `#styles` 같은 해시 주소는 검색엔진이 별도 페이지로 보지 않습니다. 색인되는 주소는 대표 주소 하나입니다.
 - 새 사이트가 검색 결과에 나타나기까지 구글은 며칠, 네이버는 몇 주가 걸릴 수 있습니다.
 
+## 방문자 분석
+
+Google Analytics(GA4)를 메인과 카테고리 페이지 전체에 넣어 두었습니다. 측정 ID는 `G-Q7QVVHSLQ6` 이고, https://analytics.google.com 에서 방문자 수와 인기 페이지를 볼 수 있습니다.
+
+ID를 바꾸려면 두 곳을 고치세요.
+
+- `index.html` 의 `<!-- Google Analytics (GA4) -->` 블록
+- `tools/build-pages.py` 안의 같은 블록 (카테고리 페이지에 적용됨)
+
+쿠키를 사용하므로, 방문자가 늘어나면 개인정보 처리방침 문구를 두는 편이 안전합니다.
+
 ## 기능
 
 - 카테고리별 탐색, 사이트명·설명·도메인·태그 통합 검색 (`/` 키로 검색창 포커스)
