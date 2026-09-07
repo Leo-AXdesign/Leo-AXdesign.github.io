@@ -1,0 +1,13 @@
+# 모든 검색엔진 수집 허용
+User-agent: *
+Allow: /
+
+# 네이버
+User-agent: Yeti
+Allow: /
+
+# 다음
+User-agent: Daum
+Allow: /
+
+Sitemap: https://leo-axdesign.github.io/Design_hub/sitemap.xml

@@ -419,6 +419,17 @@ mark { background: none; color: inherit; text-decoration: underline; text-underl
 .empty__title { font-size: 18px; font-weight: 600; color: var(--ink); margin: 0 0 6px; letter-spacing: -0.02em; }
 .empty p { margin: 0; font-size: 14px; }
 
+
+/* ================= noscript (검색엔진·JS 미사용 환경용 목록) ================= */
+.noscript-seo { padding: 40px 0 80px; }
+.noscript-seo h2 { font-size: 22px; letter-spacing: -0.03em; margin: 0 0 8px; }
+.noscript-seo h3 { font-size: 16px; letter-spacing: -0.02em; margin: 32px 0 6px; padding-top: 12px; border-top: 1px solid var(--line-strong); }
+.noscript-seo p { margin: 0 0 4px; color: var(--ink-2); font-size: 13.5px; }
+.noscript-seo ul { margin: 10px 0 0; padding-left: 18px; }
+.noscript-seo li { margin-bottom: 6px; font-size: 13.5px; color: var(--ink-2); }
+.noscript-seo a { font-weight: 600; color: var(--ink); }
+.noscript-seo a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
 /* ================= Footer ================= */
 .footer { border-top: 1px solid var(--line); padding: 28px 0 40px; color: var(--ink-2); font-size: 12.5px; }
 .footer__inner { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }

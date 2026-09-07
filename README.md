@@ -13,6 +13,8 @@
 │   └── app.js                    # 검색 · 필터 · 즐겨찾기 · 테마 · 호버 미리보기
 ├── favicon.svg, favicon.ico      # 파비콘
 ├── og-image.png                  # 공유 미리보기 이미지 (1200×630)
+├── robots.txt, sitemap.xml       # 검색엔진 수집용
+├── tools/build-seo.py            # data.js 로부터 위 파일과 JSON-LD 를 다시 생성
 ├── .nojekyll                     # GitHub Pages 가 Jekyll 처리를 건너뛰도록
 └── .github/workflows/deploy.yml  # main 에 push 하면 Pages 로 자동 배포
 ```
@@ -90,6 +92,44 @@ git config user.name "이름" && git config user.email "메일주소"
 
 - **Netlify · Vercel · Cloudflare Pages**: 저장소를 연결하고 빌드 명령은 비워 둔 채 배포 디렉터리만 루트(`.`)로 지정하면 됩니다.
 - **직접 열기**: 서버 없이 `index.html`을 더블클릭해도 모든 기능이 동작합니다.
+
+## 검색엔진 등록 (구글 · 네이버)
+
+`robots.txt`, `sitemap.xml`, 구조화 데이터(JSON-LD), 자바스크립트 미실행 환경용 목록이 들어 있습니다. 등록은 아래 두 단계만 직접 하시면 됩니다.
+
+### 1. 구글
+
+1. https://search.google.com/search-console 접속 → 속성 추가 → **URL 접두어**를 고르고 `https://leo-axdesign.github.io/Design_hub/` 입력
+2. 소유권 확인에서 **HTML 태그**를 고르면 `content="..."` 값이 나옵니다
+3. `index.html` 의 아래 줄에서 주석을 풀고 값을 넣은 뒤 push
+   ```html
+   <meta name="google-site-verification" content="받은_코드" />
+   ```
+4. 확인이 끝나면 좌측 **Sitemaps** 에서 `sitemap.xml` 제출
+5. **URL 검사** 에 사이트 주소를 넣고 "색인 생성 요청" 을 누르면 더 빨리 수집됩니다
+
+### 2. 네이버
+
+1. https://searchadvisor.naver.com 접속 → 웹마스터 도구 → 사이트 등록
+2. **HTML 태그** 방식을 고르고 받은 값을 `index.html` 의 `naver-site-verification` 줄에 넣고 push
+3. 요청 → **사이트맵 제출** 에 `https://leo-axdesign.github.io/Design_hub/sitemap.xml` 입력
+4. 요청 → **웹 페이지 수집** 에 사이트 주소 입력
+
+### 데이터를 고친 뒤에는
+
+사이트를 추가·수정했다면 아래를 실행해 검색엔진용 파일을 다시 만든 다음 push 하세요.
+
+```bash
+python3 tools/build-seo.py
+```
+
+`sitemap.xml` 의 날짜와 `index.html` 안의 JSON-LD·목록이 `js/data.js` 기준으로 갱신됩니다.
+
+### 알아둘 점
+
+- 화면은 자바스크립트로 그려지므로, 검색엔진이 본문을 놓치지 않도록 `<noscript>` 안에 전체 목록을 함께 넣어 두었습니다. 화면에는 보이지 않습니다.
+- `#styles` 같은 해시 주소는 검색엔진이 별도 페이지로 보지 않습니다. 색인되는 주소는 대표 주소 하나입니다.
+- 새 사이트가 검색 결과에 나타나기까지 구글은 며칠, 네이버는 몇 주가 걸릴 수 있습니다.
 
 ## 기능
 
