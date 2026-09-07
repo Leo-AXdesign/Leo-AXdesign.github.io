@@ -1,0 +1,24 @@
+<!DOCTYPE html><html><body style="margin:0">
+<iframe id="f" src="/#glossary" style="width:375px;height:800px;border:0;display:block"></iframe>
+<pre id="out" style="font:11px monospace"></pre>
+<script>
+document.getElementById('f').addEventListener('load', () => {
+  setTimeout(() => {
+    const w = document.getElementById('f').contentWindow, d = w.document;
+    const grow = d.querySelector('.grow');
+    const list = d.querySelector('.list--insight');
+    const wide = [...d.querySelectorAll('.main *')].filter(el => {
+      const r = el.getBoundingClientRect();
+      return r.width > 0 && r.width < 40 && r.height > 200;  // 세로로 길쭉 = 글자 세로정렬 의심
+    }).slice(0,8).map(el => el.className + ' w=' + Math.round(el.getBoundingClientRect().width) + ' h=' + Math.round(el.getBoundingClientRect().height));
+    document.getElementById('out').textContent = 'RESULT\n'
+      + 'view=' + d.body.className + '\n'
+      + 'listDisplay=' + (list ? getComputedStyle(list).display : 'none') + '\n'
+      + 'growDisplay=' + (grow ? getComputedStyle(grow).display : 'none') + '\n'
+      + 'growCols=' + (grow ? getComputedStyle(grow).gridTemplateColumns : '-') + '\n'
+      + 'growW=' + (grow ? Math.round(grow.getBoundingClientRect().width) : '-') + '\n'
+      + 'grows=' + d.querySelectorAll('.grow').length + '\n'
+      + 'narrowTall=' + JSON.stringify(wide) + '\nEND';
+  }, 1800);
+});
+</script></body></html>

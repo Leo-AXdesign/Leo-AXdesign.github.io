@@ -27,8 +27,16 @@
     hero: $('#hero'),
     themeToggle: $('#theme-toggle'),
     logo: $('#logo'),
+    toTop: $('#to-top'),
     footerTop: $('#footer-top'),
     viewBtns: document.querySelectorAll('.view__btn'),
+    drawer: $('#drawer'),
+    drawerNav: $('#drawer-nav'),
+    drawerTags: $('#drawer-tags'),
+    drawerTheme: $('#drawer-theme'),
+    menuOpen: $('#menu-open'),
+    menuClose: $('#menu-close'),
+    menuDot: document.querySelector('.top__btn-dot'),
     preview: $('#preview'),
     previewImg: $('#preview-img'),
     previewName: $('#preview-name'),
@@ -123,6 +131,8 @@
     state.view = view;
     document.body.classList.toggle('grid-view', view === 'grid');
     els.viewBtns.forEach(b => b.classList.toggle('is-active', b.dataset.view === view));
+    document.querySelectorAll('.drawer__opt[data-view]').forEach(b =>
+      b.classList.toggle('is-active', b.dataset.view === view));
   }
 
   /* ---------- filtering ---------- */
@@ -168,12 +178,19 @@
     html += item('trends', '2026 트렌드', TRENDS.length);
     html += item('glossary', '용어 사전', GLOSSARY.length);
     els.nav.innerHTML = html;
+    if (els.drawerNav) els.drawerNav.innerHTML = html;
   }
 
   function renderFilters() {
-    els.tagFilters.innerHTML = TAG_FILTERS.map(t =>
+    const html = TAG_FILTERS.map(t =>
       `<button class="pill ${state.tag === t.id ? 'is-active' : ''}" data-tag="${t.id}" type="button" role="tab" aria-selected="${state.tag === t.id}">${t.label}</button>`
     ).join('');
+    els.tagFilters.innerHTML = html;
+    if (els.drawerTags) els.drawerTags.innerHTML = html;
+    // 필터가 걸려 있으면 햄버거 버튼에 표시를 남긴다
+    if (els.menuDot) els.menuDot.hidden = !state.tag;
+    document.querySelectorAll('.drawer__opt[data-view]').forEach(b =>
+      b.classList.toggle('is-active', b.dataset.view === state.view));
   }
 
   function renderStats(shown) {
@@ -505,7 +522,72 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     };
     els.logo.addEventListener('click', goHome);
+
+    if (els.toTop) {
+      els.toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+      let ticking = false;
+      window.addEventListener('scroll', () => {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => {
+          els.toTop.classList.toggle('is-visible', window.scrollY > 700);
+          ticking = false;
+        });
+      }, { passive: true });
+    }
     els.footerTop.addEventListener('click', e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+  }
+
+  /* ---------- 모바일 전체 메뉴 ---------- */
+  let lastFocus = null;
+  function openDrawer() {
+    if (!els.drawer) return;
+    lastFocus = document.activeElement;
+    els.drawer.hidden = false;
+    // 다음 프레임에 클래스를 붙여야 열리는 애니메이션이 보인다
+    requestAnimationFrame(() => els.drawer.classList.add('is-open'));
+    document.body.classList.add('drawer-open');
+    els.menuOpen.setAttribute('aria-expanded', 'true');
+    els.menuClose.focus();
+  }
+  function closeDrawer() {
+    if (!els.drawer || els.drawer.hidden) return;
+    els.drawer.classList.remove('is-open');
+    document.body.classList.remove('drawer-open');
+    els.menuOpen.setAttribute('aria-expanded', 'false');
+    const done = () => { els.drawer.hidden = true; };
+    setTimeout(done, 260);
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  function bindDrawer() {
+    if (!els.drawer) return;
+    els.menuOpen.addEventListener('click', openDrawer);
+    els.menuClose.addEventListener('click', closeDrawer);
+    $('#drawer-backdrop').addEventListener('click', closeDrawer);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
+
+    // 메뉴 안에서 카테고리를 고르면 이동 후 닫기
+    els.drawerNav.addEventListener('click', e => {
+      const btn = e.target.closest('.nav__item');
+      if (!btn) return;
+      state.cat = btn.dataset.cat;
+      setHash(state.cat === 'all' ? '' : state.cat);
+      renderAll();
+      closeDrawer();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    els.drawerTags.addEventListener('click', e => {
+      const btn = e.target.closest('.pill');
+      if (!btn) return;
+      state.tag = btn.dataset.tag;
+      renderAll();
+    });
+    els.drawerTheme.addEventListener('click', toggleTheme);
+    document.querySelectorAll('.drawer__opt[data-view]').forEach(b =>
+      b.addEventListener('click', () => { applyView(b.dataset.view); save(STORAGE_VIEW, b.dataset.view); }));
+
+    // 데스크톱으로 넓어지면 열려 있던 메뉴를 닫는다
+    window.matchMedia('(min-width: 961px)').addEventListener('change', ev => { if (ev.matches) closeDrawer(); });
   }
 
   /* ---------- hover preview ---------- */
@@ -617,6 +699,7 @@
   applyView(load(STORAGE_VIEW) === 'grid' ? 'grid' : 'list');
   loadBookmarks();
   bindEvents();
+  bindDrawer();
   bindPreview();
   renderAll();
 })();
