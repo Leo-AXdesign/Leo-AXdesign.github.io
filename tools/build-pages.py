@@ -144,6 +144,96 @@ pages.append(("glossary", f"디자인 용어 사전 {len(terms)}개",
               "타이포그래피, 편집·인쇄, 컬러, UI 설계, UX 리서치, 개발 협업까지 실무에서 자주 쓰는 디자인 용어를 정리했습니다.",
               "\n".join(gb), len(terms), [t["term"] for t in terms]))
 
+
+# ---------- 산문 페이지 (소개 · 개인정보처리방침) ----------
+# 데이터가 아니라 글로 된 페이지입니다. 내용은 이 파일에서 고칩니다.
+n_site, n_cat = len(sites), len(cats)
+n_style, n_term, n_trend = len(styles), len(terms), len(trends)
+
+ABOUT = f"""
+    <h2 class="psub">무엇을 하는 곳인가요</h2>
+    <p class="ptext">디자인 허브는 디자이너가 자주 찾는 사이트를 한곳에 모아 둔 주소록입니다.
+    지금 {n_site}개 사이트를 {n_cat}개 분야로 나눠 정리했고, 각 사이트가 어떤 곳인지 한 줄로 설명해 두었습니다.
+    검색창에서 이름·설명·주소·태그를 한 번에 찾을 수 있고, 자주 쓰는 곳은 즐겨찾기로 모아 둘 수 있습니다.</p>
+
+    <h2 class="psub">직접 쓴 자료도 있습니다</h2>
+    <p class="ptext">링크만 모으지 않았습니다. 실무에서 자주 부딪히는 내용을 따로 정리했습니다.</p>
+    <ul class="ptext-list">
+      <li><a href="{SITE}styles/">디자인 스타일 사전</a> — 아르누보부터 글래스모피즘까지 {n_style}가지 양식을 연대순으로. 시대, 특징, 대표 인물, 대표 이미지를 함께 실었습니다.</li>
+      <li><a href="{SITE}glossary/">디자인 용어 사전</a> — 타이포그래피, 편집·인쇄, 컬러, UI 설계, UX 리서치, 개발 협업까지 {n_term}개 용어를 실무 기준으로 설명했습니다.</li>
+      <li><a href="{SITE}trends/">2026 디자인 트렌드</a> — 업계 리포트와 커뮤니티에서 반복 언급되는 키워드 {n_trend}가지를 정리했습니다.</li>
+    </ul>
+
+    <h2 class="psub">어떤 기준으로 고르나요</h2>
+    <ul class="ptext-list">
+      <li>실무에서 실제로 쓰이는 곳만 넣습니다. 이름값보다 쓸모를 봅니다.</li>
+      <li>분야마다 국내 사이트를 함께 담습니다. 한국에서 일하는 디자이너에게 맞춰야 하기 때문입니다.</li>
+      <li>설명은 직접 씁니다. 사이트 소개 문구를 그대로 옮기지 않고, 무엇에 강한 곳인지 한 줄로 적습니다.</li>
+      <li>무료·유료 여부를 태그로 표시해 들어가기 전에 알 수 있게 합니다.</li>
+      <li>주소는 등록 전에 응답을 확인하고, 서비스가 바뀌거나 종료되면 갱신하거나 지웁니다.</li>
+    </ul>
+
+    <h2 class="psub">제안과 문의</h2>
+    <p class="ptext">빠진 사이트나 잘못된 정보를 알려주시면 확인 후 반영하겠습니다.
+    설명이 사실과 다르거나 서비스가 종료된 경우도 알려주세요.
+    <a href="mailto:nisov0924@gmail.com">nisov0924@gmail.com</a> 으로 보내주시면 됩니다.</p>
+"""
+
+PRIVACY = f"""
+    <p class="ptext">디자인 허브는 회원가입이나 로그인이 없고, 이름·연락처 같은 개인정보를 직접 수집하거나 저장하지 않습니다.
+    다만 방문 분석과 일부 기능을 위해 아래와 같은 정보가 쓰입니다.</p>
+
+    <h2 class="psub">1. 브라우저에만 저장되는 정보</h2>
+    <p class="ptext">아래 세 가지는 보시는 기기의 브라우저 저장소에만 남고, 서버로 전송되지 않습니다.
+    브라우저의 사이트 데이터 삭제 기능으로 언제든 지울 수 있습니다.</p>
+    <ul class="ptext-list">
+      <li>즐겨찾기로 표시한 사이트 목록</li>
+      <li>라이트·다크 테마 선택</li>
+      <li>목록·격자 보기 선택</li>
+    </ul>
+
+    <h2 class="psub">2. 방문 분석</h2>
+    <p class="ptext">방문자 수와 어떤 페이지가 많이 읽히는지 파악하기 위해 Google Analytics를 사용합니다.
+    이 과정에서 쿠키가 사용되며, 접속 기기·브라우저 종류, 대략적인 지역, 방문한 페이지, 머문 시간 같은 정보가 구글 서버에 수집됩니다.
+    이 정보로 개인을 식별하지 않습니다.</p>
+    <p class="ptext">수집을 원하지 않으시면
+    <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">구글 애널리틱스 차단 확장 프로그램</a>을 설치하거나,
+    브라우저 설정에서 쿠키를 차단하시면 됩니다.</p>
+
+    <h2 class="psub">3. 광고</h2>
+    <p class="ptext">향후 이 사이트에 구글 애드센스 광고가 게재될 수 있습니다.
+    구글을 비롯한 제3자 광고 사업자는 쿠키를 사용해 이용자의 이전 방문 기록을 바탕으로 광고를 게재할 수 있습니다.
+    맞춤 광고를 원하지 않으시면 <a href="https://myadcenter.google.com" target="_blank" rel="noopener">구글 광고 설정</a>에서 끌 수 있습니다.</p>
+
+    <h2 class="psub">4. 외부 서비스</h2>
+    <p class="ptext">화면을 구성하면서 아래 외부 서비스를 불러옵니다. 이 과정에서 해당 서비스에 접속 기록이 남을 수 있습니다.</p>
+    <ul class="ptext-list">
+      <li>구글 파비콘 서비스 — 목록에 표시되는 사이트 아이콘</li>
+      <li>WordPress mShots, thum.io — 마우스를 올렸을 때 보이는 사이트 미리보기 이미지</li>
+      <li>jsDelivr — 본문 글꼴(Pretendard)</li>
+      <li>Wikimedia Commons — 스타일 사전의 대표 이미지</li>
+    </ul>
+
+    <h2 class="psub">5. 외부 링크</h2>
+    <p class="ptext">이 사이트는 다른 사이트로 이동하는 링크를 모아 둔 곳입니다.
+    링크를 눌러 이동한 뒤의 개인정보 처리는 해당 사이트의 방침을 따릅니다.
+    이동한 사이트에서 일어나는 일에 대해 디자인 허브는 책임지지 않습니다.</p>
+
+    <h2 class="psub">6. 문의</h2>
+    <p class="ptext">이 방침에 대한 문의는 <a href="mailto:nisov0924@gmail.com">nisov0924@gmail.com</a> 으로 보내주세요.</p>
+
+    <p class="ptext ptext--note">시행일 2026년 9월 14일</p>
+"""
+
+PROSE_PAGES = [
+    ("about", "디자인 허브 소개",
+     f"디자인 허브가 어떤 곳인지, 사이트를 어떤 기준으로 고르고 관리하는지 정리했습니다.", ABOUT),
+    ("privacy", "개인정보처리방침",
+     "디자인 허브의 개인정보 처리방침입니다. 수집 항목, 쿠키 사용, 외부 서비스, 광고에 대해 안내합니다.", PRIVACY),
+]
+for slug, title, intro, body in PROSE_PAGES:
+    pages.append((slug, title, intro, body, 0, []))
+
 # ---------- 페이지 파일 쓰기 ----------
 nav_all = "".join(
     f'<a href="{SITE}{s}/">{e(t)}</a>' for s, t, *_ in pages
@@ -151,7 +241,9 @@ nav_all = "".join(
 
 for slug, title, intro, body, n, names in pages:
     url = f"{SITE}{slug}/"
-    others = "".join(f'<a href="{SITE}{s}/">{e(t)}</a>' for s, t, *_ in pages if s != slug)
+    PROSE_SLUGS = {sl for sl, *_ in PROSE_PAGES}
+    others = "".join(f'<a href="{SITE}{s2}/">{e(t2)}</a>'
+                     for s2, t2, *_ in pages if s2 != slug and s2 not in PROSE_SLUGS)
     jsonld = {
         "@context": "https://schema.org",
         "@type": "CollectionPage",
@@ -167,15 +259,20 @@ for slug, title, intro, body, n, names in pages:
                 {"@type": "ListItem", "position": 2, "name": title, "item": url},
             ],
         },
-        "mainEntity": {
+    }
+    if n:
+        jsonld["mainEntity"] = {
             "@type": "ItemList",
             "numberOfItems": n,
             "itemListElement": [
                 {"@type": "ListItem", "position": i + 1, "name": nm}
                 for i, nm in enumerate(names[:100])
             ],
-        },
-    }
+        }
+    cta = ('<p class="page__cta"><a href="' + SITE + '">검색·필터가 되는 전체 목록 보기 →</a></p>'
+           if n else '')
+    nav_block = ('<nav class="page__nav">\n      <h2 class="psub">다른 목록</h2>\n'
+                 f'      <div class="page__navlinks">{others}</div>\n    </nav>') if others else ''
     doc = f"""<!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -195,6 +292,8 @@ for slug, title, intro, body, n, names in pages:
   <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
   <link rel="stylesheet" href="../css/style.css" />
+  <!-- 구글 애드센스: 승인 신청 시 아래 주석을 풀고 ca-pub- 번호를 채우세요. -->
+  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
 
   <!-- Google Analytics (GA4) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q7QVVHSLQ6"></script>
@@ -227,21 +326,19 @@ for slug, title, intro, body, n, names in pages:
   <main class="wrap page__main">
     <h1 class="page__title">{e(title)}</h1>
     <p class="page__intro">{e(intro)}</p>
-    <p class="page__cta"><a href="{SITE}">검색·필터가 되는 전체 목록 보기 →</a></p>
+    {cta}
 
 {body}
 
-    <nav class="page__nav">
-      <h2 class="psub">다른 목록</h2>
-      <div class="page__navlinks">{others}</div>
-    </nav>
+    {nav_block}
   </main>
 
   <footer class="footer">
     <div class="wrap footer__inner">
       <span>Copyright 2026. Design Hub. all rights reserved.</span>
+      <a href="{SITE}about/">소개</a>
+      <a href="{SITE}privacy/">개인정보처리방침</a>
       <a href="mailto:nisov0924@gmail.com">CONTACT : nisov0924@gmail.com</a>
-      <a href="{SITE}">홈으로</a>
     </div>
   </footer>
 </body>
@@ -254,7 +351,9 @@ for slug, title, intro, body, n, names in pages:
 # ---------- 메인 index.html 의 푸터 링크 갱신 ----------
 p = ROOT / "index.html"
 doc = p.read_text(encoding="utf-8")
-links = "".join(f'<a href="{SITE}{s}/">{e(t.split(" ")[0])}</a>' for s, t, *_ in pages)
+_prose = {sl for sl, *_ in PROSE_PAGES}
+links = "".join(f'<a href="{SITE}{s}/">{e(t.split(" ")[0])}</a>'
+                for s, t, *_ in pages if s not in _prose)
 pat = re.compile(r"<!-- SEO:PAGELINKS -->.*?<!-- /SEO:PAGELINKS -->", re.S)
 if pat.search(doc):
     doc = pat.sub(f'<!-- SEO:PAGELINKS -->\n      <nav class="footer__nav">{links}</nav>\n      <!-- /SEO:PAGELINKS -->', doc)

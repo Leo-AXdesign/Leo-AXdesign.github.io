@@ -47,7 +47,7 @@ today = datetime.date.today().isoformat()
 # 해시(#) 주소는 검색엔진이 별도 페이지로 보지 않으므로, 실제 파일이 있는 주소만 넣습니다.
 PAGE_SLUGS = ["ui-ux", "graphic", "color", "font", "assets", "dev", "tools",
               "freelance", "jobs", "ai", "community", "creators",
-              "styles", "trends", "glossary"]
+              "styles", "trends", "glossary", "about", "privacy"]
 urls = [(SITE, "1.0")] + [(SITE + s + "/", "0.8") for s in PAGE_SLUGS]
 body = "\n".join(
     f"  <url>\n    <loc>{u}</loc>\n    <lastmod>{today}</lastmod>\n"
@@ -109,6 +109,7 @@ PAGE_TITLES = [
     ("tools", "디자인 툴"), ("freelance", "외주 · 프리랜서"), ("jobs", "채용공고"),
     ("ai", "AI 툴"), ("community", "커뮤니티 · 매거진"), ("creators", "크리에이터 · 채널"),
     ("styles", "디자인 스타일 사전"), ("trends", "2026 디자인 트렌드"), ("glossary", "디자인 용어 사전"),
+    ("about", "사이트 소개"), ("privacy", "개인정보처리방침"),
 ]
 e = html.escape
 parts = ["  <noscript>", '    <div class="wrap noscript-seo">',

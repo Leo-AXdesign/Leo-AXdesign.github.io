@@ -137,6 +137,7 @@ python3 tools/build-pages.py && python3 tools/build-seo.py
 | `/dev/` `/tools/` `/freelance/` `/jobs/` `/ai/` | |
 | `/community/` `/creators/` | |
 | `/styles/` `/trends/` `/glossary/` | 스타일 사전 · 트렌드 · 용어 사전 |
+| `/about/` `/privacy/` | 소개 · 개인정보처리방침 |
 
 각 폴더는 `tools/build-pages.py` 가 만들어 냅니다. 직접 고치면 다음 실행 때 덮어쓰이니, 내용은 `js/data.js` 에서 고치세요. 주소 슬러그와 페이지 제목은 스크립트 상단의 `PAGE_META` 에서 바꿉니다.
 
@@ -156,6 +157,21 @@ ID를 바꾸려면 두 곳을 고치세요.
 - `tools/build-pages.py` 안의 같은 블록 (카테고리 페이지에 적용됨)
 
 쿠키를 사용하므로, 방문자가 늘어나면 개인정보 처리방침 문구를 두는 편이 안전합니다.
+
+## 광고 (구글 애드센스)
+
+신청 전 준비는 끝나 있습니다. 승인 후 아래 두 곳의 주석을 풀고 `ca-pub-` 번호를 채우면 전체 페이지에 적용됩니다.
+
+- `index.html` 의 `<!-- 구글 애드센스 -->` 주석
+- `tools/build-pages.py` 의 같은 자리 (카테고리·산문 페이지에 반영)
+
+승인 후에는 사이트 루트에 `ads.txt` 도 올려야 합니다. 애드센스 화면에서 알려주는 한 줄을 그대로 저장하세요.
+
+```
+google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
+```
+
+관련 페이지: [소개](about/), [개인정보처리방침](privacy/) — 둘 다 `tools/build-pages.py` 의 `ABOUT` · `PRIVACY` 변수에서 내용을 고칩니다.
 
 ## 기능
 
