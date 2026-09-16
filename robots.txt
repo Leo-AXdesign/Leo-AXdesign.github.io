@@ -10,4 +10,4 @@ Allow: /
 User-agent: Daum
 Allow: /
 
-Sitemap: https://leo-axdesign.github.io/sitemap.xml
+Sitemap: https://designrefs.com/sitemap.xml

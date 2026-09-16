@@ -14,7 +14,7 @@ data.js 를 읽어 검색엔진용 파일을 다시 만듭니다.
 import json, re, html, datetime, pathlib
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-SITE = "https://leo-axdesign.github.io/"
+SITE = "https://designrefs.com/"
 
 src = (ROOT / "js" / "data.js").read_text(encoding="utf-8")
 

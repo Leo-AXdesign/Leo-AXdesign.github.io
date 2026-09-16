@@ -12,7 +12,7 @@ data.js 를 읽어 카테고리별 정적 페이지를 만듭니다.
 import json, re, html, pathlib
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-SITE = "https://leo-axdesign.github.io/"
+SITE = "https://designrefs.com/"
 e = html.escape
 
 # 카테고리 id -> (주소 슬러그, 페이지 제목, 소개 문장)

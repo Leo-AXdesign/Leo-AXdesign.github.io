@@ -101,7 +101,7 @@ git config user.name "이름" && git config user.email "메일주소"
 
 ### 1. 구글
 
-1. https://search.google.com/search-console 접속 → 속성 추가 → **URL 접두어**를 고르고 `https://leo-axdesign.github.io/` 입력
+1. https://search.google.com/search-console 접속 → 속성 추가 → **URL 접두어**를 고르고 `https://designrefs.com/` 입력
 2. 소유권 확인에서 **HTML 태그**를 고르면 `content="..."` 값이 나옵니다
 3. `index.html` 의 아래 줄에서 주석을 풀고 값을 넣은 뒤 push
    ```html
@@ -114,7 +114,7 @@ git config user.name "이름" && git config user.email "메일주소"
 
 1. https://searchadvisor.naver.com 접속 → 웹마스터 도구 → 사이트 등록
 2. **HTML 태그** 방식을 고르고 받은 값을 `index.html` 의 `naver-site-verification` 줄에 넣고 push
-3. 요청 → **사이트맵 제출** 에 `https://leo-axdesign.github.io/sitemap.xml` 입력
+3. 요청 → **사이트맵 제출** 에 `https://designrefs.com/sitemap.xml` 입력
 4. 요청 → **웹 페이지 수집** 에 사이트 주소 입력
 
 ### 데이터를 고친 뒤에는
