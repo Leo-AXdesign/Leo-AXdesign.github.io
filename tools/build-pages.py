@@ -98,7 +98,7 @@ for c in cats:
         body_html = "\n".join(body)
     else:
         body_html = site_list(items)
-    pages.append((slug, title, intro, body_html, len(items), [s["name"] for s in items]))
+    pages.append((slug, title, intro, body_html, len(items), [s["name"] for s in items], c["label"]))
 
 # 스타일 사전
 sb = ['      <ul class="plist">']
@@ -112,7 +112,7 @@ for s in styles:
 sb.append("      </ul>")
 pages.append(("styles", f"디자인 스타일 사전 {len(styles)}가지",
               "아르누보부터 바우하우스, 스위스 스타일, Y2K, 글래스모피즘까지 유명 그래픽 디자인 양식을 연대순으로 정리했습니다.",
-              "\n".join(sb), len(styles), [s["name"] for s in styles]))
+              "\n".join(sb), len(styles), [s["name"] for s in styles], "스타일 사전"))
 
 # 트렌드
 tb = ['      <ul class="plist">']
@@ -124,7 +124,7 @@ for i, t in enumerate(trends, 1):
 tb.append("      </ul>")
 pages.append(("trends", f"2026 디자인 트렌드 {len(trends)}가지",
               "리퀴드 글래스, 팬톤 올해의 컬러, 벤토 그리드 등 2026년 디자인 트렌드 키워드를 정리했습니다.",
-              "\n".join(tb), len(trends), [t["name"] for t in trends]))
+              "\n".join(tb), len(trends), [t["name"] for t in trends], "2026 트렌드"))
 
 # 용어 사전
 gb = []
@@ -142,7 +142,7 @@ for g in groups:
     gb.append("      </ul>")
 pages.append(("glossary", f"디자인 용어 사전 {len(terms)}개",
               "타이포그래피, 편집·인쇄, 컬러, UI 설계, UX 리서치, 개발 협업까지 실무에서 자주 쓰는 디자인 용어를 정리했습니다.",
-              "\n".join(gb), len(terms), [t["term"] for t in terms]))
+              "\n".join(gb), len(terms), [t["term"] for t in terms], "용어 사전"))
 
 
 # ---------- 산문 페이지 (소개 · 개인정보처리방침) ----------
@@ -232,14 +232,14 @@ PROSE_PAGES = [
      "디자인 허브의 개인정보 처리방침입니다. 수집 항목, 쿠키 사용, 외부 서비스, 광고에 대해 안내합니다.", PRIVACY),
 ]
 for slug, title, intro, body in PROSE_PAGES:
-    pages.append((slug, title, intro, body, 0, []))
+    pages.append((slug, title, intro, body, 0, [], title))
 
 # ---------- 페이지 파일 쓰기 ----------
 nav_all = "".join(
     f'<a href="{SITE}{s}/">{e(t)}</a>' for s, t, *_ in pages
 )
 
-for slug, title, intro, body, n, names in pages:
+for slug, title, intro, body, n, names, navlabel in pages:
     url = f"{SITE}{slug}/"
     PROSE_SLUGS = {sl for sl, *_ in PROSE_PAGES}
     others = "".join(f'<a href="{SITE}{s2}/">{e(t2)}</a>'
@@ -352,8 +352,19 @@ for slug, title, intro, body, n, names in pages:
 p = ROOT / "index.html"
 doc = p.read_text(encoding="utf-8")
 _prose = {sl for sl, *_ in PROSE_PAGES}
-links = "".join(f'<a href="{SITE}{s}/">{e(t.split(" ")[0])}</a>'
-                for s, t, *_ in pages if s not in _prose)
+INSIGHT = {"styles", "trends", "glossary"}
+
+def _group(slugs):
+    return "".join(f'<a href="{SITE}{pg[0]}/">{e(pg[6])}</a>'
+                   for pg in pages if pg[0] in slugs)
+
+_cat_slugs = [pg[0] for pg in pages if pg[0] not in _prose and pg[0] not in INSIGHT]
+links = (
+    '<div class="footer__navgroup"><span class="footer__navlabel">카테고리</span>'
+    + _group(_cat_slugs) + '</div>'
+    '<div class="footer__navgroup"><span class="footer__navlabel">인사이트</span>'
+    + _group(INSIGHT) + '</div>'
+)
 pat = re.compile(r"<!-- SEO:PAGELINKS -->.*?<!-- /SEO:PAGELINKS -->", re.S)
 if pat.search(doc):
     doc = pat.sub(f'<!-- SEO:PAGELINKS -->\n      <nav class="footer__nav">{links}</nav>\n      <!-- /SEO:PAGELINKS -->', doc)
