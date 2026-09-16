@@ -428,16 +428,10 @@ mark { background: none; color: inherit; text-decoration: underline; text-underl
   border-bottom: 1px solid var(--line);
 }
 .footer__navgroup { display: flex; flex-wrap: wrap; align-items: baseline; gap: 7px 14px; }
-.footer__navlabel {
-  flex-shrink: 0; width: 52px;
-  font-size: 11px; font-weight: 600; letter-spacing: 0.04em;
-  color: var(--ink-3);
-}
 .footer__nav a { font-size: 12.5px; color: var(--ink-2); }
 .footer__nav a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
 @media (max-width: 640px) {
   .footer__navgroup { gap: 7px 12px; }
-  .footer__navlabel { width: 100%; }
 }
 
 .page .top__inner { gap: 16px; }

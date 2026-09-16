@@ -151,32 +151,35 @@ n_site, n_cat = len(sites), len(cats)
 n_style, n_term, n_trend = len(styles), len(terms), len(trends)
 
 ABOUT = f"""
-    <h2 class="psub">무엇을 하는 곳인가요</h2>
-    <p class="ptext">디자인 허브는 디자이너가 자주 찾는 사이트를 한곳에 모아 둔 주소록입니다.
-    지금 {n_site}개 사이트를 {n_cat}개 분야로 나눠 정리했고, 각 사이트가 어떤 곳인지 한 줄로 설명해 두었습니다.
-    검색창에서 이름·설명·주소·태그를 한 번에 찾을 수 있고, 자주 쓰는 곳은 즐겨찾기로 모아 둘 수 있습니다.</p>
+    <h2 class="psub">왜 만들었나</h2>
+    <p class="ptext">북마크 폴더가 감당이 안 됐습니다. 폰트 사이트 하나 찾으려고 들어가 보면 몇 년 전에 저장해 둔 링크는 이미 없어진 도메인이고,
+    괜찮은 레퍼런스를 봐도 어디에 넣어뒀는지 기억이 안 나고.</p>
+    <p class="ptext">그래서 한 페이지에 다 모았습니다. 검색창에 단어 하나 치면 나오게.
+    지금 {n_site}개가 들어 있고, 분야는 {n_cat}개로 나눠 뒀습니다.</p>
 
-    <h2 class="psub">직접 쓴 자료도 있습니다</h2>
-    <p class="ptext">링크만 모으지 않았습니다. 실무에서 자주 부딪히는 내용을 따로 정리했습니다.</p>
+    <h2 class="psub">링크만 있는 건 아닙니다</h2>
+    <p class="ptext">쓰다 보니 아쉬운 게 생겨서 몇 가지를 더 붙였습니다.</p>
     <ul class="ptext-list">
-      <li><a href="{SITE}styles/">디자인 스타일 사전</a> — 아르누보부터 글래스모피즘까지 {n_style}가지 양식을 연대순으로. 시대, 특징, 대표 인물, 대표 이미지를 함께 실었습니다.</li>
-      <li><a href="{SITE}glossary/">디자인 용어 사전</a> — 타이포그래피, 편집·인쇄, 컬러, UI 설계, UX 리서치, 개발 협업까지 {n_term}개 용어를 실무 기준으로 설명했습니다.</li>
-      <li><a href="{SITE}trends/">2026 디자인 트렌드</a> — 업계 리포트와 커뮤니티에서 반복 언급되는 키워드 {n_trend}가지를 정리했습니다.</li>
+      <li><a href="{SITE}styles/">스타일 사전</a>은 클라이언트가 "바우하우스 느낌으로 가죠" 할 때 바로 열어볼 용도입니다.
+      {n_style}가지 양식을 연대순으로 놓고, 시대와 특징, 대표 인물, 대표 이미지를 같이 넣었습니다.</li>
+      <li><a href="{SITE}glossary/">용어 사전</a>은 인쇄소에서 도련이 어떻고 오시가 어떻고 하는 말을 들었을 때를 위한 것입니다.
+      타이포그래피부터 UI 설계, 개발 협업 용어까지 {n_term}개.</li>
+      <li><a href="{SITE}trends/">2026 트렌드</a>는 매년 리포트 찾아 헤매기가 번거로워서 정리해 둡니다. {n_trend}가지.</li>
     </ul>
 
-    <h2 class="psub">어떤 기준으로 고르나요</h2>
+    <h2 class="psub">고르는 기준</h2>
+    <p class="ptext">처음부터 정해 놓은 건 아니고, 넣었다 뺐다 하면서 자연스럽게 생긴 기준입니다.</p>
     <ul class="ptext-list">
-      <li>실무에서 실제로 쓰이는 곳만 넣습니다. 이름값보다 쓸모를 봅니다.</li>
-      <li>분야마다 국내 사이트를 함께 담습니다. 한국에서 일하는 디자이너에게 맞춰야 하기 때문입니다.</li>
-      <li>설명은 직접 씁니다. 사이트 소개 문구를 그대로 옮기지 않고, 무엇에 강한 곳인지 한 줄로 적습니다.</li>
-      <li>무료·유료 여부를 태그로 표시해 들어가기 전에 알 수 있게 합니다.</li>
-      <li>주소는 등록 전에 응답을 확인하고, 서비스가 바뀌거나 종료되면 갱신하거나 지웁니다.</li>
+      <li>유명한 곳보다 실제로 자주 여는 곳</li>
+      <li>분야마다 국내 사이트를 같이 넣습니다. 해외 것만 모아두면 반쪽짜리가 되더군요</li>
+      <li>설명은 직접 씁니다. 사이트 소개 문구를 그대로 옮기면 전부 비슷해 보입니다</li>
+      <li>무료인지 유료인지 태그로 먼저 표시. 들어갔다가 결제창 보면 맥이 빠지니까요</li>
+      <li>주소는 넣기 전에 한 번씩 열어 보고, 서비스가 없어지면 지웁니다</li>
     </ul>
 
-    <h2 class="psub">제안과 문의</h2>
-    <p class="ptext">빠진 사이트나 잘못된 정보를 알려주시면 확인 후 반영하겠습니다.
-    설명이 사실과 다르거나 서비스가 종료된 경우도 알려주세요.
-    <a href="mailto:nisov0924@gmail.com">nisov0924@gmail.com</a> 으로 보내주시면 됩니다.</p>
+    <h2 class="psub">제안</h2>
+    <p class="ptext">빠진 사이트를 알려주시면 확인하고 넣겠습니다. 링크가 죽었거나 설명이 틀린 것도 알려주세요.
+    <a href="mailto:nisov0924@gmail.com">nisov0924@gmail.com</a></p>
 """
 
 PRIVACY = f"""
@@ -227,7 +230,7 @@ PRIVACY = f"""
 
 PROSE_PAGES = [
     ("about", "디자인 허브 소개",
-     f"디자인 허브가 어떤 곳인지, 사이트를 어떤 기준으로 고르고 관리하는지 정리했습니다.", ABOUT),
+     "왜 만들었고 무엇이 들어 있는지, 사이트는 어떤 기준으로 고르는지 적어 뒀습니다.", ABOUT),
     ("privacy", "개인정보처리방침",
      "디자인 허브의 개인정보 처리방침입니다. 수집 항목, 쿠키 사용, 외부 서비스, 광고에 대해 안내합니다.", PRIVACY),
 ]
@@ -359,12 +362,8 @@ def _group(slugs):
                    for pg in pages if pg[0] in slugs)
 
 _cat_slugs = [pg[0] for pg in pages if pg[0] not in _prose and pg[0] not in INSIGHT]
-links = (
-    '<div class="footer__navgroup"><span class="footer__navlabel">카테고리</span>'
-    + _group(_cat_slugs) + '</div>'
-    '<div class="footer__navgroup"><span class="footer__navlabel">인사이트</span>'
-    + _group(INSIGHT) + '</div>'
-)
+links = ('<div class="footer__navgroup">' + _group(_cat_slugs) + '</div>'
+         '<div class="footer__navgroup">' + _group(INSIGHT) + '</div>')
 pat = re.compile(r"<!-- SEO:PAGELINKS -->.*?<!-- /SEO:PAGELINKS -->", re.S)
 if pat.search(doc):
     doc = pat.sub(f'<!-- SEO:PAGELINKS -->\n      <nav class="footer__nav">{links}</nav>\n      <!-- /SEO:PAGELINKS -->', doc)
