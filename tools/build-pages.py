@@ -309,8 +309,7 @@ for slug, title, intro, body, n, names, navlabel in pages:
   <script>
     // 메인에서 고른 테마를 그대로 따릅니다.
     try {{
-      var t = localStorage.getItem('designhub:theme')
-        || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      var t = localStorage.getItem('designhub:theme') || 'light';
       if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
     }} catch (e) {{}}
   </script>

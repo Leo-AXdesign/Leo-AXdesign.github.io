@@ -118,9 +118,8 @@
     else document.documentElement.removeAttribute('data-theme');
   }
   function initTheme() {
-    let theme = load(STORAGE_THEME);
-    if (!theme) theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    applyTheme(theme);
+    // 저장된 선택이 없으면 라이트로 시작합니다. 시스템 설정은 따르지 않습니다.
+    applyTheme(load(STORAGE_THEME) || 'light');
   }
   function toggleTheme() {
     const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
@@ -696,7 +695,8 @@
     if (id && catById(id)) state.cat = id;
   })();
   initTheme();
-  applyView(load(STORAGE_VIEW) === 'grid' ? 'grid' : 'list');
+  // 기본은 격자 보기. 목록을 고른 적이 있으면 그 선택을 따릅니다.
+  applyView(load(STORAGE_VIEW) === 'list' ? 'list' : 'grid');
   loadBookmarks();
   bindEvents();
   bindDrawer();
