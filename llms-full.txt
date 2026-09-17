@@ -1,0 +1,690 @@
+# 디자인 허브 (Design Hub) 전체 내용
+
+> 출처: https://designrefs.com/ · 사이트 371개, 스타일 34가지, 트렌드 15가지, 용어 155개
+
+## UI/UX 레퍼런스
+
+앱·웹 화면, 유저 플로우, 랜딩페이지 인스피레이션.
+
+- [Mobbin](https://mobbin.com): 실제 서비스 앱·웹 화면과 플로우를 통째로 모아둔 UI 아카이브. 화면 단위 검색이 강력합니다.
+- [Refero](https://refero.design): 실제 프로덕트의 UI 패턴을 컴포넌트·페이지 유형별로 검색할 수 있는 레퍼런스 툴.
+- [Dribbble](https://dribbble.com): 전 세계 디자이너들의 샷(Shot) 쇼케이스. 비주얼 트렌드 파악에 좋습니다.
+- [Behance](https://www.behance.net): 어도비의 포트폴리오 플랫폼. 프로젝트 단위의 긴 호흡 작업물을 볼 수 있습니다.
+- [Awwwards](https://www.awwwards.com): 세계적인 웹 디자인 어워드. 인터랙션이 뛰어난 사이트를 매일 선정합니다.
+- [지디웹 (GDWEB)](https://www.gdweb.co.kr): 국내 웹·앱 디자인 어워드. 한국 기업 사이트 레퍼런스를 찾을 때 유용합니다.
+- [디비컷 (DBCUT)](https://www.dbcut.com): 국내 웹디자인 레퍼런스 모음. 업종별·스타일별로 한국 사이트를 살펴볼 수 있습니다.
+- [Land-book](https://land-book.com): 랜딩페이지 갤러리. 산업·스타일·컬러별 필터가 잘 되어 있습니다.
+- [Lapa Ninja](https://www.lapa.ninja): 랜딩페이지 인스피레이션 모음. 무료 UI 킷·북도 함께 제공합니다.
+- [Recent (구 Godly)](https://recent.design): 감각적인 웹사이트만 엄선한 큐레이션. Godly에서 이름을 바꿨습니다.
+- [Siteinspire](https://www.siteinspire.com): 깔끔하고 세련된 웹사이트 쇼케이스. 스타일·타입·주제별 필터 제공.
+- [Httpster](https://httpster.net): 트렌디하고 실험적인 웹사이트를 모아둔 갤러리.
+- [Minimal Gallery](https://minimal.gallery): 미니멀한 웹사이트만 모아둔 갤러리.
+- [Dark Mode Design](https://www.darkmodedesign.com): 다크 모드 웹사이트 레퍼런스만 모아둔 사이트.
+- [SaaS Landing Page](https://saaslandingpage.com): SaaS 랜딩페이지 예시를 섹션·유형별로 정리한 사이트.
+- [Nicelydone](https://nicelydone.club): SaaS 프로덕트의 UI 패턴·플로우를 모아둔 레퍼런스.
+- [Page Flows](https://pageflows.com): 온보딩, 결제 등 유저 플로우를 영상으로 기록해 둔 사이트.
+- [Pttrns](https://www.pttrns.com): 모바일 앱 UI 패턴 레퍼런스의 고전.
+- [ScreensDesign](https://screensdesign.com): 앱스토어 스크린샷과 실제 앱 UI 플로우를 모아둔 사이트.
+- [Collect UI](https://collectui.com): Dribbble 샷을 UI 요소(로그인, 404, 대시보드 등)별로 분류한 갤러리.
+- [Design Spells](https://www.designspells.com): 사용자를 미소 짓게 하는 UI 디테일·인터랙션 모음.
+- [Footer.design](https://www.footer.design): 웹사이트 푸터 디자인만 모아둔 레퍼런스.
+- [Navbar Gallery](https://www.navbar.gallery): 내비게이션 바 디자인 레퍼런스 모음.
+- [Curated Design](https://www.curated.design): 트렌디한 웹 디자인 큐레이션. 타입·스타일별 필터 제공.
+- [Muzli](https://muz.li): 디자인 인스피레이션 피드. 크롬 확장 프로그램으로 새 탭에서 바로 볼 수 있습니다.
+- [UI Patterns](https://ui-patterns.com): UI 패턴을 문제·해결 관점에서 정리한 패턴 라이브러리.
+- [Laws of UX](https://lawsofux.com): 힉의 법칙, 피츠의 법칙 등 UX 심리학 법칙을 카드로 정리.
+- [Growth.design](https://growth.design): 유명 서비스의 UX를 만화 형식으로 분석한 케이스 스터디.
+- [Checklist Design](https://www.checklist.design): 페이지·컴포넌트별 디자인 체크리스트.
+- [Nielsen Norman Group](https://www.nngroup.com): UX 리서치의 권위 있는 기관. 휴리스틱, 리서치 아티클이 풍부합니다.
+- [Toools.design](https://www.toools.design): 디자인 리소스·툴 1,500개 이상을 모아둔 디렉터리.
+- [Landingfolio](https://www.landingfolio.com): 랜딩페이지·컴포넌트 인스피레이션. 섹션별 검색.
+- [CSS Design Awards](https://www.cssdesignawards.com): Awwwards와 함께 대표적인 웹 디자인 어워드.
+- [FWA](https://thefwa.com): 2000년부터 이어진 인터랙티브 웹 어워드.
+- [One Page Love](https://onepagelove.com): 원페이지 웹사이트 갤러리와 템플릿.
+- [Bento Grids](https://bentogrids.com): 벤토 그리드 레이아웃 레퍼런스 모음.
+- [UX Archive](https://uxarchive.com): 모바일 앱 유저 플로우를 단계별 스크린샷으로 정리.
+- [Really Good UX](https://goodux.appcues.com): 온보딩·엠프티 스테이트 등 잘 만든 UX 사례 모음.
+- [UI8](https://ui8.net): 프리미엄 UI 킷·아이콘·3D 에셋 마켓.
+
+## 그래픽 / 브랜딩
+
+포스터, 로고, 패키지, 브랜딩, 편집 디자인 레퍼런스.
+
+- [Pinterest](https://kr.pinterest.com): 이미지 기반 인스피레이션 보드. 무드보드 만들 때 필수.
+- [노트폴리오](https://notefolio.net): 국내 최대 디자이너 포트폴리오 플랫폼. 그래픽·브랜딩·일러스트 레퍼런스.
+- [Are.na](https://www.are.na): 광고 없는 리서치·큐레이션 도구. 디자이너들의 채널을 탐색할 수 있습니다.
+- [Savee](https://savee.com): 비주얼 인스피레이션 수집 툴. 감각적인 이미지 피드.
+- [Cosmos](https://www.cosmos.so): 알고리즘 없는 큐레이션 기반 디자인 무드보드 플랫폼.
+- [Designspiration](https://www.designspiration.com): 그래픽 디자인 인스피레이션 검색. 컬러로 검색 가능.
+- [It's Nice That](https://www.itsnicethat.com): 크리에이티브 산업 전반의 작업물을 소개하는 영국 매거진.
+- [Brand New](https://www.underconsideration.com/brandnew/): 기업 로고·아이덴티티 리뉴얼을 리뷰하는 브랜딩 전문 블로그.
+- [BP&O](https://bpando.org): 브랜딩·패키징 프로젝트를 깊이 있게 소개하는 아카이브.
+- [The Dieline](https://thedieline.com): 패키지 디자인 전문 매거진.
+- [Packaging of the World](https://packagingoftheworld.com): 전 세계 패키지 디자인 갤러리.
+- [Logobook](https://www.logobook.com): 클래식 로고 아카이브. 형태·업종별 분류.
+- [LogoLounge](https://www.logolounge.com): 로고 디자인 트렌드 리포트와 방대한 로고 데이터베이스.
+- [Branding Style Guides](https://brandingstyleguides.com): 기업 브랜드 가이드라인 문서를 모아둔 사이트.
+- [Typographic Posters](https://www.typographicposters.com): 타이포그래피 중심 포스터 아카이브.
+- [Ads of the World](https://www.adsoftheworld.com): 전 세계 광고 캠페인 아카이브.
+- [Abduzeedo](https://abduzeedo.com): 그래픽·브랜딩·일러스트 인스피레이션 블로그.
+- [Visuelle](https://visuelle.co.uk): 편집·브랜딩 디자인 위주의 큐레이션 블로그.
+- [Book Cover Archive](https://bookcoverarchive.com): 북 커버 디자인 아카이브.
+- [Mindsparkle Mag](https://mindsparklemag.com): 브랜딩·웹 디자인 큐레이션 매거진.
+- [Gurafiku](https://gurafiku.tumblr.com): 일본 그래픽 디자인 아카이브.
+
+## 컬러 가이드
+
+팔레트 생성, 그라디언트, 명도 대비 검사.
+
+- [Coolors](https://coolors.co): 스페이스바로 팔레트를 빠르게 생성. 이미지에서 컬러 추출, 대비 검사까지.
+- [Adobe Color](https://color.adobe.com): 색상환 기반 조화 팔레트 생성. 트렌드·탐색 탭도 유용합니다.
+- [Color Hunt](https://colorhunt.co): 큐레이션된 4색 팔레트 모음. 인기순·트렌드순 정렬.
+- [Realtime Colors](https://www.realtimecolors.com): 팔레트를 실제 웹 UI에 바로 적용해 보며 확인.
+- [Happy Hues](https://www.happyhues.co): 팔레트를 페이지 전체에 적용한 모습을 보며 고를 수 있는 사이트.
+- [Khroma](https://www.khroma.co): 취향을 학습해 팔레트를 추천하는 AI 컬러 툴.
+- [Huemint](https://huemint.com): 브랜드·웹·그라디언트용 팔레트를 AI로 생성.
+- [Colormind](http://colormind.io): 딥러닝 기반 팔레트 생성기. 일부 색을 고정하고 나머지 추천.
+- [Paletton](https://paletton.com): 색상 이론 기반 조합 생성기의 고전.
+- [UI Colors](https://uicolors.app): 한 가지 색으로 Tailwind 스타일 50~950 단계 팔레트 자동 생성.
+- [Radix Colors](https://www.radix-ui.com/colors): 접근성을 고려해 설계된 12단계 컬러 스케일 시스템.
+- [Material Theme Builder](https://material-foundation.github.io/material-theme-builder/): 구글 머티리얼 3 기반 다이내믹 컬러 테마 생성.
+- [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/): WCAG 명도 대비 기준 통과 여부 검사.
+- [OKLCH Color Picker](https://oklch.com): 지각적으로 균일한 OKLCH 색공간 피커. 최신 CSS 컬러 작업에 유용.
+- [Color Leap](https://colorleap.app): 시대별(고대~현대) 역사적 컬러 팔레트 모음.
+- [Picular](https://picular.co): 검색어를 입력하면 연관 이미지에서 색을 뽑아주는 컬러 검색.
+- [Color Space](https://mycolor.space): 한 색을 넣으면 여러 조합과 그라디언트를 한 번에 생성.
+- [Grabient](https://www.grabient.com): CSS 그라디언트를 만들고 코드로 바로 복사.
+- [Colors & Fonts](https://www.colorsandfonts.com): 컬러 팔레트·그라디언트·폰트 조합을 함께 제공.
+- [Encycolorpedia](https://encycolorpedia.kr): 색상 코드 백과사전. HEX·RGB·CMYK·페인트 매칭 정보.
+- [Pantone](https://www.pantone.com): 팬톤 컬러 시스템과 올해의 컬러.
+- [Muzli Colors](https://colors.muz.li): 팔레트 생성과 실제 UI·일러스트 적용 미리보기.
+- [ColorKit](https://colorkit.co): 팔레트 생성기와 인기 팔레트, 컬러 도구 모음.
+
+## 타이포 / 폰트
+
+무료 폰트, 폰트 조합, 타이포그래피 레퍼런스.
+
+- [눈누](https://noonnu.cc): 상업용 무료 한글 폰트 모음. 라이선스 범위를 한눈에 확인.
+- [Google Fonts](https://fonts.google.com): 오픈소스 웹폰트의 표준. 한글 폰트도 다수 포함.
+- [Pretendard](https://github.com/orioncactus/pretendard): 국내 UI 디자인에서 가장 널리 쓰이는 무료 한글 폰트.
+- [산돌구름](https://www.sandollcloud.com): 산돌의 폰트 구독 서비스. 국내 상업용 폰트가 가장 많습니다.
+- [네이버 한글한글 아름답게](https://hangeul.naver.com): 나눔글꼴, 마루 부리 등 네이버 무료 한글 폰트 배포처.
+- [Adobe Fonts](https://fonts.adobe.com): Creative Cloud 구독자를 위한 폰트 라이브러리.
+- [Fontshare](https://www.fontshare.com): Indian Type Foundry의 고품질 무료 폰트.
+- [Uncut](https://uncut.wtf): 현대적인 무료 폰트만 엄선한 카탈로그.
+- [Velvetyne](https://velvetyne.fr): 실험적인 오픈소스 폰트 파운드리.
+- [Free Faces](https://www.freefaces.gallery): 무료 폰트를 스타일별로 탐색할 수 있는 갤러리.
+- [Fontesk](https://fontesk.com): 무료·유료 폰트를 폭넓게 모아둔 사이트.
+- [Fonts In Use](https://fontsinuse.com): 실제 작업물에서 폰트가 어떻게 쓰였는지 보여주는 아카이브.
+- [Typewolf](https://www.typewolf.com): 폰트 추천, 조합, 대체 폰트 정보가 잘 정리된 사이트.
+- [Font Pair](https://www.fontpair.co): Google Fonts 조합 추천.
+- [Typ.io](https://typ.io): 실제 웹사이트에서 사용된 폰트 조합 모음.
+- [Fontjoy](https://fontjoy.com): 딥러닝으로 폰트 조합을 생성.
+- [Type Scale](https://typescale.com): 타이포그래피 스케일(크기 체계) 계산기.
+- [Wordmark](https://wordmark.it): 내 컴퓨터에 설치된 폰트로 문구를 한 번에 미리보기.
+- [WhatTheFont](https://www.myfonts.com/pages/whatthefont): 이미지 속 폰트가 무엇인지 찾아주는 서비스.
+- [DaFont](https://www.dafont.com): 개인용 무료 폰트가 가장 많은 사이트. 라이선스 확인 필수.
+- [Font Squirrel](https://www.fontsquirrel.com): 상업용 무료 폰트만 골라 모은 사이트. 웹폰트 변환기 제공.
+- [Pangram Pangram](https://pangrampangram.com): 트렌디한 서체를 개인용 무료로 배포하는 파운드리.
+- [Klim Type Foundry](https://klim.co.nz): 뉴질랜드의 서체 파운드리. 브랜딩에 자주 쓰이는 고급 서체.
+
+## 아이콘 / 에셋
+
+아이콘, 일러스트, 목업, 사진, 영상 소스.
+
+- [Lucide](https://lucide.dev): 깔끔하고 일관된 오픈소스 아이콘 세트. React 등 패키지 제공.
+- [Heroicons](https://heroicons.com): Tailwind 팀이 만든 SVG 아이콘.
+- [Phosphor Icons](https://phosphoricons.com): 6가지 굵기를 지원하는 유연한 아이콘 패밀리.
+- [Tabler Icons](https://tabler.io/icons): 5,000개 이상의 무료 SVG 아이콘.
+- [Iconify](https://icon-sets.iconify.design): 200,000개 이상의 아이콘을 한곳에서 검색.
+- [Feather](https://feathericons.com): 심플한 선 아이콘의 고전.
+- [The Noun Project](https://thenounproject.com): 방대한 픽토그램·아이콘 라이브러리.
+- [Flaticon](https://www.flaticon.com): 스타일별 아이콘 팩이 풍부한 대형 아이콘 사이트.
+- [SVG Repo](https://www.svgrepo.com): 무료 SVG 아이콘·벡터 모음.
+- [3dicons](https://3dicons.co): 오픈소스 3D 아이콘. Figma·Blender 파일 제공.
+- [Lordicon](https://lordicon.com): 애니메이션 아이콘 라이브러리.
+- [LottieFiles](https://lottiefiles.com): 벡터 애니메이션(Lottie) 마켓과 에디터.
+- [unDraw](https://undraw.co): 컬러를 바꿔 쓸 수 있는 오픈소스 일러스트.
+- [Storyset](https://storyset.com): 커스터마이징 가능한 일러스트. Freepik 제공.
+- [Humaaans](https://www.humaaans.com): 조합해서 쓰는 사람 일러스트 라이브러리.
+- [Open Doodles](https://www.opendoodles.com): 손그림 느낌의 무료 일러스트.
+- [Blush](https://blush.design): 아티스트별 일러스트를 조합해 만드는 툴.
+- [Unsplash](https://unsplash.com): 고품질 무료 사진의 대명사.
+- [Pexels](https://www.pexels.com): 무료 사진·영상 소스.
+- [Freepik](https://www.freepik.com): 벡터·사진·PSD·목업 종합 소스 사이트.
+- [Mixkit](https://mixkit.co): 무료 영상 클립·음악·효과음.
+- [Coverr](https://coverr.co): 웹 배경용 무료 영상 소스.
+- [Mockup World](https://www.mockupworld.co): 무료 PSD 목업 모음.
+- [LS Graphics](https://www.ls.graphics): 고품질 목업·3D 일러스트·UI 킷.
+- [Shots](https://shots.so): 스크린샷을 예쁜 목업으로 바로 만들어 주는 툴.
+- [Haikei](https://haikei.app): 웨이브, 블롭 등 SVG 배경 생성기.
+- [Figma Community](https://www.figma.com/community): UI 킷, 아이콘, 템플릿, 플러그인을 무료로 복제해 사용.
+- [Untitled UI](https://www.untitledui.com): 가장 널리 쓰이는 Figma UI 킷. 무료 버전도 제공.
+- [Icons8](https://icons8.com): 아이콘·일러스트·사진·3D를 스타일별로 제공하는 대형 사이트.
+- [Iconoir](https://iconoir.com): 1,600개 이상의 오픈소스 선 아이콘.
+- [Pixabay](https://pixabay.com): 무료 사진·일러스트·벡터·영상·음악.
+- [Creative Market](https://creativemarket.com): 폰트·그래픽·템플릿·목업을 개별 구매하는 마켓.
+- [Envato Elements](https://elements.envato.com): 구독 하나로 템플릿·폰트·영상·음악을 무제한 사용.
+- [Craftwork](https://craftwork.design): 일러스트·UI 킷·3D 에셋 번들.
+
+## 디자인 개발
+
+디자인 시스템, 플랫폼 가이드라인, 인터랙션 구현.
+
+- [Material Design 3](https://m3.material.io): 구글 머티리얼 디자인 가이드라인과 컴포넌트.
+- [Apple HIG](https://developer.apple.com/design/human-interface-guidelines/): iOS·macOS 등 애플 플랫폼 휴먼 인터페이스 가이드라인.
+- [KRDS 디지털정부서비스 UI/UX](https://www.krds.go.kr): 한국 디지털 정부서비스 UI/UX 가이드라인. 공공 프로젝트 필수 참고.
+- [LINE Design System](https://designsystem.line.me): 라인의 공개 디자인 시스템.
+- [Atlassian Design System](https://atlassian.design): 문서화가 잘 된 디자인 시스템의 교과서.
+- [Shopify Polaris](https://shopify.dev/docs/api/polaris): 쇼피파이 디자인 시스템. 콘텐츠 가이드가 특히 좋습니다.
+- [IBM Carbon](https://carbondesignsystem.com): IBM의 오픈소스 디자인 시스템.
+- [Ant Design](https://ant.design): 엔터프라이즈 UI 디자인 언어와 React 컴포넌트.
+- [Design Systems Repo](https://designsystemsrepo.com): 공개된 디자인 시스템 모음.
+- [Component Gallery](https://component.gallery): 여러 디자인 시스템의 동일 컴포넌트를 비교해 볼 수 있는 갤러리.
+- [shadcn/ui](https://ui.shadcn.com): 복사해서 쓰는 React 컴포넌트. 최근 웹 UI의 기본값처럼 쓰입니다.
+- [Tailwind CSS](https://tailwindcss.com): 유틸리티 클래스 기반 CSS 프레임워크.
+- [Radix UI](https://www.radix-ui.com): 접근성이 보장된 헤드리스 UI 컴포넌트.
+- [Storybook](https://storybook.js.org): UI 컴포넌트를 독립적으로 개발·문서화하는 툴.
+- [Zeroheight](https://zeroheight.com): 디자인 시스템 문서화 플랫폼.
+- [Supernova](https://www.supernova.io): 디자인 토큰 관리와 코드 동기화.
+- [Zeplin](https://zeplin.io): 디자인-개발 핸드오프 툴.
+- [Codrops](https://tympanus.net/codrops/): 고급 웹 인터랙션·애니메이션 데모와 튜토리얼.
+- [CodePen](https://codepen.io): 프론트엔드 코드 스니펫 공유 플레이그라운드.
+- [GSAP](https://gsap.com): 웹 애니메이션 라이브러리의 표준.
+- [Motion](https://motion.dev): React·JS용 모던 애니메이션 라이브러리(구 Framer Motion).
+- [Three.js](https://threejs.org): 웹 3D 라이브러리. 예제 갤러리가 인스피레이션이 됩니다.
+- [Easings.net](https://easings.net): 이징 함수 치트시트.
+- [cubic-bezier.com](https://cubic-bezier.com): CSS 베지어 이징 커브 시각 편집기.
+- [Animista](https://animista.net): CSS 애니메이션을 눌러보며 골라 코드 복사.
+- [MDN Web Docs](https://developer.mozilla.org/ko/): HTML·CSS·JS 공식 레퍼런스 문서.
+- [CSS-Tricks](https://css-tricks.com): CSS 기법 아티클과 가이드.
+- [Can I Use](https://caniuse.com): 브라우저별 CSS·JS 기능 지원 여부 확인.
+- [WCAG 2.2 Quick Reference](https://www.w3.org/WAI/WCAG22/quickref/): 웹 접근성 지침 빠른 참조.
+- [Responsively](https://responsively.app): 여러 기기 화면을 동시에 보며 반응형을 확인하는 브라우저.
+- [Bootstrap](https://getbootstrap.com): 가장 오래 쓰인 CSS 프레임워크. 반응형 그리드와 컴포넌트.
+- [Frontend Mentor](https://www.frontendmentor.io): 디자인 시안을 코드로 구현하며 배우는 실습 플랫폼.
+- [Uiverse](https://uiverse.io): 커뮤니티가 만든 오픈소스 CSS 버튼·로더·카드 모음.
+
+## 디자인 툴
+
+제작·협업·프로토타이핑·유틸리티 도구.
+
+- [Figma](https://www.figma.com): UI 디자인·프로토타이핑·협업의 표준 툴.
+- [Framer](https://www.framer.com): 디자인하듯 웹사이트를 만들어 바로 배포하는 노코드 빌더.
+- [Webflow](https://webflow.com): CMS까지 갖춘 비주얼 웹 빌더.
+- [ProtoPie](https://www.protopie.io): 코드 없이 고급 인터랙션을 만드는 국산 프로토타이핑 툴.
+- [Rive](https://rive.app): 인터랙티브 벡터 애니메이션 제작 툴.
+- [Spline](https://spline.design): 웹용 3D 디자인 툴. 인터랙티브 3D를 쉽게 제작.
+- [Adobe Creative Cloud](https://www.adobe.com/kr/): 포토샵, 일러스트레이터, 인디자인 등.
+- [Affinity](https://www.affinity.studio): 어도비 대안 그래픽 툴. 2025년 캔바 인수 후 무료로 전환.
+- [Canva](https://www.canva.com): 템플릿 기반 간편 디자인 툴.
+- [Photopea](https://www.photopea.com): 브라우저에서 돌아가는 무료 포토샵 대체 툴.
+- [Procreate](https://procreate.com): iPad 드로잉·페인팅 앱.
+- [Blender](https://www.blender.org): 무료 오픈소스 3D 제작 툴.
+- [Glyphs](https://glyphsapp.com): 맥용 폰트 제작 툴. 한글 폰트 제작에도 널리 사용.
+- [FontForge](https://fontforge.org): 무료 오픈소스 폰트 에디터.
+- [Miro](https://miro.com): 온라인 화이트보드. 워크숍·리서치 정리.
+- [Whimsical](https://whimsical.com): 와이어프레임·플로우차트·마인드맵을 빠르게 그리는 툴.
+- [Excalidraw](https://excalidraw.com): 손그림 느낌의 무료 다이어그램 툴.
+- [Notion](https://www.notion.com): 문서·프로젝트 관리. 포트폴리오 페이지로도 활용.
+- [Maze](https://maze.co): 프로토타입 사용성 테스트·설문 플랫폼.
+- [Hotjar](https://contentsquare.com/hotjar/): 히트맵·세션 녹화로 실제 사용자 행동 분석. 현재 Contentsquare에 합류.
+- [TinyPNG](https://tinypng.com): PNG·JPG·WebP 이미지 압축.
+- [Squoosh](https://squoosh.app): 구글의 브라우저 이미지 압축·변환 툴.
+- [remove.bg](https://www.remove.bg): 이미지 배경을 자동으로 제거.
+- [Screen Studio](https://screen.studio): 자동 줌·모션이 들어간 세련된 화면 녹화(맥).
+- [CleanShot X](https://cleanshot.com): 맥용 스크린샷·녹화 툴.
+- [Sketch](https://www.sketch.com): 맥 전용 UI 디자인 툴. Figma 이전의 표준.
+- [Penpot](https://penpot.app): 오픈소스 디자인·프로토타이핑 툴. Figma의 무료 대안.
+- [Jitter](https://jitter.video): 브라우저에서 쓰는 간편한 모션 디자인 툴. Figma 연동.
+- [Loom](https://www.loom.com): 화면 녹화로 디자인 설명 영상을 빠르게 공유.
+
+## 외주 / 프리랜서
+
+외주 매칭 플랫폼, 계약서·대가 기준.
+
+- [크몽](https://kmong.com): 국내 최대 프리랜서 마켓. 디자인 카테고리가 가장 활발합니다.
+- [숨고](https://soomgo.com): 견적 요청 기반 전문가 매칭 플랫폼.
+- [위시켓](https://www.wishket.com): IT·디자인 프로젝트 아웃소싱 플랫폼. 규모 있는 프로젝트가 많습니다.
+- [프리모아](https://www.freemoa.net): 프리랜서 프로젝트 매칭 플랫폼.
+- [라우드소싱](https://www.loud.kr): 로고·네이밍·패키지 디자인 콘테스트 플랫폼.
+- [이랜서](https://www.elancer.co.kr): IT 프리랜서 매칭. 상주 프로젝트가 많습니다.
+- [원티드 긱스](https://www.wanted.co.kr/gigs): 원티드의 프리랜서·긱 프로젝트 매칭.
+- [디자인DB (한국디자인진흥원)](https://www.designdb.com): 디자인 표준 대가 기준, 표준계약서 등 외주 시 참고할 공식 자료.
+- [Upwork](https://www.upwork.com): 글로벌 프리랜서 플랫폼. 해외 클라이언트와 작업.
+- [Fiverr](https://www.fiverr.com): 서비스 단위로 판매하는 글로벌 프리랜서 마켓.
+- [Toptal](https://www.toptal.com): 상위 프리랜서만 선별하는 프리미엄 매칭.
+- [99designs](https://99designs.com): 디자인 콘테스트·1:1 프로젝트 플랫폼.
+- [Contra](https://contra.com): 수수료 없는 독립 프리랜서 플랫폼. 포트폴리오 기능 포함.
+
+## 채용공고
+
+디자이너 채용, 기업 정보, 커리어.
+
+- [원티드](https://www.wanted.co.kr): IT·스타트업 채용의 중심. 프로덕트 디자이너 공고가 많습니다.
+- [사람인](https://www.saramin.co.kr): 국내 대표 채용 사이트.
+- [잡코리아](https://www.jobkorea.co.kr): 국내 대표 채용 사이트.
+- [로켓펀치](https://www.rocketpunch.com): 스타트업 채용·비즈니스 네트워크.
+- [디자이너잡](https://www.designerjob.co.kr): 디자이너 전문 채용 사이트.
+- [랠릿](https://www.rallit.com): 인크루트의 IT·디자인 직군 채용 플랫폼.
+- [리멤버](https://www.rememberapp.co.kr): 명함 앱 기반 경력직 채용 제안.
+- [잡플래닛](https://www.jobplanet.co.kr): 기업 리뷰·연봉 정보. 지원 전 회사 분위기 확인.
+- [캐치](https://www.catch.co.kr): 기업 정보·채용 공고·취업 준비 정보.
+- [블라인드](https://www.teamblind.com/kr): 익명 직장인 커뮤니티. 회사 내부 이야기 참고.
+- [인디드](https://kr.indeed.com): 글로벌 채용 검색 엔진의 한국판.
+- [LinkedIn Jobs](https://www.linkedin.com/jobs/): 글로벌·외국계 기업 채용.
+- [Dribbble Jobs](https://dribbble.com/jobs): 해외 디자인 채용 보드.
+- [Behance Jobs](https://www.behance.net/joblist): 비핸스 채용 공고.
+- [Working Not Working](https://workingnotworking.com): 크리에이티브 전문 인재·채용 플랫폼.
+- [UX Jobs Board](https://uxjobsboard.com): UX 직군 전문 채용 보드.
+- [Remote OK](https://remoteok.com): 원격 근무 채용 모음. 디자인 카테고리 제공.
+- [Glassdoor](https://www.glassdoor.com): 글로벌 기업 리뷰·연봉·채용 정보.
+- [Wellfound](https://wellfound.com): 스타트업 채용 플랫폼(구 AngelList Talent).
+
+## AI
+
+이미지·영상·UI 생성, AI 코딩 도구.
+
+### LLM · 대화형
+
+- [ChatGPT](https://chatgpt.com): OpenAI의 대화형 AI. 이미지 생성·기획·카피 작성.
+- [Claude](https://claude.ai): Anthropic의 대화형 AI. 긴 문서 작업·코드 작성에 강점.
+- [뤼튼](https://wrtn.ai): 국산 AI 포털. 여러 모델을 한곳에서 무료로 사용.
+- [Grok (xAI)](https://grok.com): xAI의 대화형 AI. 실시간 X(트위터) 정보와 이미지 생성 기능.
+- [Gemini](https://gemini.google.com): 구글의 대화형 AI. 이미지 생성·편집(나노 바나나)과 딥 리서치가 강점.
+- [Microsoft Copilot](https://copilot.microsoft.com): 마이크로소프트의 AI 비서. 오피스·윈도우와 통합.
+- [DeepSeek](https://chat.deepseek.com): 오픈 웨이트 모델로 주목받은 중국의 대화형 AI.
+- [Mistral Le Chat](https://chat.mistral.ai): 유럽 미스트랄의 대화형 AI. 빠른 응답과 문서 처리.
+- [Qwen](https://chat.qwen.ai): 알리바바의 대화형 AI. 이미지·영상 생성까지 한곳에서.
+- [Meta AI](https://www.meta.ai): 메타의 대화형 AI. 이미지 생성과 인스타그램·왓츠앱 연동.
+- [Manus](https://manus.im): 작업을 끝까지 대신 수행하는 자율 에이전트. 리서치·슬라이드·웹 제작.
+
+### 이미지 생성
+
+- [Midjourney](https://www.midjourney.com): 가장 널리 쓰이는 이미지 생성 AI. 스타일 레퍼런스 기능이 강력.
+- [Adobe Firefly](https://firefly.adobe.com): 상업적 사용이 안전한 어도비 생성형 AI.
+- [Ideogram](https://ideogram.ai): 텍스트 렌더링에 강한 이미지 생성 AI. 포스터·로고 시안.
+- [Recraft](https://www.recraft.ai): 벡터·브랜드 스타일 일관성에 특화된 이미지 생성 AI.
+- [Leonardo.Ai](https://leonardo.ai): 게임·컨셉 아트에 강한 이미지 생성 플랫폼.
+- [Krea](https://www.krea.ai): 실시간 생성·업스케일·영상까지 지원하는 크리에이티브 AI.
+- [Civitai](https://civitai.com): Stable Diffusion 모델·LoRA 공유 커뮤니티.
+- [Vizcom](https://vizcom.com): 스케치를 렌더링 이미지로 바꿔주는 산업 디자인용 AI.
+- [Looka](https://looka.com): AI 로고·브랜드 킷 생성.
+- [Stability AI](https://stability.ai): Stable Diffusion 개발사. 오픈 이미지·영상·오디오 모델.
+- [FLUX (Black Forest Labs)](https://bfl.ai): 오픈 이미지 생성 모델 FLUX. 사실적인 이미지와 정확한 텍스트 렌더링.
+- [Playground](https://playground.com): 로고·포스터·SNS 그래픽을 템플릿 기반으로 생성하는 AI 디자인 툴.
+- [ComfyUI](https://www.comfy.org): 노드 기반 오픈소스 이미지·영상 생성 워크플로 툴. 로컬에서 실행.
+- [Kittl](https://www.kittl.com): AI 기능이 통합된 브라우저 그래픽 디자인 툴. 로고·티셔츠·포스터.
+- [Freepik AI Suite](https://www.freepik.com/ai): 프리픽의 AI 이미지·영상 생성 모음. 여러 모델을 한곳에서.
+
+### 이미지 편집 · 업스케일
+
+- [Magnific](https://www.magnific.com): 디테일을 살려주는 AI 업스케일러.
+- [Upscayl](https://upscayl.org): 무료 오픈소스 AI 이미지 업스케일러.
+- [Clipdrop](https://clipdrop.co): 배경 제거, 조명 변경, 확장 등 AI 이미지 편집 툴 모음.
+- [Topaz Labs](https://www.topazlabs.com): 사진·영상 업스케일과 노이즈 제거의 표준 툴.
+
+### 영상 생성 · 편집
+
+- [Runway](https://runway.com): 영상 생성·편집 AI의 선두주자.
+- [Luma Dream Machine](https://lumalabs.ai): 이미지·영상 생성 AI.
+- [Kling](https://kling.ai): 고품질 영상 생성 AI.
+- [Sora](https://sora.chatgpt.com): OpenAI의 영상 생성 AI.
+- [Google Flow (Veo)](https://labs.google/fx/tools/flow): 구글 Veo 모델로 영상을 만드는 AI 영화 제작 툴.
+- [Pika](https://pika.art): 짧은 영상 생성·편집 AI. 효과와 립싱크 기능.
+- [Hailuo](https://hailuoai.video): MiniMax의 영상 생성 AI. 자연스러운 인물 동작.
+- [Higgsfield](https://higgsfield.ai): 카메라 무빙 프리셋으로 시네마틱 영상을 만드는 AI.
+- [HeyGen](https://www.heygen.com): AI 아바타·더빙 영상 생성. 다국어 립싱크.
+- [Synthesia](https://www.synthesia.io): 기업용 AI 아바타 영상 제작 플랫폼.
+- [CapCut](https://www.capcut.com): AI 자막·배경 제거·템플릿이 강한 영상 편집기. 모바일·데스크톱.
+- [Descript](https://www.descript.com): 텍스트를 고치듯 영상·팟캐스트를 편집하는 AI 편집기.
+
+### 오디오 · 음성
+
+- [ElevenLabs](https://elevenlabs.io): AI 음성 합성. 영상·프로토타입 내레이션.
+- [Suno](https://suno.com): AI 음악 생성.
+- [Udio](https://www.udio.com): AI 음악 생성. Suno와 양대 산맥.
+
+### UI · 코드 생성
+
+- [Google Stitch](https://stitch.withgoogle.com): 프롬프트로 UI 화면을 생성하고 Figma로 내보내는 구글 툴.
+- [Uizard](https://uizard.io): 텍스트·스케치로 UI 프로토타입 생성.
+- [Relume](https://www.relume.ai): AI로 사이트맵·와이어프레임을 만들고 Figma·Webflow로 내보내기.
+- [Figma Make](https://www.figma.com/make/): 프롬프트로 동작하는 프로토타입을 만드는 Figma의 AI 기능.
+- [v0](https://v0.app): Vercel의 UI 코드 생성 AI. React·Tailwind 컴포넌트 생성.
+- [Lovable](https://lovable.dev): 대화로 풀스택 웹 앱을 만드는 AI 빌더.
+- [Bolt](https://bolt.new): 브라우저에서 프롬프트로 웹 앱을 만들고 배포.
+- [Cursor](https://cursor.com): AI 코드 에디터. 디자이너의 코드 작업 진입 장벽을 낮춥니다.
+- [Claude Code](https://claude.com/product/claude-code): 터미널·데스크톱에서 코드를 작성·수정하는 Anthropic의 에이전트.
+- [Replit](https://replit.com): 브라우저에서 AI 에이전트로 앱을 만들고 바로 배포.
+- [GitHub Copilot](https://github.com/features/copilot): 가장 널리 쓰이는 AI 코딩 어시스턴트. VS Code 등에 통합.
+
+### 문서 · 프레젠테이션
+
+- [Gamma](https://gamma.app): AI 프레젠테이션·문서·웹페이지 생성.
+- [Napkin](https://www.napkin.ai): 텍스트를 다이어그램·인포그래픽으로 변환.
+
+### 리서치 · 모델 허브
+
+- [Perplexity](https://www.perplexity.ai): 출처를 함께 보여주는 AI 검색.
+- [NotebookLM](https://notebooklm.google.com): 자료를 올리면 요약·질문·팟캐스트로 정리해 주는 구글 AI.
+- [Hugging Face](https://huggingface.co): 오픈소스 AI 모델·데모 허브.
+
+## 커뮤니티 / 매거진
+
+아티클, 뉴스레터, 강의, 디자이너 커뮤니티.
+
+- [디자인정글](https://www.jungle.co.kr): 국내 디자인 뉴스·칼럼·전시 소식. 디자인 분야 채용 정보도 제공.
+- [월간 디자인](https://mdesign.designhouse.co.kr): 디자인하우스의 월간 디자인 매거진.
+- [디자인프레스](https://blog.naver.com/designpress2016): 네이버 디자인프레스. 국내 디자이너 인터뷰·이슈.
+- [서핏](https://www.surfit.io): 디자이너·개발자 아티클 큐레이션. 새 탭 확장 프로그램 제공.
+- [요즘IT](https://yozm.wishket.com): 위시켓의 IT·디자인 아티클 매거진.
+- [디스콰이엇](https://disquiet.io): 프로덕트 메이커 커뮤니티. 사이드 프로젝트 공유.
+- [커리어리](https://careerly.co.kr): 현직자 인사이트를 공유하는 커리어 SNS.
+- [브런치](https://brunch.co.kr): 디자이너들의 에세이·회고가 많은 글 플랫폼.
+- [토스 기술 블로그](https://toss.tech): 토스의 디자인·개발 아티클.
+- [디자인베이스](https://designbase.co.kr): 디자인 툴 강의·아티클. 입문자에게 좋습니다.
+- [Coloso](https://coloso.co.kr): 현업 디자이너·아티스트의 온라인 강의.
+- [인프런](https://www.inflearn.com): IT·디자인 온라인 강의 플랫폼.
+- [패스트캠퍼스](https://fastcampus.co.kr): 실무 중심 온라인 강의.
+- [클래스101](https://class101.net): 취미·실무 크리에이티브 강의 구독.
+- [Layers](https://layers.to): 디자이너 커뮤니티·포트폴리오 플랫폼.
+- [Product Hunt](https://www.producthunt.com): 새로운 프로덕트·툴이 매일 올라오는 커뮤니티.
+- [Sidebar](https://sidebar.io): 매일 5개의 디자인 링크를 보내주는 뉴스레터.
+- [UX Collective](https://uxdesign.cc): Medium 최대 UX 퍼블리케이션.
+- [UX Planet](https://uxplanet.org): UX 아티클 퍼블리케이션.
+- [Smashing Magazine](https://www.smashingmagazine.com): 웹 디자인·프론트엔드 심층 아티클.
+- [Figma Blog](https://www.figma.com/blog/): Figma의 디자인·프로덕트 아티클.
+- [Eye on Design](https://eyeondesign.aiga.org): AIGA의 그래픽 디자인 매거진.
+- [Creative Boom](https://www.creativeboom.com): 크리에이티브 산업 뉴스·인터뷰.
+- [Dezeen](https://www.dezeen.com): 건축·인테리어·제품 디자인 매거진.
+- [Design Milk](https://design-milk.com): 모던 디자인·아트·인테리어 매거진.
+- [Refactoring UI](https://www.refactoringui.com): 개발자·디자이너를 위한 실전 UI 디자인 책.
+- [Interaction Design Foundation](https://ixdf.org): UX 이론·강의를 제공하는 비영리 교육 기관.
+- [Dense Discovery](https://www.densediscovery.com): 디자인·테크·문화를 다루는 주간 뉴스레터.
+- [퍼블리](https://publy.co): 실무자 인사이트 아티클 구독 서비스.
+
+## 크리에이터 / 채널
+
+디자인 유튜버, 인스타그램 큐레이션 계정, 팟캐스트.
+
+- [The Futur (Chris Do)](https://www.youtube.com/@thefutur): 디자인 비즈니스, 클라이언트 협상, 브랜딩 전략. 디자이너 채널 중 가장 큰 규모.
+- [Flux Academy (Ran Segall)](https://www.youtube.com/@FluxAcademy): 웹 디자인 실무와 프리랜서 운영. Figma·Webflow 튜토리얼.
+- [DesignCourse (Gary Simon)](https://www.youtube.com/@DesignCourse): UI 디자인과 프론트엔드를 함께 다루는 채널.
+- [Satori Graphics](https://www.youtube.com/@SatoriGraphics): 로고·그래픽 디자인 이론과 일러스트레이터 팁.
+- [Will Paterson](https://www.youtube.com/@WillPaterson): 로고 디자인과 핸드 레터링, 브랜딩 프로세스.
+- [Dansky](https://www.youtube.com/@ForeverDansky): 어도비·Figma 등 툴 사용법을 짧고 명확하게.
+- [Mizko](https://www.youtube.com/@Mizko): 프로덕트 디자인 실무, Figma 고급 활용, 커리어.
+- [Malewicz](https://www.youtube.com/@MalewiczHype): UI 디자인 팁과 트렌드 비평. 짧고 직설적인 영상.
+- [Juxtopposed](https://www.youtube.com/@juxtopposed): UI/UX 리디자인 케이스 스터디. 유머와 완성도 높은 편집.
+- [Jesse Showalter](https://www.youtube.com/@JesseShowalter): UI/UX 디자인 입문, 포트폴리오, 툴 튜토리얼.
+- [Linus Boman](https://www.youtube.com/@LinusBoman): 타이포그래피와 로고에 대한 비디오 에세이. 서체 역사와 비평.
+- [Yes I'm a Designer](https://www.youtube.com/@yesimadesigner): 어도비 공인 강사 마틴 페르히니악의 포토샵·일러스트 튜토리얼.
+- [PiXimperfect](https://www.youtube.com/@PiXimperfect): 포토샵 리터칭·합성의 교과서 같은 채널.
+- [Abi Connick](https://www.youtube.com/@AbiConnick): 브랜딩 디자이너의 프로세스, 프리랜서 팁, 클라이언트 작업 공개.
+- [The Design Theory](https://www.youtube.com/@TheDesignTheory): 디자인 이론·역사·비평 중심의 에세이 채널.
+- [tutvid (Nathaniel Dodson)](https://www.youtube.com/@tutvid): 포토샵·일러스트레이터·프리미어 심화 튜토리얼.
+- [CharliMarieTV](https://www.youtube.com/@CharliMarieTV): 디자이너의 일상, 커리어, 포트폴리오 이야기.
+- [Photoshop Training Channel](https://www.youtube.com/@PhotoshopTrainingChannel): 포토샵 기능을 깊이 파는 튜토리얼 채널.
+- [Femke](https://www.youtube.com/@femkedesign): 프로덕트 디자이너의 실무 이야기와 커리어 조언.
+- [AJ&Smart](https://www.youtube.com/@AJSmart): 디자인 스프린트와 워크숍 퍼실리테이션.
+- [NNgroup](https://www.youtube.com/@NNgroup): 닐슨 노먼 그룹의 UX 리서치 짧은 강의.
+- [Google Design](https://www.youtube.com/@GoogleDesign): 구글 디자인 팀의 토크와 머티리얼 디자인 이야기.
+- [Figma](https://www.youtube.com/@Figma): Figma 공식 채널. 신기능, Config 컨퍼런스 세션.
+- [AIGA](https://www.youtube.com/@AIGAdesign): 미국 그래픽 디자인 협회의 디자인 컨퍼런스 강연.
+- [It's Nice That (YouTube)](https://www.youtube.com/@ItsNiceThat): 크리에이티브 인터뷰와 스튜디오 방문 영상.
+- [Gobird Masterclass](https://www.youtube.com/@gobirdmasterclass): 그래픽 디자인 스타일·레이아웃을 짧게 정리하는 채널. 인스타 릴스로 유명.
+- [디자인베이스](https://www.youtube.com/@designbase): 디자인 툴 강의와 실무 팁. 국내 입문자에게 가장 알려진 채널.
+- [빠르크의 3분 강좌](https://www.youtube.com/@Park3min): 포토샵·프리미어 등 툴 기능을 3분 안에 설명.
+- [디자인 스펙트럼](https://www.youtube.com/@designspectrum): 국내 디자이너 커뮤니티의 컨퍼런스·토크 영상.
+- [안그라픽스](https://www.youtube.com/@ahngraphics): 디자인 전문 출판사 안그라픽스의 책·저자 이야기.
+- [노트폴리오 (YouTube)](https://www.youtube.com/@notefolio): 노트폴리오의 디자이너 인터뷰와 강연.
+- [디자인정글 (YouTube)](https://www.youtube.com/@designjungle): 디자인정글의 전시·디자이너 소개 영상.
+- [라우드소싱 (YouTube)](https://www.youtube.com/@loudsourcing): 디자인 콘테스트 플랫폼의 디자이너 인터뷰·팁.
+- [Gobird (Instagram)](https://www.instagram.com/gobirdmasterclass/): 디자인 스타일과 원칙을 카드·릴스로 정리하는 계정.
+- [Posterlad](https://www.instagram.com/posterlad/): 모하메드 사미르의 매일 포스터 프로젝트.
+- [Typo/Graphic Posters](https://www.instagram.com/typo_graphic_posters/): 타이포그래피 포스터 아카이브 계정.
+- [Logo Inspirations](https://www.instagram.com/logoinspirations/): 로고 디자인 큐레이션 계정.
+- [Pentagram](https://www.instagram.com/pentagramdesign/): 세계 최대 독립 디자인 스튜디오의 작업 공개.
+- [Studio Feixen](https://www.instagram.com/studiofeixen/): 스위스 스튜디오의 실험적 타이포·모션 그래픽.
+- [Brand New (Instagram)](https://www.instagram.com/brand.new/): 브랜드 리뉴얼 리뷰 매체의 인스타그램.
+- [The Design Tip](https://www.instagram.com/thedesigntip/): 그래픽 디자인 팁과 레퍼런스 큐레이션.
+- [Graphic Design Central](https://www.instagram.com/graphicdesigncentral/): 그래픽 디자인 작업물 큐레이션 계정.
+- [It's Nice That (Instagram)](https://www.instagram.com/itsnicethat/): 크리에이티브 매거진의 데일리 큐레이션.
+- [노트폴리오 (Instagram)](https://www.instagram.com/notefolio_official/): 국내 디자이너 작업물 소개 계정.
+- [디자인정글 (Instagram)](https://www.instagram.com/designjungle/): 디자인 뉴스와 전시 소식.
+- [Design Matters (Debbie Millman)](https://www.designmattersmedia.com): 가장 오래된 디자인 팟캐스트. 디자이너·작가 인터뷰.
+- [Design Details](https://designdetails.fm): 프로덕트 디자이너 두 명의 실무 이야기 팟캐스트.
+
+## 디자인 스타일 사전
+
+- **아르누보** (Art Nouveau, 1890–1910): 자연에서 가져온 유기적 곡선과 식물 모티프, 장식적인 손글씨 레터링. 포스터 예술의 출발점. 특징: 유기적 곡선 · 식물 문양 · 장식 레터링 · 파스텔 톤. 대표 인물: 알폰스 무하, 오브리 비어즐리.
+- **다다** (Dada, 1916–1924): 전쟁에 대한 반발로 태어난 반(反)예술 운동. 무작위 타이포와 포토몽타주로 질서를 조롱했다. 특징: 콜라주 · 포토몽타주 · 뒤섞인 활자 · 우연성. 대표 인물: 한나 회흐, 쿠르트 슈비터스.
+- **구성주의** (Constructivism, 1915–1930s): 러시아 혁명기의 선전 그래픽. 사선 구도와 빨강·검정, 사진 몽타주로 강한 메시지를 전달. 특징: 사선 구도 · 빨강/검정 · 포토몽타주 · 기하 도형. 대표 인물: 엘 리시츠키, 알렉산더 로드첸코.
+- **데 스틸** (De Stijl, 1917–1931): 수직·수평선과 삼원색만으로 이루어진 네덜란드의 추상 양식. 오늘날 그리드 시스템의 뿌리. 특징: 수직/수평선 · 빨강·파랑·노랑 · 비대칭 격자. 대표 인물: 피트 몬드리안, 테오 반 두스뷔르흐.
+- **바우하우스** (Bauhaus, 1919–1933): 독일의 디자인 학교이자 사상. 형태는 기능을 따른다는 원칙 아래 기하 형태와 산세리프를 정착시켰다. 특징: 원·삼각·사각 · 원색 · 산세리프 · 기능주의. 대표 인물: 헤르베르트 바이어, 라슬로 모호이너지, 얀 치홀트.
+- **아르데코** (Art Deco, 1920s–1930s): 기계 시대의 화려함. 대칭적인 기하 장식과 금속 광택, 수직으로 뻗은 형태로 고급스러움을 표현. 특징: 대칭 · 부채꼴/지그재그 · 금색·검정 · 수직 강조. 대표 인물: A. M. 카상드르.
+- **미드센추리 모던** (Mid-century Modern, 1945–1965): 전후 미국의 낙관주의. 단순한 형태와 따뜻한 팔레트, 유머 있는 일러스트로 기업 아이덴티티의 황금기를 열었다. 특징: 단순 형태 · 머스터드·올리브·오렌지 · 위트 있는 일러스트. 대표 인물: 폴 랜드, 솔 바스, 알렉산더 지라드.
+- **스위스 스타일** (International Typographic Style, 1950s–): 그리드, 헬베티카, 비대칭 좌측 정렬, 객관적 사진. 현대 그래픽 디자인과 UI 레이아웃의 기본 문법. 특징: 그리드 시스템 · 헬베티카/악치덴츠 · 좌측 정렬 · 여백. 대표 인물: 요제프 뮐러브로크만, 아민 호프만, 에밀 루더.
+- **팝아트** (Pop Art, 1955–1970): 대중문화와 광고 이미지를 예술로 끌어올린 운동. 망점과 원색, 반복이 특징. 특징: 망점(하프톤) · 원색 · 만화 컷 · 반복. 대표 인물: 앤디 워홀, 로이 리히텐슈타인.
+- **사이키델릭** (Psychedelic, 1966–1972): 록 콘서트 포스터에서 시작된 환각적 스타일. 형광 보색과 흐르는 레터링이 아르누보를 재해석했다. 특징: 형광 보색 · 녹아내리는 레터링 · 소용돌이 · 낮은 가독성. 대표 인물: 웨스 윌슨, 빅터 모스코소.
+- **펑크** (Punk, 1975–1980s): 직접 만들고 복사기로 찍어낸 DIY 미학. 신문에서 오려 붙인 레터링과 거친 콜라주. 특징: 오려 붙인 활자 · 복사기 질감 · 안전핀 · 흑백+빨강. 대표 인물: 제이미 리드.
+- **뉴 웨이브 / 스위스 펑크** (New Wave, 1970s–1980s): 스위스 그리드를 일부러 깨뜨린 실험. 계단식 활자 배열, 자간 변주, 굵기 대비로 리듬을 만든다. 특징: 깨진 그리드 · 계단식 타이포 · 굵기·크기 대비 · 콜라주. 대표 인물: 볼프강 바인가르트, 에이프릴 그레이먼.
+- **멤피스** (Memphis, 1981–1988): 이탈리아 디자인 그룹 멤피스의 유희적 스타일. 파스텔과 원색의 충돌, 테라조 패턴, 기하 도형. 특징: 테라조·물결 패턴 · 파스텔+원색 · 기하 도형 · 유머. 대표 인물: 에토레 소트사스, 나탈리 뒤 파스키에.
+- **그런지** (Grunge, 1990s): 가독성보다 감정을 우선한 타이포그래피. 겹치고 부서진 글자와 지저분한 텍스처. 특징: 겹친 활자 · 얼룩·긁힘 텍스처 · 왜곡 · 저채도. 대표 인물: 데이비드 카슨(Ray Gun).
+- **레트로 퓨처리즘** (Retrofuturism, 1950s–60s / 재유행): 과거가 상상했던 미래. 우주 시대의 유선형과 크롬, 둥근 형태를 향수 어린 시선으로 재현. 특징: 유선형 · 크롬 · 우주 모티프 · 둥근 산세리프.
+- **Y2K** (Y2K Aesthetic, 1997–2004 / 2020s 재유행): 밀레니엄 전후의 기술 낙관주의. 크롬과 홀로그램, 버블 형태, 투명 플라스틱 질감. 특징: 크롬 · 홀로그램 · 버블 폰트 · 투명 플라스틱 · 은색. 대표 인물: 더 디자이너스 리퍼블릭.
+- **프루티거 에어로** (Frutiger Aero, 2004–2013): Windows Vista·초기 iPhone 시대의 광택 UI. 유리 질감과 물방울, 자연 이미지, 투명한 파랑. 특징: 광택 유리 · 물방울·풀잎 · 파랑/초록 · 프루티거 서체.
+- **스큐어모피즘** (Skeuomorphism, 2007–2013): 실물의 질감을 그대로 모사한 UI. 가죽 노트, 나무 책장, 종이 찢김 등. iOS 6까지의 애플 스타일. 특징: 실물 질감 · 그림자·하이라이트 · 가죽·종이 · 입체 버튼.
+- **플랫 디자인** (Flat Design, 2012–): 그림자와 질감을 걷어낸 2차원 UI. Windows 8과 iOS 7이 대중화했고, 이후 모든 UI의 기본이 됐다. 특징: 단색 · 그림자 없음 · 단순 아이콘 · 굵은 타이포.
+- **머티리얼 디자인** (Material Design, 2014–): 구글의 디자인 언어. 종이와 잉크의 은유, 층을 표현하는 그림자, 의미 있는 모션. 특징: 종이 레이어 · 그림자 깊이 · 플로팅 버튼 · 반응형 모션.
+- **브루탈리즘** (Brutalism (Web), 2014–): 꾸미지 않은 날것의 웹. 시스템 폰트, 기본 HTML 느낌, 비대칭과 거친 대비로 세련된 무심함을 연출. 특징: 시스템 폰트 · 검정 테두리 · 비대칭 · 마키·기본 링크.
+- **바포웨이브** (Vaporwave, 2010s): 인터넷 서브컬처에서 태어난 향수 미학. 고전 조각상, 파스텔 핑크·시안, 격자, 일본어 텍스트. 특징: 핑크·시안 그라디언트 · 조각상 · 격자 · 글리치 · 일본어.
+- **미니멀리즘** (Minimalism, 상시): 본질만 남기는 태도. 넓은 여백, 제한된 팔레트, 절제된 타이포로 콘텐츠 자체를 드러낸다. 특징: 여백 · 흑백/단색 · 한 가지 서체 · 정제된 그리드.
+- **코퍼레이트 멤피스** (Corporate Memphis, 2017–2022): 빅테크 일러스트의 정형. 긴 팔다리의 평면 인물, 파스텔, 친근하지만 몰개성하다는 비판도. 특징: 긴 팔다리 인물 · 파스텔 · 평면 일러스트 · 둥근 형태. 대표 인물: 페이스북 Alegria.
+- **뉴모피즘** (Neumorphism, 2020): 배경과 같은 색의 요소가 부드럽게 돌출·함몰된 듯한 UI. 예쁘지만 대비가 낮아 실무 적용은 제한적. 특징: 이중 그림자 · 단색 배경 · 부드러운 돌출 · 낮은 대비.
+- **글래스모피즘** (Glassmorphism, 2020–): 반투명 블러와 얇은 흰 테두리로 유리를 표현하는 UI. 2025년 애플 리퀴드 글래스로 다시 주류가 됐다. 특징: 배경 블러 · 반투명 · 얇은 테두리 · 층 구조.
+- **에이시드 그래픽** (Acid Graphics, 2018–): 레이브·클럽 문화에서 온 스타일. 액체 크롬 타이포, 형광색, 왜곡과 노이즈. 특징: 액체 크롬 · 형광 초록/보라 · 왜곡 타이포 · 노이즈.
+- **리소그래프** (Risograph, 1980s 인쇄기 / 2010s 재유행): 리소 인쇄기의 특성을 살린 스타일. 형광 잉크의 겹침, 거친 입자, 살짝 어긋난 판. 특징: 형광 잉크 겹침 · 거친 입자 · 판 어긋남 · 2~3도 인쇄.
+- **콜라주 / 스크랩북** (Collage, 상시): 오려 붙인 사진과 종이, 테이프, 손글씨를 섞는 믹스드 미디어. 디지털 시대에 손맛으로 재유행. 특징: 오린 사진 · 마스킹 테이프 · 손글씨 · 종이 질감.
+- **맥시멀리즘** (Maximalism, 2020s): 많을수록 좋다. 과잉 장식과 패턴 충돌, 여러 서체의 혼용으로 에너지를 만든다. 특징: 패턴 충돌 · 다서체 · 고채도 · 빽빽한 레이아웃.
+- **픽셀 아트 / 8비트** (Pixel Art, 1980s / 재유행): 저해상도 격자와 제한된 팔레트. 레트로 게임 향수를 타고 브랜딩과 UI에 다시 등장. 특징: 픽셀 격자 · 제한 팔레트 · 비트맵 폰트 · 계단 현상.
+- **사이버펑크** (Cyberpunk, 1980s–): 네온 도시와 디스토피아. 글리치, 홀로그램, 일본어·기술 텍스트가 겹치는 하이테크 로우라이프. 특징: 네온 핑크/시안 · 글리치 · 스캔라인 · 기술 텍스트.
+- **일본 모던 그래픽** (Japanese Modern, 1960s–): 전통 문양과 여백의 미를 현대 그래픽으로 번역. 절제된 형태와 대담한 색면. 특징: 여백 · 세로 조판 · 전통 문양 재해석 · 대담한 색면. 대표 인물: 다나카 잇코, 요코오 다다노리, 사토 가시와.
+- **안티 디자인 / 뉴 어글리** (Anti-design, 2019–): 의도적으로 어색하고 못생기게. 기본 서체, 클립아트, 눈부신 색으로 세련됨에 반기를 든다. 특징: 기본 서체 · 클립아트 · 충돌하는 색 · 어긋난 정렬.
+
+## 2026 디자인 트렌드
+
+- **리퀴드 글래스** (UI): 2025년 애플이 발표한 새 디자인 언어. 굴절·반사가 있는 유리 질감이 앱과 웹 UI 전반으로 번지는 중.
+- **클라우드 댄서 (팬톤 2026)** (컬러): 팬톤이 2026 올해의 컬러로 고른 부드러운 흰색. 오프화이트와 저채도 미니멀 팔레트가 다시 힘을 얻는다.
+- **AI 비주얼 vs 손맛 회귀** (그래픽): AI 생성 이미지가 흔해질수록 손그림, 아날로그 텍스처, 불완전함이 오히려 차별점이 된다.
+- **익스프레시브 타이포** (타이포): 초대형 글자, 가변 폰트, 움직이는 키네틱 타입. 서체 자체가 비주얼의 주인공.
+- **네오 브루탈리즘** (UI/웹): 굵은 검정 테두리, 딱딱한 그림자, 원색 블록. 플랫한 SaaS UI에 대한 반동으로 확산.
+- **픽셀 · 로우파이 노스탤지어** (그래픽): 8비트 픽셀, 비트맵 폰트, 초기 인터넷 감성. Z세대의 레트로가 90년대·2000년대로 이동.
+- **벤토 그리드** (UI/웹): 도시락 칸처럼 크기가 다른 카드를 촘촘히 배치하는 레이아웃. 랜딩페이지와 대시보드의 표준이 됐다.
+- **크롬 · 메탈릭** (그래픽): Y2K에서 이어진 액체 금속과 크롬 타이포가 3D와 결합해 더 정교해짐.
+- **도파민 컬러** (컬러): 기분을 끌어올리는 고채도 팔레트. 미니멀 흰색 트렌드와 정반대에서 공존.
+- **콜라주 · 스티커 · 스크랩북** (그래픽): 오려 붙인 사진, 마스킹 테이프, 손글씨. SNS 콘텐츠와 브랜딩에서 손맛의 대표 주자.
+- **세리프 리바이벌 · 에디토리얼** (타이포): 잡지 같은 세리프 헤드라인과 여백 많은 편집 레이아웃. 프리미엄·라이프스타일 브랜드가 선호.
+- **촉감 있는 3D** (그래픽/UI): 클레이, 인플레이트, 부드러운 렌더링 오브젝트. 아이콘과 히어로 비주얼에 입체감을 더한다.
+- **프린트 · 리소 텍스처** (그래픽): 입자, 잉크 번짐, 인쇄 오차를 디지털에서 재현. 리소그래프와 오프셋의 질감.
+- **오라 · 블러 그라디언트** (UI/그래픽): 흐릿하게 번지는 빛 덩어리 배경. AI 제품 브랜딩에서 특히 많이 쓰인다.
+- **모션 우선 인터페이스** (UI/웹): 스크롤텔링, 마이크로 인터랙션, 페이지 전환 애니메이션이 정적 레이아웃보다 우선되는 설계.
+
+## 디자인 용어 사전
+
+### 타이포그래피
+
+- **서체 / 폰트** (Typeface / Font): 서체는 글자의 디자인(예: Pretendard), 폰트는 그 서체의 특정 굵기·스타일 파일(예: Pretendard Bold). 실무에서는 섞어 씁니다.
+- **세리프 / 산세리프** (Serif / Sans-serif): 획 끝에 돌기(세리프)가 있으면 세리프(명조 계열), 없으면 산세리프(고딕 계열). 본문 인쇄물은 세리프, 화면 UI는 산세리프가 일반적.
+- **웨이트** (Weight): 글자 굵기 단계. Thin(100)부터 Black(900)까지 숫자로 표기하며 UI에서는 보통 Regular·Medium·SemiBold·Bold 4단계 안에서 씁니다.
+- **가변 폰트** (Variable Font): 굵기·너비·기울기 등을 파일 하나에서 연속적으로 조절할 수 있는 폰트. 웹에서 파일 수를 줄이고 미세 조정이 가능합니다.
+- **자간** (Tracking / Letter-spacing): 글자 사이의 전체적인 간격. 제목은 좁히고(-2~-4%), 작은 대문자나 캡션은 넓히는 것이 관례.
+- **커닝** (Kerning): 특정 글자 쌍(AV, To 등) 사이 간격을 개별 조정하는 것. 로고·헤드라인처럼 큰 글자에서 눈에 띕니다.
+- **행간** (Leading / Line-height): 줄과 줄 사이 간격. 본문은 글자 크기의 1.5~1.7배, 제목은 1.1~1.3배가 기준. 한글은 영문보다 조금 넉넉하게.
+- **베이스라인** (Baseline): 글자가 올라앉는 가상의 기준선. 여러 크기의 글자를 정렬할 때는 베이스라인을 맞춥니다.
+- **엑스하이트** (x-height): 소문자 x의 높이. 엑스하이트가 큰 서체는 작은 크기에서도 잘 읽혀 UI 본문에 유리합니다.
+- **어센더 / 디센더** (Ascender / Descender): 엑스하이트 위로 올라가는 부분(b, d, h)과 베이스라인 아래로 내려가는 부분(g, p, y).
+- **합자** (Ligature): fi, fl처럼 두 글자가 붙어 하나로 디자인된 글리프. 세리프 본문에서 자연스러운 흐름을 만듭니다.
+- **위도우 / 오펀** (Widow / Orphan): 단락 마지막 줄에 한 단어만 남거나(위도우), 단락 첫 줄이 페이지 끝에 홀로 남는 것(오펀). 편집에서 반드시 잡는 오류.
+- **리버** (Rivers): 양끝 정렬에서 단어 간격이 벌어져 세로로 흰 강줄기처럼 보이는 현상. 하이픈이나 자간 조정으로 해결.
+- **정렬** (Alignment): 좌·우·가운데·양끝 정렬. 본문은 좌측 정렬(래그드 라이트)이 가장 읽기 편하고, 가운데 정렬은 짧은 문장에만.
+- **타입 스케일** (Type Scale): 일정 비율(1.2, 1.25, 1.333 등)로 커지는 글자 크기 체계. 12·14·16·20·24·32처럼 미리 정해 두고 씁니다.
+- **위계** (Hierarchy): 크기·굵기·색·간격으로 정보의 중요도 순서를 만드는 것. 한 화면에 3단계 정도면 충분합니다.
+- **가독성 / 판독성** (Readability / Legibility): 판독성은 글자 하나가 구분되는 정도, 가독성은 문장이 편하게 읽히는 정도. 서체 선택은 판독성, 조판은 가독성.
+- **옵티컬 사이즈** (Optical Size): 본문용·제목용으로 크기에 따라 형태가 다르게 설계된 서체 변형. 제목용은 대비가 강하고 자간이 좁습니다.
+
+### 편집 · 인쇄
+
+- **판형** (Trim Size): 인쇄물의 최종 크기. A4(210×297), 국판(148×210), 신국판(152×225) 등. 판형이 그리드와 여백의 출발점.
+- **판면** (Type Area): 여백을 제외하고 본문이 놓이는 영역. 판면 비율이 책의 인상을 좌우합니다.
+- **그리드** (Grid): 페이지를 컬럼과 행으로 나눈 보이지 않는 틀. 요소를 일관되게 배치하고 리듬을 만드는 기준.
+- **컬럼 / 거터** (Column / Gutter): 컬럼은 그리드의 세로 단, 거터는 컬럼 사이 간격. 웹에서는 12컬럼, 거터 16~24px이 일반적.
+- **마진** (Margin): 페이지 가장자리 여백. 책은 안쪽(제본 쪽) 여백을 더 넓게 잡습니다.
+- **블리드 (도련)** (Bleed): 재단 오차를 대비해 이미지를 재단선 밖으로 3mm 더 빼는 것. 도련 없이 넘기면 흰 테두리가 생깁니다.
+- **재단선 / 트림 마크** (Trim Marks): 인쇄 후 종이를 자를 위치 표시. 인쇄용 PDF 내보낼 때 도련과 함께 포함.
+- **세이프 존** (Safe Area): 재단선 안쪽 3~5mm. 글자나 중요한 요소는 이 안에 두어야 잘리지 않습니다.
+- **스프레드 (펼침면)** (Spread): 마주 보는 두 페이지를 하나의 화면으로 보는 단위. 책·브로슈어는 스프레드 기준으로 디자인.
+- **폴리오** (Folio): 쪽번호. 러닝 헤드(장 제목)와 함께 페이지 상단·하단에 놓입니다.
+- **캡션 / 풀아웃** (Caption / Pull Quote): 캡션은 이미지 설명 글, 풀아웃은 본문에서 뽑아 크게 강조한 인용문.
+- **CMYK / RGB** (CMYK / RGB): 인쇄는 잉크 4색 CMYK, 화면은 빛 3색 RGB. RGB의 형광·채도 높은 색은 인쇄하면 탁해지므로 CMYK로 변환해 확인.
+- **별색** (Spot Color (Pantone)): CMYK 조합이 아니라 미리 조색된 잉크로 찍는 색. 브랜드 컬러·금·형광처럼 정확한 색이 필요할 때.
+- **DPI / PPI** (DPI / PPI): 인쇄 해상도. 인쇄물 이미지는 실제 크기 기준 300dpi, 화면은 72~144ppi면 충분.
+- **리치 블랙** (Rich Black): K100만 쓰면 회색빛이 돌아 C·M·Y를 섞어 만든 진한 검정(예: C60 M40 Y40 K100). 작은 글자는 K100만.
+- **오버프린트 / 트래핑** (Overprint / Trapping): 색판이 어긋나 흰 틈이 생기지 않도록 겹쳐 찍거나(오버프린트) 경계를 살짝 넓히는 것(트래핑). 검정 글자는 보통 오버프린트.
+- **후가공** (Finishing): 인쇄 뒤 더하는 공정. 박(금·은 호일), 형압(눌러 돋움), 부분 UV(광택), 코팅, 오시(접는 선), 타공 등.
+- **제본** (Binding): 중철(스테이플, 얇은 책자), 무선(풀로 붙임, 일반 단행본), 양장(하드커버), 사철(실로 꿰맴, 펼침 좋음).
+- **평량** (Paper Weight (g/㎡)): 종이 두께를 무게로 표시. 명함 300g, 포스터 150~200g, 본문 80~100g 정도.
+- **교정쇄 / 프루프** (Proof): 본 인쇄 전에 색과 오탈자를 확인하는 견본. 색이 중요하면 반드시 실제 종이로 교정쇄를 봅니다.
+- **아웃라인 처리** (Create Outlines): 인쇄소에 넘기기 전 글자를 패스(도형)로 변환해 폰트 누락을 막는 것. 원본은 따로 보관.
+- **터잡기** (Imposition): 접었을 때 순서가 맞도록 한 장의 큰 종이에 페이지를 배치하는 작업. 페이지 수는 보통 4의 배수.
+
+### 컬러
+
+- **HEX / RGB / HSL** (Color Notation): HEX(#5B5BD6)는 웹에서 가장 흔한 표기, HSL은 색상·채도·명도로 다루기 쉬워 팔레트 조정에 편리.
+- **색상 · 채도 · 명도** (Hue · Saturation · Value): 색상은 빨강·파랑 같은 종류, 채도는 선명한 정도, 명도는 밝은 정도. 세 축을 분리해서 생각하면 조합이 쉬워집니다.
+- **보색 / 유사색** (Complementary / Analogous): 색상환에서 마주 보는 색은 보색(강한 대비), 이웃한 색은 유사색(조화). 강조는 보색, 배경은 유사색.
+- **톤온톤 / 톤인톤** (Tone on Tone / Tone in Tone): 같은 색상의 명도 차이로 구성하면 톤온톤, 비슷한 톤의 다른 색상으로 구성하면 톤인톤.
+- **60-30-10** (60-30-10 Rule): 주조색 60%, 보조색 30%, 강조색 10% 비율로 배분하는 원칙. 색이 많아도 균형이 잡힙니다.
+- **명도 대비** (Contrast Ratio): 글자와 배경의 밝기 차이를 1:1~21:1로 표현. WCAG 기준 본문 4.5:1, 큰 글자 3:1 이상이어야 접근성 통과.
+- **WCAG AA / AAA** (WCAG Levels): 웹 접근성 지침의 준수 등급. 대부분의 서비스는 AA(대비 4.5:1)를 목표로 합니다.
+- **시맨틱 컬러** (Semantic Color): 용도에 이름을 붙인 색. primary, success, warning, error처럼 의미로 정의해 두면 다크 모드 전환이 쉬워집니다.
+- **컬러 스케일** (Color Scale): 한 색상을 50~950처럼 10단계 명도로 늘어놓은 것. 디자인 시스템의 기본 단위.
+- **색 공간** (Color Space (sRGB · P3 · OKLCH)): sRGB가 웹 표준, Display P3는 더 넓은 색역, OKLCH는 사람 눈에 균일한 최신 표기. 최신 CSS는 셋 다 지원.
+- **그라디언트** (Gradient): 색이 점진적으로 변하는 것. 색상환에서 가까운 색끼리 섞어야 중간이 탁해지지 않습니다.
+- **컬러 프로파일** (Color Profile (ICC)): 기기·종이마다 다른 색 재현을 맞추는 설정. 인쇄용 파일은 인쇄소가 지정한 프로파일(예: Japan Color 2001 Coated)로.
+
+### 그래픽 · 브랜딩
+
+- **CI / BI** (Corporate / Brand Identity): CI는 기업 전체의 아이덴티티, BI는 개별 브랜드·제품의 아이덴티티. 로고, 컬러, 서체, 톤을 포함.
+- **심볼 / 워드마크 / 로고타입** (Symbol / Wordmark / Logotype): 심볼은 그림 마크, 워드마크(로고타입)는 글자로 된 로고. 둘을 정해진 규칙으로 조합한 것이 시그니처.
+- **브랜드 가이드라인** (Brand Guidelines): 로고 사용 규칙, 최소 크기, 여백, 금지 사례, 컬러·서체·이미지 톤을 정리한 문서. 외주 시 반드시 요청.
+- **키 비주얼** (Key Visual): 캠페인이나 브랜드를 대표하는 핵심 이미지. 포스터·배너·SNS로 변주되는 원본.
+- **무드보드** (Mood Board): 방향을 잡기 위해 레퍼런스 이미지·색·질감을 모아 놓은 보드. 시안 전에 클라이언트와 합의하는 용도.
+- **톤앤매너** (Tone & Manner): 브랜드가 말하고 보이는 방식의 일관성. 색·서체·사진 스타일·문체를 아우르는 분위기.
+- **그래픽 모티프** (Graphic Motif): 로고에서 파생돼 반복 사용되는 도형·패턴. 로고 없이도 브랜드를 알아보게 하는 장치.
+- **시안** (Draft / Comp): 클라이언트에게 보여 주는 디자인 안. 보통 A·B·C안으로 방향을 나눠 제시하고 하나를 골라 발전.
+- **룩앤필** (Look & Feel): 보이는 인상(룩)과 사용 감각(필). "룩앤필을 맞춰 달라"는 기존 톤과 어긋나지 않게 하라는 뜻.
+- **어플리케이션** (Application): 아이덴티티를 명함·사인·패키지·웹 등 실제 매체에 적용한 결과물.
+- **벡터 / 래스터** (Vector / Raster): 벡터(AI, SVG)는 수식 기반이라 확대해도 깨지지 않고, 래스터(PNG, JPG)는 픽셀 기반. 로고는 반드시 벡터로.
+- **베지어 곡선 / 패스** (Bézier Curve / Path): 앵커 포인트와 핸들로 만드는 곡선. 펜 툴의 기본이며 앵커는 적을수록 매끄럽습니다.
+- **클리핑 마스크** (Clipping Mask): 위 도형의 모양대로 아래 이미지를 잘라 보이게 하는 기능. 원본을 훼손하지 않아 수정이 쉽습니다.
+- **블렌딩 모드** (Blending Mode): 레이어를 겹칠 때 색을 섞는 방식. Multiply(곱하기)는 어둡게, Screen은 밝게, Overlay는 대비를 높입니다.
+- **목업 (그래픽)** (Mockup): 디자인을 실제 제품(명함, 간판, 패키지)에 입혀 보여 주는 합성 이미지. 스마트 오브젝트 PSD로 제작.
+- **아트워크** (Artwork): 인쇄·제작에 넘기는 최종 데이터. "아트워크 넘겨 주세요"는 완성 파일을 달라는 뜻.
+
+### UI 설계
+
+- **와이어프레임** (Wireframe): 색·이미지 없이 회색 박스와 선으로 화면 구조와 정보 배치만 잡은 설계도.
+- **로파이 / 하이파이** (Lo-fi / Hi-fi): 완성도 단계. 로파이는 손그림·와이어프레임 수준, 하이파이는 실제와 같은 시각 디자인.
+- **목업 (UI)** (Mockup): 동작하지 않는 하이파이 정적 화면. 여기에 인터랙션을 붙이면 프로토타입.
+- **프로토타입** (Prototype): 클릭·전환이 되는 시뮬레이션. 개발 전에 흐름을 검증하고 사용성 테스트에 씁니다.
+- **디자인 시스템** (Design System): 컬러·타이포·간격·컴포넌트와 사용 규칙을 묶은 재사용 체계. 팀이 커질수록 필수.
+- **컴포넌트** (Component): 버튼·인풋·카드처럼 반복 사용하는 UI 조각. 원본(마스터)을 고치면 모든 인스턴스가 바뀝니다.
+- **디자인 토큰** (Design Token): 색·간격·크기 값을 이름으로 저장한 최소 단위(color-primary, space-4). 디자인과 코드가 같은 값을 공유.
+- **아토믹 디자인** (Atomic Design): 원자(버튼) → 분자(검색창) → 유기체(헤더) → 템플릿 → 페이지로 UI를 쌓는 방법론.
+- **8pt 그리드** (8pt Grid): 간격·크기를 8의 배수(8, 16, 24, 32…)로 통일하는 규칙. 어떤 해상도에서도 깔끔하게 떨어집니다.
+- **브레이크포인트** (Breakpoint): 레이아웃이 바뀌는 화면 폭 기준. 보통 모바일 ~640, 태블릿 ~1024, 데스크톱 1280 이상.
+- **반응형 / 적응형** (Responsive / Adaptive): 반응형은 폭에 따라 유연하게 흐르고, 적응형은 정해진 몇 가지 폭에 맞춘 고정 레이아웃을 골라 보여 줍니다.
+- **뷰포트 / 폴드** (Viewport / Fold): 뷰포트는 화면에 보이는 영역, 폴드는 스크롤 전 보이는 경계. 핵심 메시지와 CTA는 폴드 위에.
+- **히어로 섹션** (Hero Section): 랜딩페이지 최상단의 큰 제목·이미지·CTA 영역. 3초 안에 무엇을 하는 서비스인지 전달.
+- **CTA** (Call to Action): "시작하기", "구매하기"처럼 행동을 유도하는 버튼. 화면당 주요 CTA는 하나만 강조.
+- **GNB / LNB** (Global / Local Navigation): GNB는 전체 서비스 공통 메뉴(상단), LNB는 현재 섹션 안의 하위 메뉴(왼쪽). 국내 실무 용어.
+- **햄버거 메뉴 / 탭 바** (Hamburger / Tab Bar): 모바일에서 메뉴를 숨기는 ≡ 아이콘과 하단에 항상 노출하는 탭 바. 핵심 기능이 5개 이하면 탭 바가 낫습니다.
+- **모달 / 다이얼로그** (Modal / Dialog): 화면 위에 떠서 다른 조작을 막는 창. 남용하면 피로하니 확인이 꼭 필요한 순간에만.
+- **바텀 시트** (Bottom Sheet): 모바일 화면 아래에서 올라오는 패널. 모달보다 가볍고 엄지로 닿기 좋습니다.
+- **토스트 / 스낵바** (Toast / Snackbar): "저장되었습니다"처럼 잠깐 떴다 사라지는 알림. 스낵바는 실행 취소 같은 액션이 하나 붙습니다.
+- **툴팁 / 팝오버** (Tooltip / Popover): 호버·클릭 시 나오는 짧은 설명(툴팁)과 조금 더 많은 내용을 담은 작은 창(팝오버).
+- **드롭다운 / 셀렉트** (Dropdown / Select): 눌렀을 때 목록이 펼쳐지는 컨트롤. 선택지가 5개 이하면 라디오·세그먼트가 더 빠릅니다.
+- **아코디언** (Accordion): 제목을 누르면 내용이 펼쳐지고 접히는 목록. FAQ에 주로 사용.
+- **카드** (Card): 이미지·제목·설명을 한 덩어리로 묶은 컨테이너. 격자로 늘어놓기 쉽지만 남발하면 복잡해집니다.
+- **스켈레톤 UI** (Skeleton): 로딩 중 콘텐츠 자리에 회색 블록을 먼저 보여 주는 것. 스피너보다 체감 속도가 빠릅니다.
+- **엠프티 스테이트** (Empty State): 데이터가 없을 때의 화면. 빈 화면 대신 다음 행동을 안내해야 합니다.
+- **온보딩** (Onboarding): 첫 사용자가 서비스를 익히는 과정. 튜토리얼, 권한 요청, 초기 설정 화면을 포함.
+- **마이크로인터랙션** (Microinteraction): 버튼 눌림, 좋아요 애니메이션 같은 작은 반응. 피드백을 주고 완성도를 높입니다.
+- **어포던스** (Affordance): 보기만 해도 어떻게 쓰는지 알 수 있는 성질. 버튼은 눌러 보이고 링크는 밑줄이 있어야 합니다.
+- **상태** (States (Hover · Active · Focus · Disabled)): 컴포넌트가 가지는 여러 모습. 기본·호버·눌림·포커스·비활성·로딩·에러를 모두 정의해야 개발 누락이 없습니다.
+- **오토 레이아웃** (Auto Layout): Figma에서 내용에 따라 크기와 간격이 자동으로 늘어나는 프레임. CSS 플렉스박스와 같은 개념.
+- **컨스트레인트** (Constraints): 프레임 크기가 바뀔 때 요소가 어느 쪽에 붙어 따라갈지 정하는 규칙. 반응형 컴포넌트의 기본.
+- **배리언트** (Variants): 한 컴포넌트의 여러 버전(크기·상태·타입)을 한 세트로 묶은 것. 속성을 바꿔 가며 선택.
+- **핸드오프** (Handoff): 디자인을 개발자에게 넘기는 과정. 스펙(간격·색·폰트), 에셋, 인터랙션 설명이 포함되어야 합니다.
+- **레드라인 / 스펙** (Redline / Spec): 간격·크기를 빨간 선과 숫자로 표기한 문서. 요즘은 Figma Dev Mode가 자동으로 대신합니다.
+- **세이프 에어리어** (Safe Area): 노치·홈 인디케이터 등 기기 UI에 가려지지 않는 영역. 중요한 요소는 이 안에 배치.
+- **터치 타깃** (Touch Target): 손가락으로 누를 수 있는 최소 크기. iOS 44pt, 안드로이드 48dp 이상.
+- **플레이스홀더 / 밸리데이션** (Placeholder / Validation): 입력 전 힌트 텍스트와 입력값 검증. 라벨을 플레이스홀더로 대체하면 입력 중 사라져 불편합니다.
+- **브레드크럼** (Breadcrumb): 홈 > 카테고리 > 상품처럼 현재 위치 경로를 보여 주는 내비게이션.
+- **페이지네이션 / 무한 스크롤** (Pagination / Infinite Scroll): 목록을 페이지로 나누거나 스크롤하면 계속 불러오는 방식. 목적 있는 탐색은 페이지네이션이 낫습니다.
+- **배지 / 칩** (Badge / Chip): 배지는 알림 개수·상태를 표시하는 작은 라벨, 칩은 선택·필터·태그로 쓰는 알약 모양 요소.
+- **캐러셀** (Carousel): 이미지를 옆으로 넘겨 보는 슬라이드. 자동 재생은 사용자가 대부분 무시하므로 신중히.
+- **다크 모드** (Dark Mode): 어두운 배경 테마. 단순 반전이 아니라 순검정 대신 진회색, 채도 낮춘 강조색으로 다시 설계해야 합니다.
+
+### UX · 리서치
+
+- **UX / UI** (User Experience / User Interface): UI는 보이는 화면과 조작 요소, UX는 서비스를 쓰는 전체 경험. 예쁜 UI가 좋은 UX를 보장하지는 않습니다.
+- **유저 리서치** (User Research): 인터뷰·설문·관찰로 사용자의 행동과 니즈를 파악하는 활동. 정성(왜)과 정량(얼마나)으로 나뉩니다.
+- **페르소나** (Persona): 리서치를 바탕으로 만든 대표 가상 사용자. 이름·목표·불편을 붙여 팀이 같은 사람을 떠올리게 합니다.
+- **유저 저니 맵** (User Journey Map): 사용자가 목표를 이루기까지의 단계별 행동·감정·접점을 시간순으로 그린 지도. 불편 구간을 찾는 도구.
+- **정보 구조** (Information Architecture (IA)): 콘텐츠와 기능을 어떻게 나누고 이름 붙이고 연결할지 정하는 설계. 사이트맵이 그 결과물.
+- **유저 플로우** (User Flow): 특정 목표(회원가입, 결제)를 위해 거치는 화면과 분기의 흐름도. 와이어프레임 전에 그립니다.
+- **카드 소팅** (Card Sorting): 사용자에게 항목 카드를 분류하게 해 메뉴 구조를 정하는 리서치 방법.
+- **사용성 테스트** (Usability Test): 실제 사용자에게 과제를 주고 수행 과정을 관찰하는 것. 5명만 해도 주요 문제의 대부분이 드러납니다.
+- **휴리스틱 평가** (Heuristic Evaluation): 전문가가 닐슨의 10가지 원칙 같은 기준으로 UI를 점검하는 방법. 테스트보다 빠르고 저렴.
+- **A/B 테스트** (A/B Test): 두 버전을 나눠 보여 주고 지표(클릭·전환)로 우열을 가리는 실험.
+- **접근성** (Accessibility (a11y)): 장애·환경에 관계없이 누구나 쓸 수 있게 만드는 것. 대비, 키보드 조작, 대체 텍스트, 스크린 리더 대응.
+- **인지 부하** (Cognitive Load): 화면을 이해하는 데 드는 정신적 노력. 선택지·정보·장식을 줄일수록 낮아집니다.
+- **힉의 법칙** (Hick's Law): 선택지가 많을수록 결정 시간이 길어진다. 메뉴는 줄이고 단계를 나눕니다.
+- **피츠의 법칙** (Fitts's Law): 목표가 크고 가까울수록 빨리 누를 수 있다. 중요한 버튼은 크게, 엄지 근처에.
+- **제이콥의 법칙** (Jakob's Law): 사용자는 다른 서비스에서 익힌 방식을 기대한다. 관습을 따르는 것이 대개 옳습니다.
+- **멘탈 모델** (Mental Model): 사용자가 머릿속에 가진 "이건 이렇게 동작할 것"이라는 믿음. 여기에 맞추면 설명이 필요 없습니다.
+- **다크 패턴** (Dark Pattern): 해지 버튼 숨기기, 기본 체크된 동의처럼 사용자를 속여 이익을 얻는 설계. 규제 대상이 되고 있습니다.
+- **퍼널 / 전환율** (Funnel / Conversion Rate): 방문 → 가입 → 결제로 좁아지는 단계(퍼널)와 다음 단계로 넘어간 비율(전환율). 이탈 구간을 찾는 기본 지표.
+- **리텐션** (Retention): 사용자가 다시 돌아오는 비율. 신규 유입보다 서비스 건강을 더 잘 보여 줍니다.
+- **KPI / OKR** (KPI / OKR): 성과를 재는 핵심 지표(KPI)와 목표·핵심 결과로 정리한 목표 관리 틀(OKR). 디자인 결정의 근거로 쓰입니다.
+- **MVP** (Minimum Viable Product): 핵심 가치만 담아 가장 빨리 내놓는 최소 제품. 완성도보다 검증 속도가 목적.
+- **디자인 씽킹 / 더블 다이아몬드** (Design Thinking / Double Diamond): 공감→정의→아이디어→프로토타입→테스트, 또는 발견→정의→개발→전달로 문제를 넓혔다 좁히는 프로세스 모델.
+- **애자일 / 스프린트** (Agile / Sprint): 1~2주 단위(스프린트)로 만들고 배포하고 개선을 반복하는 개발 방식. 디자이너도 스프린트 단위로 일합니다.
+- **백로그** (Backlog): 해야 할 일의 우선순위 목록. 디자인 요청도 백로그에 쌓여 스프린트에 배정됩니다.
+- **JTBD** (Jobs To Be Done): 사용자가 제품을 "고용"해 해결하려는 일에 집중하는 관점. "드릴이 아니라 구멍을 원한다".
+- **히트맵** (Heatmap): 클릭·스크롤·시선이 몰리는 곳을 색으로 표시한 분석. 폴드 아래 콘텐츠가 얼마나 보이는지 확인.
+
+### 개발 협업
+
+- **HTML / CSS / JS** (HTML / CSS / JavaScript): HTML은 구조, CSS는 모양, JS는 동작. 디자이너가 CSS를 읽을 수 있으면 핸드오프 대화가 훨씬 정확해집니다.
+- **px / rem / em** (CSS Units): px는 고정, rem은 루트 글자 크기 기준(보통 16px=1rem), em은 부모 기준. 접근성을 위해 글자는 rem 권장.
+- **박스 모델** (Box Model (Margin · Padding · Border)): 요소는 내용 → 패딩(안쪽 여백) → 보더 → 마진(바깥 여백) 순으로 감싸입니다. Figma의 오토 레이아웃 패딩과 같은 개념.
+- **플렉스박스 / 그리드** (Flexbox / CSS Grid): 한 방향 정렬은 플렉스, 행·열 2차원 배치는 그리드. 오토 레이아웃은 플렉스로 번역됩니다.
+- **미디어 쿼리** (Media Query): 화면 폭·다크 모드 등 조건에 따라 다른 CSS를 적용하는 문법. 브레이크포인트가 여기서 구현됩니다.
+- **SVG / PNG / WebP** (Image Formats): 아이콘·로고는 SVG, 투명 이미지는 PNG, 사진은 WebP(또는 AVIF)가 가볍습니다. JPG는 점점 WebP로 대체.
+- **이징** (Easing): 애니메이션 속도 곡선. ease-out은 빠르게 시작해 부드럽게 멈춰 UI에 가장 자연스럽습니다. 지속 시간은 150~300ms.
+- **z-index** (z-index): 요소가 겹칠 때 위아래 순서. 모달·툴팁·드롭다운의 층 순서를 디자인 시스템에서 미리 정해 둡니다.
+- **시맨틱 마크업** (Semantic Markup): 버튼은 button, 제목은 h1~h6처럼 의미에 맞는 태그를 쓰는 것. 접근성과 검색 노출의 기본.
+- **컴포넌트 라이브러리 / 스토리북** (Component Library / Storybook): 코드로 구현된 컴포넌트 모음과 그것을 따로 띄워 보는 도구. 디자인 시스템의 개발 쪽 짝.
+- **CSS 변수** (CSS Custom Properties): --color-primary처럼 값을 이름으로 저장하는 CSS 기능. 디자인 토큰이 코드에서 이 형태가 됩니다.
+- **웹폰트 / FOUT** (Web Font / FOUT): 서버에서 내려받는 폰트와, 로딩 전 대체 폰트가 잠깐 보이는 현상. 서브셋 폰트로 용량을 줄여 완화.
+- **레이지 로딩** (Lazy Loading): 화면에 보일 때 이미지를 불러오는 기법. 긴 페이지의 초기 속도를 크게 개선.
+- **LCP / CLS** (Core Web Vitals): 구글의 성능 지표. LCP는 큰 콘텐츠가 뜨는 시간, CLS는 로딩 중 레이아웃이 튀는 정도. 이미지 크기를 지정하면 CLS가 줄어듭니다.
+- **QA** (Quality Assurance): 배포 전 오류를 찾는 검수. 디자인 QA는 구현이 시안과 다른 곳(간격, 색, 상태)을 잡아내는 단계.
+- **스테이징 / 배포** (Staging / Deploy): 실제 서비스(프로덕션) 전에 검수하는 테스트 서버가 스테이징. "스테이징에 올렸어요"는 확인해 달라는 뜻.
+- **Git / PR** (Git / Pull Request): 코드 변경 이력을 관리하는 도구와, 변경을 합쳐 달라는 요청. 디자인 파일의 브랜치·버전 기능과 같은 개념.
+- **API** (Application Programming Interface): 프로그램끼리 데이터를 주고받는 약속. "API가 아직 없다"는 화면에 넣을 실제 데이터가 준비되지 않았다는 뜻.
+- **CMS** (Content Management System): 개발자 없이 콘텐츠를 올리고 고치는 관리 도구. WordPress, Webflow CMS 등. 템플릿 설계가 디자이너 몫.

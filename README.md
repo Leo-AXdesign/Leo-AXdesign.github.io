@@ -14,9 +14,11 @@
 ├── favicon.svg, favicon.ico      # 파비콘
 ├── og-image.png                  # 공유 미리보기 이미지 (1200×630)
 ├── robots.txt, sitemap.xml       # 검색엔진 수집용
+├── llms.txt, llms-full.txt       # AI 검색용 안내 파일 (자동 생성)
 ├── ui-ux/, ai/, font/ ...        # 카테고리별 정적 페이지 (자동 생성, 직접 수정하지 마세요)
 ├── tools/build-seo.py            # sitemap, JSON-LD, noscript 생성
 ├── tools/build-pages.py          # 카테고리별 정적 페이지 생성
+├── tools/indexnow.py             # Bing·네이버 등에 변경 사항 즉시 알림
 ├── .nojekyll                     # GitHub Pages 가 Jekyll 처리를 건너뛰도록
 └── .github/workflows/deploy.yml  # main 에 push 하면 Pages 로 자동 배포
 ```
@@ -125,7 +127,7 @@ git config user.name "이름" && git config user.email "메일주소"
 python3 tools/build-pages.py && python3 tools/build-seo.py
 ```
 
-`js/data.js` 기준으로 카테고리 페이지, `sitemap.xml`, JSON-LD 가 모두 갱신됩니다.
+`js/data.js` 기준으로 카테고리 페이지, `sitemap.xml`, JSON-LD, `llms.txt` 가 모두 갱신됩니다.
 
 ### 카테고리별 정적 페이지
 
@@ -172,6 +174,32 @@ google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
 ```
 
 관련 페이지: [소개](about/), [개인정보처리방침](privacy/) — 둘 다 `tools/build-pages.py` 의 `ABOUT` · `PRIVACY` 변수에서 내용을 고칩니다.
+
+## AI 검색 대응 (ChatGPT · Claude · Perplexity · Gemini)
+
+AI 크롤러는 대부분 자바스크립트를 실행하지 않습니다. 그래서 화면과 별개로 AI가 읽을 수 있는 경로를 마련해 두었습니다.
+
+| 파일 | 역할 |
+|---|---|
+| `llms.txt` | AI용 사이트 안내 ([llmstxt.org](https://llmstxt.org) 규격). 분야별 페이지 링크와 요약 |
+| `llms-full.txt` | 사이트 371개, 스타일, 트렌드, 용어 전체를 마크다운 한 파일로 |
+| `index.html` 의 noscript | 메인에서 AI가 읽는 요약 본문. 분야별 설명과 대표 사이트 이름 |
+| `robots.txt` | AI 검색·학습 크롤러를 이름으로 명시해 허용 |
+| `/glossary/` 구조화 데이터 | 용어 155개를 schema.org `DefinedTermSet` 으로 표시 |
+
+`llms.txt` 와 `llms-full.txt` 는 `tools/build-seo.py` 가 `js/data.js` 로부터 만듭니다.
+
+AI 학습에 쓰이는 것을 원하지 않으면 `robots.txt` 의 "AI 학습" 구역에서 `Allow` 를 `Disallow` 로 바꾸세요. 검색·답변용 크롤러는 그대로 두어야 AI 답변에 사이트가 인용됩니다.
+
+### IndexNow
+
+사이트를 고친 뒤 Bing, 네이버 등에 바로 알리는 방법입니다. 배포가 반영된 뒤 실행하세요.
+
+```bash
+python3 tools/indexnow.py
+```
+
+루트의 `fac1ebe51d5f2cbef4f356705c5fc430.txt` 는 IndexNow 키 파일이라 지우면 안 됩니다.
 
 ## 기능
 

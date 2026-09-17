@@ -1,13 +1,55 @@
-# 모든 검색엔진 수집 허용
+# 디자인 허브 robots.txt
+# 검색엔진과 AI 서비스 모두 수집을 허용합니다.
+
 User-agent: *
 Allow: /
 
-# 네이버
+# ---- 검색엔진 ----
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
 User-agent: Yeti
 Allow: /
 
-# 다음
 User-agent: Daum
+Allow: /
+
+# ---- AI 검색 · 답변 (사용자 질문에 답할 때 사이트를 찾아 인용) ----
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# ---- AI 학습 (모델이 사이트를 알고 있게 됨. 원치 않으면 Allow 를 Disallow 로) ----
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
 Allow: /
 
 Sitemap: https://designrefs.com/sitemap.xml

@@ -263,7 +263,26 @@ for slug, title, intro, body, n, names, navlabel in pages:
             ],
         },
     }
-    if n:
+    if slug == "glossary":
+        # 용어 사전은 schema.org 의 DefinedTermSet 으로 표시해
+        # 검색엔진과 AI 가 '용어 → 정의' 짝을 그대로 읽을 수 있게 합니다.
+        jsonld["mainEntity"] = {
+            "@type": "DefinedTermSet",
+            "@id": url + "#terms",
+            "name": "디자인 용어 사전",
+            "inLanguage": "ko",
+            "hasDefinedTerm": [
+                {
+                    "@type": "DefinedTerm",
+                    "name": t["term"],
+                    **({"alternateName": t["en"]} if t.get("en") else {}),
+                    "description": t.get("desc", ""),
+                    "inDefinedTermSet": url + "#terms",
+                }
+                for t in terms
+            ],
+        }
+    elif n:
         jsonld["mainEntity"] = {
             "@type": "ItemList",
             "numberOfItems": n,
