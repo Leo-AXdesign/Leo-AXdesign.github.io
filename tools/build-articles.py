@@ -15,6 +15,7 @@ content/articles/*.md 로 블로그 페이지를 만듭니다.
 import json, pathlib, datetime
 
 import articles as A
+from nav import sidebar
 from shell import document, SITE, e
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -112,7 +113,7 @@ for x in items:
 
     {other_articles(items, x["slug"])}"""
     doc = document(title=x["title"], desc=x["desc"], url=url, body=body, jsonld=jsonld,
-                   og_type="article",
+                   og_type="article", sidebar=sidebar("articles"),
                    crumb=f'<a href="{LIST_URL}">읽을거리</a> / {e(x["title"])}',
                    main_class="page__main page__main--art", footer_nav=fnav)
     d = ROOT / "articles" / x["slug"]
@@ -168,7 +169,7 @@ list_jsonld = {
 }
 doc = document(title=f"{LIST_TITLE} — 디자인·AI 디자인 글 {len(items)}편", desc=LIST_DESC,
                url=LIST_URL, body=list_body, jsonld=list_jsonld, crumb=LIST_TITLE,
-               footer_nav=fnav)
+               footer_nav=fnav, sidebar=sidebar("articles"))
 (ROOT / "articles").mkdir(exist_ok=True)
 (ROOT / "articles" / "index.html").write_text(doc, encoding="utf-8")
 

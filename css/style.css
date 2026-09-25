@@ -443,7 +443,8 @@ mark { background: none; color: inherit; text-decoration: underline; text-underl
 .page__crumb a { color: var(--ink-2); }
 .page__crumb a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
 
-.page__main { padding: 48px 0 100px; max-width: 860px; }
+.page__main { padding: 48px 0 100px; max-width: 860px; min-width: 0; }
+.page .sidebar { padding-top: 40px; }
 .page__title { font-size: clamp(28px, 4vw, 44px); font-weight: 800; letter-spacing: -0.04em; line-height: 1.1; margin: 0 0 16px; }
 .page__intro { margin: 0 0 10px; font-size: 16px; color: var(--ink-2); line-height: 1.65; }
 .page__cta { margin: 0 0 8px; font-size: 14px; }
@@ -595,6 +596,13 @@ body.drawer-open { overflow: hidden; }
   border: 1px solid transparent; border-radius: 8px; outline: none;
 }
 .talk__name:focus { border-color: var(--ink); }
+.talk__pw {
+  width: 150px; padding: 9px 12px; font: inherit; font-size: 14px;
+  color: var(--ink); background: var(--field);
+  border: 1px solid transparent; border-radius: 8px; outline: none;
+}
+.talk__pw:focus { border-color: var(--ink); }
+.talk__pw::placeholder { color: var(--ink-3); }
 .talk__hint { font-size: 12.5px; color: var(--ink-3); }
 .talk__body {
   display: block; width: 100%; margin-top: 12px; padding: 12px;
@@ -624,6 +632,22 @@ body.drawer-open { overflow: hidden; }
 .talk__meta span { font-size: 12px; color: var(--ink-3); }
 .talk__text { margin: 0; font-size: 14.5px; line-height: 1.7; color: var(--ink-body); word-break: break-word; }
 .talk__empty { margin: 36px 0; font-size: 14px; color: var(--ink-3); text-align: center; }
+.talk__del {
+  margin-left: auto; font-size: 12px; color: var(--ink-3);
+  opacity: 0; transition: opacity 0.15s, color 0.15s;
+}
+.talk__item:hover .talk__del, .talk__del:focus-visible { opacity: 1; }
+.talk__del:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+.talk__delbox { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+.talk__delbox .talk__pw { width: 180px; padding: 7px 11px; font-size: 13px; }
+.talk__delok, .talk__delno {
+  padding: 7px 14px; border-radius: 8px; font-size: 13px; font-weight: 600;
+  border: 1px solid var(--line);
+}
+.talk__delok { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.talk__delok:disabled { opacity: 0.45; cursor: default; }
+.talk__delno { color: var(--ink-2); }
+.talk__delno:hover { border-color: var(--ink); color: var(--ink); }
 
 /* 맨 위로 (모바일에서만 노출) */
 .to-top {
@@ -701,8 +725,10 @@ body.drawer-open { overflow: hidden; }
   .arow__date { padding-top: 0; }
   .arow__tag { display: none; }
   .talk__form { padding: 14px; border-radius: 10px; }
-  .talk__name { width: 100%; }
+  .talk__name, .talk__pw { width: 100%; }
   .talk__hint { display: none; }
+  .talk__del { opacity: 1; }
+  .talk__delbox .talk__pw { width: 100%; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

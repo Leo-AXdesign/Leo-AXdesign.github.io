@@ -37,7 +37,7 @@
 
 ## Optional
 
-- [이야기 나누는 곳](https://designrefs.com/talk/): 방문자가 사이트 제보와 의견을 남기는 페이지
+- [디자인 이야기](https://designrefs.com/talk/): 디자이너들이 작업 고민, 쓰는 툴, 레퍼런스를 나누는 공간. 이름과 비밀번호만으로 글을 남깁니다
 - [사이트 소개](https://designrefs.com/about/): 운영 목적과 사이트 선정 기준
 - [개인정보처리방침](https://designrefs.com/privacy/)
 - [사이트맵](https://designrefs.com/sitemap.xml)

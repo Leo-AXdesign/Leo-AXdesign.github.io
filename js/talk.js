@@ -41,10 +41,12 @@ const TALK_API = 'https://designrefs-talk.designrefs-talk.workers.dev/comments';
         <form class="talk__form" id="talk-form" autocomplete="off">
           <div class="talk__row">
             <input class="talk__name" id="talk-name" type="text" maxlength="20" placeholder="이름" value="${esc(saved)}" required />
-            <span class="talk__hint">이름만 적으면 됩니다. 가입도 로그인도 없습니다.</span>
+            <input class="talk__pw" id="talk-pw" type="password" minlength="4" maxlength="12"
+              placeholder="비밀번호 4~12자" autocomplete="new-password" required />
+            <span class="talk__hint">비밀번호는 나중에 이 글을 지울 때 씁니다</span>
           </div>
           <textarea class="talk__body" id="talk-body" rows="4" maxlength="1000"
-            placeholder="빠진 사이트 제보, 안 열리는 링크, 글에 대한 의견, 아무 이야기나 남겨 주세요." required></textarea>
+            placeholder="작업하다 막힌 것, 요즘 쓰는 툴, 찾은 레퍼런스. 디자인 이야기면 무엇이든 좋습니다." required></textarea>
           <input class="talk__trap" id="talk-web" type="text" tabindex="-1" aria-hidden="true" autocomplete="off" />
           <div class="talk__foot">
             <span class="talk__msg" id="talk-msg" role="status"></span>
@@ -73,10 +75,30 @@ const TALK_API = 'https://designrefs-talk.designrefs-talk.workers.dev/comments';
       return;
     }
     box.innerHTML = `<p class="talk__count">${items.length}개의 이야기</p>` + items.map(x => `
-      <article class="talk__item">
-        <p class="talk__meta"><b>${esc(x.name)}</b><span>${when(x.at)}</span></p>
+      <article class="talk__item" data-id="${x.id}">
+        <p class="talk__meta"><b>${esc(x.name)}</b><span>${when(x.at)}</span>
+          <button class="talk__del" type="button" data-del="${x.id}">지우기</button></p>
         <p class="talk__text">${bodyHtml(x.body)}</p>
+        <form class="talk__delbox" data-form="${x.id}" hidden>
+          <input class="talk__pw talk__pw--del" type="password" minlength="4" maxlength="12"
+            placeholder="글 쓸 때 정한 비밀번호" autocomplete="off" required />
+          <button class="talk__delok" type="submit">삭제</button>
+          <button class="talk__delno" type="button" data-cancel="${x.id}">취소</button>
+          <span class="talk__msg" data-msg="${x.id}"></span>
+        </form>
       </article>`).join('');
+    box.querySelectorAll('[data-del]').forEach(b => b.addEventListener('click', () => {
+      const f = box.querySelector(`[data-form="${b.dataset.del}"]`);
+      f.hidden = !f.hidden;
+      if (!f.hidden) f.querySelector('input').focus();
+    }));
+    box.querySelectorAll('[data-cancel]').forEach(b => b.addEventListener('click', () => {
+      box.querySelector(`[data-form="${b.dataset.cancel}"]`).hidden = true;
+    }));
+    box.querySelectorAll('[data-form]').forEach(f => f.addEventListener('submit', ev => {
+      ev.preventDefault();
+      wipe(f.dataset.form, f);
+    }));
   }
 
   function load() {
@@ -89,10 +111,36 @@ const TALK_API = 'https://designrefs-talk.designrefs-talk.workers.dev/comments';
       });
   }
 
+  function wipe(id, form) {
+    const pw = form.querySelector('input').value;
+    const msg = form.querySelector('[data-msg]');
+    const btn = form.querySelector('.talk__delok');
+    msg.className = 'talk__msg';
+    msg.textContent = '';
+    btn.disabled = true;
+
+    fetch(TALK_API + '?id=' + encodeURIComponent(id), {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ pw: pw }),
+    })
+      .then(r => r.json())
+      .then(d => {
+        if (!d || !d.ok) throw new Error((d && d.error) || '지우지 못했습니다.');
+        load();
+      })
+      .catch(err => {
+        msg.className = 'talk__msg is-bad';
+        msg.textContent = err.message || '지우지 못했습니다.';
+      })
+      .then(() => { btn.disabled = false; });
+  }
+
   function send(e) {
     e.preventDefault();
     const name = document.getElementById('talk-name');
     const body = document.getElementById('talk-body');
+    const pw = document.getElementById('talk-pw');
     const btn = document.getElementById('talk-send');
     const msg = document.getElementById('talk-msg');
     msg.className = 'talk__msg';
@@ -106,6 +154,7 @@ const TALK_API = 'https://designrefs-talk.designrefs-talk.workers.dev/comments';
         page: PAGE,
         name: name.value.trim(),
         body: body.value.trim(),
+        pw: pw.value,
         website: document.getElementById('talk-web').value,
         elapsed: Date.now() - openedAt,
       }),
@@ -115,6 +164,7 @@ const TALK_API = 'https://designrefs-talk.designrefs-talk.workers.dev/comments';
         if (!d || !d.ok) throw new Error((d && d.error) || '남기지 못했습니다.');
         try { localStorage.setItem(NAME_KEY, name.value.trim()); } catch (err) { /* 무시 */ }
         body.value = '';
+        pw.value = '';
         msg.className = 'talk__msg is-ok';
         msg.textContent = d.pending ? '확인 후 올라갑니다. 고맙습니다.' : '올렸습니다. 고맙습니다.';
         load();

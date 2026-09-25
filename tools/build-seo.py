@@ -19,38 +19,18 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 SITE = "https://designrefs.com/"
 posts = A.load()          # content/articles/*.md
 
-src = (ROOT / "js" / "data.js").read_text(encoding="utf-8")
+import sitedata as D
 
-def block(name):
-    i = src.index(f"const {name} = [")
-    return src[i:src.index("\n];", i)]
-
-def fields(chunk, keys):
-    out = []
-    for m in re.finditer(r"\{[^{}]*\}", chunk):
-        row = m.group(0)
-        item = {}
-        for k in keys:
-            # 값이 작은따옴표 또는 큰따옴표로 감싸인 두 경우를 모두 처리
-            v = (re.search(rf"\b{k}: '((?:[^'\\]|\\.)*)'", row)
-                 or re.search(rf'\b{k}: "((?:[^"\\]|\\.)*)"', row))
-            if v:
-                item[k] = v.group(1).replace("\\'", "'").replace('\\"', '"')
-        if item.get(keys[0]):
-            out.append(item)
-    return out
-
-cats = fields(block("CATEGORIES"), ["id", "label", "desc"])
-sites = fields(block("SITES"), ["name", "url", "desc", "cat", "sub"])
-styles = fields(block("STYLES"), ["name", "en", "era", "desc", "traits", "people"])
-trends = fields(block("TRENDS"), ["name", "area", "desc"])
-terms = fields(block("GLOSSARY"), ["term", "en", "group", "desc"])
-gloss_groups = fields(block("GLOSSARY_GROUPS"), ["id", "label"])
+src = D.SRC
+cats = D.cats
+sites = D.sites
+styles = D.styles
+trends = D.trends
+terms = D.terms
+gloss_groups = D.gloss_groups
 
 # 카테고리 id -> 정적 페이지 주소
-CAT_SLUG = {"uiux": "ui-ux", "graphic": "graphic", "color": "color", "typo": "font",
-            "asset": "assets", "dev": "dev", "tool": "tools", "freelance": "freelance",
-            "job": "jobs", "ai": "ai", "community": "community", "creator": "creators"}
+CAT_SLUG = D.CAT_SLUG
 today = datetime.date.today().isoformat()
 
 # ---------- sitemap.xml ----------
@@ -157,7 +137,7 @@ if posts:
     for x in posts:
         parts.append(f'        <li><a href="{SITE}articles/{x["slug"]}/">{e(x["title"])}</a> — {e(x["desc"])}</li>')
     parts.append("      </ul>")
-parts.append(f'      <p><a href="{SITE}talk/">이야기 나누는 곳</a> · <a href="{SITE}about/">사이트 소개</a> · <a href="{SITE}llms.txt">llms.txt</a></p>')
+parts.append(f'      <p><a href="{SITE}talk/">디자인 이야기</a> · <a href="{SITE}about/">사이트 소개</a> · <a href="{SITE}llms.txt">llms.txt</a></p>')
 parts += ["    </div>", "  </noscript>"]
 noscript_html = "\n".join(parts)
 
@@ -200,7 +180,7 @@ L += ["", "## 자료", "",
       f"- [읽을거리 목록]({SITE}articles/): 디자인·AI 디자인·커뮤니티에 대해 직접 쓴 글 {len(posts)}편",
       f"- [전체 내용]({SITE}llms-full.txt): 위의 모든 목록과 설명, 글 본문을 마크다운 한 파일로",
       "", "## Optional", "",
-      f"- [이야기 나누는 곳]({SITE}talk/): 방문자가 사이트 제보와 의견을 남기는 페이지",
+      f"- [디자인 이야기]({SITE}talk/): 디자이너들이 작업 고민, 쓰는 툴, 레퍼런스를 나누는 공간. 이름과 비밀번호만으로 글을 남깁니다",
       f"- [사이트 소개]({SITE}about/): 운영 목적과 사이트 선정 기준",
       f"- [개인정보처리방침]({SITE}privacy/)",
       f"- [사이트맵]({SITE}sitemap.xml)", ""]

@@ -185,7 +185,7 @@
     // 이야기 페이지는 화면 전환이 아니라 별도 주소라서 링크로 둡니다
     html += '<div class="nav__group">커뮤니티</div>';
     html += '<a class="nav__item nav__item--link" href="talk/">'
-          + '<span class="nav__label">이야기 나누기</span><span class="nav__count">→</span></a>';
+          + '<span class="nav__label">디자인 이야기</span><span class="nav__count">→</span></a>';
     els.nav.innerHTML = html;
     if (els.drawerNav) els.drawerNav.innerHTML = html;
   }

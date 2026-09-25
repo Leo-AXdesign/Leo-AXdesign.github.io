@@ -14,7 +14,7 @@ e = html.escape
 
 
 def document(*, title, desc, url, body, jsonld, crumb, og_type="website",
-             head_extra="", main_class="page__main", footer_nav=""):
+             head_extra="", main_class="page__main", footer_nav="", sidebar=""):
     """페이지 하나의 HTML 전체를 돌려줍니다.
 
     title      : <title> 과 og:title 에 쓰는 제목 (사이트 이름은 여기서 붙입니다)
@@ -24,6 +24,7 @@ def document(*, title, desc, url, body, jsonld, crumb, og_type="website",
     jsonld     : 구조화 데이터 dict
     crumb      : 상단바에 보이는 현재 위치 문구 (HTML 허용)
     footer_nav : 푸터 위에 붙일 링크 묶음 HTML
+    sidebar    : 왼쪽 메뉴 HTML (tools/nav.py 가 만듭니다). 비우면 메뉴 없이 나옵니다.
     """
     return f"""<!DOCTYPE html>
 <html lang="ko">
@@ -74,16 +75,19 @@ def document(*, title, desc, url, body, jsonld, crumb, og_type="website",
     </div>
   </header>
 
-  <main class="wrap {main_class}">
+  <div class="wrap layout">
+{sidebar}
+    <main class="{main_class}">
 {body}
-  </main>
+    </main>
+  </div>
 
   <footer class="footer">
 {footer_nav}    <div class="wrap footer__inner">
       <span>Copyright 2026. Design Hub. all rights reserved.</span>
       <a href="{SITE}about/">소개</a>
       <a href="{SITE}articles/">읽을거리</a>
-      <a href="{SITE}talk/">이야기</a>
+      <a href="{SITE}talk/">디자인 이야기</a>
       <a href="{SITE}privacy/">개인정보처리방침</a>
       <a href="mailto:{CONTACT}">CONTACT : {CONTACT}</a>
     </div>
