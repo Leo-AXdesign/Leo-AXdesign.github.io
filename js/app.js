@@ -727,6 +727,11 @@
   (function initRoute() {
     const id = location.hash.slice(1);
     if (id && catById(id)) state.cat = id;
+    // 다른 페이지의 메뉴에서 태그를 골라 들어온 경우 (?tag=무료)
+    try {
+      const tag = new URLSearchParams(location.search).get('tag');
+      if (tag && TAG_FILTERS.some(f => f.id === tag)) state.tag = tag;
+    } catch { /* 무시 */ }
   })();
   initTheme();
   // 기본은 격자 보기. 목록을 고른 적이 있으면 그 선택을 따릅니다.

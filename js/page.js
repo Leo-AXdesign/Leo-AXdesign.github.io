@@ -2,7 +2,8 @@
    메인 화면은 app.js 가 같은 일을 합니다.
 
    - 메뉴의 즐겨찾기 개수를 브라우저 저장소에서 읽어 채웁니다
-   - 좁은 화면에서 햄버거 버튼으로 메뉴 서랍을 엽니다 */
+   - 좁은 화면에서 햄버거 버튼으로 메뉴 서랍을 엽니다
+   - 서랍 안의 테마 전환 · 목록/격자 버튼 (메인 화면과 같은 저장소 값을 씁니다) */
 (function () {
   'use strict';
 
@@ -29,9 +30,6 @@
     document.body.classList.add('drawer-open');
     openBtn.setAttribute('aria-expanded', 'true');
     closeBtn.focus();
-    // 지금 보고 있는 항목이 보이도록 서랍 안에서 스크롤
-    const active = drawer.querySelector('.nav__item.is-active');
-    if (active) active.scrollIntoView({ block: 'center' });
   }
 
   function close() {
@@ -42,6 +40,28 @@
     setTimeout(() => { drawer.hidden = true; }, 260);
     if (lastFocus && lastFocus.focus) lastFocus.focus();
   }
+
+  /* ---------- 보기: 테마 · 목록/격자 ---------- */
+  function load(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+  function save(k, v) { try { localStorage.setItem(k, v); } catch (e) { /* 무시 */ } }
+
+  const themeBtn = document.getElementById('drawer-theme');
+  if (themeBtn) themeBtn.addEventListener('click', () => {
+    const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    if (next === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+    else document.documentElement.removeAttribute('data-theme');
+    save('designhub:theme', next);
+  });
+
+  // 목록/격자는 메인 화면의 보기 방식이라, 고르면 저장하고 메인으로 갑니다
+  const view = load('designhub:view') === 'list' ? 'list' : 'grid';
+  drawer.querySelectorAll('.drawer__opt[data-view]').forEach(b => {
+    b.classList.toggle('is-active', b.dataset.view === view);
+    b.addEventListener('click', () => {
+      save('designhub:view', b.dataset.view);
+      location.href = 'https://designrefs.com/';
+    });
+  });
 
   openBtn.addEventListener('click', open);
   closeBtn.addEventListener('click', close);

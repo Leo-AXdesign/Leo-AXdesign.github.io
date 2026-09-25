@@ -447,7 +447,6 @@ mark { background: none; color: inherit; text-decoration: underline; text-underl
 .page__crumb a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
 
 .page__main { padding: 48px 0 100px; max-width: 860px; min-width: 0; }
-.page .sidebar { padding-top: 40px; }
 .page__title { font-size: clamp(28px, 4vw, 44px); font-weight: 800; letter-spacing: -0.04em; line-height: 1.1; margin: 0 0 16px; }
 .page__intro { margin: 0 0 10px; font-size: 16px; color: var(--ink-2); line-height: 1.65; }
 .page__cta { margin: 0 0 8px; font-size: 14px; }

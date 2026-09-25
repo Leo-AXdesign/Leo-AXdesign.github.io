@@ -15,6 +15,31 @@ e = html.escape
 
 MENU_ICON = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" '
              'stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>')
+# 메인 화면의 태그 필터와 같은 순서 (js/app.js 의 TAG_FILTERS)
+TAGS = [("", "전체"), ("한국", "한국"), ("무료", "무료"), ("유료", "유료"), ("AI", "AI")]
+
+
+def drawer_extras():
+    """메인 화면 모바일 메뉴의 아래쪽 두 묶음을 정적 페이지에도 똑같이 둡니다.
+    태그를 누르면 메인 화면으로 가서 그 필터가 걸린 채로 열립니다."""
+    from urllib.parse import quote
+    pills = "".join(
+        f'<a class="pill{" is-active" if not tid else ""}" href="{SITE}{"?tag=" + quote(tid) if tid else ""}">{label}</a>'
+        for tid, label in TAGS)
+    return ('        <div class="drawer__section">\n'
+            '          <p class="nav__group">태그 필터</p>\n'
+            f'          <div class="pills pills--tags">{pills}</div>\n'
+            '        </div>\n'
+            '        <div class="drawer__section">\n'
+            '          <p class="nav__group">보기</p>\n'
+            '          <div class="drawer__row">\n'
+            '            <button class="drawer__opt" id="drawer-theme" type="button">테마 전환</button>\n'
+            '            <button class="drawer__opt" data-view="list" type="button">목록</button>\n'
+            '            <button class="drawer__opt" data-view="grid" type="button">격자</button>\n'
+            '          </div>\n'
+            '        </div>\n')
+
+
 CLOSE_ICON = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" '
               'stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>')
 
@@ -48,7 +73,10 @@ def document(*, title, desc, url, body, jsonld, crumb, og_type="website",
                   '        <button id="menu-close" class="drawer__close" type="button" aria-label="메뉴 닫기">'
                   + CLOSE_ICON + '</button>\n'
                   '      </header>\n'
-                  '      <div class="drawer__body"><nav class="nav" aria-label="메뉴">' + menu + '</nav></div>\n'
+                  '      <div class="drawer__body">\n'
+                  '        <nav class="nav" aria-label="메뉴">' + menu + '</nav>\n'
+                  + drawer_extras() +
+                  '      </div>\n'
                   '    </aside>\n'
                   '  </div>\n')
         aside = ('    <aside class="sidebar">\n'
