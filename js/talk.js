@@ -38,7 +38,9 @@ const TALK_API = 'https://designrefs-talk.designrefs-talk.workers.dev/comments';
     const saved = (function () { try { return localStorage.getItem(NAME_KEY) || ''; } catch (e) { return ''; } })();
     root.innerHTML = `
       <div class="talk">
+        <div class="talk__list" id="talk-list"><p class="talk__empty">불러오는 중입니다.</p></div>
         <form class="talk__form" id="talk-form" autocomplete="off">
+          <p class="talk__formtitle">글 남기기</p>
           <div class="talk__row">
             <input class="talk__name" id="talk-name" type="text" maxlength="20" placeholder="이름" value="${esc(saved)}" required />
             <input class="talk__pw" id="talk-pw" type="password" minlength="4" maxlength="12"
@@ -46,14 +48,13 @@ const TALK_API = 'https://designrefs-talk.designrefs-talk.workers.dev/comments';
             <span class="talk__hint">비밀번호는 나중에 이 글을 지울 때 씁니다</span>
           </div>
           <textarea class="talk__body" id="talk-body" rows="4" maxlength="1000"
-            placeholder="작업하다 막힌 것, 요즘 쓰는 툴, 찾은 레퍼런스. 디자인 이야기면 무엇이든 좋습니다." required></textarea>
+            placeholder="요즘 하는 작업, 쓰는 툴, 막힌 것, 찾은 레퍼런스. 디자인 얘기면 뭐든 좋습니다." required></textarea>
           <input class="talk__trap" id="talk-web" type="text" tabindex="-1" aria-hidden="true" autocomplete="off" />
           <div class="talk__foot">
             <span class="talk__msg" id="talk-msg" role="status"></span>
             <button class="talk__send" id="talk-send" type="submit">남기기</button>
           </div>
         </form>
-        <div class="talk__list" id="talk-list"><p class="talk__empty">불러오는 중입니다.</p></div>
       </div>`;
     document.getElementById('talk-form').addEventListener('submit', send);
   }
@@ -71,10 +72,10 @@ const TALK_API = 'https://designrefs-talk.designrefs-talk.workers.dev/comments';
     const box = document.getElementById('talk-list');
     if (!box) return;
     if (!items.length) {
-      box.innerHTML = '<p class="talk__empty">아직 남겨진 이야기가 없습니다. 처음으로 남겨 보세요.</p>';
+      box.innerHTML = '<p class="talk__empty">아직 글이 없습니다. 아래에서 처음으로 남겨 보세요.</p>';
       return;
     }
-    box.innerHTML = `<p class="talk__count">${items.length}개의 이야기</p>` + items.map(x => `
+    box.innerHTML = `<p class="talk__count">글 ${items.length}개</p>` + items.map(x => `
       <article class="talk__item" data-id="${x.id}">
         <p class="talk__meta"><b>${esc(x.name)}</b><span>${when(x.at)}</span>
           <button class="talk__del" type="button" data-del="${x.id}">지우기</button></p>

@@ -20,7 +20,7 @@ const DB = {
       async all() {
         if (sql.includes("SELECT id, name, body, at"))
           return { results: rows.filter(r => r.page === args[0] && r.hidden === 0)
-            .map(({ id, name, body, at }) => ({ id, name, body, at })) };
+            .map(({ id, name, body, at }) => ({ id, name, body, at })).reverse() };
         return { results: [] };
       },
       async first() {
@@ -117,6 +117,10 @@ check("길이 자르기", d.ok && d.item.name.length === 20 && d.item.body.lengt
 
 d = await (await worker.fetch(post({ ...good, body: "<script>alert(1)</script> 안녕" }, "7.7.7.7"), env)).json();
 check("태그는 그대로 저장(출력에서 이스케이프)", d.ok && d.item.body.includes("<script>"));
+
+r = await worker.fetch(new Request("https://x/comments?page=talk", { headers: { Origin: ORIGIN } }), env);
+d = await r.json();
+check("최신 글이 맨 위", d.items.length > 1 && d.items[0].id > d.items[d.items.length - 1].id);
 
 /* ---------- 글 지우기 ---------- */
 const mine = (await (await worker.fetch(post({ ...good, pw: "비번1234" }, "8.8.8.8"), env)).json()).item.id;

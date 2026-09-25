@@ -12,7 +12,7 @@ data.js 를 읽어 카테고리별 정적 페이지를 만듭니다.
 import json, re, pathlib
 
 import sitedata as D
-from nav import sidebar
+from nav import menu
 from shell import document, SITE, e
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -193,7 +193,7 @@ PRIVACY = f"""
     맞춤 광고를 원하지 않으시면 <a href="https://myadcenter.google.com" target="_blank" rel="noopener">구글 광고 설정</a>에서 끌 수 있습니다.</p>
 
     <h2 class="psub">4. 이야기 페이지에 남긴 글</h2>
-    <p class="ptext"><a href="{SITE}talk/">디자인 이야기</a> 페이지에 글을 남기면 적어 주신 이름과 내용이 그대로 공개되고,
+    <p class="ptext"><a href="{SITE}talk/">디자인 잡담</a> 페이지에 글을 남기면 적어 주신 이름과 내용이 그대로 공개되고,
     Cloudflare 가 운영하는 데이터베이스에 저장됩니다. 가입 절차가 없어 이메일이나 비밀번호는 받지 않습니다.</p>
     <p class="ptext">글을 지울 때 쓰는 비밀번호도 그대로 저장하지 않습니다. 글마다 다른 값을 섞어 되돌릴 수 없는 형태로 바꿔 두기 때문에,
     운영자도 어떤 비밀번호를 쓰셨는지 알 수 없습니다.</p>
@@ -224,29 +224,17 @@ PRIVACY = f"""
 """
 
 TALK = f"""
-    <h2 class="psub">이런 이야기를 나눕니다</h2>
-    <ul class="ptext-list">
-      <li>작업하다 막힌 것. 인쇄 사양, 폰트 라이선스, 클라이언트 대응처럼 검색해도 잘 안 나오는 것들</li>
-      <li>요즘 쓰는 툴과 방식. 특히 AI 툴은 쓰는 방식이 제각각이라 서로 물어볼 게 많습니다</li>
-      <li>알게 된 사이트나 레퍼런스. <a href="{SITE}">목록</a>에 없는 곳은 알려주시면 확인하고 넣겠습니다</li>
-      <li><a href="{SITE}articles/">읽을거리</a>에 쓴 글에 대한 의견이나 반론</li>
-    </ul>
-
     <div id="talk"></div>
 
-    <h2 class="psub">남기기 전에</h2>
-    <ul class="ptext-list">
-      <li>비밀번호는 나중에 본인 글을 지울 때 씁니다. 4~12자로 정하시면 됩니다.</li>
-      <li>남긴 글은 이름과 내용이 그대로 공개됩니다. 연락처나 개인정보는 적지 마세요.</li>
-      <li>광고, 욕설, 남의 개인정보가 담긴 글은 보이는 대로 지웁니다.</li>
-    </ul>
+    <p class="ptext ptext--note">남긴 글은 이름과 내용이 그대로 공개됩니다. 연락처 같은 개인정보는 적지 마세요.
+    광고나 욕설, 남의 개인정보가 담긴 글은 보이는 대로 지웁니다.</p>
 
     <script src="{SITE}js/talk.js" defer></script>
 """
 
 PROSE_PAGES = [
-    ("talk", "디자인 이야기",
-     "디자이너들이 작업하면서 생기는 이야기를 나누는 공간입니다. 막힌 작업, 요즘 쓰는 툴, 찾은 레퍼런스를 서로 묻고 답합니다.", TALK),
+    ("talk", "디자인 잡담",
+     "디자인 이야기를 편하게 나누는 공간입니다.", TALK),
     ("about", "디자인 허브 소개",
      "왜 만들었고 무엇이 들어 있는지, 사이트는 어떤 기준으로 고르는지 적어 뒀습니다.", ABOUT),
     ("privacy", "개인정보처리방침",
@@ -312,7 +300,8 @@ for slug, title, intro, body, n, names, navlabel in pages:
         }
     cta = ('<p class="page__cta"><a href="' + SITE + '">검색·필터가 되는 전체 목록 보기 →</a></p>'
            if n else '')
-    nav_block = ('<nav class="page__nav">\n      <h2 class="psub">다른 목록</h2>\n'
+    NO_NAV = {"talk"}
+    nav_block = '' if slug in NO_NAV else ('<nav class="page__nav">\n      <h2 class="psub">다른 목록</h2>\n'
                  f'      <div class="page__navlinks">{others}</div>\n    </nav>') if others else ''
     body_full = f"""    <h1 class="page__title">{e(title)}</h1>
     <p class="page__intro">{e(intro)}</p>
@@ -322,7 +311,7 @@ for slug, title, intro, body, n, names, navlabel in pages:
 
     {nav_block}"""
     doc = document(title=title, desc=intro, url=url, body=body_full, jsonld=jsonld,
-                   crumb=e(title), sidebar=sidebar(slug))
+                   crumb=e(title), menu=menu(slug))
     d = ROOT / slug
     d.mkdir(exist_ok=True)
     (d / "index.html").write_text(doc, encoding="utf-8")

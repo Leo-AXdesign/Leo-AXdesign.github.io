@@ -13,8 +13,14 @@ CONTACT = "nisov0924@gmail.com"
 e = html.escape
 
 
+MENU_ICON = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" '
+             'stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>')
+CLOSE_ICON = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" '
+              'stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>')
+
+
 def document(*, title, desc, url, body, jsonld, crumb, og_type="website",
-             head_extra="", main_class="page__main", footer_nav="", sidebar=""):
+             head_extra="", main_class="page__main", footer_nav="", menu=""):
     """페이지 하나의 HTML 전체를 돌려줍니다.
 
     title      : <title> 과 og:title 에 쓰는 제목 (사이트 이름은 여기서 붙입니다)
@@ -24,8 +30,30 @@ def document(*, title, desc, url, body, jsonld, crumb, og_type="website",
     jsonld     : 구조화 데이터 dict
     crumb      : 상단바에 보이는 현재 위치 문구 (HTML 허용)
     footer_nav : 푸터 위에 붙일 링크 묶음 HTML
-    sidebar    : 왼쪽 메뉴 HTML (tools/nav.py 가 만듭니다). 비우면 메뉴 없이 나옵니다.
+    menu       : 메뉴 항목 HTML (tools/nav.py 의 menu()). 넓은 화면에서는 왼쪽에,
+                 좁은 화면에서는 햄버거 버튼을 누르면 서랍으로 나옵니다. 비우면 메뉴 없이 나옵니다.
     """
+    menu_btn = drawer = aside = ""
+    if menu:
+        menu_btn = ('<div class="top__actions">\n'
+                    '        <button id="menu-open" class="top__btn top__btn--menu" type="button" '
+                    'aria-label="메뉴 열기" aria-expanded="false" aria-controls="drawer">'
+                    + MENU_ICON + '</button>\n      </div>')
+        drawer = ('\n  <!-- 모바일 전체 메뉴 -->\n'
+                  '  <div class="drawer" id="drawer" hidden>\n'
+                  '    <div class="drawer__backdrop" id="drawer-backdrop"></div>\n'
+                  '    <aside class="drawer__panel" role="dialog" aria-modal="true" aria-label="전체 메뉴">\n'
+                  '      <header class="drawer__head">\n'
+                  '        <span class="drawer__title">전체 메뉴</span>\n'
+                  '        <button id="menu-close" class="drawer__close" type="button" aria-label="메뉴 닫기">'
+                  + CLOSE_ICON + '</button>\n'
+                  '      </header>\n'
+                  '      <div class="drawer__body"><nav class="nav" aria-label="메뉴">' + menu + '</nav></div>\n'
+                  '    </aside>\n'
+                  '  </div>\n')
+        aside = ('    <aside class="sidebar">\n'
+                 '      <nav class="nav" aria-label="메뉴">' + menu + '</nav>\n'
+                 '    </aside>')
     return f"""<!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -72,11 +100,12 @@ def document(*, title, desc, url, body, jsonld, crumb, og_type="website",
     <div class="wrap top__inner">
       <a class="logo" href="{SITE}">d<span>.</span></a>
       <span class="page__crumb"><a href="{SITE}">디자인 허브</a> / {crumb}</span>
+      {menu_btn}
     </div>
   </header>
-
+{drawer}
   <div class="wrap layout">
-{sidebar}
+{aside}
     <main class="{main_class}">
 {body}
     </main>
@@ -87,11 +116,12 @@ def document(*, title, desc, url, body, jsonld, crumb, og_type="website",
       <span>Copyright 2026. Design Hub. all rights reserved.</span>
       <a href="{SITE}about/">소개</a>
       <a href="{SITE}articles/">읽을거리</a>
-      <a href="{SITE}talk/">디자인 이야기</a>
+      <a href="{SITE}talk/">디자인 잡담</a>
       <a href="{SITE}privacy/">개인정보처리방침</a>
       <a href="mailto:{CONTACT}">CONTACT : {CONTACT}</a>
     </div>
   </footer>
+  <script src="{SITE}js/page.js" defer></script>
 </body>
 </html>
 """

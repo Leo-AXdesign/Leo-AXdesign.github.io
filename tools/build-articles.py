@@ -15,7 +15,7 @@ content/articles/*.md 로 블로그 페이지를 만듭니다.
 import json, pathlib, datetime
 
 import articles as A
-from nav import sidebar
+from nav import menu
 from shell import document, SITE, e
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -113,7 +113,7 @@ for x in items:
 
     {other_articles(items, x["slug"])}"""
     doc = document(title=x["title"], desc=x["desc"], url=url, body=body, jsonld=jsonld,
-                   og_type="article", sidebar=sidebar("articles"),
+                   og_type="article", menu=menu("articles"),
                    crumb=f'<a href="{LIST_URL}">읽을거리</a> / {e(x["title"])}',
                    main_class="page__main page__main--art", footer_nav=fnav)
     d = ROOT / "articles" / x["slug"]
@@ -122,9 +122,8 @@ for x in items:
 
 # ---------- 목록 페이지 ----------
 LIST_TITLE = "읽을거리"
-LIST_DESC = ("디자인과 AI 디자인, 커뮤니티에 대해 직접 쓴 글입니다. "
-             "AI 툴을 실무에 끼워 넣는 방법, 스타일을 말로 설명하는 방법, "
-             "AI 이미지의 상업적 사용, 국내 디자인 커뮤니티 정리.")
+LIST_DESC = ("디자인하면서 생각한 것들을 적습니다. "
+             "AI와 같이 일하는 법, 스타일을 말로 옮기는 법, 레퍼런스와 커뮤니티 이야기.")
 rows = []
 for x in items:
     rows.append(
@@ -169,7 +168,7 @@ list_jsonld = {
 }
 doc = document(title=f"{LIST_TITLE} — 디자인·AI 디자인 글 {len(items)}편", desc=LIST_DESC,
                url=LIST_URL, body=list_body, jsonld=list_jsonld, crumb=LIST_TITLE,
-               footer_nav=fnav, sidebar=sidebar("articles"))
+               footer_nav=fnav, menu=menu("articles"))
 (ROOT / "articles").mkdir(exist_ok=True)
 (ROOT / "articles" / "index.html").write_text(doc, encoding="utf-8")
 

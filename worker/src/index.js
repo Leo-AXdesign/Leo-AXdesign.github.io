@@ -93,7 +93,7 @@ function clean(s, max) {
 
 async function list(env, page, origin) {
   const { results } = await env.DB.prepare(
-    "SELECT id, name, body, at FROM comments WHERE page = ?1 AND hidden = 0 ORDER BY id ASC LIMIT 300"
+    "SELECT id, name, body, at FROM comments WHERE page = ?1 AND hidden = 0 ORDER BY id DESC LIMIT 300"
   ).bind(page).all();
   return json({ ok: true, items: results || [] }, 200, origin);
 }

@@ -147,6 +147,8 @@ kbd { font-family: inherit; }
 .nav__item.is-active .nav__count { color: inherit; opacity: 0.6; }
 .nav__item svg { width: 12px; height: 12px; fill: currentColor; flex-shrink: 0; }
 .nav__item--link .nav__count { font-size: 13px; }
+.nav__sep { border: 0; border-top: 1px solid var(--line); margin: 10px 12px; }
+.nav > .nav__item:first-child { margin-top: 6px; }
 
 /* 필(태그 필터) */
 .pills { display: flex; align-items: center; gap: 6px; }
@@ -439,6 +441,7 @@ mark { background: none; color: inherit; text-decoration: underline; text-underl
 }
 
 .page .top__inner { gap: 16px; }
+.page .top__actions { margin-left: auto; }
 .page__crumb { font-size: 13px; color: var(--ink-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .page__crumb a { color: var(--ink-2); }
 .page__crumb a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
@@ -554,10 +557,10 @@ body.drawer-open { overflow: hidden; }
   border-bottom: 1px solid var(--line-strong);
   font-size: 13px; color: var(--ink-3); font-variant-numeric: tabular-nums;
 }
-.art .ptext { margin-top: 20px; font-size: 16px; line-height: 1.85; color: var(--ink-body); }
+.art .ptext { margin-top: 24px; font-size: 16.5px; line-height: 1.95; color: var(--ink-body); }
 .art .ptext-list { margin-top: 16px; padding-left: 20px; }
-.art .ptext-list li { margin-bottom: 12px; font-size: 16px; line-height: 1.8; color: var(--ink-body); }
-.art .psub { margin-top: 52px; font-size: 19px; letter-spacing: -0.03em; border-bottom: 0; padding-bottom: 0; }
+.art .ptext-list li { margin-bottom: 12px; font-size: 16.5px; line-height: 1.85; color: var(--ink-body); }
+.art .psub { margin-top: 64px; font-size: 19px; letter-spacing: -0.03em; border-bottom: 0; padding-bottom: 0; }
 .art__h3 { margin: 32px 0 0; font-size: 16px; font-weight: 700; letter-spacing: -0.02em; color: var(--ink); }
 .art strong { font-weight: 700; color: var(--ink); }
 .art code {
@@ -565,9 +568,9 @@ body.drawer-open { overflow: hidden; }
   font-size: 14px; padding: 2px 6px; border-radius: 5px; background: var(--field);
 }
 .art__quote {
-  margin: 24px 0 0; padding: 16px 20px;
-  border-left: 2px solid var(--line-strong); background: var(--field);
-  font-size: 14.5px; line-height: 1.75; color: var(--ink-2);
+  margin: 40px 0; padding: 4px 0 4px 20px;
+  border-left: 3px solid var(--line-strong);
+  font-size: 18px; font-weight: 600; line-height: 1.7; letter-spacing: -0.02em; color: var(--ink);
 }
 
 /* 메인 화면의 읽을거리 목록 */
@@ -584,7 +587,9 @@ body.drawer-open { overflow: hidden; }
 .arow__tag { font-size: 12px; color: var(--ink-3); white-space: nowrap; padding-top: 4px; }
 
 /* 이야기(댓글) */
-.talk { margin-top: 28px; }
+.talk { margin-top: 12px; }
+.talk__form { margin-top: 36px; }
+.talk__formtitle { margin: 0 0 12px; font-size: 14px; font-weight: 700; letter-spacing: -0.015em; }
 .talk__form {
   border: 1px solid var(--line); border-radius: 12px;
   padding: 18px; background: var(--surface);
@@ -624,14 +629,14 @@ body.drawer-open { overflow: hidden; }
   background: var(--ink); color: var(--bg);
 }
 .talk__send:disabled { opacity: 0.45; cursor: default; }
-.talk__count { margin: 32px 0 0; font-size: 12.5px; color: var(--ink-3); }
+.talk__count { margin: 8px 0 0; font-size: 12.5px; color: var(--ink-3); }
 .talk__list { margin-top: 4px; }
 .talk__item { padding: 18px 0; border-bottom: 1px solid var(--line); }
 .talk__meta { display: flex; align-items: baseline; gap: 10px; margin: 0 0 6px; }
 .talk__meta b { font-size: 14px; font-weight: 600; letter-spacing: -0.015em; }
 .talk__meta span { font-size: 12px; color: var(--ink-3); }
 .talk__text { margin: 0; font-size: 14.5px; line-height: 1.7; color: var(--ink-body); word-break: break-word; }
-.talk__empty { margin: 36px 0; font-size: 14px; color: var(--ink-3); text-align: center; }
+.talk__empty { margin: 28px 0; font-size: 14px; color: var(--ink-3); text-align: center; }
 .talk__del {
   margin-left: auto; font-size: 12px; color: var(--ink-3);
   opacity: 0; transition: opacity 0.15s, color 0.15s;

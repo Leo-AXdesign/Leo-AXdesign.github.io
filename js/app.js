@@ -59,7 +59,7 @@
     styles:    { id: 'styles', label: '스타일 사전', desc: '유명 그래픽 디자인 양식과 흐름. 이름을 누르면 핀터레스트 레퍼런스가 열립니다.' },
     trends:    { id: 'trends', label: '2026 트렌드', desc: '트렌드 리포트와 커뮤니티에서 반복 언급되는 키워드 정리' },
     glossary:  { id: 'glossary', label: '용어 사전', desc: '디자인 · 편집/인쇄 · UI/UX 구축 시 자주 쓰는 용어' },
-    articles:  { id: 'articles', label: '읽을거리', desc: '디자인과 AI 디자인, 커뮤니티에 대해 직접 쓴 글' },
+    articles:  { id: 'articles', label: '읽을거리', desc: '디자인하면서 생각한 것들' },
   };
   const INSIGHT_PAGES = ['articles', 'styles', 'trends', 'glossary'];
   // js/articles.js 가 없어도 화면이 깨지지 않게 둡니다
@@ -172,20 +172,19 @@
         <span class="nav__count">${count}</span>
       </button>`;
 
-    let html = '<div class="nav__group">라이브러리</div>';
-    html += item('all', '전체', SITES.length);
+    const SEP = '<hr class="nav__sep" />';
+    let html = item('all', '전체', SITES.length);
     html += item('bookmarks', '즐겨찾기', state.bookmarks.size, STAR.replace('fill="none"', 'fill="currentColor"'));
-    html += '<div class="nav__group">카테고리</div>';
+    // 디자인 잡담은 화면 전환이 아니라 별도 주소라서 링크로 둡니다
+    html += '<a class="nav__item nav__item--link" href="talk/">'
+          + '<span class="nav__label">디자인 잡담</span></a>';
+    html += SEP;
     CATEGORIES.forEach(c => { html += item(c.id, c.label, counts[c.id] || 0); });
-    html += '<div class="nav__group">인사이트</div>';
+    html += SEP;
     if (POSTS.length) html += item('articles', '읽을거리', POSTS.length);
     html += item('styles', '스타일 사전', STYLES.length);
     html += item('trends', '2026 트렌드', TRENDS.length);
     html += item('glossary', '용어 사전', GLOSSARY.length);
-    // 이야기 페이지는 화면 전환이 아니라 별도 주소라서 링크로 둡니다
-    html += '<div class="nav__group">커뮤니티</div>';
-    html += '<a class="nav__item nav__item--link" href="talk/">'
-          + '<span class="nav__label">디자인 이야기</span><span class="nav__count">→</span></a>';
     els.nav.innerHTML = html;
     if (els.drawerNav) els.drawerNav.innerHTML = html;
   }

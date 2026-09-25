@@ -137,7 +137,7 @@ if posts:
     for x in posts:
         parts.append(f'        <li><a href="{SITE}articles/{x["slug"]}/">{e(x["title"])}</a> — {e(x["desc"])}</li>')
     parts.append("      </ul>")
-parts.append(f'      <p><a href="{SITE}talk/">디자인 이야기</a> · <a href="{SITE}about/">사이트 소개</a> · <a href="{SITE}llms.txt">llms.txt</a></p>')
+parts.append(f'      <p><a href="{SITE}talk/">디자인 잡담</a> · <a href="{SITE}about/">사이트 소개</a> · <a href="{SITE}llms.txt">llms.txt</a></p>')
 parts += ["    </div>", "  </noscript>"]
 noscript_html = "\n".join(parts)
 
@@ -180,7 +180,7 @@ L += ["", "## 자료", "",
       f"- [읽을거리 목록]({SITE}articles/): 디자인·AI 디자인·커뮤니티에 대해 직접 쓴 글 {len(posts)}편",
       f"- [전체 내용]({SITE}llms-full.txt): 위의 모든 목록과 설명, 글 본문을 마크다운 한 파일로",
       "", "## Optional", "",
-      f"- [디자인 이야기]({SITE}talk/): 디자이너들이 작업 고민, 쓰는 툴, 레퍼런스를 나누는 공간. 이름과 비밀번호만으로 글을 남깁니다",
+      f"- [디자인 잡담]({SITE}talk/): 디자인 이야기를 편하게 나누는 게시판",
       f"- [사이트 소개]({SITE}about/): 운영 목적과 사이트 선정 기준",
       f"- [개인정보처리방침]({SITE}privacy/)",
       f"- [사이트맵]({SITE}sitemap.xml)", ""]
