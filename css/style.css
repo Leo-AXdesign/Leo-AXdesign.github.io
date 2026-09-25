@@ -146,6 +146,7 @@ kbd { font-family: inherit; }
 .nav__count { font-size: 12px; color: var(--ink-3); font-variant-numeric: tabular-nums; }
 .nav__item.is-active .nav__count { color: inherit; opacity: 0.6; }
 .nav__item svg { width: 12px; height: 12px; fill: currentColor; flex-shrink: 0; }
+.nav__item--link .nav__count { font-size: 13px; }
 
 /* 필(태그 필터) */
 .pills { display: flex; align-items: center; gap: 6px; }
@@ -581,6 +582,49 @@ body.drawer-open { overflow: hidden; }
 .arow__desc { margin: 0; font-size: 13.5px; color: var(--ink-2); line-height: 1.6; }
 .arow__tag { font-size: 12px; color: var(--ink-3); white-space: nowrap; padding-top: 4px; }
 
+/* 이야기(댓글) */
+.talk { margin-top: 28px; }
+.talk__form {
+  border: 1px solid var(--line); border-radius: 12px;
+  padding: 18px; background: var(--surface);
+}
+.talk__row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.talk__name {
+  width: 160px; padding: 9px 12px; font: inherit; font-size: 14px;
+  color: var(--ink); background: var(--field);
+  border: 1px solid transparent; border-radius: 8px; outline: none;
+}
+.talk__name:focus { border-color: var(--ink); }
+.talk__hint { font-size: 12.5px; color: var(--ink-3); }
+.talk__body {
+  display: block; width: 100%; margin-top: 12px; padding: 12px;
+  font: inherit; font-size: 14.5px; line-height: 1.7; color: var(--ink);
+  background: var(--field); border: 1px solid transparent; border-radius: 8px;
+  outline: none; resize: vertical; min-height: 96px;
+}
+.talk__body:focus { border-color: var(--ink); }
+.talk__name::placeholder, .talk__body::placeholder { color: var(--ink-3); }
+.talk__trap { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.talk__foot { display: flex; align-items: center; gap: 12px; margin-top: 12px; }
+.talk__msg { font-size: 13px; color: var(--ink-2); }
+.talk__msg.is-ok { color: var(--ink); font-weight: 600; }
+.talk__msg.is-bad { color: #C0392B; }
+:root[data-theme="dark"] .talk__msg.is-bad { color: #FF8A7A; }
+.talk__send {
+  margin-left: auto; padding: 9px 20px; border-radius: 8px;
+  font-size: 14px; font-weight: 600;
+  background: var(--ink); color: var(--bg);
+}
+.talk__send:disabled { opacity: 0.45; cursor: default; }
+.talk__count { margin: 32px 0 0; font-size: 12.5px; color: var(--ink-3); }
+.talk__list { margin-top: 4px; }
+.talk__item { padding: 18px 0; border-bottom: 1px solid var(--line); }
+.talk__meta { display: flex; align-items: baseline; gap: 10px; margin: 0 0 6px; }
+.talk__meta b { font-size: 14px; font-weight: 600; letter-spacing: -0.015em; }
+.talk__meta span { font-size: 12px; color: var(--ink-3); }
+.talk__text { margin: 0; font-size: 14.5px; line-height: 1.7; color: var(--ink-body); word-break: break-word; }
+.talk__empty { margin: 36px 0; font-size: 14px; color: var(--ink-3); text-align: center; }
+
 /* 맨 위로 (모바일에서만 노출) */
 .to-top {
   position: fixed; right: 16px; bottom: 16px; z-index: 60;
@@ -656,6 +700,9 @@ body.drawer-open { overflow: hidden; }
   .arow { grid-template-columns: 1fr; gap: 6px; padding: 18px 0; }
   .arow__date { padding-top: 0; }
   .arow__tag { display: none; }
+  .talk__form { padding: 14px; border-radius: 10px; }
+  .talk__name { width: 100%; }
+  .talk__hint { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

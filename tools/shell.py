@@ -83,6 +83,7 @@ def document(*, title, desc, url, body, jsonld, crumb, og_type="website",
       <span>Copyright 2026. Design Hub. all rights reserved.</span>
       <a href="{SITE}about/">소개</a>
       <a href="{SITE}articles/">읽을거리</a>
+      <a href="{SITE}talk/">이야기</a>
       <a href="{SITE}privacy/">개인정보처리방침</a>
       <a href="mailto:{CONTACT}">CONTACT : {CONTACT}</a>
     </div>
