@@ -1,0 +1,92 @@
+#!/usr/bin/env python3
+"""
+정적 페이지의 공통 껍데기(head, 상단바, 푸터)를 한곳에서 만듭니다.
+
+build-pages.py 와 build-articles.py 가 같이 씁니다.
+애널리틱스 ID, 애드센스 코드, 푸터 문구는 이 파일만 고치면 모든 페이지에 반영됩니다.
+"""
+import json, html
+
+SITE = "https://designrefs.com/"
+GA_ID = "G-Q7QVVHSLQ6"
+CONTACT = "nisov0924@gmail.com"
+e = html.escape
+
+
+def document(*, title, desc, url, body, jsonld, crumb, og_type="website",
+             head_extra="", main_class="page__main", footer_nav=""):
+    """페이지 하나의 HTML 전체를 돌려줍니다.
+
+    title      : <title> 과 og:title 에 쓰는 제목 (사이트 이름은 여기서 붙입니다)
+    desc       : meta description
+    url        : canonical 주소 (끝에 / 포함)
+    body       : <main> 안에 들어갈 HTML
+    jsonld     : 구조화 데이터 dict
+    crumb      : 상단바에 보이는 현재 위치 문구 (HTML 허용)
+    footer_nav : 푸터 위에 붙일 링크 묶음 HTML
+    """
+    return f"""<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{e(title)} | 디자인 허브</title>
+  <meta name="description" content="{e(desc)}" />
+  <link rel="canonical" href="{url}" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta property="og:type" content="{og_type}" />
+  <meta property="og:title" content="{e(title)} | 디자인 허브" />
+  <meta property="og:description" content="{e(desc)}" />
+  <meta property="og:url" content="{url}" />
+  <meta property="og:image" content="{SITE}og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="{SITE}favicon.ico" sizes="32x32" />
+  <link rel="icon" type="image/svg+xml" href="{SITE}favicon.svg" />
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+  <link rel="stylesheet" href="{SITE}css/style.css" />
+  <!-- 구글 애드센스: 승인 신청 시 아래 주석을 풀고 ca-pub- 번호를 채우세요. -->
+  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){{dataLayer.push(arguments);}}
+    gtag('js', new Date());
+    gtag('config', '{GA_ID}');
+  </script>
+  <script>
+    // 메인에서 고른 테마를 그대로 따릅니다.
+    try {{
+      var t = localStorage.getItem('designhub:theme') || 'light';
+      if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+    }} catch (e) {{}}
+  </script>
+  <script type="application/ld+json">
+{json.dumps(jsonld, ensure_ascii=False, indent=2)}
+  </script>{head_extra}
+</head>
+<body class="page">
+  <header class="top">
+    <div class="wrap top__inner">
+      <a class="logo" href="{SITE}">d<span>.</span></a>
+      <span class="page__crumb"><a href="{SITE}">디자인 허브</a> / {crumb}</span>
+    </div>
+  </header>
+
+  <main class="wrap {main_class}">
+{body}
+  </main>
+
+  <footer class="footer">
+{footer_nav}    <div class="wrap footer__inner">
+      <span>Copyright 2026. Design Hub. all rights reserved.</span>
+      <a href="{SITE}about/">소개</a>
+      <a href="{SITE}articles/">읽을거리</a>
+      <a href="{SITE}privacy/">개인정보처리방침</a>
+      <a href="mailto:{CONTACT}">CONTACT : {CONTACT}</a>
+    </div>
+  </footer>
+</body>
+</html>
+"""

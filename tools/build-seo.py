@@ -13,8 +13,11 @@ data.js 를 읽어 검색엔진용 파일을 다시 만듭니다.
 """
 import json, re, html, datetime, pathlib
 
+import articles as A
+
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SITE = "https://designrefs.com/"
+posts = A.load()          # content/articles/*.md
 
 src = (ROOT / "js" / "data.js").read_text(encoding="utf-8")
 
@@ -55,11 +58,14 @@ today = datetime.date.today().isoformat()
 PAGE_SLUGS = ["ui-ux", "graphic", "color", "font", "assets", "dev", "tools",
               "freelance", "jobs", "ai", "community", "creators",
               "styles", "trends", "glossary", "about", "privacy"]
-urls = [(SITE, "1.0")] + [(SITE + s + "/", "0.8") for s in PAGE_SLUGS]
+urls = [(SITE, "1.0", today)] + [(SITE + s + "/", "0.8", today) for s in PAGE_SLUGS]
+urls.append((SITE + "articles/", "0.8", posts[0]["date"] if posts else today))
+# 글은 고칠 때마다 날짜가 바뀌므로 각 글의 작성일을 lastmod 로 넣습니다
+urls += [(f'{SITE}articles/{x["slug"]}/', "0.7", x["date"]) for x in posts]
 body = "\n".join(
-    f"  <url>\n    <loc>{u}</loc>\n    <lastmod>{today}</lastmod>\n"
+    f"  <url>\n    <loc>{u}</loc>\n    <lastmod>{lm}</lastmod>\n"
     f"    <changefreq>weekly</changefreq>\n    <priority>{pr}</priority>\n  </url>"
-    for u, pr in urls
+    for u, pr, lm in urls
 )
 sitemap = ('<?xml version="1.0" encoding="UTF-8"?>\n'
            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
@@ -79,6 +85,13 @@ jsonld = {
             "description": f"디자이너를 위한 레퍼런스 사이트 {len(sites)}개를 카테고리별로 모은 주소록. "
                            f"디자인 스타일 사전 {len(styles)}개, 2026 트렌드, 용어 사전 {len(terms)}개 제공.",
             "inLanguage": "ko",
+            "hasPart": {
+                "@type": "Blog",
+                "@id": SITE + "articles/#blog",
+                "url": SITE + "articles/",
+                "name": "디자인 허브 읽을거리",
+                "description": "디자인·AI 디자인·커뮤니티에 대해 운영자가 직접 쓴 글",
+            },
         },
         {
             "@type": "CollectionPage",
@@ -137,6 +150,13 @@ parts.append("      <p>" + ", ".join(e(x["name"]) for x in trends) + ".</p>")
 parts.append(f'      <h3><a href="{SITE}glossary/">디자인 용어 사전</a> ({len(terms)})</h3>')
 parts.append("      <p>" + " · ".join(
     f'{e(g["label"])} {sum(1 for t in terms if t.get("group") == g["id"])}개' for g in gloss_groups) + ".</p>")
+if posts:
+    parts.append(f'      <h3><a href="{SITE}articles/">읽을거리</a> ({len(posts)})</h3>')
+    parts.append(f'      <p>디자인과 AI 디자인, 커뮤니티를 다룬 직접 쓴 글 {len(posts)}편입니다.</p>')
+    parts.append("      <ul>")
+    for x in posts:
+        parts.append(f'        <li><a href="{SITE}articles/{x["slug"]}/">{e(x["title"])}</a> — {e(x["desc"])}</li>')
+    parts.append("      </ul>")
 parts.append(f'      <p><a href="{SITE}about/">사이트 소개</a> · <a href="{SITE}llms.txt">llms.txt</a></p>')
 parts += ["    </div>", "  </noscript>"]
 noscript_html = "\n".join(parts)
@@ -169,11 +189,16 @@ for c in cats:
     n = sum(1 for x in sites if x.get("cat") == c["id"])
     if n:
         L.append(f'- [{c["label"]}]({SITE}{CAT_SLUG.get(c["id"], c["id"])}/): {md(c.get("desc"))}. {n}곳')
+if posts:
+    L += ["", "## 읽을거리 (직접 쓴 글)", ""]
+    L += [f'- [{x["title"]}]({SITE}articles/{x["slug"]}/): {md(x["desc"])} ({x["date"]}, 약 {x["min"]}분)'
+          for x in posts]
 L += ["", "## 자료", "",
       f"- [디자인 스타일 사전]({SITE}styles/): 아르누보부터 글래스모피즘까지 {len(styles)}가지 그래픽 디자인 양식. 시대, 특징, 대표 인물",
       f"- [디자인 용어 사전]({SITE}glossary/): 타이포그래피, 편집·인쇄, 컬러, UI 설계, UX 리서치, 개발 협업 용어 {len(terms)}개",
       f"- [2026 디자인 트렌드]({SITE}trends/): 올해 디자인 트렌드 키워드 {len(trends)}가지",
-      f"- [전체 내용]({SITE}llms-full.txt): 위의 모든 목록과 설명을 마크다운 한 파일로",
+      f"- [읽을거리 목록]({SITE}articles/): 디자인·AI 디자인·커뮤니티에 대해 직접 쓴 글 {len(posts)}편",
+      f"- [전체 내용]({SITE}llms-full.txt): 위의 모든 목록과 설명, 글 본문을 마크다운 한 파일로",
       "", "## Optional", "",
       f"- [사이트 소개]({SITE}about/): 운영 목적과 사이트 선정 기준",
       f"- [개인정보처리방침]({SITE}privacy/)",
@@ -216,6 +241,12 @@ for g in gloss_groups:
     F += [f'### {g["label"]}', ""]
     F += [f'- **{t["term"]}** ({t.get("en","")}): {md(t.get("desc"))}' for t in part]
     F.append("")
+if posts:
+    F += ["", "## 읽을거리 (직접 쓴 글)", ""]
+    for x in posts:
+        F += [f'### {x["title"]}', "",
+              f'출처: {SITE}articles/{x["slug"]}/ · {x["date"]} · {x.get("tag","")}', "",
+              x["text"], ""]
 (ROOT / "llms-full.txt").write_text("\n".join(F), encoding="utf-8")
 
 print(f"sitemap.xml, JSON-LD, noscript, llms.txt, llms-full.txt 갱신 완료 "

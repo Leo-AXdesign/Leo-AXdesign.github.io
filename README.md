@@ -10,14 +10,20 @@
 ├── css/style.css                 # 스타일 (라이트/다크 테마)
 ├── js/
 │   ├── data.js                   # ★ 사이트 · 스타일 · 트렌드 · 용어 데이터 (여기만 수정하면 됨)
+│   ├── articles.js               # 읽을거리 목록 (자동 생성)
 │   └── app.js                    # 검색 · 필터 · 즐겨찾기 · 테마 · 호버 미리보기
+├── content/articles/*.md         # ★ 읽을거리 글 원본 (여기서 글을 씁니다)
 ├── favicon.svg, favicon.ico      # 파비콘
 ├── og-image.png                  # 공유 미리보기 이미지 (1200×630)
 ├── robots.txt, sitemap.xml       # 검색엔진 수집용
 ├── llms.txt, llms-full.txt       # AI 검색용 안내 파일 (자동 생성)
 ├── ui-ux/, ai/, font/ ...        # 카테고리별 정적 페이지 (자동 생성, 직접 수정하지 마세요)
+├── articles/                     # 읽을거리 페이지 (자동 생성)
+├── tools/shell.py                # 정적 페이지 공통 껍데기 (head · 상단바 · 푸터)
+├── tools/articles.py             # 글 원본을 읽는 부분 (빌드 스크립트가 같이 씁니다)
 ├── tools/build-seo.py            # sitemap, JSON-LD, noscript 생성
 ├── tools/build-pages.py          # 카테고리별 정적 페이지 생성
+├── tools/build-articles.py       # 읽을거리 페이지 생성
 ├── tools/indexnow.py             # Bing·네이버 등에 변경 사항 즉시 알림
 ├── .nojekyll                     # GitHub Pages 가 Jekyll 처리를 건너뛰도록
 └── .github/workflows/deploy.yml  # main 에 push 하면 Pages 로 자동 배포
@@ -124,10 +130,35 @@ git config user.name "이름" && git config user.email "메일주소"
 사이트를 추가·수정했다면 아래 두 줄을 실행해 검색엔진용 파일과 카테고리 페이지를 다시 만든 다음 push 하세요.
 
 ```bash
-python3 tools/build-pages.py && python3 tools/build-seo.py
+python3 tools/build-pages.py && python3 tools/build-articles.py && python3 tools/build-seo.py
 ```
 
-`js/data.js` 기준으로 카테고리 페이지, `sitemap.xml`, JSON-LD, `llms.txt` 가 모두 갱신됩니다.
+`js/data.js` 와 `content/articles/` 기준으로 카테고리 페이지, 읽을거리 페이지, `sitemap.xml`, JSON-LD, `llms.txt` 가 모두 갱신됩니다. 순서가 있습니다. `build-seo.py` 를 마지막에 돌려야 새 글이 sitemap 에 들어갑니다.
+
+## 글 쓰기 (읽을거리)
+
+`content/articles/` 에 `.md` 파일을 하나 만들면 글이 한 편 늘어납니다. 맨 위 정보 칸은 이렇게 씁니다.
+
+```
+---
+slug: ai-design-tools-in-practice     # 주소가 됩니다 (/articles/<slug>/). 영문 소문자와 -
+title: AI 디자인 툴, 실무에서 갈리는 지점
+desc: 목록과 검색 결과에 그대로 보이는 한 줄 요약
+date: 2026-09-25
+order: 1                              # 같은 날짜 안에서의 순서. 작을수록 위
+tag: AI 디자인                         # 분류 이름표
+related: ai, tools                    # 글 아래에 걸어 둘 목록 페이지
+---
+```
+
+본문에서 쓸 수 있는 문법은 아래가 전부입니다. 표나 이미지는 아직 지원하지 않습니다.
+
+- `## 중간 제목`, `### 작은 제목`
+- `- 목록`, `1. 번호 목록`
+- `> 인용`
+- `**굵게**`, `[링크](https://...)`, `` `코드` ``
+
+글을 쓴 뒤 `python3 tools/build-articles.py && python3 tools/build-seo.py` 를 실행하면 글 페이지, 목록 페이지, 메인 화면의 읽을거리, sitemap, llms.txt 가 한 번에 갱신됩니다. 읽는 시간은 글자 수에서 자동으로 계산합니다(분당 600자 기준).
 
 ### 카테고리별 정적 페이지
 
@@ -139,6 +170,7 @@ python3 tools/build-pages.py && python3 tools/build-seo.py
 | `/dev/` `/tools/` `/freelance/` `/jobs/` `/ai/` | |
 | `/community/` `/creators/` | |
 | `/styles/` `/trends/` `/glossary/` | 스타일 사전 · 트렌드 · 용어 사전 |
+| `/articles/` `/articles/<slug>/` | 읽을거리 목록과 글 (BlogPosting 구조화 데이터 포함) |
 | `/about/` `/privacy/` | 소개 · 개인정보처리방침 |
 
 각 폴더는 `tools/build-pages.py` 가 만들어 냅니다. 직접 고치면 다음 실행 때 덮어쓰이니, 내용은 `js/data.js` 에서 고치세요. 주소 슬러그와 페이지 제목은 스크립트 상단의 `PAGE_META` 에서 바꿉니다.

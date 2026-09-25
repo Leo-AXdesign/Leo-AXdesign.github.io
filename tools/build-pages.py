@@ -9,11 +9,11 @@ data.js 를 읽어 카테고리별 정적 페이지를 만듭니다.
 - 메인 화면은 그대로 두고, 이 페이지들이 추가로 생깁니다.
 - 사이트를 추가한 뒤 실행하면 페이지가 다시 만들어집니다.
 """
-import json, re, html, pathlib
+import json, re, pathlib
+
+from shell import document, SITE, e
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-SITE = "https://designrefs.com/"
-e = html.escape
 
 # 카테고리 id -> (주소 슬러그, 페이지 제목, 소개 문장)
 PAGE_META = {
@@ -245,8 +245,9 @@ nav_all = "".join(
 for slug, title, intro, body, n, names, navlabel in pages:
     url = f"{SITE}{slug}/"
     PROSE_SLUGS = {sl for sl, *_ in PROSE_PAGES}
-    others = "".join(f'<a href="{SITE}{s2}/">{e(t2)}</a>'
-                     for s2, t2, *_ in pages if s2 != slug and s2 not in PROSE_SLUGS)
+    others = f'<a href="{SITE}articles/">읽을거리</a>' + "".join(
+        f'<a href="{SITE}{s2}/">{e(t2)}</a>'
+        for s2, t2, *_ in pages if s2 != slug and s2 not in PROSE_SLUGS)
     jsonld = {
         "@context": "https://schema.org",
         "@type": "CollectionPage",
@@ -295,76 +296,15 @@ for slug, title, intro, body, n, names, navlabel in pages:
            if n else '')
     nav_block = ('<nav class="page__nav">\n      <h2 class="psub">다른 목록</h2>\n'
                  f'      <div class="page__navlinks">{others}</div>\n    </nav>') if others else ''
-    doc = f"""<!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{e(title)} | 디자인 허브</title>
-  <meta name="description" content="{e(intro)}" />
-  <link rel="canonical" href="{url}" />
-  <meta name="robots" content="index, follow, max-image-preview:large" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="{e(title)} | 디자인 허브" />
-  <meta property="og:description" content="{e(intro)}" />
-  <meta property="og:url" content="{url}" />
-  <meta property="og:image" content="{SITE}og-image.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <link rel="icon" href="../favicon.ico" sizes="32x32" />
-  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
-  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
-  <link rel="stylesheet" href="../css/style.css" />
-  <!-- 구글 애드센스: 승인 신청 시 아래 주석을 풀고 ca-pub- 번호를 채우세요. -->
-  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
-
-  <!-- Google Analytics (GA4) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q7QVVHSLQ6"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){{dataLayer.push(arguments);}}
-    gtag('js', new Date());
-    gtag('config', 'G-Q7QVVHSLQ6');
-  </script>
-  <script>
-    // 메인에서 고른 테마를 그대로 따릅니다.
-    try {{
-      var t = localStorage.getItem('designhub:theme') || 'light';
-      if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
-    }} catch (e) {{}}
-  </script>
-  <script type="application/ld+json">
-{json.dumps(jsonld, ensure_ascii=False, indent=2)}
-  </script>
-</head>
-<body class="page">
-  <header class="top">
-    <div class="wrap top__inner">
-      <a class="logo" href="{SITE}">d<span>.</span></a>
-      <span class="page__crumb"><a href="{SITE}">디자인 허브</a> / {e(title)}</span>
-    </div>
-  </header>
-
-  <main class="wrap page__main">
-    <h1 class="page__title">{e(title)}</h1>
+    body_full = f"""    <h1 class="page__title">{e(title)}</h1>
     <p class="page__intro">{e(intro)}</p>
     {cta}
 
 {body}
 
-    {nav_block}
-  </main>
-
-  <footer class="footer">
-    <div class="wrap footer__inner">
-      <span>Copyright 2026. Design Hub. all rights reserved.</span>
-      <a href="{SITE}about/">소개</a>
-      <a href="{SITE}privacy/">개인정보처리방침</a>
-      <a href="mailto:nisov0924@gmail.com">CONTACT : nisov0924@gmail.com</a>
-    </div>
-  </footer>
-</body>
-</html>
-"""
+    {nav_block}"""
+    doc = document(title=title, desc=intro, url=url, body=body_full, jsonld=jsonld,
+                   crumb=e(title))
     d = ROOT / slug
     d.mkdir(exist_ok=True)
     (d / "index.html").write_text(doc, encoding="utf-8")
@@ -381,7 +321,8 @@ def _group(slugs):
 
 _cat_slugs = [pg[0] for pg in pages if pg[0] not in _prose and pg[0] not in INSIGHT]
 links = ('<div class="footer__navgroup">' + _group(_cat_slugs) + '</div>'
-         '<div class="footer__navgroup">' + _group(INSIGHT) + '</div>')
+         '<div class="footer__navgroup">'
+         + f'<a href="{SITE}articles/">읽을거리</a>' + _group(INSIGHT) + '</div>')
 pat = re.compile(r"<!-- SEO:PAGELINKS -->.*?<!-- /SEO:PAGELINKS -->", re.S)
 if pat.search(doc):
     doc = pat.sub(f'<!-- SEO:PAGELINKS -->\n      <nav class="footer__nav">{links}</nav>\n      <!-- /SEO:PAGELINKS -->', doc)

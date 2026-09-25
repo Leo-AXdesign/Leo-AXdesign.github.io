@@ -59,8 +59,12 @@
     styles:    { id: 'styles', label: '스타일 사전', desc: '유명 그래픽 디자인 양식과 흐름. 이름을 누르면 핀터레스트 레퍼런스가 열립니다.' },
     trends:    { id: 'trends', label: '2026 트렌드', desc: '트렌드 리포트와 커뮤니티에서 반복 언급되는 키워드 정리' },
     glossary:  { id: 'glossary', label: '용어 사전', desc: '디자인 · 편집/인쇄 · UI/UX 구축 시 자주 쓰는 용어' },
+    articles:  { id: 'articles', label: '읽을거리', desc: '디자인과 AI 디자인, 커뮤니티에 대해 직접 쓴 글' },
   };
-  const INSIGHT_PAGES = ['styles', 'trends', 'glossary'];
+  const INSIGHT_PAGES = ['articles', 'styles', 'trends', 'glossary'];
+  // js/articles.js 가 없어도 화면이 깨지지 않게 둡니다
+  // (const 로 선언된 전역은 window 에 붙지 않으므로 typeof 로 확인합니다)
+  const POSTS = typeof ARTICLES !== 'undefined' ? ARTICLES : [];
   const pinUrl = q => 'https://www.pinterest.com/search/pins/?q=' + encodeURIComponent(q);
   const imgUrl = q => 'https://www.google.com/search?tbm=isch&q=' + encodeURIComponent(q);
 
@@ -152,6 +156,7 @@
   }
   function visibleStyles() { return STYLES.filter(x => textMatches([x.name, x.en, x.era, x.desc, x.traits, x.people])); }
   function visibleTrends() { return TRENDS.filter(x => textMatches([x.name, x.area, x.desc])); }
+  function visibleArticles() { return POSTS.filter(x => textMatches([x.title, x.desc, x.tag])); }
   function visibleGlossary(ignoreGroup) {
     return GLOSSARY.filter(x => (ignoreGroup || !state.ggroup || x.group === state.ggroup) && textMatches([x.term, x.en, x.desc]));
   }
@@ -173,6 +178,7 @@
     html += '<div class="nav__group">카테고리</div>';
     CATEGORIES.forEach(c => { html += item(c.id, c.label, counts[c.id] || 0); });
     html += '<div class="nav__group">인사이트</div>';
+    if (POSTS.length) html += item('articles', '읽을거리', POSTS.length);
     html += item('styles', '스타일 사전', STYLES.length);
     html += item('trends', '2026 트렌드', TRENDS.length);
     html += item('glossary', '용어 사전', GLOSSARY.length);
@@ -204,6 +210,8 @@
       els.stats.innerHTML = `트렌드 키워드 <b>${shown}</b>개`;
     } else if (state.cat === 'glossary') {
       els.stats.innerHTML = `용어 <b>${shown}</b>개`;
+    } else if (state.cat === 'articles') {
+      els.stats.innerHTML = `글 <b>${shown}</b>편`;
     } else {
       els.stats.innerHTML = `<b>${escapeHtml(catById(state.cat).label)}</b> · <b>${shown}</b>개`;
     }
@@ -368,6 +376,20 @@
     return html;
   }
 
+  function renderArticleRow(x) {
+    const url = 'articles/' + x.slug + '/';
+    const d = x.date.split('-');
+    return `
+      <a class="arow" href="${url}">
+        <span class="arow__date">${d[0]}. ${d[1]}. ${d[2]}</span>
+        <span class="arow__main">
+          <span class="arow__title">${highlight(x.title, state.query)}</span>
+          <p class="arow__desc">${highlight(x.desc, state.query)}</p>
+        </span>
+        <span class="arow__tag">${escapeHtml(x.tag || '')} · ${x.min}분</span>
+      </a>`;
+  }
+
   function renderTrendSources() {
     return `
       <div class="sources">
@@ -408,6 +430,12 @@
       html = list.length
         ? renderInsightSection(PSEUDO.trends, list.map(renderTrendRow).join(''), list.length, renderTrendSources())
         : renderEmpty('검색 결과가 없습니다', `"${state.query}"에 해당하는 트렌드가 없습니다.`);
+    } else if (state.cat === 'articles') {
+      const list = visibleArticles();
+      shown = list.length;
+      html = list.length
+        ? renderInsightSection(PSEUDO.articles, list.map(renderArticleRow).join(''), list.length)
+        : renderEmpty('검색 결과가 없습니다', `"${state.query}"에 해당하는 글이 없습니다.`);
     } else if (state.cat === 'glossary') {
       const list = visibleGlossary();
       shown = list.length;
@@ -420,6 +448,9 @@
       CATEGORIES.forEach(c => { html += renderSection(c, sites.filter(s => s.cat === c.id), searching); });
       shown = sites.length;
       if (searching && !state.tag) {
+        const ar = visibleArticles();
+        html += renderInsightSection(PSEUDO.articles, ar.map(renderArticleRow).join(''), ar.length);
+        shown += ar.length;
         const st = visibleStyles(), tr = visibleTrends();
         html += renderInsightSection(PSEUDO.styles, st.map(renderStyleRow).join(''), st.length);
         html += renderInsightSection(PSEUDO.trends, tr.map(renderTrendRow).join(''), tr.length);
