@@ -36,13 +36,13 @@ npx wrangler deploy
 마지막 `deploy` 가 끝나면 주소가 찍힙니다.
 
 ```
-https://designrefs-talk.<계정이름>.workers.dev
+https://designrefs-talk.designrefs-talk.workers.dev
 ```
 
 이 주소를 `js/talk.js` 맨 위 `TALK_API` 에 `/comments` 를 붙여서 넣으세요.
 
 ```js
-const TALK_API = 'https://designrefs-talk.<계정이름>.workers.dev/comments';
+const TALK_API = 'https://designrefs-talk.designrefs-talk.workers.dev/comments';
 ```
 
 고친 뒤 커밋하고 push 하면 이야기 페이지가 살아납니다.
@@ -52,14 +52,14 @@ const TALK_API = 'https://designrefs-talk.<계정이름>.workers.dev/comments';
 지우고 싶은 글의 번호를 알아야 합니다. 목록을 보려면:
 
 ```bash
-curl "https://designrefs-talk.<계정이름>.workers.dev/comments?page=talk"
+curl "https://designrefs-talk.designrefs-talk.workers.dev/comments?page=talk"
 ```
 
 지우기:
 
 ```bash
 curl -X DELETE -H "Authorization: Bearer <ADMIN_TOKEN>" \
-  "https://designrefs-talk.<계정이름>.workers.dev/comments?id=12"
+  "https://designrefs-talk.designrefs-talk.workers.dev/comments?id=12"
 ```
 
 Cloudflare 대시보드의 D1 화면에서 표를 직접 열어 지워도 됩니다.

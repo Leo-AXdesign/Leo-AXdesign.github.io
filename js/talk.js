@@ -3,7 +3,7 @@
 
    ★ 워커를 배포한 뒤, 아래 주소를 받은 주소로 바꾸세요.
      (npx wrangler deploy 를 하면 터미널에 주소가 찍힙니다) */
-const TALK_API = 'https://designrefs-talk.여기를-바꾸세요.workers.dev/comments';
+const TALK_API = 'https://designrefs-talk.designrefs-talk.workers.dev/comments';
 
 (function () {
   'use strict';

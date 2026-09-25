@@ -1,0 +1,12 @@
+{
+  "name": "designrefs-talk",
+  "private": true,
+  "description": "디자인 허브 이야기 페이지의 댓글 서버 (Cloudflare Worker)",
+  "scripts": {
+    "test": "node test.mjs",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.39.0"
+  }
+}
