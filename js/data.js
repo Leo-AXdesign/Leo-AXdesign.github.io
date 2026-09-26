@@ -152,6 +152,7 @@ const SITES = [
   { name: 'LS Graphics', url: 'https://www.ls.graphics', desc: '고품질 목업·3D 일러스트·UI 킷.', cat: 'asset', tags: ['무료', '유료'] },
   { name: 'Shots', url: 'https://shots.so', desc: '스크린샷을 예쁜 목업으로 바로 만들어 주는 툴.', cat: 'asset', tags: ['무료'] },
   { name: 'Haikei', url: 'https://haikei.app', desc: '웨이브, 블롭 등 SVG 배경 생성기.', cat: 'asset', tags: ['무료'] },
+  { name: 'Book of Shapes', url: 'https://bookofshapes.com', desc: '격자·노이즈·아이소메트릭 등 값을 조절해 쓰는 제너레이티브 SVG 패턴 모음. 상업적 사용 가능, 출처 표기 불필요.', cat: 'asset', tags: ['무료'] },
   { name: 'Figma Community', url: 'https://www.figma.com/community', desc: 'UI 킷, 아이콘, 템플릿, 플러그인을 무료로 복제해 사용.', cat: 'asset', tags: ['무료'] },
   { name: 'Untitled UI', url: 'https://www.untitledui.com', desc: '가장 널리 쓰이는 Figma UI 킷. 무료 버전도 제공.', cat: 'asset', tags: ['무료', '유료'] },
 

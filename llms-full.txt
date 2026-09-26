@@ -1,6 +1,6 @@
 # 디자인 허브 (Design Hub) 전체 내용
 
-> 출처: https://designrefs.com/ · 사이트 373개, 스타일 34가지, 트렌드 15가지, 용어 155개
+> 출처: https://designrefs.com/ · 사이트 374개, 스타일 34가지, 트렌드 15가지, 용어 155개
 
 ## UI/UX 레퍼런스
 
@@ -159,6 +159,7 @@
 - [LS Graphics](https://www.ls.graphics): 고품질 목업·3D 일러스트·UI 킷.
 - [Shots](https://shots.so): 스크린샷을 예쁜 목업으로 바로 만들어 주는 툴.
 - [Haikei](https://haikei.app): 웨이브, 블롭 등 SVG 배경 생성기.
+- [Book of Shapes](https://bookofshapes.com): 격자·노이즈·아이소메트릭 등 값을 조절해 쓰는 제너레이티브 SVG 패턴 모음. 상업적 사용 가능, 출처 표기 불필요.
 - [Figma Community](https://www.figma.com/community): UI 킷, 아이콘, 템플릿, 플러그인을 무료로 복제해 사용.
 - [Untitled UI](https://www.untitledui.com): 가장 널리 쓰이는 Figma UI 킷. 무료 버전도 제공.
 - [Icons8](https://icons8.com): 아이콘·일러스트·사진·3D를 스타일별로 제공하는 대형 사이트.
