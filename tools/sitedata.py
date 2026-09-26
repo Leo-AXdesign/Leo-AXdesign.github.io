@@ -13,7 +13,7 @@ SRC = (ROOT / "js" / "data.js").read_text(encoding="utf-8")
 # 카테고리 id -> 정적 페이지 주소 슬러그
 CAT_SLUG = {
     "uiux": "ui-ux", "graphic": "graphic", "color": "color", "typo": "font",
-    "asset": "assets", "dev": "dev", "tool": "tools", "freelance": "freelance",
+    "asset": "assets", "mockup": "mockups", "dev": "dev", "tool": "tools", "freelance": "freelance",
     "job": "jobs", "ai": "ai", "community": "community", "creator": "creators",
 }
 

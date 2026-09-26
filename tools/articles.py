@@ -36,7 +36,7 @@ e = html.escape
 # 본문에서 다른 목록 페이지로 연결할 때 쓰는 이름표
 RELATED_LABEL = {
     "ui-ux": "UI/UX 레퍼런스", "graphic": "그래픽·브랜딩", "color": "컬러 팔레트",
-    "font": "폰트·타이포", "assets": "아이콘·에셋", "dev": "디자인 시스템·개발",
+    "font": "폰트·타이포", "assets": "아이콘·에셋", "mockups": "목업", "dev": "디자인 시스템·개발",
     "tools": "디자인 툴", "freelance": "외주·프리랜서", "jobs": "디자이너 채용",
     "ai": "AI 디자인 툴", "community": "커뮤니티·매거진", "creators": "유튜버·크리에이터",
     "styles": "스타일 사전", "trends": "2026 트렌드", "glossary": "용어 사전",

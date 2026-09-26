@@ -35,7 +35,7 @@ today = datetime.date.today().isoformat()
 
 # ---------- sitemap.xml ----------
 # 해시(#) 주소는 검색엔진이 별도 페이지로 보지 않으므로, 실제 파일이 있는 주소만 넣습니다.
-PAGE_SLUGS = ["ui-ux", "graphic", "color", "font", "assets", "dev", "tools",
+PAGE_SLUGS = ["ui-ux", "graphic", "color", "font", "assets", "mockups", "dev", "tools",
               "freelance", "jobs", "ai", "community", "creators",
               "styles", "trends", "glossary", "talk", "about", "privacy"]
 urls = [(SITE, "1.0", today)] + [(SITE + s + "/", "0.8", today) for s in PAGE_SLUGS]

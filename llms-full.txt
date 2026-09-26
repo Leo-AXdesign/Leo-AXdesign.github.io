@@ -1,6 +1,6 @@
 # 디자인 허브 (Design Hub) 전체 내용
 
-> 출처: https://designrefs.com/ · 사이트 376개, 스타일 34가지, 트렌드 15가지, 용어 155개
+> 출처: https://designrefs.com/ · 사이트 393개, 스타일 34가지, 트렌드 15가지, 용어 155개
 
 ## UI/UX 레퍼런스
 
@@ -133,7 +133,7 @@
 
 ## 아이콘 / 에셋
 
-아이콘, 일러스트, 목업, 사진, 영상 소스.
+아이콘, 일러스트, 사진, 영상 소스.
 
 - [Lucide](https://lucide.dev): 깔끔하고 일관된 오픈소스 아이콘 세트. React 등 패키지 제공.
 - [Heroicons](https://heroicons.com): Tailwind 팀이 만든 SVG 아이콘.
@@ -157,9 +157,6 @@
 - [Freepik](https://www.freepik.com): 벡터·사진·PSD·목업 종합 소스 사이트.
 - [Mixkit](https://mixkit.co): 무료 영상 클립·음악·효과음.
 - [Coverr](https://coverr.co): 웹 배경용 무료 영상 소스.
-- [Mockup World](https://www.mockupworld.co): 무료 PSD 목업 모음.
-- [LS Graphics](https://www.ls.graphics): 고품질 목업·3D 일러스트·UI 킷.
-- [Shots](https://shots.so): 스크린샷을 예쁜 목업으로 바로 만들어 주는 툴.
 - [Haikei](https://haikei.app): 웨이브, 블롭 등 SVG 배경 생성기.
 - [Book of Shapes](https://bookofshapes.com): 격자·노이즈·아이소메트릭 등 값을 조절해 쓰는 제너레이티브 SVG 패턴 모음. 상업적 사용 가능, 출처 표기 불필요.
 - [Figma Community](https://www.figma.com/community): UI 킷, 아이콘, 템플릿, 플러그인을 무료로 복제해 사용.
@@ -170,6 +167,30 @@
 - [Creative Market](https://creativemarket.com): 폰트·그래픽·템플릿·목업을 개별 구매하는 마켓.
 - [Envato Elements](https://elements.envato.com): 구독 하나로 템플릿·폰트·영상·음악을 무제한 사용.
 - [Craftwork](https://craftwork.design): 일러스트·UI 킷·3D 에셋 번들.
+
+## 목업
+
+기기·인쇄물·패키지·의류 목업, 목업 생성기.
+
+- [Mockup World](https://www.mockupworld.co): 무료 PSD 목업 모음.
+- [LS Graphics](https://www.ls.graphics): 고품질 목업·3D 일러스트·UI 킷.
+- [Shots](https://shots.so): 스크린샷을 예쁜 목업으로 바로 만들어 주는 툴.
+- [ContentCore](https://contentcore.xyz): 3D 기기 목업과 모션 템플릿을 브라우저에서 만들어 이미지·영상(MP4)으로 뽑는 툴.
+- [Placeit](https://placeit.net): 기기·의류·인쇄물 목업을 브라우저에서 바로 합성하는 엔바토의 목업 생성기. 로고·영상 템플릿도 있습니다.
+- [Mockuuups Studio](https://mockuuups.studio): 스크린샷을 끌어 놓으면 5,200여 개 장면 목업에 바로 입혀 주는 생성기.
+- [Artboard Studio](https://artboard.studio): 브라우저에서 목업을 편집하고 움직이는 장면까지 만드는 온라인 목업 에디터.
+- [Rotato](https://rotato.app): 3D 기기 목업을 돌리고 움직여 영상으로 뽑는 맥 앱.
+- [Previewed](https://previewed.app): 앱 스크린샷으로 3D 목업과 앱스토어용 이미지를 만드는 생성기.
+- [Device Frames](https://deviceframes.com): 기기 프레임을 3D로 돌려 목업 이미지를 만드는 생성기.
+- [Angle](https://angle.sh): 피그마·스케치·XD에서 쓰는 기기 목업 7,600여 개 모음.
+- [Mockey](https://mockey.ai): 템플릿 3만여 개로 목업을 만드는 AI 목업 생성기.
+- [Yellow Images](https://yellowimages.com): 패키지·제품 오브젝트 목업이 특히 많은 목업 마켓.
+- [Mockup Mark](https://mockupmark.com): 티셔츠·후드 같은 의류 목업을 사진 합성으로 만드는 생성기.
+- [Mockups-Design](https://mockups-design.com): 고품질 PSD 목업을 무료로 바로 내려받는 곳.
+- [Mockupden](https://mockupden.com): 웹 곳곳의 무료·유료 목업을 찾아 모아 둔 목업 검색 사이트.
+- [Unblast](https://unblast.com): 무료 목업·폰트·아이콘을 모아 둔 리소스 사이트.
+- [Pixelbuddha](https://pixelbuddha.net): 목업·폰트·그래픽 리소스를 무료와 멤버십으로 제공.
+- [Pixeden](https://www.pixeden.com): 목업·템플릿·아이콘 리소스. 무료 자료와 멤버십(Pixeden Club).
 
 ## 디자인 개발
 
@@ -196,6 +217,7 @@
 - [CodePen](https://codepen.io): 프론트엔드 코드 스니펫 공유 플레이그라운드.
 - [GSAP](https://gsap.com): 웹 애니메이션 라이브러리의 표준.
 - [Motion](https://motion.dev): React·JS용 모던 애니메이션 라이브러리(구 Framer Motion).
+- [Shaders](https://shaders.com): 웹용 셰이더 효과를 에디터로 디자인하고 컴포넌트로 바로 가져다 쓰는 플랫폼. 제작은 무료, 실서비스 적용은 유료.
 - [Three.js](https://threejs.org): 웹 3D 라이브러리. 예제 갤러리가 인스피레이션이 됩니다.
 - [Easings.net](https://easings.net): 이징 함수 치트시트.
 - [cubic-bezier.com](https://cubic-bezier.com): CSS 베지어 이징 커브 시각 편집기.
