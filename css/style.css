@@ -33,7 +33,7 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-y: scroll; }   /* 짧은 페이지에서도 스크롤바 자리를 비워 둬 화면이 옆으로 밀리지 않게 */
 body {
   margin: 0;
   font-family: var(--font);
@@ -440,15 +440,11 @@ mark { background: none; color: inherit; text-decoration: underline; text-underl
   .footer__navgroup { gap: 7px 12px; }
 }
 
-.page .top__inner { gap: 16px; }
-.page .top__actions { margin-left: auto; }
-.page__crumb { font-size: 13px; color: var(--ink-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.page__crumb a { color: var(--ink-2); }
-.page__crumb a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
 
-.page__main { padding: 48px 0 100px; max-width: 860px; min-width: 0; }
+.page__main { min-width: 0; }
 .page__title { font-size: clamp(28px, 4vw, 44px); font-weight: 800; letter-spacing: -0.04em; line-height: 1.1; margin: 0 0 16px; }
-.page__intro { margin: 0 0 10px; font-size: 16px; color: var(--ink-2); line-height: 1.65; }
+.page__intro { margin: 14px 0 0; font-size: 13.5px; color: var(--ink-2); line-height: 1.6; }
+.art .page__intro { margin: 0 0 10px; font-size: 16px; line-height: 1.65; }
 .page__cta { margin: 0 0 8px; font-size: 14px; }
 .page__cta a { font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }
 
@@ -547,7 +543,9 @@ body.drawer-open { overflow: hidden; }
 .ptext-list a { color: var(--ink); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
 
 /* 읽을거리(글) */
-.page__main--art { max-width: 720px; }
+.art { max-width: 720px; }
+.art { padding-top: 16px; }
+.page__main--art .section { margin-top: 24px; }
 .art__kicker { margin: 0 0 12px; font-size: 12.5px; color: var(--ink-3); }
 .art__kicker a { color: var(--ink-2); }
 .art__kicker a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
@@ -628,7 +626,6 @@ body.drawer-open { overflow: hidden; }
   background: var(--ink); color: var(--bg);
 }
 .talk__send:disabled { opacity: 0.45; cursor: default; }
-.talk__count { margin: 8px 0 0; font-size: 12.5px; color: var(--ink-3); }
 .talk__list { margin-top: 4px; }
 .talk__item { padding: 18px 0; border-bottom: 1px solid var(--line); }
 .talk__meta { display: flex; align-items: baseline; gap: 10px; margin: 0 0 6px; }

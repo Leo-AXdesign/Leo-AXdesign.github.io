@@ -13,6 +13,22 @@ CONTACT = "nisov0924@gmail.com"
 e = html.escape
 
 
+SEARCH_ICON = ('<svg class="search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
+               'stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'
+               '<circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>')
+UP_ICON = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" '
+           'stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>')
+
+
+def section_head(title, count=None, desc="", level=1):
+    """메인 화면의 섹션 머리(제목 · 개수 · 오른쪽 설명 · 검은 줄)와 같은 모양."""
+    num = f'\n        <span class="section__count" data-count>{count}</span>' if count is not None else ""
+    d = f'\n        <p class="section__desc">{e(desc)}</p>' if desc else ""
+    return (f'      <header class="section__head">\n'
+            f'        <h{level} class="section__title">{e(title)}</h{level}>{num}{d}\n'
+            f'      </header>')
+
+
 MENU_ICON = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" '
              'stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>')
 # 메인 화면의 태그 필터와 같은 순서 (js/app.js 의 TAG_FILTERS)
@@ -44,7 +60,7 @@ CLOSE_ICON = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke
               'stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>')
 
 
-def document(*, title, desc, url, body, jsonld, crumb, og_type="website",
+def document(*, title, desc, url, body, jsonld, og_type="website",
              head_extra="", main_class="page__main", footer_nav="", menu=""):
     """페이지 하나의 HTML 전체를 돌려줍니다.
 
@@ -53,17 +69,15 @@ def document(*, title, desc, url, body, jsonld, crumb, og_type="website",
     url        : canonical 주소 (끝에 / 포함)
     body       : <main> 안에 들어갈 HTML
     jsonld     : 구조화 데이터 dict
-    crumb      : 상단바에 보이는 현재 위치 문구 (HTML 허용)
     footer_nav : 푸터 위에 붙일 링크 묶음 HTML
     menu       : 메뉴 항목 HTML (tools/nav.py 의 menu()). 넓은 화면에서는 왼쪽에,
                  좁은 화면에서는 햄버거 버튼을 누르면 서랍으로 나옵니다. 비우면 메뉴 없이 나옵니다.
     """
     menu_btn = drawer = aside = ""
     if menu:
-        menu_btn = ('<div class="top__actions">\n'
-                    '        <button id="menu-open" class="top__btn top__btn--menu" type="button" '
+        menu_btn = ('<button id="menu-open" class="top__btn top__btn--menu" type="button" '
                     'aria-label="메뉴 열기" aria-expanded="false" aria-controls="drawer">'
-                    + MENU_ICON + '</button>\n      </div>')
+                    + MENU_ICON + '</button>')
         drawer = ('\n  <!-- 모바일 전체 메뉴 -->\n'
                   '  <div class="drawer" id="drawer" hidden>\n'
                   '    <div class="drawer__backdrop" id="drawer-backdrop"></div>\n'
@@ -127,14 +141,26 @@ def document(*, title, desc, url, body, jsonld, crumb, og_type="website",
   <header class="top">
     <div class="wrap top__inner">
       <a class="logo" href="{SITE}">d<span>.</span></a>
-      <span class="page__crumb"><a href="{SITE}">디자인 허브</a> / {crumb}</span>
-      {menu_btn}
+
+      <!-- 검색어를 넣고 엔터를 치면 메인 화면에서 검색 결과가 열립니다 (?q=) -->
+      <form class="search" action="{SITE}" method="get" role="search">
+        {SEARCH_ICON}
+        <input id="search" class="search__input" type="search" name="q" placeholder="사이트 검색" autocomplete="off" />
+        <kbd class="search__kbd">/</kbd>
+      </form>
+
+      <div class="top__actions">
+        <button id="theme-toggle" class="top__btn" type="button" aria-label="테마 전환" title="라이트 / 다크 전환">
+          <span class="dot"></span>
+        </button>
+        {menu_btn}
+      </div>
     </div>
   </header>
 {drawer}
   <div class="wrap layout">
 {aside}
-    <main class="{main_class}">
+    <main class="main {main_class}">
 {body}
     </main>
   </div>
@@ -147,8 +173,11 @@ def document(*, title, desc, url, body, jsonld, crumb, og_type="website",
       <a href="{SITE}talk/">디자인 잡담</a>
       <a href="{SITE}privacy/">개인정보처리방침</a>
       <a href="mailto:{CONTACT}">CONTACT : {CONTACT}</a>
+      <a href="#" id="footer-top">맨 위로 ↑</a>
     </div>
   </footer>
+
+  <button id="to-top" class="to-top" type="button" aria-label="맨 위로">{UP_ICON}</button>
   <script src="{SITE}js/page.js" defer></script>
 </body>
 </html>

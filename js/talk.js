@@ -71,11 +71,13 @@ const TALK_API = 'https://designrefs-talk.designrefs-talk.workers.dev/comments';
   function draw(items) {
     const box = document.getElementById('talk-list');
     if (!box) return;
+    const count = document.querySelector('.section__head [data-count]');
+    if (count) count.textContent = items.length;
     if (!items.length) {
       box.innerHTML = '<p class="talk__empty">아직 글이 없습니다. 아래에서 처음으로 남겨 보세요.</p>';
       return;
     }
-    box.innerHTML = `<p class="talk__count">글 ${items.length}개</p>` + items.map(x => `
+    box.innerHTML = items.map(x => `
       <article class="talk__item" data-id="${x.id}">
         <p class="talk__meta"><b>${esc(x.name)}</b><span>${when(x.at)}</span>
           <button class="talk__del" type="button" data-del="${x.id}">지우기</button></p>

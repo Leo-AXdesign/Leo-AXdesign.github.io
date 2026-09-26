@@ -100,8 +100,18 @@
   <header class="top">
     <div class="wrap top__inner">
       <a class="logo" href="https://designrefs.com/">d<span>.</span></a>
-      <span class="page__crumb"><a href="https://designrefs.com/">디자인 허브</a> / <a href="https://designrefs.com/articles/">읽을거리</a> / AI로 만든 이미지, 클라이언트 작업에 써도 될까</span>
+
+      <!-- 검색어를 넣고 엔터를 치면 메인 화면에서 검색 결과가 열립니다 (?q=) -->
+      <form class="search" action="https://designrefs.com/" method="get" role="search">
+        <svg class="search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+        <input id="search" class="search__input" type="search" name="q" placeholder="사이트 검색" autocomplete="off" />
+        <kbd class="search__kbd">/</kbd>
+      </form>
+
       <div class="top__actions">
+        <button id="theme-toggle" class="top__btn" type="button" aria-label="테마 전환" title="라이트 / 다크 전환">
+          <span class="dot"></span>
+        </button>
         <button id="menu-open" class="top__btn top__btn--menu" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="drawer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
       </div>
     </div>
@@ -116,7 +126,7 @@
         <button id="menu-close" class="drawer__close" type="button" aria-label="메뉴 닫기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
       </header>
       <div class="drawer__body">
-        <nav class="nav" aria-label="메뉴"><a class="nav__item" href="https://designrefs.com/"><span class="nav__label">전체</span><span class="nav__count">371</span></a><a class="nav__item" href="https://designrefs.com/#bookmarks"><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="m12 2.5 2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8Z"/></svg><span class="nav__label">즐겨찾기</span><span class="nav__count" data-bm-count>0</span></a><a class="nav__item" href="https://designrefs.com/talk/"><span class="nav__label">디자인 잡담</span></a><hr class="nav__sep" /><a class="nav__item" href="https://designrefs.com/ui-ux/"><span class="nav__label">UI/UX 레퍼런스</span><span class="nav__count">39</span></a><a class="nav__item" href="https://designrefs.com/graphic/"><span class="nav__label">그래픽 / 브랜딩</span><span class="nav__count">21</span></a><a class="nav__item" href="https://designrefs.com/color/"><span class="nav__label">컬러 가이드</span><span class="nav__count">23</span></a><a class="nav__item" href="https://designrefs.com/font/"><span class="nav__label">타이포 / 폰트</span><span class="nav__count">23</span></a><a class="nav__item" href="https://designrefs.com/assets/"><span class="nav__label">아이콘 / 에셋</span><span class="nav__count">34</span></a><a class="nav__item" href="https://designrefs.com/dev/"><span class="nav__label">디자인 개발</span><span class="nav__count">33</span></a><a class="nav__item" href="https://designrefs.com/tools/"><span class="nav__label">디자인 툴</span><span class="nav__count">29</span></a><a class="nav__item" href="https://designrefs.com/freelance/"><span class="nav__label">외주 / 프리랜서</span><span class="nav__count">13</span></a><a class="nav__item" href="https://designrefs.com/jobs/"><span class="nav__label">채용공고</span><span class="nav__count">19</span></a><a class="nav__item" href="https://designrefs.com/ai/"><span class="nav__label">AI</span><span class="nav__count">61</span></a><a class="nav__item" href="https://designrefs.com/community/"><span class="nav__label">커뮤니티 / 매거진</span><span class="nav__count">29</span></a><a class="nav__item" href="https://designrefs.com/creators/"><span class="nav__label">크리에이터 / 채널</span><span class="nav__count">47</span></a><hr class="nav__sep" /><a class="nav__item is-active" href="https://designrefs.com/articles/"><span class="nav__label">읽을거리</span><span class="nav__count">5</span></a><a class="nav__item" href="https://designrefs.com/styles/"><span class="nav__label">스타일 사전</span><span class="nav__count">34</span></a><a class="nav__item" href="https://designrefs.com/trends/"><span class="nav__label">2026 트렌드</span><span class="nav__count">15</span></a><a class="nav__item" href="https://designrefs.com/glossary/"><span class="nav__label">용어 사전</span><span class="nav__count">155</span></a></nav>
+        <nav class="nav" aria-label="메뉴"><a class="nav__item" href="https://designrefs.com/"><span class="nav__label">전체</span><span class="nav__count">371</span></a><a class="nav__item" href="https://designrefs.com/#bookmarks"><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="m12 2.5 2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8Z"/></svg><span class="nav__label">즐겨찾기</span><span class="nav__count" data-bm-count>0</span></a><a class="nav__item" href="https://designrefs.com/talk/"><span class="nav__label">디자인 잡담</span></a><hr class="nav__sep" /><a class="nav__item" href="https://designrefs.com/#uiux"><span class="nav__label">UI/UX 레퍼런스</span><span class="nav__count">39</span></a><a class="nav__item" href="https://designrefs.com/#graphic"><span class="nav__label">그래픽 / 브랜딩</span><span class="nav__count">21</span></a><a class="nav__item" href="https://designrefs.com/#color"><span class="nav__label">컬러 가이드</span><span class="nav__count">23</span></a><a class="nav__item" href="https://designrefs.com/#typo"><span class="nav__label">타이포 / 폰트</span><span class="nav__count">23</span></a><a class="nav__item" href="https://designrefs.com/#asset"><span class="nav__label">아이콘 / 에셋</span><span class="nav__count">34</span></a><a class="nav__item" href="https://designrefs.com/#dev"><span class="nav__label">디자인 개발</span><span class="nav__count">33</span></a><a class="nav__item" href="https://designrefs.com/#tool"><span class="nav__label">디자인 툴</span><span class="nav__count">29</span></a><a class="nav__item" href="https://designrefs.com/#freelance"><span class="nav__label">외주 / 프리랜서</span><span class="nav__count">13</span></a><a class="nav__item" href="https://designrefs.com/#job"><span class="nav__label">채용공고</span><span class="nav__count">19</span></a><a class="nav__item" href="https://designrefs.com/#ai"><span class="nav__label">AI</span><span class="nav__count">61</span></a><a class="nav__item" href="https://designrefs.com/#community"><span class="nav__label">커뮤니티 / 매거진</span><span class="nav__count">29</span></a><a class="nav__item" href="https://designrefs.com/#creator"><span class="nav__label">크리에이터 / 채널</span><span class="nav__count">47</span></a><hr class="nav__sep" /><a class="nav__item is-active" href="https://designrefs.com/#articles"><span class="nav__label">읽을거리</span><span class="nav__count">5</span></a><a class="nav__item" href="https://designrefs.com/#styles"><span class="nav__label">스타일 사전</span><span class="nav__count">34</span></a><a class="nav__item" href="https://designrefs.com/#trends"><span class="nav__label">2026 트렌드</span><span class="nav__count">15</span></a><a class="nav__item" href="https://designrefs.com/#glossary"><span class="nav__label">용어 사전</span><span class="nav__count">155</span></a></nav>
         <div class="drawer__section">
           <p class="nav__group">태그 필터</p>
           <div class="pills pills--tags"><a class="pill is-active" href="https://designrefs.com/">전체</a><a class="pill" href="https://designrefs.com/?tag=%ED%95%9C%EA%B5%AD">한국</a><a class="pill" href="https://designrefs.com/?tag=%EB%AC%B4%EB%A3%8C">무료</a><a class="pill" href="https://designrefs.com/?tag=%EC%9C%A0%EB%A3%8C">유료</a><a class="pill" href="https://designrefs.com/?tag=AI">AI</a></div>
@@ -135,9 +145,9 @@
 
   <div class="wrap layout">
     <aside class="sidebar">
-      <nav class="nav" aria-label="메뉴"><a class="nav__item" href="https://designrefs.com/"><span class="nav__label">전체</span><span class="nav__count">371</span></a><a class="nav__item" href="https://designrefs.com/#bookmarks"><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="m12 2.5 2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8Z"/></svg><span class="nav__label">즐겨찾기</span><span class="nav__count" data-bm-count>0</span></a><a class="nav__item" href="https://designrefs.com/talk/"><span class="nav__label">디자인 잡담</span></a><hr class="nav__sep" /><a class="nav__item" href="https://designrefs.com/ui-ux/"><span class="nav__label">UI/UX 레퍼런스</span><span class="nav__count">39</span></a><a class="nav__item" href="https://designrefs.com/graphic/"><span class="nav__label">그래픽 / 브랜딩</span><span class="nav__count">21</span></a><a class="nav__item" href="https://designrefs.com/color/"><span class="nav__label">컬러 가이드</span><span class="nav__count">23</span></a><a class="nav__item" href="https://designrefs.com/font/"><span class="nav__label">타이포 / 폰트</span><span class="nav__count">23</span></a><a class="nav__item" href="https://designrefs.com/assets/"><span class="nav__label">아이콘 / 에셋</span><span class="nav__count">34</span></a><a class="nav__item" href="https://designrefs.com/dev/"><span class="nav__label">디자인 개발</span><span class="nav__count">33</span></a><a class="nav__item" href="https://designrefs.com/tools/"><span class="nav__label">디자인 툴</span><span class="nav__count">29</span></a><a class="nav__item" href="https://designrefs.com/freelance/"><span class="nav__label">외주 / 프리랜서</span><span class="nav__count">13</span></a><a class="nav__item" href="https://designrefs.com/jobs/"><span class="nav__label">채용공고</span><span class="nav__count">19</span></a><a class="nav__item" href="https://designrefs.com/ai/"><span class="nav__label">AI</span><span class="nav__count">61</span></a><a class="nav__item" href="https://designrefs.com/community/"><span class="nav__label">커뮤니티 / 매거진</span><span class="nav__count">29</span></a><a class="nav__item" href="https://designrefs.com/creators/"><span class="nav__label">크리에이터 / 채널</span><span class="nav__count">47</span></a><hr class="nav__sep" /><a class="nav__item is-active" href="https://designrefs.com/articles/"><span class="nav__label">읽을거리</span><span class="nav__count">5</span></a><a class="nav__item" href="https://designrefs.com/styles/"><span class="nav__label">스타일 사전</span><span class="nav__count">34</span></a><a class="nav__item" href="https://designrefs.com/trends/"><span class="nav__label">2026 트렌드</span><span class="nav__count">15</span></a><a class="nav__item" href="https://designrefs.com/glossary/"><span class="nav__label">용어 사전</span><span class="nav__count">155</span></a></nav>
+      <nav class="nav" aria-label="메뉴"><a class="nav__item" href="https://designrefs.com/"><span class="nav__label">전체</span><span class="nav__count">371</span></a><a class="nav__item" href="https://designrefs.com/#bookmarks"><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="m12 2.5 2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8Z"/></svg><span class="nav__label">즐겨찾기</span><span class="nav__count" data-bm-count>0</span></a><a class="nav__item" href="https://designrefs.com/talk/"><span class="nav__label">디자인 잡담</span></a><hr class="nav__sep" /><a class="nav__item" href="https://designrefs.com/#uiux"><span class="nav__label">UI/UX 레퍼런스</span><span class="nav__count">39</span></a><a class="nav__item" href="https://designrefs.com/#graphic"><span class="nav__label">그래픽 / 브랜딩</span><span class="nav__count">21</span></a><a class="nav__item" href="https://designrefs.com/#color"><span class="nav__label">컬러 가이드</span><span class="nav__count">23</span></a><a class="nav__item" href="https://designrefs.com/#typo"><span class="nav__label">타이포 / 폰트</span><span class="nav__count">23</span></a><a class="nav__item" href="https://designrefs.com/#asset"><span class="nav__label">아이콘 / 에셋</span><span class="nav__count">34</span></a><a class="nav__item" href="https://designrefs.com/#dev"><span class="nav__label">디자인 개발</span><span class="nav__count">33</span></a><a class="nav__item" href="https://designrefs.com/#tool"><span class="nav__label">디자인 툴</span><span class="nav__count">29</span></a><a class="nav__item" href="https://designrefs.com/#freelance"><span class="nav__label">외주 / 프리랜서</span><span class="nav__count">13</span></a><a class="nav__item" href="https://designrefs.com/#job"><span class="nav__label">채용공고</span><span class="nav__count">19</span></a><a class="nav__item" href="https://designrefs.com/#ai"><span class="nav__label">AI</span><span class="nav__count">61</span></a><a class="nav__item" href="https://designrefs.com/#community"><span class="nav__label">커뮤니티 / 매거진</span><span class="nav__count">29</span></a><a class="nav__item" href="https://designrefs.com/#creator"><span class="nav__label">크리에이터 / 채널</span><span class="nav__count">47</span></a><hr class="nav__sep" /><a class="nav__item is-active" href="https://designrefs.com/#articles"><span class="nav__label">읽을거리</span><span class="nav__count">5</span></a><a class="nav__item" href="https://designrefs.com/#styles"><span class="nav__label">스타일 사전</span><span class="nav__count">34</span></a><a class="nav__item" href="https://designrefs.com/#trends"><span class="nav__label">2026 트렌드</span><span class="nav__count">15</span></a><a class="nav__item" href="https://designrefs.com/#glossary"><span class="nav__label">용어 사전</span><span class="nav__count">155</span></a></nav>
     </aside>
-    <main class="page__main page__main--art">
+    <main class="main page__main page__main--art">
     <article class="art">
       <p class="art__kicker"><a href="https://designrefs.com/articles/">읽을거리</a> · AI 디자인</p>
       <h1 class="page__title">AI로 만든 이미지, 클라이언트 작업에 써도 될까</h1>
@@ -180,24 +190,55 @@
 
     <nav class="page__nav">
       <h2 class="psub">이어서 볼 목록</h2>
-      <div class="page__navlinks"><a href="https://designrefs.com/ai/">AI 디자인 툴</a><a href="https://designrefs.com/freelance/">외주·프리랜서</a></div>
+      <div class="page__navlinks"><a href="https://designrefs.com/#ai">AI 디자인 툴</a><a href="https://designrefs.com/#freelance">외주·프리랜서</a></div>
     </nav>
 
-    <nav class="page__nav">
-      <h2 class="psub">다른 글</h2>
-      <ul class="plist">
-        <li class="plist__item"><a class="plist__name" href="https://designrefs.com/articles/ai-design-tools-in-practice/">AI가 시안을 서른 장 뽑아 줘도 일이 줄지 않는 이유</a><span class="plist__host">AI 디자인</span><p class="plist__desc">탐색과 양산은 AI에게, 방향과 검수는 사람에게. 한동안 써 보고 나서야 보인 경계에 대하여.</p></li>
-        <li class="plist__item"><a class="plist__name" href="https://designrefs.com/articles/describing-design-style/">‘느낌 있게’를 말로 옮기는 일</a><span class="plist__host">디자인</span><p class="plist__desc">클라이언트에게도, 프롬프트 창에도 결국 말로 설명해야 한다. 스타일을 여섯 겹으로 쪼개서 말하는 방법.</p></li>
-        <li class="plist__item"><a class="plist__name" href="https://designrefs.com/articles/how-to-collect-references/">저장만 하고 다시 열지 않는 레퍼런스들</a><span class="plist__host">디자인</span><p class="plist__desc">보드는 스무 개가 넘는데 작업할 땐 처음부터 다시 검색한다. 꺼내 쓸 수 있게 모으는 법.</p></li>
-        <li class="plist__item"><a class="plist__name" href="https://designrefs.com/articles/korean-design-community-map/">디자이너는 어디서 이야기를 나눌까</a><span class="plist__host">커뮤니티</span><p class="plist__desc">읽고 싶을 때, 만든 걸 보여 주고 싶을 때, 급하게 묻고 싶을 때. 국내 디자인 커뮤니티를 쓰임새대로 나눠 봤다.</p></li>
-      </ul>
-    </nav>
+    <section class="section">
+      <header class="section__head">
+        <h2 class="section__title">다른 글</h2>
+        <span class="section__count" data-count>4</span>
+      </header>
+      <div class="list list--insight">
+        <a class="arow" href="https://designrefs.com/articles/ai-design-tools-in-practice/">
+          <span class="arow__date">2026. 09. 25</span>
+          <span class="arow__main">
+            <span class="arow__title">AI가 시안을 서른 장 뽑아 줘도 일이 줄지 않는 이유</span>
+            <p class="arow__desc">탐색과 양산은 AI에게, 방향과 검수는 사람에게. 한동안 써 보고 나서야 보인 경계에 대하여.</p>
+          </span>
+          <span class="arow__tag">AI 디자인 · 3분</span>
+        </a>
+        <a class="arow" href="https://designrefs.com/articles/describing-design-style/">
+          <span class="arow__date">2026. 09. 25</span>
+          <span class="arow__main">
+            <span class="arow__title">‘느낌 있게’를 말로 옮기는 일</span>
+            <p class="arow__desc">클라이언트에게도, 프롬프트 창에도 결국 말로 설명해야 한다. 스타일을 여섯 겹으로 쪼개서 말하는 방법.</p>
+          </span>
+          <span class="arow__tag">디자인 · 3분</span>
+        </a>
+        <a class="arow" href="https://designrefs.com/articles/how-to-collect-references/">
+          <span class="arow__date">2026. 09. 25</span>
+          <span class="arow__main">
+            <span class="arow__title">저장만 하고 다시 열지 않는 레퍼런스들</span>
+            <p class="arow__desc">보드는 스무 개가 넘는데 작업할 땐 처음부터 다시 검색한다. 꺼내 쓸 수 있게 모으는 법.</p>
+          </span>
+          <span class="arow__tag">디자인 · 2분</span>
+        </a>
+        <a class="arow" href="https://designrefs.com/articles/korean-design-community-map/">
+          <span class="arow__date">2026. 09. 25</span>
+          <span class="arow__main">
+            <span class="arow__title">디자이너는 어디서 이야기를 나눌까</span>
+            <p class="arow__desc">읽고 싶을 때, 만든 걸 보여 주고 싶을 때, 급하게 묻고 싶을 때. 국내 디자인 커뮤니티를 쓰임새대로 나눠 봤다.</p>
+          </span>
+          <span class="arow__tag">커뮤니티 · 2분</span>
+        </a>
+      </div>
+    </section>
     </main>
   </div>
 
   <footer class="footer">
     <div class="wrap">
-      <nav class="footer__nav"><div class="footer__navgroup"><a href="https://designrefs.com/articles/ai-design-tools-in-practice/">AI가 시안을 서른 장 뽑아 줘도 일이 줄지 않는 이유</a><a href="https://designrefs.com/articles/describing-design-style/">‘느낌 있게’를 말로 옮기는 일</a><a href="https://designrefs.com/articles/how-to-collect-references/">저장만 하고 다시 열지 않는 레퍼런스들</a><a href="https://designrefs.com/articles/korean-design-community-map/">디자이너는 어디서 이야기를 나눌까</a><a href="https://designrefs.com/articles/ai-image-commercial-use/">AI로 만든 이미지, 클라이언트 작업에 써도 될까</a></div></nav>
+      <nav class="footer__nav"><div class="footer__navgroup"><a href="https://designrefs.com/ui-ux/">UI/UX 레퍼런스</a><a href="https://designrefs.com/graphic/">그래픽 / 브랜딩</a><a href="https://designrefs.com/color/">컬러 가이드</a><a href="https://designrefs.com/font/">타이포 / 폰트</a><a href="https://designrefs.com/assets/">아이콘 / 에셋</a><a href="https://designrefs.com/dev/">디자인 개발</a><a href="https://designrefs.com/tools/">디자인 툴</a><a href="https://designrefs.com/freelance/">외주 / 프리랜서</a><a href="https://designrefs.com/jobs/">채용공고</a><a href="https://designrefs.com/ai/">AI</a><a href="https://designrefs.com/community/">커뮤니티 / 매거진</a><a href="https://designrefs.com/creators/">크리에이터 / 채널</a></div><div class="footer__navgroup"><a href="https://designrefs.com/articles/">읽을거리</a><a href="https://designrefs.com/styles/">스타일 사전</a><a href="https://designrefs.com/trends/">2026 트렌드</a><a href="https://designrefs.com/glossary/">용어 사전</a></div></nav>
     </div>
     <div class="wrap footer__inner">
       <span>Copyright 2026. Design Hub. all rights reserved.</span>
@@ -206,8 +247,11 @@
       <a href="https://designrefs.com/talk/">디자인 잡담</a>
       <a href="https://designrefs.com/privacy/">개인정보처리방침</a>
       <a href="mailto:nisov0924@gmail.com">CONTACT : nisov0924@gmail.com</a>
+      <a href="#" id="footer-top">맨 위로 ↑</a>
     </div>
   </footer>
+
+  <button id="to-top" class="to-top" type="button" aria-label="맨 위로"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg></button>
   <script src="https://designrefs.com/js/page.js" defer></script>
 </body>
 </html>

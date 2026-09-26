@@ -15,8 +15,9 @@ content/articles/*.md 로 블로그 페이지를 만듭니다.
 import json, pathlib, datetime
 
 import articles as A
-from nav import menu
-from shell import document, SITE, e
+import sitedata as D
+from nav import menu, footer_links
+from shell import document, section_head, SITE, e
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 LIST_URL = SITE + "articles/"
@@ -38,8 +39,14 @@ def crumbs(items):
     }
 
 
+# 정적 페이지 슬러그 -> 메인 화면의 화면 이름 (#uiux 처럼)
+APP_VIEW = {slug: cid for cid, slug in D.CAT_SLUG.items()}
+APP_VIEW.update({"styles": "styles", "trends": "trends", "glossary": "glossary"})
+
+
 def related_links(slugs):
-    out = [f'<a href="{SITE}{s}/">{e(A.RELATED_LABEL[s])}</a>'
+    """글 아래 '이어서 볼 목록'. 사이트 안에서 움직일 때는 메인 화면의 같은 화면으로 보냅니다."""
+    out = [f'<a href="{SITE}#{APP_VIEW.get(s, s)}">{e(A.RELATED_LABEL[s])}</a>'
            for s in slugs if s in A.RELATED_LABEL]
     if not out:
         return ""
@@ -47,32 +54,32 @@ def related_links(slugs):
             f'      <div class="page__navlinks">{"".join(out)}</div>\n    </nav>')
 
 
+def arow(x):
+    """메인 화면 '읽을거리' 목록의 한 줄과 같은 모양 (js/app.js renderArticleRow)."""
+    y, m, d = x["date"].split("-")
+    return (f'        <a class="arow" href="{SITE}articles/{x["slug"]}/">\n'
+            f'          <span class="arow__date">{y}. {m}. {d}</span>\n'
+            f'          <span class="arow__main">\n'
+            f'            <span class="arow__title">{e(x["title"])}</span>\n'
+            f'            <p class="arow__desc">{e(x["desc"])}</p>\n'
+            f'          </span>\n'
+            f'          <span class="arow__tag">{e(x.get("tag", ""))} · {x["min"]}분</span>\n'
+            f'        </a>')
+
+
 def other_articles(items, slug):
     rest = [x for x in items if x["slug"] != slug]
     if not rest:
         return ""
-    rows = "\n".join(
-        '        <li class="plist__item">'
-        f'<a class="plist__name" href="{SITE}articles/{x["slug"]}/">{e(x["title"])}</a>'
-        f'<span class="plist__host">{e(x.get("tag", ""))}</span>'
-        f'<p class="plist__desc">{e(x["desc"])}</p></li>'
-        for x in rest)
-    return ('<nav class="page__nav">\n      <h2 class="psub">다른 글</h2>\n'
-            f'      <ul class="plist">\n{rows}\n      </ul>\n    </nav>')
-
-
-def footer_nav(items):
-    """푸터 위에 붙는 글 목록. 모든 글에서 모든 글로 연결되게 둡니다."""
-    links = "".join(f'<a href="{SITE}articles/{x["slug"]}/">{e(x["title"])}</a>' for x in items)
-    return ('    <div class="wrap">\n'
-            f'      <nav class="footer__nav"><div class="footer__navgroup">{links}</div></nav>\n'
-            '    </div>\n')
+    rows = "\n".join(arow(x) for x in rest)
+    return (f'<section class="section">\n{section_head("다른 글", len(rest), level=2)}\n'
+            f'      <div class="list list--insight">\n{rows}\n      </div>\n    </section>')
 
 
 items = A.load()
 if not items:
     raise SystemExit("content/articles/ 에 글이 없습니다")
-fnav = footer_nav(items)
+fnav = footer_links()
 
 # ---------- 글 하나씩 ----------
 for x in items:
@@ -114,7 +121,6 @@ for x in items:
     {other_articles(items, x["slug"])}"""
     doc = document(title=x["title"], desc=x["desc"], url=url, body=body, jsonld=jsonld,
                    og_type="article", menu=menu("articles"),
-                   crumb=f'<a href="{LIST_URL}">읽을거리</a> / {e(x["title"])}',
                    main_class="page__main page__main--art", footer_nav=fnav)
     d = ROOT / "articles" / x["slug"]
     d.mkdir(parents=True, exist_ok=True)
@@ -124,21 +130,12 @@ for x in items:
 LIST_TITLE = "읽을거리"
 LIST_DESC = ("디자인하면서 생각한 것들을 적습니다. "
              "AI와 같이 일하는 법, 스타일을 말로 옮기는 법, 레퍼런스와 커뮤니티 이야기.")
-rows = []
-for x in items:
-    rows.append(
-        '        <li class="plist__item">'
-        f'<a class="plist__name" href="{SITE}articles/{x["slug"]}/">{e(x["title"])}</a>'
-        f'<span class="plist__host">{e(x.get("tag", ""))}</span>'
-        f'<p class="plist__desc">{e(x["desc"])}</p>'
-        f'<p class="plist__meta"><time datetime="{x["date"]}">{kdate(x["date"])}</time> · 약 {x["min"]}분</p></li>')
-list_body = f"""    <h1 class="page__title">{LIST_TITLE}</h1>
-    <p class="page__intro">{e(LIST_DESC)}</p>
-    <p class="page__cta"><a href="{SITE}">디자인 레퍼런스 사이트 목록 보기 →</a></p>
-
-      <ul class="plist">
-{chr(10).join(rows)}
-      </ul>"""
+list_body = f"""    <section class="section">
+{section_head(LIST_TITLE, len(items), "디자인하면서 생각한 것들")}
+      <div class="list list--insight">
+{chr(10).join(arow(x) for x in items)}
+      </div>
+    </section>"""
 list_jsonld = {
     "@context": "https://schema.org",
     "@graph": [
@@ -167,7 +164,7 @@ list_jsonld = {
     ],
 }
 doc = document(title=f"{LIST_TITLE} — 디자인·AI 디자인 글 {len(items)}편", desc=LIST_DESC,
-               url=LIST_URL, body=list_body, jsonld=list_jsonld, crumb=LIST_TITLE,
+               url=LIST_URL, body=list_body, jsonld=list_jsonld,
                footer_nav=fnav, menu=menu("articles"))
 (ROOT / "articles").mkdir(exist_ok=True)
 (ROOT / "articles" / "index.html").write_text(doc, encoding="utf-8")

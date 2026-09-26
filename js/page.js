@@ -3,7 +3,9 @@
 
    - 메뉴의 즐겨찾기 개수를 브라우저 저장소에서 읽어 채웁니다
    - 좁은 화면에서 햄버거 버튼으로 메뉴 서랍을 엽니다
-   - 서랍 안의 테마 전환 · 목록/격자 버튼 (메인 화면과 같은 저장소 값을 씁니다) */
+   - 상단과 서랍 안의 테마 전환 · 목록/격자 버튼 (메인 화면과 같은 저장소 값을 씁니다)
+   - 검색창 단축키(/), 맨 위로 버튼
+   검색은 폼이라 엔터를 치면 메인 화면(?q=)으로 넘어갑니다. */
 (function () {
   'use strict';
 
@@ -13,6 +15,47 @@
     const n = raw ? JSON.parse(raw).length : 0;
     document.querySelectorAll('[data-bm-count]').forEach(el => { el.textContent = n; });
   } catch (e) { /* 저장소를 못 쓰는 환경이면 0 으로 둡니다 */ }
+
+  function load(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+  function save(k, v) { try { localStorage.setItem(k, v); } catch (e) { /* 무시 */ } }
+
+  /* ---------- 테마 ---------- */
+  function toggleTheme() {
+    const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    if (next === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+    else document.documentElement.removeAttribute('data-theme');
+    save('designhub:theme', next);
+  }
+  ['theme-toggle', 'drawer-theme'].forEach(id => {
+    const b = document.getElementById(id);
+    if (b) b.addEventListener('click', toggleTheme);
+  });
+
+  /* ---------- 검색 단축키 ---------- */
+  const search = document.getElementById('search');
+  if (search) {
+    document.addEventListener('keydown', e => {
+      if (e.key === '/' && document.activeElement !== search && !e.metaKey && !e.ctrlKey) {
+        const tag = (document.activeElement || {}).tagName;
+        if (tag === 'INPUT' || tag === 'TEXTAREA') return;   // 글을 쓰는 중이면 그대로 둡니다
+        e.preventDefault();
+        search.focus();
+      }
+    });
+    search.addEventListener('keydown', e => { if (e.key === 'Escape') { search.value = ''; search.blur(); } });
+  }
+
+  /* ---------- 맨 위로 ---------- */
+  const toTop = document.getElementById('to-top');
+  const footTop = document.getElementById('footer-top');
+  const up = e => { if (e) e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); };
+  if (footTop) footTop.addEventListener('click', up);
+  if (toTop) {
+    toTop.addEventListener('click', () => up());
+    const onScroll = () => toTop.classList.toggle('is-visible', window.scrollY > 700);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
 
   /* ---------- 모바일 메뉴 ---------- */
   const drawer = document.getElementById('drawer');
@@ -41,18 +84,7 @@
     if (lastFocus && lastFocus.focus) lastFocus.focus();
   }
 
-  /* ---------- 보기: 테마 · 목록/격자 ---------- */
-  function load(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
-  function save(k, v) { try { localStorage.setItem(k, v); } catch (e) { /* 무시 */ } }
-
-  const themeBtn = document.getElementById('drawer-theme');
-  if (themeBtn) themeBtn.addEventListener('click', () => {
-    const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-    if (next === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
-    else document.documentElement.removeAttribute('data-theme');
-    save('designhub:theme', next);
-  });
-
+  /* ---------- 보기: 목록/격자 ---------- */
   // 목록/격자는 메인 화면의 보기 방식이라, 고르면 저장하고 메인으로 갑니다
   const view = load('designhub:view') === 'list' ? 'list' : 'grid';
   drawer.querySelectorAll('.drawer__opt[data-view]').forEach(b => {

@@ -12,8 +12,8 @@ data.js 를 읽어 카테고리별 정적 페이지를 만듭니다.
 import json, re, pathlib
 
 import sitedata as D
-from nav import menu
-from shell import document, SITE, e
+from nav import menu, footer_links
+from shell import document, section_head, SITE, e
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 
@@ -244,16 +244,23 @@ for slug, title, intro, body in PROSE_PAGES:
     pages.append((slug, title, intro, body, 0, [], title))
 
 # ---------- 페이지 파일 쓰기 ----------
+# 제목 오른쪽의 짧은 설명. 메인 화면에서 같은 화면을 볼 때와 똑같은 문구를 씁니다.
+SHORT_DESC = {PAGE_META[c["id"]][0]: c.get("desc", "") for c in cats if c["id"] in PAGE_META}
+SHORT_DESC.update({
+    "styles": "유명 그래픽 디자인 양식과 흐름",
+    "trends": "트렌드 리포트와 커뮤니티에서 반복 언급되는 키워드 정리",
+    "glossary": "디자인 · 편집/인쇄 · UI/UX 구축 시 자주 쓰는 용어",
+    "talk": "디자인 이야기를 편하게 나누는 공간",
+})
+FOOTER = footer_links()
+# 개수를 브라우저에서 채우는 페이지 (디자인 잡담의 글 수는 서버에서 받아 옵니다)
+COUNT_BY_JS = {"talk"}
 nav_all = "".join(
     f'<a href="{SITE}{s}/">{e(t)}</a>' for s, t, *_ in pages
 )
 
 for slug, title, intro, body, n, names, navlabel in pages:
     url = f"{SITE}{slug}/"
-    PROSE_SLUGS = {sl for sl, *_ in PROSE_PAGES}
-    others = f'<a href="{SITE}articles/">읽을거리</a>' + "".join(
-        f'<a href="{SITE}{s2}/">{e(t2)}</a>'
-        for s2, t2, *_ in pages if s2 != slug and s2 not in PROSE_SLUGS)
     jsonld = {
         "@context": "https://schema.org",
         "@type": "CollectionPage",
@@ -298,20 +305,15 @@ for slug, title, intro, body, n, names, navlabel in pages:
                 for i, nm in enumerate(names[:100])
             ],
         }
-    cta = ('<p class="page__cta"><a href="' + SITE + '">검색·필터가 되는 전체 목록 보기 →</a></p>'
-           if n else '')
-    NO_NAV = {"talk"}
-    nav_block = '' if slug in NO_NAV else ('<nav class="page__nav">\n      <h2 class="psub">다른 목록</h2>\n'
-                 f'      <div class="page__navlinks">{others}</div>\n    </nav>') if others else ''
-    body_full = f"""    <h1 class="page__title">{e(title)}</h1>
-    <p class="page__intro">{e(intro)}</p>
-    {cta}
-
-{body}
-
-    {nav_block}"""
+    # 제목 틀은 메인 화면과 같게: 제목 · 개수 · 오른쪽 짧은 설명 · 검은 줄.
+    # 목록 페이지는 검색으로 들어온 사람을 위해 긴 소개를 한 줄 더 둡니다.
+    intro_html = f'      <p class="page__intro">{e(intro)}</p>\n' if n else ""
+    body_full = f"""    <section class="section">
+{section_head(navlabel, n or ("" if slug in COUNT_BY_JS else None), SHORT_DESC.get(slug, ""))}
+{intro_html}{body}
+    </section>"""
     doc = document(title=title, desc=intro, url=url, body=body_full, jsonld=jsonld,
-                   crumb=e(title), menu=menu(slug))
+                   menu=menu(slug), footer_nav=FOOTER)
     d = ROOT / slug
     d.mkdir(exist_ok=True)
     (d / "index.html").write_text(doc, encoding="utf-8")

@@ -729,8 +729,12 @@
     if (id && catById(id)) state.cat = id;
     // 다른 페이지의 메뉴에서 태그를 골라 들어온 경우 (?tag=무료)
     try {
-      const tag = new URLSearchParams(location.search).get('tag');
+      const params = new URLSearchParams(location.search);
+      const tag = params.get('tag');
       if (tag && TAG_FILTERS.some(f => f.id === tag)) state.tag = tag;
+      // 다른 페이지의 검색창에서 엔터를 친 경우 (?q=폰트)
+      const q = (params.get('q') || '').trim();
+      if (q) { state.query = q; els.search.value = q; }
     } catch { /* 무시 */ }
   })();
   initTheme();
