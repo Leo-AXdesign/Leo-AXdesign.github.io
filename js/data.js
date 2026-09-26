@@ -386,7 +386,7 @@ const SITES = [
   { name: 'Synthesia', url: 'https://www.synthesia.io', desc: '기업용 AI 아바타 영상 제작 플랫폼.', cat: 'ai', tags: ['유료', 'AI'], sub: '영상 생성 · 편집' },
   { name: 'CapCut', url: 'https://www.capcut.com', desc: 'AI 자막·배경 제거·템플릿이 강한 영상 편집기. 모바일·데스크톱.', cat: 'ai', tags: ['무료', '유료', 'AI'], sub: '영상 생성 · 편집' },
   { name: 'Descript', url: 'https://www.descript.com', desc: '텍스트를 고치듯 영상·팟캐스트를 편집하는 AI 편집기.', cat: 'ai', tags: ['무료', '유료', 'AI'], sub: '영상 생성 · 편집' },
-  { name: 'Swishy', url: 'https://www.swishy.ai', desc: '말로 설명하면 텍스트·로고·UI 모션 그래픽을 만들어 주는 AI 모션 디자이너.', cat: 'ai', tags: ['무료', '유료', 'AI'], sub: '영상 생성 · 편집' },
+  { name: 'Swishy', url: 'https://www.swishy.ai', desc: '말로 설명하면 텍스트·로고·UI 애니메이션을 만들어 주는 AI 모션 디자이너.', cat: 'ai', tags: ['무료', '유료', 'AI'], sub: '영상 생성 · 편집' },
   { name: 'Udio', url: 'https://www.udio.com', desc: 'AI 음악 생성. Suno와 양대 산맥.', cat: 'ai', tags: ['무료', '유료', 'AI'], sub: '오디오 · 음성' },
   { name: 'Replit', url: 'https://replit.com', desc: '브라우저에서 AI 에이전트로 앱을 만들고 바로 배포.', cat: 'ai', tags: ['무료', '유료', 'AI'], sub: 'UI · 코드 생성' },
   { name: 'GitHub Copilot', url: 'https://github.com/features/copilot', desc: '가장 널리 쓰이는 AI 코딩 어시스턴트. VS Code 등에 통합.', cat: 'ai', tags: ['무료', '유료', 'AI'], sub: 'UI · 코드 생성' },
@@ -426,7 +426,7 @@ const SITES = [
 
   { name: 'Sketch', url: 'https://www.sketch.com', desc: '맥 전용 UI 디자인 툴. Figma 이전의 표준.', cat: 'tool', tags: ['유료'] },
   { name: 'Penpot', url: 'https://penpot.app', desc: '오픈소스 디자인·프로토타이핑 툴. Figma의 무료 대안.', cat: 'tool', tags: ['무료'] },
-  { name: 'Jitter', url: 'https://jitter.video', desc: '브라우저에서 쓰는 간편한 모션 디자인 툴. Figma 연동.', cat: 'tool', tags: ['무료', '유료'] },
+  { name: 'Jitter', url: 'https://jitter.video', desc: '브라우저에서 쓰는 간편한 모션·애니메이션 디자인 툴. Figma 연동.', cat: 'tool', tags: ['무료', '유료'] },
   { name: 'Loom', url: 'https://www.loom.com', desc: '화면 녹화로 디자인 설명 영상을 빠르게 공유.', cat: 'tool', tags: ['무료', '유료'] },
 
   { name: 'Glassdoor', url: 'https://www.glassdoor.com', desc: '글로벌 기업 리뷰·연봉·채용 정보.', cat: 'job', tags: [] },
