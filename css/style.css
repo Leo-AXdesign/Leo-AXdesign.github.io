@@ -546,6 +546,7 @@ body.drawer-open { overflow: hidden; }
 .art { max-width: 720px; }
 .art { padding-top: 16px; }
 .page__main--art .section { margin-top: 24px; }
+.nb { white-space: nowrap; }   /* GPT-6 처럼 하이픈이 든 이름이 줄바꿈으로 갈라지지 않게 */
 .art__kicker { margin: 0 0 12px; font-size: 12.5px; color: var(--ink-3); }
 .art__kicker a { color: var(--ink-2); }
 .art__kicker a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
@@ -576,6 +577,19 @@ body.drawer-open { overflow: hidden; }
 .art__fig img { display: block; width: 100%; height: auto; border-radius: 14px; }
 .art__fig figcaption { margin-top: 12px; font-size: 13px; line-height: 1.6; color: var(--ink-3); text-align: center; }
 :root[data-theme="dark"] .art__fig img { filter: invert(1) hue-rotate(180deg); }
+
+/* 글 속 표와 출처 */
+.art__tablewrap { margin: 28px 0 0; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.art__table { width: 100%; border-collapse: collapse; font-size: 14.5px; line-height: 1.55; font-variant-numeric: tabular-nums; }
+.art__table th {
+  text-align: left; font-size: 12.5px; font-weight: 600; color: var(--ink-2); white-space: nowrap;
+  padding: 0 16px 10px 0; border-bottom: 1px solid var(--line-strong);
+}
+.art__table td { padding: 12px 16px 12px 0; border-bottom: 1px solid var(--line); color: var(--ink-body); vertical-align: top; }
+.art__table td:first-child { color: var(--ink); font-weight: 600; }
+.art__table strong { font-weight: 700; }
+.art__note { margin: 12px 0 0; font-size: 12.5px; line-height: 1.6; color: var(--ink-3); }
+.art__note a { color: var(--ink-2); text-decoration: underline; text-underline-offset: 3px; }
 
 /* 글 공유 버튼 */
 .share { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-top: 56px; }
@@ -737,6 +751,7 @@ body.drawer-open { overflow: hidden; }
   .row__arrow { display: none; }
   .grid-view .list { grid-template-columns: 1fr; }
   .art .ptext, .art .ptext-list li { font-size: 15.5px; }
+  .art__table { min-width: 540px; font-size: 14px; }
   .art .psub { margin-top: 42px; font-size: 18px; }
   .arow { grid-template-columns: 1fr; gap: 6px; padding: 18px 0; }
   .arow__date { padding-top: 0; }

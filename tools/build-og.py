@@ -35,6 +35,7 @@ TEMPLATE = """<!doctype html><html lang="ko"><head><meta charset="utf-8">
   .rule {{ height: 4px; background: #111; margin: 40px 0 22px; }}
   .foot {{ display: flex; justify-content: space-between; font-size: 24px; color: #6B6B6B; }}
   .foot b {{ color: #111; font-weight: 700; }}
+  .nb {{ white-space: nowrap; }}
 </style></head><body><div class="card">
   <div class="top"><div class="logo">d<span>.</span></div><div class="kicker">읽을거리 · {tag}</div></div>
   <div class="title">{title}</div>
@@ -59,7 +60,7 @@ def main():
             if png.exists() and not redo:
                 continue
             page = pathlib.Path(tmp) / f"{x['slug']}.html"
-            page.write_text(TEMPLATE.format(title=e(x["title"]), tag=e(x.get("tag", "")),
+            page.write_text(TEMPLATE.format(title=A.nobreak(e(x["title"])), tag=e(x.get("tag", "")),
                                             size=title_size(x["title"])), encoding="utf-8")
             shoot(page, png)
             made.append(png.name)

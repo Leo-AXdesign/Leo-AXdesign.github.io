@@ -22,6 +22,8 @@ build-articles.py 와 build-seo.py 가 같이 씁니다.
     - 목록 / 1. 번호 목록
     > 인용
     **굵게**, [링크](https://...), `코드`
+    | 표 | 머리 |    첫 줄은 머리, 둘째 줄은 |---|---| 구분선, 그다음부터 내용
+    ※ 출처나 주석     작은 회색 글씨 한 줄
     ![그림 설명](https://designrefs.com/articles/img/파일.svg)   한 줄을 통째로 써야 그림이 됩니다.
                                                               설명은 그림 아래 캡션으로 나옵니다.
 """
@@ -39,6 +41,11 @@ RELATED_LABEL = {
     "ai": "AI 디자인 툴", "community": "커뮤니티·매거진", "creators": "유튜버·크리에이터",
     "styles": "스타일 사전", "trends": "2026 트렌드", "glossary": "용어 사전",
 }
+
+
+def nobreak(escaped):
+    """이미 이스케이프된 글에서 하이픈이 든 단어(GPT-6 등)가 줄바꿈으로 갈라지지 않게 묶습니다."""
+    return re.sub(r"(\S*\w-\w\S*)", r'<span class="nb">\1</span>', escaped)
 
 
 def inline(t):
@@ -84,6 +91,17 @@ def figure(caption, src):
             '    </figure>')
 
 
+def table(rows):
+    """| 로 시작하는 줄들을 표로. 첫 줄은 머리, 둘째 줄(|---|)은 구분선."""
+    cells = [[c.strip() for c in r.strip().strip("|").split("|")] for r in rows]
+    head, body = cells[0], [r for r in cells[1:] if not all(re.fullmatch(r":?-{2,}:?", c) for c in r)]
+    th = "".join(f"<th>{inline(c)}</th>" for c in head)
+    trs = "\n".join("        <tr>" + "".join(f"<td>{inline(c)}</td>" for c in r) + "</tr>" for r in body)
+    return ('    <div class="art__tablewrap"><table class="art__table">\n'
+            f'      <thead><tr>{th}</tr></thead>\n      <tbody>\n{trs}\n      </tbody>\n'
+            '    </table></div>')
+
+
 def to_html(md):
     """마크다운 일부 문법을 본문 HTML 로 바꿉니다."""
     out, buf, mode = [], [], None
@@ -102,6 +120,10 @@ def to_html(md):
             out.append(f"    </{mode}>")
         elif mode == "quote":
             out.append(f'    <blockquote class="art__quote">{inline(" ".join(buf))}</blockquote>')
+        elif mode == "table":
+            out.append(table(buf))
+        elif mode == "note":
+            out.append(f'    <p class="art__note">{inline(" ".join(buf))}</p>')
         buf, mode = [], None
 
     for raw in md.split("\n"):
@@ -119,6 +141,16 @@ def to_html(md):
         elif line.startswith("### "):
             flush()
             out.append(f'    <h3 class="art__h3">{inline(line[4:])}</h3>')
+        elif line.startswith("|"):
+            if mode != "table":
+                flush()
+            mode = "table"
+            buf.append(line)
+        elif line.startswith("※ "):
+            if mode != "note":
+                flush()
+            mode = "note"
+            buf.append(line[2:])
         elif line.startswith("> "):
             if mode != "quote":
                 flush()

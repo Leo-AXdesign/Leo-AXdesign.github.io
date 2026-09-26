@@ -112,7 +112,7 @@ for x in items:
     }
     body = f"""    <article class="art">
       <p class="art__kicker"><a href="{LIST_URL}">읽을거리</a>{f' · {e(x["tag"])}' if x.get("tag") else ''}</p>
-      <h1 class="page__title">{e(x["title"])}</h1>
+      <h1 class="page__title">{A.nobreak(e(x["title"]))}</h1>
       <p class="page__intro">{e(x["desc"])}</p>
       <p class="art__meta"><time datetime="{x["date"]}">{kdate(x["date"])}</time> · 읽는 데 약 {x["min"]}분</p>
 {x["body"]}

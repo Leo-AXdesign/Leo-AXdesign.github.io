@@ -29,6 +29,7 @@
 ├── tools/build-articles.py       # 읽을거리 페이지 생성
 ├── tools/build-og.py             # 글별 공유 이미지 og/<slug>.png (크롬 필요)
 ├── tools/build-cards.py          # 인스타 카드뉴스 → 저장소 밖 홍보자료/cards/ (크롬 필요)
+├── tools/charts.py               # 글 속 비교 차트 SVG (넓은 판 + 폰 판 -m)
 ├── tools/snap.py                 # 위 두 스크립트가 쓰는 크롬 캡처
 ├── og/                           # 글별 공유 이미지
 ├── rss.xml                       # 읽을거리 피드 (자동 생성)
@@ -165,6 +166,9 @@ related: ai, tools                    # 글 아래에 걸어 둘 목록 페이�
 - `- 목록`, `1. 번호 목록`
 - `> 인용`
 - `**굵게**`, `[링크](https://...)`, `` `코드` ``
+- `| 표 | 머리 |` + `|---|---|` 구분선 + 내용 줄 → 표 (폰에서는 옆으로 밀어서 봄)
+- `※ 출처` → 작은 회색 한 줄
+- `![캡션](https://designrefs.com/articles/img/파일.svg)` → 그림. 같은 폴더에 `파일-m.svg` 가 있으면 폰에서는 그걸 씀
 
 글을 쓴 뒤 `python3 tools/build-og.py && python3 tools/build-articles.py && python3 tools/build-seo.py` 를 실행하면 공유 이미지, 글 페이지, 목록 페이지, 메인 화면의 읽을거리, RSS, sitemap, llms.txt 가 한 번에 갱신됩니다. 읽는 시간은 글자 수에서 자동으로 계산합니다(분당 600자 기준).
 
