@@ -61,7 +61,8 @@ CLOSE_ICON = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke
 
 
 def document(*, title, desc, url, body, jsonld, og_type="website",
-             head_extra="", main_class="page__main", footer_nav="", menu=""):
+             head_extra="", main_class="page__main", footer_nav="", menu="",
+             og_image=None):
     """페이지 하나의 HTML 전체를 돌려줍니다.
 
     title      : <title> 과 og:title 에 쓰는 제목 (사이트 이름은 여기서 붙입니다)
@@ -70,6 +71,7 @@ def document(*, title, desc, url, body, jsonld, og_type="website",
     body       : <main> 안에 들어갈 HTML
     jsonld     : 구조화 데이터 dict
     footer_nav : 푸터 위에 붙일 링크 묶음 HTML
+    og_image   : 카톡·SNS 미리보기 이미지 주소. 비우면 사이트 기본 이미지
     menu       : 메뉴 항목 HTML (tools/nav.py 의 menu()). 넓은 화면에서는 왼쪽에,
                  좁은 화면에서는 햄버거 버튼을 누르면 서랍으로 나옵니다. 비우면 메뉴 없이 나옵니다.
     """
@@ -109,8 +111,11 @@ def document(*, title, desc, url, body, jsonld, og_type="website",
   <meta property="og:title" content="{e(title)} | 디자인 허브" />
   <meta property="og:description" content="{e(desc)}" />
   <meta property="og:url" content="{url}" />
-  <meta property="og:image" content="{SITE}og-image.png" />
+  <meta property="og:image" content="{og_image or SITE + 'og-image.png'}" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
+  <link rel="alternate" type="application/rss+xml" title="디자인 허브 읽을거리" href="{SITE}rss.xml" />
   <link rel="icon" href="{SITE}favicon.ico" sizes="32x32" />
   <link rel="icon" type="image/svg+xml" href="{SITE}favicon.svg" />
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />

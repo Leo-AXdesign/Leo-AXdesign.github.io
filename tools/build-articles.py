@@ -8,11 +8,13 @@ content/articles/*.md 로 블로그 페이지를 만듭니다.
 - /articles/            글 목록
 - /articles/<slug>/     글 하나 (BlogPosting 구조화 데이터 포함)
 - js/articles.js        메인 화면 '읽을거리' 목록용 데이터
+- rss.xml               새 글 알림용 피드 (네이버 서치어드바이저·피드 구독기)
+글별 공유 이미지(og/<slug>.png)는 tools/build-og.py 가 따로 만듭니다.
 
 글을 추가하려면 content/articles/ 에 .md 파일을 하나 더 만들고 이 스크립트를 실행하세요.
 그다음 tools/build-seo.py 를 돌려야 sitemap 과 llms.txt 에도 반영됩니다.
 """
-import json, pathlib, datetime
+import json, pathlib, datetime, email.utils
 
 import articles as A
 import sitedata as D
@@ -114,13 +116,20 @@ for x in items:
       <p class="page__intro">{e(x["desc"])}</p>
       <p class="art__meta"><time datetime="{x["date"]}">{kdate(x["date"])}</time> · 읽는 데 약 {x["min"]}분</p>
 {x["body"]}
+      <div class="share">
+        <button class="share__btn" type="button" data-share>공유하기</button>
+        <button class="share__btn" type="button" data-copy>링크 복사</button>
+        <span class="share__msg" role="status"></span>
+      </div>
     </article>
 
     {related_links(x.get("related", []))}
 
     {other_articles(items, x["slug"])}"""
+    og = ROOT / "og" / f"{x['slug']}.png"
     doc = document(title=x["title"], desc=x["desc"], url=url, body=body, jsonld=jsonld,
                    og_type="article", menu=menu("articles"),
+                   og_image=f"{SITE}og/{x['slug']}.png" if og.exists() else None,
                    main_class="page__main page__main--art", footer_nav=fnav)
     d = ROOT / "articles" / x["slug"]
     d.mkdir(parents=True, exist_ok=True)
@@ -169,6 +178,42 @@ doc = document(title=f"{LIST_TITLE} — 디자인·AI 디자인 글 {len(items)}
 (ROOT / "articles").mkdir(exist_ok=True)
 (ROOT / "articles" / "index.html").write_text(doc, encoding="utf-8")
 
+# ---------- RSS ----------
+KST = datetime.timezone(datetime.timedelta(hours=9))
+
+
+def rfc822(d):
+    y, m, day = (int(v) for v in d.split("-"))
+    return email.utils.format_datetime(datetime.datetime(y, m, day, 9, 0, tzinfo=KST))
+
+
+rss_items = []
+for x in items:
+    link = f"{SITE}articles/{x['slug']}/"
+    rss_items.append(f"""    <item>
+      <title>{e(x["title"])}</title>
+      <link>{link}</link>
+      <guid isPermaLink="true">{link}</guid>
+      <pubDate>{rfc822(x["date"])}</pubDate>
+      <category>{e(x.get("tag", ""))}</category>
+      <description>{e(x["desc"])}</description>
+      <content:encoded><![CDATA[{x["body"]}]]></content:encoded>
+    </item>""")
+rss = f"""<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>디자인 허브 읽을거리</title>
+    <link>{LIST_URL}</link>
+    <atom:link href="{SITE}rss.xml" rel="self" type="application/rss+xml" />
+    <description>{e(LIST_DESC)}</description>
+    <language>ko</language>
+    <lastBuildDate>{rfc822(items[0]["date"])}</lastBuildDate>
+{chr(10).join(rss_items)}
+  </channel>
+</rss>
+"""
+(ROOT / "rss.xml").write_text(rss, encoding="utf-8")
+
 # ---------- 메인 화면용 데이터 ----------
 js = ["// 이 파일은 tools/build-articles.py 가 만듭니다. 직접 고치지 마세요.",
       "// 글은 content/articles/*.md 에서 고칩니다.",
@@ -186,4 +231,4 @@ js += ["];", ""]
 (ROOT / "js" / "articles.js").write_text("\n".join(js), encoding="utf-8")
 
 print(f"글 {len(items)}편: /articles/ + " + ", ".join(f"/articles/{x['slug']}/" for x in items))
-print(f"(오늘 {datetime.date.today().isoformat()} · js/articles.js 갱신)")
+print(f"(오늘 {datetime.date.today().isoformat()} · js/articles.js, rss.xml 갱신)")

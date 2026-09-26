@@ -27,6 +27,11 @@
 ├── tools/build-seo.py            # sitemap, JSON-LD, noscript 생성
 ├── tools/build-pages.py          # 카테고리별 정적 페이지 생성
 ├── tools/build-articles.py       # 읽을거리 페이지 생성
+├── tools/build-og.py             # 글별 공유 이미지 og/<slug>.png (크롬 필요)
+├── tools/build-cards.py          # 인스타 카드뉴스 → 저장소 밖 홍보자료/cards/ (크롬 필요)
+├── tools/snap.py                 # 위 두 스크립트가 쓰는 크롬 캡처
+├── og/                           # 글별 공유 이미지
+├── rss.xml                       # 읽을거리 피드 (자동 생성)
 ├── tools/indexnow.py             # Bing·네이버 등에 변경 사항 즉시 알림
 ├── .nojekyll                     # GitHub Pages 가 Jekyll 처리를 건너뛰도록
 └── .github/workflows/deploy.yml  # main 에 push 하면 Pages 로 자동 배포
@@ -161,7 +166,7 @@ related: ai, tools                    # 글 아래에 걸어 둘 목록 페이�
 - `> 인용`
 - `**굵게**`, `[링크](https://...)`, `` `코드` ``
 
-글을 쓴 뒤 `python3 tools/build-articles.py && python3 tools/build-seo.py` 를 실행하면 글 페이지, 목록 페이지, 메인 화면의 읽을거리, sitemap, llms.txt 가 한 번에 갱신됩니다. 읽는 시간은 글자 수에서 자동으로 계산합니다(분당 600자 기준).
+글을 쓴 뒤 `python3 tools/build-og.py && python3 tools/build-articles.py && python3 tools/build-seo.py` 를 실행하면 공유 이미지, 글 페이지, 목록 페이지, 메인 화면의 읽을거리, RSS, sitemap, llms.txt 가 한 번에 갱신됩니다. 읽는 시간은 글자 수에서 자동으로 계산합니다(분당 600자 기준).
 
 ### 카테고리별 정적 페이지
 

@@ -577,6 +577,16 @@ body.drawer-open { overflow: hidden; }
 .art__fig figcaption { margin-top: 12px; font-size: 13px; line-height: 1.6; color: var(--ink-3); text-align: center; }
 :root[data-theme="dark"] .art__fig img { filter: invert(1) hue-rotate(180deg); }
 
+/* 글 공유 버튼 */
+.share { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-top: 56px; }
+.share__btn {
+  font-size: 13px; font-weight: 600; padding: 9px 16px; border-radius: 999px;
+  border: 1px solid var(--line); color: var(--ink);
+}
+.share__btn:hover { border-color: var(--ink); }
+.share__btn[data-share] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.share__msg { font-size: 13px; color: var(--ink-2); }
+
 /* 메인 화면의 읽을거리 목록 */
 .arow {
   display: grid; grid-template-columns: 88px 1fr auto; gap: 4px 20px;

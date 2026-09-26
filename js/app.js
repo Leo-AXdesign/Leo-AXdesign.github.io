@@ -68,6 +68,18 @@
   const pinUrl = q => 'https://www.pinterest.com/search/pins/?q=' + encodeURIComponent(q);
   const imgUrl = q => 'https://www.google.com/search?tbm=isch&q=' + encodeURIComponent(q);
 
+  /* ---------- 측정 (Google Analytics) ----------
+     메인 화면은 한 페이지 안에서 화면만 바뀌어서, 그대로 두면 모두 '메인 조회 1회'로 잡힙니다.
+     어떤 분야를 봤는지, 어떤 사이트를 눌렀는지, 무엇을 검색했는지를 이벤트로 따로 남깁니다.
+       view_section  분야 화면을 열었을 때   (section_id, section_name)
+       click_site    목록에서 사이트를 눌렀을 때 (site_name, site_category, link_domain)
+       search        검색어를 입력하고 멈췄을 때 (search_term)  */
+  function track(name, params) {
+    try { if (typeof gtag === 'function') gtag('event', name, params); } catch { /* 측정 실패는 무시 */ }
+  }
+  const BASE_TITLE = document.title;
+  let trackedSection = null;
+
   /* ---------- helpers ---------- */
   function hostOf(url) {
     try { return new URL(url).hostname.replace(/^www\./, ''); }
@@ -481,6 +493,13 @@
     renderNav();
     renderFilters();
     renderContent();
+    // 분야가 바뀌었을 때만 한 번 기록합니다 (필터·즐겨찾기로 다시 그릴 때는 빼고)
+    if (trackedSection !== state.cat) {
+      trackedSection = state.cat;
+      const label = (catById(state.cat) || PSEUDO.all).label;
+      document.title = state.cat === 'all' ? BASE_TITLE : label + ' | 디자인 허브';
+      if (state.cat !== 'all') track('view_section', { section_id: state.cat, section_name: label });
+    }
   }
 
   /* ---------- events ---------- */
@@ -510,7 +529,7 @@
       save(STORAGE_VIEW, b.dataset.view);
     }));
 
-    let timer;
+    let timer, searchTimer;
     els.search.addEventListener('input', () => {
       clearTimeout(timer);
       timer = setTimeout(() => {
@@ -518,6 +537,23 @@
         renderNav();
         renderContent();
       }, 120);
+      // 입력을 멈춘 뒤 1.5초가 지나야 한 번 기록 (타자 하나하나를 남기지 않게)
+      clearTimeout(searchTimer);
+      searchTimer = setTimeout(() => {
+        const q = els.search.value.trim();
+        if (q.length >= 2) track('search', { search_term: q });
+      }, 1500);
+    });
+
+    els.content.addEventListener('click', e => {
+      const a = e.target.closest('a.row');
+      if (!a || e.target.closest('.row__star')) return;
+      const site = SITES.find(s => s.url === a.dataset.url);
+      if (site) track('click_site', {
+        site_name: site.name,
+        site_category: (catById(site.cat) || {}).label || site.cat,
+        link_domain: hostOf(site.url),
+      });
     });
     els.search.addEventListener('keydown', e => {
       if (e.key === 'Escape') { els.search.value = ''; state.query = ''; renderContent(); els.search.blur(); }

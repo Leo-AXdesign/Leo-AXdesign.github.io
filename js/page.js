@@ -57,6 +57,42 @@
     onScroll();
   }
 
+  /* ---------- 글 공유 ----------
+     폰에서는 운영체제 공유 창(카카오톡 등)이 열리고, 안 되는 환경에서는 링크를 복사합니다.
+     공유된 링크에는 utm 꼬리표를 붙여, 공유로 들어온 방문이 애널리틱스에서 따로 보이게 합니다. */
+  function track(name, params) {
+    try { if (typeof gtag === 'function') gtag('event', name, params); } catch (e) { /* 무시 */ }
+  }
+  const canonical = (document.querySelector('link[rel=canonical]') || {}).href || location.href.split('?')[0];
+  const shareMsg = document.querySelector('.share__msg');
+  function say(text) {
+    if (!shareMsg) return;
+    shareMsg.textContent = text;
+    clearTimeout(say.t);
+    say.t = setTimeout(() => { shareMsg.textContent = ''; }, 2500);
+  }
+  function copy(medium) {
+    const url = canonical + '?utm_source=share&utm_medium=' + medium;
+    const done = () => { say('링크를 복사했습니다'); track('share', { method: 'copy', content_type: 'article', item_id: location.pathname }); };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(url).then(done, () => say('복사하지 못했습니다. 주소창의 주소를 복사해 주세요'));
+    } else {
+      say('복사하지 못했습니다. 주소창의 주소를 복사해 주세요');
+    }
+  }
+  const shareBtn = document.querySelector('[data-share]');
+  const copyBtn = document.querySelector('[data-copy]');
+  if (shareBtn) shareBtn.addEventListener('click', () => {
+    if (navigator.share) {
+      navigator.share({ title: document.title, url: canonical + '?utm_source=share&utm_medium=native' })
+        .then(() => track('share', { method: 'native', content_type: 'article', item_id: location.pathname }))
+        .catch(() => { /* 사용자가 닫은 경우 */ });
+    } else {
+      copy('link');
+    }
+  });
+  if (copyBtn) copyBtn.addEventListener('click', () => copy('link'));
+
   /* ---------- 모바일 메뉴 ---------- */
   const drawer = document.getElementById('drawer');
   const openBtn = document.getElementById('menu-open');
