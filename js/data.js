@@ -100,6 +100,7 @@ const SITES = [
   { name: 'Picular', url: 'https://picular.co', desc: '검색어를 입력하면 연관 이미지에서 색을 뽑아주는 컬러 검색.', cat: 'color', tags: ['무료'] },
   { name: 'Color Space', url: 'https://mycolor.space', desc: '한 색을 넣으면 여러 조합과 그라디언트를 한 번에 생성.', cat: 'color', tags: ['무료'] },
   { name: 'Grabient', url: 'https://www.grabient.com', desc: 'CSS 그라디언트를 만들고 코드로 바로 복사.', cat: 'color', tags: ['무료'] },
+  { name: 'Grainient', url: 'https://grainient.supply', desc: '그레인·부드러운 그라디언트, 움직이는 그라디언트, AI 배경을 모은 곳. 셰이더로 직접 만들 수도 있고 무료 모음도 있습니다.', cat: 'color', tags: ['무료', '유료'] },
   { name: 'Colors & Fonts', url: 'https://www.colorsandfonts.com', desc: '컬러 팔레트·그라디언트·폰트 조합을 함께 제공.', cat: 'color', tags: ['무료'] },
   { name: 'Encycolorpedia', url: 'https://encycolorpedia.kr', desc: '색상 코드 백과사전. HEX·RGB·CMYK·페인트 매칭 정보.', cat: 'color', tags: ['한국', '무료'] },
   { name: 'Pantone', url: 'https://www.pantone.com', desc: '팬톤 컬러 시스템과 올해의 컬러.', cat: 'color', tags: ['무료'] },
@@ -394,6 +395,7 @@ const SITES = [
 
   { name: 'Toools.design', url: 'https://www.toools.design', desc: '디자인 리소스·툴 1,500개 이상을 모아둔 디렉터리.', cat: 'uiux', tags: ['무료'] },
   { name: 'Landingfolio', url: 'https://www.landingfolio.com', desc: '랜딩페이지·컴포넌트 인스피레이션. 섹션별 검색.', cat: 'uiux', tags: ['무료'] },
+  { name: 'Supahero', url: 'https://supahero.io', desc: '웹사이트 첫 화면(히어로 섹션)만 골라 모은 갤러리. 랜딩페이지의 첫인상을 잡을 때 좋습니다.', cat: 'uiux', tags: ['무료'] },
   { name: 'CSS Design Awards', url: 'https://www.cssdesignawards.com', desc: 'Awwwards와 함께 대표적인 웹 디자인 어워드.', cat: 'uiux', tags: ['무료'] },
   { name: 'FWA', url: 'https://thefwa.com', desc: '2000년부터 이어진 인터랙티브 웹 어워드.', cat: 'uiux', tags: ['무료'] },
   { name: 'One Page Love', url: 'https://onepagelove.com', desc: '원페이지 웹사이트 갤러리와 템플릿.', cat: 'uiux', tags: ['무료'] },

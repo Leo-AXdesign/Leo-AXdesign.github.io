@@ -1,6 +1,6 @@
 # 디자인 허브 (Design Hub) 전체 내용
 
-> 출처: https://designrefs.com/ · 사이트 374개, 스타일 34가지, 트렌드 15가지, 용어 155개
+> 출처: https://designrefs.com/ · 사이트 376개, 스타일 34가지, 트렌드 15가지, 용어 155개
 
 ## UI/UX 레퍼런스
 
@@ -38,6 +38,7 @@
 - [Nielsen Norman Group](https://www.nngroup.com): UX 리서치의 권위 있는 기관. 휴리스틱, 리서치 아티클이 풍부합니다.
 - [Toools.design](https://www.toools.design): 디자인 리소스·툴 1,500개 이상을 모아둔 디렉터리.
 - [Landingfolio](https://www.landingfolio.com): 랜딩페이지·컴포넌트 인스피레이션. 섹션별 검색.
+- [Supahero](https://supahero.io): 웹사이트 첫 화면(히어로 섹션)만 골라 모은 갤러리. 랜딩페이지의 첫인상을 잡을 때 좋습니다.
 - [CSS Design Awards](https://www.cssdesignawards.com): Awwwards와 함께 대표적인 웹 디자인 어워드.
 - [FWA](https://thefwa.com): 2000년부터 이어진 인터랙티브 웹 어워드.
 - [One Page Love](https://onepagelove.com): 원페이지 웹사이트 갤러리와 템플릿.
@@ -95,6 +96,7 @@
 - [Picular](https://picular.co): 검색어를 입력하면 연관 이미지에서 색을 뽑아주는 컬러 검색.
 - [Color Space](https://mycolor.space): 한 색을 넣으면 여러 조합과 그라디언트를 한 번에 생성.
 - [Grabient](https://www.grabient.com): CSS 그라디언트를 만들고 코드로 바로 복사.
+- [Grainient](https://grainient.supply): 그레인·부드러운 그라디언트, 움직이는 그라디언트, AI 배경을 모은 곳. 셰이더로 직접 만들 수도 있고 무료 모음도 있습니다.
 - [Colors & Fonts](https://www.colorsandfonts.com): 컬러 팔레트·그라디언트·폰트 조합을 함께 제공.
 - [Encycolorpedia](https://encycolorpedia.kr): 색상 코드 백과사전. HEX·RGB·CMYK·페인트 매칭 정보.
 - [Pantone](https://www.pantone.com): 팬톤 컬러 시스템과 올해의 컬러.
