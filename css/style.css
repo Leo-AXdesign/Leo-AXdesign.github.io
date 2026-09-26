@@ -626,7 +626,6 @@ body.drawer-open { overflow: hidden; }
   background: var(--ink); color: var(--bg);
 }
 .talk__send:disabled { opacity: 0.45; cursor: default; }
-.talk__list { margin-top: 4px; }
 .talk__item { padding: 18px 0; border-bottom: 1px solid var(--line); }
 .talk__meta { display: flex; align-items: baseline; gap: 10px; margin: 0 0 6px; }
 .talk__meta b { font-size: 14px; font-weight: 600; letter-spacing: -0.015em; }
