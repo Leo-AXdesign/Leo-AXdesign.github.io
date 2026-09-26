@@ -57,19 +57,29 @@ def inline(t):
 SITE = "https://designrefs.com/"
 
 
+def _svg_size(src):
+    """사이트 안 SVG 의 viewBox 를 읽어 width/height 속성으로 돌려줍니다."""
+    if not (src.startswith(SITE) and src.endswith(".svg")):
+        return ""
+    f = ROOT / src[len(SITE):]
+    if not f.exists():
+        raise SystemExit(f"그림 파일이 없습니다: {f}")
+    vb = re.search(r'viewBox="0 0 ([\d.]+) ([\d.]+)"', f.read_text(encoding="utf-8"))
+    return f' width="{round(float(vb.group(1)))}" height="{round(float(vb.group(2)))}"' if vb else ""
+
+
 def figure(caption, src):
-    """그림 한 장. 사이트 안의 SVG 면 viewBox 를 읽어 크기를 미리 적어 둡니다.
-    (그림이 늦게 떠도 글이 아래로 밀리지 않게)"""
-    size = ""
-    if src.startswith(SITE) and src.endswith(".svg"):
-        f = ROOT / src[len(SITE):]
-        if not f.exists():
-            raise SystemExit(f"그림 파일이 없습니다: {f}")
-        vb = re.search(r'viewBox="0 0 ([\d.]+) ([\d.]+)"', f.read_text(encoding="utf-8"))
-        if vb:
-            size = f' width="{round(float(vb.group(1)))}" height="{round(float(vb.group(2)))}"'
+    """그림 한 장. 크기를 미리 적어 두면 그림이 늦게 떠도 글이 아래로 밀리지 않습니다.
+    같은 폴더에 '이름-m.svg' 가 있으면 폰(640px 이하)에서는 그 그림을 씁니다.
+    넓은 그림을 폰 폭으로 줄이면 글씨가 읽을 수 없을 만큼 작아지기 때문입니다."""
+    alt = e(re.sub(r"[*`]", "", caption))
+    img = f'<img src="{e(src)}" alt="{alt}"{_svg_size(src)} loading="lazy" decoding="async" />'
+    mobile = src[:-4] + "-m.svg" if src.endswith(".svg") else ""
+    if mobile and (ROOT / mobile[len(SITE):]).exists():
+        img = (f'<picture><source media="(max-width: 640px)" srcset="{e(mobile)}"{_svg_size(mobile)} />'
+               + img + '</picture>')
     return ('    <figure class="art__fig">\n'
-            f'      <img src="{e(src)}" alt="{e(re.sub(r"[*`]", "", caption))}"{size} loading="lazy" decoding="async" />\n'
+            f'      {img}\n'
             f'      <figcaption>{inline(caption)}</figcaption>\n'
             '    </figure>')
 

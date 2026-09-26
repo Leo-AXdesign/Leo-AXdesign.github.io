@@ -572,6 +572,7 @@ body.drawer-open { overflow: hidden; }
 
 /* 글 속 그림. 흑백 일러스트라 다크 테마에서는 뒤집어서 배경과 맞춥니다 */
 .art__fig { margin: 44px 0; }
+.art__fig picture { display: block; }
 .art__fig img { display: block; width: 100%; height: auto; border-radius: 14px; }
 .art__fig figcaption { margin-top: 12px; font-size: 13px; line-height: 1.6; color: var(--ink-3); text-align: center; }
 :root[data-theme="dark"] .art__fig img { filter: invert(1) hue-rotate(180deg); }
