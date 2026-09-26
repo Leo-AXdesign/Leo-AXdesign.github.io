@@ -235,7 +235,7 @@ AI 크롤러는 대부분 자바스크립트를 실행하지 않습니다. 그�
 | 파일 | 역할 |
 |---|---|
 | `llms.txt` | AI용 사이트 안내 ([llmstxt.org](https://llmstxt.org) 규격). 분야별 페이지 링크와 요약 |
-| `llms-full.txt` | 사이트 371개, 스타일, 트렌드, 용어 전체를 마크다운 한 파일로 |
+| `llms-full.txt` | 사이트, 스타일, 트렌드, 용어 전체를 마크다운 한 파일로 |
 | `index.html` 의 noscript | 메인에서 AI가 읽는 요약 본문. 분야별 설명과 대표 사이트 이름 |
 | `robots.txt` | AI 검색·학습 크롤러를 이름으로 명시해 허용 |
 | `/glossary/` 구조화 데이터 | 용어 155개를 schema.org `DefinedTermSet` 으로 표시 |

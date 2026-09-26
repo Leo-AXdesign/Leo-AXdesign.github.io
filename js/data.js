@@ -386,6 +386,7 @@ const SITES = [
   { name: 'Synthesia', url: 'https://www.synthesia.io', desc: '기업용 AI 아바타 영상 제작 플랫폼.', cat: 'ai', tags: ['유료', 'AI'], sub: '영상 생성 · 편집' },
   { name: 'CapCut', url: 'https://www.capcut.com', desc: 'AI 자막·배경 제거·템플릿이 강한 영상 편집기. 모바일·데스크톱.', cat: 'ai', tags: ['무료', '유료', 'AI'], sub: '영상 생성 · 편집' },
   { name: 'Descript', url: 'https://www.descript.com', desc: '텍스트를 고치듯 영상·팟캐스트를 편집하는 AI 편집기.', cat: 'ai', tags: ['무료', '유료', 'AI'], sub: '영상 생성 · 편집' },
+  { name: 'Swishy', url: 'https://www.swishy.ai', desc: '말로 설명하면 텍스트·로고·UI 모션 그래픽을 만들어 주는 AI 모션 디자이너.', cat: 'ai', tags: ['무료', '유료', 'AI'], sub: '영상 생성 · 편집' },
   { name: 'Udio', url: 'https://www.udio.com', desc: 'AI 음악 생성. Suno와 양대 산맥.', cat: 'ai', tags: ['무료', '유료', 'AI'], sub: '오디오 · 음성' },
   { name: 'Replit', url: 'https://replit.com', desc: '브라우저에서 AI 에이전트로 앱을 만들고 바로 배포.', cat: 'ai', tags: ['무료', '유료', 'AI'], sub: 'UI · 코드 생성' },
   { name: 'GitHub Copilot', url: 'https://github.com/features/copilot', desc: '가장 널리 쓰이는 AI 코딩 어시스턴트. VS Code 등에 통합.', cat: 'ai', tags: ['무료', '유료', 'AI'], sub: 'UI · 코드 생성' },
@@ -399,6 +400,7 @@ const SITES = [
   { name: 'UX Archive', url: 'https://uxarchive.com', desc: '모바일 앱 유저 플로우를 단계별 스크린샷으로 정리.', cat: 'uiux', tags: ['무료'] },
   { name: 'Really Good UX', url: 'https://goodux.appcues.com', desc: '온보딩·엠프티 스테이트 등 잘 만든 UX 사례 모음.', cat: 'uiux', tags: ['무료'] },
   { name: 'UI8', url: 'https://ui8.net', desc: '프리미엄 UI 킷·아이콘·3D 에셋 마켓.', cat: 'uiux', tags: ['유료'] },
+  { name: 'Ripplix', url: 'https://www.ripplix.com', desc: '실제 앱·웹에서 모은 UI 애니메이션과 마이크로 인터랙션 7,000여 개. 요소·업종·서비스별로 찾아볼 수 있습니다.', cat: 'uiux', tags: ['무료', '유료'] },
 
   { name: 'Mindsparkle Mag', url: 'https://mindsparklemag.com', desc: '브랜딩·웹 디자인 큐레이션 매거진.', cat: 'graphic', tags: ['무료'] },
   { name: 'Gurafiku', url: 'https://gurafiku.tumblr.com', desc: '일본 그래픽 디자인 아카이브.', cat: 'graphic', tags: ['무료'] },
