@@ -584,7 +584,7 @@ body.drawer-open { overflow: hidden; }
 .arow__tag { font-size: 12px; color: var(--ink-3); white-space: nowrap; padding-top: 4px; }
 
 /* 이야기(댓글) */
-.talk { margin-top: 12px; }
+.talk { margin-top: 0; }   /* 원본 목록처럼 제목 줄 바로 아래에서 시작 */
 .talk__form { margin-top: 36px; }
 .talk__formtitle { margin: 0 0 12px; font-size: 14px; font-weight: 700; letter-spacing: -0.015em; }
 .talk__form {
