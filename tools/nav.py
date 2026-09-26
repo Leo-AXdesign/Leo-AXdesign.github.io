@@ -43,7 +43,6 @@ def menu(active=""):
              # 즐겨찾기는 브라우저에만 저장돼 있어서, 개수는 js/page.js 가 채웁니다
              f'<a class="nav__item" href="{_app("bookmarks")}">{STAR}'
              '<span class="nav__label">즐겨찾기</span><span class="nav__count" data-bm-count>0</span></a>',
-             _item("talk", "디자인 잡담", None, active, SITE + "talk/"),
              SEP]
     for c in D.cats:
         slug = D.CAT_SLUG.get(c["id"])
@@ -56,6 +55,8 @@ def menu(active=""):
     parts.append(_item("styles", "스타일 사전", len(D.styles), active, _app("styles")))
     parts.append(_item("trends", "2026 트렌드", len(D.trends), active, _app("trends")))
     parts.append(_item("glossary", "용어 사전", len(D.terms), active, _app("glossary")))
+    parts.append(SEP)
+    parts.append(_item("talk", "디자인 잡담", None, active, SITE + "talk/"))
     return "".join(parts)
 
 

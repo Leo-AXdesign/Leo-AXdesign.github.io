@@ -175,9 +175,6 @@
     const SEP = '<hr class="nav__sep" />';
     let html = item('all', '전체', SITES.length);
     html += item('bookmarks', '즐겨찾기', state.bookmarks.size, STAR.replace('fill="none"', 'fill="currentColor"'));
-    // 디자인 잡담은 화면 전환이 아니라 별도 주소라서 링크로 둡니다
-    html += '<a class="nav__item nav__item--link" href="talk/">'
-          + '<span class="nav__label">디자인 잡담</span></a>';
     html += SEP;
     CATEGORIES.forEach(c => { html += item(c.id, c.label, counts[c.id] || 0); });
     html += SEP;
@@ -185,6 +182,10 @@
     html += item('styles', '스타일 사전', STYLES.length);
     html += item('trends', '2026 트렌드', TRENDS.length);
     html += item('glossary', '용어 사전', GLOSSARY.length);
+    // 디자인 잡담은 화면 전환이 아니라 별도 주소라서 링크로 둡니다
+    html += SEP;
+    html += '<a class="nav__item nav__item--link" href="talk/">'
+          + '<span class="nav__label">디자인 잡담</span></a>';
     els.nav.innerHTML = html;
     if (els.drawerNav) els.drawerNav.innerHTML = html;
   }

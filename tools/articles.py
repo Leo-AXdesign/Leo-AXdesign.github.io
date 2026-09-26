@@ -22,6 +22,8 @@ build-articles.py 와 build-seo.py 가 같이 씁니다.
     - 목록 / 1. 번호 목록
     > 인용
     **굵게**, [링크](https://...), `코드`
+    ![그림 설명](https://designrefs.com/articles/img/파일.svg)   한 줄을 통째로 써야 그림이 됩니다.
+                                                              설명은 그림 아래 캡션으로 나옵니다.
 """
 import re, html, pathlib
 
@@ -52,6 +54,26 @@ def inline(t):
     return t
 
 
+SITE = "https://designrefs.com/"
+
+
+def figure(caption, src):
+    """그림 한 장. 사이트 안의 SVG 면 viewBox 를 읽어 크기를 미리 적어 둡니다.
+    (그림이 늦게 떠도 글이 아래로 밀리지 않게)"""
+    size = ""
+    if src.startswith(SITE) and src.endswith(".svg"):
+        f = ROOT / src[len(SITE):]
+        if not f.exists():
+            raise SystemExit(f"그림 파일이 없습니다: {f}")
+        vb = re.search(r'viewBox="0 0 ([\d.]+) ([\d.]+)"', f.read_text(encoding="utf-8"))
+        if vb:
+            size = f' width="{round(float(vb.group(1)))}" height="{round(float(vb.group(2)))}"'
+    return ('    <figure class="art__fig">\n'
+            f'      <img src="{e(src)}" alt="{e(re.sub(r"[*`]", "", caption))}"{size} loading="lazy" decoding="async" />\n'
+            f'      <figcaption>{inline(caption)}</figcaption>\n'
+            '    </figure>')
+
+
 def to_html(md):
     """마크다운 일부 문법을 본문 HTML 로 바꿉니다."""
     out, buf, mode = [], [], None
@@ -77,7 +99,11 @@ def to_html(md):
         if not line.strip():
             flush()
             continue
-        if line.startswith("## "):
+        img = re.match(r"^!\[([^\]]*)\]\(([^)\s]+)\)$", line.strip())
+        if img:
+            flush()
+            out.append(figure(img.group(1), img.group(2)))
+        elif line.startswith("## "):
             flush()
             out.append(f'    <h2 class="psub">{inline(line[3:])}</h2>')
         elif line.startswith("### "):
@@ -109,7 +135,8 @@ def to_html(md):
 
 def to_text(md):
     """llms-full.txt 에 넣을 평문. 마크다운 기호만 걷어냅니다."""
-    t = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", md)
+    t = re.sub(r"!\[([^\]]*)\]\([^)]+\)", r"(그림: \1)", md)
+    t = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", t)
     t = re.sub(r"[*`>]", "", t)
     return re.sub(r"\n{3,}", "\n\n", t).strip()
 
