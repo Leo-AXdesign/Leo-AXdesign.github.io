@@ -5,6 +5,9 @@
   'use strict';
 
   const $ = (sel, root = document) => root.querySelector(sel);
+  // 영문판(/en/)은 <html lang="en"> 이고 js/data.en.js 를 함께 불러옵니다
+  const LANG = (document.documentElement.lang || 'ko').slice(0, 2) === 'en' && typeof EN !== 'undefined' ? 'en' : 'ko';
+  const T = (ko, en) => (LANG === 'en' ? en : ko);
   const STORAGE_BOOKMARKS = 'designhub:bookmarks';
   const STORAGE_THEME = 'designhub:theme';
   const STORAGE_VIEW = 'designhub:view';
@@ -43,17 +46,26 @@
     previewDomain: $('#preview-domain'),
   };
 
+  const tagLabel = t => (LANG === 'en' ? EN.tags[t] || t : t);
+  const subLabel = k => (LANG === 'en' ? EN.aiSubs[k] || (k === '기타' ? 'Other' : k) : k);
   const TAG_FILTERS = [
-    { id: '', label: '전체' },
-    { id: '한국', label: '한국' },
-    { id: '무료', label: '무료' },
-    { id: '유료', label: '유료' },
+    { id: '', label: T('전체', 'All') },
+    { id: '한국', label: tagLabel('한국') },
+    { id: '무료', label: tagLabel('무료') },
+    { id: '유료', label: tagLabel('유료') },
     { id: 'AI', label: 'AI' },
   ];
 
   const STAR = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="m12 2.5 2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8Z"/></svg>';
 
-  const PSEUDO = {
+  const PSEUDO = LANG === 'en' ? {
+    all:       { id: 'all', label: 'All' },
+    bookmarks: { id: 'bookmarks', label: 'Bookmarks', desc: 'Bookmarks saved in this browser' },
+    styles:    { id: 'styles', label: 'Style Guide', desc: 'Major graphic design styles and movements. Click a name to open Pinterest references.' },
+    trends:    { id: 'trends', label: '2026 Trends', desc: 'Keywords that keep coming up in trend reports and design communities' },
+    glossary:  { id: 'glossary', label: 'Glossary', desc: 'Everyday terms in design, print and UI/UX work, with the Korean term used in Korean studios' },
+    articles:  { id: 'articles', label: 'Articles', desc: '' },
+  } : {
     all:       { id: 'all', label: '전체' },
     bookmarks: { id: 'bookmarks', label: '즐겨찾기', desc: '이 브라우저에 저장된 즐겨찾기' },
     styles:    { id: 'styles', label: '스타일 사전', desc: '유명 그래픽 디자인 양식과 흐름. 이름을 누르면 핀터레스트 레퍼런스가 열립니다.' },
@@ -65,6 +77,40 @@
   // js/articles.js 가 없어도 화면이 깨지지 않게 둡니다
   // (const 로 선언된 전역은 window 에 붙지 않으므로 typeof 로 확인합니다)
   const POSTS = typeof ARTICLES !== 'undefined' ? ARTICLES : [];
+  /* 영문판이면 data.js 의 한국어 내용을 data.en.js 의 영어로 바꿔 둡니다.
+     원래 한국어 이름은 ko 에 남겨 두고, 번역이 없는 항목은 한국어 그대로 둡니다. */
+  (function applyEnglish() {
+    if (LANG !== 'en') return;
+    CATEGORIES.forEach(c => Object.assign(c, EN.categories[c.id] || {}));
+    SITES.forEach(s => {
+      const e = SITES_EN[s.url];
+      if (!e) return;
+      s.ko = s.name;
+      if (e[0]) s.name = e[0];
+      s.desc = e[1];
+    });
+    STYLES.forEach(x => {
+      const e = STYLES_EN[x.en];
+      if (!e) return;
+      x.ko = x.name;
+      x.name = x.en;
+      [x.era, x.desc, x.traits, x.people] = e;
+    });
+    TRENDS.forEach(x => {
+      const e = TRENDS_EN[x.name];
+      if (!e) return;
+      x.ko = x.name;
+      [x.name, x.area, x.desc] = e;
+    });
+    GLOSSARY.forEach(x => {
+      const e = GLOSSARY_EN[x.term];
+      if (!e) return;
+      x.ko = x.term;
+      [x.term, x.desc] = e;
+    });
+    GLOSSARY_GROUPS.forEach(g => { g.label = EN.glossaryGroups[g.id] || g.label; });
+    TREND_SOURCES.forEach(t => { t.desc = EN.trendSources[t.name] || t.desc; });
+  })();
   const pinUrl = q => 'https://www.pinterest.com/search/pins/?q=' + encodeURIComponent(q);
   const imgUrl = q => 'https://www.google.com/search?tbm=isch&q=' + encodeURIComponent(q);
 
@@ -155,7 +201,7 @@
     if (state.tag && !(site.tags || []).includes(state.tag)) return false;
     if (!state.query) return true;
     const words = state.query.toLowerCase().split(/\s+/).filter(Boolean);
-    const hay = [site.name, site.desc, hostOf(site.url), ...(site.tags || []), (catById(site.cat) || {}).label || '']
+    const hay = [site.name, site.ko, site.desc, hostOf(site.url), ...(site.tags || []).map(tagLabel), (catById(site.cat) || {}).label || '']
       .join(' ').toLowerCase();
     return words.every(w => hay.includes(w));
   }
@@ -166,11 +212,11 @@
     const hay = fields.filter(Boolean).join(' ').toLowerCase();
     return words.every(w => hay.includes(w));
   }
-  function visibleStyles() { return STYLES.filter(x => textMatches([x.name, x.en, x.era, x.desc, x.traits, x.people])); }
-  function visibleTrends() { return TRENDS.filter(x => textMatches([x.name, x.area, x.desc])); }
+  function visibleStyles() { return STYLES.filter(x => textMatches([x.name, x.ko, x.en, x.era, x.desc, x.traits, x.people])); }
+  function visibleTrends() { return TRENDS.filter(x => textMatches([x.name, x.ko, x.area, x.desc])); }
   function visibleArticles() { return POSTS.filter(x => textMatches([x.title, x.desc, x.tag])); }
   function visibleGlossary(ignoreGroup) {
-    return GLOSSARY.filter(x => (ignoreGroup || !state.ggroup || x.group === state.ggroup) && textMatches([x.term, x.en, x.desc]));
+    return GLOSSARY.filter(x => (ignoreGroup || !state.ggroup || x.group === state.ggroup) && textMatches([x.term, x.ko, x.en, x.desc]));
   }
 
   /* ---------- render: nav / filters / stats ---------- */
@@ -185,19 +231,21 @@
       </button>`;
 
     const SEP = '<hr class="nav__sep" />';
-    let html = item('all', '전체', SITES.length);
-    html += item('bookmarks', '즐겨찾기', state.bookmarks.size, STAR.replace('fill="none"', 'fill="currentColor"'));
+    let html = item('all', PSEUDO.all.label, SITES.length);
+    html += item('bookmarks', PSEUDO.bookmarks.label, state.bookmarks.size, STAR.replace('fill="none"', 'fill="currentColor"'));
     html += SEP;
     CATEGORIES.forEach(c => { html += item(c.id, c.label, counts[c.id] || 0); });
     html += SEP;
-    if (POSTS.length) html += item('articles', '읽을거리', POSTS.length);
-    html += item('styles', '스타일 사전', STYLES.length);
-    html += item('trends', '2026 트렌드', TRENDS.length);
-    html += item('glossary', '용어 사전', GLOSSARY.length);
-    // 디자인 잡담은 화면 전환이 아니라 별도 주소라서 링크로 둡니다
-    html += SEP;
-    html += '<a class="nav__item nav__item--link" href="talk/">'
-          + '<span class="nav__label">디자인 잡담</span></a>';
+    if (POSTS.length) html += item('articles', PSEUDO.articles.label, POSTS.length);
+    html += item('styles', PSEUDO.styles.label, STYLES.length);
+    html += item('trends', PSEUDO.trends.label, TRENDS.length);
+    html += item('glossary', PSEUDO.glossary.label, GLOSSARY.length);
+    // 디자인 잡담은 화면 전환이 아니라 별도 주소라서 링크로 둡니다 (한국어 게시판이라 영문판에는 두지 않습니다)
+    if (LANG === 'ko') {
+      html += SEP;
+      html += '<a class="nav__item nav__item--link" href="talk/">'
+            + '<span class="nav__label">디자인 잡담</span></a>';
+    }
     els.nav.innerHTML = html;
     if (els.drawerNav) els.drawerNav.innerHTML = html;
   }
@@ -217,19 +265,20 @@
   function renderStats(shown) {
     const searching = !!state.query;
     if (searching) {
-      els.stats.innerHTML = `"<b>${escapeHtml(state.query)}</b>" 검색 결과 <b>${shown}</b>개`;
+      els.stats.innerHTML = T(`"<b>${escapeHtml(state.query)}</b>" 검색 결과 <b>${shown}</b>개`,
+        `<b>${shown}</b> results for "<b>${escapeHtml(state.query)}</b>"`);
     } else if (state.cat === 'all') {
       els.stats.innerHTML = '';
     } else if (state.cat === 'styles') {
-      els.stats.innerHTML = `디자인 스타일 <b>${shown}</b>개 · 연대순`;
+      els.stats.innerHTML = T(`디자인 스타일 <b>${shown}</b>개 · 연대순`, `<b>${shown}</b> styles · chronological`);
     } else if (state.cat === 'trends') {
-      els.stats.innerHTML = `트렌드 키워드 <b>${shown}</b>개`;
+      els.stats.innerHTML = T(`트렌드 키워드 <b>${shown}</b>개`, `<b>${shown}</b> trends`);
     } else if (state.cat === 'glossary') {
-      els.stats.innerHTML = `용어 <b>${shown}</b>개`;
+      els.stats.innerHTML = T(`용어 <b>${shown}</b>개`, `<b>${shown}</b> terms`);
     } else if (state.cat === 'articles') {
-      els.stats.innerHTML = `글 <b>${shown}</b>편`;
+      els.stats.innerHTML = T(`글 <b>${shown}</b>편`, `<b>${shown}</b> articles`);
     } else {
-      els.stats.innerHTML = `<b>${escapeHtml(catById(state.cat).label)}</b> · <b>${shown}</b>개`;
+      els.stats.innerHTML = `<b>${escapeHtml(catById(state.cat).label)}</b> · <b>${shown}</b>${T('개', ' sites')}`;
     }
   }
 
@@ -241,8 +290,8 @@
     const initial = escapeHtml((site.name || '?').trim().charAt(0).toUpperCase());
     const parts = [];
     if (showCat) parts.push(`<b>${escapeHtml(cat.label)}</b>`);
-    if (site.sub && (showCat || state.cat !== site.cat)) parts.push(escapeHtml(site.sub));
-    (site.tags || []).forEach(t => parts.push(escapeHtml(t)));
+    if (site.sub && (showCat || state.cat !== site.cat)) parts.push(escapeHtml(subLabel(site.sub)));
+    (site.tags || []).forEach(t => parts.push(escapeHtml(tagLabel(t))));
     return `
       <a class="row" href="${escapeHtml(site.url)}" target="_blank" rel="noopener noreferrer" data-url="${escapeHtml(site.url)}">
         <span class="row__fav" data-initial="${initial}">
@@ -254,7 +303,7 @@
         </span>
         <p class="row__desc">${highlight(site.desc, state.query)}</p>
         <span class="row__tags">${parts.join(' · ')}</span>
-        <button class="row__star ${on ? 'is-on' : ''}" type="button" aria-label="${on ? '즐겨찾기 해제' : '즐겨찾기 추가'}" title="즐겨찾기">${STAR}</button>
+        <button class="row__star ${on ? 'is-on' : ''}" type="button" aria-label="${on ? T('즐겨찾기 해제', 'Remove bookmark') : T('즐겨찾기 추가', 'Add bookmark')}" title="${T('즐겨찾기', 'Bookmark')}">${STAR}</button>
         <span class="row__arrow" aria-hidden="true">↗</span>
       </a>`;
   }
@@ -271,7 +320,7 @@
       return `
         <div class="subgroup">
           <header class="section__head section__head--sub">
-            <h3 class="section__title section__title--sub">${escapeHtml(k)}</h3>
+            <h3 class="section__title section__title--sub">${escapeHtml(subLabel(k))}</h3>
             <span class="section__count">${items.length}</span>
           </header>
           <div class="list">${items.map(s => renderRow(s, showCat)).join('')}</div>
@@ -300,7 +349,7 @@
     // 이미지 로드 실패 시: img 를 제거하고 래퍼에 is-text 를 붙여 CSS 로 텍스트 타일 표시
     return `
       <a class="srow__thumbwrap" href="${pinUrl(x.q)}" target="_blank" rel="noopener noreferrer" tabindex="-1" data-en="${en}" title="${escapeHtml(x.imgTitle || x.en)}">
-        <img class="srow__thumb" src="${escapeHtml(x.img)}" alt="${en} 대표 이미지" loading="lazy"
+        <img class="srow__thumb" src="${escapeHtml(x.img)}" alt="${T(en + ' 대표 이미지', en + ' example')}" loading="lazy"
              onerror="this.parentNode.classList.add('is-text'); this.remove();" />
       </a>`;
   }
@@ -312,7 +361,7 @@
         <span class="srow__main">
           <span class="srow__era">${escapeHtml(x.era)}</span>
           <a class="srow__name" href="${pinUrl(x.q)}" target="_blank" rel="noopener noreferrer">${highlight(x.name, state.query)}</a>
-          <span class="srow__en">${highlight(x.en, state.query)}</span>
+          <span class="srow__en">${highlight(LANG === 'en' ? x.ko || '' : x.en, state.query)}</span>
         </span>
         <span class="srow__body">
           <p class="srow__desc">${highlight(x.desc, state.query)}</p>
@@ -320,7 +369,7 @@
         </span>
         <span class="srow__links">
           <a href="${pinUrl(x.q)}" target="_blank" rel="noopener noreferrer">Pinterest</a>
-          <a href="${imgUrl(x.en + ' graphic design')}" target="_blank" rel="noopener noreferrer">이미지</a>
+          <a href="${imgUrl(x.en + ' graphic design')}" target="_blank" rel="noopener noreferrer">${T('이미지', 'Images')}</a>
           ${x.wiki ? `<a href="${escapeHtml(x.wiki)}" target="_blank" rel="noopener noreferrer">Wiki</a>` : ''}
         </span>
       </div>`;
@@ -337,7 +386,7 @@
         <span class="srow__body"><p class="srow__desc">${highlight(x.desc, state.query)}</p></span>
         <span class="srow__links">
           <a href="${pinUrl(x.q)}" target="_blank" rel="noopener noreferrer">Pinterest</a>
-          ${x.link ? `<a href="${escapeHtml(x.link)}" target="_blank" rel="noopener noreferrer">자세히</a>` : ''}
+          ${x.link ? `<a href="${escapeHtml(x.link)}" target="_blank" rel="noopener noreferrer">${T('자세히', 'More')}</a>` : ''}
         </span>
       </div>`;
   }
@@ -361,7 +410,7 @@
       <div class="grow">
         <span class="grow__main">
           <span class="grow__term">${highlight(x.term, state.query)}</span>
-          <span class="grow__en">${highlight(x.en, state.query)}</span>
+          <span class="grow__en">${highlight(LANG === 'en' ? x.ko || '' : x.en, state.query)}</span>
         </span>
         <p class="grow__desc">${highlight(x.desc, state.query)}</p>
       </div>`;
@@ -371,7 +420,7 @@
     const counts = {};
     GLOSSARY.forEach(g => { counts[g.group] = (counts[g.group] || 0) + 1; });
     const pill = (id, label, n) => `<button class="pill ${state.ggroup === id ? 'is-active' : ''}" data-ggroup="${id}" type="button">${escapeHtml(label)} <span class="pill__count">${n}</span></button>`;
-    return `<div class="gfilter pills">${pill('', '전체', GLOSSARY.length)}${GLOSSARY_GROUPS.map(g => pill(g.id, g.label, counts[g.id] || 0)).join('')}</div>`;
+    return `<div class="gfilter pills">${pill('', PSEUDO.all.label, GLOSSARY.length)}${GLOSSARY_GROUPS.map(g => pill(g.id, g.label, counts[g.id] || 0)).join('')}</div>`;
   }
 
   function renderGlossary(list, withFilter) {
@@ -409,11 +458,12 @@
   function renderTrendSources() {
     return `
       <div class="sources">
-        <span class="sources__label">참고 리포트</span>
+        <span class="sources__label">${T('참고 리포트', 'Sources')}</span>
         ${TREND_SOURCES.map(t => `<a class="sources__link" href="${escapeHtml(t.url)}" target="_blank" rel="noopener noreferrer" title="${escapeHtml(t.desc)}">${escapeHtml(t.name)} ↗</a>`).join('')}
       </div>`;
   }
 
+  const NO_RESULTS = T('검색 결과가 없습니다', 'No results');
   function renderEmpty(title, desc) {
     return `<div class="empty"><p class="empty__title">${escapeHtml(title)}</p><p>${escapeHtml(desc)}</p></div>`;
   }
@@ -433,31 +483,31 @@
       shown = list.length;
       html = list.length
         ? renderSection(PSEUDO.bookmarks, list, true)
-        : renderEmpty('아직 즐겨찾기가 없습니다', '목록의 ☆ 버튼을 눌러 자주 쓰는 사이트를 모아보세요.');
+        : renderEmpty(T('아직 즐겨찾기가 없습니다', 'No bookmarks yet'), T('목록의 ☆ 버튼을 눌러 자주 쓰는 사이트를 모아보세요.', 'Tap ☆ on any site to keep the ones you use most.'));
     } else if (state.cat === 'styles') {
       const list = visibleStyles();
       shown = list.length;
       html = list.length
         ? renderInsightSection(PSEUDO.styles, list.map(renderStyleRow).join(''), list.length)
-        : renderEmpty('검색 결과가 없습니다', `"${state.query}"에 해당하는 스타일이 없습니다.`);
+        : renderEmpty(NO_RESULTS, T(`"${state.query}"에 해당하는 스타일이 없습니다.`, `No styles match "${state.query}".`));
     } else if (state.cat === 'trends') {
       const list = visibleTrends();
       shown = list.length;
       html = list.length
         ? renderInsightSection(PSEUDO.trends, list.map(renderTrendRow).join(''), list.length, renderTrendSources())
-        : renderEmpty('검색 결과가 없습니다', `"${state.query}"에 해당하는 트렌드가 없습니다.`);
+        : renderEmpty(NO_RESULTS, T(`"${state.query}"에 해당하는 트렌드가 없습니다.`, `No trends match "${state.query}".`));
     } else if (state.cat === 'articles') {
       const list = visibleArticles();
       shown = list.length;
       html = list.length
         ? renderInsightSection(PSEUDO.articles, list.map(renderArticleRow).join(''), list.length)
-        : renderEmpty('검색 결과가 없습니다', `"${state.query}"에 해당하는 글이 없습니다.`);
+        : renderEmpty(NO_RESULTS, T(`"${state.query}"에 해당하는 글이 없습니다.`, `No articles match "${state.query}".`));
     } else if (state.cat === 'glossary') {
       const list = visibleGlossary();
       shown = list.length;
       html = list.length
         ? renderInsightSection(PSEUDO.glossary, renderGlossary(list, true), list.length)
-        : renderInsightSection(PSEUDO.glossary, renderGlossaryFilter() + renderEmpty('검색 결과가 없습니다', `"${state.query}"에 해당하는 용어가 없습니다.`), 1);
+        : renderInsightSection(PSEUDO.glossary, renderGlossaryFilter() + renderEmpty(NO_RESULTS, T(`"${state.query}"에 해당하는 용어가 없습니다.`, `No terms match "${state.query}".`)), 1);
     } else if (state.cat === 'all') {
       const starred = sites.filter(s => state.bookmarks.has(s.url));
       if (starred.length && !searching) html += renderSection(PSEUDO.bookmarks, starred, true);
@@ -474,14 +524,14 @@
         html += renderInsightSection(PSEUDO.glossary, gl.map(renderGlossaryRow).join(''), gl.length);
         shown += st.length + tr.length + gl.length;
       }
-      if (!shown) html = renderEmpty('검색 결과가 없습니다', `"${state.query}"에 해당하는 항목을 찾지 못했습니다.`);
+      if (!shown) html = renderEmpty(NO_RESULTS, T(`"${state.query}"에 해당하는 항목을 찾지 못했습니다.`, `Nothing matches "${state.query}".`));
     } else {
       const cat = catById(state.cat);
       const list = sites.filter(s => s.cat === state.cat);
       shown = list.length;
       html = list.length
         ? renderSection(cat, list)
-        : renderEmpty('검색 결과가 없습니다', searching ? `"${state.query}"에 해당하는 사이트가 이 카테고리에 없습니다.` : '조건에 맞는 사이트가 없습니다.');
+        : renderEmpty(NO_RESULTS, searching ? T(`"${state.query}"에 해당하는 사이트가 이 카테고리에 없습니다.`, `No sites in this category match "${state.query}".`) : T('조건에 맞는 사이트가 없습니다.', 'No sites match these filters.'));
     }
 
     els.content.innerHTML = html;
@@ -497,7 +547,7 @@
     if (trackedSection !== state.cat) {
       trackedSection = state.cat;
       const label = (catById(state.cat) || PSEUDO.all).label;
-      document.title = state.cat === 'all' ? BASE_TITLE : label + ' | 디자인 허브';
+      document.title = state.cat === 'all' ? BASE_TITLE : label + T(' | 디자인 허브', ' | Design Hub');
       if (state.cat !== 'all') track('view_section', { section_id: state.cat, section_name: label });
     }
   }

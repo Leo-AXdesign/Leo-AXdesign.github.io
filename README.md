@@ -27,6 +27,8 @@
 ├── tools/build-seo.py            # sitemap, JSON-LD, noscript 생성
 ├── tools/build-pages.py          # 카테고리별 정적 페이지 생성
 ├── tools/build-articles.py       # 읽을거리 페이지 생성
+├── tools/build-en.py             # 영문판 첫 화면 en/index.html 생성 (번역 빠진 항목도 알려 줌)
+├── js/data.en.js                 # ★ 영문판 번역 (사이트를 추가하면 여기에도 한 줄)
 ├── tools/build-og.py             # 글별 공유 이미지 og/<slug>.png (크롬 필요)
 ├── tools/build-cards.py          # 인스타 카드뉴스 → 저장소 밖 홍보자료/cards/ (크롬 필요)
 ├── tools/charts.py               # 글 속 비교 차트 SVG (넓은 판 + 폰 판 -m)
@@ -139,7 +141,7 @@ git config user.name "이름" && git config user.email "메일주소"
 사이트를 추가·수정했다면 아래 두 줄을 실행해 검색엔진용 파일과 카테고리 페이지를 다시 만든 다음 push 하세요.
 
 ```bash
-python3 tools/build-pages.py && python3 tools/build-articles.py && python3 tools/build-seo.py
+python3 tools/build-pages.py && python3 tools/build-articles.py && python3 tools/build-seo.py && python3 tools/build-en.py
 ```
 
 `js/data.js` 와 `content/articles/` 기준으로 카테고리 페이지, 읽을거리 페이지, `sitemap.xml`, JSON-LD, `llms.txt` 가 모두 갱신됩니다. 순서가 있습니다. `build-seo.py` 를 마지막에 돌려야 새 글이 sitemap 에 들어갑니다.
