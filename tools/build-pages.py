@@ -256,6 +256,8 @@ SHORT_DESC.update({
 FOOTER = footer_links()
 # 개수를 브라우저에서 채우는 페이지 (디자인 잡담의 글 수는 서버에서 받아 옵니다)
 COUNT_BY_JS = {"talk"}
+# 디자인 잡담은 영문판(/en/talk/)과 짝입니다
+TALK_ALT = {"ko": f"{SITE}talk/", "en": f"{SITE}en/talk/"}
 nav_all = "".join(
     f'<a href="{SITE}{s}/">{e(t)}</a>' for s, t, *_ in pages
 )
@@ -314,10 +316,36 @@ for slug, title, intro, body, n, names, navlabel in pages:
 {intro_html}{body}
     </section>"""
     doc = document(title=title, desc=intro, url=url, body=body_full, jsonld=jsonld,
-                   menu=menu(slug), footer_nav=FOOTER)
+                   menu=menu(slug), footer_nav=FOOTER,
+                   alternates=TALK_ALT if slug == "talk" else None)
     d = ROOT / slug
     d.mkdir(exist_ok=True)
     (d / "index.html").write_text(doc, encoding="utf-8")
+
+# ---------- 영문 디자인 잡담 (/en/talk/) ----------
+# 게시판은 한국어판과 하나를 같이 씁니다. 화면 문구는 js/talk.js 가 <html lang> 을 보고 바꿉니다.
+TALK_EN_URL = TALK_ALT["en"]
+TALK_EN_DESC = "A place to talk about design. Share what you're working on, the tools you use, or where you're stuck."
+talk_en_body = f"""    <section class="section">
+{section_head("Design Talk", "", "Talk about design, in Korean or English")}
+
+    <div id="talk"></div>
+
+    <p class="ptext ptext--note">Your name and post are shown publicly. Please don't include contact details or other personal information.
+    Ads, abuse and posts containing other people's personal information are removed.
+    This board is shared with the Korean site, so you'll see posts in Korean too.</p>
+
+    <script src="{SITE}js/talk.js" defer></script>
+    </section>"""
+talk_en_jsonld = {
+    "@context": "https://schema.org", "@type": "CollectionPage", "url": TALK_EN_URL, "name": "Design Talk",
+    "description": TALK_EN_DESC, "inLanguage": "en",
+    "isPartOf": {"@type": "WebSite", "url": SITE + "en/", "name": "Design Hub"},
+}
+doc = document(title="Design Talk", desc=TALK_EN_DESC, url=TALK_EN_URL, body=talk_en_body, jsonld=talk_en_jsonld,
+               menu=menu("talk", "en"), footer_nav=footer_links("en"), lang="en", alternates=TALK_ALT)
+(ROOT / "en" / "talk").mkdir(parents=True, exist_ok=True)
+(ROOT / "en" / "talk" / "index.html").write_text(doc, encoding="utf-8")
 
 # ---------- 메인 index.html 의 푸터 링크 갱신 ----------
 p = ROOT / "index.html"

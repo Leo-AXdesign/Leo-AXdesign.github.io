@@ -98,6 +98,7 @@ FOOTER = f"""<footer class="footer">
     <div class="wrap footer__inner">
       <span>Copyright 2026. Design Hub. all rights reserved.</span>
       <a href="{SITE}en/articles/">Articles</a>
+      <a href="{SITE}en/talk/">Design Talk</a>
       <a href="/" hreflang="ko" lang="ko">한국어</a>
       <a href="/privacy/">Privacy (Korean)</a>
       <a href="mailto:nisov0924@gmail.com">CONTACT : nisov0924@gmail.com</a>

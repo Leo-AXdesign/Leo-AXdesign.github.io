@@ -104,6 +104,7 @@ def document(*, title, desc, url, body, jsonld, og_type="website",
         hreflang += f'\n  <link rel="alternate" hreflang="x-default" href="{alternates["ko"]}" />'
     if lang == "en":
         foot = (f'      <a href="{SITE}en/articles/">Articles</a>\n'
+                f'      <a href="{SITE}en/talk/">Design Talk</a>\n'
                 f'      <a href="{SITE}" hreflang="ko" lang="ko">한국어</a>\n'
                 f'      <a href="{SITE}privacy/">Privacy (Korean)</a>\n')
     else:

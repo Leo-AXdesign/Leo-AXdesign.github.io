@@ -12,11 +12,16 @@
 - 읽을거리: content/articles/<주소>.md (한국어) 와 content/articles-en/<주소>.md (영어) 를 씁니다.
 - 올리기: 빌드 스크립트를 순서대로 돌리고, git 으로 커밋·푸시한 뒤 검색엔진에 알립니다.
   푸시하면 GitHub Actions 가 1~2분 안에 designrefs.com 에 반영합니다.
+- 디자인 잡담: 게시판 서버(Cloudflare Worker)에 운영자 열쇠로 접속해 글을 고치고, 숨기고, 지웁니다.
+  이쪽은 누르는 즉시 사이트에 반영됩니다 (올리기 필요 없음).
 
 안전장치
 - 127.0.0.1 에서만 열립니다. 같은 와이파이의 다른 기기에서도 들어올 수 없습니다.
 - 실행할 때마다 새 열쇠(토큰)를 만들어, 이 창이 아닌 다른 웹페이지가 몰래 요청을 보내지 못하게 합니다.
-- 비밀번호나 GitHub 토큰은 다루지 않습니다. 푸시는 이 맥에 이미 설정된 git 로그인을 그대로 씁니다.
+- GitHub 토큰은 다루지 않습니다. 푸시는 이 맥에 이미 설정된 git 로그인을 그대로 씁니다.
+- 게시판 운영자 열쇠(ADMIN_TOKEN)는 화면에서 직접 넣습니다. '이 맥에 기억'을 고르면
+  저장소 밖(~/.config/designhub/talk-admin-token, 나만 읽을 수 있는 권한)에만 저장하고,
+  화면이나 기록에 다시 보여 주지 않습니다.
 """
 import base64, datetime, html, http.server, json, mimetypes, pathlib, re, secrets
 import subprocess, sys, threading, urllib.parse, urllib.request, webbrowser
@@ -27,6 +32,8 @@ sys.path.insert(0, str(TOOLS))
 import articles as A  # noqa: E402  (본문 미리보기에 같은 변환기를 씁니다)
 
 HOST, PORT = "127.0.0.1", 8787
+if "--port" in sys.argv:          # 다른 포트로 띄울 때: python3 tools/admin.py --port 8788
+    PORT = int(sys.argv[sys.argv.index("--port") + 1])
 TOKEN = secrets.token_urlsafe(24)
 DATA = ROOT / "js" / "data.js"
 DATA_EN = ROOT / "js" / "data.en.js"
@@ -34,6 +41,8 @@ KO_DIR = ROOT / "content" / "articles"
 EN_DIR = ROOT / "content" / "articles-en"
 IMG_DIR = ROOT / "articles" / "img"
 TAGS = ["한국", "무료", "유료", "AI", "유튜브", "인스타그램", "팟캐스트"]
+KEY_FILE = pathlib.Path.home() / ".config" / "designhub" / "talk-admin-token"
+TALK_KEY = {"value": None}      # 이번 실행 동안만 기억하는 운영자 열쇠
 SLUG_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 LOCK = threading.Lock()          # 파일을 고치는 요청은 한 번에 하나씩
 
@@ -400,9 +409,98 @@ def preview(p):
     return {"ok": True, "html": out}
 
 
+# =========================================================
+# 디자인 잡담 — 게시판 서버에 운영자 열쇠로 요청합니다
+# =========================================================
+def talk_api():
+    # 시험할 때만: DESIGNHUB_TALK_API 로 다른 서버(로컬 wrangler dev 등)를 가리킬 수 있습니다
+    import os
+    if os.environ.get("DESIGNHUB_TALK_API"):
+        return os.environ["DESIGNHUB_TALK_API"]
+    m = re.search(r"const TALK_API = '([^']+)'", (ROOT / "js" / "talk.js").read_text(encoding="utf-8"))
+    if not m:
+        raise Oops("js/talk.js 에서 게시판 서버 주소를 찾지 못했습니다.")
+    return m.group(1)
+
+
+def talk_key():
+    if TALK_KEY["value"]:
+        return TALK_KEY["value"]
+    if KEY_FILE.exists():
+        TALK_KEY["value"] = KEY_FILE.read_text(encoding="utf-8").strip() or None
+    return TALK_KEY["value"]
+
+
+def talk_call(method, query, body=None, key=None):
+    key = key or talk_key()
+    if not key:
+        raise Oops("운영자 열쇠를 먼저 넣어 주세요.")
+    data = json.dumps(body).encode("utf-8") if body is not None else None
+    req = urllib.request.Request(f"{talk_api()}?{urllib.parse.urlencode(query)}", data=data, method=method,
+                                 headers={"Authorization": "Bearer " + key, "Content-Type": "application/json",
+                                          "User-Agent": "DesignHubAdmin"})
+    try:
+        with urllib.request.urlopen(req, timeout=15) as r:
+            return json.loads(r.read().decode("utf-8"))
+    except urllib.error.HTTPError as err:
+        try:
+            msg = json.loads(err.read().decode("utf-8")).get("error", "")
+        except Exception:
+            msg = ""
+        if err.code == 403:
+            raise Oops("운영자 열쇠가 맞지 않습니다. 다시 넣어 주세요.")
+        raise Oops(msg or f"게시판 서버가 {err.code} 로 답했습니다.")
+    except urllib.error.URLError as err:
+        raise Oops(f"게시판 서버에 연결하지 못했습니다: {err.reason}")
+
+
+def talk_status(_=None):
+    return {"ok": True, "connected": bool(talk_key()), "remembered": KEY_FILE.exists()}
+
+
+def talk_connect(p):
+    key = str(p.get("key") or "").strip()
+    if not key:
+        raise Oops("열쇠를 넣어 주세요.")
+    talk_call("GET", {"page": "talk", "all": "1"}, key=key)      # 맞는지 먼저 확인
+    TALK_KEY["value"] = key
+    if p.get("remember"):
+        KEY_FILE.parent.mkdir(parents=True, exist_ok=True)
+        KEY_FILE.touch(mode=0o600, exist_ok=True)
+        KEY_FILE.chmod(0o600)
+        KEY_FILE.write_text(key, encoding="utf-8")
+    else:
+        KEY_FILE.unlink(missing_ok=True)
+    return {"ok": True, "message": "게시판에 연결했습니다." + (" 이 맥에 기억해 두었습니다." if p.get("remember") else "")}
+
+
+def talk_forget(_=None):
+    TALK_KEY["value"] = None
+    KEY_FILE.unlink(missing_ok=True)
+    return {"ok": True, "message": "열쇠를 잊었습니다. 다음에 다시 넣어야 합니다."}
+
+
+def talk_list(_=None):
+    d = talk_call("GET", {"page": "talk", "all": "1"})
+    return {"ok": True, "items": d.get("items", [])}
+
+
+def talk_update(p):
+    body = {k: p[k] for k in ("name", "body", "hidden") if k in p}
+    d = talk_call("PATCH", {"id": int(p.get("id") or 0)}, body)
+    return {"ok": True, "item": d.get("item"), "message": "고쳤습니다. 사이트에 바로 반영됩니다."}
+
+
+def talk_delete(p):
+    talk_call("DELETE", {"id": int(p.get("id") or 0)}, {})
+    return {"ok": True, "message": "지웠습니다. 사이트에서도 바로 사라집니다."}
+
+
 API = {"state": state, "site": save_site, "site-delete": delete_site, "article-get": lambda p: get_article(p.get("slug")),
        "article": save_article, "article-delete": delete_article, "upload": upload_image, "check-url": check_url,
-       "preview": preview, "publish": publish, "build": build_only}
+       "preview": preview, "publish": publish, "build": build_only,
+       "talk-status": talk_status, "talk-connect": talk_connect, "talk-forget": talk_forget,
+       "talk-list": talk_list, "talk-update": talk_update, "talk-delete": talk_delete}
 
 
 # =========================================================

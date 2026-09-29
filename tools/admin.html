@@ -106,6 +106,21 @@
   .empty-a { color: var(--a-muted); padding: 60px 0; text-align: center; }
   .busy { position: fixed; inset: 0; background: rgba(255,255,255,.6); display: grid; place-items: center; z-index: 70; font-weight: 600; }
   .busy[hidden] { display: none; }
+  /* 디자인 잡담 */
+  .wrapA--one { grid-template-columns: minmax(0, 860px); justify-content: center; }
+  .post { border: 1px solid var(--a-line); border-radius: 14px; padding: 16px 18px; margin-bottom: 10px; }
+  .post.is-hidden { background: var(--a-soft); }
+  .post.is-hidden .post__text { color: var(--a-muted); }
+  .post__meta { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--a-muted); margin-bottom: 8px; }
+  .post__meta b { color: var(--a-ink); font-size: 14px; }
+  .post__meta .spacer { flex: 1; }
+  .post__text { margin: 0; line-height: 1.65; white-space: pre-wrap; word-break: break-word; }
+  .post__edit { display: grid; gap: 8px; }
+  .post__edit[hidden] { display: none; }
+  .talk-top { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; }
+  .talk-top .spacer { flex: 1; }
+  .note-a { font-size: 12px; color: var(--a-muted); line-height: 1.6; background: var(--a-soft); border-radius: 10px; padding: 12px 14px; }
+  .note-a code { background: #fff; padding: 1px 5px; border-radius: 4px; }
   @media (max-width: 900px) {
     .wrapA { grid-template-columns: 1fr; } .side { position: static; max-height: none; } .list-a { max-height: 320px; }
     .editor, .grid2 { grid-template-columns: 1fr; }
@@ -119,6 +134,7 @@
       <nav class="tabs">
         <button class="tab is-on" data-view="sites" type="button">사이트</button>
         <button class="tab" data-view="articles" type="button">읽을거리</button>
+        <button class="tab" data-view="talk" type="button">디자인 잡담</button>
       </nav>
       <div class="bar__right">
         <span class="pending" id="pending"></span>
@@ -246,6 +262,36 @@
     </section>
   </main>
 
+  <!-- ================= 디자인 잡담 ================= -->
+  <main class="wrapA wrapA--one" id="view-talk" hidden>
+    <section class="panel" id="talk-connect" hidden>
+      <h2>게시판에 연결</h2>
+      <p class="lead">디자인 잡담의 글을 고치고 지우려면 운영자 열쇠가 필요합니다.
+        게시판 서버를 만들 때 터미널에서 <code>npx wrangler secret put ADMIN_TOKEN</code> 을 실행하고 직접 넣었던 값입니다.</p>
+      <form id="talk-key-form" autocomplete="off">
+        <div class="f"><label for="t-key">운영자 열쇠 (ADMIN_TOKEN)</label>
+          <input class="inp" id="t-key" type="password" autocomplete="off" spellcheck="false" /></div>
+        <label class="chk" style="margin-bottom:16px"><input type="checkbox" id="t-remember" checked /> 이 맥에 기억하기</label>
+        <div class="actions"><button class="btn btn--dark" type="submit">연결</button></div>
+      </form>
+      <p class="note-a" style="margin-top:20px">열쇠는 이 맥에만 저장되고(내 계정만 읽을 수 있는 파일), 화면에 다시 보이지 않습니다.<br />
+        열쇠가 기억나지 않으면 터미널에서 <code>cd 디자인허브/worker</code> 후 <code>npx wrangler secret put ADMIN_TOKEN</code> 으로 새 값을 정하고, 여기에 그 값을 넣으면 됩니다.</p>
+    </section>
+
+    <section class="panel" id="talk-board" hidden>
+      <div class="talk-top">
+        <h2 style="margin:0">디자인 잡담</h2><span class="count" id="talk-count"></span>
+        <span class="spacer"></span>
+        <a class="btn btn--sm" href="https://designrefs.com/talk/" target="_blank" rel="noopener">사이트에서 보기</a>
+        <button class="btn btn--sm" id="talk-reload" type="button">새로고침</button>
+        <button class="btn btn--sm" id="talk-forget" type="button">열쇠 잊기</button>
+      </div>
+      <p class="lead">여기서 고치거나 숨기거나 지우면 사이트에 바로 반영됩니다. '사이트에 올리기'는 누르지 않아도 됩니다.
+        숨긴 글은 사이트에서 보이지 않고 여기에만 남습니다.</p>
+      <div id="talk-posts"></div>
+    </section>
+  </main>
+
   <!-- ================= 올리기 ================= -->
   <div class="modal" id="publish" hidden>
     <div class="modal__box">
@@ -308,6 +354,8 @@
     document.querySelectorAll('.tab').forEach(x => x.classList.toggle('is-on', x === b));
     $('#view-sites').hidden = b.dataset.view !== 'sites';
     $('#view-articles').hidden = b.dataset.view !== 'articles';
+    $('#view-talk').hidden = b.dataset.view !== 'talk';
+    if (b.dataset.view === 'talk') talkOpen();
   }));
   window.addEventListener('beforeunload', e => { if (dirty) { e.preventDefault(); e.returnValue = ''; } });
   document.addEventListener('input', e => { if (e.target.closest('form')) dirty = true; });
@@ -487,6 +535,85 @@
     if (!confirm(`'${$('#a-title').value}' 글을 지울까요? 영문판도 함께 지워집니다.`)) return;
     try { const r = await api('article-delete', { slug: curArt }); curArt = null; dirty = false; await refresh(); toast(r.message); }
     catch (err) { toast(err.message, true); }
+  });
+
+  /* ================= 디자인 잡담 ================= */
+  let POSTS = [];
+  function when(ms) {
+    const d = new Date(ms), p = n => String(n).padStart(2, '0');
+    return `${d.getFullYear()}. ${d.getMonth() + 1}. ${d.getDate()} ${p(d.getHours())}:${p(d.getMinutes())}`;
+  }
+  async function talkOpen() {
+    try {
+      const st = await api('talk-status', {}, true);
+      $('#talk-connect').hidden = st.connected; $('#talk-board').hidden = !st.connected;
+      if (st.connected) await talkLoad(); else $('#t-key').focus();
+    } catch (err) { toast(err.message, true); }
+  }
+  async function talkLoad() {
+    try {
+      const r = await api('talk-list');
+      POSTS = r.items; drawPosts();
+    } catch (err) {
+      toast(err.message, true);
+      if (/열쇠/.test(err.message)) { $('#talk-connect').hidden = false; $('#talk-board').hidden = true; }
+    }
+  }
+  function drawPosts() {
+    const hidden = POSTS.filter(x => x.hidden).length;
+    $('#talk-count').textContent = `${POSTS.length}개` + (hidden ? ` · 숨김 ${hidden}` : '');
+    $('#talk-posts').innerHTML = POSTS.map(x => `
+      <article class="post ${x.hidden ? 'is-hidden' : ''}" data-id="${x.id}">
+        <div class="post__meta"><b>${esc(x.name)}</b><span>${when(x.at)}</span><span>#${x.id}</span>
+          ${x.hidden ? '<span class="badge">숨김</span>' : ''}<span class="spacer"></span>
+          <button class="btn btn--sm" data-act="edit" type="button">수정</button>
+          <button class="btn btn--sm" data-act="hide" type="button">${x.hidden ? '다시 보이기' : '숨기기'}</button>
+          <button class="btn btn--sm btn--danger" data-act="del" type="button">지우기</button></div>
+        <p class="post__text">${esc(x.body)}</p>
+        <form class="post__edit" hidden>
+          <input class="inp" name="name" maxlength="20" value="${esc(x.name)}" />
+          <textarea class="area" name="body" maxlength="1000" style="min-height:110px">${esc(x.body)}</textarea>
+          <div class="actions"><button class="btn btn--dark btn--sm" type="submit">저장</button>
+            <button class="btn btn--sm" data-act="cancel" type="button">취소</button></div>
+        </form>
+      </article>`).join('') || '<p class="empty-a">아직 글이 없습니다</p>';
+  }
+  $('#talk-posts').addEventListener('click', async e => {
+    const b = e.target.closest('[data-act]'); if (!b) return;
+    const card = b.closest('.post'), id = Number(card.dataset.id), x = POSTS.find(p => p.id === id);
+    const form = card.querySelector('.post__edit'), text = card.querySelector('.post__text');
+    if (b.dataset.act === 'edit') { form.hidden = false; text.hidden = true; form.querySelector('[name=body]').focus(); return; }
+    if (b.dataset.act === 'cancel') { form.hidden = true; text.hidden = false; return; }
+    try {
+      if (b.dataset.act === 'hide') {
+        const r = await api('talk-update', { id, hidden: !x.hidden });
+        Object.assign(x, r.item); drawPosts(); toast(x.hidden ? '숨겼습니다. 사이트에서 보이지 않습니다.' : '다시 보이게 했습니다.');
+      } else if (b.dataset.act === 'del') {
+        if (!confirm(`${x.name} 님의 글을 지울까요? 되돌릴 수 없습니다.`)) return;
+        const r = await api('talk-delete', { id });
+        POSTS = POSTS.filter(p => p.id !== id); drawPosts(); toast(r.message);
+      }
+    } catch (err) { toast(err.message, true); }
+  });
+  $('#talk-posts').addEventListener('submit', async e => {
+    e.preventDefault();
+    const form = e.target, card = form.closest('.post'), id = Number(card.dataset.id);
+    try {
+      const r = await api('talk-update', { id, name: form.querySelector('[name=name]').value, body: form.querySelector('[name=body]').value });
+      Object.assign(POSTS.find(p => p.id === id), r.item); drawPosts(); toast(r.message);
+    } catch (err) { toast(err.message, true); }
+  });
+  $('#talk-key-form').addEventListener('submit', async e => {
+    e.preventDefault();
+    try {
+      const r = await api('talk-connect', { key: $('#t-key').value, remember: $('#t-remember').checked });
+      $('#t-key').value = ''; toast(r.message); await talkOpen();
+    } catch (err) { toast(err.message, true); }
+  });
+  $('#talk-reload').addEventListener('click', talkLoad);
+  $('#talk-forget').addEventListener('click', async () => {
+    if (!confirm('이 맥에 기억한 열쇠를 지울까요? 다음에 다시 넣어야 합니다.')) return;
+    try { const r = await api('talk-forget'); toast(r.message); await talkOpen(); } catch (err) { toast(err.message, true); }
   });
 
   /* ================= 올리기 ================= */

@@ -46,7 +46,7 @@ LABELS = {
 def menu(active="", lang="ko"):
     """메뉴 항목들. 왼쪽 사이드바와 모바일 메뉴가 같이 씁니다.
     active: 지금 보고 있는 페이지의 슬러그 (예: 'talk', 'ai', 'articles')
-    lang  : "en" 이면 영문판 화면(/en/#...)으로 가는 영어 메뉴. 디자인 잡담은 한국어 게시판이라 뺍니다."""
+    lang  : "en" 이면 영문판 화면(/en/#...)으로 가는 영어 메뉴. 디자인 잡담은 /en/talk/ 로 갑니다."""
     n = D.counts()
     L = LABELS[lang]
     app = lambda v="": _app(v, lang)
@@ -67,8 +67,10 @@ def menu(active="", lang="ko"):
     parts.append(_item("styles", L["styles"], len(D.styles), active, app("styles")))
     parts.append(_item("trends", L["trends"], len(D.trends), active, app("trends")))
     parts.append(_item("glossary", L["glossary"], len(D.terms), active, app("glossary")))
-    if lang == "ko":
-        parts.append(SEP)
+    parts.append(SEP)
+    if lang == "en":
+        parts.append(_item("talk", "Design Talk", None, active, SITE + "en/talk/"))
+    else:
         parts.append(_item("talk", "디자인 잡담", None, active, SITE + "talk/"))
     return "".join(parts)
 

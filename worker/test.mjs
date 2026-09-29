@@ -18,6 +18,9 @@ const DB = {
     const api = {
       bind(...a) { args = a; return api; },
       async all() {
+        if (sql.includes("SELECT id, name, body, at, hidden"))
+          return { results: rows.filter(r => r.page === args[0])
+            .map(({ id, name, body, at, hidden }) => ({ id, name, body, at, hidden })).reverse() };
         if (sql.includes("SELECT id, name, body, at"))
           return { results: rows.filter(r => r.page === args[0] && r.hidden === 0)
             .map(({ id, name, body, at }) => ({ id, name, body, at })).reverse() };
@@ -34,6 +37,10 @@ const DB = {
           return { n: tries.filter(t => t.who === args[0] && t.at > args[1]).length };
         if (sql.includes("SELECT pw FROM comments"))
           return rows.find(r => r.id === args[0]) || null;
+        if (sql.includes("FROM comments WHERE id = ?1")) {
+          const r = rows.find(r => r.id === args[0]);
+          return r ? { id: r.id, name: r.name, body: r.body, at: r.at, hidden: r.hidden } : null;
+        }
         return null;
       },
       async run() {
@@ -44,6 +51,13 @@ const DB = {
         }
         if (sql.startsWith("INSERT INTO tries")) { tries.push({ who: args[0], at: args[1] }); return { meta: {} }; }
         if (sql.startsWith("DELETE FROM tries")) { tries = tries.filter(t => t.at >= args[0]); return { meta: {} }; }
+        if (sql.startsWith("UPDATE comments SET")) {
+          // "UPDATE comments SET name = ?, body = ?, hidden = ? WHERE id = ?" 의 순서대로 채웁니다
+          const cols = [...sql.matchAll(/(\w+) = \?/g)].map(m => m[1]).filter(c => c !== "id");
+          const r = rows.find(x => x.id === args[args.length - 1]);
+          if (r) cols.forEach((c, i) => { r[c] = args[i]; });
+          return { meta: {} };
+        }
         if (sql.startsWith("DELETE FROM comments")) {
           const i = rows.findIndex(r => r.id === args[0]);
           if (i > -1) rows.splice(i, 1);
@@ -147,6 +161,38 @@ check("관리자 토큰은 비밀번호 없이 삭제", r.status === 200 && !row
 
 r = await worker.fetch(del(1, { pw: "x" }, "5.5.5.2", "wrong-token"), env);
 check("틀린 관리자 토큰은 비밀번호 경로로", r.status === 403 || r.status === 400);
+
+/* ---------- 운영자: 전체 목록 · 고치기 ---------- */
+const adminReq = (url, method = "GET", body, token = "s3cret") => new Request(url, {
+  method, headers: { Origin: ORIGIN, "Content-Type": "application/json", ...(token ? { Authorization: "Bearer " + token } : {}) },
+  body: body === undefined ? undefined : JSON.stringify(body),
+});
+r = await worker.fetch(adminReq("https://x/comments?page=talk&all=1", "GET", undefined, null), env);
+check("전체 목록은 열쇠 없으면 403", r.status === 403);
+r = await worker.fetch(adminReq("https://x/comments?page=talk&all=1", "GET", undefined, "wrong"), env);
+check("전체 목록은 틀린 열쇠면 403", r.status === 403);
+const target = rows.find(x => x.page === "talk").id;
+r = await worker.fetch(adminReq(`https://x/comments?id=${target}`, "PATCH", { body: "고친 내용입니다", hidden: true }), env);
+d = await r.json();
+check("운영자 글 고치기·숨기기", d.ok && d.item.body === "고친 내용입니다" && d.item.hidden === 1);
+d = await (await worker.fetch(new Request("https://x/comments?page=talk", { headers: { Origin: ORIGIN } }), env)).json();
+check("숨긴 글은 공개 목록에서 빠짐", !d.items.some(x => x.id === target));
+d = await (await worker.fetch(adminReq("https://x/comments?page=talk&all=1"), env)).json();
+check("전체 목록에는 숨긴 글도 보임", d.ok && d.items.some(x => x.id === target && x.hidden === 1));
+r = await worker.fetch(adminReq(`https://x/comments?id=${target}`, "PATCH", { hidden: false }), env);
+check("숨김 풀기", (await r.json()).item.hidden === 0);
+r = await worker.fetch(adminReq(`https://x/comments?id=${target}`, "PATCH", { body: "x" }, "wrong"), env);
+check("틀린 열쇠로는 못 고침", r.status === 403);
+r = await worker.fetch(adminReq(`https://x/comments?id=${target}`, "PATCH", { name: "" }), env);
+check("이름을 비우면 거부", r.status === 400);
+r = await worker.fetch(adminReq("https://x/comments?id=99999", "PATCH", { body: "없는 글" }), env);
+check("없는 글 고치기 404", r.status === 404);
+
+/* ---------- 영문판 오류 문구 ---------- */
+d = await (await worker.fetch(post({ ...good, pw: "12", lang: "en" }, "3.4.5.6"), env)).json();
+check("영문 오류 문구", !d.ok && d.error.startsWith("Password"));
+r = await worker.fetch(del(target, { pw: "nope", lang: "en" }, "3.4.5.7"), env);
+check("영문 삭제 오류 문구", (await r.json()).error === "Wrong password.");
 
 /* ---------- 그 밖 ---------- */
 r = await worker.fetch(new Request("https://x/other", { headers: { Origin: ORIGIN } }), env);

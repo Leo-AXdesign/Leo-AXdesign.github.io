@@ -240,12 +240,10 @@
     html += item('styles', PSEUDO.styles.label, STYLES.length);
     html += item('trends', PSEUDO.trends.label, TRENDS.length);
     html += item('glossary', PSEUDO.glossary.label, GLOSSARY.length);
-    // 디자인 잡담은 화면 전환이 아니라 별도 주소라서 링크로 둡니다 (한국어 게시판이라 영문판에는 두지 않습니다)
-    if (LANG === 'ko') {
-      html += SEP;
-      html += '<a class="nav__item nav__item--link" href="talk/">'
-            + '<span class="nav__label">디자인 잡담</span></a>';
-    }
+    // 디자인 잡담은 화면 전환이 아니라 별도 주소라서 링크로 둡니다 (영문판은 /en/talk/)
+    html += SEP;
+    html += '<a class="nav__item nav__item--link" href="talk/">'
+          + `<span class="nav__label">${T('디자인 잡담', 'Design Talk')}</span></a>`;
     els.nav.innerHTML = html;
     if (els.drawerNav) els.drawerNav.innerHTML = html;
   }

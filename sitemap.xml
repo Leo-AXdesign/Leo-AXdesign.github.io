@@ -13,6 +13,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://designrefs.com/en/talk/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://designrefs.com/ui-ux/</loc>
     <lastmod>2026-09-29</lastmod>
     <changefreq>weekly</changefreq>
