@@ -18,7 +18,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "og"
 e = html.escape
 
-TEMPLATE = """<!doctype html><html lang="ko"><head><meta charset="utf-8">
+TEMPLATE = """<!doctype html><html lang="{lang}"><head><meta charset="utf-8">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <style>
   html, body {{ margin: 0; width: 1200px; height: 630px; overflow: hidden; background: #fff; }}
@@ -37,17 +37,25 @@ TEMPLATE = """<!doctype html><html lang="ko"><head><meta charset="utf-8">
   .foot b {{ color: #111; font-weight: 700; }}
   .nb {{ white-space: nowrap; }}
 </style></head><body><div class="card">
-  <div class="top"><div class="logo">d<span>.</span></div><div class="kicker">읽을거리 · {tag}</div></div>
+  <div class="top"><div class="logo">d<span>.</span></div><div class="kicker">{kicker} · {tag}</div></div>
   <div class="title">{title}</div>
   <div class="rule"></div>
-  <div class="foot"><span><b>디자인 허브</b> · 디자이너를 위한 레퍼런스 모음</span><span>designrefs.com</span></div>
+  <div class="foot"><span><b>{brand}</b> · {slogan}</span><span>designrefs.com</span></div>
 </div></body></html>"""
 
 
-def title_size(t):
-    """제목 길이에 따라 글자 크기를 정합니다. 세 줄을 넘지 않게."""
-    n = len(t)
+def title_size(t, lang="ko"):
+    """제목 길이에 따라 글자 크기를 정합니다. 세 줄을 넘지 않게.
+    영어는 한 글자가 좁아서 글자 수를 절반쯤으로 셉니다."""
+    n = len(t) / (1.9 if lang == "en" else 1)
     return 78 if n <= 16 else 68 if n <= 26 else 60
+
+
+# 언어별 문구와 저장 폴더. 영문판 글(content/articles-en/)은 og/en/<slug>.png 로 만듭니다.
+LANGS = {
+    "ko": {"out": OUT, "kicker": "읽을거리", "brand": "디자인 허브", "slogan": "디자이너를 위한 레퍼런스 모음"},
+    "en": {"out": OUT / "en", "kicker": "Articles", "brand": "Design Hub", "slogan": "Reference sites for designers"},
+}
 
 
 def main():
@@ -55,15 +63,19 @@ def main():
     OUT.mkdir(exist_ok=True)
     made = []
     with tempfile.TemporaryDirectory() as tmp:
-        for x in A.load():
-            png = OUT / f"{x['slug']}.png"
-            if png.exists() and not redo:
-                continue
-            page = pathlib.Path(tmp) / f"{x['slug']}.html"
-            page.write_text(TEMPLATE.format(title=A.nobreak(e(x["title"])), tag=e(x.get("tag", "")),
-                                            size=title_size(x["title"])), encoding="utf-8")
-            shoot(page, png)
-            made.append(png.name)
+        for lang, L in LANGS.items():
+            L["out"].mkdir(exist_ok=True)
+            for x in A.load(lang):
+                png = L["out"] / f"{x['slug']}.png"
+                if png.exists() and not redo:
+                    continue
+                page = pathlib.Path(tmp) / f"{lang}-{x['slug']}.html"
+                page.write_text(TEMPLATE.format(title=A.nobreak(e(x["title"])), tag=e(x.get("tag", "")),
+                                                size=title_size(x["title"], lang), lang=lang,
+                                                kicker=L["kicker"], brand=L["brand"], slogan=L["slogan"]),
+                                encoding="utf-8")
+                shoot(page, png)
+                made.append(("en/" if lang == "en" else "") + png.name)
     print(f"공유 이미지 {len(made)}장: " + (", ".join(made) if made else "새로 만들 것 없음"))
 
 

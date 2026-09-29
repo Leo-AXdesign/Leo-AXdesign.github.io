@@ -64,6 +64,11 @@
     try { if (typeof gtag === 'function') gtag('event', name, params); } catch (e) { /* 무시 */ }
   }
   const canonical = (document.querySelector('link[rel=canonical]') || {}).href || location.href.split('?')[0];
+  // 영문판 페이지(<html lang="en">)는 안내 문구와 메인 화면 주소가 다릅니다
+  const isEn = (document.documentElement.lang || '').slice(0, 2) === 'en';
+  const MSG = isEn
+    ? { copied: 'Link copied', failed: "Couldn't copy. Please copy the address from the address bar." }
+    : { copied: '링크를 복사했습니다', failed: '복사하지 못했습니다. 주소창의 주소를 복사해 주세요' };
   const shareMsg = document.querySelector('.share__msg');
   function say(text) {
     if (!shareMsg) return;
@@ -73,11 +78,11 @@
   }
   function copy(medium) {
     const url = canonical + '?utm_source=share&utm_medium=' + medium;
-    const done = () => { say('링크를 복사했습니다'); track('share', { method: 'copy', content_type: 'article', item_id: location.pathname }); };
+    const done = () => { say(MSG.copied); track('share', { method: 'copy', content_type: 'article', item_id: location.pathname }); };
     if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(url).then(done, () => say('복사하지 못했습니다. 주소창의 주소를 복사해 주세요'));
+      navigator.clipboard.writeText(url).then(done, () => say(MSG.failed));
     } else {
-      say('복사하지 못했습니다. 주소창의 주소를 복사해 주세요');
+      say(MSG.failed);
     }
   }
   const shareBtn = document.querySelector('[data-share]');
@@ -127,7 +132,7 @@
     b.classList.toggle('is-active', b.dataset.view === view);
     b.addEventListener('click', () => {
       save('designhub:view', b.dataset.view);
-      location.href = 'https://designrefs.com/';
+      location.href = 'https://designrefs.com/' + (isEn ? 'en/' : '');
     });
   });
 

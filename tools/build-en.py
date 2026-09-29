@@ -22,21 +22,9 @@ EN_URL = SITE + "en/"
 e = html.escape
 
 # ---------- data.en.js 읽기 ----------
-EN_SRC = (ROOT / "js" / "data.en.js").read_text(encoding="utf-8")
-
-
-def en_block(name):
-    """const NAME = { "키": [...], ... }; 를 파이썬 dict 로. 한 줄에 한 항목이라는 형식에 기댑니다."""
-    i = EN_SRC.index(f"const {name} = {{")
-    body = EN_SRC[EN_SRC.index("\n", i) + 1:EN_SRC.index("\n};", i)]
-    rows = [ln.strip().rstrip(",") for ln in body.splitlines() if ln.strip().startswith('"')]
-    return json.loads("{" + ",".join(rows) + "}")
-
-
-sites_en = en_block("SITES_EN")
-gloss_en = en_block("GLOSSARY_EN")
-cat_en = dict(re.findall(r'^\s+(\w+):\s+\{ label: "([^"]+)"', EN_SRC, re.M))
-cat_desc_en = dict(re.findall(r'^\s+(\w+):\s+\{ label: "[^"]+", desc: "([^"]+)"', EN_SRC, re.M))
+sites_en = D.en_block("SITES_EN")
+gloss_en = D.en_block("GLOSSARY_EN")
+cat_en, cat_desc_en = D.cat_en, D.cat_desc_en
 
 missing = [s["name"] for s in D.sites if s["url"] not in sites_en]
 missing_terms = [t["term"] for t in D.terms if t["term"] not in gloss_en]
@@ -60,7 +48,6 @@ TEXT = [
     ('<meta property="og:description" content="디자이너를 위한 레퍼런스 사이트 모음. 스타일 사전, 2026 트렌드, 용어 사전까지." />',
      '<meta property="og:description" content="Reference sites for designers, plus a style guide, 2026 trends and a design glossary." />'),
     ('<meta property="og:url" content="https://designrefs.com/" />', f'<meta property="og:url" content="{EN_URL}" />'),
-    ('<link rel="alternate" type="application/rss+xml" title="디자인 허브 읽을거리" href="https://designrefs.com/rss.xml" />\n', ""),
     ('href="favicon.ico"', 'href="../favicon.ico"'),
     ('href="favicon.svg"', 'href="../favicon.svg"'),
     ('href="css/style.css"', 'href="../css/style.css"'),
@@ -96,7 +83,9 @@ TEXT = [
      '<button id="to-top" class="to-top" type="button" aria-label="Back to top">'),
     # 스크립트: 한국어 글 목록 대신 영문 데이터
     ('<script src="js/data.js"></script>\n  <script src="js/articles.js"></script>\n  <script src="js/app.js"></script>',
-     '<script src="../js/data.js"></script>\n  <script src="../js/data.en.js"></script>\n  <script src="../js/app.js"></script>'),
+     '<script src="../js/data.js"></script>\n  <script src="../js/data.en.js"></script>\n  <script src="../js/articles.en.js"></script>\n  <script src="../js/app.js"></script>'),
+    ('<link rel="alternate" type="application/rss+xml" title="디자인 허브 읽을거리" href="https://designrefs.com/rss.xml" />',
+     '<link rel="alternate" type="application/rss+xml" title="Design Hub Articles" href="https://designrefs.com/en/rss.xml" />'),
 ]
 
 # 바닥글은 통째로 바꿉니다. 분야 링크는 한국어 정적 페이지 대신 영문판 화면으로.
@@ -104,10 +93,11 @@ FOOTER_RE = re.compile(r'<footer class="footer">.*?</footer>', re.S)
 footer_links = "".join(f'<a href="#{c["id"]}">{e(cat_en.get(c["id"], c["label"]))}</a>' for c in D.cats)
 FOOTER = f"""<footer class="footer">
     <div class="wrap">
-      <nav class="footer__nav"><div class="footer__navgroup">{footer_links}</div><div class="footer__navgroup"><a href="#styles">Style Guide</a><a href="#trends">2026 Trends</a><a href="#glossary">Glossary</a></div></nav>
+      <nav class="footer__nav"><div class="footer__navgroup">{footer_links}</div><div class="footer__navgroup"><a href="{SITE}en/articles/">Articles</a><a href="#styles">Style Guide</a><a href="#trends">2026 Trends</a><a href="#glossary">Glossary</a></div></nav>
     </div>
     <div class="wrap footer__inner">
       <span>Copyright 2026. Design Hub. all rights reserved.</span>
+      <a href="{SITE}en/articles/">Articles</a>
       <a href="/" hreflang="ko" lang="ko">한국어</a>
       <a href="/privacy/">Privacy (Korean)</a>
       <a href="mailto:nisov0924@gmail.com">CONTACT : nisov0924@gmail.com</a>

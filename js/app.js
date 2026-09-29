@@ -64,7 +64,7 @@
     styles:    { id: 'styles', label: 'Style Guide', desc: 'Major graphic design styles and movements. Click a name to open Pinterest references.' },
     trends:    { id: 'trends', label: '2026 Trends', desc: 'Keywords that keep coming up in trend reports and design communities' },
     glossary:  { id: 'glossary', label: 'Glossary', desc: 'Everyday terms in design, print and UI/UX work, with the Korean term used in Korean studios' },
-    articles:  { id: 'articles', label: 'Articles', desc: '' },
+    articles:  { id: 'articles', label: 'Articles', desc: 'Notes from designing, translated from Korean' },
   } : {
     all:       { id: 'all', label: '전체' },
     bookmarks: { id: 'bookmarks', label: '즐겨찾기', desc: '이 브라우저에 저장된 즐겨찾기' },
@@ -451,7 +451,7 @@
           <span class="arow__title">${highlight(x.title, state.query)}</span>
           <p class="arow__desc">${highlight(x.desc, state.query)}</p>
         </span>
-        <span class="arow__tag">${escapeHtml(x.tag || '')} · ${x.min}분</span>
+        <span class="arow__tag">${escapeHtml(x.tag || '')} · ${x.min}${T('분', ' min')}</span>
       </a>`;
   }
 

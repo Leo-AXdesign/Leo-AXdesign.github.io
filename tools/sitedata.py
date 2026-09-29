@@ -5,7 +5,7 @@ js/data.js 를 읽어 파이썬 쪽에서 쓰기 좋은 형태로 돌려줍니�
 빌드 스크립트 세 개(build-pages, build-articles, build-seo)와 nav.py 가 같이 씁니다.
 data.js 는 사람이 손으로 고치는 파일이라 JSON 이 아니라서, 필요한 값만 정규식으로 꺼냅니다.
 """
-import re, pathlib
+import json, re, pathlib
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SRC = (ROOT / "js" / "data.js").read_text(encoding="utf-8")
@@ -50,6 +50,23 @@ styles = fields(block("STYLES"), ["name", "en", "era", "desc", "traits", "people
 trends = fields(block("TRENDS"), ["name", "area", "desc"])
 terms = fields(block("GLOSSARY"), ["term", "en", "group", "desc"])
 gloss_groups = fields(block("GLOSSARY_GROUPS"), ["id", "label"])
+
+
+# ---------- 영문판 (js/data.en.js) ----------
+EN_SRC = (ROOT / "js" / "data.en.js").read_text(encoding="utf-8")
+
+
+def en_block(name):
+    """const NAME = { "키": [...], ... }; 를 dict 로. 한 줄에 한 항목이라는 형식에 기댑니다."""
+    i = EN_SRC.index(f"const {name} = {{")
+    body = EN_SRC[EN_SRC.index("\n", i) + 1:EN_SRC.index("\n};", i)]
+    rows = [ln.strip().rstrip(",") for ln in body.splitlines() if ln.strip().startswith('"')]
+    return json.loads("{" + ",".join(rows) + "}")
+
+
+# 카테고리 id -> 영문 이름 / 영문 설명
+cat_en = dict(re.findall(r'^\s+(\w+):\s+\{ label: "([^"]+)"', EN_SRC, re.M))
+cat_desc_en = dict(re.findall(r'^\s+(\w+):\s+\{ label: "[^"]+", desc: "([^"]+)"', EN_SRC, re.M))
 
 
 def counts():

@@ -38,6 +38,22 @@ CHARTS = {
              "rows": [("Claude Fable 5.1", 78, "7.8만"), ("GPT-6 아스트라", 27, "2.7만")]},
         ],
     },
+    # 영문판 글(content/articles-en/claude-fable-5-1-vs-gpt-6-astra.md)에 쓰는 같은 차트
+    "fable-astra-cost-en": {
+        "title": "Same score, different cost",
+        "sub": "Artificial Analysis Intelligence Index v4.3 · both at maximum reasoning",
+        "source": ["Source: Artificial Analysis (Sep 9, 2026).", "Cost and tokens are averages per index task."],
+        "desc": "Both Claude Fable 5.1 and GPT-6 Astra score 53 on the index. Cost per task: Fable 5.1 $7.63, Astra $3.26. "
+                "Output tokens per task: Fable 5.1 about 78,000, Astra about 27,000.",
+        "panels": [
+            {"title": "Intelligence Index", "hint": "higher is better",
+             "rows": [("Claude Fable 5.1", 53, "53"), ("GPT-6 Astra", 53, "53")]},
+            {"title": "Cost per task", "hint": "lower is better",
+             "rows": [("Claude Fable 5.1", 7.63, "$7.63"), ("GPT-6 Astra", 3.26, "$3.26")]},
+            {"title": "Output tokens per task", "hint": "lower is better",
+             "rows": [("Claude Fable 5.1", 78, "78k"), ("GPT-6 Astra", 27, "27k")]},
+        ],
+    },
 }
 
 

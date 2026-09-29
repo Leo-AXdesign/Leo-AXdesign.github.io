@@ -3,7 +3,7 @@
 HTML 한 장을 크롬(헤드리스)으로 찍어 PNG 로 저장합니다.
 build-og.py(공유 이미지)와 build-cards.py(인스타 카드뉴스)가 같이 씁니다.
 """
-import subprocess, tempfile, time
+import shutil, subprocess, tempfile, time
 
 CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 
@@ -13,7 +13,9 @@ def shoot(html_path, png_path, size=(1200, 630), timeout=40):
     헤드리스 크롬은 파일을 다 쓰고도 종료하지 않고 멈춰 있을 때가 있어서,
     파일이 생기고 크기가 더 변하지 않으면 그 자리에서 닫습니다."""
     png_path.unlink(missing_ok=True)
-    with tempfile.TemporaryDirectory() as profile:
+    # 크롬이 닫히는 중에도 프로필 폴더에 파일을 쓰는 일이 있어서, 지울 때 오류는 무시합니다
+    profile = tempfile.mkdtemp()
+    try:
         proc = subprocess.Popen(
             [CHROME, "--headless=new", "--disable-gpu", "--hide-scrollbars", "--no-first-run",
              "--force-device-scale-factor=1", f"--window-size={size[0]},{size[1]}",
@@ -34,5 +36,7 @@ def shoot(html_path, png_path, size=(1200, 630), timeout=40):
             if proc.poll() is None:
                 proc.kill()
                 proc.wait()
+    finally:
+        shutil.rmtree(profile, ignore_errors=True)
     if not png_path.exists() or png_path.stat().st_size == 0:
         raise SystemExit(f"이미지를 만들지 못했습니다: {png_path.name}")

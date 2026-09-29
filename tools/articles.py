@@ -31,6 +31,9 @@ import re, html, pathlib
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SRC = ROOT / "content" / "articles"
+# 영문판 글. 파일 이름(slug)이 한국어 글과 같아야 짝이 됩니다.
+# date · order · related 는 비워 두면 한국어 글의 값을 그대로 씁니다.
+SRC_EN = ROOT / "content" / "articles-en"
 e = html.escape
 
 # 본문에서 다른 목록 페이지로 연결할 때 쓰는 이름표
@@ -40,6 +43,13 @@ RELATED_LABEL = {
     "tools": "디자인 툴", "freelance": "외주·프리랜서", "jobs": "디자이너 채용",
     "ai": "AI 디자인 툴", "community": "커뮤니티·매거진", "creators": "유튜버·크리에이터",
     "styles": "스타일 사전", "trends": "2026 트렌드", "glossary": "용어 사전",
+}
+RELATED_LABEL_EN = {
+    "ui-ux": "UI/UX", "graphic": "Graphic & Branding", "color": "Color",
+    "font": "Type & Fonts", "assets": "Icons & Assets", "mockups": "Mockups", "dev": "Design & Code",
+    "tools": "Design Tools", "freelance": "Freelance", "jobs": "Jobs",
+    "ai": "AI tools", "community": "Community & Media", "creators": "Creators",
+    "styles": "Style Guide", "trends": "2026 Trends", "glossary": "Glossary",
 }
 
 
@@ -175,18 +185,21 @@ def to_html(md):
     return "\n".join(out)
 
 
-def to_text(md):
+def to_text(md, fig="그림"):
     """llms-full.txt 에 넣을 평문. 마크다운 기호만 걷어냅니다."""
-    t = re.sub(r"!\[([^\]]*)\]\([^)]+\)", r"(그림: \1)", md)
+    t = re.sub(r"!\[([^\]]*)\]\([^)]+\)", rf"({fig}: \1)", md)
     t = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", t)
     t = re.sub(r"[*`>]", "", t)
     return re.sub(r"\n{3,}", "\n\n", t).strip()
 
 
-def load():
-    """날짜 내림차순(최신 글이 앞)으로 글 목록을 돌려줍니다."""
+def load(lang="ko"):
+    """날짜 내림차순(최신 글이 앞)으로 글 목록을 돌려줍니다.
+    lang="en" 이면 content/articles-en/ 의 영문 글을 읽습니다."""
     items = []
-    for f in sorted(SRC.glob("*.md")):
+    en = lang == "en"
+    ko = {x["slug"]: x for x in load("ko")} if en else {}
+    for f in sorted((SRC_EN if en else SRC).glob("*.md")):
         raw = f.read_text(encoding="utf-8")
         m = re.match(r"^---\n(.*?)\n---\n(.*)$", raw, re.S)
         if not m:
@@ -197,15 +210,23 @@ def load():
                 k, v = line.split(":", 1)
                 meta[k.strip()] = v.strip()
         body = m.group(2).strip()
-        text = to_text(body)
+        text = to_text(body, "Figure" if en else "그림")
+        if en:
+            base = ko.get(meta.get("slug"))
+            if not base:
+                raise SystemExit(f"articles-en/{f.name}: 같은 slug 의 한국어 글이 없습니다")
+            for k in ("date", "order", "tag"):
+                meta.setdefault(k, base.get(k, ""))
+            meta.setdefault("related", ", ".join(base.get("related", [])))
         need = {"slug", "title", "desc", "date"} - set(meta)
         if need:
             raise SystemExit(f"{f.name}: {', '.join(sorted(need))} 항목이 없습니다")
         meta["body"] = to_html(body)
         meta["text"] = text
         meta["chars"] = len(re.sub(r"\s", "", text))
-        # 한국어는 분당 600자 정도로 봅니다
-        meta["min"] = max(1, round(meta["chars"] / 600))
+        # 한국어는 분당 600자, 영어는 분당 230단어 정도로 봅니다
+        meta["words"] = len(text.split())
+        meta["min"] = max(1, round(meta["words"] / 230 if en else meta["chars"] / 600))
         meta["related"] = [x.strip() for x in meta.get("related", "").split(",") if x.strip()]
         meta["file"] = f.name
         items.append(meta)

@@ -42,6 +42,11 @@ urls = [(SITE, "1.0", today)] + [(SITE + s + "/", "0.8", today) for s in PAGE_SL
 urls.append((SITE + "articles/", "0.8", posts[0]["date"] if posts else today))
 # 글은 고칠 때마다 날짜가 바뀌므로 각 글의 작성일을 lastmod 로 넣습니다
 urls += [(f'{SITE}articles/{x["slug"]}/', "0.7", x["date"]) for x in posts]
+# 영문판 글 (content/articles-en/)
+posts_en = A.load("en")
+if posts_en:
+    urls.append((SITE + "en/articles/", "0.7", posts_en[0]["date"]))
+    urls += [(f'{SITE}en/articles/{x["slug"]}/', "0.6", x["date"]) for x in posts_en]
 body = "\n".join(
     f"  <url>\n    <loc>{u}</loc>\n    <lastmod>{lm}</lastmod>\n"
     f"    <changefreq>weekly</changefreq>\n    <priority>{pr}</priority>\n  </url>"

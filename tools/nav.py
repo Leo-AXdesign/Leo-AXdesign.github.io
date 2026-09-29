@@ -24,9 +24,9 @@ def _item(key, label, count, active, href):
     return f'<a class="{cls}" href="{href}"><span class="nav__label">{e(label)}</span>{num}</a>'
 
 
-def _app(view=""):
-    """메인 화면의 한 화면으로 가는 주소 (#ai 처럼)"""
-    return SITE + ("#" + view if view else "")
+def _app(view="", lang="ko"):
+    """메인 화면의 한 화면으로 가는 주소 (#ai 처럼). 영문판은 /en/#ai"""
+    return SITE + ("en/" if lang == "en" else "") + ("#" + view if view else "")
 
 
 STAR = ('<svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.8" '
@@ -35,35 +35,58 @@ STAR = ('<svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stro
 SEP = '<hr class="nav__sep" />'
 
 
-def menu(active=""):
+LABELS = {
+    "ko": {"all": "전체", "bookmarks": "즐겨찾기", "articles": "읽을거리", "styles": "스타일 사전",
+           "trends": "2026 트렌드", "glossary": "용어 사전"},
+    "en": {"all": "All", "bookmarks": "Bookmarks", "articles": "Articles", "styles": "Style Guide",
+           "trends": "2026 Trends", "glossary": "Glossary"},
+}
+
+
+def menu(active="", lang="ko"):
     """메뉴 항목들. 왼쪽 사이드바와 모바일 메뉴가 같이 씁니다.
-    active: 지금 보고 있는 페이지의 슬러그 (예: 'talk', 'ai', 'articles')"""
+    active: 지금 보고 있는 페이지의 슬러그 (예: 'talk', 'ai', 'articles')
+    lang  : "en" 이면 영문판 화면(/en/#...)으로 가는 영어 메뉴. 디자인 잡담은 한국어 게시판이라 뺍니다."""
     n = D.counts()
-    parts = [_item("", "전체", len(D.sites), active, _app()),
+    L = LABELS[lang]
+    app = lambda v="": _app(v, lang)
+    parts = [_item("", L["all"], len(D.sites), active, app()),
              # 즐겨찾기는 브라우저에만 저장돼 있어서, 개수는 js/page.js 가 채웁니다
-             f'<a class="nav__item" href="{_app("bookmarks")}">{STAR}'
-             '<span class="nav__label">즐겨찾기</span><span class="nav__count" data-bm-count>0</span></a>',
+             f'<a class="nav__item" href="{app("bookmarks")}">{STAR}'
+             f'<span class="nav__label">{L["bookmarks"]}</span><span class="nav__count" data-bm-count>0</span></a>',
              SEP]
     for c in D.cats:
         slug = D.CAT_SLUG.get(c["id"])
         if slug and n.get(c["id"]):
-            parts.append(_item(slug, c["label"], n[c["id"]], active, _app(c["id"])))
+            label = D.cat_en.get(c["id"], c["label"]) if lang == "en" else c["label"]
+            parts.append(_item(slug, label, n[c["id"]], active, app(c["id"])))
     parts.append(SEP)
-    posts = A.load()
+    posts = A.load(lang)
     if posts:
-        parts.append(_item("articles", "읽을거리", len(posts), active, _app("articles")))
-    parts.append(_item("styles", "스타일 사전", len(D.styles), active, _app("styles")))
-    parts.append(_item("trends", "2026 트렌드", len(D.trends), active, _app("trends")))
-    parts.append(_item("glossary", "용어 사전", len(D.terms), active, _app("glossary")))
-    parts.append(SEP)
-    parts.append(_item("talk", "디자인 잡담", None, active, SITE + "talk/"))
+        parts.append(_item("articles", L["articles"], len(posts), active, app("articles")))
+    parts.append(_item("styles", L["styles"], len(D.styles), active, app("styles")))
+    parts.append(_item("trends", L["trends"], len(D.trends), active, app("trends")))
+    parts.append(_item("glossary", L["glossary"], len(D.terms), active, app("glossary")))
+    if lang == "ko":
+        parts.append(SEP)
+        parts.append(_item("talk", "디자인 잡담", None, active, SITE + "talk/"))
     return "".join(parts)
 
 
-def footer_links():
+def footer_links(lang="ko"):
     """메인 화면 푸터의 링크 묶음(카테고리 / 인사이트)과 같은 것.
-    여기는 검색엔진이 따라가도록 정적 페이지 주소를 겁니다."""
+    여기는 검색엔진이 따라가도록 정적 페이지 주소를 겁니다.
+    영문판에는 정적 페이지가 없어서 영문판 첫 화면의 각 화면으로 겁니다."""
     n = D.counts()
+    if lang == "en":
+        cats = "".join(f'<a href="{SITE}en/#{c["id"]}">{e(D.cat_en.get(c["id"], c["label"]))}</a>'
+                       for c in D.cats if n.get(c["id"]))
+        ins = (f'<a href="{SITE}en/articles/">Articles</a><a href="{SITE}en/#styles">Style Guide</a>'
+               f'<a href="{SITE}en/#trends">2026 Trends</a><a href="{SITE}en/#glossary">Glossary</a>')
+        return ('    <div class="wrap">\n'
+                f'      <nav class="footer__nav"><div class="footer__navgroup">{cats}</div>'
+                f'<div class="footer__navgroup">{ins}</div></nav>\n'
+                '    </div>\n')
     cats = "".join(f'<a href="{SITE}{D.CAT_SLUG[c["id"]]}/">{e(c["label"])}</a>'
                    for c in D.cats if D.CAT_SLUG.get(c["id"]) and n.get(c["id"]))
     ins = (f'<a href="{SITE}articles/">읽을거리</a><a href="{SITE}styles/">스타일 사전</a>'

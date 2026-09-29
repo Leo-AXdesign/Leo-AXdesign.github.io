@@ -33,25 +33,40 @@ MENU_ICON = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-
              'stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>')
 # 메인 화면의 태그 필터와 같은 순서 (js/app.js 의 TAG_FILTERS)
 TAGS = [("", "전체"), ("한국", "한국"), ("무료", "무료"), ("유료", "유료"), ("AI", "AI")]
+TAGS_EN = {"": "All", "한국": "Korean", "무료": "Free", "유료": "Paid", "AI": "AI"}
+
+# 페이지 틀에 들어가는 문구. 영문판(/en/...) 페이지는 lang="en" 으로 만듭니다.
+UI = {
+    "ko": {"home": SITE, "brand": "디자인 허브", "search": "사이트 검색", "theme": "테마 전환",
+           "theme_title": "라이트 / 다크 전환", "open": "메뉴 열기", "close": "메뉴 닫기", "menu": "전체 메뉴",
+           "nav": "메뉴", "filter": "태그 필터", "view": "보기", "list": "목록", "grid": "격자",
+           "top": "맨 위로", "rss": "디자인 허브 읽을거리", "rss_url": SITE + "rss.xml"},
+    "en": {"home": SITE + "en/", "brand": "Design Hub", "search": "Search sites", "theme": "Theme",
+           "theme_title": "Light / Dark", "open": "Open menu", "close": "Close menu", "menu": "Menu",
+           "nav": "Menu", "filter": "Filter", "view": "View", "list": "List", "grid": "Grid",
+           "top": "Back to top", "rss": "Design Hub Articles", "rss_url": SITE + "en/rss.xml"},
+}
 
 
-def drawer_extras():
+def drawer_extras(lang="ko"):
     """메인 화면 모바일 메뉴의 아래쪽 두 묶음을 정적 페이지에도 똑같이 둡니다.
     태그를 누르면 메인 화면으로 가서 그 필터가 걸린 채로 열립니다."""
     from urllib.parse import quote
+    u = UI[lang]
     pills = "".join(
-        f'<a class="pill{" is-active" if not tid else ""}" href="{SITE}{"?tag=" + quote(tid) if tid else ""}">{label}</a>'
+        f'<a class="pill{" is-active" if not tid else ""}" href="{u["home"]}{"?tag=" + quote(tid) if tid else ""}">'
+        f'{TAGS_EN[tid] if lang == "en" else label}</a>'
         for tid, label in TAGS)
     return ('        <div class="drawer__section">\n'
-            '          <p class="nav__group">태그 필터</p>\n'
+            f'          <p class="nav__group">{u["filter"]}</p>\n'
             f'          <div class="pills pills--tags">{pills}</div>\n'
             '        </div>\n'
             '        <div class="drawer__section">\n'
-            '          <p class="nav__group">보기</p>\n'
+            f'          <p class="nav__group">{u["view"]}</p>\n'
             '          <div class="drawer__row">\n'
-            '            <button class="drawer__opt" id="drawer-theme" type="button">테마 전환</button>\n'
-            '            <button class="drawer__opt" data-view="list" type="button">목록</button>\n'
-            '            <button class="drawer__opt" data-view="grid" type="button">격자</button>\n'
+            f'            <button class="drawer__opt" id="drawer-theme" type="button">{u["theme"]}</button>\n'
+            f'            <button class="drawer__opt" data-view="list" type="button">{u["list"]}</button>\n'
+            f'            <button class="drawer__opt" data-view="grid" type="button">{u["grid"]}</button>\n'
             '          </div>\n'
             '        </div>\n')
 
@@ -62,7 +77,7 @@ CLOSE_ICON = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke
 
 def document(*, title, desc, url, body, jsonld, og_type="website",
              head_extra="", main_class="page__main", footer_nav="", menu="",
-             og_image=None):
+             og_image=None, lang="ko", alternates=None):
     """페이지 하나의 HTML 전체를 돌려줍니다.
 
     title      : <title> 과 og:title 에 쓰는 제목 (사이트 이름은 여기서 붙입니다)
@@ -74,48 +89,69 @@ def document(*, title, desc, url, body, jsonld, og_type="website",
     og_image   : 카톡·SNS 미리보기 이미지 주소. 비우면 사이트 기본 이미지
     menu       : 메뉴 항목 HTML (tools/nav.py 의 menu()). 넓은 화면에서는 왼쪽에,
                  좁은 화면에서는 햄버거 버튼을 누르면 서랍으로 나옵니다. 비우면 메뉴 없이 나옵니다.
+    lang       : "ko" 또는 "en". 페이지 틀의 문구와 로고·검색이 가는 곳이 바뀝니다.
+    alternates : {"ko": 주소, "en": 주소} 같은 페이지의 다른 언어판. 있으면 hreflang 을 달고,
+                 머리글의 EN/KO 버튼이 그 주소로 갑니다. 없으면 버튼은 다른 언어의 첫 화면으로 갑니다.
     """
+    u = UI[lang]
+    alternates = alternates or {}
+    other = "en" if lang == "ko" else "ko"
+    other_url = alternates.get(other) or UI[other]["home"]
+    lang_btn = (f'<a class="top__lang" href="{other_url}" hreflang="{other}" lang="{other}" '
+                f'title="{"English" if other == "en" else "한국어"}">{other.upper()}</a>')
+    hreflang = "".join(f'\n  <link rel="alternate" hreflang="{k}" href="{v}" />' for k, v in alternates.items())
+    if "ko" in alternates:
+        hreflang += f'\n  <link rel="alternate" hreflang="x-default" href="{alternates["ko"]}" />'
+    if lang == "en":
+        foot = (f'      <a href="{SITE}en/articles/">Articles</a>\n'
+                f'      <a href="{SITE}" hreflang="ko" lang="ko">한국어</a>\n'
+                f'      <a href="{SITE}privacy/">Privacy (Korean)</a>\n')
+    else:
+        foot = (f'      <a href="{SITE}about/">소개</a>\n'
+                f'      <a href="{SITE}articles/">읽을거리</a>\n'
+                f'      <a href="{SITE}talk/">디자인 잡담</a>\n'
+                f'      <a href="{SITE}privacy/">개인정보처리방침</a>\n')
     menu_btn = drawer = aside = ""
     if menu:
         menu_btn = ('<button id="menu-open" class="top__btn top__btn--menu" type="button" '
-                    'aria-label="메뉴 열기" aria-expanded="false" aria-controls="drawer">'
+                    f'aria-label="{u["open"]}" aria-expanded="false" aria-controls="drawer">'
                     + MENU_ICON + '</button>')
         drawer = ('\n  <!-- 모바일 전체 메뉴 -->\n'
                   '  <div class="drawer" id="drawer" hidden>\n'
                   '    <div class="drawer__backdrop" id="drawer-backdrop"></div>\n'
-                  '    <aside class="drawer__panel" role="dialog" aria-modal="true" aria-label="전체 메뉴">\n'
+                  f'    <aside class="drawer__panel" role="dialog" aria-modal="true" aria-label="{u["menu"]}">\n'
                   '      <header class="drawer__head">\n'
-                  '        <span class="drawer__title">전체 메뉴</span>\n'
-                  '        <button id="menu-close" class="drawer__close" type="button" aria-label="메뉴 닫기">'
+                  f'        <span class="drawer__title">{u["menu"]}</span>\n'
+                  f'        <button id="menu-close" class="drawer__close" type="button" aria-label="{u["close"]}">'
                   + CLOSE_ICON + '</button>\n'
                   '      </header>\n'
                   '      <div class="drawer__body">\n'
-                  '        <nav class="nav" aria-label="메뉴">' + menu + '</nav>\n'
-                  + drawer_extras() +
+                  f'        <nav class="nav" aria-label="{u["nav"]}">' + menu + '</nav>\n'
+                  + drawer_extras(lang) +
                   '      </div>\n'
                   '    </aside>\n'
                   '  </div>\n')
         aside = ('    <aside class="sidebar">\n'
-                 '      <nav class="nav" aria-label="메뉴">' + menu + '</nav>\n'
+                 f'      <nav class="nav" aria-label="{u["nav"]}">' + menu + '</nav>\n'
                  '    </aside>')
     return f"""<!DOCTYPE html>
-<html lang="ko">
+<html lang="{lang}">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{e(title)} | 디자인 허브</title>
+  <title>{e(title)} | {u["brand"]}</title>
   <meta name="description" content="{e(desc)}" />
-  <link rel="canonical" href="{url}" />
+  <link rel="canonical" href="{url}" />{hreflang}
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta property="og:type" content="{og_type}" />
-  <meta property="og:title" content="{e(title)} | 디자인 허브" />
+  <meta property="og:title" content="{e(title)} | {u["brand"]}" />
   <meta property="og:description" content="{e(desc)}" />
   <meta property="og:url" content="{url}" />
   <meta property="og:image" content="{og_image or SITE + 'og-image.png'}" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="alternate" type="application/rss+xml" title="디자인 허브 읽을거리" href="{SITE}rss.xml" />
+  <link rel="alternate" type="application/rss+xml" title="{u["rss"]}" href="{u["rss_url"]}" />
   <link rel="icon" href="{SITE}favicon.ico" sizes="32x32" />
   <link rel="icon" type="image/svg+xml" href="{SITE}favicon.svg" />
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
@@ -145,18 +181,18 @@ def document(*, title, desc, url, body, jsonld, og_type="website",
 <body class="page">
   <header class="top">
     <div class="wrap top__inner">
-      <a class="logo" href="{SITE}">d<span>.</span></a>
+      <a class="logo" href="{u["home"]}">d<span>.</span></a>
 
       <!-- 검색어를 넣고 엔터를 치면 메인 화면에서 검색 결과가 열립니다 (?q=) -->
-      <form class="search" action="{SITE}" method="get" role="search">
+      <form class="search" action="{u["home"]}" method="get" role="search">
         {SEARCH_ICON}
-        <input id="search" class="search__input" type="search" name="q" placeholder="사이트 검색" autocomplete="off" />
+        <input id="search" class="search__input" type="search" name="q" placeholder="{u["search"]}" autocomplete="off" />
         <kbd class="search__kbd">/</kbd>
       </form>
 
       <div class="top__actions">
-        <a class="top__lang" href="/en/" hreflang="en" lang="en" title="English">EN</a>
-        <button id="theme-toggle" class="top__btn" type="button" aria-label="테마 전환" title="라이트 / 다크 전환">
+        {lang_btn}
+        <button id="theme-toggle" class="top__btn" type="button" aria-label="{u["theme"]}" title="{u["theme_title"]}">
           <span class="dot"></span>
         </button>
         {menu_btn}
@@ -174,16 +210,12 @@ def document(*, title, desc, url, body, jsonld, og_type="website",
   <footer class="footer">
 {footer_nav}    <div class="wrap footer__inner">
       <span>Copyright 2026. Design Hub. all rights reserved.</span>
-      <a href="{SITE}about/">소개</a>
-      <a href="{SITE}articles/">읽을거리</a>
-      <a href="{SITE}talk/">디자인 잡담</a>
-      <a href="{SITE}privacy/">개인정보처리방침</a>
-      <a href="mailto:{CONTACT}">CONTACT : {CONTACT}</a>
-      <a href="#" id="footer-top">맨 위로 ↑</a>
+{foot}      <a href="mailto:{CONTACT}">CONTACT : {CONTACT}</a>
+      <a href="#" id="footer-top">{u["top"]} ↑</a>
     </div>
   </footer>
 
-  <button id="to-top" class="to-top" type="button" aria-label="맨 위로">{UP_ICON}</button>
+  <button id="to-top" class="to-top" type="button" aria-label="{u["top"]}">{UP_ICON}</button>
   <script src="{SITE}js/page.js" defer></script>
 </body>
 </html>

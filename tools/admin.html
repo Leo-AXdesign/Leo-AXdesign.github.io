@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex" />
+<title>디자인 허브 관리자</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+<!-- 본문 미리보기는 실제 사이트의 글 스타일을 그대로 씁니다 -->
+<link rel="stylesheet" href="/css/style.css" />
+<style>
+  /* 관리자 화면 전용. 사이트와 같은 흑백 톤을 씁니다. */
+  :root {
+    --a-ink: #111; --a-body: #444; --a-muted: #6b6b6b; --a-line: #e5e5e5; --a-soft: #f5f5f5;
+    --a-bg: #fff; --a-ok: #1a7f37; --a-bad: #c62828; --a-radius: 12px;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--a-bg); color: var(--a-ink); }
+  body.admin { font-family: "Pretendard Variable", Pretendard, -apple-system, sans-serif; font-size: 14px;
+    -webkit-font-smoothing: antialiased; }
+  .admin button, .admin input, .admin select, .admin textarea { font: inherit; color: inherit; }
+
+  .bar { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,.92); backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--a-line); }
+  .bar__in { max-width: 1320px; margin: 0 auto; padding: 12px 24px; display: flex; align-items: center; gap: 20px; }
+  .bar__logo { font-size: 22px; font-weight: 800; letter-spacing: -.04em; }
+  .bar__logo span { color: #a3a3a3; }
+  .bar__logo small { font-size: 13px; font-weight: 600; color: var(--a-muted); letter-spacing: 0; margin-left: 6px; }
+  .tabs { display: flex; gap: 4px; }
+  .tab { border: 0; background: none; padding: 8px 14px; border-radius: 999px; font-weight: 600; color: var(--a-muted); cursor: pointer; }
+  .tab.is-on { background: var(--a-ink); color: #fff; }
+  .bar__right { margin-left: auto; display: flex; align-items: center; gap: 10px; }
+  .pending { font-size: 13px; color: var(--a-muted); }
+  .pending b { color: var(--a-ink); }
+
+  .btn { border: 1px solid var(--a-line); background: #fff; padding: 9px 16px; border-radius: 999px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+  .btn:hover { border-color: var(--a-ink); }
+  .btn--dark { background: var(--a-ink); border-color: var(--a-ink); color: #fff; }
+  .btn--dark:hover { background: #333; }
+  .btn--danger { color: var(--a-bad); }
+  .btn--danger:hover { border-color: var(--a-bad); }
+  .btn--sm { padding: 6px 12px; font-size: 13px; }
+  .btn[disabled] { opacity: .45; pointer-events: none; }
+
+  .wrapA { max-width: 1320px; margin: 0 auto; padding: 24px; display: grid; grid-template-columns: 340px minmax(0, 1fr); gap: 28px; align-items: start; }
+  .side { position: sticky; top: 76px; display: flex; flex-direction: column; gap: 10px; max-height: calc(100vh - 100px); }
+  .side__tools { display: flex; gap: 8px; }
+  .inp, .sel, .area { width: 100%; border: 1px solid var(--a-line); border-radius: 10px; padding: 10px 12px; background: #fff; outline: none; }
+  .inp:focus, .sel:focus, .area:focus { border-color: var(--a-ink); }
+  .area { min-height: 120px; resize: vertical; line-height: 1.6; }
+  .area--body { min-height: 460px; font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 13px; }
+  .list-a { overflow: auto; border: 1px solid var(--a-line); border-radius: var(--a-radius); }
+  .li { display: block; width: 100%; text-align: left; border: 0; border-bottom: 1px solid var(--a-line); background: #fff; padding: 10px 14px; cursor: pointer; }
+  .li:last-child { border-bottom: 0; }
+  .li:hover { background: var(--a-soft); }
+  .li.is-on { background: var(--a-ink); color: #fff; }
+  .li.is-on .li__sub { color: #bbb; }
+  .li__t { font-weight: 600; display: flex; gap: 6px; align-items: center; }
+  .li__sub { font-size: 12px; color: var(--a-muted); margin-top: 2px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .badge { font-size: 10px; font-weight: 700; letter-spacing: .04em; border: 1px solid currentColor; border-radius: 4px; padding: 0 4px; opacity: .7; }
+  .count { font-size: 12px; color: var(--a-muted); }
+
+  .panel { border: 1px solid var(--a-line); border-radius: 16px; padding: 28px; }
+  .panel h2 { margin: 0 0 4px; font-size: 22px; letter-spacing: -.02em; }
+  .panel .lead { margin: 0 0 22px; color: var(--a-muted); }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .f { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+  .f > label, .lab { font-size: 13px; font-weight: 600; }
+  .f .hint { font-size: 12px; color: var(--a-muted); line-height: 1.5; }
+  .row-a { display: flex; gap: 8px; align-items: center; }
+  .checks { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chk { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--a-line); border-radius: 999px; padding: 6px 12px; cursor: pointer; user-select: none; }
+  .chk input { margin: 0; accent-color: #111; }
+  .chk:has(input:checked) { border-color: var(--a-ink); background: var(--a-soft); }
+  .sec { border-top: 1px solid var(--a-line); margin: 8px 0 18px; padding-top: 18px; }
+  .sec__t { font-size: 15px; font-weight: 700; margin: 0 0 4px; }
+  .sec__d { font-size: 12px; color: var(--a-muted); margin: 0 0 14px; }
+  .actions { display: flex; gap: 8px; margin-top: 8px; align-items: center; }
+  .actions .spacer { flex: 1; }
+  .urlcheck { font-size: 12px; }
+  .urlcheck.ok { color: var(--a-ok); } .urlcheck.bad { color: var(--a-bad); }
+
+  .ltabs { display: flex; gap: 4px; margin: 0 0 16px; border-bottom: 1px solid var(--a-line); }
+  .ltab { border: 0; background: none; padding: 10px 14px; font-weight: 600; color: var(--a-muted); border-bottom: 2px solid transparent; margin-bottom: -1px; cursor: pointer; }
+  .ltab.is-on { color: var(--a-ink); border-color: var(--a-ink); }
+  .editor { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .editor.no-preview { grid-template-columns: 1fr; }
+  .editor.no-preview .prev { display: none; }
+  .prev { border: 1px solid var(--a-line); border-radius: 10px; padding: 8px 20px; max-height: 620px; overflow: auto; background: #fff; }
+  .prev .art { max-width: none; }
+  .md-help { font-size: 12px; color: var(--a-muted); line-height: 1.7; background: var(--a-soft); border-radius: 10px; padding: 10px 14px; margin-top: 8px; }
+  .md-help code { background: #fff; padding: 1px 5px; border-radius: 4px; }
+
+  .modal { position: fixed; inset: 0; background: rgba(0,0,0,.35); display: grid; place-items: center; z-index: 50; padding: 24px; }
+  .modal[hidden] { display: none; }
+  .modal__box { background: #fff; border-radius: 18px; width: min(720px, 100%); max-height: 90vh; overflow: auto; padding: 28px; }
+  .modal__box h2 { margin: 0 0 6px; }
+  .changes { font-family: ui-monospace, Menlo, monospace; font-size: 12px; background: var(--a-soft); border-radius: 10px; padding: 12px 14px; margin: 14px 0; max-height: 180px; overflow: auto; white-space: pre; }
+  .log { font-family: ui-monospace, Menlo, monospace; font-size: 11.5px; background: #111; color: #ddd; border-radius: 10px; padding: 12px 14px; max-height: 300px; overflow: auto; white-space: pre-wrap; margin-top: 14px; }
+  .log[hidden] { display: none; }
+
+  .toast { position: fixed; left: 50%; bottom: 28px; transform: translateX(-50%) translateY(20px); background: var(--a-ink); color: #fff; padding: 12px 18px; border-radius: 12px; opacity: 0; transition: .2s; z-index: 60; max-width: min(640px, 92vw); line-height: 1.5; white-space: pre-line; }
+  .toast.is-on { opacity: 1; transform: translateX(-50%) translateY(0); }
+  .toast.bad { background: var(--a-bad); }
+  .empty-a { color: var(--a-muted); padding: 60px 0; text-align: center; }
+  .busy { position: fixed; inset: 0; background: rgba(255,255,255,.6); display: grid; place-items: center; z-index: 70; font-weight: 600; }
+  .busy[hidden] { display: none; }
+  @media (max-width: 900px) {
+    .wrapA { grid-template-columns: 1fr; } .side { position: static; max-height: none; } .list-a { max-height: 320px; }
+    .editor, .grid2 { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body class="admin">
+  <header class="bar">
+    <div class="bar__in">
+      <div class="bar__logo">d<span>.</span><small>관리자</small></div>
+      <nav class="tabs">
+        <button class="tab is-on" data-view="sites" type="button">사이트</button>
+        <button class="tab" data-view="articles" type="button">읽을거리</button>
+      </nav>
+      <div class="bar__right">
+        <span class="pending" id="pending"></span>
+        <a class="btn" href="/site/" target="_blank" rel="noopener">내 맥에서 미리보기</a>
+        <button class="btn btn--dark" id="open-publish" type="button">사이트에 올리기</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= 사이트 ================= -->
+  <main class="wrapA" id="view-sites">
+    <aside class="side">
+      <button class="btn btn--dark" id="site-new" type="button">+ 새 사이트</button>
+      <div class="side__tools">
+        <input class="inp" id="site-q" type="search" placeholder="이름, 주소, 설명으로 찾기" />
+      </div>
+      <select class="sel" id="site-cat"></select>
+      <span class="count" id="site-count"></span>
+      <div class="list-a" id="site-list"></div>
+    </aside>
+
+    <section class="panel" id="site-form-wrap">
+      <h2 id="site-title">새 사이트</h2>
+      <p class="lead" id="site-lead">목록에 넣을 사이트를 적어 주세요. 저장하면 이 맥의 파일에 들어가고, '사이트에 올리기'를 눌러야 실제 사이트에 반영됩니다.</p>
+      <form id="site-form" autocomplete="off">
+        <div class="grid2">
+          <div class="f"><label for="s-name">이름</label><input class="inp" id="s-name" required placeholder="예: Mobbin" /></div>
+          <div class="f">
+            <label for="s-url">주소</label>
+            <div class="row-a"><input class="inp" id="s-url" required placeholder="https://" /><button class="btn btn--sm" id="s-check" type="button">주소 확인</button></div>
+            <span class="urlcheck" id="s-urlmsg"></span>
+          </div>
+        </div>
+        <div class="grid2">
+          <div class="f"><label for="s-cat">분야</label><select class="sel" id="s-cat" required></select></div>
+          <div class="f" id="s-sub-wrap" hidden><label for="s-sub">AI 소분류</label><select class="sel" id="s-sub"></select></div>
+        </div>
+        <div class="f"><span class="lab">태그</span><div class="checks" id="s-tags"></div>
+          <span class="hint">한국 서비스면 '한국', 요금에 따라 '무료'나 '유료'. 크리에이터 분야는 유튜브·인스타그램·팟캐스트 중에서.</span></div>
+        <div class="f"><label for="s-desc">설명 (한국어)</label><textarea class="area" id="s-desc" rows="3" style="min-height:84px" required placeholder="무엇을 하는 곳인지 한두 문장으로. 예: 실제 서비스 앱·웹 화면과 플로우를 통째로 모아둔 UI 아카이브."></textarea></div>
+
+        <div class="sec">
+          <p class="sec__t">영문판</p>
+          <p class="sec__d">비워 두면 영문판(designrefs.com/en/)에서는 한국어 설명이 그대로 보입니다.</p>
+          <div class="f"><label for="s-name-en">영문 이름 <span class="hint">(이름이 한글일 때만. 예: 눈누 → Noonnu)</span></label><input class="inp" id="s-name-en" /></div>
+          <div class="f"><label for="s-desc-en">영문 설명</label><textarea class="area" id="s-desc-en" rows="3" style="min-height:84px"></textarea></div>
+        </div>
+
+        <div class="actions">
+          <button class="btn btn--dark" type="submit">저장</button>
+          <span class="spacer"></span>
+          <button class="btn btn--danger" id="site-del" type="button" hidden>이 사이트 지우기</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <!-- ================= 읽을거리 ================= -->
+  <main class="wrapA" id="view-articles" hidden>
+    <aside class="side">
+      <button class="btn btn--dark" id="art-new" type="button">+ 새 글</button>
+      <span class="count" id="art-count"></span>
+      <div class="list-a" id="art-list"></div>
+    </aside>
+
+    <section class="panel">
+      <h2 id="art-title">새 글</h2>
+      <p class="lead">저장하면 이 맥의 파일에 들어가고, '사이트에 올리기'를 눌러야 실제 사이트에 발행됩니다.</p>
+      <form id="art-form" autocomplete="off">
+        <div class="ltabs">
+          <button class="ltab is-on" data-lang="ko" type="button">한국어</button>
+          <button class="ltab" data-lang="en" type="button">영문판</button>
+          <span style="flex:1"></span>
+          <label class="chk" style="border:0"><input type="checkbox" id="a-prev-on" checked /> 미리보기</label>
+        </div>
+
+        <div id="pane-ko">
+          <div class="grid2">
+            <div class="f"><label for="a-title">제목</label><input class="inp" id="a-title" /></div>
+            <div class="f"><label for="a-slug">주소</label><input class="inp" id="a-slug" placeholder="color-for-beginners" />
+              <span class="hint">designrefs.com/articles/<b id="a-slug-view">…</b>/ 가 됩니다. 영어 소문자·숫자·하이픈만.</span></div>
+          </div>
+          <div class="f"><label for="a-desc">한 줄 요약</label><input class="inp" id="a-desc" placeholder="목록과 검색 결과에 그대로 보입니다" /></div>
+          <div class="grid2">
+            <div class="grid2">
+              <div class="f"><label for="a-date">날짜</label><input class="inp" id="a-date" type="date" /></div>
+              <div class="f"><label for="a-order">같은 날 순서</label><input class="inp" id="a-order" inputmode="numeric" placeholder="1" />
+                <span class="hint">같은 날 글이 여럿이면 작은 숫자가 위</span></div>
+            </div>
+            <div class="f"><label for="a-tag">태그</label><input class="inp" id="a-tag" list="tag-list" placeholder="AI 디자인" />
+              <datalist id="tag-list"><option value="AI 디자인"><option value="디자인"><option value="커뮤니티"></datalist></div>
+          </div>
+          <div class="f"><span class="lab">글 아래 '이어서 볼 목록'</span><div class="checks" id="a-related"></div></div>
+          <div class="f">
+            <div class="row-a"><label for="a-body" style="font-weight:600">본문</label><span style="flex:1"></span>
+              <label class="btn btn--sm">그림 올리기<input type="file" id="a-img" accept="image/*" hidden /></label></div>
+            <div class="editor" id="ed-ko"><textarea class="area area--body" id="a-body" placeholder="첫 문단부터 적으면 됩니다. 제목은 위 칸에 있으니 본문에 다시 쓰지 않아도 됩니다."></textarea><div class="prev"><div class="art" id="prev-ko"></div></div></div>
+            <div class="md-help">
+              <code>## 중간 제목</code> <code>### 작은 제목</code> <code>- 목록</code> <code>1. 번호 목록</code> <code>&gt; 인용</code>
+              <code>**굵게**</code> <code>[링크 글자](https://...)</code> <code>※ 출처 같은 작은 글씨</code><br />
+              표: <code>| 머리 | 머리 |</code> 다음 줄 <code>|---|---|</code> 그다음부터 내용 · 그림은 '그림 올리기'를 누르면 커서 자리에 들어갑니다 · 문단 사이는 빈 줄 하나
+            </div>
+          </div>
+        </div>
+
+        <div id="pane-en" hidden>
+          <p class="sec__d" style="margin-top:0">영문을 비워 두면 영문판에는 이 글이 나오지 않습니다. 날짜·순서·연결 목록은 한국어 글을 그대로 따릅니다. 본문 속 사이트 링크는 영문판 주소(예: https://designrefs.com/en/#ai)로 바꿔 주세요.</p>
+          <div class="grid2">
+            <div class="f"><label for="e-title">Title</label><input class="inp" id="e-title" /></div>
+            <div class="f"><label for="e-tag">Tag</label><input class="inp" id="e-tag" list="tag-list-en" placeholder="AI Design" />
+              <datalist id="tag-list-en"><option value="AI Design"><option value="Design"><option value="Community"></datalist></div>
+          </div>
+          <div class="f"><label for="e-desc">Summary</label><input class="inp" id="e-desc" /></div>
+          <div class="f"><label for="e-body" style="font-weight:600">Body</label>
+            <div class="editor" id="ed-en"><textarea class="area area--body" id="e-body"></textarea><div class="prev"><div class="art" id="prev-en"></div></div></div></div>
+        </div>
+
+        <div class="actions">
+          <button class="btn btn--dark" type="submit">저장</button>
+          <a class="btn" id="art-open" href="#" target="_blank" rel="noopener" hidden>실제 사이트에서 보기</a>
+          <span class="spacer"></span>
+          <button class="btn btn--danger" id="art-del" type="button" hidden>이 글 지우기</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <!-- ================= 올리기 ================= -->
+  <div class="modal" id="publish" hidden>
+    <div class="modal__box">
+      <h2>사이트에 올리기</h2>
+      <p class="lead" style="color:var(--a-muted);margin:0">페이지를 다시 만들고 GitHub 에 올립니다. 공유 이미지를 새로 만드는 글이 있으면 1분쯤 걸립니다. 올린 뒤 1~2분이면 designrefs.com 에 보입니다.</p>
+      <div class="changes" id="pub-changes"></div>
+      <div class="f"><label for="pub-msg">무엇을 바꿨나요? (기록용, 비워도 됩니다)</label><input class="inp" id="pub-msg" placeholder="예: 폰트 사이트 2곳 추가, 새 글 발행" /></div>
+      <div class="actions">
+        <button class="btn btn--dark" id="pub-go" type="button">올리기</button>
+        <button class="btn" id="pub-build" type="button">빌드만 하고 내 맥에서 보기</button>
+        <span class="spacer"></span>
+        <button class="btn" id="pub-close" type="button">닫기</button>
+      </div>
+      <pre class="log" id="pub-log" hidden></pre>
+    </div>
+  </div>
+
+  <div class="busy" id="busy" hidden>처리하는 중…</div>
+  <div class="toast" id="toast" role="status"></div>
+
+<script>
+(function () {
+  'use strict';
+  const TOKEN = '__TOKEN__';
+  const $ = s => document.querySelector(s);
+  let S = null;              // 서버에서 받은 전체 상태
+  let curSite = null;        // 고치는 중인 사이트의 원래 주소 (새 사이트면 null)
+  let curArt = null;         // 고치는 중인 글의 원래 주소
+  let dirty = false;
+
+  async function api(name, payload = {}, quiet = false) {
+    if (!quiet) $('#busy').hidden = false;
+    try {
+      const r = await fetch('/api/' + name, {
+        method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Admin-Token': TOKEN },
+        body: JSON.stringify(payload),
+      });
+      const j = await r.json();
+      if (!j.ok && j.message) throw new Error(j.message);
+      return j;
+    } finally { if (!quiet) $('#busy').hidden = true; }
+  }
+  function toast(msg, bad) {
+    const t = $('#toast');
+    t.textContent = msg; t.classList.toggle('bad', !!bad); t.classList.add('is-on');
+    clearTimeout(toast.t); toast.t = setTimeout(() => t.classList.remove('is-on'), bad ? 6000 : 3200);
+  }
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const catLabel = id => (S.cats.find(c => c.id === id) || {}).label || id;
+
+  async function refresh() {
+    S = await api('state', {}, true);
+    const n = S.changes.length;
+    $('#pending').innerHTML = n ? `올리지 않은 변경 <b>${n}</b>개` : '올릴 변경 없음';
+    renderSites(); renderArticles();
+  }
+
+  /* ---------- 화면 전환 ---------- */
+  document.querySelectorAll('.tab').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(x => x.classList.toggle('is-on', x === b));
+    $('#view-sites').hidden = b.dataset.view !== 'sites';
+    $('#view-articles').hidden = b.dataset.view !== 'articles';
+  }));
+  window.addEventListener('beforeunload', e => { if (dirty) { e.preventDefault(); e.returnValue = ''; } });
+  document.addEventListener('input', e => { if (e.target.closest('form')) dirty = true; });
+
+  /* ================= 사이트 ================= */
+  function renderSites() {
+    const cs = $('#site-cat'), keep = cs.value;
+    const counts = {}; S.sites.forEach(s => { counts[s.cat] = (counts[s.cat] || 0) + 1; });
+    cs.innerHTML = `<option value="">전체 분야 (${S.sites.length})</option>` +
+      S.cats.map(c => `<option value="${c.id}">${esc(c.label)} (${counts[c.id] || 0})</option>`).join('');
+    cs.value = keep;
+    $('#s-cat').innerHTML = '<option value="">분야 고르기</option>' + S.cats.map(c => `<option value="${c.id}">${esc(c.label)}</option>`).join('');
+    $('#s-sub').innerHTML = S.subs.map(x => `<option>${esc(x)}</option>`).join('');
+    $('#s-tags').innerHTML = S.tags.map(t => `<label class="chk"><input type="checkbox" value="${esc(t)}" />${esc(t)}</label>`).join('');
+    listSites();
+    if (curSite) fillSite(S.sites.find(s => s.url === curSite)); else fillSite(null);
+  }
+  function listSites() {
+    const q = $('#site-q').value.trim().toLowerCase(), c = $('#site-cat').value;
+    const list = S.sites.filter(s => (!c || s.cat === c) &&
+      (!q || [s.name, s.url, s.desc, s.name_en, s.desc_en].join(' ').toLowerCase().includes(q)));
+    $('#site-count').textContent = `${list.length}곳`;
+    $('#site-list').innerHTML = list.slice().reverse().map(s => `
+      <button class="li ${s.url === curSite ? 'is-on' : ''}" data-url="${esc(s.url)}" type="button">
+        <span class="li__t">${esc(s.name)}${s.desc_en ? '' : ' <span class="badge" title="영문 설명 없음">EN 없음</span>'}</span>
+        <span class="li__sub">${esc(catLabel(s.cat))} · ${esc(s.url.replace(/^https?:\/\/(www\.)?/, ''))}</span>
+      </button>`).join('') || '<p class="empty-a">찾는 사이트가 없습니다</p>';
+  }
+  $('#site-q').addEventListener('input', listSites);
+  $('#site-cat').addEventListener('change', listSites);
+  $('#site-list').addEventListener('click', e => {
+    const b = e.target.closest('.li'); if (!b) return;
+    if (dirty && !confirm('저장하지 않은 내용이 있습니다. 다른 사이트를 열까요?')) return;
+    curSite = b.dataset.url; fillSite(S.sites.find(s => s.url === curSite)); listSites();
+  });
+  $('#site-new').addEventListener('click', () => {
+    if (dirty && !confirm('저장하지 않은 내용이 있습니다. 새로 시작할까요?')) return;
+    curSite = null; fillSite(null); listSites(); $('#s-name').focus();
+  });
+  $('#s-cat').addEventListener('change', () => { $('#s-sub-wrap').hidden = $('#s-cat').value !== 'ai'; });
+
+  function fillSite(s) {
+    $('#site-title').textContent = s ? s.name : '새 사이트';
+    $('#site-lead').hidden = !!s;
+    $('#site-del').hidden = !s;
+    $('#s-name').value = s ? s.name : '';
+    $('#s-url').value = s ? s.url : '';
+    $('#s-cat').value = s ? s.cat : ($('#site-cat').value || '');
+    $('#s-sub-wrap').hidden = $('#s-cat').value !== 'ai';
+    $('#s-sub').value = s && s.sub ? s.sub : S.subs[0];
+    $('#s-desc').value = s ? s.desc : '';
+    $('#s-name-en').value = s ? s.name_en : '';
+    $('#s-desc-en').value = s ? s.desc_en : '';
+    document.querySelectorAll('#s-tags input').forEach(i => { i.checked = !!s && s.tags.includes(i.value); });
+    $('#s-urlmsg').textContent = ''; $('#s-urlmsg').className = 'urlcheck';
+    dirty = false;
+  }
+  $('#s-check').addEventListener('click', async () => {
+    const m = $('#s-urlmsg'); m.className = 'urlcheck'; m.textContent = '확인하는 중…';
+    try {
+      const r = await api('check-url', { url: $('#s-url').value.trim() }, true);
+      m.className = 'urlcheck ' + (r.status && r.status < 400 ? 'ok' : 'bad');
+      m.textContent = r.status && r.status < 400
+        ? `열립니다 (${r.status})${r.title ? ' · ' + r.title : ''}${r.final !== $('#s-url').value.trim() ? ' · 옮겨 간 주소: ' + r.final : ''}`
+        : r.status ? `응답 ${r.status}. 주소를 다시 확인해 주세요. (봇을 막는 사이트는 브라우저에서는 열릴 수 있어요)` : `열리지 않습니다. ${r.error || ''}`;
+    } catch (err) { m.className = 'urlcheck bad'; m.textContent = err.message; }
+  });
+  $('#site-form').addEventListener('submit', async e => {
+    e.preventDefault();
+    try {
+      const r = await api('site', {
+        orig_url: curSite, name: $('#s-name').value, url: $('#s-url').value, cat: $('#s-cat').value,
+        sub: $('#s-cat').value === 'ai' ? $('#s-sub').value : '', desc: $('#s-desc').value,
+        tags: [...document.querySelectorAll('#s-tags input:checked')].map(i => i.value),
+        name_en: $('#s-name-en').value, desc_en: $('#s-desc-en').value,
+      });
+      curSite = $('#s-url').value.trim(); dirty = false;
+      await refresh(); toast(r.message);
+    } catch (err) { toast(err.message, true); }
+  });
+  $('#site-del').addEventListener('click', async () => {
+    if (!confirm(`'${$('#s-name').value}'를 목록에서 지울까요?`)) return;
+    try { const r = await api('site-delete', { url: curSite }); curSite = null; dirty = false; await refresh(); toast(r.message); }
+    catch (err) { toast(err.message, true); }
+  });
+
+  /* ================= 읽을거리 ================= */
+  function renderArticles() {
+    $('#art-count').textContent = `글 ${S.articles.length}편`;
+    $('#art-list').innerHTML = S.articles.map(a => `
+      <button class="li ${a.slug === curArt ? 'is-on' : ''}" data-slug="${esc(a.slug)}" type="button">
+        <span class="li__t">${esc(a.title)}${a.en ? '' : ' <span class="badge">EN 없음</span>'}</span>
+        <span class="li__sub">${esc(a.date)} · ${esc(a.tag)}</span>
+      </button>`).join('') || '<p class="empty-a">아직 글이 없습니다</p>';
+    $('#a-related').innerHTML = S.related.map(r => `<label class="chk"><input type="checkbox" value="${r.id}" />${esc(r.label)}</label>`).join('');
+    if (!curArt) fillArt(null);
+  }
+  $('#art-list').addEventListener('click', async e => {
+    const b = e.target.closest('.li'); if (!b) return;
+    if (dirty && !confirm('저장하지 않은 내용이 있습니다. 다른 글을 열까요?')) return;
+    try { const r = await api('article-get', { slug: b.dataset.slug }); curArt = b.dataset.slug; fillArt(r); renderArticles(); fillArt(r); }
+    catch (err) { toast(err.message, true); }
+  });
+  $('#art-new').addEventListener('click', () => {
+    if (dirty && !confirm('저장하지 않은 내용이 있습니다. 새로 시작할까요?')) return;
+    curArt = null; renderArticles(); $('#a-title').focus();
+  });
+  function fillArt(r) {
+    const ko = r ? r.ko : {}, en = r && r.en ? r.en : {};
+    $('#art-title').textContent = r ? ko.title : '새 글';
+    $('#a-title').value = ko.title || ''; $('#a-slug').value = ko.slug || '';
+    $('#a-desc').value = ko.desc || ''; $('#a-date').value = ko.date || S.today;
+    $('#a-order').value = ko.order || ''; $('#a-tag').value = ko.tag || (r ? '' : 'AI 디자인');
+    const rel = (ko.related || '').split(',').map(x => x.trim());
+    document.querySelectorAll('#a-related input').forEach(i => { i.checked = rel.includes(i.value); });
+    $('#a-body').value = ko.body || '';
+    $('#e-title').value = en.title || ''; $('#e-tag').value = en.tag || ''; $('#e-desc').value = en.desc || ''; $('#e-body').value = en.body || '';
+    $('#art-del').hidden = !r;
+    $('#art-open').hidden = !r; if (r) $('#art-open').href = 'https://designrefs.com/articles/' + ko.slug + '/';
+    $('#a-slug-view').textContent = ko.slug || '…';
+    dirty = false; preview('ko'); preview('en');
+  }
+  $('#a-slug').addEventListener('input', () => { $('#a-slug-view').textContent = $('#a-slug').value || '…'; });
+  document.querySelectorAll('.ltab').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('.ltab').forEach(x => x.classList.toggle('is-on', x === b));
+    $('#pane-ko').hidden = b.dataset.lang !== 'ko'; $('#pane-en').hidden = b.dataset.lang !== 'en';
+  }));
+  $('#a-prev-on').addEventListener('change', () => {
+    document.querySelectorAll('.editor').forEach(x => x.classList.toggle('no-preview', !$('#a-prev-on').checked));
+  });
+
+  // 본문 미리보기: 사이트와 같은 변환기로 그립니다 (입력을 멈추면 갱신)
+  const ptimer = {};
+  function preview(lang) {
+    clearTimeout(ptimer[lang]);
+    ptimer[lang] = setTimeout(async () => {
+      const md = $(lang === 'ko' ? '#a-body' : '#e-body').value;
+      try { const r = await api('preview', { md }, true); $('#prev-' + lang).innerHTML = r.html || '<p class="ptext" style="color:#999">본문을 적으면 여기에 보입니다</p>'; }
+      catch (err) { $('#prev-' + lang).innerHTML = `<p class="ptext" style="color:#c62828">${esc(err.message)}</p>`; }
+    }, 350);
+  }
+  $('#a-body').addEventListener('input', () => preview('ko'));
+  $('#e-body').addEventListener('input', () => preview('en'));
+
+  // 그림 올리기: articles/img/ 에 저장하고 커서 자리에 그림 줄을 넣습니다
+  $('#a-img').addEventListener('change', async () => {
+    const f = $('#a-img').files[0]; if (!f) return;
+    const data = await new Promise(res => { const r = new FileReader(); r.onload = () => res(r.result); r.readAsDataURL(f); });
+    try {
+      const r = await api('upload', { name: f.name, data });
+      const ta = $('#pane-en').hidden ? $('#a-body') : $('#e-body');
+      const at = ta.selectionStart ?? ta.value.length;
+      const line = '\n\n' + r.markdown.replace('그림 설명을 여기에', $('#pane-en').hidden ? '그림 설명을 여기에' : 'Caption here') + '\n\n';
+      ta.value = ta.value.slice(0, at) + line + ta.value.slice(at); dirty = true;
+      preview($('#pane-en').hidden ? 'ko' : 'en');
+      toast('그림을 넣었습니다. 대괄호 안의 설명을 고쳐 주세요.');
+    } catch (err) { toast(err.message, true); }
+    $('#a-img').value = '';
+  });
+
+  $('#art-form').addEventListener('submit', async e => {
+    e.preventDefault();
+    try {
+      const r = await api('article', {
+        orig_slug: curArt,
+        ko: { slug: $('#a-slug').value, title: $('#a-title').value, desc: $('#a-desc').value, date: $('#a-date').value,
+              order: $('#a-order').value, tag: $('#a-tag').value, body: $('#a-body').value,
+              related: [...document.querySelectorAll('#a-related input:checked')].map(i => i.value) },
+        en: { title: $('#e-title').value, desc: $('#e-desc').value, tag: $('#e-tag').value, body: $('#e-body').value },
+      });
+      curArt = r.slug; dirty = false; await refresh();
+      const g = await api('article-get', { slug: curArt }, true); fillArt(g);
+      toast(r.message);
+    } catch (err) { toast(err.message, true); }
+  });
+  $('#art-del').addEventListener('click', async () => {
+    if (!confirm(`'${$('#a-title').value}' 글을 지울까요? 영문판도 함께 지워집니다.`)) return;
+    try { const r = await api('article-delete', { slug: curArt }); curArt = null; dirty = false; await refresh(); toast(r.message); }
+    catch (err) { toast(err.message, true); }
+  });
+
+  /* ================= 올리기 ================= */
+  const NAMES = { 'js/data.js': '사이트 목록', 'js/data.en.js': '사이트 영문 설명' };
+  function describe(line) {
+    const code = line.slice(0, 2).trim(), path = line.slice(3).replace(/"/g, '');
+    const what = { M: '고침', A: '새로', '??': '새로', D: '지움', R: '이름 바뀜' }[code] || code;
+    let name = NAMES[path] || path;
+    if (path.startsWith('content/articles-en/')) name = '영문 글 ' + path.slice(20);
+    else if (path.startsWith('content/articles/')) name = '글 ' + path.slice(17);
+    else if (path.startsWith('articles/img/')) name = '그림 ' + path.slice(13);
+    return `${what.padEnd(6)} ${name}`;
+  }
+  $('#open-publish').addEventListener('click', async () => {
+    await refresh();
+    $('#pub-changes').textContent = S.changes.length ? S.changes.map(describe).join('\n') : '관리자에서 바꾼 원본 파일은 없습니다. (다시 만들어야 할 페이지가 있으면 그것만 올라갑니다)';
+    $('#pub-log').hidden = true; $('#publish').hidden = false;
+  });
+  $('#pub-close').addEventListener('click', () => { $('#publish').hidden = true; });
+  async function runPub(name) {
+    if (dirty && !confirm('저장하지 않은 내용이 있습니다. 저장하지 않은 것은 빼고 진행할까요?')) return;
+    $('#pub-go').disabled = $('#pub-build').disabled = true;
+    const log = $('#pub-log'); log.hidden = false; log.textContent = name === 'publish' ? '빌드하고 올리는 중… (1분쯤 걸릴 수 있어요)' : '빌드하는 중…';
+    try {
+      const r = await api(name, { message: $('#pub-msg').value });
+      log.textContent = r.log || ''; toast(r.message); await refresh();
+      if (name === 'build') window.open('/site/', '_blank');
+    } catch (err) { log.textContent = err.message; toast(err.message.split('\n')[0], true); }
+    finally { $('#pub-go').disabled = $('#pub-build').disabled = false; }
+  }
+  $('#pub-go').addEventListener('click', () => runPub('publish'));
+  $('#pub-build').addEventListener('click', () => runPub('build'));
+
+  refresh().catch(err => toast(err.message, true));
+})();
+</script>
+</body>
+</html>
