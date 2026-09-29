@@ -27,6 +27,8 @@
 ├── tools/build-seo.py            # sitemap, JSON-LD, noscript 생성
 ├── tools/build-pages.py          # 카테고리별 정적 페이지 생성
 ├── tools/build-articles.py       # 읽을거리 페이지 생성
+├── tools/admin.py + admin.html    # 관리자 화면 (python3 tools/admin.py)
+├── content/articles-en/*.md      # 읽을거리 영문판 (파일 이름이 한국어 글과 같아야 짝이 됨)
 ├── tools/build-en.py             # 영문판 첫 화면 en/index.html 생성 (번역 빠진 항목도 알려 줌)
 ├── js/data.en.js                 # ★ 영문판 번역 (사이트를 추가하면 여기에도 한 줄)
 ├── tools/build-og.py             # 글별 공유 이미지 og/<slug>.png (크롬 필요)
@@ -145,6 +147,21 @@ python3 tools/build-pages.py && python3 tools/build-articles.py && python3 tools
 ```
 
 `js/data.js` 와 `content/articles/` 기준으로 카테고리 페이지, 읽을거리 페이지, `sitemap.xml`, JSON-LD, `llms.txt` 가 모두 갱신됩니다. 순서가 있습니다. `build-seo.py` 를 마지막에 돌려야 새 글이 sitemap 에 들어갑니다.
+
+## 관리자 화면 (사이트 추가 · 글 발행)
+
+코드를 열지 않고 사이트를 넣고 글을 쓰려면 관리자 화면을 씁니다. 이 맥에서만 열립니다.
+
+```bash
+python3 tools/admin.py
+```
+
+바탕화면 `클로드코드` 폴더의 **디자인허브 관리자.command** 를 두 번 눌러도 됩니다.
+
+- **사이트**: 이름·주소·분야·태그·설명(한국어/영어)을 적고 저장. '주소 확인'으로 링크가 살아 있는지 봅니다.
+- **읽을거리**: 제목·주소·요약·날짜·태그와 본문(마크다운)을 적고 저장. 오른쪽에 실제 모양으로 미리보기가 나오고, '그림 올리기'로 본문에 그림을 넣습니다. '영문판' 탭에 영어를 채우면 /en/articles/ 에도 발행됩니다.
+- **사이트에 올리기**: 페이지를 다시 만들고 커밋·푸시·검색엔진 알림까지 한 번에. 1~2분 뒤 사이트에 보입니다.
+- 저장만 하면 이 맥의 파일만 바뀝니다. '올리기'를 눌러야 사이트에 나갑니다.
 
 ## 글 쓰기 (읽을거리)
 

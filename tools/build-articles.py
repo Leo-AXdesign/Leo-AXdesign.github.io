@@ -19,7 +19,7 @@ content/articles/*.md 와 content/articles-en/*.md 로 블로그 페이지를 �
 글을 추가하려면 content/articles/ 에 .md 파일을 하나 더 만들고 이 스크립트를 실행하세요.
 그다음 tools/build-seo.py 를 돌려야 sitemap 과 llms.txt 에도 반영됩니다.
 """
-import json, pathlib, datetime, email.utils
+import json, pathlib, datetime, email.utils, shutil
 
 import articles as A
 import sitedata as D
@@ -273,7 +273,25 @@ def build(lang, ko_slugs, en_slugs):
         ]) + " },")
     js += ["];", ""]
     (ROOT / "js" / L["js"]).write_text("\n".join(js), encoding="utf-8")
+    prune(L, {x["slug"] for x in items})
     return items
+
+
+def prune(L, slugs):
+    """지우거나 주소를 바꾼 글의 옛 페이지와 공유 이미지를 치웁니다.
+    손으로 만든 이동 안내 페이지(meta refresh)는 남겨 둡니다."""
+    for d in (L["dir"] / "articles").iterdir():
+        page = d / "index.html"
+        if not d.is_dir() or d.name == "img" or d.name in slugs:
+            continue
+        if page.exists() and 'http-equiv="refresh"' in page.read_text(encoding="utf-8"):
+            continue
+        shutil.rmtree(d)
+        print(f"  지운 글 페이지 정리: {d.relative_to(ROOT)}/")
+    if L["og"].exists():
+        for f in L["og"].glob("*.png"):
+            if f.stem not in slugs:
+                f.unlink()
 
 
 ko_slugs = {x["slug"] for x in A.load("ko")}

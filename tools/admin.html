@@ -18,7 +18,8 @@
   html, body { margin: 0; background: var(--a-bg); color: var(--a-ink); }
   body.admin { font-family: "Pretendard Variable", Pretendard, -apple-system, sans-serif; font-size: 14px;
     -webkit-font-smoothing: antialiased; }
-  .admin button, .admin input, .admin select, .admin textarea { font: inherit; color: inherit; }
+  /* :where 로 감싸 우선순위를 0으로 둡니다. 그래야 .btn--dark 의 흰 글자가 이깁니다 */
+  :where(.admin) :where(button, input, select, textarea) { font: inherit; color: inherit; }
 
   .bar { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,.92); backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--a-line); }
