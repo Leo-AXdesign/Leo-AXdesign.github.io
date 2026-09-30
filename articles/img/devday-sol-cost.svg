@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 537" role="img" aria-labelledby="t d">
+  <title id="t">점수는 비슷하게, 값은 5분의 1로</title>
+  <desc id="d">종합 지수는 Claude Opus 5.5 58점, GPT-6 아스트라 53점, GPT-6.1 Sol 52점. 과제 하나당 비용은 5.98달러, 3.26달러, 0.72달러.</desc>
+  <rect width="1200" height="537" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="40" y="70" font-size="30" font-weight="800" fill="#111111" letter-spacing="-0.5">점수는 비슷하게, 값은 5분의 1로</text>
+    <text x="40" y="101" font-size="19" fill="#6B6B6B">Artificial Analysis 종합 지수와 지수 과제 하나당 비용</text>
+    <text x="40.0" y="165" font-size="24" font-weight="700" fill="#111111">종합 지수</text>
+    <text x="40.0" y="193" font-size="18" fill="#6B6B6B">높을수록 좋음</text>
+    <text x="40.0" y="237" font-size="18" fill="#444444">Claude Opus 5.5</text>
+    <path d="M40.0 247H467.0A7 7 0 0 1 474.0 254V270A7 7 0 0 1 467.0 277H40.0Z" fill="#111111"/>
+    <text x="486.0" y="269.92" font-size="22" font-weight="700" fill="#111111">58</text>
+    <text x="40.0" y="315" font-size="18" fill="#444444">GPT-6 아스트라</text>
+    <path d="M40.0 325H429.58620689655174A7 7 0 0 1 436.58620689655174 332V348A7 7 0 0 1 429.58620689655174 355H40.0Z" fill="#111111"/>
+    <text x="448.58620689655174" y="347.92" font-size="22" font-weight="700" fill="#111111">53</text>
+    <text x="40.0" y="393" font-size="18" fill="#444444">GPT-6.1 Sol</text>
+    <path d="M40.0 403H422.1034482758621A7 7 0 0 1 429.1034482758621 410V426A7 7 0 0 1 422.1034482758621 433H40.0Z" fill="#111111"/>
+    <text x="441.1034482758621" y="425.92" font-size="22" font-weight="700" fill="#111111">52</text>
+    <line x1="40.0" y1="219" x2="40.0" y2="453" stroke="#D9D9D9" stroke-width="1.6"/>
+    <text x="630.0" y="165" font-size="24" font-weight="700" fill="#111111">과제당 비용</text>
+    <text x="630.0" y="193" font-size="18" fill="#6B6B6B">낮을수록 좋음</text>
+    <text x="630.0" y="237" font-size="18" fill="#444444">Claude Opus 5.5</text>
+    <path d="M630.0 247H1057.0A7 7 0 0 1 1064.0 254V270A7 7 0 0 1 1057.0 277H630.0Z" fill="#111111"/>
+    <text x="1076.0" y="269.92" font-size="22" font-weight="700" fill="#111111">$5.98</text>
+    <text x="630.0" y="315" font-size="18" fill="#444444">GPT-6 아스트라</text>
+    <path d="M630.0 325H859.5953177257525A7 7 0 0 1 866.5953177257525 332V348A7 7 0 0 1 859.5953177257525 355H630.0Z" fill="#111111"/>
+    <text x="878.5953177257525" y="347.92" font-size="22" font-weight="700" fill="#111111">$3.26</text>
+    <text x="630.0" y="393" font-size="18" fill="#444444">GPT-6.1 Sol</text>
+    <path d="M630.0 403H675.2541806020067A7 7 0 0 1 682.2541806020067 410V426A7 7 0 0 1 675.2541806020067 433H630.0Z" fill="#111111"/>
+    <text x="694.2541806020067" y="425.92" font-size="22" font-weight="700" fill="#111111">$0.72</text>
+    <line x1="630.0" y1="219" x2="630.0" y2="453" stroke="#D9D9D9" stroke-width="1.6"/>
+    <line x1="40" y1="475" x2="1160" y2="475" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="40" y="501" font-size="16" fill="#6B6B6B">출처: Artificial Analysis 수치(데브데이 발표 정리, DEV Community 인용). 9월 29일 기준. 지수는 자주 개편됨.</text>
+  </g>
+</svg>

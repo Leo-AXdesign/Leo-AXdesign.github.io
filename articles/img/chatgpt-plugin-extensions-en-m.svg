@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 1122" role="img" aria-labelledby="t d">
+  <title id="t">Three places a plugin can live</title>
+  <desc id="d">Three places plugin extensions appear in ChatGPT: a side panel next to the chat (e.g. Canva), a file viewer that opens files (e.g. Adobe Acrobat and Photoshop), and @mentions in the message box (e.g. Figma file search).</desc>
+  <rect width="600" height="1122" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="32" y="66" font-size="34" font-weight="800" fill="#111111" text-anchor="start">Three places a plugin can live</text>
+    <text x="32" y="99" font-size="21" font-weight="400" fill="#6B6B6B" text-anchor="start">A diagram based on the announcement. Not the actual interface.</text>
+    <rect x="32" y="131" width="536" height="591" rx="16" fill="#FFFFFF" stroke="#111111" stroke-width="2"/>
+    <line x1="32" y1="171" x2="568" y2="171" stroke="#D9D9D9" stroke-width="1.5"/>
+    <circle cx="56" cy="151" r="5" fill="#D9D9D9"/>
+    <circle cx="74" cy="151" r="5" fill="#D9D9D9"/>
+    <circle cx="92" cy="151" r="5" fill="#D9D9D9"/>
+    <text x="300.0" y="157" font-size="17" font-weight="700" fill="#6B6B6B" text-anchor="middle">ChatGPT</text>
+    <rect x="224.71999999999997" y="195" width="323.28000000000003" height="41" rx="20.5" fill="#111111"/>
+    <text x="242.71999999999997" y="219" font-size="19" font-weight="400" fill="#FFFFFF" text-anchor="start">Give me three banner drafts</text>
+    <rect x="52" y="248" width="312.64000000000004" height="41" rx="20.5" fill="#F2F2F2"/>
+    <text x="70" y="272" font-size="19" font-weight="400" fill="#444444" text-anchor="start">Here are three directions.</text>
+    <rect x="52" y="301" width="365.84000000000003" height="41" rx="20.5" fill="#F2F2F2"/>
+    <text x="70" y="325" font-size="19" font-weight="400" fill="#444444" text-anchor="start">You can edit them in the panel.</text>
+    <rect x="52" y="358" width="300" height="56" rx="10" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <rect x="64" y="370" width="32" height="32" rx="6" fill="#F2F2F2" stroke="#D9D9D9"/>
+    <text x="108" y="383" font-size="18" font-weight="700" fill="#111111" text-anchor="start">banner-a.psd</text>
+    <text x="108" y="404" font-size="16" font-weight="400" fill="#6B6B6B" text-anchor="start">File viewer →</text>
+    <circle cx="346" cy="360" r="15" fill="#111111"/><text x="346" y="366.12" font-size="17" font-weight="800" fill="#FFFFFF" text-anchor="middle">2</text>
+    <rect x="52" y="434" width="496" height="44" rx="22" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <rect x="62" y="443" width="90.67999999999999" height="26" rx="13" fill="#111111"/>
+    <text x="72" y="462" font-size="17" font-weight="700" fill="#FFFFFF" text-anchor="start">@Figma</text>
+    <text x="164.68" y="462" font-size="17" font-weight="400" fill="#444444" text-anchor="start">find last week&#x27;s landing draft</text>
+    <circle cx="54" cy="436" r="15" fill="#111111"/><text x="54" y="442.12" font-size="17" font-weight="800" fill="#FFFFFF" text-anchor="middle">3</text>
+    <rect x="52" y="502" width="496" height="200" rx="12" fill="#F2F2F2" stroke="#111111" stroke-width="1.5"/>
+    <text x="72" y="536" font-size="20" font-weight="800" fill="#111111" text-anchor="start">Side panel</text>
+    <text x="72" y="560" font-size="17" font-weight="400" fill="#6B6B6B" text-anchor="start">e.g. Canva&#x27;s editor</text>
+    <rect x="72" y="578" width="412" height="104" rx="8" fill="#FFFFFF" stroke="#D9D9D9"/>
+    <rect x="88" y="594" width="226.60000000000002" height="16.64" rx="4" fill="#111111"/>
+    <rect x="88" y="616.64" width="156.56" height="8" rx="4" fill="#D9D9D9"/>
+    <circle cx="368.64" cy="642.48" r="20.8" fill="#D9D9D9"/>
+    <rect x="496" y="578" width="28" height="28" rx="6" fill="#FFFFFF" stroke="#D9D9D9"/>
+    <rect x="496" y="614" width="28" height="28" rx="6" fill="#FFFFFF" stroke="#D9D9D9"/>
+    <rect x="496" y="650" width="28" height="28" rx="6" fill="#FFFFFF" stroke="#D9D9D9"/>
+    <circle cx="544" cy="506" r="15" fill="#111111"/><text x="544" y="512.12" font-size="17" font-weight="800" fill="#FFFFFF" text-anchor="middle">1</text>
+    <circle cx="47" cy="754.8" r="14" fill="#111111"/><text x="47" y="760.56" font-size="16" font-weight="800" fill="#FFFFFF" text-anchor="middle">1</text>
+    <text x="72" y="762" font-size="20" font-weight="700" fill="#111111" text-anchor="start">Side panel</text>
+    <text x="72" y="792" font-size="19" font-weight="400" fill="#444444" text-anchor="start">An app&#x27;s screen next to the chat. Canva put</text>
+    <text x="72" y="822" font-size="19" font-weight="400" fill="#444444" text-anchor="start">its design tools here.</text>
+    <circle cx="47" cy="856.8" r="14" fill="#111111"/><text x="47" y="862.56" font-size="16" font-weight="800" fill="#FFFFFF" text-anchor="middle">2</text>
+    <text x="72" y="864" font-size="20" font-weight="700" fill="#111111" text-anchor="start">File viewer</text>
+    <text x="72" y="894" font-size="19" font-weight="400" fill="#444444" text-anchor="start">Opens files from the chat in an app. Adobe:</text>
+    <text x="72" y="924" font-size="19" font-weight="400" fill="#444444" text-anchor="start">PDFs in Acrobat, images in Photoshop.</text>
+    <circle cx="47" cy="958.8" r="14" fill="#111111"/><text x="47" y="964.56" font-size="16" font-weight="800" fill="#FFFFFF" text-anchor="middle">3</text>
+    <text x="72" y="966" font-size="20" font-weight="700" fill="#111111" text-anchor="start">@mention</text>
+    <text x="72" y="996" font-size="19" font-weight="400" fill="#444444" text-anchor="start">Call an app from the message box. Figma put</text>
+    <text x="72" y="1026" font-size="19" font-weight="400" fill="#444444" text-anchor="start">file search here.</text>
+    <line x1="32" y1="1066" x2="568" y2="1066" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="32" y="1090" font-size="17" font-weight="400" fill="#6B6B6B" text-anchor="start">Sources: OpenAI DevDay, the-decoder, antihype.com.br</text>
+  </g>
+</svg>

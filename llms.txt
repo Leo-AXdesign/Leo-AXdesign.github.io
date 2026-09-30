@@ -22,6 +22,8 @@
 
 ## 읽을거리 (직접 쓴 글)
 
+- [챗GPT 안으로 들어온 캔바·피그마·어도비, 데브데이에서 디자이너가 볼 것](https://designrefs.com/articles/openai-devday-2026-designers/): 오늘 새벽 오픈AI 데브데이에서 발표가 스무 개 넘게 쏟아졌다. 그중 디자인 작업과 닿는 것만 골라, 그림과 숫자로 정리했다. (2026-09-30, 약 3분)
+- ['디자인 보는 눈'을 내세운 Claude Sonnet 5.5, 중간 가격 모델이 달라졌다](https://designrefs.com/articles/claude-sonnet-5-5-design/): 앤트로픽이 9월 28일 내놓은 Sonnet 5.5는 발표문에서 디자인 감각을 앞세웠다. 가격은 그대로, 일은 더 빠르게. 실제로 한 페이지짜리 사이트를 시켜 본 결과까지 숫자로 정리했다. (2026-09-29, 약 3분)
 - [투명 배경까지 뽑아 주는 무료 이미지 모델, 일에 써도 될까](https://designrefs.com/articles/open-image-model-license/): 기업들이 값싼 오픈 모델로 옮겨 가는 사이, 알리바바의 새 이미지 모델 Qwen-Image-2.1은 상업적 이용을 막았다. 내려받을 수 있다는 것과 일에 써도 된다는 것의 차이를 정리했다. (2026-09-28, 약 3분)
 - [한 주 만에 반값이 된 AI, 디자인 툴 값도 내려갈까](https://designrefs.com/articles/ai-price-cut-week/): 9월 22일 하루에 Opus 5.5, GPT-6 Sol, Luna가 한꺼번에 나오며 가격표가 크게 바뀌었다. 디자이너가 내는 크레딧과 구독료에는 어떻게 이어질지 숫자로 짚었다. (2026-09-27, 약 4분)
 - [Claude Fable 5.1 vs GPT-6 아스트라, 숫자로 비교해 보면](https://designrefs.com/articles/claude-fable-5-1-vs-gpt-6-astra/): 이틀 차이로 나온 두 최상위 모델. 공식 사양, 제3자 평가, 디자이너들의 초기 반응을 출처와 함께 나란히 놓았다. (2026-09-26, 약 4분)
@@ -36,7 +38,7 @@
 - [디자인 스타일 사전](https://designrefs.com/styles/): 아르누보부터 글래스모피즘까지 34가지 그래픽 디자인 양식. 시대, 특징, 대표 인물
 - [디자인 용어 사전](https://designrefs.com/glossary/): 타이포그래피, 편집·인쇄, 컬러, UI 설계, UX 리서치, 개발 협업 용어 155개
 - [2026 디자인 트렌드](https://designrefs.com/trends/): 올해 디자인 트렌드 키워드 15가지
-- [읽을거리 목록](https://designrefs.com/articles/): 디자인·AI 디자인·커뮤니티에 대해 직접 쓴 글 8편
+- [읽을거리 목록](https://designrefs.com/articles/): 디자인·AI 디자인·커뮤니티에 대해 직접 쓴 글 10편
 - [전체 내용](https://designrefs.com/llms-full.txt): 위의 모든 목록과 설명, 글 본문을 마크다운 한 파일로
 
 ## Optional

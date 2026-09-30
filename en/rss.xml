@@ -6,7 +6,102 @@
     <atom:link href="https://designrefs.com/en/rss.xml" rel="self" type="application/rss+xml" />
     <description>Notes from a designer in Korea: working with AI, putting style into words, collecting references and design communities. Translated from Korean.</description>
     <language>en</language>
-    <lastBuildDate>Mon, 28 Sep 2026 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 30 Sep 2026 09:00:00 +0900</lastBuildDate>
+    <item>
+      <title>Canva, Figma and Adobe move into ChatGPT. What designers should take from DevDay</title>
+      <link>https://designrefs.com/en/articles/openai-devday-2026-designers/</link>
+      <guid isPermaLink="true">https://designrefs.com/en/articles/openai-devday-2026-designers/</guid>
+      <pubDate>Wed, 30 Sep 2026 09:00:00 +0900</pubDate>
+      <category>AI Design</category>
+      <description>OpenAI&#x27;s DevDay brought more than twenty announcements. Here are only the ones that touch design work, laid out with diagrams and numbers.</description>
+      <content:encoded><![CDATA[    <p class="ptext">OpenAI&#x27;s developer event, DevDay, took place in San Francisco on September 29 (in Korea, at 2 a.m. today). There were more than twenty announcements.</p>
+    <p class="ptext">The biggest headline was &quot;dots&quot;, agents that keep working in the background even after you close the app. But as a designer, what I kept coming back to was something else. Canva, Figma and Adobe moved inside the ChatGPT window.</p>
+    <p class="ptext"><strong>First, a disclaimer.</strong> This is right after the event, so there are almost no hands-on reviews yet. What follows is based on OpenAI&#x27;s announcements and articles covering the event. I&#x27;ll also note that I&#x27;m building this site with Claude Code.</p>
+    <h2 class="psub">Three places a plugin can live</h2>
+    <p class="ptext">The new thing is &quot;plugin extensions&quot;. Instead of the old approach of just handing you links in the chat, they put the app&#x27;s own screen inside ChatGPT. There are three places it can go.</p>
+    <figure class="art__fig">
+      <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/chatgpt-plugin-extensions-en-m.svg" width="600" height="1122" /><img src="https://designrefs.com/articles/img/chatgpt-plugin-extensions-en.svg" alt="Three places a plugin can live in ChatGPT. A diagram based on the announcement, not the actual interface." width="1200" height="760" loading="lazy" decoding="async" /></picture>
+      <figcaption>Three places a plugin can live in ChatGPT. A diagram based on the announcement, not the actual interface.</figcaption>
+    </figure>
+    <p class="ptext">The first is a side panel next to the chat. Canva put its design tools here. You ask for drafts, then edit them right beside the conversation without leaving it.</p>
+    <p class="ptext">The second is the file viewer. Files in the chat open in the app. Adobe made PDFs open in Acrobat and images in Photoshop.</p>
+    <p class="ptext">The third is the @mention in the message box. Figma put file search here. You call it up with something like &quot;@Figma last week&#x27;s landing draft&quot;.</p>
+    <p class="ptext">Plugins can be installed on every plan, including Free. But the file viewer and @mentions only work in the desktop app. For Free and Go users, the web version is only promised &quot;soon&quot;. For businesses, OpenAI also opened a marketplace with 32 partner companies, including Adobe and Figma.</p>
+    <h2 class="psub">The fourth attempt</h2>
+    <p class="ptext">It&#x27;s welcome news, but one thing is worth knowing going in. This isn&#x27;t OpenAI&#x27;s first attempt to bring other companies&#x27; apps into ChatGPT.</p>
+    <figure class="art__fig">
+      <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/openai-app-platforms-en-m.svg" width="600" height="754" /><img src="https://designrefs.com/articles/img/openai-app-platforms-en.svg" alt="ChatGPT&#x27;s app platform changed four times in three years. The first plugins shut down within about a year, and the GPT Store closes this December." width="1200" height="609" loading="lazy" decoding="async" /></picture>
+      <figcaption>ChatGPT&#x27;s app platform changed four times in three years. The first plugins shut down within about a year, and the GPT Store closes this December.</figcaption>
+    </figure>
+    <p class="ptext">Plugins, launched in March 2023, shut down a little over a year later. GPTs and the GPT Store, launched that November, close on December 11. The Apps SDK arrived in October 2025, and this is the fourth. A Brazilian tech outlet called it &quot;the fourth time in three years&quot;.</p>
+    <p class="ptext">So rather than hanging your whole workflow on it, trying the one or two plugins you use most is about right. And remember that even if the platform changes again, your original files still live in Figma and Adobe.</p>
+    <h2 class="psub">Other announcements that touch design work</h2>
+    <p class="ptext"><strong>Pages.</strong> A new document type written by people and agents together, with research, diagrams and data visualization in one document. Worth a look if you write a lot of briefs or research summaries.</p>
+    <p class="ptext"><strong>Collaborative slides.</strong> Several people editing one deck at once, exportable to PowerPoint and Google Slides. Promised &quot;in the coming weeks&quot;.</p>
+    <p class="ptext"><strong>Spaces.</strong> A place for a team to keep conversations and agents together. It launched alongside @ChatGPT in Slack and Teams.</p>
+    <p class="ptext"><strong>Dots.</strong> Give one a goal and it keeps working with its own cloud computer and browser. It runs on GPT-6 Astra and connects to more than 4,000 apps. The first dot is included in the Pro and Business Premium plans.</p>
+    <h2 class="psub">And the prices</h2>
+    <p class="ptext">On the model side, GPT-6.1 Sol arrived. OpenAI says it nearly matches its top model, GPT-6 Astra, at a fifth of the price: $2 input and $10 output per million tokens.</p>
+    <figure class="art__fig">
+      <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/devday-sol-cost-en-m.svg" width="600" height="1035" /><img src="https://designrefs.com/articles/img/devday-sol-cost-en.svg" alt="Independent evaluator&#x27;s overall index and cost per task. One point apart in score, less than a quarter of the cost." width="1200" height="537" loading="lazy" decoding="async" /></picture>
+      <figcaption>Independent evaluator&#x27;s overall index and cost per task. One point apart in score, less than a quarter of the cost.</figcaption>
+    </figure>
+    <p class="ptext">On the Artificial Analysis Intelligence Index, GPT-6.1 Sol scores 52, one point behind Astra (53). Its cost per index task is $0.72, less than a quarter of Astra&#x27;s. First place is still Claude Opus 5.5 (58).</p>
+    <p class="ptext">OpenAI&#x27;s own tables show a wider gap in places. On a science-focused terminal benchmark, Sol scored 57.0% and Astra 68.1%. It won&#x27;t stand in for Astra on everything.</p>
+    <p class="ptext">The interesting part is the $2 / $10 price. It&#x27;s exactly the same as <a href="https://designrefs.com/en/articles/claude-sonnet-5-5-design/">Claude Sonnet 5.5</a>, released a day earlier. The two companies are now going head to head in the middle tier at the same price.</p>
+    <p class="ptext">Subscription plans changed too. There&#x27;s a new top plan at $500 a month (Pro 500), and on the $200 plan, usage for new subscribers was cut in half. Existing subscribers keep what they had. That part has drawn plenty of criticism since the announcement.</p>
+    <h2 class="psub">So, for now</h2>
+    <p class="ptext">There isn&#x27;t much to do today. If you use the ChatGPT desktop app, install the Canva, Figma or Adobe plugin you already use and see how useful it is beside the chat.</p>
+    <p class="ptext">The bigger thing is the direction. Design tools are moving into ChatGPT, and ChatGPT is moving into design tools. Wherever you start, you&#x27;re heading toward the same files. In between, where the original lives and who does the final check is still a person&#x27;s call. I wrote about that boundary in <a href="https://designrefs.com/en/articles/ai-design-tools-in-practice/">Why thirty AI drafts don&#x27;t make the work any shorter</a>.</p>
+    <p class="art__note">Sources: <a href="https://openai.com/index/devday-2026-recap/" target="_blank" rel="noopener">OpenAI DevDay 2026 recap</a>, <a href="https://the-decoder.com/openais-reveals-a-new-chatgpt-that-looks-less-like-a-chatbot-and-more-like-an-operating-system/" target="_blank" rel="noopener">the-decoder</a>, <a href="https://antihype.com.br/c/software/plugin-extensions-chatgpt-apps-na-barra-lateral/" target="_blank" rel="noopener">antihype.com.br</a>, <a href="https://dev.to/axrisi/openai-devday-2026-every-announcement-with-prices-and-availability-1mbh" target="_blank" rel="noopener">DEV Community roundup</a>, <a href="https://thenextweb.com/news/openai-devday-pro-200-usage-cut-pro-500-plan" target="_blank" rel="noopener">The Next Web</a>, <a href="https://www.beri.net/article/gpt-6-1-sol-devday-2026-astra-fifth-price-terminal-bench-score-gap-cost-per-task" target="_blank" rel="noopener">THE DAILY BRIEF</a>.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Claude Sonnet 5.5 leads with &quot;an eye for design&quot;, and the mid-priced tier changes</title>
+      <link>https://designrefs.com/en/articles/claude-sonnet-5-5-design/</link>
+      <guid isPermaLink="true">https://designrefs.com/en/articles/claude-sonnet-5-5-design/</guid>
+      <pubDate>Tue, 29 Sep 2026 09:00:00 +0900</pubDate>
+      <category>AI Design</category>
+      <description>Anthropic&#x27;s Sonnet 5.5, released September 28, put design sense front and center. Same price, faster work. Plus what happened when someone had it build a one-page site, in numbers.</description>
+      <content:encoded><![CDATA[    <p class="ptext">Anthropic released Claude Sonnet 5.5 on September 28 (US time). In Korea, the news spread this morning.</p>
+    <p class="ptext">Sonnet is the middle tier of Anthropic&#x27;s lineup. Not the priciest, smartest model, and not the cheapest, fastest one. Its launches are usually quiet, but this one had a line that stood out: Anthropic wrote that the model has &quot;a sharp eye for design&quot;.</p>
+    <p class="ptext">It&#x27;s unusual for a mid-priced model to lead with design. And this tier is closer to designers than you might think. For a tool company selling AI features, cost makes this price range the natural default rather than the most expensive model.</p>
+    <p class="ptext"><strong>First, a disclaimer.</strong> I&#x27;m building this site with Claude Code. So I&#x27;ve only used company announcements and results from people outside who ran their own tests, and noted who measured what.</p>
+    <h2 class="psub">Same price, crowded row</h2>
+    <p class="ptext">The price is the same as Sonnet 5: $2 input and $10 output per million tokens. What changed is speed and how much it says. Anthropic says it&#x27;s more than 30% faster than the previous model and finishes the same work with fewer tokens, so most tasks cost up to 30% less.</p>
+    <figure class="art__fig">
+      <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/price-tiers-0929-en-m.svg" width="600" height="1445" /><img src="https://designrefs.com/articles/img/price-tiers-0929-en.svg" alt="Price per million tokens. Models from two companies stand side by side in the $2 input, $10 output row." width="1200" height="693" loading="lazy" decoding="async" /></picture>
+      <figcaption>Price per million tokens. Models from two companies stand side by side in the $2 input, $10 output row.</figcaption>
+    </figure>
+    <p class="ptext">Put it on a chart and something interesting shows up. OpenAI&#x27;s GPT-6 Sol sits in the same $2 / $10 row. After <a href="https://designrefs.com/en/articles/ai-price-cut-week/">the week AI got half price</a>, the two companies&#x27; mid-tier models now face each other at exactly the same price. The top row is still $10 input and $50 output.</p>
+    <h2 class="psub">What it&#x27;s supposed to be good at</h2>
+    <p class="ptext">Anthropic&#x27;s list: well-scoped everyday tasks, fixing bugs, and making polished documents, slides and spreadsheets. Design was added to that. It&#x27;s described as adding polish to interfaces and following templates well. In internal testing, Anthropic says it produced an investment presentation that needed almost no editing.</p>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th>Evaluation</th><th>Sonnet 5</th><th>Sonnet 5.5</th><th>Measured by</th></tr></thead>
+      <tbody>
+        <tr><td>GDPval-AA (real-world document work)</td><td>1449</td><td><strong>1844</strong></td><td>Anthropic</td></tr>
+        <tr><td>FrontierCode (max effort)</td><td>42.4%</td><td><strong>46.2%</strong></td><td>Anthropic</td></tr>
+        <tr><td>Speed</td><td>baseline</td><td><strong>30%+ faster</strong></td><td>Anthropic</td></tr>
+      </tbody>
+    </table></div>
+    <p class="art__note">Source: <a href="https://www.anthropic.com/claude-sonnet-5-5" target="_blank" rel="noopener">Anthropic, Introducing Claude Sonnet 5.5</a>. Anthropic also noted it scores two points below the higher-tier Opus 5.5 on GDPval-AA.</p>
+    <p class="ptext">Launch tables tend to collect the good numbers. So I was more curious about results from someone outside.</p>
+    <h2 class="psub">Asking it to build a one-page site</h2>
+    <p class="ptext">Right after launch, developer Thomas Wiegold <a href="https://thomas-wiegold.com/blog/claude-sonnet-5-5-review/" target="_blank" rel="noopener">posted a test on his blog</a>. The task: a single page for &quot;Low Tide&quot;, a made-up outdoor screening of three short films on a beach. The content was fixed (date, gate times, programme, tickets, FAQ), and Opus 5.5, Sonnet 5.5 and Sonnet 5 each got the same setup.</p>
+    <p class="ptext">The ranking was Opus 5.5, Sonnet 5.5, then Sonnet 5. But the character of each result is what&#x27;s interesting.</p>
+    <p class="ptext">Opus 5.5 went for atmosphere. A big, soft &quot;Low Tide&quot; wordmark over a sunset, with the type and the sun reflected in the water line. Nine animations, and the most thorough accessibility work.</p>
+    <p class="ptext">Sonnet 5.5 went toward print. Cream and navy, a flat orange sun, and type pairing roman with italic. Only four animations, but chosen with care, and it included a reduced-motion fallback. The reviewer pointed out that it came up with the same slider idea as Opus but executed it in a completely different way.</p>
+    <p class="ptext">Sonnet 5 applied a film-reel theme mechanically: sprocket-hole borders, sections numbered as reels. There was an idea, but it felt like a template.</p>
+    <figure class="art__fig">
+      <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/sonnet55-lowtide-en-m.svg" width="600" height="1521" /><img src="https://designrefs.com/articles/img/sonnet55-lowtide-en.svg" alt="Cost, time and output for the same task. Sonnet 5.5 was cheaper than Opus, and said more." width="1200" height="537" loading="lazy" decoding="async" /></picture>
+      <figcaption>Cost, time and output for the same task. Sonnet 5.5 was cheaper than Opus, and said more.</figcaption>
+    </figure>
+    <p class="ptext">The numbers are worth a look too. Sonnet 5.5 finished for $1.35, 30% less than Opus 5.5 ($1.94). But it actually produced more output tokens than Opus. The total came down because its tokens are cheaper, not because it said less. It&#x27;s a personal test with one run per model, so it can&#x27;t settle which is better on its own.</p>
+    <h2 class="psub">What a better middle tier changes</h2>
+    <p class="ptext">Designers don&#x27;t often pick a model by name. Usually we use whatever model our tools have chosen, and which tier a tool uses is decided by cost.</p>
+    <p class="ptext">So if the middle tier gets better design sense, the first drafts from tools we use without knowing the model underneath can improve along with it. That&#x27;s closer to daily work than the top model&#x27;s score.</p>
+    <p class="ptext">Checking for yourself isn&#x27;t hard. Give it one template you use often and one page of brand guidelines, and ask it to build the same page. Watch how well it sticks to the template, and where it lets spacing and type sizes drift. That&#x27;s the part Anthropic sounded most confident about this time.</p>
+    <p class="ptext">If the model names are confusing, my earlier <a href="https://designrefs.com/en/articles/claude-fable-5-1-vs-gpt-6-astra/">comparison of Fable 5.1 and Astra</a> helps sort out the tiers. Tools by use case are collected under <a href="https://designrefs.com/en/#ai">AI tools</a>.</p>]]></content:encoded>
+    </item>
     <item>
       <title>A free image model that even does transparent backgrounds. Can you use it for work?</title>
       <link>https://designrefs.com/en/articles/open-image-model-license/</link>

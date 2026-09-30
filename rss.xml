@@ -6,7 +6,102 @@
     <atom:link href="https://designrefs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>디자인하면서 생각한 것들을 적습니다. AI와 같이 일하는 법, 스타일을 말로 옮기는 법, 레퍼런스와 커뮤니티 이야기.</description>
     <language>ko</language>
-    <lastBuildDate>Mon, 28 Sep 2026 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 30 Sep 2026 09:00:00 +0900</lastBuildDate>
+    <item>
+      <title>챗GPT 안으로 들어온 캔바·피그마·어도비, 데브데이에서 디자이너가 볼 것</title>
+      <link>https://designrefs.com/articles/openai-devday-2026-designers/</link>
+      <guid isPermaLink="true">https://designrefs.com/articles/openai-devday-2026-designers/</guid>
+      <pubDate>Wed, 30 Sep 2026 09:00:00 +0900</pubDate>
+      <category>AI 디자인</category>
+      <description>오늘 새벽 오픈AI 데브데이에서 발표가 스무 개 넘게 쏟아졌다. 그중 디자인 작업과 닿는 것만 골라, 그림과 숫자로 정리했다.</description>
+      <content:encoded><![CDATA[    <p class="ptext">오늘 새벽 2시, 오픈AI의 개발자 행사 데브데이가 샌프란시스코에서 열렸다. 발표만 스무 개가 넘었다.</p>
+    <p class="ptext">제일 크게 다뤄진 건 &#x27;닷(dots)&#x27;이다. 앱을 닫아도 뒤에서 계속 일하는 에이전트다. 그런데 디자이너 입장에서 오래 들여다본 건 다른 쪽이었다. 캔바, 피그마, 어도비가 챗GPT 화면 안으로 들어왔다.</p>
+    <p class="ptext"><strong>먼저 밝혀 둘 것.</strong> 발표 직후라 아직 직접 써 본 사람의 후기가 거의 없다. 아래 내용은 오픈AI 발표와 행사를 정리한 기사들을 바탕으로 했다. 나는 이 사이트를 클로드 코드로 만들고 있다는 것도 함께 적어 둔다.</p>
+    <h2 class="psub">플러그인이 들어가는 세 자리</h2>
+    <p class="ptext">새로 나온 건 &#x27;플러그인 익스텐션&#x27;이다. 대화창 안에서 링크만 건네던 예전 방식과 달리, 앱 화면 자체를 챗GPT 안에 띄운다. 들어가는 자리는 세 군데다.</p>
+    <figure class="art__fig">
+      <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/chatgpt-plugin-extensions-m.svg" width="600" height="1122" /><img src="https://designrefs.com/articles/img/chatgpt-plugin-extensions.svg" alt="챗GPT 화면에서 플러그인이 들어가는 세 자리. 발표를 바탕으로 그린 구조도이고 실제 화면과는 다르다." width="1200" height="760" loading="lazy" decoding="async" /></picture>
+      <figcaption>챗GPT 화면에서 플러그인이 들어가는 세 자리. 발표를 바탕으로 그린 구조도이고 실제 화면과는 다르다.</figcaption>
+    </figure>
+    <p class="ptext">첫째는 대화 옆 사이드 패널. 캔바가 여기에 디자인 도구를 넣었다. 시안을 뽑아 달라고 한 다음, 대화를 닫지 않고 옆에서 바로 고치는 흐름이다.</p>
+    <p class="ptext">둘째는 파일 뷰어. 대화에 올라온 파일을 앱으로 연다. 어도비는 PDF는 애크로뱃으로, 이미지는 포토샵으로 열리게 했다.</p>
+    <p class="ptext">셋째는 입력창의 @호출이다. 피그마는 파일 검색을 여기에 넣었다. &quot;@Figma 지난주 랜딩 시안&quot; 하는 식으로 불러낸다.</p>
+    <p class="ptext">플러그인은 무료를 포함한 모든 요금제에서 설치할 수 있다. 다만 파일 뷰어와 @호출은 데스크톱 앱에서만 된다. 무료·Go 요금제의 웹 버전은 &quot;곧&quot;이라고만 했다. 기업용으로는 어도비, 피그마를 포함한 32개 회사가 들어간 마켓플레이스도 열었다.</p>
+    <h2 class="psub">네 번째 시도라는 것</h2>
+    <p class="ptext">반가운 소식인데, 한 가지는 알고 가는 게 좋다. 챗GPT에 남의 앱을 들이려는 시도가 이번이 처음이 아니다.</p>
+    <figure class="art__fig">
+      <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/openai-app-platforms-m.svg" width="600" height="754" /><img src="https://designrefs.com/articles/img/openai-app-platforms.svg" alt="챗GPT 앱 플랫폼이 3년 동안 네 번 바뀌었다. 첫 플러그인은 1년 만에 닫혔고, GPT 스토어는 올해 12월에 닫는다." width="1200" height="609" loading="lazy" decoding="async" /></picture>
+      <figcaption>챗GPT 앱 플랫폼이 3년 동안 네 번 바뀌었다. 첫 플러그인은 1년 만에 닫혔고, GPT 스토어는 올해 12월에 닫는다.</figcaption>
+    </figure>
+    <p class="ptext">2023년 3월의 플러그인은 1년 남짓 만에 닫혔다. 같은 해 11월에 나온 GPTs와 GPT 스토어는 12월 11일에 문을 닫는다. 2025년 10월에 Apps SDK가 나왔고, 이번이 네 번째다. 브라질의 한 기술 매체는 이걸 두고 &quot;3년 사이 네 번째&quot;라고 꼬집었다.</p>
+    <p class="ptext">그러니 작업 흐름을 통째로 여기에 걸기보다는, 자주 쓰는 한두 개를 먼저 써 보는 정도가 알맞다. 플랫폼이 또 바뀌어도 원본 파일은 늘 피그마와 어도비에 남아 있다는 점도 기억해 두자.</p>
+    <h2 class="psub">디자인 작업과 닿는 다른 발표들</h2>
+    <p class="ptext"><strong>페이지(Pages).</strong> 사람과 에이전트가 함께 쓰는 새 문서 형식이다. 리서치, 도표, 데이터 시각화를 한 문서 안에서 같이 만든다. 기획서나 리서치 정리를 자주 쓰는 사람이라면 볼 만하다.</p>
+    <p class="ptext"><strong>함께 고치는 슬라이드.</strong> 여러 사람이 한 덱을 동시에 고친다. 파워포인트와 구글 슬라이드로 내보낼 수 있고, 몇 주 안에 나온다고 했다.</p>
+    <p class="ptext"><strong>스페이스(Spaces).</strong> 팀이 대화와 에이전트를 한곳에 모아 두는 공간이다. 슬랙과 팀즈에서 @ChatGPT로 부르는 기능도 같이 나왔다.</p>
+    <p class="ptext"><strong>닷(dots).</strong> 목표를 주면 자기 클라우드 컴퓨터와 브라우저로 계속 일하는 에이전트다. GPT-6 아스트라로 돌고, 4,000개가 넘는 앱에 연결된다. 프로와 비즈니스 프리미엄 요금제에서 첫 번째 닷이 포함된다.</p>
+    <h2 class="psub">그리고 가격</h2>
+    <p class="ptext">모델 쪽에서는 GPT-6.1 Sol이 나왔다. 오픈AI는 최상위 모델인 GPT-6 아스트라와 거의 비슷한 성능을 5분의 1 값에 낸다고 했다. 100만 토큰에 입력 2달러, 출력 10달러다.</p>
+    <figure class="art__fig">
+      <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/devday-sol-cost-m.svg" width="600" height="1035" /><img src="https://designrefs.com/articles/img/devday-sol-cost.svg" alt="독립 평가 기관의 종합 지수와 과제 하나당 비용. 점수 차이는 1점인데 비용은 4분의 1도 안 된다." width="1200" height="537" loading="lazy" decoding="async" /></picture>
+      <figcaption>독립 평가 기관의 종합 지수와 과제 하나당 비용. 점수 차이는 1점인데 비용은 4분의 1도 안 된다.</figcaption>
+    </figure>
+    <p class="ptext">Artificial Analysis 종합 지수로 보면 GPT-6.1 Sol은 52점으로 아스트라(53점)와 1점 차이다. 지수 과제 하나당 비용은 0.72달러로 아스트라의 4분의 1이 안 된다. 1위는 여전히 Claude Opus 5.5(58점)다.</p>
+    <p class="ptext">오픈AI가 직접 낸 표에서는 차이가 좀 더 벌어진다. 과학 분야 터미널 작업 평가에서 Sol은 57.0%, 아스트라는 68.1%였다. 모든 일에서 아스트라를 대신하지는 못한다는 뜻이다.</p>
+    <p class="ptext">흥미로운 건 2달러·10달러라는 값이다. 하루 전에 나온 <a href="https://designrefs.com/articles/claude-sonnet-5-5-design/">Claude Sonnet 5.5</a>와 정확히 같다. 중간 칸에서 두 회사가 같은 값으로 맞붙었다.</p>
+    <p class="ptext">구독 요금제도 바뀌었다. 월 500달러짜리 최상위 요금제(Pro 500)가 새로 생겼고, 월 200달러 요금제는 새로 가입하는 사람의 사용량이 절반으로 줄었다. 기존 가입자는 그대로다. 발표 직후부터 이 부분을 두고 말이 많다.</p>
+    <h2 class="psub">그래서 지금은</h2>
+    <p class="ptext">오늘 당장 할 일은 많지 않다. 데스크톱 챗GPT 앱을 쓰고 있다면, 평소 쓰는 캔바·피그마·어도비 플러그인을 하나 설치해서 대화 옆에서 얼마나 쓸 만한지 보는 정도면 된다.</p>
+    <p class="ptext">더 중요한 건 흐름이다. 디자인 툴이 챗GPT 안으로 들어오고, 챗GPT는 디자인 툴 안으로 들어간다. 어디서 시작하든 같은 파일에 닿게 되는 쪽으로 가고 있다. 그 사이에서 원본을 어디에 두고, 마지막 확인을 누가 하는지는 여전히 사람이 정할 일이다. 이 경계에 대해서는 <a href="https://designrefs.com/articles/ai-design-tools-in-practice/">AI가 시안을 서른 장 뽑아 줘도 일이 줄지 않는 이유</a>에 따로 적었다.</p>
+    <p class="art__note">출처: <a href="https://openai.com/index/devday-2026-recap/" target="_blank" rel="noopener">OpenAI DevDay 2026 정리</a>, <a href="https://the-decoder.com/openais-reveals-a-new-chatgpt-that-looks-less-like-a-chatbot-and-more-like-an-operating-system/" target="_blank" rel="noopener">the-decoder</a>, <a href="https://antihype.com.br/c/software/plugin-extensions-chatgpt-apps-na-barra-lateral/" target="_blank" rel="noopener">antihype.com.br</a>, <a href="https://dev.to/axrisi/openai-devday-2026-every-announcement-with-prices-and-availability-1mbh" target="_blank" rel="noopener">DEV Community 발표 정리</a>, <a href="https://thenextweb.com/news/openai-devday-pro-200-usage-cut-pro-500-plan" target="_blank" rel="noopener">The Next Web</a>, <a href="https://www.beri.net/article/gpt-6-1-sol-devday-2026-astra-fifth-price-terminal-bench-score-gap-cost-per-task" target="_blank" rel="noopener">THE DAILY BRIEF</a>.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>&#x27;디자인 보는 눈&#x27;을 내세운 Claude Sonnet 5.5, 중간 가격 모델이 달라졌다</title>
+      <link>https://designrefs.com/articles/claude-sonnet-5-5-design/</link>
+      <guid isPermaLink="true">https://designrefs.com/articles/claude-sonnet-5-5-design/</guid>
+      <pubDate>Tue, 29 Sep 2026 09:00:00 +0900</pubDate>
+      <category>AI 디자인</category>
+      <description>앤트로픽이 9월 28일 내놓은 Sonnet 5.5는 발표문에서 디자인 감각을 앞세웠다. 가격은 그대로, 일은 더 빠르게. 실제로 한 페이지짜리 사이트를 시켜 본 결과까지 숫자로 정리했다.</description>
+      <content:encoded><![CDATA[    <p class="ptext">앤트로픽이 9월 28일(미국 시간) Claude Sonnet 5.5를 내놓았다. 한국에서는 오늘 아침부터 소식이 돌았다.</p>
+    <p class="ptext">Sonnet은 앤트로픽 모델 가운데 가운데 칸이다. 가장 비싸고 똑똑한 모델도 아니고, 가장 싸고 빠른 모델도 아니다. 그래서 보통은 발표가 조용한 편인데, 이번에는 눈에 띄는 문장이 하나 있었다. 앤트로픽은 이 모델이 &quot;디자인을 보는 눈이 날카롭다&quot;고 적었다.</p>
+    <p class="ptext">중간 가격 모델이 디자인을 내세우는 건 흔한 일이 아니다. 그리고 이 칸은 디자이너와 생각보다 가깝다. AI 기능을 파는 툴 회사 입장에서는, 원가를 생각하면 가장 비싼 모델보다 이 가격대를 기본값으로 두고 싶기 마련이니까.</p>
+    <p class="ptext"><strong>먼저 밝혀 둘 것.</strong> 나는 이 사이트를 클로드 코드로 만들고 있다. 그래서 회사 발표와 외부에서 직접 돌려 본 결과만 옮겼고, 누가 잰 숫자인지 적었다.</p>
+    <h2 class="psub">값은 그대로, 칸은 붐빈다</h2>
+    <p class="ptext">가격은 Sonnet 5와 같다. 100만 토큰에 입력 2달러, 출력 10달러. 달라진 건 속도와 말의 양이다. 앤트로픽은 이전 모델보다 30% 넘게 빠르고, 같은 일을 더 적은 토큰으로 끝내서 대부분의 작업에서 비용이 최대 30% 줄어든다고 했다.</p>
+    <figure class="art__fig">
+      <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/price-tiers-0929-m.svg" width="600" height="1445" /><img src="https://designrefs.com/articles/img/price-tiers-0929.svg" alt="100만 토큰당 가격. 입력 2달러, 출력 10달러 칸에 두 회사의 모델이 나란히 서 있다." width="1200" height="693" loading="lazy" decoding="async" /></picture>
+      <figcaption>100만 토큰당 가격. 입력 2달러, 출력 10달러 칸에 두 회사의 모델이 나란히 서 있다.</figcaption>
+    </figure>
+    <p class="ptext">그래프로 놓고 보면 재미있는 게 보인다. 2달러·10달러 칸에 오픈AI의 GPT-6 Sol도 서 있다. 지난주 <a href="https://designrefs.com/articles/ai-price-cut-week/">가격이 반으로 내려간 한 주</a>를 지나고 나니, 두 회사의 중간 모델이 정확히 같은 값에서 마주 보게 된 셈이다. 맨 위 칸은 여전히 입력 10달러, 출력 50달러다.</p>
+    <h2 class="psub">무엇을 잘한다고 했나</h2>
+    <p class="ptext">앤트로픽이 꼽은 쓰임새는 이렇다. 범위가 분명한 일상 작업, 버그 고치기, 그리고 문서·슬라이드·스프레드시트를 깔끔하게 만드는 일. 여기에 디자인이 붙었다. 화면에 마감을 더하고, 템플릿을 잘 따른다는 설명이다. 내부 시험에서는 손볼 데가 거의 없는 투자 발표 자료를 만들었다고 했다.</p>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th>평가</th><th>Sonnet 5</th><th>Sonnet 5.5</th><th>누가 쟀나</th></tr></thead>
+      <tbody>
+        <tr><td>GDPval-AA (실무 문서 작업)</td><td>1449</td><td><strong>1844</strong></td><td>앤트로픽 발표</td></tr>
+        <tr><td>FrontierCode (최대 노력)</td><td>42.4%</td><td><strong>46.2%</strong></td><td>앤트로픽 발표</td></tr>
+        <tr><td>속도</td><td>기준</td><td><strong>30% 넘게 빠름</strong></td><td>앤트로픽 발표</td></tr>
+      </tbody>
+    </table></div>
+    <p class="art__note">출처: <a href="https://www.anthropic.com/claude-sonnet-5-5" target="_blank" rel="noopener">앤트로픽 Claude Sonnet 5.5 소개</a>. GDPval-AA에서는 상위 모델 Opus 5.5보다 2점 낮다고 함께 밝혔다.</p>
+    <p class="ptext">발표 표에는 좋은 숫자만 모이기 마련이다. 그래서 바깥에서 직접 시켜 본 결과가 더 궁금했다.</p>
+    <h2 class="psub">한 페이지짜리 사이트를 시켜 보니</h2>
+    <p class="ptext">공개 직후 개발자 Thomas Wiegold가 <a href="https://thomas-wiegold.com/blog/claude-sonnet-5-5-review/" target="_blank" rel="noopener">블로그에 올린 시험</a>이 있다. 과제는 &#x27;Low Tide&#x27;라는 가상의 행사 사이트 한 페이지. 바닷가에서 단편 영화 세 편을 트는 야외 상영회다. 날짜, 입장 시간, 상영작, 표, 자주 묻는 질문까지 내용은 정해 주고, Opus 5.5, Sonnet 5.5, Sonnet 5에 같은 조건으로 맡겼다.</p>
+    <p class="ptext">순위는 Opus 5.5, Sonnet 5.5, Sonnet 5 순이었다. 그런데 결과물의 성격이 흥미롭다.</p>
+    <p class="ptext">Opus 5.5는 분위기로 갔다. 노을 위에 부드러운 &#x27;Low Tide&#x27; 글자를 얹고, 글자와 해가 수면에 비치게 했다. 애니메이션이 아홉 개였고 접근성 처리도 가장 꼼꼼했다.</p>
+    <p class="ptext">Sonnet 5.5는 인쇄물 쪽으로 갔다. 크림색과 남색 바탕에 납작한 주황 해, 정자체와 이탤릭을 짝지은 타이포. 애니메이션은 네 개뿐이지만 골라서 넣었고, 움직임을 줄이고 싶은 사람을 위한 설정도 챙겼다. 리뷰어는 Opus와 같은 슬라이더 아이디어를 떠올리고도 전혀 다른 모습으로 풀어냈다는 점을 짚었다.</p>
+    <p class="ptext">Sonnet 5는 필름 릴이라는 주제를 기계적으로 적용했다. 테두리에 필름 구멍을 뚫고 섹션마다 릴 번호를 붙이는 식이다. 아이디어는 있는데 템플릿 같았다는 평이다.</p>
+    <figure class="art__fig">
+      <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/sonnet55-lowtide-m.svg" width="600" height="1521" /><img src="https://designrefs.com/articles/img/sonnet55-lowtide.svg" alt="같은 과제에 든 비용과 시간, 말의 양. Sonnet 5.5는 Opus보다 싸고, 말은 더 많이 했다." width="1200" height="537" loading="lazy" decoding="async" /></picture>
+      <figcaption>같은 과제에 든 비용과 시간, 말의 양. Sonnet 5.5는 Opus보다 싸고, 말은 더 많이 했다.</figcaption>
+    </figure>
+    <p class="ptext">숫자도 볼 만하다. Sonnet 5.5는 1.35달러로 Opus 5.5(1.94달러)보다 30% 싸게 끝냈다. 다만 출력 토큰은 오히려 Opus보다 많았다. 토큰 값이 싸서 전체 값이 내려간 것이지, 말수가 줄어서가 아니었다. 과제 하나를 한 번씩 돌린 개인 시험이라 이것만으로 우열을 가를 수는 없다.</p>
+    <h2 class="psub">중간 칸이 좋아지면 달라지는 것</h2>
+    <p class="ptext">디자이너가 모델 이름을 골라서 쓰는 일은 생각보다 적다. 대개는 쓰는 툴이 정해 둔 모델을 그대로 쓰고, 그 툴이 어떤 칸의 모델을 쓰는지는 원가가 정한다.</p>
+    <p class="ptext">그러니 중간 칸의 디자인 감각이 올라가면, 이름을 모르는 채로 쓰던 도구들의 첫 시안이 같이 나아질 수 있다. 가장 비싼 모델의 점수보다 이쪽이 매일의 작업에 더 가깝다.</p>
+    <p class="ptext">직접 확인하는 방법은 어렵지 않다. 자주 쓰는 템플릿 하나와 브랜드 가이드 한 장을 주고 같은 페이지를 만들게 해 보자. 템플릿을 얼마나 지키는지, 여백과 글자 크기를 어디서 흐트러뜨리는지 보면 된다. 이번 발표에서 앤트로픽이 가장 자신 있어 한 대목이 바로 거기라서다.</p>
+    <p class="ptext">모델 이름이 헷갈린다면 지난번 <a href="https://designrefs.com/articles/claude-fable-5-1-vs-gpt-6-astra/">Fable 5.1과 아스트라 비교</a>를 같이 보면 칸이 정리된다. 쓰임새별 도구는 <a href="https://designrefs.com/ai/">AI 디자인 툴</a>에 모아 두었다.</p>]]></content:encoded>
+    </item>
     <item>
       <title>투명 배경까지 뽑아 주는 무료 이미지 모델, 일에 써도 될까</title>
       <link>https://designrefs.com/articles/open-image-model-license/</link>

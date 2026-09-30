@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 693" role="img" aria-labelledby="t d">
+  <title id="t">100만 토큰당 가격, 9월 29일 기준</title>
+  <desc id="d">입력 가격은 Sonnet 5.5와 GPT-6 Sol이 2달러, Opus 5.5 4달러, Fable 5.1과 GPT-6 아스트라 10달러. 출력 가격은 각각 10달러, 20달러, 50달러.</desc>
+  <rect width="1200" height="693" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="40" y="70" font-size="30" font-weight="800" fill="#111111" letter-spacing="-0.5">100만 토큰당 가격, 9월 29일 기준</text>
+    <text x="40" y="101" font-size="19" fill="#6B6B6B">각 회사 발표 가격 · 막대가 짧을수록 쌈</text>
+    <text x="40.0" y="165" font-size="24" font-weight="700" fill="#111111">입력</text>
+    <text x="40.0" y="193" font-size="18" fill="#6B6B6B">읽는 값</text>
+    <text x="40.0" y="237" font-size="18" fill="#444444">Claude Sonnet 5.5</text>
+    <path d="M40.0 247H119.8A7 7 0 0 1 126.8 254V270A7 7 0 0 1 119.8 277H40.0Z" fill="#111111"/>
+    <text x="138.8" y="269.92" font-size="22" font-weight="700" fill="#111111">$2</text>
+    <text x="40.0" y="315" font-size="18" fill="#444444">GPT-6 Sol</text>
+    <path d="M40.0 325H119.8A7 7 0 0 1 126.8 332V348A7 7 0 0 1 119.8 355H40.0Z" fill="#111111"/>
+    <text x="138.8" y="347.92" font-size="22" font-weight="700" fill="#111111">$2</text>
+    <text x="40.0" y="393" font-size="18" fill="#444444">Claude Opus 5.5</text>
+    <path d="M40.0 403H206.6A7 7 0 0 1 213.6 410V426A7 7 0 0 1 206.6 433H40.0Z" fill="#111111"/>
+    <text x="225.6" y="425.92" font-size="22" font-weight="700" fill="#111111">$4</text>
+    <text x="40.0" y="471" font-size="18" fill="#444444">Claude Fable 5.1</text>
+    <path d="M40.0 481H467.0A7 7 0 0 1 474.0 488V504A7 7 0 0 1 467.0 511H40.0Z" fill="#111111"/>
+    <text x="486.0" y="503.92" font-size="22" font-weight="700" fill="#111111">$10</text>
+    <text x="40.0" y="549" font-size="18" fill="#444444">GPT-6 아스트라</text>
+    <path d="M40.0 559H467.0A7 7 0 0 1 474.0 566V582A7 7 0 0 1 467.0 589H40.0Z" fill="#111111"/>
+    <text x="486.0" y="581.92" font-size="22" font-weight="700" fill="#111111">$10</text>
+    <line x1="40.0" y1="219" x2="40.0" y2="609" stroke="#D9D9D9" stroke-width="1.6"/>
+    <text x="630.0" y="165" font-size="24" font-weight="700" fill="#111111">출력</text>
+    <text x="630.0" y="193" font-size="18" fill="#6B6B6B">쓰는 값</text>
+    <text x="630.0" y="237" font-size="18" fill="#444444">Claude Sonnet 5.5</text>
+    <path d="M630.0 247H709.8A7 7 0 0 1 716.8 254V270A7 7 0 0 1 709.8 277H630.0Z" fill="#111111"/>
+    <text x="728.8" y="269.92" font-size="22" font-weight="700" fill="#111111">$10</text>
+    <text x="630.0" y="315" font-size="18" fill="#444444">GPT-6 Sol</text>
+    <path d="M630.0 325H709.8A7 7 0 0 1 716.8 332V348A7 7 0 0 1 709.8 355H630.0Z" fill="#111111"/>
+    <text x="728.8" y="347.92" font-size="22" font-weight="700" fill="#111111">$10</text>
+    <text x="630.0" y="393" font-size="18" fill="#444444">Claude Opus 5.5</text>
+    <path d="M630.0 403H796.6A7 7 0 0 1 803.6 410V426A7 7 0 0 1 796.6 433H630.0Z" fill="#111111"/>
+    <text x="815.6" y="425.92" font-size="22" font-weight="700" fill="#111111">$20</text>
+    <text x="630.0" y="471" font-size="18" fill="#444444">Claude Fable 5.1</text>
+    <path d="M630.0 481H1057.0A7 7 0 0 1 1064.0 488V504A7 7 0 0 1 1057.0 511H630.0Z" fill="#111111"/>
+    <text x="1076.0" y="503.92" font-size="22" font-weight="700" fill="#111111">$50</text>
+    <text x="630.0" y="549" font-size="18" fill="#444444">GPT-6 아스트라</text>
+    <path d="M630.0 559H1057.0A7 7 0 0 1 1064.0 566V582A7 7 0 0 1 1057.0 589H630.0Z" fill="#111111"/>
+    <text x="1076.0" y="581.92" font-size="22" font-weight="700" fill="#111111">$50</text>
+    <line x1="630.0" y1="219" x2="630.0" y2="609" stroke="#D9D9D9" stroke-width="1.6"/>
+    <line x1="40" y1="631" x2="1160" y2="631" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="40" y="657" font-size="16" fill="#6B6B6B">출처: Anthropic, OpenAI 발표. 캐시·할인 가격은 뺀 기본 가격.</text>
+  </g>
+</svg>

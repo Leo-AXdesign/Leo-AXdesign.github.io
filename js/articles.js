@@ -1,6 +1,8 @@
 // 이 파일은 tools/build-articles.py 가 만듭니다. 직접 고치지 마세요.
 // 글은 content/articles/*.md 에서 고칩니다.
 const ARTICLES = [
+  { slug: "openai-devday-2026-designers", title: "챗GPT 안으로 들어온 캔바·피그마·어도비, 데브데이에서 디자이너가 볼 것", desc: "오늘 새벽 오픈AI 데브데이에서 발표가 스무 개 넘게 쏟아졌다. 그중 디자인 작업과 닿는 것만 골라, 그림과 숫자로 정리했다.", date: "2026-09-30", tag: "AI 디자인", min: 3 },
+  { slug: "claude-sonnet-5-5-design", title: "'디자인 보는 눈'을 내세운 Claude Sonnet 5.5, 중간 가격 모델이 달라졌다", desc: "앤트로픽이 9월 28일 내놓은 Sonnet 5.5는 발표문에서 디자인 감각을 앞세웠다. 가격은 그대로, 일은 더 빠르게. 실제로 한 페이지짜리 사이트를 시켜 본 결과까지 숫자로 정리했다.", date: "2026-09-29", tag: "AI 디자인", min: 3 },
   { slug: "open-image-model-license", title: "투명 배경까지 뽑아 주는 무료 이미지 모델, 일에 써도 될까", desc: "기업들이 값싼 오픈 모델로 옮겨 가는 사이, 알리바바의 새 이미지 모델 Qwen-Image-2.1은 상업적 이용을 막았다. 내려받을 수 있다는 것과 일에 써도 된다는 것의 차이를 정리했다.", date: "2026-09-28", tag: "AI 디자인", min: 3 },
   { slug: "ai-price-cut-week", title: "한 주 만에 반값이 된 AI, 디자인 툴 값도 내려갈까", desc: "9월 22일 하루에 Opus 5.5, GPT-6 Sol, Luna가 한꺼번에 나오며 가격표가 크게 바뀌었다. 디자이너가 내는 크레딧과 구독료에는 어떻게 이어질지 숫자로 짚었다.", date: "2026-09-27", tag: "AI 디자인", min: 4 },
   { slug: "claude-fable-5-1-vs-gpt-6-astra", title: "Claude Fable 5.1 vs GPT-6 아스트라, 숫자로 비교해 보면", desc: "이틀 차이로 나온 두 최상위 모델. 공식 사양, 제3자 평가, 디자이너들의 초기 반응을 출처와 함께 나란히 놓았다.", date: "2026-09-26", tag: "AI 디자인", min: 4 },

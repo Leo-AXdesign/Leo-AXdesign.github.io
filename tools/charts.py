@@ -54,6 +54,88 @@ CHARTS = {
              "rows": [("Claude Fable 5.1", 78, "78k"), ("GPT-6 Astra", 27, "27k")]},
         ],
     },
+    # ---- 2026-09-29 'Claude Sonnet 5.5' 글 ----
+    "sonnet55-lowtide": {
+        "title": "같은 페이지를 만드는 데 든 것",
+        "sub": "한 페이지짜리 행사 사이트 'Low Tide' · Claude Code, 높은 노력 설정 · 결과 순위: Opus 5.5 → Sonnet 5.5 → Sonnet 5",
+        "source": ["출처: Thomas Wiegold 블로그의 Sonnet 5.5 리뷰.", "과제 한 번씩 돌린 개인 시험이라 참고용."],
+        "desc": "같은 과제에 든 비용은 Opus 5.5 1.94달러, Sonnet 5.5 1.35달러, Sonnet 5 1.08달러. 시간은 9분, 8분, 6분. 출력 토큰은 4만 5천, 5만 8천, 2만 5천 개.",
+        "panels": [
+            {"title": "비용", "hint": "낮을수록 좋음",
+             "rows": [("Opus 5.5", 1.94, "$1.94"), ("Sonnet 5.5", 1.35, "$1.35"), ("Sonnet 5", 1.08, "$1.08")]},
+            {"title": "걸린 시간", "hint": "낮을수록 좋음",
+             "rows": [("Opus 5.5", 9, "9분"), ("Sonnet 5.5", 8, "8분"), ("Sonnet 5", 6, "6분")]},
+            {"title": "출력 토큰", "hint": "말의 양",
+             "rows": [("Opus 5.5", 45.1, "4.5만"), ("Sonnet 5.5", 57.8, "5.8만"), ("Sonnet 5", 25, "2.5만")]},
+        ],
+    },
+    "sonnet55-lowtide-en": {
+        "title": "What it took to build the same page",
+        "sub": "One-page event site 'Low Tide' · Claude Code, high effort · Ranking: Opus 5.5 → Sonnet 5.5 → Sonnet 5",
+        "source": ["Source: Thomas Wiegold's Sonnet 5.5 review.", "A personal test, one run each. For reference only."],
+        "desc": "Cost for the same task: Opus 5.5 $1.94, Sonnet 5.5 $1.35, Sonnet 5 $1.08. Time: 9, 8 and 6 minutes. Output tokens: 45k, 58k, 25k.",
+        "panels": [
+            {"title": "Cost", "hint": "lower is better",
+             "rows": [("Opus 5.5", 1.94, "$1.94"), ("Sonnet 5.5", 1.35, "$1.35"), ("Sonnet 5", 1.08, "$1.08")]},
+            {"title": "Time", "hint": "lower is better",
+             "rows": [("Opus 5.5", 9, "9 min"), ("Sonnet 5.5", 8, "8 min"), ("Sonnet 5", 6, "6 min")]},
+            {"title": "Output tokens", "hint": "how much it said",
+             "rows": [("Opus 5.5", 45.1, "45k"), ("Sonnet 5.5", 57.8, "58k"), ("Sonnet 5", 25, "25k")]},
+        ],
+    },
+    "price-tiers-0929": {
+        "title": "100만 토큰당 가격, 9월 29일 기준",
+        "sub": "각 회사 발표 가격 · 막대가 짧을수록 쌈",
+        "source": ["출처: Anthropic, OpenAI 발표.", "캐시·할인 가격은 뺀 기본 가격."],
+        "desc": "입력 가격은 Sonnet 5.5와 GPT-6 Sol이 2달러, Opus 5.5 4달러, Fable 5.1과 GPT-6 아스트라 10달러. 출력 가격은 각각 10달러, 20달러, 50달러.",
+        "panels": [
+            {"title": "입력", "hint": "읽는 값",
+             "rows": [("Claude Sonnet 5.5", 2, "$2"), ("GPT-6 Sol", 2, "$2"), ("Claude Opus 5.5", 4, "$4"),
+                      ("Claude Fable 5.1", 10, "$10"), ("GPT-6 아스트라", 10, "$10")]},
+            {"title": "출력", "hint": "쓰는 값",
+             "rows": [("Claude Sonnet 5.5", 10, "$10"), ("GPT-6 Sol", 10, "$10"), ("Claude Opus 5.5", 20, "$20"),
+                      ("Claude Fable 5.1", 50, "$50"), ("GPT-6 아스트라", 50, "$50")]},
+        ],
+    },
+    "price-tiers-0929-en": {
+        "title": "Price per 1M tokens, as of Sep 29",
+        "sub": "List prices from each company · shorter bar is cheaper",
+        "source": ["Sources: Anthropic and OpenAI announcements.", "Base prices, excluding cache and discounts."],
+        "desc": "Input: Sonnet 5.5 and GPT-6 Sol $2, Opus 5.5 $4, Fable 5.1 and GPT-6 Astra $10. Output: $10, $20 and $50 respectively.",
+        "panels": [
+            {"title": "Input", "hint": "reading",
+             "rows": [("Claude Sonnet 5.5", 2, "$2"), ("GPT-6 Sol", 2, "$2"), ("Claude Opus 5.5", 4, "$4"),
+                      ("Claude Fable 5.1", 10, "$10"), ("GPT-6 Astra", 10, "$10")]},
+            {"title": "Output", "hint": "writing",
+             "rows": [("Claude Sonnet 5.5", 10, "$10"), ("GPT-6 Sol", 10, "$10"), ("Claude Opus 5.5", 20, "$20"),
+                      ("Claude Fable 5.1", 50, "$50"), ("GPT-6 Astra", 50, "$50")]},
+        ],
+    },
+    # ---- 2026-09-30 '데브데이' 글 ----
+    "devday-sol-cost": {
+        "title": "점수는 비슷하게, 값은 5분의 1로",
+        "sub": "Artificial Analysis 종합 지수와 지수 과제 하나당 비용",
+        "source": ["출처: Artificial Analysis 수치(데브데이 발표 정리, DEV Community 인용).", "9월 29일 기준. 지수는 자주 개편됨."],
+        "desc": "종합 지수는 Claude Opus 5.5 58점, GPT-6 아스트라 53점, GPT-6.1 Sol 52점. 과제 하나당 비용은 5.98달러, 3.26달러, 0.72달러.",
+        "panels": [
+            {"title": "종합 지수", "hint": "높을수록 좋음",
+             "rows": [("Claude Opus 5.5", 58, "58"), ("GPT-6 아스트라", 53, "53"), ("GPT-6.1 Sol", 52, "52")]},
+            {"title": "과제당 비용", "hint": "낮을수록 좋음",
+             "rows": [("Claude Opus 5.5", 5.98, "$5.98"), ("GPT-6 아스트라", 3.26, "$3.26"), ("GPT-6.1 Sol", 0.72, "$0.72")]},
+        ],
+    },
+    "devday-sol-cost-en": {
+        "title": "A similar score at a fifth of the price",
+        "sub": "Artificial Analysis Intelligence Index and cost per index task",
+        "source": ["Source: Artificial Analysis figures (as compiled in a DevDay roundup on DEV Community).", "As of Sep 29. The index is revised often."],
+        "desc": "Index score: Claude Opus 5.5 58, GPT-6 Astra 53, GPT-6.1 Sol 52. Cost per task: $5.98, $3.26, $0.72.",
+        "panels": [
+            {"title": "Intelligence Index", "hint": "higher is better",
+             "rows": [("Claude Opus 5.5", 58, "58"), ("GPT-6 Astra", 53, "53"), ("GPT-6.1 Sol", 52, "52")]},
+            {"title": "Cost per task", "hint": "lower is better",
+             "rows": [("Claude Opus 5.5", 5.98, "$5.98"), ("GPT-6 Astra", 3.26, "$3.26"), ("GPT-6.1 Sol", 0.72, "$0.72")]},
+        ],
+    },
 }
 
 

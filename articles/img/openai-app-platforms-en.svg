@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 609" role="img" aria-labelledby="t d">
+  <title id="t">ChatGPT&#x27;s app platforms: four tries in three years</title>
+  <desc id="d">Plugins launched in March 2023 and shut down in April 2024. GPTs and the GPT Store launched in November 2023 and close on December 11, 2026. The Apps SDK arrived in October 2025, and plugin extensions in September 2026.</desc>
+  <rect width="1200" height="609" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="40" y="70" font-size="30" font-weight="800" fill="#111111" text-anchor="start">ChatGPT&#x27;s app platforms: four tries in three years</text>
+    <text x="40" y="101" font-size="19" font-weight="400" fill="#6B6B6B" text-anchor="start">From launch to shutdown (or planned shutdown)</text>
+    <line x1="290.0" y1="157" x2="290.0" y2="457" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="290.0" y="147" font-size="16" font-weight="400" fill="#6B6B6B" text-anchor="middle">2023</text>
+    <line x1="505.0" y1="157" x2="505.0" y2="457" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="505.0" y="147" font-size="16" font-weight="400" fill="#6B6B6B" text-anchor="middle">2024</text>
+    <line x1="720.0" y1="157" x2="720.0" y2="457" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="720.0" y="147" font-size="16" font-weight="400" fill="#6B6B6B" text-anchor="middle">2025</text>
+    <line x1="935.0" y1="157" x2="935.0" y2="457" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="935.0" y="147" font-size="16" font-weight="400" fill="#6B6B6B" text-anchor="middle">2026</text>
+    <line x1="1150.0" y1="157" x2="1150.0" y2="457" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="1150.0" y="147" font-size="16" font-weight="400" fill="#6B6B6B" text-anchor="middle">2027</text>
+    <text x="40" y="206.0" font-size="20" font-weight="700" fill="#111111" text-anchor="start">Plugins</text>
+    <text x="40" y="228.0" font-size="16" font-weight="400" fill="#6B6B6B" text-anchor="start">Mar 2023 → shut down Apr 2024</text>
+    <rect x="325.83333333334963" y="194.0" width="232.91666666665037" height="20" rx="10.0" fill="none" stroke="#111111" stroke-width="2"/>
+    <text x="40" y="280.0" font-size="20" font-weight="700" fill="#111111" text-anchor="start">GPTs &amp; GPT Store</text>
+    <text x="40" y="302.0" font-size="16" font-weight="400" fill="#6B6B6B" text-anchor="start">Nov 2023 → closing Dec 11, 2026</text>
+    <rect x="469.16666666665037" y="268.0" width="626.5458333333379" height="20" rx="10.0" fill="#111111"/>
+    <rect x="1085.7124999999883" y="268.0" width="52.64166666670121" height="20" rx="10.0" fill="none" stroke="#111111" stroke-width="2" stroke-dasharray="5 4"/>
+    <rect x="469.16666666665037" y="268.0" width="626.5458333333379" height="20" rx="10.0" fill="#111111"/>
+    <text x="40" y="354.0" font-size="20" font-weight="700" fill="#111111" text-anchor="start">Apps SDK</text>
+    <text x="40" y="376.0" font-size="16" font-weight="400" fill="#6B6B6B" text-anchor="start">Oct 2025 →</text>
+    <rect x="881.25" y="342.0" width="214.46249999998827" height="20" rx="10.0" fill="#111111"/>
+    <text x="40" y="428.0" font-size="20" font-weight="700" fill="#111111" text-anchor="start">Plugin extensions</text>
+    <text x="40" y="450.0" font-size="16" font-weight="400" fill="#6B6B6B" text-anchor="start">Sep 2026, new</text>
+    <rect x="1095.3541666666797" y="416.0" width="20.0" height="20" rx="10.0" fill="#111111"/>
+    <line x1="1095.7124999999883" y1="157" x2="1095.7124999999883" y2="471" stroke="#111111" stroke-width="1.5" stroke-dasharray="3 4"/>
+    <text x="1095.7124999999883" y="493" font-size="16" font-weight="700" fill="#111111" text-anchor="middle">Now</text>
+    <rect x="40" y="510" width="34" height="16" rx="8" fill="#111111"/>
+    <text x="84" y="523" font-size="16" font-weight="400" fill="#444444" text-anchor="start">Active</text>
+    <rect x="178.51999999999998" y="511" width="32" height="14" rx="7" fill="none" stroke="#111111" stroke-width="2"/>
+    <text x="221.51999999999998" y="523" font-size="16" font-weight="400" fill="#444444" text-anchor="start">Shut down</text>
+    <rect x="345.79999999999995" y="511" width="32" height="14" rx="7" fill="none" stroke="#111111" stroke-width="2" stroke-dasharray="5 4"/>
+    <text x="388.79999999999995" y="523" font-size="16" font-weight="400" fill="#444444" text-anchor="start">Closing</text>
+    <line x1="40" y1="545" x2="1160" y2="545" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="40" y="569" font-size="16" font-weight="400" fill="#6B6B6B" text-anchor="start">Sources: OpenAI announcements, antihype.com.br (as of Sep 30, 2026)</text>
+  </g>
+</svg>
