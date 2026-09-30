@@ -2,10 +2,10 @@
 slug: korean-design-community-map
 title: 디자이너는 어디서 이야기를 나눌까
 desc: 읽고 싶을 때, 만든 걸 보여 주고 싶을 때, 급하게 묻고 싶을 때. 국내 디자인 커뮤니티를 쓰임새대로 나눠 봤다.
-date: 2026-09-25
+date: 2026-09-22
 order: 4
 tag: 커뮤니티
-related: community, creators, jobs
+related: jobs, community, creators
 ---
 
 혼자 일하다 보면 가끔 말이 고프다.

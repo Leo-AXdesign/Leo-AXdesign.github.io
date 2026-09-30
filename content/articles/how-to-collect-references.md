@@ -2,7 +2,7 @@
 slug: how-to-collect-references
 title: 저장만 하고 다시 열지 않는 레퍼런스들
 desc: 보드는 스무 개가 넘는데 작업할 땐 처음부터 다시 검색한다. 꺼내 쓸 수 있게 모으는 법.
-date: 2026-09-25
+date: 2026-09-23
 order: 3
 tag: 디자인
 related: ui-ux, graphic, styles

@@ -2,10 +2,10 @@
 slug: ai-image-commercial-use
 title: AI로 만든 이미지, 클라이언트 작업에 써도 될까
 desc: 저작권, 약관, 닮은꼴, 계약서. 실무에서 확인해야 할 것들을 순서대로 적었다.
-date: 2026-09-25
-order: 5
+date: 2026-09-21
+order: 1
 tag: AI 디자인
-related: ai, freelance
+related: freelance, ai
 ---
 
 이미지 생성 툴을 한 달쯤 쓰다 보면 어느 날 문득 이런 생각이 든다. 이거, 클라이언트 작업에 넣어도 되나.

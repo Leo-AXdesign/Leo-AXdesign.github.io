@@ -26,10 +26,10 @@
 - [한 주 만에 반값이 된 AI, 디자인 툴 값도 내려갈까](https://designrefs.com/articles/ai-price-cut-week/): 9월 22일 하루에 Opus 5.5, GPT-6 Sol, Luna가 한꺼번에 나오며 가격표가 크게 바뀌었다. 디자이너가 내는 크레딧과 구독료에는 어떻게 이어질지 숫자로 짚었다. (2026-09-27, 약 4분)
 - [Claude Fable 5.1 vs GPT-6 아스트라, 숫자로 비교해 보면](https://designrefs.com/articles/claude-fable-5-1-vs-gpt-6-astra/): 이틀 차이로 나온 두 최상위 모델. 공식 사양, 제3자 평가, 디자이너들의 초기 반응을 출처와 함께 나란히 놓았다. (2026-09-26, 약 4분)
 - [AI가 시안을 서른 장 뽑아 줘도 일이 줄지 않는 이유](https://designrefs.com/articles/ai-design-tools-in-practice/): 탐색과 양산은 AI에게, 방향과 검수는 사람에게. 한동안 써 보고 나서야 보인 경계에 대하여. (2026-09-25, 약 3분)
-- [‘느낌 있게’를 말로 옮기는 일](https://designrefs.com/articles/describing-design-style/): 클라이언트에게도, 프롬프트 창에도 결국 말로 설명해야 한다. 스타일을 여섯 겹으로 쪼개서 말하는 방법. (2026-09-25, 약 3분)
-- [저장만 하고 다시 열지 않는 레퍼런스들](https://designrefs.com/articles/how-to-collect-references/): 보드는 스무 개가 넘는데 작업할 땐 처음부터 다시 검색한다. 꺼내 쓸 수 있게 모으는 법. (2026-09-25, 약 2분)
-- [디자이너는 어디서 이야기를 나눌까](https://designrefs.com/articles/korean-design-community-map/): 읽고 싶을 때, 만든 걸 보여 주고 싶을 때, 급하게 묻고 싶을 때. 국내 디자인 커뮤니티를 쓰임새대로 나눠 봤다. (2026-09-25, 약 2분)
-- [AI로 만든 이미지, 클라이언트 작업에 써도 될까](https://designrefs.com/articles/ai-image-commercial-use/): 저작권, 약관, 닮은꼴, 계약서. 실무에서 확인해야 할 것들을 순서대로 적었다. (2026-09-25, 약 3분)
+- [‘느낌 있게’를 말로 옮기는 일](https://designrefs.com/articles/describing-design-style/): 클라이언트에게도, 프롬프트 창에도 결국 말로 설명해야 한다. 스타일을 여섯 겹으로 쪼개서 말하는 방법. (2026-09-24, 약 3분)
+- [저장만 하고 다시 열지 않는 레퍼런스들](https://designrefs.com/articles/how-to-collect-references/): 보드는 스무 개가 넘는데 작업할 땐 처음부터 다시 검색한다. 꺼내 쓸 수 있게 모으는 법. (2026-09-23, 약 2분)
+- [디자이너는 어디서 이야기를 나눌까](https://designrefs.com/articles/korean-design-community-map/): 읽고 싶을 때, 만든 걸 보여 주고 싶을 때, 급하게 묻고 싶을 때. 국내 디자인 커뮤니티를 쓰임새대로 나눠 봤다. (2026-09-22, 약 2분)
+- [AI로 만든 이미지, 클라이언트 작업에 써도 될까](https://designrefs.com/articles/ai-image-commercial-use/): 저작권, 약관, 닮은꼴, 계약서. 실무에서 확인해야 할 것들을 순서대로 적었다. (2026-09-21, 약 3분)
 
 ## 자료
 

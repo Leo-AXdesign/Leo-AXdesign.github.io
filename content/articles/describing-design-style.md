@@ -2,10 +2,10 @@
 slug: describing-design-style
 title: ‘느낌 있게’를 말로 옮기는 일
 desc: 클라이언트에게도, 프롬프트 창에도 결국 말로 설명해야 한다. 스타일을 여섯 겹으로 쪼개서 말하는 방법.
-date: 2026-09-25
+date: 2026-09-24
 order: 2
 tag: 디자인
-related: styles, glossary, ai
+related: ai, styles, glossary
 ---
 
 "좀 더 느낌 있게 해 주세요."
