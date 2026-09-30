@@ -362,7 +362,7 @@ body_404 = f"""    <section class="section">
     </section>"""
 doc = document(title="페이지를 찾을 수 없습니다", desc="찾는 페이지가 없습니다.", url=SITE + "404.html", body=body_404,
                jsonld={"@context": "https://schema.org", "@type": "WebPage", "name": "404"},
-               menu=menu(""), footer_nav=FOOTER, robots="noindex, follow")
+               menu=menu("404"), footer_nav=FOOTER, robots="noindex, follow")
 (ROOT / "404.html").write_text(doc, encoding="utf-8")
 
 # ---------- 영문 디자인 잡담 (/en/talk/) ----------
