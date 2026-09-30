@@ -189,7 +189,7 @@ def delete_site(p):
 # =========================================================
 # 읽을거리 — 맨 위 --- 정보 칸 + 마크다운 본문
 # =========================================================
-KO_KEYS = ["slug", "title", "desc", "date", "order", "tag", "related"]
+KO_KEYS = ["slug", "title", "desc", "date", "updated", "order", "tag", "related"]
 EN_KEYS = ["slug", "title", "desc", "tag"]
 
 
@@ -251,6 +251,12 @@ def save_article(p):
         datetime.date.fromisoformat(date)
     except ValueError:
         raise Oops("날짜는 2026-09-29 처럼 적어 주세요.")
+    updated = one_line(ko.get("updated"))
+    if updated:
+        try:
+            datetime.date.fromisoformat(updated)
+        except ValueError:
+            raise Oops("고친 날은 2026-10-02 처럼 적어 주세요.")
     order = one_line(ko.get("order"))
     if order and not order.isdigit():
         raise Oops("같은 날 순서는 숫자로 적어 주세요.")
@@ -262,7 +268,7 @@ def save_article(p):
         raise Oops(" ".join(body_errors))
 
     meta = {"slug": slug, "title": one_line(ko["title"]), "desc": one_line(ko["desc"]), "date": date,
-            "order": order, "tag": one_line(ko.get("tag")), "related": ", ".join(related),
+            "updated": updated if updated and updated != date else "", "order": order, "tag": one_line(ko.get("tag")), "related": ", ".join(related),
             "body": ko["body"].replace("\r\n", "\n")}
     write_md(KO_DIR / f"{slug}.md", meta, KO_KEYS)
     en_has = any(str(en.get(k, "")).strip() for k in ("title", "desc", "body"))

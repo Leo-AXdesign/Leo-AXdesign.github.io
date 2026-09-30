@@ -13,6 +13,7 @@ build-articles.py 와 build-seo.py 가 같이 씁니다.
     date: 2026-09-25
     tag: AI 디자인
     order: 1                    (선택) 같은 날짜 안에서의 순서. 작을수록 위
+    updated: 2026-10-02         (선택) 내용을 크게 고친 날. 검색엔진에 '수정일'로 알립니다
     related: ai, tools          (선택) 연결할 카테고리 페이지 슬러그
     ---
 
@@ -112,9 +113,17 @@ def table(rows):
             '    </table></div>')
 
 
+def toc(md):
+    """중간 제목(##) 목록. 글 위의 '차례'와 제목 바로가기(#s1, #s2 …)에 씁니다."""
+    heads = [ln[3:].strip() for ln in md.split("\n") if ln.startswith("## ")]
+    return [(f"s{i + 1}", re.sub(r"[*`]", "", re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", h))) for i, h in enumerate(heads)]
+
+
 def to_html(md):
-    """마크다운 일부 문법을 본문 HTML 로 바꿉니다."""
+    """마크다운 일부 문법을 본문 HTML 로 바꿉니다.
+    중간 제목에는 순서대로 id(s1, s2 …)를 붙여 차례에서 바로 갈 수 있게 합니다."""
     out, buf, mode = [], [], None
+    h2 = 0
 
     def flush():
         nonlocal buf, mode
@@ -147,7 +156,8 @@ def to_html(md):
             out.append(figure(img.group(1), img.group(2)))
         elif line.startswith("## "):
             flush()
-            out.append(f'    <h2 class="psub">{inline(line[3:])}</h2>')
+            h2 += 1
+            out.append(f'    <h2 class="psub" id="s{h2}">{inline(line[3:])}</h2>')
         elif line.startswith("### "):
             flush()
             out.append(f'    <h3 class="art__h3">{inline(line[4:])}</h3>')
@@ -222,12 +232,14 @@ def load(lang="ko"):
         if need:
             raise SystemExit(f"{f.name}: {', '.join(sorted(need))} 항목이 없습니다")
         meta["body"] = to_html(body)
+        meta["toc"] = toc(body)
         meta["text"] = text
         meta["chars"] = len(re.sub(r"\s", "", text))
         # 한국어는 분당 600자, 영어는 분당 230단어 정도로 봅니다
         meta["words"] = len(text.split())
         meta["min"] = max(1, round(meta["words"] / 230 if en else meta["chars"] / 600))
         meta["related"] = [x.strip() for x in meta.get("related", "").split(",") if x.strip()]
+        meta["updated"] = meta.get("updated") or meta.get("date", "")
         meta["file"] = f.name
         items.append(meta)
     # 최신 날짜가 위. 같은 날 올린 글은 order 값이 작은 것이 위입니다.

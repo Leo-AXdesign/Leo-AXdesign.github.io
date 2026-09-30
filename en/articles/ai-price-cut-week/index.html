@@ -11,6 +11,8 @@
   <link rel="alternate" hreflang="x-default" href="https://designrefs.com/articles/ai-price-cut-week/" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Design Hub" />
+  <meta property="og:locale" content="en_US" />
   <meta property="og:title" content="AI got half price in a week. Will design tools follow? | Design Hub" />
   <meta property="og:description" content="On September 22, Opus 5.5, GPT-6 Sol and Luna all launched on the same day and the price sheets changed dramatically. What that means, in numbers, for the credits and subscriptions designers pay for." />
   <meta property="og:url" content="https://designrefs.com/en/articles/ai-price-cut-week/" />
@@ -104,6 +106,12 @@
   ]
 }
   </script>
+  <meta property="article:published_time" content="2026-09-27T09:00:00+09:00" />
+  <meta property="article:modified_time" content="2026-09-27T09:00:00+09:00" />
+  <meta property="article:section" content="AI Design" />
+  <meta property="article:tag" content="AI Design" />
+  <meta property="article:tag" content="AI tools" />
+  <meta property="article:tag" content="Design Tools" />
 </head>
 <body class="page">
   <header class="top">
@@ -164,10 +172,11 @@
       <p class="page__intro">On September 22, Opus 5.5, GPT-6 Sol and Luna all launched on the same day and the price sheets changed dramatically. What that means, in numbers, for the credits and subscriptions designers pay for.</p>
       <p class="art__meta"><time datetime="2026-09-27">September 27, 2026</time> · 4 min read</p>
       <p class="art__note">Translated from the Korean original. <a href="https://designrefs.com/articles/ai-price-cut-week/" hreflang="ko" lang="ko">Read in Korean</a></p>
+      <nav class="art__toc" aria-label="In this article"><p class="art__toc-t">In this article</p><ol><li><a href="#s1">The price sheet, one week later</a></li><li><a href="#s2">The top row hasn&#x27;t moved</a></li><li><a href="#s3">It&#x27;s already reaching design tools</a></li><li><a href="#s4">What&#x27;s getting cheaper is the price, not the result</a></li><li><a href="#s5">So what you can do now</a></li></ol></nav>
     <p class="ptext">Last Tuesday, September 22, three price sheets changed in a single day. Anthropic released Claude Opus 5.5, and the same day OpenAI unveiled GPT-6 Sol and GPT-6 Luna. All three are cheaper than the previous generation. Quite a bit cheaper.</p>
     <p class="ptext">API prices sound far removed from designers. Not many designers call an API directly. But the credit prices charged by Figma Make, Canva and every image and prototyping tool out there sit on top of these numbers. When the underlying cost goes down, what we pay moves too, eventually. The only question is when, and by how much.</p>
     <p class="ptext"><strong>First, a disclaimer.</strong> All prices are as of September 27. OpenAI&#x27;s developer event (DevDay) is scheduled for the 29th, so they may change again within days. Also, I&#x27;m building this site with Claude Code, which is why I&#x27;ve only used numbers from company announcements and independent outlets.</p>
-    <h2 class="psub">The price sheet, one week later</h2>
+    <h2 class="psub" id="s1">The price sheet, one week later</h2>
     <div class="art__tablewrap"><table class="art__table">
       <thead><tr><th>Model</th><th>Input (per 1M tokens)</th><th>Output (per 1M tokens)</th><th>vs. previous generation</th></tr></thead>
       <tbody>
@@ -180,15 +189,15 @@
     <p class="art__note">Sources: <a href="https://simonwillison.net/2026/Sep/22/opus-and-sol-and-luna/" target="_blank" rel="noopener">Simon Willison</a> (Sep 22), <a href="https://www.digitalapplied.com/blog/ai-model-releases-september-2026-tracker" target="_blank" rel="noopener">Digital Applied&#x27;s September model release tracker</a>.</p>
     <p class="ptext">What stands out more than the numbers is Anthropic&#x27;s claim. It said Opus 5.5 performs at the level of Fable 5.1 on most work. If that&#x27;s true, you can now get what the top model did three weeks ago for 40% of the price. It&#x27;s the company&#x27;s own claim, though, so it&#x27;s worth waiting for independent evaluations to pile up.</p>
     <p class="ptext">This didn&#x27;t happen out of nowhere this week, either. According to <a href="https://vercel.com/blog/ai-gateway-production-index-september-2026" target="_blank" rel="noopener">Vercel&#x27;s figures</a> from its gateway that routes to many AI models, the average token price fell 23.2% in August alone, the third monthly drop in a row. September 22 is closer to the day that trend showed up on the price sheets all at once.</p>
-    <h2 class="psub">The top row hasn&#x27;t moved</h2>
+    <h2 class="psub" id="s2">The top row hasn&#x27;t moved</h2>
     <p class="ptext">Not everything got cheaper. The bottom row of the table, Fable 5.1 and Astra, is still $10 input and $50 output.</p>
     <p class="ptext">If anything, a new tier seems to be forming above them. According to a September 27 report by Korea&#x27;s AI Times, traces of a $500-a-month &quot;Pro Max&quot; plan were found in ChatGPT&#x27;s settings screen. That&#x27;s two and a half times the current top Pro plan ($200 a month). There&#x27;s no official announcement yet.</p>
     <p class="ptext">So prices aren&#x27;t moving in one direction; they&#x27;re spreading apart. Common work is getting cheap fast, while the best models and the fastest processing hold on to high prices.</p>
     <p class="ptext">And cheap tokens don&#x27;t mean cheap work. In my earlier <a href="https://designrefs.com/en/articles/claude-fable-5-1-vs-gpt-6-astra/">comparison of Fable 5.1 and Astra</a>, the price sheets were identical, yet the cost per task differed by more than double, because of how much each model talked. A similar story came up this time. Simon Willison wrote that when he set Opus 5.5 to maximum thinking, it used up the entire 128,000-token output limit without reaching a conclusion, costing $2.56 per attempt. Even so, he said he&#x27;d switched his default models for development work to GPT-6 Sol and Opus 5.5.</p>
-    <h2 class="psub">It&#x27;s already reaching design tools</h2>
+    <h2 class="psub" id="s3">It&#x27;s already reaching design tools</h2>
     <p class="ptext">Figma moved first. At the Goldman Sachs technology conference on September 8, CEO Dylan Field said Figma had cut the price of Figma Make credits quite a bit, in some cases by half. He explained that the company chose to grow usage over short-term margins.</p>
     <p class="ptext">On the 16th of the same month, Figma let people publish Figma Weave, its workflow tool for generating images and vectors, to the Community. It&#x27;s free for now while in open beta. But Figma has already announced that it will consume AI credits once it&#x27;s generally available. Free is for the beta only.</p>
-    <h2 class="psub">What&#x27;s getting cheaper is the price, not the result</h2>
+    <h2 class="psub" id="s4">What&#x27;s getting cheaper is the price, not the result</h2>
     <p class="ptext">At the same event, Field also said this: &quot;Hallucination is a huge issue.&quot; Pulling a design system into the wrong context is still a problem too, he said. His assessment was that frontier models are improving at design work only incrementally.</p>
     <p class="ptext">Designers&#x27; experience isn&#x27;t much different. The <a href="https://stateofaidesign.com/" target="_blank" rel="noopener">AI in Design Report 2026</a>, published September 16 by Designer Fund and Foundation Capital, surveyed more than 900 designers in over 60 countries. The survey was run in the first quarter of this year.</p>
     <ul class="ptext-list">
@@ -198,7 +207,7 @@
       <li>The top reason people keep using a tool is reliable quality (80%).</li>
     </ul>
     <p class="ptext">If price were the problem, it would be solved by now. These numbers say it isn&#x27;t. What people want isn&#x27;t a cheaper result but one that&#x27;s reliably good every time.</p>
-    <h2 class="psub">So what you can do now</h2>
+    <h2 class="psub" id="s5">So what you can do now</h2>
     <p class="ptext">If you use seven tools, it&#x27;s probably time for a cleanup. There&#x27;s a good chance two subscriptions are doing the same job.</p>
     <p class="ptext">It&#x27;s also worth checking which model each of your tools uses. It&#x27;s usually listed in the settings or the help pages. If the underlying cost has halved and the credit price hasn&#x27;t moved in three months, that&#x27;s one reason to switch tools.</p>
     <p class="ptext">You can hold off on annual plans for a bit. Unit prices have dropped three months in a row, and there&#x27;s another announcement on the 29th. Paying month to month hurts less right now.</p>
@@ -217,35 +226,10 @@
 
     <section class="section">
       <header class="section__head">
-        <h2 class="section__title">More articles</h2>
-        <span class="section__count" data-count>9</span>
+        <h2 class="section__title">Read next</h2>
       </header>
       <div class="list list--insight">
-        <a class="arow" href="https://designrefs.com/en/articles/openai-devday-2026-designers/">
-          <span class="arow__date">2026. 09. 30</span>
-          <span class="arow__main">
-            <span class="arow__title">Canva, Figma and Adobe move into ChatGPT. What designers should take from DevDay</span>
-            <p class="arow__desc">OpenAI&#x27;s DevDay brought more than twenty announcements. Here are only the ones that touch design work, laid out with diagrams and numbers.</p>
-          </span>
-          <span class="arow__tag">AI Design · 4 min</span>
-        </a>
-        <a class="arow" href="https://designrefs.com/en/articles/claude-sonnet-5-5-design/">
-          <span class="arow__date">2026. 09. 29</span>
-          <span class="arow__main">
-            <span class="arow__title">Claude Sonnet 5.5 leads with &quot;an eye for design&quot;, and the mid-priced tier changes</span>
-            <p class="arow__desc">Anthropic&#x27;s Sonnet 5.5, released September 28, put design sense front and center. Same price, faster work. Plus what happened when someone had it build a one-page site, in numbers.</p>
-          </span>
-          <span class="arow__tag">AI Design · 4 min</span>
-        </a>
-        <a class="arow" href="https://designrefs.com/en/articles/open-image-model-license/">
-          <span class="arow__date">2026. 09. 28</span>
-          <span class="arow__main">
-            <span class="arow__title">A free image model that even does transparent backgrounds. Can you use it for work?</span>
-            <p class="arow__desc">While companies shift to cheap open models, Alibaba&#x27;s new image model Qwen-Image-2.1 shut the door on commercial use. The difference between being able to download a model and being allowed to use it for work.</p>
-          </span>
-          <span class="arow__tag">AI Design · 4 min</span>
-        </a>
-        <a class="arow" href="https://designrefs.com/en/articles/claude-fable-5-1-vs-gpt-6-astra/">
+        <a class="arow" href="https://designrefs.com/en/articles/claude-fable-5-1-vs-gpt-6-astra/" data-tag="AI Design">
           <span class="arow__date">2026. 09. 26</span>
           <span class="arow__main">
             <span class="arow__title">Claude Fable 5.1 vs GPT-6 Astra, by the numbers</span>
@@ -253,7 +237,15 @@
           </span>
           <span class="arow__tag">AI Design · 5 min</span>
         </a>
-        <a class="arow" href="https://designrefs.com/en/articles/ai-design-tools-in-practice/">
+        <a class="arow" href="https://designrefs.com/en/articles/claude-sonnet-5-5-design/" data-tag="AI Design">
+          <span class="arow__date">2026. 09. 29</span>
+          <span class="arow__main">
+            <span class="arow__title">Claude Sonnet 5.5 leads with &quot;an eye for design&quot;, and the mid-priced tier changes</span>
+            <p class="arow__desc">Anthropic&#x27;s Sonnet 5.5, released September 28, put design sense front and center. Same price, faster work. Plus what happened when someone had it build a one-page site, in numbers.</p>
+          </span>
+          <span class="arow__tag">AI Design · 4 min</span>
+        </a>
+        <a class="arow" href="https://designrefs.com/en/articles/ai-design-tools-in-practice/" data-tag="AI Design">
           <span class="arow__date">2026. 09. 25</span>
           <span class="arow__main">
             <span class="arow__title">Why thirty AI drafts don&#x27;t make the work any shorter</span>
@@ -261,39 +253,9 @@
           </span>
           <span class="arow__tag">AI Design · 4 min</span>
         </a>
-        <a class="arow" href="https://designrefs.com/en/articles/describing-design-style/">
-          <span class="arow__date">2026. 09. 24</span>
-          <span class="arow__main">
-            <span class="arow__title">Putting &quot;make it feel right&quot; into words</span>
-            <p class="arow__desc">Whether it&#x27;s a client or a prompt box, you end up explaining style in words. A way of breaking style into six layers.</p>
-          </span>
-          <span class="arow__tag">Design · 4 min</span>
-        </a>
-        <a class="arow" href="https://designrefs.com/en/articles/how-to-collect-references/">
-          <span class="arow__date">2026. 09. 23</span>
-          <span class="arow__main">
-            <span class="arow__title">The references we save and never open again</span>
-            <p class="arow__desc">Twenty-plus boards, and still I start every project by searching from scratch. How to collect references you can actually pull back out.</p>
-          </span>
-          <span class="arow__tag">Design · 3 min</span>
-        </a>
-        <a class="arow" href="https://designrefs.com/en/articles/korean-design-community-map/">
-          <span class="arow__date">2026. 09. 22</span>
-          <span class="arow__main">
-            <span class="arow__title">Where Korean designers talk to each other</span>
-            <p class="arow__desc">When you want to read, when you want to show your work, when you need an answer fast. Korea&#x27;s design communities, sorted by what they&#x27;re good for.</p>
-          </span>
-          <span class="arow__tag">Community · 3 min</span>
-        </a>
-        <a class="arow" href="https://designrefs.com/en/articles/ai-image-commercial-use/">
-          <span class="arow__date">2026. 09. 21</span>
-          <span class="arow__main">
-            <span class="arow__title">Can you use AI-generated images in client work?</span>
-            <p class="arow__desc">Copyright, terms of service, lookalikes, contracts. What to check in practice, in order. Written from Korea, with the US for comparison.</p>
-          </span>
-          <span class="arow__tag">AI Design · 4 min</span>
-        </a>
       </div>
+      <nav class="art__pn"><a class="art__pn-a is-prev" href="https://designrefs.com/en/articles/claude-fable-5-1-vs-gpt-6-astra/" rel="prev"><span class="art__pn-l">← Previous</span><span class="art__pn-t">Claude Fable 5.1 vs GPT-6 Astra, by the numbers</span></a><a class="art__pn-a is-next" href="https://designrefs.com/en/articles/open-image-model-license/" rel="next"><span class="art__pn-l">Next →</span><span class="art__pn-t">A free image model that even does transparent backgrounds. Can you use it for work?</span></a></nav>
+      <p class="art__all"><a href="https://designrefs.com/en/articles/">All articles (10) →</a></p>
     </section>
     </main>
   </div>

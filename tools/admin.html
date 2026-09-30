@@ -221,6 +221,8 @@
           <div class="grid2">
             <div class="grid2">
               <div class="f"><label for="a-date">날짜</label><input class="inp" id="a-date" type="date" /></div>
+              <div class="f"><label for="a-updated">고친 날 <span class="hint">(선택)</span></label><input class="inp" id="a-updated" type="date" />
+                <span class="hint">내용을 크게 고쳤을 때만. 검색엔진에 수정일로 알립니다</span></div>
               <div class="f"><label for="a-order">같은 날 순서</label><input class="inp" id="a-order" inputmode="numeric" placeholder="1" />
                 <span class="hint">같은 날 글이 여럿이면 작은 숫자가 위</span></div>
             </div>
@@ -468,7 +470,7 @@
     $('#art-title').textContent = r ? ko.title : '새 글';
     $('#a-title').value = ko.title || ''; $('#a-slug').value = ko.slug || '';
     $('#a-desc').value = ko.desc || ''; $('#a-date').value = ko.date || S.today;
-    $('#a-order').value = ko.order || ''; $('#a-tag').value = ko.tag || (r ? '' : 'AI 디자인');
+    $('#a-order').value = ko.order || ''; $('#a-updated').value = ko.updated || ''; $('#a-tag').value = ko.tag || (r ? '' : 'AI 디자인');
     const rel = (ko.related || '').split(',').map(x => x.trim());
     document.querySelectorAll('#a-related input').forEach(i => { i.checked = rel.includes(i.value); });
     $('#a-body').value = ko.body || '';
@@ -522,6 +524,7 @@
       const r = await api('article', {
         orig_slug: curArt,
         ko: { slug: $('#a-slug').value, title: $('#a-title').value, desc: $('#a-desc').value, date: $('#a-date').value,
+              updated: $('#a-updated').value,
               order: $('#a-order').value, tag: $('#a-tag').value, body: $('#a-body').value,
               related: [...document.querySelectorAll('#a-related input:checked')].map(i => i.value) },
         en: { title: $('#e-title').value, desc: $('#e-desc').value, tag: $('#e-tag').value, body: $('#e-body').value },

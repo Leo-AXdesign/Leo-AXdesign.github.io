@@ -462,6 +462,24 @@
   }
 
   const NO_RESULTS = T('검색 결과가 없습니다', 'No results');
+  /* 분야 화면 아래의 '관련 읽을거리' (글의 views 에 이 화면이 있는 것, 최신 글부터 4편) */
+  function renderRelatedPosts(view) {
+    if (state.query || !POSTS.length) return '';
+    const list = POSTS.filter(p => (p.views || []).includes(view)).slice(0, 4);
+    if (!list.length) return '';
+    return renderInsightSection({ id: 'related', label: T('관련 읽을거리', 'Related articles'),
+      desc: T('이 분야를 다룬 글', 'Articles on this topic') }, list.map(renderArticleRow).join(''), list.length);
+  }
+
+  /* 첫 화면 로고 아래의 '새 글' 한 줄 */
+  function renderHeroNew() {
+    const box = document.getElementById('hero-new');
+    if (!box || !POSTS.length) return;
+    const x = POSTS[0];
+    box.innerHTML = `<b>${T('새 글', 'New')}</b><a href="articles/${escapeHtml(x.slug)}/">${escapeHtml(x.title)}</a>`;
+    box.hidden = false;
+  }
+
   function renderEmpty(title, desc) {
     return `<div class="empty"><p class="empty__title">${escapeHtml(title)}</p><p>${escapeHtml(desc)}</p></div>`;
   }
@@ -486,7 +504,7 @@
       const list = visibleStyles();
       shown = list.length;
       html = list.length
-        ? renderInsightSection(PSEUDO.styles, list.map(renderStyleRow).join(''), list.length)
+        ? renderInsightSection(PSEUDO.styles, list.map(renderStyleRow).join(''), list.length) + renderRelatedPosts('styles')
         : renderEmpty(NO_RESULTS, T(`"${state.query}"에 해당하는 스타일이 없습니다.`, `No styles match "${state.query}".`));
     } else if (state.cat === 'trends') {
       const list = visibleTrends();
@@ -504,7 +522,7 @@
       const list = visibleGlossary();
       shown = list.length;
       html = list.length
-        ? renderInsightSection(PSEUDO.glossary, renderGlossary(list, true), list.length)
+        ? renderInsightSection(PSEUDO.glossary, renderGlossary(list, true), list.length) + renderRelatedPosts('glossary')
         : renderInsightSection(PSEUDO.glossary, renderGlossaryFilter() + renderEmpty(NO_RESULTS, T(`"${state.query}"에 해당하는 용어가 없습니다.`, `No terms match "${state.query}".`)), 1);
     } else if (state.cat === 'all') {
       const starred = sites.filter(s => state.bookmarks.has(s.url));
@@ -528,7 +546,7 @@
       const list = sites.filter(s => s.cat === state.cat);
       shown = list.length;
       html = list.length
-        ? renderSection(cat, list)
+        ? renderSection(cat, list) + renderRelatedPosts(state.cat)
         : renderEmpty(NO_RESULTS, searching ? T(`"${state.query}"에 해당하는 사이트가 이 카테고리에 없습니다.`, `No sites in this category match "${state.query}".`) : T('조건에 맞는 사이트가 없습니다.', 'No sites match these filters.'));
     }
 
@@ -830,4 +848,5 @@
   bindDrawer();
   bindPreview();
   renderAll();
+  renderHeroNew();
 })();

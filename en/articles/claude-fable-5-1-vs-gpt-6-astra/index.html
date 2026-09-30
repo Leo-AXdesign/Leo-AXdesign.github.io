@@ -11,6 +11,8 @@
   <link rel="alternate" hreflang="x-default" href="https://designrefs.com/articles/claude-fable-5-1-vs-gpt-6-astra/" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Design Hub" />
+  <meta property="og:locale" content="en_US" />
   <meta property="og:title" content="Claude Fable 5.1 vs GPT-6 Astra, by the numbers | Design Hub" />
   <meta property="og:description" content="Two frontier models released two days apart. Official specs, third-party evaluations and early reactions from designers, side by side with sources." />
   <meta property="og:url" content="https://designrefs.com/en/articles/claude-fable-5-1-vs-gpt-6-astra/" />
@@ -104,6 +106,12 @@
   ]
 }
   </script>
+  <meta property="article:published_time" content="2026-09-26T09:00:00+09:00" />
+  <meta property="article:modified_time" content="2026-09-26T09:00:00+09:00" />
+  <meta property="article:section" content="AI Design" />
+  <meta property="article:tag" content="AI Design" />
+  <meta property="article:tag" content="AI tools" />
+  <meta property="article:tag" content="Design Tools" />
 </head>
 <body class="page">
   <header class="top">
@@ -164,10 +172,11 @@
       <p class="page__intro">Two frontier models released two days apart. Official specs, third-party evaluations and early reactions from designers, side by side with sources.</p>
       <p class="art__meta"><time datetime="2026-09-26">September 26, 2026</time> · 5 min read</p>
       <p class="art__note">Translated from the Korean original. <a href="https://designrefs.com/articles/claude-fable-5-1-vs-gpt-6-astra/" hreflang="ko" lang="ko">Read in Korean</a></p>
+      <nav class="art__toc" aria-label="In this article"><p class="art__toc-t">In this article</p><ol><li><a href="#s1">Specs: same price, different cache</a></li><li><a href="#s2">Same overall score, more than double the cost</a></li><li><a href="#s3">Change the kind of work and the ranking changes</a></li><li><a href="#s4">How designers reacted</a></li><li><a href="#s5">In short</a></li></ol></nav>
     <p class="ptext">In the first week of September, two frontier AI models came out two days apart: Anthropic&#x27;s Claude Fable 5.1 on September 1–2, and OpenAI&#x27;s GPT-6 Astra on September 3. Both were announced as the smartest yet, and, as it happens, their price sheets are identical.</p>
     <p class="ptext">Asked which is better, it&#x27;s hard to answer in one line. Lay out the official specs, the independent evaluations and the reactions of people who tried them first, one after another, and you&#x27;ll see why.</p>
     <p class="ptext"><strong>First, a disclaimer.</strong> Many of the benchmarks were measured by the companies that made the models. Each table notes who measured what. Also, I&#x27;m building this site with Claude Code, so I only used numbers that have a source. All figures are as of mid-September 2026 and are changing fast.</p>
-    <h2 class="psub">Specs: same price, different cache</h2>
+    <h2 class="psub" id="s1">Specs: same price, different cache</h2>
     <div class="art__tablewrap"><table class="art__table">
       <thead><tr><th></th><th>Claude Fable 5.1</th><th>GPT-6 Astra</th></tr></thead>
       <tbody>
@@ -184,7 +193,7 @@
     <p class="ptext">On the table alone, they&#x27;re practically twins. The differences are in two places.</p>
     <p class="ptext">For work where the model rereads the same long material, the picture changes. The cache price, what you pay to reload content it has already read, is a quarter as much for Fable 5.1 as for Astra. Attaching a brand guideline PDF and asking dozens of questions about it is exactly this kind of work. And Fable 5.1 knows about the world two months later.</p>
     <p class="ptext">There are no official numbers to compare speed. Anthropic classifies Fable 5.1 as &quot;slower&quot; among its own models.</p>
-    <h2 class="psub">Same overall score, more than double the cost</h2>
+    <h2 class="psub" id="s2">Same overall score, more than double the cost</h2>
     <p class="ptext">On the overall index from independent evaluator Artificial Analysis (September 9, v4.3), the two models are tied for first at 53 points. Their coding agent index is also the same, at 62.</p>
     <p class="ptext">The difference is in what it cost to reach the same score. On average, Fable 5.1 spent $7.63 per index task and Astra spent $3.26. The token prices are the same; the cost differs because of how much they say. Per task, Fable 5.1 used about 78,000 output tokens and Astra about 27,000.</p>
     <figure class="art__fig">
@@ -192,7 +201,7 @@
       <figcaption>Cost and output to reach the same score. A shorter bar means less was used.</figcaption>
     </figure>
     <p class="ptext">One caution. This index was revised twice in the week after Astra came out, and in that time Astra climbed from fifth to first. It&#x27;s too early to call these settled numbers.</p>
-    <h2 class="psub">Change the kind of work and the ranking changes</h2>
+    <h2 class="psub" id="s3">Change the kind of work and the ranking changes</h2>
     <div class="art__tablewrap"><table class="art__table">
       <thead><tr><th>Evaluation</th><th>What it measures</th><th>Fable 5.1</th><th>Astra</th><th>Measured by</th></tr></thead>
       <tbody>
@@ -208,7 +217,7 @@
     <p class="ptext">In head-to-heads building web screens, Astra leads; in agent head-to-heads involving long tool use, Fable 5.1 leads. Even in vote-based evaluations where people choose directly, the results split like this.</p>
     <p class="ptext">The row worth noticing is the last one. Even in OpenAI&#x27;s own announcement table, Fable 5.1 scores higher on expert-level questions.</p>
     <p class="ptext">It&#x27;s also worth knowing that the two companies choose different tests to announce. Anthropic published a SWE-bench Pro score of 81.2% for Fable 5.1, but OpenAI didn&#x27;t publish Astra&#x27;s score on the same test. Cases where the same test&#x27;s scores sit side by side are rarer than you&#x27;d think.</p>
-    <h2 class="psub">How designers reacted</h2>
+    <h2 class="psub" id="s4">How designers reacted</h2>
     <p class="ptext">When OpenAI introduced Astra, it put <a href="https://x.com/OpenAIDevs/status/2095596149654868092" target="_blank" rel="noopener">visual judgment in front-end design</a> up front: give it a sketch or reference and it turns it into a working screen, refining layout, typography and spacing.</p>
     <p class="ptext">The verdicts from designers who tried them first don&#x27;t lean one way. One comparison (<a href="https://eidosdesign.substack.com/p/claude-fable-51-vs-gpt-6-astra-for" target="_blank" rel="noopener">Eidos Design</a>, September 7) summed it up like this.</p>
     <ul class="ptext-list">
@@ -218,7 +227,7 @@
     </ul>
     <p class="ptext">A comparison that split five design tasks between them (<a href="https://betterstack.com/community/guides/ai/kimi-claude-astra-design/" target="_blank" rel="noopener">Better Stack</a>, September 14) reached a similar conclusion. For web design, Kimi K3 actually did best; Astra won 3D, and Fable 5.1 won 2D games. UI components were about even across the three, and none of them produced mobile app designs usable as is.</p>
     <p class="ptext">One more. Artificial Analysis noted that on a measure of the quality of documents like presentations, Astra scored lower than its predecessor, GPT-5.6 Sol. Worth knowing if you make a lot of slides.</p>
-    <h2 class="psub">In short</h2>
+    <h2 class="psub" id="s5">In short</h2>
     <p class="ptext">The price sheets are the same, but the actual cost depends on how you use them. For work where you attach long material and ask many times, Fable 5.1 with its cheaper cache has the edge; for short, one-shot answers, Astra, which talks less, has the edge.</p>
     <p class="ptext">In evaluations, Astra leads at quickly producing web screens and 3D, while Fable 5.1 leads at long tasks involving tool use. The approach recommended by designers who tried them first lines up with these results: explore first with Astra, finish and refine with Fable 5.1.</p>
     <p class="ptext">And both models are less than a month old. The rankings could change again in a few weeks. In the end, you only know if it fits your work by running it on your work.</p>
@@ -237,35 +246,10 @@
 
     <section class="section">
       <header class="section__head">
-        <h2 class="section__title">More articles</h2>
-        <span class="section__count" data-count>9</span>
+        <h2 class="section__title">Read next</h2>
       </header>
       <div class="list list--insight">
-        <a class="arow" href="https://designrefs.com/en/articles/openai-devday-2026-designers/">
-          <span class="arow__date">2026. 09. 30</span>
-          <span class="arow__main">
-            <span class="arow__title">Canva, Figma and Adobe move into ChatGPT. What designers should take from DevDay</span>
-            <p class="arow__desc">OpenAI&#x27;s DevDay brought more than twenty announcements. Here are only the ones that touch design work, laid out with diagrams and numbers.</p>
-          </span>
-          <span class="arow__tag">AI Design · 4 min</span>
-        </a>
-        <a class="arow" href="https://designrefs.com/en/articles/claude-sonnet-5-5-design/">
-          <span class="arow__date">2026. 09. 29</span>
-          <span class="arow__main">
-            <span class="arow__title">Claude Sonnet 5.5 leads with &quot;an eye for design&quot;, and the mid-priced tier changes</span>
-            <p class="arow__desc">Anthropic&#x27;s Sonnet 5.5, released September 28, put design sense front and center. Same price, faster work. Plus what happened when someone had it build a one-page site, in numbers.</p>
-          </span>
-          <span class="arow__tag">AI Design · 4 min</span>
-        </a>
-        <a class="arow" href="https://designrefs.com/en/articles/open-image-model-license/">
-          <span class="arow__date">2026. 09. 28</span>
-          <span class="arow__main">
-            <span class="arow__title">A free image model that even does transparent backgrounds. Can you use it for work?</span>
-            <p class="arow__desc">While companies shift to cheap open models, Alibaba&#x27;s new image model Qwen-Image-2.1 shut the door on commercial use. The difference between being able to download a model and being allowed to use it for work.</p>
-          </span>
-          <span class="arow__tag">AI Design · 4 min</span>
-        </a>
-        <a class="arow" href="https://designrefs.com/en/articles/ai-price-cut-week/">
+        <a class="arow" href="https://designrefs.com/en/articles/ai-price-cut-week/" data-tag="AI Design">
           <span class="arow__date">2026. 09. 27</span>
           <span class="arow__main">
             <span class="arow__title">AI got half price in a week. Will design tools follow?</span>
@@ -273,7 +257,7 @@
           </span>
           <span class="arow__tag">AI Design · 4 min</span>
         </a>
-        <a class="arow" href="https://designrefs.com/en/articles/ai-design-tools-in-practice/">
+        <a class="arow" href="https://designrefs.com/en/articles/ai-design-tools-in-practice/" data-tag="AI Design">
           <span class="arow__date">2026. 09. 25</span>
           <span class="arow__main">
             <span class="arow__title">Why thirty AI drafts don&#x27;t make the work any shorter</span>
@@ -281,39 +265,17 @@
           </span>
           <span class="arow__tag">AI Design · 4 min</span>
         </a>
-        <a class="arow" href="https://designrefs.com/en/articles/describing-design-style/">
-          <span class="arow__date">2026. 09. 24</span>
+        <a class="arow" href="https://designrefs.com/en/articles/claude-sonnet-5-5-design/" data-tag="AI Design">
+          <span class="arow__date">2026. 09. 29</span>
           <span class="arow__main">
-            <span class="arow__title">Putting &quot;make it feel right&quot; into words</span>
-            <p class="arow__desc">Whether it&#x27;s a client or a prompt box, you end up explaining style in words. A way of breaking style into six layers.</p>
-          </span>
-          <span class="arow__tag">Design · 4 min</span>
-        </a>
-        <a class="arow" href="https://designrefs.com/en/articles/how-to-collect-references/">
-          <span class="arow__date">2026. 09. 23</span>
-          <span class="arow__main">
-            <span class="arow__title">The references we save and never open again</span>
-            <p class="arow__desc">Twenty-plus boards, and still I start every project by searching from scratch. How to collect references you can actually pull back out.</p>
-          </span>
-          <span class="arow__tag">Design · 3 min</span>
-        </a>
-        <a class="arow" href="https://designrefs.com/en/articles/korean-design-community-map/">
-          <span class="arow__date">2026. 09. 22</span>
-          <span class="arow__main">
-            <span class="arow__title">Where Korean designers talk to each other</span>
-            <p class="arow__desc">When you want to read, when you want to show your work, when you need an answer fast. Korea&#x27;s design communities, sorted by what they&#x27;re good for.</p>
-          </span>
-          <span class="arow__tag">Community · 3 min</span>
-        </a>
-        <a class="arow" href="https://designrefs.com/en/articles/ai-image-commercial-use/">
-          <span class="arow__date">2026. 09. 21</span>
-          <span class="arow__main">
-            <span class="arow__title">Can you use AI-generated images in client work?</span>
-            <p class="arow__desc">Copyright, terms of service, lookalikes, contracts. What to check in practice, in order. Written from Korea, with the US for comparison.</p>
+            <span class="arow__title">Claude Sonnet 5.5 leads with &quot;an eye for design&quot;, and the mid-priced tier changes</span>
+            <p class="arow__desc">Anthropic&#x27;s Sonnet 5.5, released September 28, put design sense front and center. Same price, faster work. Plus what happened when someone had it build a one-page site, in numbers.</p>
           </span>
           <span class="arow__tag">AI Design · 4 min</span>
         </a>
       </div>
+      <nav class="art__pn"><a class="art__pn-a is-prev" href="https://designrefs.com/en/articles/ai-design-tools-in-practice/" rel="prev"><span class="art__pn-l">← Previous</span><span class="art__pn-t">Why thirty AI drafts don&#x27;t make the work any shorter</span></a><a class="art__pn-a is-next" href="https://designrefs.com/en/articles/ai-price-cut-week/" rel="next"><span class="art__pn-l">Next →</span><span class="art__pn-t">AI got half price in a week. Will design tools follow?</span></a></nav>
+      <p class="art__all"><a href="https://designrefs.com/en/articles/">All articles (10) →</a></p>
     </section>
     </main>
   </div>

@@ -11,6 +11,8 @@
   <link rel="alternate" hreflang="x-default" href="https://designrefs.com/articles/open-image-model-license/" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Design Hub" />
+  <meta property="og:locale" content="en_US" />
   <meta property="og:title" content="A free image model that even does transparent backgrounds. Can you use it for work? | Design Hub" />
   <meta property="og:description" content="While companies shift to cheap open models, Alibaba&#x27;s new image model Qwen-Image-2.1 shut the door on commercial use. The difference between being able to download a model and being allowed to use it for work." />
   <meta property="og:url" content="https://designrefs.com/en/articles/open-image-model-license/" />
@@ -104,6 +106,12 @@
   ]
 }
   </script>
+  <meta property="article:published_time" content="2026-09-28T09:00:00+09:00" />
+  <meta property="article:modified_time" content="2026-09-28T09:00:00+09:00" />
+  <meta property="article:section" content="AI Design" />
+  <meta property="article:tag" content="AI Design" />
+  <meta property="article:tag" content="AI tools" />
+  <meta property="article:tag" content="Icons &amp; Assets" />
 </head>
 <body class="page">
   <header class="top">
@@ -164,20 +172,21 @@
       <p class="page__intro">While companies shift to cheap open models, Alibaba&#x27;s new image model Qwen-Image-2.1 shut the door on commercial use. The difference between being able to download a model and being allowed to use it for work.</p>
       <p class="art__meta"><time datetime="2026-09-28">September 28, 2026</time> · 4 min read</p>
       <p class="art__note">Translated from the Korean original. <a href="https://designrefs.com/articles/open-image-model-license/" hreflang="ko" lang="ko">Read in Korean</a></p>
+      <nav class="art__toc" aria-label="In this article"><p class="art__toc-t">In this article</p><ol><li><a href="#s1">Transparent backgrounds, straight out</a></li><li><a href="#s2">But you can&#x27;t use it for work</a></li><li><a href="#s3">What&#x27;s mixed into the word &quot;open&quot;</a></li><li><a href="#s4">What if I just run it on my own computer?</a></li><li><a href="#s5">Thirty seconds before you download</a></li></ol></nav>
     <p class="ptext">On the 28th, the Financial Times reported that corporate AI spending is shifting away from OpenAI and Anthropic toward cheap open models. The numbers make it clearer. In <a href="https://vercel.com/blog/ai-gateway-production-index-september-2026" target="_blank" rel="noopener">Vercel&#x27;s figures</a> from its gateway that routes to many AI models, open models, the ones whose weights you can download, handled 7% of tokens last December. By August this year that was 56%, more than half for the first time.</p>
     <p class="ptext">The interesting part is the money. In the same month, open models took only 14% of the spending. Open models get the volume; closed models still make the money. It means people have started splitting the work: routine jobs go to cheap models, and only the important ones go to expensive models.</p>
     <p class="ptext">The same thing is happening with images. And right there, a problem popped up that designers can easily trip over.</p>
     <p class="ptext"><strong>First, a disclaimer.</strong> This isn&#x27;t legal advice. License terms differ between model versions and they change. Check the original text on the model page before you actually use anything.</p>
-    <h2 class="psub">Transparent backgrounds, straight out</h2>
+    <h2 class="psub" id="s1">Transparent backgrounds, straight out</h2>
     <p class="ptext">On September 20, Alibaba released an image model called Qwen-Image-2.1. It has a few features designers will welcome.</p>
     <p class="ptext">The most striking is transparency. It produces PNGs with the background already gone. No separate cut-out step, and you can even pick out and edit just the text on a transparent layer. You can feed it up to ten reference images at once, which makes it handy for group shots, virtual try-ons and room styling drafts. The default output is 2048×2048.</p>
     <p class="ptext">It&#x27;s small, too. The image generation part has 7 billion parameters and runs on a graphics card around the level of an RTX 3090. Quantized, it fits in roughly 16GB of video memory. In other words, you can run it on your own computer, for free, as much as you like.</p>
     <p class="ptext">The performance claims deserve some caution for now. The result that it beats most closed models comes from a benchmark Alibaba made itself, and there are no independent evaluations yet. Early testers said it&#x27;s clearly sharper than the previous version, but noted a slight yellowish cast and missed instructions in complex compositions.</p>
-    <h2 class="psub">But you can&#x27;t use it for work</h2>
+    <h2 class="psub" id="s2">But you can&#x27;t use it for work</h2>
     <p class="ptext">The problem is the license. Qwen-Image-2.1 comes with the &quot;Qwen Research License&quot;, which limits use to research and evaluation, non-commercial only. To use it for paid work, you need separate permission from Alibaba.</p>
     <p class="ptext">There&#x27;s a reason this became news. The previous versions, Qwen-Image and 2.0, were under Apache 2.0, which allows free commercial use. A model with the same name changed its terms completely with a 0.1 version bump. On Hacker News, some reactions went as far as saying it can hardly be called open anymore.</p>
     <p class="ptext">If you heard last year that &quot;Qwen Image is fine for commercial use&quot;, that no longer holds for 2.1.</p>
-    <h2 class="psub">What&#x27;s mixed into the word &quot;open&quot;</h2>
+    <h2 class="psub" id="s3">What&#x27;s mixed into the word &quot;open&quot;</h2>
     <p class="ptext">&quot;Open model&quot; actually lumps together several different situations. Whether you can download it and whether you&#x27;re allowed to use it for work need to be looked at separately.</p>
     <div class="art__tablewrap"><table class="art__table">
       <thead><tr><th>Status</th><th>Download</th><th>Commercial use</th><th>Example</th></tr></thead>
@@ -189,11 +198,11 @@
     </table></div>
     <p class="art__note">Sources: <a href="https://the-decoder.com/alibabas-open-weight-qwen-image-2-1-claims-to-beat-closed-models-in-image-generation-with-just-7-billion-parameters/" target="_blank" rel="noopener">the-decoder</a> (Sep 20), <a href="https://mixed-news.com/en/qwen-image-2-1-transparent-rgba-7b-open-weights-research-licence/" target="_blank" rel="noopener">MIXED</a>, <a href="https://en.wikipedia.org/wiki/Ideogram_(text-to-image_model" target="_blank" rel="noopener">Wikipedia: Ideogram</a>).</p>
     <p class="ptext">The first two rows look identical from the outside. Both are on Hugging Face, and both download for free. The only difference is one word in the License field on the model page.</p>
-    <h2 class="psub">What if I just run it on my own computer?</h2>
+    <h2 class="psub" id="s4">What if I just run it on my own computer?</h2>
     <p class="ptext">It&#x27;s an easy thought. If it runs on my own graphics card and never touches a server, who would know?</p>
     <p class="ptext">A license applies wherever you run the model. Whether anyone notices is a separate question. And with client work, trouble usually comes much later: months after a campaign ends, when someone asks, &quot;How was this image made?&quot;</p>
     <p class="ptext">One more thing. Clearing the license isn&#x27;t the end of it. Whether AI output gets copyright protection, and whether it resembles someone else&#x27;s character, are separate issues. I covered that in <a href="https://designrefs.com/en/articles/ai-image-commercial-use/">Can you use AI-generated images in client work?</a></p>
-    <h2 class="psub">Thirty seconds before you download</h2>
+    <h2 class="psub" id="s5">Thirty seconds before you download</h2>
     <p class="ptext">When you download an open image model, there are about three places to look.</p>
     <p class="ptext">The License field, on the right side or at the bottom of the model page. If you see the words research or non-commercial there, assume you can&#x27;t use it for work.</p>
     <p class="ptext">The version number. As we saw, the same model can have different terms in each version. If you got a ComfyUI workflow from someone else, check which files are actually inside it.</p>
@@ -213,19 +222,10 @@
 
     <section class="section">
       <header class="section__head">
-        <h2 class="section__title">More articles</h2>
-        <span class="section__count" data-count>9</span>
+        <h2 class="section__title">Read next</h2>
       </header>
       <div class="list list--insight">
-        <a class="arow" href="https://designrefs.com/en/articles/openai-devday-2026-designers/">
-          <span class="arow__date">2026. 09. 30</span>
-          <span class="arow__main">
-            <span class="arow__title">Canva, Figma and Adobe move into ChatGPT. What designers should take from DevDay</span>
-            <p class="arow__desc">OpenAI&#x27;s DevDay brought more than twenty announcements. Here are only the ones that touch design work, laid out with diagrams and numbers.</p>
-          </span>
-          <span class="arow__tag">AI Design · 4 min</span>
-        </a>
-        <a class="arow" href="https://designrefs.com/en/articles/claude-sonnet-5-5-design/">
+        <a class="arow" href="https://designrefs.com/en/articles/claude-sonnet-5-5-design/" data-tag="AI Design">
           <span class="arow__date">2026. 09. 29</span>
           <span class="arow__main">
             <span class="arow__title">Claude Sonnet 5.5 leads with &quot;an eye for design&quot;, and the mid-priced tier changes</span>
@@ -233,7 +233,7 @@
           </span>
           <span class="arow__tag">AI Design · 4 min</span>
         </a>
-        <a class="arow" href="https://designrefs.com/en/articles/ai-price-cut-week/">
+        <a class="arow" href="https://designrefs.com/en/articles/ai-price-cut-week/" data-tag="AI Design">
           <span class="arow__date">2026. 09. 27</span>
           <span class="arow__main">
             <span class="arow__title">AI got half price in a week. Will design tools follow?</span>
@@ -241,55 +241,17 @@
           </span>
           <span class="arow__tag">AI Design · 4 min</span>
         </a>
-        <a class="arow" href="https://designrefs.com/en/articles/claude-fable-5-1-vs-gpt-6-astra/">
-          <span class="arow__date">2026. 09. 26</span>
+        <a class="arow" href="https://designrefs.com/en/articles/openai-devday-2026-designers/" data-tag="AI Design">
+          <span class="arow__date">2026. 09. 30</span>
           <span class="arow__main">
-            <span class="arow__title">Claude Fable 5.1 vs GPT-6 Astra, by the numbers</span>
-            <p class="arow__desc">Two frontier models released two days apart. Official specs, third-party evaluations and early reactions from designers, side by side with sources.</p>
-          </span>
-          <span class="arow__tag">AI Design · 5 min</span>
-        </a>
-        <a class="arow" href="https://designrefs.com/en/articles/ai-design-tools-in-practice/">
-          <span class="arow__date">2026. 09. 25</span>
-          <span class="arow__main">
-            <span class="arow__title">Why thirty AI drafts don&#x27;t make the work any shorter</span>
-            <p class="arow__desc">Exploration and mass production go to AI; direction and final checks stay with people. A boundary I only saw after months of use.</p>
-          </span>
-          <span class="arow__tag">AI Design · 4 min</span>
-        </a>
-        <a class="arow" href="https://designrefs.com/en/articles/describing-design-style/">
-          <span class="arow__date">2026. 09. 24</span>
-          <span class="arow__main">
-            <span class="arow__title">Putting &quot;make it feel right&quot; into words</span>
-            <p class="arow__desc">Whether it&#x27;s a client or a prompt box, you end up explaining style in words. A way of breaking style into six layers.</p>
-          </span>
-          <span class="arow__tag">Design · 4 min</span>
-        </a>
-        <a class="arow" href="https://designrefs.com/en/articles/how-to-collect-references/">
-          <span class="arow__date">2026. 09. 23</span>
-          <span class="arow__main">
-            <span class="arow__title">The references we save and never open again</span>
-            <p class="arow__desc">Twenty-plus boards, and still I start every project by searching from scratch. How to collect references you can actually pull back out.</p>
-          </span>
-          <span class="arow__tag">Design · 3 min</span>
-        </a>
-        <a class="arow" href="https://designrefs.com/en/articles/korean-design-community-map/">
-          <span class="arow__date">2026. 09. 22</span>
-          <span class="arow__main">
-            <span class="arow__title">Where Korean designers talk to each other</span>
-            <p class="arow__desc">When you want to read, when you want to show your work, when you need an answer fast. Korea&#x27;s design communities, sorted by what they&#x27;re good for.</p>
-          </span>
-          <span class="arow__tag">Community · 3 min</span>
-        </a>
-        <a class="arow" href="https://designrefs.com/en/articles/ai-image-commercial-use/">
-          <span class="arow__date">2026. 09. 21</span>
-          <span class="arow__main">
-            <span class="arow__title">Can you use AI-generated images in client work?</span>
-            <p class="arow__desc">Copyright, terms of service, lookalikes, contracts. What to check in practice, in order. Written from Korea, with the US for comparison.</p>
+            <span class="arow__title">Canva, Figma and Adobe move into ChatGPT. What designers should take from DevDay</span>
+            <p class="arow__desc">OpenAI&#x27;s DevDay brought more than twenty announcements. Here are only the ones that touch design work, laid out with diagrams and numbers.</p>
           </span>
           <span class="arow__tag">AI Design · 4 min</span>
         </a>
       </div>
+      <nav class="art__pn"><a class="art__pn-a is-prev" href="https://designrefs.com/en/articles/ai-price-cut-week/" rel="prev"><span class="art__pn-l">← Previous</span><span class="art__pn-t">AI got half price in a week. Will design tools follow?</span></a><a class="art__pn-a is-next" href="https://designrefs.com/en/articles/claude-sonnet-5-5-design/" rel="next"><span class="art__pn-l">Next →</span><span class="art__pn-t">Claude Sonnet 5.5 leads with &quot;an eye for design&quot;, and the mid-priced tier changes</span></a></nav>
+      <p class="art__all"><a href="https://designrefs.com/en/articles/">All articles (10) →</a></p>
     </section>
     </main>
   </div>

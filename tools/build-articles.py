@@ -41,7 +41,9 @@ LANG = {
                       "AI와 같이 일하는 법, 스타일을 말로 옮기는 법, 레퍼런스와 커뮤니티 이야기."),
         "date": lambda y, m, d: f"{y}년 {m}월 {d}일",
         "read": lambda n: f"읽는 데 약 {n}분", "min": "분",
-        "share": "공유하기", "copy": "링크 복사", "more": "다른 글", "related": "이어서 볼 목록",
+        "share": "공유하기", "copy": "링크 복사", "more": "함께 읽으면 좋은 글", "related": "이어서 볼 목록",
+        "toc": "이 글의 차례", "prev": "이전 글", "next": "다음 글", "all": lambda n: f"읽을거리 전체 보기 ({n}편)",
+        "every": "전체", "locale": "ko_KR",
         "labels": A.RELATED_LABEL, "js": "articles.js", "rss": "rss.xml", "rss_lang": "ko",
         "note": "",
     },
@@ -54,7 +56,9 @@ LANG = {
                       "collecting references and design communities. Translated from Korean."),
         "date": lambda y, m, d: f"{MONTHS[m - 1]} {d}, {y}",
         "read": lambda n: f"{n} min read", "min": " min",
-        "share": "Share", "copy": "Copy link", "more": "More articles", "related": "Keep exploring",
+        "share": "Share", "copy": "Copy link", "more": "Read next", "related": "Keep exploring",
+        "toc": "In this article", "prev": "Previous", "next": "Next", "all": lambda n: f"All articles ({n})",
+        "every": "All", "locale": "en_US",
         "labels": A.RELATED_LABEL_EN, "js": "articles.en.js", "rss": "en/rss.xml", "rss_lang": "en",
         "note": '      <p class="art__note">Translated from the Korean original. '
                 '<a href="{ko}" hreflang="ko" lang="ko">Read in Korean</a></p>\n',
@@ -115,7 +119,7 @@ def build(lang, ko_slugs, en_slugs):
     def arow(x):
         """메인 화면 '읽을거리' 목록의 한 줄과 같은 모양 (js/app.js renderArticleRow)."""
         y, m, d = x["date"].split("-")
-        return (f'        <a class="arow" href="{art_url(x["slug"])}">\n'
+        return (f'        <a class="arow" href="{art_url(x["slug"])}" data-tag="{e(x.get("tag", ""))}">\n'
                 f'          <span class="arow__date">{y}. {m}. {d}</span>\n'
                 f'          <span class="arow__main">\n'
                 f'            <span class="arow__title">{e(x["title"])}</span>\n'
@@ -124,13 +128,41 @@ def build(lang, ko_slugs, en_slugs):
                 f'          <span class="arow__tag">{e(x.get("tag", ""))} · {x["min"]}{L["min"]}</span>\n'
                 f'        </a>')
 
-    def other_articles(slug):
-        rest = [x for x in items if x["slug"] != slug]
-        if not rest:
+    def pick_related(x, n=3):
+        """이어 읽을 글 고르기: 연결 목록이 겹칠수록, 태그가 같을수록, 날짜가 가까울수록 앞에."""
+        def score(o):
+            shared = len(set(o.get("related", [])) & set(x.get("related", [])))
+            same = 1 if o.get("tag") == x.get("tag") else 0
+            gap = abs(datetime.date.fromisoformat(o["date"]) - datetime.date.fromisoformat(x["date"])).days
+            return (-(shared * 2 + same), gap)
+        return sorted((o for o in items if o["slug"] != x["slug"]), key=score)[:n]
+
+    def toc_block(x):
+        """중간 제목이 셋 이상이면 글 위에 차례를 둡니다. 누르면 그 제목으로 바로 갑니다."""
+        if len(x["toc"]) < 3:
             return ""
-        rows = "\n".join(arow(x) for x in rest)
-        return (f'<section class="section">\n{section_head(L["more"], len(rest), level=2)}\n'
-                f'      <div class="list list--insight">\n{rows}\n      </div>\n    </section>')
+        li = "".join(f'<li><a href="#{i}">{e(t)}</a></li>' for i, t in x["toc"])
+        return (f'      <nav class="art__toc" aria-label="{L["toc"]}"><p class="art__toc-t">{L["toc"]}</p>'
+                f'<ol>{li}</ol></nav>\n')
+
+    def next_block(x):
+        """글 아래: 함께 읽으면 좋은 글 3편 + 이전·다음 글 + 전체 목록."""
+        rel = pick_related(x)
+        rows = "\n".join(arow(o) for o in rel)
+        i = next(k for k, o in enumerate(items) if o["slug"] == x["slug"])
+        newer = items[i - 1] if i > 0 else None          # 목록은 최신 글이 앞
+        older = items[i + 1] if i + 1 < len(items) else None
+        pn = ""
+        if newer or older:
+            cell = lambda o, label, cls: (f'<a class="art__pn-a {cls}" href="{art_url(o["slug"])}" rel="{"prev" if cls == "is-prev" else "next"}">'
+                                          f'<span class="art__pn-l">{label}</span><span class="art__pn-t">{e(o["title"])}</span></a>'
+                                          if o else '<span></span>')
+            pn = (f'\n      <nav class="art__pn">{cell(older, "← " + L["prev"], "is-prev")}'
+                  f'{cell(newer, L["next"] + " →", "is-next")}</nav>')
+        allink = f'\n      <p class="art__all"><a href="{list_url}">{L["all"](len(items))} →</a></p>'
+        head = section_head(L["more"], None, level=2) if rel else ""
+        body = f'      <div class="list list--insight">\n{rows}\n      </div>' if rel else ""
+        return f'<section class="section">\n{head}\n{body}{pn}{allink}\n    </section>'
 
     # ---------- 글 하나씩 ----------
     for x in items:
@@ -149,7 +181,7 @@ def build(lang, ko_slugs, en_slugs):
                     "description": x["desc"],
                     "articleSection": x.get("tag", ""),
                     "datePublished": x["date"],
-                    "dateModified": x["date"],
+                    "dateModified": x["updated"],
                     "inLanguage": lang,
                     "wordCount": x["words"] if lang == "en" else x["chars"],
                     "timeRequired": f"PT{x['min']}M",
@@ -170,7 +202,7 @@ def build(lang, ko_slugs, en_slugs):
       <h1 class="page__title">{A.nobreak(e(x["title"]))}</h1>
       <p class="page__intro">{e(x["desc"])}</p>
       <p class="art__meta"><time datetime="{x["date"]}">{L["date"](y, m, d)}</time> · {L["read"](x["min"])}</p>
-{note}{x["body"]}
+{note}{toc_block(x)}{x["body"]}
       <div class="share">
         <button class="share__btn" type="button" data-share>{L["share"]}</button>
         <button class="share__btn" type="button" data-copy>{L["copy"]}</button>
@@ -180,8 +212,14 @@ def build(lang, ko_slugs, en_slugs):
 
     {related_links(x.get("related", []))}
 
-    {other_articles(x["slug"])}"""
-        doc = document(title=x["title"], desc=x["desc"], url=url, body=body, jsonld=jsonld,
+    {next_block(x)}"""
+        # 카톡·페이스북·네이버가 읽는 글 정보 (발행일, 수정일, 분류, 태그)
+        tags = [x.get("tag", "")] + [L["labels"][s] for s in x.get("related", []) if s in L["labels"]]
+        art_meta = (f'\n  <meta property="article:published_time" content="{x["date"]}T09:00:00+09:00" />'
+                    f'\n  <meta property="article:modified_time" content="{x["updated"]}T09:00:00+09:00" />'
+                    f'\n  <meta property="article:section" content="{e(x.get("tag", ""))}" />'
+                    + "".join(f'\n  <meta property="article:tag" content="{e(t)}" />' for t in tags if t))
+        doc = document(title=x["title"], desc=x["desc"], url=url, body=body, jsonld=jsonld, head_extra=art_meta,
                        og_type="article", menu=menu("articles", lang), og_image=og_url,
                        main_class="page__main page__main--art", footer_nav=fnav,
                        lang=lang, alternates=alternates(x["slug"]))
@@ -190,8 +228,16 @@ def build(lang, ko_slugs, en_slugs):
         (out / "index.html").write_text(doc, encoding="utf-8")
 
     # ---------- 목록 페이지 ----------
+    # 태그로 골라 보기 (js/page.js 가 목록을 거릅니다)
+    tag_n = {}
+    for x in items:
+        tag_n[x.get("tag", "")] = tag_n.get(x.get("tag", ""), 0) + 1
+    chips = (f'<button class="pill is-active" type="button" data-atag="">{L["every"]} <span class="pill__count">{len(items)}</span></button>'
+             + "".join(f'<button class="pill" type="button" data-atag="{e(t)}">{e(t)} <span class="pill__count">{n}</span></button>'
+                       for t, n in sorted(tag_n.items(), key=lambda kv: -kv[1]) if t))
     list_body = f"""    <section class="section">
 {section_head(L["list"], len(items), L["list_head"])}
+      <div class="gfilter pills" role="group" aria-label="tag">{chips}</div>
       <div class="list list--insight">
 {chr(10).join(arow(x) for x in items)}
       </div>
@@ -270,6 +316,7 @@ def build(lang, ko_slugs, en_slugs):
             f"date: {json.dumps(x['date'], ensure_ascii=False)}",
             f"tag: {json.dumps(x.get('tag', ''), ensure_ascii=False)}",
             f"min: {x['min']}",
+            f"views: {json.dumps([APP_VIEW.get(s, s) for s in x.get('related', [])])}",
         ]) + " },")
     js += ["];", ""]
     (ROOT / "js" / L["js"]).write_text("\n".join(js), encoding="utf-8")

@@ -14,6 +14,27 @@ import json, re, pathlib
 import sitedata as D
 from nav import menu, footer_links
 from shell import document, section_head, SITE, e
+import articles as A
+
+
+def related_articles(slug, n=4):
+    """이 분야와 연결된 읽을거리 (글의 related 에 이 페이지 슬러그가 있는 것). 최신 글부터."""
+    posts = [x for x in A.load() if slug in x.get("related", [])][:n]
+    if not posts:
+        return ""
+    rows = []
+    for x in posts:
+        y, m, d = x["date"].split("-")
+        rows.append(f'        <a class="arow" href="{SITE}articles/{x["slug"]}/">\n'
+                    f'          <span class="arow__date">{y}. {m}. {d}</span>\n'
+                    f'          <span class="arow__main">\n'
+                    f'            <span class="arow__title">{e(x["title"])}</span>\n'
+                    f'            <p class="arow__desc">{e(x["desc"])}</p>\n'
+                    f'          </span>\n'
+                    f'          <span class="arow__tag">{e(x.get("tag", ""))} · {x["min"]}분</span>\n'
+                    f'        </a>')
+    return (f'\n    <section class="section">\n{section_head("관련 읽을거리", len(posts), "이 분야를 다룬 글", level=2)}\n'
+            f'      <div class="list list--insight">\n' + "\n".join(rows) + '\n      </div>\n    </section>')
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 
@@ -314,13 +335,35 @@ for slug, title, intro, body, n, names, navlabel in pages:
     body_full = f"""    <section class="section">
 {section_head(navlabel, n or ("" if slug in COUNT_BY_JS else None), SHORT_DESC.get(slug, ""))}
 {intro_html}{body}
-    </section>"""
+    </section>{related_articles(slug)}"""
     doc = document(title=title, desc=intro, url=url, body=body_full, jsonld=jsonld,
                    menu=menu(slug), footer_nav=FOOTER,
                    alternates=TALK_ALT if slug == "talk" else None)
     d = ROOT / slug
     d.mkdir(exist_ok=True)
     (d / "index.html").write_text(doc, encoding="utf-8")
+
+# ---------- 404 (없는 주소) ----------
+# GitHub Pages 는 없는 주소로 오면 /404.html 을 보여 줍니다. 한국어·영어를 같이 적고, 갈 곳을 안내합니다.
+posts_404 = A.load()[:3]
+rows_404 = "".join(f'<li><a href="{SITE}articles/{x["slug"]}/">{e(x["title"])}</a></li>' for x in posts_404)
+body_404 = f"""    <section class="section">
+{section_head("페이지를 찾을 수 없습니다", None, "Page not found")}
+      <p class="ptext">주소가 바뀌었거나 없어진 페이지입니다. 아래에서 찾던 것을 다시 찾아보세요.</p>
+      <form class="notfound__search" action="{SITE}" method="get" role="search">
+        <input class="search__input" type="search" name="q" placeholder="사이트 검색 / Search sites" aria-label="검색" />
+      </form>
+      <div class="page__navlinks" style="margin-top:20px">
+        <a href="{SITE}">디자인 허브 첫 화면</a><a href="{SITE}articles/">읽을거리</a><a href="{SITE}talk/">디자인 잡담</a>
+        <a href="{SITE}en/" hreflang="en" lang="en">English</a>
+      </div>
+      <h2 class="psub">최근 읽을거리</h2>
+      <ul class="ptext-list">{rows_404}</ul>
+    </section>"""
+doc = document(title="페이지를 찾을 수 없습니다", desc="찾는 페이지가 없습니다.", url=SITE + "404.html", body=body_404,
+               jsonld={"@context": "https://schema.org", "@type": "WebPage", "name": "404"},
+               menu=menu(""), footer_nav=FOOTER, robots="noindex, follow")
+(ROOT / "404.html").write_text(doc, encoding="utf-8")
 
 # ---------- 영문 디자인 잡담 (/en/talk/) ----------
 # 게시판은 한국어판과 하나를 같이 씁니다. 화면 문구는 js/talk.js 가 <html lang> 을 보고 바꿉니다.

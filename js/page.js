@@ -98,6 +98,20 @@
   });
   if (copyBtn) copyBtn.addEventListener('click', () => copy('link'));
 
+  /* ---------- 읽을거리 목록: 태그로 골라 보기 ---------- */
+  document.querySelectorAll('[data-atag]').forEach(chip => chip.addEventListener('click', () => {
+    const tag = chip.dataset.atag;
+    document.querySelectorAll('[data-atag]').forEach(c => c.classList.toggle('is-active', c === chip));
+    let n = 0;
+    document.querySelectorAll('.arow[data-tag]').forEach(row => {
+      const show = !tag || row.dataset.tag === tag;
+      row.hidden = !show;
+      if (show) n += 1;
+    });
+    const count = document.querySelector('.section__head .section__count');
+    if (count) count.textContent = n;
+  }));
+
   /* ---------- 모바일 메뉴 ---------- */
   const drawer = document.getElementById('drawer');
   const openBtn = document.getElementById('menu-open');

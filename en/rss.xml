@@ -17,7 +17,7 @@
       <content:encoded><![CDATA[    <p class="ptext">OpenAI&#x27;s developer event, DevDay, took place in San Francisco on September 29 (in Korea, at 2 a.m. today). There were more than twenty announcements.</p>
     <p class="ptext">The biggest headline was &quot;dots&quot;, agents that keep working in the background even after you close the app. But as a designer, what I kept coming back to was something else. Canva, Figma and Adobe moved inside the ChatGPT window.</p>
     <p class="ptext"><strong>First, a disclaimer.</strong> This is right after the event, so there are almost no hands-on reviews yet. What follows is based on OpenAI&#x27;s announcements and articles covering the event. I&#x27;ll also note that I&#x27;m building this site with Claude Code.</p>
-    <h2 class="psub">Three places a plugin can live</h2>
+    <h2 class="psub" id="s1">Three places a plugin can live</h2>
     <p class="ptext">The new thing is &quot;plugin extensions&quot;. Instead of the old approach of just handing you links in the chat, they put the app&#x27;s own screen inside ChatGPT. There are three places it can go.</p>
     <figure class="art__fig">
       <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/chatgpt-plugin-extensions-en-m.svg" width="600" height="1122" /><img src="https://designrefs.com/articles/img/chatgpt-plugin-extensions-en.svg" alt="Three places a plugin can live in ChatGPT. A diagram based on the announcement, not the actual interface." width="1200" height="760" loading="lazy" decoding="async" /></picture>
@@ -27,7 +27,7 @@
     <p class="ptext">The second is the file viewer. Files in the chat open in the app. Adobe made PDFs open in Acrobat and images in Photoshop.</p>
     <p class="ptext">The third is the @mention in the message box. Figma put file search here. You call it up with something like &quot;@Figma last week&#x27;s landing draft&quot;.</p>
     <p class="ptext">Plugins can be installed on every plan, including Free. But the file viewer and @mentions only work in the desktop app. For Free and Go users, the web version is only promised &quot;soon&quot;. For businesses, OpenAI also opened a marketplace with 32 partner companies, including Adobe and Figma.</p>
-    <h2 class="psub">The fourth attempt</h2>
+    <h2 class="psub" id="s2">The fourth attempt</h2>
     <p class="ptext">It&#x27;s welcome news, but one thing is worth knowing going in. This isn&#x27;t OpenAI&#x27;s first attempt to bring other companies&#x27; apps into ChatGPT.</p>
     <figure class="art__fig">
       <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/openai-app-platforms-en-m.svg" width="600" height="754" /><img src="https://designrefs.com/articles/img/openai-app-platforms-en.svg" alt="ChatGPT&#x27;s app platform changed four times in three years. The first plugins shut down within about a year, and the GPT Store closes this December." width="1200" height="609" loading="lazy" decoding="async" /></picture>
@@ -35,12 +35,12 @@
     </figure>
     <p class="ptext">Plugins, launched in March 2023, shut down a little over a year later. GPTs and the GPT Store, launched that November, close on December 11. The Apps SDK arrived in October 2025, and this is the fourth. A Brazilian tech outlet called it &quot;the fourth time in three years&quot;.</p>
     <p class="ptext">So rather than hanging your whole workflow on it, trying the one or two plugins you use most is about right. And remember that even if the platform changes again, your original files still live in Figma and Adobe.</p>
-    <h2 class="psub">Other announcements that touch design work</h2>
+    <h2 class="psub" id="s3">Other announcements that touch design work</h2>
     <p class="ptext"><strong>Pages.</strong> A new document type written by people and agents together, with research, diagrams and data visualization in one document. Worth a look if you write a lot of briefs or research summaries.</p>
     <p class="ptext"><strong>Collaborative slides.</strong> Several people editing one deck at once, exportable to PowerPoint and Google Slides. Promised &quot;in the coming weeks&quot;.</p>
     <p class="ptext"><strong>Spaces.</strong> A place for a team to keep conversations and agents together. It launched alongside @ChatGPT in Slack and Teams.</p>
     <p class="ptext"><strong>Dots.</strong> Give one a goal and it keeps working with its own cloud computer and browser. It runs on GPT-6 Astra and connects to more than 4,000 apps. The first dot is included in the Pro and Business Premium plans.</p>
-    <h2 class="psub">And the prices</h2>
+    <h2 class="psub" id="s4">And the prices</h2>
     <p class="ptext">On the model side, GPT-6.1 Sol arrived. OpenAI says it nearly matches its top model, GPT-6 Astra, at a fifth of the price: $2 input and $10 output per million tokens.</p>
     <figure class="art__fig">
       <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/devday-sol-cost-en-m.svg" width="600" height="1035" /><img src="https://designrefs.com/articles/img/devday-sol-cost-en.svg" alt="Independent evaluator&#x27;s overall index and cost per task. One point apart in score, less than a quarter of the cost." width="1200" height="537" loading="lazy" decoding="async" /></picture>
@@ -50,7 +50,7 @@
     <p class="ptext">OpenAI&#x27;s own tables show a wider gap in places. On a science-focused terminal benchmark, Sol scored 57.0% and Astra 68.1%. It won&#x27;t stand in for Astra on everything.</p>
     <p class="ptext">The interesting part is the $2 / $10 price. It&#x27;s exactly the same as <a href="https://designrefs.com/en/articles/claude-sonnet-5-5-design/">Claude Sonnet 5.5</a>, released a day earlier. The two companies are now going head to head in the middle tier at the same price.</p>
     <p class="ptext">Subscription plans changed too. There&#x27;s a new top plan at $500 a month (Pro 500), and on the $200 plan, usage for new subscribers was cut in half. Existing subscribers keep what they had. That part has drawn plenty of criticism since the announcement.</p>
-    <h2 class="psub">So, for now</h2>
+    <h2 class="psub" id="s5">So, for now</h2>
     <p class="ptext">There isn&#x27;t much to do today. If you use the ChatGPT desktop app, install the Canva, Figma or Adobe plugin you already use and see how useful it is beside the chat.</p>
     <p class="ptext">The bigger thing is the direction. Design tools are moving into ChatGPT, and ChatGPT is moving into design tools. Wherever you start, you&#x27;re heading toward the same files. In between, where the original lives and who does the final check is still a person&#x27;s call. I wrote about that boundary in <a href="https://designrefs.com/en/articles/ai-design-tools-in-practice/">Why thirty AI drafts don&#x27;t make the work any shorter</a>.</p>
     <p class="art__note">Sources: <a href="https://openai.com/index/devday-2026-recap/" target="_blank" rel="noopener">OpenAI DevDay 2026 recap</a>, <a href="https://the-decoder.com/openais-reveals-a-new-chatgpt-that-looks-less-like-a-chatbot-and-more-like-an-operating-system/" target="_blank" rel="noopener">the-decoder</a>, <a href="https://antihype.com.br/c/software/plugin-extensions-chatgpt-apps-na-barra-lateral/" target="_blank" rel="noopener">antihype.com.br</a>, <a href="https://dev.to/axrisi/openai-devday-2026-every-announcement-with-prices-and-availability-1mbh" target="_blank" rel="noopener">DEV Community roundup</a>, <a href="https://thenextweb.com/news/openai-devday-pro-200-usage-cut-pro-500-plan" target="_blank" rel="noopener">The Next Web</a>, <a href="https://www.beri.net/article/gpt-6-1-sol-devday-2026-astra-fifth-price-terminal-bench-score-gap-cost-per-task" target="_blank" rel="noopener">THE DAILY BRIEF</a>.</p>]]></content:encoded>
@@ -66,14 +66,14 @@
     <p class="ptext">Sonnet is the middle tier of Anthropic&#x27;s lineup. Not the priciest, smartest model, and not the cheapest, fastest one. Its launches are usually quiet, but this one had a line that stood out: Anthropic wrote that the model has &quot;a sharp eye for design&quot;.</p>
     <p class="ptext">It&#x27;s unusual for a mid-priced model to lead with design. And this tier is closer to designers than you might think. For a tool company selling AI features, cost makes this price range the natural default rather than the most expensive model.</p>
     <p class="ptext"><strong>First, a disclaimer.</strong> I&#x27;m building this site with Claude Code. So I&#x27;ve only used company announcements and results from people outside who ran their own tests, and noted who measured what.</p>
-    <h2 class="psub">Same price, crowded row</h2>
+    <h2 class="psub" id="s1">Same price, crowded row</h2>
     <p class="ptext">The price is the same as Sonnet 5: $2 input and $10 output per million tokens. What changed is speed and how much it says. Anthropic says it&#x27;s more than 30% faster than the previous model and finishes the same work with fewer tokens, so most tasks cost up to 30% less.</p>
     <figure class="art__fig">
       <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/price-tiers-0929-en-m.svg" width="600" height="1445" /><img src="https://designrefs.com/articles/img/price-tiers-0929-en.svg" alt="Price per million tokens. Models from two companies stand side by side in the $2 input, $10 output row." width="1200" height="693" loading="lazy" decoding="async" /></picture>
       <figcaption>Price per million tokens. Models from two companies stand side by side in the $2 input, $10 output row.</figcaption>
     </figure>
     <p class="ptext">Put it on a chart and something interesting shows up. OpenAI&#x27;s GPT-6 Sol sits in the same $2 / $10 row. After <a href="https://designrefs.com/en/articles/ai-price-cut-week/">the week AI got half price</a>, the two companies&#x27; mid-tier models now face each other at exactly the same price. The top row is still $10 input and $50 output.</p>
-    <h2 class="psub">What it&#x27;s supposed to be good at</h2>
+    <h2 class="psub" id="s2">What it&#x27;s supposed to be good at</h2>
     <p class="ptext">Anthropic&#x27;s list: well-scoped everyday tasks, fixing bugs, and making polished documents, slides and spreadsheets. Design was added to that. It&#x27;s described as adding polish to interfaces and following templates well. In internal testing, Anthropic says it produced an investment presentation that needed almost no editing.</p>
     <div class="art__tablewrap"><table class="art__table">
       <thead><tr><th>Evaluation</th><th>Sonnet 5</th><th>Sonnet 5.5</th><th>Measured by</th></tr></thead>
@@ -85,7 +85,7 @@
     </table></div>
     <p class="art__note">Source: <a href="https://www.anthropic.com/claude-sonnet-5-5" target="_blank" rel="noopener">Anthropic, Introducing Claude Sonnet 5.5</a>. Anthropic also noted it scores two points below the higher-tier Opus 5.5 on GDPval-AA.</p>
     <p class="ptext">Launch tables tend to collect the good numbers. So I was more curious about results from someone outside.</p>
-    <h2 class="psub">Asking it to build a one-page site</h2>
+    <h2 class="psub" id="s3">Asking it to build a one-page site</h2>
     <p class="ptext">Right after launch, developer Thomas Wiegold <a href="https://thomas-wiegold.com/blog/claude-sonnet-5-5-review/" target="_blank" rel="noopener">posted a test on his blog</a>. The task: a single page for &quot;Low Tide&quot;, a made-up outdoor screening of three short films on a beach. The content was fixed (date, gate times, programme, tickets, FAQ), and Opus 5.5, Sonnet 5.5 and Sonnet 5 each got the same setup.</p>
     <p class="ptext">The ranking was Opus 5.5, Sonnet 5.5, then Sonnet 5. But the character of each result is what&#x27;s interesting.</p>
     <p class="ptext">Opus 5.5 went for atmosphere. A big, soft &quot;Low Tide&quot; wordmark over a sunset, with the type and the sun reflected in the water line. Nine animations, and the most thorough accessibility work.</p>
@@ -96,7 +96,7 @@
       <figcaption>Cost, time and output for the same task. Sonnet 5.5 was cheaper than Opus, and said more.</figcaption>
     </figure>
     <p class="ptext">The numbers are worth a look too. Sonnet 5.5 finished for $1.35, 30% less than Opus 5.5 ($1.94). But it actually produced more output tokens than Opus. The total came down because its tokens are cheaper, not because it said less. It&#x27;s a personal test with one run per model, so it can&#x27;t settle which is better on its own.</p>
-    <h2 class="psub">What a better middle tier changes</h2>
+    <h2 class="psub" id="s4">What a better middle tier changes</h2>
     <p class="ptext">Designers don&#x27;t often pick a model by name. Usually we use whatever model our tools have chosen, and which tier a tool uses is decided by cost.</p>
     <p class="ptext">So if the middle tier gets better design sense, the first drafts from tools we use without knowing the model underneath can improve along with it. That&#x27;s closer to daily work than the top model&#x27;s score.</p>
     <p class="ptext">Checking for yourself isn&#x27;t hard. Give it one template you use often and one page of brand guidelines, and ask it to build the same page. Watch how well it sticks to the template, and where it lets spacing and type sizes drift. That&#x27;s the part Anthropic sounded most confident about this time.</p>
@@ -113,16 +113,16 @@
     <p class="ptext">The interesting part is the money. In the same month, open models took only 14% of the spending. Open models get the volume; closed models still make the money. It means people have started splitting the work: routine jobs go to cheap models, and only the important ones go to expensive models.</p>
     <p class="ptext">The same thing is happening with images. And right there, a problem popped up that designers can easily trip over.</p>
     <p class="ptext"><strong>First, a disclaimer.</strong> This isn&#x27;t legal advice. License terms differ between model versions and they change. Check the original text on the model page before you actually use anything.</p>
-    <h2 class="psub">Transparent backgrounds, straight out</h2>
+    <h2 class="psub" id="s1">Transparent backgrounds, straight out</h2>
     <p class="ptext">On September 20, Alibaba released an image model called Qwen-Image-2.1. It has a few features designers will welcome.</p>
     <p class="ptext">The most striking is transparency. It produces PNGs with the background already gone. No separate cut-out step, and you can even pick out and edit just the text on a transparent layer. You can feed it up to ten reference images at once, which makes it handy for group shots, virtual try-ons and room styling drafts. The default output is 2048×2048.</p>
     <p class="ptext">It&#x27;s small, too. The image generation part has 7 billion parameters and runs on a graphics card around the level of an RTX 3090. Quantized, it fits in roughly 16GB of video memory. In other words, you can run it on your own computer, for free, as much as you like.</p>
     <p class="ptext">The performance claims deserve some caution for now. The result that it beats most closed models comes from a benchmark Alibaba made itself, and there are no independent evaluations yet. Early testers said it&#x27;s clearly sharper than the previous version, but noted a slight yellowish cast and missed instructions in complex compositions.</p>
-    <h2 class="psub">But you can&#x27;t use it for work</h2>
+    <h2 class="psub" id="s2">But you can&#x27;t use it for work</h2>
     <p class="ptext">The problem is the license. Qwen-Image-2.1 comes with the &quot;Qwen Research License&quot;, which limits use to research and evaluation, non-commercial only. To use it for paid work, you need separate permission from Alibaba.</p>
     <p class="ptext">There&#x27;s a reason this became news. The previous versions, Qwen-Image and 2.0, were under Apache 2.0, which allows free commercial use. A model with the same name changed its terms completely with a 0.1 version bump. On Hacker News, some reactions went as far as saying it can hardly be called open anymore.</p>
     <p class="ptext">If you heard last year that &quot;Qwen Image is fine for commercial use&quot;, that no longer holds for 2.1.</p>
-    <h2 class="psub">What&#x27;s mixed into the word &quot;open&quot;</h2>
+    <h2 class="psub" id="s3">What&#x27;s mixed into the word &quot;open&quot;</h2>
     <p class="ptext">&quot;Open model&quot; actually lumps together several different situations. Whether you can download it and whether you&#x27;re allowed to use it for work need to be looked at separately.</p>
     <div class="art__tablewrap"><table class="art__table">
       <thead><tr><th>Status</th><th>Download</th><th>Commercial use</th><th>Example</th></tr></thead>
@@ -134,11 +134,11 @@
     </table></div>
     <p class="art__note">Sources: <a href="https://the-decoder.com/alibabas-open-weight-qwen-image-2-1-claims-to-beat-closed-models-in-image-generation-with-just-7-billion-parameters/" target="_blank" rel="noopener">the-decoder</a> (Sep 20), <a href="https://mixed-news.com/en/qwen-image-2-1-transparent-rgba-7b-open-weights-research-licence/" target="_blank" rel="noopener">MIXED</a>, <a href="https://en.wikipedia.org/wiki/Ideogram_(text-to-image_model" target="_blank" rel="noopener">Wikipedia: Ideogram</a>).</p>
     <p class="ptext">The first two rows look identical from the outside. Both are on Hugging Face, and both download for free. The only difference is one word in the License field on the model page.</p>
-    <h2 class="psub">What if I just run it on my own computer?</h2>
+    <h2 class="psub" id="s4">What if I just run it on my own computer?</h2>
     <p class="ptext">It&#x27;s an easy thought. If it runs on my own graphics card and never touches a server, who would know?</p>
     <p class="ptext">A license applies wherever you run the model. Whether anyone notices is a separate question. And with client work, trouble usually comes much later: months after a campaign ends, when someone asks, &quot;How was this image made?&quot;</p>
     <p class="ptext">One more thing. Clearing the license isn&#x27;t the end of it. Whether AI output gets copyright protection, and whether it resembles someone else&#x27;s character, are separate issues. I covered that in <a href="https://designrefs.com/en/articles/ai-image-commercial-use/">Can you use AI-generated images in client work?</a></p>
-    <h2 class="psub">Thirty seconds before you download</h2>
+    <h2 class="psub" id="s5">Thirty seconds before you download</h2>
     <p class="ptext">When you download an open image model, there are about three places to look.</p>
     <p class="ptext">The License field, on the right side or at the bottom of the model page. If you see the words research or non-commercial there, assume you can&#x27;t use it for work.</p>
     <p class="ptext">The version number. As we saw, the same model can have different terms in each version. If you got a ComfyUI workflow from someone else, check which files are actually inside it.</p>
@@ -155,7 +155,7 @@
       <content:encoded><![CDATA[    <p class="ptext">Last Tuesday, September 22, three price sheets changed in a single day. Anthropic released Claude Opus 5.5, and the same day OpenAI unveiled GPT-6 Sol and GPT-6 Luna. All three are cheaper than the previous generation. Quite a bit cheaper.</p>
     <p class="ptext">API prices sound far removed from designers. Not many designers call an API directly. But the credit prices charged by Figma Make, Canva and every image and prototyping tool out there sit on top of these numbers. When the underlying cost goes down, what we pay moves too, eventually. The only question is when, and by how much.</p>
     <p class="ptext"><strong>First, a disclaimer.</strong> All prices are as of September 27. OpenAI&#x27;s developer event (DevDay) is scheduled for the 29th, so they may change again within days. Also, I&#x27;m building this site with Claude Code, which is why I&#x27;ve only used numbers from company announcements and independent outlets.</p>
-    <h2 class="psub">The price sheet, one week later</h2>
+    <h2 class="psub" id="s1">The price sheet, one week later</h2>
     <div class="art__tablewrap"><table class="art__table">
       <thead><tr><th>Model</th><th>Input (per 1M tokens)</th><th>Output (per 1M tokens)</th><th>vs. previous generation</th></tr></thead>
       <tbody>
@@ -168,15 +168,15 @@
     <p class="art__note">Sources: <a href="https://simonwillison.net/2026/Sep/22/opus-and-sol-and-luna/" target="_blank" rel="noopener">Simon Willison</a> (Sep 22), <a href="https://www.digitalapplied.com/blog/ai-model-releases-september-2026-tracker" target="_blank" rel="noopener">Digital Applied&#x27;s September model release tracker</a>.</p>
     <p class="ptext">What stands out more than the numbers is Anthropic&#x27;s claim. It said Opus 5.5 performs at the level of Fable 5.1 on most work. If that&#x27;s true, you can now get what the top model did three weeks ago for 40% of the price. It&#x27;s the company&#x27;s own claim, though, so it&#x27;s worth waiting for independent evaluations to pile up.</p>
     <p class="ptext">This didn&#x27;t happen out of nowhere this week, either. According to <a href="https://vercel.com/blog/ai-gateway-production-index-september-2026" target="_blank" rel="noopener">Vercel&#x27;s figures</a> from its gateway that routes to many AI models, the average token price fell 23.2% in August alone, the third monthly drop in a row. September 22 is closer to the day that trend showed up on the price sheets all at once.</p>
-    <h2 class="psub">The top row hasn&#x27;t moved</h2>
+    <h2 class="psub" id="s2">The top row hasn&#x27;t moved</h2>
     <p class="ptext">Not everything got cheaper. The bottom row of the table, Fable 5.1 and Astra, is still $10 input and $50 output.</p>
     <p class="ptext">If anything, a new tier seems to be forming above them. According to a September 27 report by Korea&#x27;s AI Times, traces of a $500-a-month &quot;Pro Max&quot; plan were found in ChatGPT&#x27;s settings screen. That&#x27;s two and a half times the current top Pro plan ($200 a month). There&#x27;s no official announcement yet.</p>
     <p class="ptext">So prices aren&#x27;t moving in one direction; they&#x27;re spreading apart. Common work is getting cheap fast, while the best models and the fastest processing hold on to high prices.</p>
     <p class="ptext">And cheap tokens don&#x27;t mean cheap work. In my earlier <a href="https://designrefs.com/en/articles/claude-fable-5-1-vs-gpt-6-astra/">comparison of Fable 5.1 and Astra</a>, the price sheets were identical, yet the cost per task differed by more than double, because of how much each model talked. A similar story came up this time. Simon Willison wrote that when he set Opus 5.5 to maximum thinking, it used up the entire 128,000-token output limit without reaching a conclusion, costing $2.56 per attempt. Even so, he said he&#x27;d switched his default models for development work to GPT-6 Sol and Opus 5.5.</p>
-    <h2 class="psub">It&#x27;s already reaching design tools</h2>
+    <h2 class="psub" id="s3">It&#x27;s already reaching design tools</h2>
     <p class="ptext">Figma moved first. At the Goldman Sachs technology conference on September 8, CEO Dylan Field said Figma had cut the price of Figma Make credits quite a bit, in some cases by half. He explained that the company chose to grow usage over short-term margins.</p>
     <p class="ptext">On the 16th of the same month, Figma let people publish Figma Weave, its workflow tool for generating images and vectors, to the Community. It&#x27;s free for now while in open beta. But Figma has already announced that it will consume AI credits once it&#x27;s generally available. Free is for the beta only.</p>
-    <h2 class="psub">What&#x27;s getting cheaper is the price, not the result</h2>
+    <h2 class="psub" id="s4">What&#x27;s getting cheaper is the price, not the result</h2>
     <p class="ptext">At the same event, Field also said this: &quot;Hallucination is a huge issue.&quot; Pulling a design system into the wrong context is still a problem too, he said. His assessment was that frontier models are improving at design work only incrementally.</p>
     <p class="ptext">Designers&#x27; experience isn&#x27;t much different. The <a href="https://stateofaidesign.com/" target="_blank" rel="noopener">AI in Design Report 2026</a>, published September 16 by Designer Fund and Foundation Capital, surveyed more than 900 designers in over 60 countries. The survey was run in the first quarter of this year.</p>
     <ul class="ptext-list">
@@ -186,7 +186,7 @@
       <li>The top reason people keep using a tool is reliable quality (80%).</li>
     </ul>
     <p class="ptext">If price were the problem, it would be solved by now. These numbers say it isn&#x27;t. What people want isn&#x27;t a cheaper result but one that&#x27;s reliably good every time.</p>
-    <h2 class="psub">So what you can do now</h2>
+    <h2 class="psub" id="s5">So what you can do now</h2>
     <p class="ptext">If you use seven tools, it&#x27;s probably time for a cleanup. There&#x27;s a good chance two subscriptions are doing the same job.</p>
     <p class="ptext">It&#x27;s also worth checking which model each of your tools uses. It&#x27;s usually listed in the settings or the help pages. If the underlying cost has halved and the credit price hasn&#x27;t moved in three months, that&#x27;s one reason to switch tools.</p>
     <p class="ptext">You can hold off on annual plans for a bit. Unit prices have dropped three months in a row, and there&#x27;s another announcement on the 29th. Paying month to month hurts less right now.</p>
@@ -202,7 +202,7 @@
       <content:encoded><![CDATA[    <p class="ptext">In the first week of September, two frontier AI models came out two days apart: Anthropic&#x27;s Claude Fable 5.1 on September 1–2, and OpenAI&#x27;s GPT-6 Astra on September 3. Both were announced as the smartest yet, and, as it happens, their price sheets are identical.</p>
     <p class="ptext">Asked which is better, it&#x27;s hard to answer in one line. Lay out the official specs, the independent evaluations and the reactions of people who tried them first, one after another, and you&#x27;ll see why.</p>
     <p class="ptext"><strong>First, a disclaimer.</strong> Many of the benchmarks were measured by the companies that made the models. Each table notes who measured what. Also, I&#x27;m building this site with Claude Code, so I only used numbers that have a source. All figures are as of mid-September 2026 and are changing fast.</p>
-    <h2 class="psub">Specs: same price, different cache</h2>
+    <h2 class="psub" id="s1">Specs: same price, different cache</h2>
     <div class="art__tablewrap"><table class="art__table">
       <thead><tr><th></th><th>Claude Fable 5.1</th><th>GPT-6 Astra</th></tr></thead>
       <tbody>
@@ -219,7 +219,7 @@
     <p class="ptext">On the table alone, they&#x27;re practically twins. The differences are in two places.</p>
     <p class="ptext">For work where the model rereads the same long material, the picture changes. The cache price, what you pay to reload content it has already read, is a quarter as much for Fable 5.1 as for Astra. Attaching a brand guideline PDF and asking dozens of questions about it is exactly this kind of work. And Fable 5.1 knows about the world two months later.</p>
     <p class="ptext">There are no official numbers to compare speed. Anthropic classifies Fable 5.1 as &quot;slower&quot; among its own models.</p>
-    <h2 class="psub">Same overall score, more than double the cost</h2>
+    <h2 class="psub" id="s2">Same overall score, more than double the cost</h2>
     <p class="ptext">On the overall index from independent evaluator Artificial Analysis (September 9, v4.3), the two models are tied for first at 53 points. Their coding agent index is also the same, at 62.</p>
     <p class="ptext">The difference is in what it cost to reach the same score. On average, Fable 5.1 spent $7.63 per index task and Astra spent $3.26. The token prices are the same; the cost differs because of how much they say. Per task, Fable 5.1 used about 78,000 output tokens and Astra about 27,000.</p>
     <figure class="art__fig">
@@ -227,7 +227,7 @@
       <figcaption>Cost and output to reach the same score. A shorter bar means less was used.</figcaption>
     </figure>
     <p class="ptext">One caution. This index was revised twice in the week after Astra came out, and in that time Astra climbed from fifth to first. It&#x27;s too early to call these settled numbers.</p>
-    <h2 class="psub">Change the kind of work and the ranking changes</h2>
+    <h2 class="psub" id="s3">Change the kind of work and the ranking changes</h2>
     <div class="art__tablewrap"><table class="art__table">
       <thead><tr><th>Evaluation</th><th>What it measures</th><th>Fable 5.1</th><th>Astra</th><th>Measured by</th></tr></thead>
       <tbody>
@@ -243,7 +243,7 @@
     <p class="ptext">In head-to-heads building web screens, Astra leads; in agent head-to-heads involving long tool use, Fable 5.1 leads. Even in vote-based evaluations where people choose directly, the results split like this.</p>
     <p class="ptext">The row worth noticing is the last one. Even in OpenAI&#x27;s own announcement table, Fable 5.1 scores higher on expert-level questions.</p>
     <p class="ptext">It&#x27;s also worth knowing that the two companies choose different tests to announce. Anthropic published a SWE-bench Pro score of 81.2% for Fable 5.1, but OpenAI didn&#x27;t publish Astra&#x27;s score on the same test. Cases where the same test&#x27;s scores sit side by side are rarer than you&#x27;d think.</p>
-    <h2 class="psub">How designers reacted</h2>
+    <h2 class="psub" id="s4">How designers reacted</h2>
     <p class="ptext">When OpenAI introduced Astra, it put <a href="https://x.com/OpenAIDevs/status/2095596149654868092" target="_blank" rel="noopener">visual judgment in front-end design</a> up front: give it a sketch or reference and it turns it into a working screen, refining layout, typography and spacing.</p>
     <p class="ptext">The verdicts from designers who tried them first don&#x27;t lean one way. One comparison (<a href="https://eidosdesign.substack.com/p/claude-fable-51-vs-gpt-6-astra-for" target="_blank" rel="noopener">Eidos Design</a>, September 7) summed it up like this.</p>
     <ul class="ptext-list">
@@ -253,7 +253,7 @@
     </ul>
     <p class="ptext">A comparison that split five design tasks between them (<a href="https://betterstack.com/community/guides/ai/kimi-claude-astra-design/" target="_blank" rel="noopener">Better Stack</a>, September 14) reached a similar conclusion. For web design, Kimi K3 actually did best; Astra won 3D, and Fable 5.1 won 2D games. UI components were about even across the three, and none of them produced mobile app designs usable as is.</p>
     <p class="ptext">One more. Artificial Analysis noted that on a measure of the quality of documents like presentations, Astra scored lower than its predecessor, GPT-5.6 Sol. Worth knowing if you make a lot of slides.</p>
-    <h2 class="psub">In short</h2>
+    <h2 class="psub" id="s5">In short</h2>
     <p class="ptext">The price sheets are the same, but the actual cost depends on how you use them. For work where you attach long material and ask many times, Fable 5.1 with its cheaper cache has the edge; for short, one-shot answers, Astra, which talks less, has the edge.</p>
     <p class="ptext">In evaluations, Astra leads at quickly producing web screens and 3D, while Fable 5.1 leads at long tasks involving tool use. The approach recommended by designers who tried them first lines up with these results: explore first with Astra, finish and refine with Fable 5.1.</p>
     <p class="ptext">And both models are less than a month old. The rankings could change again in a few weeks. In the end, you only know if it fits your work by running it on your work.</p>
@@ -270,28 +270,28 @@
     <p class="ptext">The first time I saw that screen, honestly, it scared me a little. What happens to my job now?</p>
     <p class="ptext">But after a few months of using these tools, something strange happened. I had far more drafts than before, and I was still leaving work at the same time. Some days I left later.</p>
     <p class="ptext">I&#x27;d get thirty images and flip through them for ages. All of them looked plausible. Not one was something I could send to a client. Only after living in that odd stretch for a while did I understand: there&#x27;s work AI takes off your plate, and work it leaves exactly where it was.</p>
-    <h2 class="psub">The time in front of a blank screen</h2>
+    <h2 class="psub" id="s1">The time in front of a blank screen</h2>
     <p class="ptext">The biggest change is in how things start.</p>
     <p class="ptext">Sitting in front of an empty artboard is the most daunting, most wasteful part of design work. AI fills that gap well. When there are three possible directions, generating one image for each makes the thirty minutes I used to spend explaining them in a meeting disappear.</p>
     <p class="ptext">The point is that you don&#x27;t generate those images to use them. They&#x27;re material for starting a conversation. &quot;This way, not that way.&quot; Nothing gets that sentence out of people faster.</p>
     <p class="ptext">The tasks that take a lot of hands but almost no judgment have shrunk too. Removing backgrounds, upscaling low-res images, turning one banner into twelve aspect ratios. Jobs I used to hold onto for an hour are done in minutes. Whatever anyone says, that part is a clear win.</p>
-    <h2 class="psub">And then it gets stuck</h2>
+    <h2 class="psub" id="s2">And then it gets stuck</h2>
     <p class="ptext">Ask it to make the same thing again, and it starts to drift.</p>
     <p class="ptext">Get a character you like, ask for another pose, and you get a subtly different person. The eyes are a little off, the hair a little longer. For work where consistency is the quality, like a brand illustration set or a campaign series, that&#x27;s fatal.</p>
     <p class="ptext">&quot;Just tweak it a bit&quot; doesn&#x27;t work well either. I want to trim 4px from the right margin, and the generator redraws everything from scratch every time. Half of design work is revisions, and this is where the most time leaks away while you wrestle with the tool.</p>
     <p class="ptext">Korean text is still a long way off. Final consonants vanish and letter parts scatter. For anything with lettering, it&#x27;s faster in the end to generate without text and set the type yourself.</p>
     <p class="ptext">Then there are numbers. Trim lines, real-world measurements, contrast ratios, anything that has to be exactly right, AI gets plausibly wrong. Obviously wrong would be better. Plausibly wrong slips through review.</p>
-    <h2 class="psub">So this is how I split it now</h2>
+    <h2 class="psub" id="s3">So this is how I split it now</h2>
     <p class="ptext">Lay out the flow of a project and the places where AI fits become fairly clear.</p>
     <p class="ptext">I use it heavily in research and exploration. The output gets thrown away anyway, so there&#x27;s no pressure. I don&#x27;t use it at the moment of choosing a direction. I think the right order is to decide what to make first and then look for material, not to pick from whatever was generated.</p>
     <p class="ptext">When it&#x27;s time to actually build, I go back to the tools I normally use. AI only plays assistant, cleaning backgrounds or raising resolution. Then when the stage comes to stamp out many sizes for many channels, AI&#x27;s share goes back up. The final check is done by a person: lettering, the number of fingers, the logo&#x27;s shape, dimensions.</p>
     <blockquote class="art__quote">Deciding the direction and checking at the end. Hand those two over and things go wrong.</blockquote>
     <p class="ptext">On the other hand, if you keep doing exploration and mass production by hand, you&#x27;ll fall behind. In the end it&#x27;s about where you use it.</p>
-    <h2 class="psub">What I look at first when choosing a tool</h2>
+    <h2 class="psub" id="s4">What I look at first when choosing a tool</h2>
     <p class="ptext">When a new tool comes out, I read the terms before looking at the output. Some services write different rights for images made on the free plan and the paid plan. I also check whether my uploads are used for training and whether I can turn that off. For a tool I&#x27;d upload client files to, that&#x27;s the most important thing.</p>
     <p class="ptext">Next is the file. A tool that hands you a single PNG and a tool that gives you layers or vectors leave you with completely different amounts of work afterward.</p>
     <p class="ptext">Last, whether it works inside the tools I already use. Features that live inside Figma or Photoshop end up getting used; features that need one more tab end up forgotten. There&#x27;s a list by type under <a href="https://designrefs.com/en/#ai">AI tools</a>.</p>
-    <h2 class="psub">An eye for choosing</h2>
+    <h2 class="psub" id="s5">An eye for choosing</h2>
     <p class="ptext">The better the tools get, the more I feel the center of gravity of skill shifting.</p>
     <p class="ptext">It used to be that the skill was in your hands, in getting the picture in your head onto the screen. That barrier is lower now. What&#x27;s widened instead is the gap in deciding what to make, and in the eye that picks one thing out of everything that pours out.</p>
     <p class="ptext">Choosing one image out of thirty is harder than making thirty. No prompt solves that.</p>
@@ -308,27 +308,27 @@
     <p class="ptext">The first time I heard that, I sighed inwardly. Feel? Which feeling?</p>
     <p class="ptext">Over time I realized the person who said it hadn&#x27;t done anything wrong. Not many people have practiced putting the image in their head into words. The problem was that I, the designer, hadn&#x27;t practiced either. Apart from asking back, &quot;What kind of feeling do you want?&quot;, I had nothing. And then the meeting runs two hours and goes nowhere.</p>
     <p class="ptext">These days there&#x27;s one more listener. We give instructions to tools in words now. Writing a prompt is surprisingly similar to talking with a client. It&#x27;s a moment when practice at breaking style into words turns directly into skill.</p>
-    <h2 class="psub">&quot;Let&#x27;s go with a Bauhaus feel&quot;</h2>
+    <h2 class="psub" id="s1">&quot;Let&#x27;s go with a Bauhaus feel&quot;</h2>
     <p class="ptext">Style names are convenient. They&#x27;re also dangerous.</p>
     <p class="ptext">Hear the same word, &quot;Bauhaus&quot;, and one person pictures red, yellow and blue geometric shapes while another pictures gray sans-serifs on a grid. Neither is wrong. A style name crams decades of work into one word, so its resolution is bound to be low.</p>
     <p class="ptext">So I use the name only as a starting point and break it down from there. I usually split it into six layers.</p>
-    <h2 class="psub">Six layers</h2>
+    <h2 class="psub" id="s2">Six layers</h2>
     <p class="ptext">The first is <strong>era and movement</strong>. Art Deco, Swiss Style, Memphis, Y2K. What matters more than the name is what the movement was reacting against. Swiss Style chose the grid to strip away ornament; Memphis burst out because that ascetic attitude had grown tiresome. Knowing the context shows you how far you can push. There&#x27;s a chronological list in the <a href="https://designrefs.com/en/#styles">Style Guide</a>.</p>
     <p class="ptext">The second is <strong>form</strong>. Geometric or organic, sharp corners or rounded, thick lines or thin. Clients pick up this layer quickly. &quot;Angular feels solid; rounded feels friendly.&quot; Pairing a form with the impression it gives moves the conversation forward.</p>
     <p class="ptext">The third is <strong>color</strong>, and ending at &quot;blue&quot; is the same as saying nothing. You need to say whether saturation is high or low, whether the lightness gap between background and text is large, and how few colors it holds on with. Even a buzzword like &quot;dopamine colors&quot; has to be translated into saturation and number of colors before hands can move.</p>
     <p class="ptext">The fourth is <strong>texture and medium</strong>. The one most often left out, and the one with the biggest effect. Risograph, silkscreen, newspaper halftone dots, slightly misregistered printing, the rough tone of something photocopied a few times over, film grain. The same shape becomes a completely different object depending on what it was printed with.</p>
     <p class="ptext">The fifth is <strong>composition and gaze</strong>. Centered or asymmetric, a visible grid or a hidden one, white space used as structure or left over as empty room. If photos are involved, camera height and light direction belong to this layer too.</p>
     <p class="ptext">The last is <strong>mood</strong>. Neat, messy, dry, expensive, cheap-looking. Start a conversation with these adjectives and you get &quot;make it feel right&quot;. Add them after the other five layers are settled and they become fine-tuning. Order is everything.</p>
-    <h2 class="psub">Talking to people</h2>
+    <h2 class="psub" id="s3">Talking to people</h2>
     <p class="ptext">If you&#x27;ve brought up a name, put three images on screen right then. &quot;Which of these is it?&quot; Trade only words and you&#x27;ll think you agreed while each of you was picturing something different. That one question saves an hour of meeting.</p>
     <p class="ptext">Ask what they dislike, too. People struggle to say what they want, but everyone is clear about what they don&#x27;t. No gradients, or no handwritten fonts. Get just three lines of don&#x27;ts and the drafts won&#x27;t miss by much.</p>
-    <h2 class="psub">Talking to machines</h2>
+    <h2 class="psub" id="s4">Talking to machines</h2>
     <p class="ptext">Prompts use the same six layers. Machines just understand a little differently from people.</p>
     <p class="ptext">Medium names beat adjectives. &quot;1970s offset print, ink bleed&quot; comes out far more precisely than &quot;vintage&quot;. Negatives don&#x27;t work well. Write &quot;no text&quot; and text still shows up. Better to say what should go there instead than what to leave out.</p>
     <p class="ptext">Put five things in one sentence and three get reflected. Lead with what matters, then add the rest one layer at a time as you look at the results.</p>
     <p class="ptext">Adding a living artist&#x27;s name gets you there fast. But lifting that style wholesale for commercial work is another matter. I feel better describing it with movement and medium names instead.</p>
     <blockquote class="art__quote">Where you get stuck is usually not taste but vocabulary.</blockquote>
-    <h2 class="psub">In the end, it&#x27;s the number of words</h2>
+    <h2 class="psub" id="s5">In the end, it&#x27;s the number of words</h2>
     <p class="ptext">The ability to put things into words is proportional to how many words you know. If you don&#x27;t know risograph, you can&#x27;t ask for a riso feel; if you don&#x27;t know misregistration, you can&#x27;t use that offset on purpose.</p>
     <p class="ptext">So lately I&#x27;ve been consciously memorizing style names and print terms bit by bit. Once about thirty of the common ones were second nature, meetings got noticeably shorter. When an unfamiliar word comes up, I keep the <a href="https://designrefs.com/en/#glossary">Glossary</a> open.</p>
     <p class="ptext">Now when I hear &quot;make it feel right&quot;, a question comes out before the sigh. Looking back, that was the biggest change.</p>]]></content:encoded>
@@ -343,27 +343,27 @@
       <content:encoded><![CDATA[    <p class="ptext">My Pinterest boards passed twenty. Twelve bookmark folders. I stopped counting my saved posts on Instagram.</p>
     <p class="ptext">And yet when I actually start a poster, I search from scratch. I&#x27;ve collected so much, and none of it is usable.</p>
     <p class="ptext">For a while I thought it was because I was lazy. I hadn&#x27;t organized, hadn&#x27;t tagged. But organizing didn&#x27;t change anything. The problem wasn&#x27;t diligence. It was the way I collected.</p>
-    <h2 class="psub">The illusion of the save button</h2>
+    <h2 class="psub" id="s1">The illusion of the save button</h2>
     <p class="ptext">Hitting save feels good. It feels like you&#x27;ve grabbed something useful.</p>
     <p class="ptext">What you actually get in that moment is just a feeling that you might use it someday. The image goes somewhere hard to pull it back out of, because the me who saves and the me who searches use different words.</p>
     <p class="ptext">When I save, I file it as &quot;pretty poster&quot;. When I search, I&#x27;m looking for &quot;vertical editorial layout with lots of white space&quot;. The words going in and the words coming out don&#x27;t match, so of course nothing turns up.</p>
     <p class="ptext">On top of that, I never note why I saved something. Six months later I can&#x27;t remember what was good about it. The color? The white space? The typeface? A reference that&#x27;s lost its reason is just a nice picture.</p>
-    <h2 class="psub">One word for why</h2>
+    <h2 class="psub" id="s2">One word for why</h2>
     <p class="ptext">Every attempt at perfect categorization failed. With twenty folders, I&#x27;d agonize over where something belonged and end up not saving it at all.</p>
     <p class="ptext">So I changed the method. Each image gets <strong>just one reason it was saved</strong>. White space, grid, color pairing, texture, font pairing, tone of copy. These are exactly the words that come to mind later when I go looking.</p>
     <p class="ptext">On Pinterest, just renaming boards is enough. Boards split by medium, like &quot;Posters&quot; or &quot;Web design&quot;, only grow and never get opened. Boards split by reason, like &quot;Great white space&quot; or &quot;Holds up with two colors&quot;, actually get opened during work.</p>
-    <h2 class="psub">Images and addresses are different things</h2>
+    <h2 class="psub" id="s3">Images and addresses are different things</h2>
     <p class="ptext">It took me a long time to realize I&#x27;d been mixing two completely different things in one folder.</p>
     <p class="ptext">Image references should be collected in bulk and found by tag. Pinterest, Savee and Are.na are built to do exactly that.</p>
     <p class="ptext">Site addresses, on the other hand, should be few and always in the same place. Where to get fonts, where to get icons, where to make palettes. Twenty is plenty, and what matters is opening those twenty the same way every time.</p>
     <p class="ptext">That side turned out to be what ate the most time. Searching for the same font site&#x27;s address every time, finding that the mockup site I saved years ago had lost its domain. That inconvenience is, in the end, why I made this site. Sites are split by field, like <a href="https://designrefs.com/en/#uiux">UI/UX</a> and <a href="https://designrefs.com/en/#graphic">Graphic &amp; Branding</a>, and dead links get removed.</p>
-    <h2 class="psub">Collecting and using</h2>
+    <h2 class="psub" id="s4">Collecting and using</h2>
     <p class="ptext">If you treat everyday collecting and searching during a project as the same job, neither works.</p>
     <p class="ptext">Day to day, I collect wide and shallow. Whatever I see on the commute gets tossed into one place without sorting. Try to organize at this stage too and you&#x27;ll get tired and give up.</p>
     <p class="ptext">When a project starts, I go narrow and deep. I don&#x27;t pick from what I&#x27;ve stored; I search fresh. I make one project folder and gather around twenty references just for this job. The accumulated boards are only a starting point.</p>
     <blockquote class="art__quote">Collecting references fresh for each project is normal.</blockquote>
     <p class="ptext">Trying to build a library for life is what makes collecting feel heavy. What lasts isn&#x27;t the images but the criteria you used to choose them.</p>
-    <h2 class="psub">What you learn by throwing things away</h2>
+    <h2 class="psub" id="s5">What you learn by throwing things away</h2>
     <p class="ptext">The best way to organize what I&#x27;d collected turned out to be throwing it away. Once a month, for ten minutes, I open a board and ask whether each image still looks good. If not, it goes.</p>
     <p class="ptext">As you delete, patterns appear. What you keep saving, which way your taste leans, where you&#x27;d been following someone else&#x27;s work too closely. That&#x27;s probably the biggest thing you get from collecting references. One sentence like &quot;I like asymmetric layouts with big white space&quot; changes your work more than five hundred images.</p>
     <p class="ptext">The next step is writing down, in a sentence, why something looks good. &quot;The photo sits in the top two-thirds and the bottom is left empty, so the eye drops to the title.&quot; If you can put the reason into words, you can carry the principle to other material. If you can&#x27;t, you only borrow the shape.</p>
@@ -381,22 +381,22 @@
     <p class="ptext">So you start poking around communities. Join one or two and before long it&#x27;s more than ten, and all you collect are notifications. A foot in every door, and yet you don&#x27;t really belong anywhere.</p>
     <p class="ptext">After wandering for a long time, I learned that each community is good at something different. No place does it all.</p>
     <p class="art__note">A note for readers outside Korea: most of the places below are Korean-language services. I&#x27;ve kept them as they are, since this is a map of the Korean design scene.</p>
-    <h2 class="psub">When you want to read</h2>
+    <h2 class="psub" id="s1">When you want to read</h2>
     <p class="ptext"><strong>Surfit</strong> gathers design and product writing scattered across the web onto one screen. Good for skimming on the commute. The upside is discovering outlets you didn&#x27;t know; the downside is pretending you read things and scrolling past.</p>
     <p class="ptext"><strong>Yozm IT</strong> has lots of long pieces written by practitioners. It isn&#x27;t design-only, but many topics straddle product and engineering, so you end up reading about your collaboration frustrations from the other side. That turns out to be oddly comforting.</p>
     <p class="ptext">When I miss talk about graphic, spatial or industrial design, I go to <strong>Design Jungle</strong> or <strong>Monthly Design</strong>. Online design discourse in Korea leans toward UI and product, so for exhibitions, competitions and interviews with people in the industry, these are much richer. <strong>Design Press</strong> shows brand and space stories mostly through photos.</p>
-    <h2 class="psub">When you want to put your work out there</h2>
+    <h2 class="psub" id="s2">When you want to put your work out there</h2>
     <p class="ptext"><strong>Disquiet</strong> is where people post side projects and document the making. Unlike portfolio sites that only show the result, the culture there is to write about why you made something and where you stumbled. If you&#x27;re building something on your own, it&#x27;s a good place to get first reactions.</p>
     <p class="ptext"><strong>Brunch</strong> makes long-form writing easy. Quite a few designers write retrospectives and notes on how they work there, and it has its own readers who arrive through search.</p>
     <p class="ptext">To show your work, it&#x27;s <strong>Notefolio</strong> in Korea and, internationally, still <strong>Behance</strong> and <strong>Dribbble</strong>. Behance shows the flow of an entire project; Dribbble competes on the polish of a single shot. For web work, just looking at the award winners on <strong>GDWEB</strong> or <strong>DBCUT</strong> tells you where Korean web design is heading.</p>
-    <h2 class="psub">When you&#x27;re thinking about your career</h2>
+    <h2 class="psub" id="s3">When you&#x27;re thinking about your career</h2>
     <p class="ptext">On <strong>Careerly</strong>, short posts, questions and answers from working professionals circulate together. Things search won&#x27;t give you, like the culture at a specific company or switching roles, surface here.</p>
     <p class="ptext">I also check job services like <strong>Wanted</strong> or <strong>Rallit</strong> now and then. Even with no plans to move, reading job descriptions shows you what the market wants from designers right now. Once every six months is enough. Job sites are collected under <a href="https://designrefs.com/en/#job">Jobs</a>.</p>
     <p class="ptext">Company reviews I take only as reference. The people with complaints write more diligently, so they tend to lean one way.</p>
-    <h2 class="psub">The fastest place, and the fastest forgotten</h2>
+    <h2 class="psub" id="s4">The fastest place, and the fastest forgotten</h2>
     <p class="ptext">The quickest answers come from KakaoTalk open chat rooms or Discord. Printer recommendations, reading a font license, a feel for pricing. For these, asking people is far faster than searching.</p>
     <p class="ptext">Two things are worth knowing going in. Most ban advertising; if you want to promote your work or service, it&#x27;s polite to ask the host first. And the conversation flows away. Even a great answer is buried far up the scroll by the next day. Anything useful needs to be copied down somewhere as you go.</p>
-    <h2 class="psub">Three is enough</h2>
+    <h2 class="psub" id="s5">Three is enough</h2>
     <p class="ptext">Rather than a foot in ten doors, cutting down to one place per purpose, about three, lasts longer. One place to read, one place to write your own story, one place to ask when you&#x27;re in a hurry.</p>
     <p class="ptext">And wherever it is, it&#x27;s good to write at least a line. The people who get the most out of a community are usually the ones who wrote something. Even one question, one comment.</p>
     <p class="ptext">I made a spot like that on this site too, <a href="https://designrefs.com/talk/">Design Talk</a>, though it&#x27;s a Korean-language board for now. The full list of other places is under <a href="https://designrefs.com/en/#community">Community &amp; Media</a>.</p>]]></content:encoded>
@@ -412,13 +412,13 @@
     <p class="ptext">The answer isn&#x27;t simple. Does copyright arise? Do the tool&#x27;s terms allow it? Does the contract forbid it? Does the result resemble someone else&#x27;s work? There are several layers, and you can get caught at each one separately.</p>
     <p class="ptext">I&#x27;m not a lawyer, but I&#x27;ve laid them out in the order you&#x27;d check them in practice.</p>
     <p class="ptext"><strong>First, a disclaimer.</strong> This isn&#x27;t legal advice. The relevant laws, rulings and terms of service keep changing. For anything big, check with a lawyer or the client&#x27;s legal team. This piece is based on Korean law, with the US for comparison; rules differ by country.</p>
-    <h2 class="psub">Copyright belongs to people</h2>
+    <h2 class="psub" id="s1">Copyright belongs to people</h2>
     <p class="ptext">Korea&#x27;s Copyright Act defines a work as &quot;a creative production that expresses human thoughts or emotions&quot;. The key is the word &quot;human&quot;. The basic interpretation so far is that output made just by entering a prompt is hard to see as something a person expressed, and the AI copyright guide published by Korea&#x27;s Ministry of Culture, Sports and Tourism pointed broadly the same way.</p>
     <p class="ptext">The US is similar. The Copyright Office has refused to register AI output without human creative contribution. In the case of a comic book containing AI images, the images were left out, and only the parts a person did, like the text and arrangement, were recognized.</p>
     <p class="ptext">In practice, that means this: if you deliver an AI-generated image as is, there&#x27;s a good chance nobody owns the copyright on it. That also means it&#x27;s hard to stop a competitor from using the exact same thing. Once a person composes, edits and sets type on top of it, rights arise in the parts that person made.</p>
     <p class="ptext">So the question comes down to one thing: <strong>how long, and how exclusively, will this be used?</strong></p>
     <p class="ptext">A background for a single banner is nothing to worry much about. A logo or a mascot you&#x27;ll use for ten years is a completely different story. You&#x27;d be making something you can&#x27;t protect into the face of the brand.</p>
-    <h2 class="psub">Terms differ by service</h2>
+    <h2 class="psub" id="s2">Terms differ by service</h2>
     <p class="ptext">Separate from copyright, each service sets its own conditions for how you may use its output. They differ by service and change more often than you&#x27;d think. Before signing up, I check four things.</p>
     <ol class="ptext-list">
       <li>Is commercial use allowed? Some services allow it only on paid plans, or require a higher plan depending on company size.</li>
@@ -427,17 +427,17 @@
       <li>Are my uploads used for training? If you upload drafts or logos to work on, check whether you can turn it off.</li>
     </ol>
     <p class="ptext">Some services state that their training data is limited to licensed material. Adobe Firefly is the best-known example, and on some plans it even promises indemnification if a dispute arises. In advertising or in-house work at large companies, that one condition can decide which tool gets used. The character of each service is summarized under <a href="https://designrefs.com/en/#ai">AI tools</a>.</p>
-    <h2 class="psub">Does it look like someone else&#x27;s?</h2>
+    <h2 class="psub" id="s3">Does it look like someone else&#x27;s?</h2>
     <p class="ptext">Sometimes you clear both copyright and the terms, and still get caught here.</p>
     <p class="ptext">If a generated image resembles a famous character or logo, that&#x27;s a problem under both copyright and trademark, even if you never put that name in the prompt. If a face resembles a specific person, portrait and publicity rights come into play. This is where to be most careful when using AI people instead of model photos.</p>
     <p class="ptext">Putting a living artist&#x27;s name in a prompt and using the result commercially is an area where legal opinions differ. Before that, it&#x27;s also a question of the reputation you build in the industry.</p>
     <p class="ptext">Just running a reverse image search once before delivery catches most big accidents. It takes thirty seconds.</p>
-    <h2 class="psub">Using it without saying so is the riskiest</h2>
+    <h2 class="psub" id="s4">Using it without saying so is the riskiest</h2>
     <p class="ptext">AI clauses are showing up in contracts more and more. Some ban it outright, some require you to disclose and get approval first, and some allow only specific tools with verified provenance.</p>
     <p class="ptext">The most common accident is using it without saying so. If it comes out later, it becomes a matter of trust, not of the work. On the other hand, if you mention it up front, most clients say it&#x27;s fine. Not many clients get angry about hearing a background texture was made with AI.</p>
     <p class="ptext">Saying it isn&#x27;t hard either. &quot;The pattern background was generated with AI; I did the editing myself.&quot; One line like that is enough. If you freelance, it helps to prepare this as a document alongside your contract. Resources like standard contracts are collected under <a href="https://designrefs.com/en/#freelance">Freelance</a>.</p>
     <p class="ptext">Rules requiring AI-generated content to be labeled are also appearing country by country. For advertising or public-sector projects, it&#x27;s safer to check the guidelines for that field separately.</p>
-    <h2 class="psub">Records are everything</h2>
+    <h2 class="psub" id="s5">Records are everything</h2>
     <p class="ptext">Looking back, the conclusion is simple. For images you&#x27;ll use briefly and throw away, use AI without much worry. For brand assets you&#x27;ll keep for a long time, don&#x27;t use AI-only output. When people appear in an image, check once more.</p>
     <p class="ptext">And whatever the case, keep a record.</p>
     <p class="ptext">The habit of making a text file in the project folder and noting the tool, the date and the prompt. The most tedious thing, and the most useful. Someday when someone asks, &quot;How did you make this?&quot;, this is what separates those who can answer from those who can&#x27;t.</p>]]></content:encoded>

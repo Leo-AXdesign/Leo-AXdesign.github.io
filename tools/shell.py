@@ -77,7 +77,7 @@ CLOSE_ICON = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke
 
 def document(*, title, desc, url, body, jsonld, og_type="website",
              head_extra="", main_class="page__main", footer_nav="", menu="",
-             og_image=None, lang="ko", alternates=None):
+             og_image=None, lang="ko", alternates=None, robots="index, follow, max-image-preview:large"):
     """페이지 하나의 HTML 전체를 돌려줍니다.
 
     title      : <title> 과 og:title 에 쓰는 제목 (사이트 이름은 여기서 붙입니다)
@@ -90,6 +90,7 @@ def document(*, title, desc, url, body, jsonld, og_type="website",
     menu       : 메뉴 항목 HTML (tools/nav.py 의 menu()). 넓은 화면에서는 왼쪽에,
                  좁은 화면에서는 햄버거 버튼을 누르면 서랍으로 나옵니다. 비우면 메뉴 없이 나옵니다.
     lang       : "ko" 또는 "en". 페이지 틀의 문구와 로고·검색이 가는 곳이 바뀝니다.
+    robots     : 검색엔진 지시. 404 처럼 검색 결과에 나오면 안 되는 페이지는 "noindex, follow"
     alternates : {"ko": 주소, "en": 주소} 같은 페이지의 다른 언어판. 있으면 hreflang 을 달고,
                  머리글의 EN/KO 버튼이 그 주소로 갑니다. 없으면 버튼은 다른 언어의 첫 화면으로 갑니다.
     """
@@ -142,9 +143,11 @@ def document(*, title, desc, url, body, jsonld, og_type="website",
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{e(title)} | {u["brand"]}</title>
   <meta name="description" content="{e(desc)}" />
-  <link rel="canonical" href="{url}" />{hreflang}
-  <meta name="robots" content="index, follow, max-image-preview:large" />
+  {f'<link rel="canonical" href="{url}" />' if robots.startswith("index") else ""}{hreflang}
+  <meta name="robots" content="{robots}" />
   <meta property="og:type" content="{og_type}" />
+  <meta property="og:site_name" content="{u["brand"]}" />
+  <meta property="og:locale" content="{"en_US" if lang == "en" else "ko_KR"}" />
   <meta property="og:title" content="{e(title)} | {u["brand"]}" />
   <meta property="og:description" content="{e(desc)}" />
   <meta property="og:url" content="{url}" />
