@@ -1,5 +1,6 @@
 # 정적 사이트를 GitHub Pages 로 배포합니다.
 # main 브랜치에 push 하면 자동으로 실행됩니다.
+# 배포가 끝나면 검색엔진(Bing·네이버 등)에 IndexNow 로 바뀐 주소를 알립니다.
 name: Deploy to GitHub Pages
 
 on:
@@ -32,3 +33,13 @@ jobs:
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
+
+  # 배포가 끝난 뒤 검색엔진에 알림. 실패해도 배포 결과에는 영향이 없습니다.
+  indexnow:
+    needs: deploy
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - name: Notify search engines (IndexNow)
+        run: python3 tools/indexnow.py
