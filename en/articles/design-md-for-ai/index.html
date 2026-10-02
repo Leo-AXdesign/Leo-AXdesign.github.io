@@ -58,8 +58,8 @@
       "datePublished": "2026-10-02",
       "dateModified": "2026-10-02",
       "inLanguage": "en",
-      "wordCount": 1006,
-      "timeRequired": "PT4M",
+      "wordCount": 1055,
+      "timeRequired": "PT5M",
       "image": "https://designrefs.com/og/en/design-md-for-ai.png",
       "author": {
         "@type": "Organization",
@@ -170,7 +170,7 @@
       <p class="art__kicker"><a href="https://designrefs.com/en/articles/">Articles</a> · AI Design</p>
       <h1 class="page__title">DESIGN.md, one file that hands your design rules to AI</h1>
       <p class="page__intro">As AI makes more of our drafts and code, where you write down your rules starts to matter. I wrote this site&#x27;s rules in Google&#x27;s DESIGN.md format and ran the official checker on it. Here&#x27;s what it caught.</p>
-      <p class="art__meta"><time datetime="2026-10-02">October 2, 2026</time> · 4 min read</p>
+      <p class="art__meta"><time datetime="2026-10-02">October 2, 2026</time> · 5 min read</p>
       <p class="art__note">Translated from the Korean original. <a href="https://designrefs.com/articles/design-md-for-ai/" hreflang="ko" lang="ko">Read in Korean</a></p>
       <nav class="art__toc" aria-label="In this article"><p class="art__toc-t">In this article</p><ol><li><a href="#s1">What is DESIGN.md?</a></li><li><a href="#s2">What goes in it</a></li><li><a href="#s3">I tried it on this site</a></li><li><a href="#s4">How it fits with the tools you already use</a></li><li><a href="#s5">So, for now</a></li></ol></nav>
     <p class="ptext">Two design stories this week pointed in oddly similar directions.</p>
@@ -212,6 +212,7 @@
       <figcaption>Contrast on white for this site&#x27;s four grays and one candidate. Only one falls below 4.5.</figcaption>
     </figure>
     <p class="ptext">I put in <code>#767676</code> as a candidate and ran the <code>diff</code> command. It pointed out exactly one changed token and one fewer warning. At 4.54 : 1, it barely passes. Whether I actually switch is something I&#x27;ll decide after looking at it on screen.</p>
+    <p class="ptext"><strong>Update.</strong> The day this went up, I re-checked the whole site and switched to <code>#767676</code>. The matching gray in dark mode (<code>#5E5E5E</code>, 2.96 : 1) failed too, so it went up to <code>#868686</code>. The old gray stays only on decoration that isn&#x27;t text, like the dot in the logo.</p>
     <p class="ptext"><strong>Second, a warning about a missing primary color.</strong> When there&#x27;s no color named <code>primary</code>, the checker says the agent will auto-generate key colors. This site leaves out a primary color on purpose, being black and white, but an AI reads that gap as &quot;not decided yet&quot;. So I need to write &quot;There is no accent color. Don&#x27;t create one&quot; under Do&#x27;s and Don&#x27;ts. Even what&#x27;s absent has to be written down to be respected.</p>
     <p class="ptext">The other two warnings were about colors defined but never used by any component. It found some tidying up for me.</p>
     <h2 class="psub" id="s4">How it fits with the tools you already use</h2>
