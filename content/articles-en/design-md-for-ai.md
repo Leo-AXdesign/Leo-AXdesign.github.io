@@ -55,6 +55,8 @@ It came back with four warnings. Two were worth a look.
 
 I put in `#767676` as a candidate and ran the `diff` command. It pointed out exactly one changed token and one fewer warning. At 4.54 : 1, it barely passes. Whether I actually switch is something I'll decide after looking at it on screen.
 
+**Update.** The day this went up, I re-checked the whole site and switched to `#767676`. The matching gray in dark mode (`#5E5E5E`, 2.96 : 1) failed too, so it went up to `#868686`. The old gray stays only on decoration that isn't text, like the dot in the logo.
+
 **Second, a warning about a missing primary color.** When there's no color named `primary`, the checker says the agent will auto-generate key colors. This site leaves out a primary color on purpose, being black and white, but an AI reads that gap as "not decided yet". So I need to write "There is no accent color. Don't create one" under Do's and Don'ts. Even what's absent has to be written down to be respected.
 
 The other two warnings were about colors defined but never used by any component. It found some tidying up for me.
