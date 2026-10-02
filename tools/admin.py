@@ -10,8 +10,8 @@
 하는 일
 - 사이트: js/data.js 의 SITES 와 js/data.en.js 의 SITES_EN 에 한 줄씩 넣고 고치고 지웁니다.
 - 읽을거리: content/articles/<주소>.md (한국어) 와 content/articles-en/<주소>.md (영어) 를 씁니다.
-- 올리기: 빌드 스크립트를 순서대로 돌리고, git 으로 커밋·푸시한 뒤 검색엔진에 알립니다.
-  푸시하면 GitHub Actions 가 1~2분 안에 designrefs.com 에 반영합니다.
+- 올리기: GitHub 의 최신 내용을 먼저 받아 오고, 빌드 스크립트를 순서대로 돌린 뒤 커밋·푸시합니다.
+  푸시하면 GitHub Actions 가 1~2분 안에 designrefs.com 에 반영하고, 검색엔진 알림(IndexNow)까지 보냅니다.
 - 디자인 잡담: 게시판 서버(Cloudflare Worker)에 운영자 열쇠로 접속해 글을 고치고, 숨기고, 지웁니다.
   이쪽은 누르는 즉시 사이트에 반영됩니다 (올리기 필요 없음).
 
@@ -376,9 +376,18 @@ def source_changes():
     return [ln for ln in git_changes() if any(ln[3:].startswith(k) for k in keep)]
 
 
+def pull(log):
+    """다른 곳(클라우드 등)에서 먼저 올린 내용을 받아 옵니다. 저장만 하고 안 올린 글은 그대로 둡니다."""
+    if run(["git", "pull", "-q", "--rebase", "--autostash", "origin", "main"], log) != 0:
+        run(["git", "rebase", "--abort"], log)
+        raise Oops("GitHub 의 최신 내용을 받아 오지 못했습니다. 인터넷 연결을 확인하거나, "
+                   "이 기록을 클로드에게 보여 주세요.\n" + "\n".join(log))
+
+
 def publish(p):
     msg = one_line(p.get("message")) or "관리자에서 내용 업데이트"
     log = []
+    pull(log)
     build(log)
     if not git_changes():
         return {"ok": True, "message": "바뀐 내용이 없어서 올릴 것이 없습니다.", "log": "\n".join(log)}
@@ -387,8 +396,9 @@ def publish(p):
         raise Oops("커밋하지 못했습니다. 아래 기록을 확인해 주세요.\n" + "\n".join(log))
     if run(["git", "push", "-q", "origin", "HEAD"], log) != 0:
         raise Oops("GitHub 에 올리지 못했습니다. 인터넷 연결이나 git 로그인을 확인해 주세요.\n" + "\n".join(log))
-    run([sys.executable, str(TOOLS / "indexnow.py")], log)
-    return {"ok": True, "message": "올렸습니다. 1~2분 뒤 designrefs.com 에 반영됩니다.", "log": "\n".join(log)}
+    # 검색엔진 알림은 배포가 끝난 뒤 GitHub Actions 가 보냅니다 (.github/workflows/deploy.yml)
+    return {"ok": True, "message": "올렸습니다. 1~2분 뒤 designrefs.com 에 반영되고, 검색엔진에도 자동으로 알립니다.",
+            "log": "\n".join(log)}
 
 
 def build_only(p):

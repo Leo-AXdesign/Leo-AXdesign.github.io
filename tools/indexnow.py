@@ -5,10 +5,11 @@ IndexNow 에 참여하는 검색엔진(Bing, 네이버, Yandex 등)에 한 번�
 
   python3 tools/indexnow.py
 
-배포(push)가 끝나 사이트에 반영된 뒤에 실행하세요.
+main 에 push 하면 GitHub Actions(deploy.yml)가 배포 직후 자동으로 실행합니다.
+손으로 돌릴 때는 배포가 끝나 사이트에 반영된 뒤에 실행하세요.
 키 파일(fac1ebe51d5f2cbef4f356705c5fc430.txt)은 저장소 루트에 있어야 하며 지우면 안 됩니다.
 """
-import json, re, pathlib, urllib.request
+import json, re, pathlib, time, urllib.request
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 HOST = "designrefs.com"
@@ -20,8 +21,16 @@ extra = [f"https://{HOST}/llms.txt", f"https://{HOST}/llms-full.txt"]
 url_list = list(dict.fromkeys(urls + extra))
 
 # 제출 전에 키 파일이 실제로 열리는지 확인 (없으면 검색엔진이 거부합니다)
-with urllib.request.urlopen(KEY_LOCATION, timeout=20) as r:
-    live_key = r.read().decode().strip()
+# 배포 직후에는 사이트가 잠깐 늦게 열릴 수 있어서 몇 번 다시 시도합니다
+for attempt in range(5):
+    try:
+        with urllib.request.urlopen(KEY_LOCATION, timeout=20) as r:
+            live_key = r.read().decode().strip()
+        break
+    except Exception as err:
+        if attempt == 4:
+            raise SystemExit(f"키 파일을 열지 못했습니다: {KEY_LOCATION} ({err})")
+        time.sleep(15)
 if live_key != KEY:
     raise SystemExit(f"키 파일 내용이 다릅니다: {KEY_LOCATION}")
 
