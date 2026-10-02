@@ -280,7 +280,263 @@ def scheme(lang, wide):
     return wrap(W, round(y + pad), t["title"], t["desc"], out)
 
 
-FIGS = {"openai-app-platforms": timeline, "chatgpt-plugin-extensions": scheme}
+# =========================================================
+# 3. 테마 편집기와 캔버스 비교 (2026-10-01 쇼피파이 캔버스 글)
+# =========================================================
+CANVAS = {
+    "ko": {
+        "title": "같은 가게, 두 가지 작업대",
+        "sub": "발표를 바탕으로 그린 구조도. 실제 화면과는 다르다.",
+        "left": "지금까지: 테마 편집기",
+        "left_note": ["한 번에 한 페이지.", "왼쪽 설정 칸을 하나씩 열어 고친다."],
+        "right": "캔버스",
+        "right_note": ["모든 페이지를 한 판에 펼친다.", "눌러서 고치거나 사이드킥에게 말한다."],
+        "settings": ["헤더", "이미지 배너", "추천 상품", "뉴스레터", "푸터"],
+        "page": "홈",
+        "pages": ["홈", "상품", "컬렉션", "장바구니", "소개", "FAQ"],
+        "chat": ["상품 사진을 더 크게,", "버튼은 검정으로"],
+        "reply": "6개 페이지에 반영했어요",
+        "source": "출처: Shopify 발표·변경 기록, TechCrunch (2026. 10. 1)",
+        "desc": "기존 테마 편집기는 한 번에 한 페이지를 열고 왼쪽 설정 칸에서 고친다. 캔버스는 가게의 모든 페이지를 한 판에 펼쳐 놓고, "
+                "요소를 눌러 직접 고치거나 사이드킥에게 말로 시킨다.",
+    },
+    "en": {
+        "title": "Same store, two workbenches",
+        "sub": "A diagram based on the announcement. Not the actual interface.",
+        "left": "Until now: the theme editor",
+        "left_note": ["One page at a time.", "Open settings on the left, one by one."],
+        "right": "Canvas",
+        "right_note": ["Every page laid out at once.", "Click to edit, or tell Sidekick."],
+        "settings": ["Header", "Image banner", "Featured products", "Newsletter", "Footer"],
+        "page": "Home",
+        "pages": ["Home", "Product", "Collection", "Cart", "About", "FAQ"],
+        "chat": ["Bigger product photos,", "black buttons"],
+        "reply": "Applied to 6 pages",
+        "source": "Sources: Shopify announcement and changelog, TechCrunch (Oct 1, 2026)",
+        "desc": "The old theme editor opens one page at a time and edits it through a settings column on the left. Canvas lays out "
+                "every page of the store at once; you click an element to edit it or ask Sidekick in chat.",
+    },
+}
+
+
+def mini_page(x, y, w, h, label, fs, selected=False):
+    """페이지 썸네일 하나. 머리 막대, 큰 그림, 글 줄 두 개."""
+    o = [f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="6" fill="{BG}" stroke="{INK if selected else RULE}" '
+         f'stroke-width="{2.5 if selected else 1.2}"/>',
+         f'<rect x="{x + 8}" y="{y + 8}" width="{w - 16}" height="6" rx="3" fill="{RULE}"/>',
+         f'<rect x="{x + 8}" y="{y + 20}" width="{w - 16}" height="{h * 0.42}" rx="3" fill="{SOFT}"/>',
+         f'<rect x="{x + 8}" y="{y + 28 + h * 0.42}" width="{(w - 16) * 0.7}" height="5" rx="2.5" fill="{RULE}"/>',
+         f'<rect x="{x + 8}" y="{y + 38 + h * 0.42}" width="{(w - 16) * 0.45}" height="5" rx="2.5" fill="{RULE}"/>',
+         text(x, y + h + fs + 6, label, fs, INK if selected else MUTED, 700 if selected else 400)]
+    return o
+
+
+def window(x, y, w, h):
+    o = [f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="14" fill="{BG}" stroke="{INK}" stroke-width="2"/>',
+         f'<line x1="{x}" y1="{y + 34}" x2="{x + w}" y2="{y + 34}" stroke="{RULE}" stroke-width="1.5"/>']
+    for k in range(3):
+        o.append(f'<circle cx="{x + 20 + k * 16}" cy="{y + 17}" r="4.5" fill="{RULE}"/>')
+    return o
+
+
+def canvas_compare(lang, wide):
+    t = CANVAS[lang]
+    if wide:
+        W, pad, ts, ss, hs, fs, ns = 1200, 40, 30, 19, 22, 14, 17
+    else:
+        W, pad, ts, ss, hs, fs, ns = 600, 32, 34, 21, 26, 17, 20
+    out, y = [], pad + ts
+    out.append(text(pad, y, t["title"], ts, weight=800))
+    y += ss + 12
+    out.append(text(pad, y, t["sub"], ss, MUTED))
+    y += 44 if wide else 52
+    gap = 48
+    colw = (W - pad * 2 - gap) / 2 if wide else W - pad * 2
+    winh = 330 if wide else 330
+
+    def left_block(x, y0):
+        o = [text(x, y0, t["left"], hs, INK, 800)]
+        wy = y0 + 22
+        o += window(x, wy, colw, winh)
+        # 왼쪽 설정 칸
+        sw = colw * 0.34
+        o.append(f'<line x1="{x + sw}" y1="{wy + 34}" x2="{x + sw}" y2="{wy + winh}" stroke="{RULE}" stroke-width="1.5"/>')
+        for k, name in enumerate(t["settings"]):
+            ry = wy + 52 + k * 42
+            sel = k == 2
+            o.append(f'<rect x="{x + 12}" y="{ry}" width="{sw - 24}" height="32" rx="6" fill="{INK if sel else SOFT}"/>')
+            o.append(text(x + 24, ry + 21, name, fs - 1 if lang == "en" and not wide else fs, BG if sel else BODY, 700 if sel else 400))
+        # 한 페이지 미리보기
+        px, pw = x + sw + 24, colw - sw - 48
+        o += mini_page(px, wy + 56, pw, winh - 110, t["page"], fs, True)
+        out_y = wy + winh + 30
+        for k, line in enumerate(t["left_note"]):
+            o.append(text(x, out_y + k * (ns + 10), line, ns, BODY))
+        return o, out_y + len(t["left_note"]) * (ns + 10)
+
+    def right_block(x, y0):
+        o = [text(x, y0, t["right"], hs, INK, 800)]
+        wy = y0 + 22
+        o += window(x, wy, colw, winh)
+        # 페이지 판 (3 x 2)
+        chw = colw * 0.36
+        gx, gw = x + 16, colw - chw - 32
+        cols, rows = 3, 2
+        cw = (gw - (cols - 1) * 14) / cols
+        chh = (winh - 50 - 16 - rows * (fs + 16) - (rows - 1) * 10) / rows
+        for k, name in enumerate(t["pages"]):
+            cx = gx + (k % cols) * (cw + 14)
+            cy = wy + 50 + (k // cols) * (chh + fs + 26)  # 줄 사이 = 이름 칸 + 여백
+            o += mini_page(cx, cy, cw, chh, name, fs - 2 if not wide else fs - 1, k == 1)
+        # 선택한 페이지 위 커서
+        cx = gx + (cw + 14) + cw * 0.6
+        cy = wy + 50 + chh * 0.45
+        o.append(f'<path d="M{cx} {cy}l0 22l6-6l5 10l4-2l-5-10l8 0z" fill="{INK}" stroke="{BG}" stroke-width="1.5"/>')
+        # 사이드킥 대화
+        sx = x + colw - chw
+        o.append(f'<line x1="{sx}" y1="{wy + 34}" x2="{sx}" y2="{wy + winh}" stroke="{RULE}" stroke-width="1.5"/>')
+        o.append(text(sx + 14, wy + 60, "Sidekick", fs, INK, 800))
+        by = wy + 78
+        bh = len(t["chat"]) * (fs + 8) + 16
+        o.append(f'<rect x="{sx + 12}" y="{by}" width="{chw - 24}" height="{bh}" rx="10" fill="{INK}"/>')
+        for k, line in enumerate(t["chat"]):
+            o.append(text(sx + 24, by + 10 + (k + 1) * (fs + 8) - 4, line, fs - 1, BG))
+        ry = by + bh + 14
+        o.append(f'<rect x="{sx + 12}" y="{ry}" width="{chw - 24}" height="{fs + 22}" rx="10" fill="{SOFT}"/>')
+        o.append(text(sx + 24, ry + fs + 6, t["reply"], fs - 1 if wide else fs - 3, BODY))
+        o.append(f'<rect x="{sx + 12}" y="{wy + winh - 50}" width="{chw - 24}" height="34" rx="17" fill="{BG}" stroke="{INK}" stroke-width="1.5"/>')
+        out_y = wy + winh + 30
+        for k, line in enumerate(t["right_note"]):
+            o.append(text(x, out_y + k * (ns + 10), line, ns, BODY))
+        return o, out_y + len(t["right_note"]) * (ns + 10)
+
+    if wide:
+        a, ya = left_block(pad, y)
+        b, yb = right_block(pad + colw + gap, y)
+        out += a + b
+        y = max(ya, yb) + 20
+    else:
+        a, ya = left_block(pad, y)
+        out += a
+        b, yb = right_block(pad, ya + 40)
+        out += b
+        y = yb + 20
+    out.append(f'<line x1="{pad}" y1="{y - 14}" x2="{W - pad}" y2="{y - 14}" stroke="{RULE}" stroke-width="1"/>')
+    y += 14
+    out.append(text(pad, y, t["source"], (ss - 3) if wide else (ss - 4), MUTED))
+    return wrap(W, round(y + pad), t["title"], t["desc"], out)
+
+
+# =========================================================
+# 4. DESIGN.md 한 장의 생김새 (2026-10-02 DESIGN.md 글)
+# =========================================================
+DESIGNMD = {
+    "ko": {
+        "title": "DESIGN.md 한 장은 이렇게 생겼다",
+        "sub": "이 사이트의 규칙을 옮겨 적은 예. 줄을 덜어냈다.",
+        "lines": [
+            ("---", "fence"), ("name: Design Hub", "k"), ("colors:", "k"), ('  ink: "#111111"', "v"),
+            ('  muted: "#6B6B6B"', "v"), ('  faint: "#A3A3A3"', "v"), ("typography:", "k"),
+            ("  caption: { fontFamily: Pretendard, fontSize: 12px }", "v"), ("rounded:", "k"), ("  md: 8px", "v"),
+            ("components:", "k"), ('  row-tags: { textColor: "{colors.faint}" }', "v"), ("---", "fence"),
+            ("## Overview", "h"), ("흑백만 쓴다. 강조는 색 대신 굵기와 채움으로.", "p"),
+            ("## Do's and Don'ts", "h"), ("- 색으로 한쪽을 강조하지 않는다.", "p"),
+        ],
+        "split": 13,
+        "a_head": "토큰", "a_body": ["정확한 값.", "기계가 읽는 YAML."],
+        "b_head": "설명", "b_body": ["왜 그 값인지.", "사람도 읽는 글."],
+        "source": "형식: google-labs-code/design.md (알파, Apache 2.0)",
+        "desc": "DESIGN.md 파일은 위쪽 --- 사이에 색, 글자, 둥근 정도, 컴포넌트 같은 토큰을 YAML로 적고, 아래쪽에 왜 그런 값을 쓰는지 마크다운 글로 적는다.",
+    },
+    "en": {
+        "title": "What a DESIGN.md file looks like",
+        "sub": "This site's rules as an example, trimmed.",
+        "lines": [
+            ("---", "fence"), ("name: Design Hub", "k"), ("colors:", "k"), ('  ink: "#111111"', "v"),
+            ('  muted: "#6B6B6B"', "v"), ('  faint: "#A3A3A3"', "v"), ("typography:", "k"),
+            ("  caption: { fontFamily: Pretendard, fontSize: 12px }", "v"), ("rounded:", "k"), ("  md: 8px", "v"),
+            ("components:", "k"), ('  row-tags: { textColor: "{colors.faint}" }', "v"), ("---", "fence"),
+            ("## Overview", "h"), ("Black and white only. Emphasis by weight and fill, not color.", "p"),
+            ("## Do's and Don'ts", "h"), ("- Never use color to favor one side.", "p"),
+        ],
+        "split": 13,
+        "a_head": "Tokens", "a_body": ["Exact values.", "YAML for machines."],
+        "b_head": "Rationale", "b_body": ["Why those values.", "Prose for people too."],
+        "source": "Format: google-labs-code/design.md (alpha, Apache 2.0)",
+        "desc": "A DESIGN.md file lists tokens such as colors, type, corner radius and components as YAML between --- fences at the top, "
+                "and explains why those values exist in markdown prose below.",
+    },
+}
+
+MONO = "'SF Mono', Menlo, Consolas, 'D2Coding', monospace"
+
+
+def designmd(lang, wide):
+    t = DESIGNMD[lang]
+    if wide:
+        W, pad, ts, ss, cs, lh, ns = 1200, 40, 30, 19, 17, 27, 18
+    else:
+        W, pad, ts, ss, cs, lh, ns = 600, 32, 34, 21, 15, 25, 20
+    out, y = [], pad + ts
+    out.append(text(pad, y, t["title"], ts, weight=800))
+    y += ss + 12
+    out.append(text(pad, y, t["sub"], ss, MUTED))
+    y += 36
+    fw = (W - pad * 2) * 0.68 if wide else W - pad * 2
+    lines = t["lines"]
+    if not wide:  # 폰판은 긴 줄을 줄여서 폭 안에 넣습니다
+        lines = [(s.replace("  caption: { fontFamily: Pretendard, fontSize: 12px }", "  caption: { fontSize: 12px }")
+                  .replace('  row-tags: { textColor: "{colors.faint}" }', '  row-tags: "{colors.faint}"'), k) for s, k in lines]
+    fh = 52 + len(lines) * lh + 20
+    fx, fy = pad, y
+    out.append(f'<rect x="{fx}" y="{fy}" width="{fw}" height="{fh}" rx="14" fill="{BG}" stroke="{INK}" stroke-width="2"/>')
+    out.append(f'<line x1="{fx}" y1="{fy + 38}" x2="{fx + fw}" y2="{fy + 38}" stroke="{RULE}" stroke-width="1.5"/>')
+    out.append(text(fx + 20, fy + 25, "DESIGN.md", cs, INK, 700))
+    # 토큰 구간 바탕
+    ty0 = fy + 52
+    ty1 = ty0 + t["split"] * lh
+    out.append(f'<rect x="{fx + 2}" y="{ty0 - 4}" width="{fw - 4}" height="{ty1 - ty0}" fill="{SOFT}"/>')
+    for i, (s, kind) in enumerate(lines):
+        ly = ty0 + i * lh + cs
+        fill = MUTED if kind == "fence" else INK if kind in ("k", "h") else BODY
+        weight = 700 if kind in ("k", "h") else 400
+        fam = FONT if kind in ("h", "p") else MONO
+        size = cs + 1 if kind in ("h", "p") else cs
+        out.append(f'<text x="{fx + 20}" y="{ly}" font-size="{size}" font-weight="{weight}" fill="{fill}" '
+                   f'font-family="{fam}" xml:space="preserve">{e(s)}</text>')
+    by1 = ty0 + len(lines) * lh
+
+    def note(x, y0, y1, head, body, wide_mode):
+        o = []
+        if wide_mode:
+            o.append(f'<path d="M{x} {y0 + 4}h12v{y1 - y0 - 8}h-12" fill="none" stroke="{INK}" stroke-width="2"/>')
+            mid = (y0 + y1) / 2 - (len(body) * (ns + 8)) / 2
+            o.append(text(x + 30, mid, head, ns + 4, INK, 800))
+            for k, line in enumerate(body):
+                o.append(text(x + 30, mid + (k + 1) * (ns + 8) + 4, line, ns, BODY))
+        return o
+
+    if wide:
+        nx = fx + fw + 20
+        out += note(nx, ty0 - 4, ty1 - 4, t["a_head"], t["a_body"], True)
+        out += note(nx, ty1, by1 + 4, t["b_head"], t["b_body"], True)
+        y = fy + fh + 40
+    else:
+        y = fy + fh + 40
+        for head, body, filled in ((t["a_head"], t["a_body"], True), (t["b_head"], t["b_body"], False)):
+            out.append(f'<rect x="{pad}" y="{y - ns}" width="22" height="22" rx="4" fill="{SOFT if filled else BG}" stroke="{INK}" stroke-width="1.5"/>')
+            out.append(text(pad + 34, y, head, ns, INK, 800))
+            out.append(text(pad + 34 + len(head) * ns * (1.05 if lang == "ko" else 0.62) + 14, y, " ".join(t["a_body" if filled else "b_body"]), ns - 1, BODY))
+            y += ns + 20
+        y += 16
+    out.append(f'<line x1="{pad}" y1="{y - 14}" x2="{W - pad}" y2="{y - 14}" stroke="{RULE}" stroke-width="1"/>')
+    y += 14
+    out.append(text(pad, y, t["source"], (ss - 3) if wide else (ss - 4), MUTED))
+    return wrap(W, round(y + pad), t["title"], t["desc"], out)
+
+
+FIGS = {"openai-app-platforms": timeline, "chatgpt-plugin-extensions": scheme,
+        "shopify-canvas-compare": canvas_compare, "design-md-anatomy": designmd}
 
 if __name__ == "__main__":
     OUT.mkdir(parents=True, exist_ok=True)
