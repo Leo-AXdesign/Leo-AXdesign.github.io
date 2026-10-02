@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 557" role="img" aria-labelledby="t d">
+  <title id="t">Time to get a store up</title>
+  <desc id="d">Ben Sehl said that 12 years ago, even knowing how to code, it took him two weeks to get a rough Kotn store working, and that a fully custom store now takes about twenty minutes with Canvas.</desc>
+  <rect width="600" height="557" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="32" y="68" font-size="36" font-weight="800" fill="#111111" letter-spacing="-0.5">Time to get a store up</text>
+    <text x="32" y="102" font-size="22" fill="#6B6B6B">As told by Shopify Director of Product Ben Sehl</text>
+    <text x="32" y="136" font-size="22" fill="#6B6B6B">not a like-for-like measurement</text>
+    <text x="32" y="206" font-size="30" font-weight="700" fill="#111111">Time taken</text>
+    <text x="32" y="238" font-size="22" fill="#6B6B6B">both in minutes, same axis</text>
+    <text x="32" y="291" font-size="23" fill="#444444">2014, Kotn, hand-coded</text>
+    <path d="M32 303H441.0A7 7 0 0 1 448.0 310V332A7 7 0 0 1 441.0 339H32Z" fill="#111111"/>
+    <text x="462.0" y="331.08" font-size="28" font-weight="700" fill="#111111">~2 weeks</text>
+    <text x="32" y="385" font-size="23" fill="#444444">2026, Canvas + Sidekick</text>
+    <path d="M32 397H61A7 7 0 0 1 68 404V426A7 7 0 0 1 61 433H32Z" fill="#111111"/>
+    <text x="82" y="425.08" font-size="28" font-weight="700" fill="#111111">~20 min</text>
+    <line x1="32" y1="268" x2="32" y2="456" stroke="#D9D9D9" stroke-width="1.8"/>
+    <line x1="32" y1="474" x2="568" y2="474" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="32" y="500" font-size="19" fill="#6B6B6B">Source: Shopify&#x27;s Canvas announcement (Oct 1, 2026), as quoted by TechCrunch.</text>
+    <text x="32" y="529" font-size="19" fill="#6B6B6B">Two weeks counted as 14 calendar days (20,160 min).</text>
+  </g>
+</svg>

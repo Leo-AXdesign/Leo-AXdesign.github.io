@@ -6,7 +6,127 @@
     <atom:link href="https://designrefs.com/en/rss.xml" rel="self" type="application/rss+xml" />
     <description>Notes from a designer in Korea: working with AI, putting style into words, collecting references and design communities. Translated from Korean.</description>
     <language>en</language>
-    <lastBuildDate>Wed, 30 Sep 2026 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 02 Oct 2026 09:00:00 +0900</lastBuildDate>
+    <item>
+      <title>DESIGN.md, one file that hands your design rules to AI</title>
+      <link>https://designrefs.com/en/articles/design-md-for-ai/</link>
+      <guid isPermaLink="true">https://designrefs.com/en/articles/design-md-for-ai/</guid>
+      <pubDate>Fri, 02 Oct 2026 09:00:00 +0900</pubDate>
+      <category>AI Design</category>
+      <description>As AI makes more of our drafts and code, where you write down your rules starts to matter. I wrote this site&#x27;s rules in Google&#x27;s DESIGN.md format and ran the official checker on it. Here&#x27;s what it caught.</description>
+      <content:encoded><![CDATA[    <p class="ptext">Two design stories this week pointed in oddly similar directions.</p>
+    <p class="ptext"><a href="https://designrefs.com/en/articles/shopify-canvas-sidekick/">Canvas</a>, which Shopify launched yesterday, lays a store&#x27;s design system out right beside its AI assistant. The day before, Figma updated its Motion feature so that motion values such as easing and duration can be saved as &quot;animation styles&quot; and published to libraries. Both come down to keeping rules in one place, so that people and AI can pull from the same rules.</p>
+    <p class="ptext">One way of keeping rules in one place keeps coming up lately: a single file called DESIGN.md.</p>
+    <p class="ptext"><strong>First, a disclaimer.</strong> I&#x27;m building this site with Claude Code, and the experiment below was done there too. The checker is Google&#x27;s official tool (version 0.4.0), used as is.</p>
+    <h2 class="psub" id="s1">What is DESIGN.md?</h2>
+    <p class="ptext">It&#x27;s a format Google Labs used inside Stitch, its AI design tool. Google opened the format on April 21, so any AI tool can now read it. It&#x27;s licensed under Apache 2.0 and still in alpha.</p>
+    <p class="ptext">The structure is simple. One markdown file, two layers.</p>
+    <figure class="art__fig">
+      <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/design-md-anatomy-en-m.svg" width="600" height="814" /><img src="https://designrefs.com/articles/img/design-md-anatomy-en.svg" alt="The structure of a DESIGN.md file. Exact values on top, the reasons for them below." width="1200" height="762" loading="lazy" decoding="async" /></picture>
+      <figcaption>The structure of a DESIGN.md file. Exact values on top, the reasons for them below.</figcaption>
+    </figure>
+    <p class="ptext">Between the <code>---</code> fences at the top go the tokens: colors, type, corner radius, spacing and components, as exact values. Below that, you explain in prose why you use those values. In Google&#x27;s words, tokens give agents exact values, and prose tells them why those values exist and how to apply them.</p>
+    <p class="ptext">That second layer is the point. Give an AI just the value <code>#6B6B6B</code> and it&#x27;ll use that gray anywhere. Add one line, &quot;only for descriptions&quot;, and it stops putting that color in headings.</p>
+    <h2 class="psub" id="s2">What goes in it</h2>
+    <p class="ptext">The prose sections have a set order. You can skip any of them, but the ones you use must follow this order.</p>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th>Order</th><th>Section</th><th>What to write</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>Overview</td><td>The brand&#x27;s character and overall mood, in a sentence or two</td></tr>
+        <tr><td>2</td><td>Colors</td><td>Each color&#x27;s name, value and where it&#x27;s used</td></tr>
+        <tr><td>3</td><td>Typography</td><td>Type scale steps and their uses</td></tr>
+        <tr><td>4</td><td>Layout</td><td>Spacing and grid</td></tr>
+        <tr><td>5</td><td>Elevation &amp; Depth</td><td>Shadows and layering</td></tr>
+        <tr><td>6</td><td>Shapes</td><td>Corner radius</td></tr>
+        <tr><td>7</td><td>Components</td><td>How parts like buttons and inputs are put together</td></tr>
+        <tr><td>8</td><td>Do&#x27;s and Don&#x27;ts</td><td>What not to do</td></tr>
+      </tbody>
+    </table></div>
+    <p class="art__note">Source: the spec in <a href="https://github.com/google-labs-code/design.md" target="_blank" rel="noopener">google-labs-code/design.md</a>.</p>
+    <p class="ptext">If you&#x27;ve ever made a brand guidelines PDF, the outline will look familiar. The difference is that an AI is reading it, so values and conditions work better than vague adjectives. &quot;Emphasis by weight, not color&quot; beats &quot;a refined feel&quot;.</p>
+    <h2 class="psub" id="s3">I tried it on this site</h2>
+    <p class="ptext">Talking about it in the abstract didn&#x27;t feel like enough, so I wrote this site&#x27;s rules out as a DESIGN.md. This site uses only black and white: a few grays, one typeface and a few corner radius steps. Then I ran <code>lint</code>, the checker Google released alongside the format.</p>
+    <p class="ptext">It came back with four warnings. Two were worth a look.</p>
+    <p class="ptext"><strong>First, one gray fell short.</strong> The light gray <code>#A3A3A3</code>, used for site domains and tags, measured 2.52 : 1 contrast on white. The web accessibility standard for body text (WCAG AA) is 4.5 : 1. When I picked it I thought &quot;less important text, so lighter&quot;. The checker drew the line with a number.</p>
+    <figure class="art__fig">
+      <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/designmd-contrast-en-m.svg" width="600" height="839" /><img src="https://designrefs.com/articles/img/designmd-contrast-en.svg" alt="Contrast on white for this site&#x27;s four grays and one candidate. Only one falls below 4.5." width="1200" height="693" loading="lazy" decoding="async" /></picture>
+      <figcaption>Contrast on white for this site&#x27;s four grays and one candidate. Only one falls below 4.5.</figcaption>
+    </figure>
+    <p class="ptext">I put in <code>#767676</code> as a candidate and ran the <code>diff</code> command. It pointed out exactly one changed token and one fewer warning. At 4.54 : 1, it barely passes. Whether I actually switch is something I&#x27;ll decide after looking at it on screen.</p>
+    <p class="ptext"><strong>Second, a warning about a missing primary color.</strong> When there&#x27;s no color named <code>primary</code>, the checker says the agent will auto-generate key colors. This site leaves out a primary color on purpose, being black and white, but an AI reads that gap as &quot;not decided yet&quot;. So I need to write &quot;There is no accent color. Don&#x27;t create one&quot; under Do&#x27;s and Don&#x27;ts. Even what&#x27;s absent has to be written down to be respected.</p>
+    <p class="ptext">The other two warnings were about colors defined but never used by any component. It found some tidying up for me.</p>
+    <h2 class="psub" id="s4">How it fits with the tools you already use</h2>
+    <p class="ptext">DESIGN.md doesn&#x27;t replace Figma variables or token files. With the checker&#x27;s <code>export</code> command, the same tokens can be exported as a Tailwind config, CSS variables, or the W3C design token format (DTCG). Values stay in one place and flow out to many.</p>
+    <p class="ptext">The difference is who reads it. Token files are read by code people write. DESIGN.md is read by AI. Put the file in a project folder and coding agents like Claude Code or Cursor read it before building any screens.</p>
+    <p class="ptext">One caution. As the format caught on, sites offering &quot;DESIGN.md collections&quot; appeared, and people have pointed out that some of them don&#x27;t match Google&#x27;s official spec. If you&#x27;re going to use someone else&#x27;s file, run <code>lint</code> on it first.</p>
+    <h2 class="psub" id="s5">So, for now</h2>
+    <p class="ptext">You don&#x27;t need to fill all eight sections from the start. This is enough to begin.</p>
+    <ol class="ptext-list">
+      <li><strong>Five colors or fewer.</strong> A name, a value and one line on where each is used.</li>
+      <li><strong>Three type sizes.</strong> Heading, body, small text.</li>
+      <li><strong>Three things not to do.</strong> Write down the directions AI tends to drift in. No gradients, say, or no drop shadows.</li>
+    </ol>
+    <p class="ptext">Then run <code>npx @google/design.md lint DESIGN.md</code>. Like me, you might find that a color you&#x27;ve used for ages doesn&#x27;t meet the standard. You end up checking your rules before handing them to AI.</p>
+    <p class="ptext">How to put a style into words for AI is covered separately in <a href="https://designrefs.com/en/articles/describing-design-style/">How to describe a design style</a>. Tools for checking color contrast are under <a href="https://designrefs.com/en/#color">Color</a>.</p>
+    <p class="art__note">Sources: <a href="https://blog.google/innovation-and-ai/models-and-research/google-labs/stitch-design-md/" target="_blank" rel="noopener">Google blog, Stitch&#x27;s DESIGN.md format is now open-source</a>, <a href="https://github.com/google-labs-code/design.md" target="_blank" rel="noopener">google-labs-code/design.md</a>, <a href="https://the-decoder.com/googles-open-source-design-md-gives-ai-agents-a-prompt-ready-blueprint-for-brand-consistent-design/" target="_blank" rel="noopener">the-decoder</a>, <a href="https://www.figma.com/release-notes/" target="_blank" rel="noopener">Figma release notes</a>, <a href="https://note.com/ai_driven/n/n191c47fa4e24" target="_blank" rel="noopener">note.com comparison with the official spec</a>.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Shopify Canvas lays out your whole store at once and lets you edit it with AI</title>
+      <link>https://designrefs.com/en/articles/shopify-canvas-sidekick/</link>
+      <guid isPermaLink="true">https://designrefs.com/en/articles/shopify-canvas-sidekick/</guid>
+      <pubDate>Thu, 01 Oct 2026 09:00:00 +0900</pubDate>
+      <category>AI Design</category>
+      <description>Shopify&#x27;s Canvas, launched October 1, puts every page of a store on one surface. You click to edit, or tell Sidekick what you want. Here&#x27;s what changed and what doesn&#x27;t work yet, with diagrams and a table.</description>
+      <content:encoded><![CDATA[    <p class="ptext">Shopify launched Canvas on October 1. It&#x27;s a new workbench for designing online stores.</p>
+    <p class="ptext">The name already sounds familiar to designers, and so does the thing itself. Every page of the store is laid out on one surface. You pan across it and zoom in on details, much like opening a Figma file. The difference is that what sits on this canvas isn&#x27;t a mockup. It&#x27;s the working store.</p>
+    <p class="ptext"><strong>First, a disclaimer.</strong> Canvas is rolling out to stores over the coming days. I don&#x27;t run a Shopify store, so I haven&#x27;t used it myself. What follows is based on Shopify&#x27;s announcement and changelog, and on articles covering the launch.</p>
+    <h2 class="psub" id="s1">From one page at a time to everything at once</h2>
+    <p class="ptext">Until now, Shopify stores were edited in the theme editor. You open one page and click through the settings listed on the left, one by one. To check the product page while working on the home page, you had to switch pages.</p>
+    <figure class="art__fig">
+      <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/shopify-canvas-compare-en-m.svg" width="600" height="1141" /><img src="https://designrefs.com/articles/img/shopify-canvas-compare-en.svg" alt="The theme editor versus Canvas. A diagram based on the announcement, not the actual interface." width="1200" height="655" loading="lazy" decoding="async" /></picture>
+      <figcaption>The theme editor versus Canvas. A diagram based on the announcement, not the actual interface.</figcaption>
+    </figure>
+    <p class="ptext">Canvas flips that around. A store&#x27;s pages, design elements and design system all sit on one screen. There are two ways to make changes.</p>
+    <ul class="ptext-list">
+      <li><strong>Click directly.</strong> Click any element on the canvas and edit it.</li>
+      <li><strong>Say it.</strong> Tell Sidekick, Shopify&#x27;s AI assistant, what you want in the chat beside the canvas. From a single section to a store-wide redesign, the changes show up on the canvas as they happen.</li>
+    </ul>
+    <p class="ptext">The preview isn&#x27;t a picture either. Shopify stresses that what&#x27;s rendered is the real code behind the store, not a mockup. So you can check pages with animations and interactions intact, swapping in different products and collections and changing screen sizes.</p>
+    <h2 class="psub" id="s2">Two weeks and twenty minutes</h2>
+    <p class="ptext">Ben Sehl, Shopify&#x27;s Director of Product, is also a co-founder of the clothing brand Kotn. The comparison he made at the launch stands out.</p>
+    <figure class="art__fig">
+      <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/canvas-store-time-en-m.svg" width="600" height="557" /><img src="https://designrefs.com/articles/img/canvas-store-time-en.svg" alt="Two numbers from Ben Sehl. Two weeks then, twenty minutes now. Not a like-for-like measurement." width="1200" height="459" loading="lazy" decoding="async" /></picture>
+      <figcaption>Two numbers from Ben Sehl. Two weeks then, twenty minutes now. Not a like-for-like measurement.</figcaption>
+    </figure>
+    <blockquote class="art__quote">When I built Kotn 12 years ago, I knew how to code and it still took me two weeks to get a rough store working. Today, an entrepreneur on Shopify can build a fully custom store in twenty minutes that&#x27;s head and shoulders above what I built then.</blockquote>
+    <p class="ptext">On a chart, the second bar is barely a dot. But this is a company insider&#x27;s memory mixed with a sales pitch, not a measurement of the same store under the same conditions. Read twenty minutes as &quot;enough to get started&quot;. Picking photos, polishing copy and filling in product details aren&#x27;t in that number.</p>
+    <h2 class="psub" id="s3">What doesn&#x27;t work yet</h2>
+    <p class="ptext">On day one, Canvas has a fair number of gaps. Shopify says they&#x27;ll be filled over time.</p>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th>Item</th><th>In Canvas today</th></tr></thead>
+      <tbody>
+        <tr><td>Third-party themes from the Theme Store</td><td>Not supported. Only Shopify-made and custom themes</td></tr>
+        <tr><td>App blocks and app embeds</td><td>Can&#x27;t be added or configured</td></tr>
+        <tr><td>Adding new blocks</td><td>Not by hand. You have to ask Sidekick</td></tr>
+        <tr><td>Per-market customization, translation</td><td>Not supported. Translate in the Translate &amp; Adapt app</td></tr>
+        <tr><td>Theme updates</td><td>A theme edited in Canvas stops receiving them</td></tr>
+        <tr><td>Downloading theme files</td><td>Not possible</td></tr>
+      </tbody>
+    </table></div>
+    <p class="art__note">Sources: <a href="https://changelog.shopify.com/posts/design-a-fully-bespoke-store-with-canvas" target="_blank" rel="noopener">Shopify changelog</a>, <a href="https://techcrunch.com/2026/10/01/shopify-debuts-canvas-a-way-to-build-online-stores-by-chatting-with-ai/" target="_blank" rel="noopener">TechCrunch</a>. Sidekick is included on every plan at no extra cost.</p>
+    <p class="ptext">The last two rows are the ones to watch. A theme edited in Canvas no longer gets updates from the original theme, and you can&#x27;t download its files to work on elsewhere. Once a theme goes in, it lives inside Canvas.</p>
+    <p class="ptext">The good news is you can start carefully. Under Online Store &gt; Themes, create a new theme in Canvas, or duplicate your current theme and open the copy in Canvas. The original stays in the existing editor. For now, Canvas is desktop-only.</p>
+    <h2 class="psub" id="s4">What changes for designers</h2>
+    <p class="ptext">If you design Shopify stores for clients, the shape of the work shifts a little.</p>
+    <p class="ptext">Until now it was two steps: make the design in Figma, then move it over through a developer or the theme editor. Canvas shortens the gap, because the surface you design on and the live store become the same surface. It also brings the moment when the store owner tells Sidekick &quot;make the buttons black&quot; themselves.</p>
+    <p class="ptext">So the work that remains is this: deciding which buttons should be black, and why, and writing it down. Having the design system on the canvas also means the AI reads those rules and follows them. If the rules are blank, the AI fills them in on its own. I pick this up tomorrow in <a href="https://designrefs.com/en/articles/design-md-for-ai/">DESIGN.md, the file that hands your design rules to AI</a>.</p>
+    <p class="ptext">One more thing. In last week&#x27;s <a href="https://designrefs.com/en/articles/openai-devday-2026-designers/">DevDay roundup</a>, design tools were moving into ChatGPT. This time a design workbench moved into a commerce tool. Wherever you start, things are converging toward touching the real product directly.</p>
+    <h2 class="psub" id="s5">So, for now</h2>
+    <p class="ptext">If you have a Shopify store, duplicating your current theme and opening the copy in Canvas is about right. Leave the original alone, and if your store relies on app blocks or translations, hold off on moving over.</p>
+    <p class="ptext">One thing worth trying on the copy: tell Sidekick three of your store&#x27;s usual rules first (say, button shape, heading size and photo ratio), then ask it to build a new page. How many pages it keeps those rules for will tell you how far to trust this workbench.</p>
+    <p class="ptext">For store references, see <a href="https://designrefs.com/en/#uiux">UI/UX references</a>. AI tools are collected under <a href="https://designrefs.com/en/#ai">AI design tools</a>.</p>
+    <p class="art__note">Sources: <a href="https://www.shopify.com/news/introducing-canvas" target="_blank" rel="noopener">Shopify, Introducing Canvas</a>, <a href="https://changelog.shopify.com/posts/design-a-fully-bespoke-store-with-canvas" target="_blank" rel="noopener">Shopify changelog</a>, <a href="https://techcrunch.com/2026/10/01/shopify-debuts-canvas-a-way-to-build-online-stores-by-chatting-with-ai/" target="_blank" rel="noopener">TechCrunch</a>, <a href="https://www.unite.ai/shopify-rolls-out-canvas-a-sidekick-powered-store-design-surface/" target="_blank" rel="noopener">Unite.AI</a>, <a href="https://ecommercenews.com.au/story/shopify-launches-canvas-ai-workspace-for-store-design" target="_blank" rel="noopener">ecommercenews</a>.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Canva, Figma and Adobe move into ChatGPT. What designers should take from DevDay</title>
       <link>https://designrefs.com/en/articles/openai-devday-2026-designers/</link>

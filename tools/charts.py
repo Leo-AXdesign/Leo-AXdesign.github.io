@@ -136,6 +136,50 @@ CHARTS = {
              "rows": [("Claude Opus 5.5", 5.98, "$5.98"), ("GPT-6 Astra", 3.26, "$3.26"), ("GPT-6.1 Sol", 0.72, "$0.72")]},
         ],
     },
+    # ---- 2026-10-01 '쇼피파이 캔버스' 글 ----
+    "canvas-store-time": {
+        "title": "가게 하나를 여는 데 걸린 시간",
+        "sub": "쇼피파이 프로덕트 디렉터 벤 셀의 말 · 같은 가게를 같은 조건으로 잰 기록은 아님",
+        "source": ["출처: Shopify 캔버스 발표(2026. 10. 1), TechCrunch 인용.", "2주는 달력으로 14일(2만 160분)로 계산."],
+        "desc": "벤 셀은 12년 전 코딩을 할 줄 알면서도 Kotn 가게의 기본 모습을 만드는 데 2주가 걸렸고, 지금은 캔버스로 완전히 맞춤형 가게를 20분 만에 만든다고 말했다.",
+        "panels": [
+            {"title": "걸린 시간", "hint": "분으로 바꿔 같은 축에",
+             "rows": [("2014년, Kotn 직접 코딩", 20160, "약 2주"), ("2026년, 캔버스와 사이드킥", 20, "약 20분")]},
+        ],
+    },
+    "canvas-store-time-en": {
+        "title": "Time to get a store up",
+        "sub": "As told by Shopify Director of Product Ben Sehl · not a like-for-like measurement",
+        "source": ["Source: Shopify's Canvas announcement (Oct 1, 2026), as quoted by TechCrunch.", "Two weeks counted as 14 calendar days (20,160 min)."],
+        "desc": "Ben Sehl said that 12 years ago, even knowing how to code, it took him two weeks to get a rough Kotn store working, and that a fully custom store now takes about twenty minutes with Canvas.",
+        "panels": [
+            {"title": "Time taken", "hint": "both in minutes, same axis",
+             "rows": [("2014, Kotn, hand-coded", 20160, "~2 weeks"), ("2026, Canvas + Sidekick", 20, "~20 min")]},
+        ],
+    },
+    # ---- 2026-10-02 'DESIGN.md' 글 ----
+    "designmd-contrast": {
+        "title": "흰 바탕 위 글자색 대비",
+        "sub": "이 사이트의 회색 넷과 후보 하나 · 본문 글자는 4.5 : 1 이상이어야 WCAG AA 통과",
+        "source": ["design.md lint 0.4.0 으로 확인. 값은 WCAG 대비율.", "#767676 은 바꿔 볼 후보."],
+        "desc": "흰 바탕 위 대비율. #111111 18.9, #2C2C2C 14.0, #6B6B6B 5.3, #767676 4.5, #A3A3A3 2.5. 4.5보다 낮은 #A3A3A3만 본문 글자 기준을 넘지 못한다.",
+        "panels": [
+            {"title": "대비율", "hint": "높을수록 읽기 쉬움",
+             "rows": [("#111111 제목", 18.88, "18.9"), ("#2C2C2C 본문", 13.97, "14.0"), ("#6B6B6B 설명", 5.33, "5.3"),
+                      ("#767676 후보", 4.54, "4.5"), ("#A3A3A3 주소·태그", 2.52, "2.5 ✕")]},
+        ],
+    },
+    "designmd-contrast-en": {
+        "title": "Text contrast on white",
+        "sub": "Four grays on this site plus one candidate · body text needs 4.5 : 1 or more to pass WCAG AA",
+        "source": ["Checked with design.md lint 0.4.0. Values are WCAG contrast ratios.", "#767676 is a candidate replacement."],
+        "desc": "Contrast on white: #111111 18.9, #2C2C2C 14.0, #6B6B6B 5.3, #767676 4.5, #A3A3A3 2.5. Only #A3A3A3 falls below 4.5.",
+        "panels": [
+            {"title": "Contrast ratio", "hint": "higher is easier to read",
+             "rows": [("#111111 headings", 18.88, "18.9"), ("#2C2C2C body", 13.97, "14.0"), ("#6B6B6B descriptions", 5.33, "5.3"),
+                      ("#767676 candidate", 4.54, "4.5"), ("#A3A3A3 domains, tags", 2.52, "2.5 ✕")]},
+        ],
+    },
 }
 
 
