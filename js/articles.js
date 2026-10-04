@@ -1,6 +1,8 @@
 // 이 파일은 tools/build-articles.py 가 만듭니다. 직접 고치지 마세요.
 // 글은 content/articles/*.md 에서 고칩니다.
 const ARTICLES = [
+  { slug: "instructmesh-ai-3d-print", title: "AI가 만든 3D 모델, 다섯 개 중 넷은 그대로 출력하면 못 쓴다", desc: "MIT 연구진이 AI로 만든 3D 모델을 출력 전에 고치는 도구 InstructMesh를 내놓았다. 생성된 모델의 약 80%에 구조 결함이 있었고, 초보자들은 이 도구로 약 90%를 고쳤다. 고치는 순서와 출력 전에 확인할 것을 정리했다.", date: "2026-10-04", tag: "AI 디자인", min: 3, views: ["ai", "tool"] },
+  { slug: "image-ai-edit-not-reroll", title: "다시 뽑지 말고 고쳐 쓴다, 이미지 AI가 '편집' 쪽으로 간 한 주", desc: "9월 30일 Ideogram 4.5, 10월 2일 FLUX 3 Image. 이번 주 나온 두 이미지 모델은 더 예쁜 그림보다 '한 군데만 고치기'를 앞세웠다. 상자로 먼저 배치하는 방식과 크기별 가격까지 그림과 숫자로 정리했다.", date: "2026-10-03", tag: "AI 디자인", min: 4, views: ["ai", "tool"] },
   { slug: "design-md-for-ai", title: "AI에게 우리 디자인 규칙을 건네는 파일 한 장, DESIGN.md", desc: "AI가 시안을 만들고 코드를 짜는 일이 늘수록, 규칙을 어디에 적어 두느냐가 중요해진다. 구글이 공개한 DESIGN.md 형식으로 이 사이트의 규칙을 직접 옮겨 적고 검사기를 돌려 봤다. 걸린 것까지 그대로 옮긴다.", date: "2026-10-02", tag: "AI 디자인", min: 4, views: ["ai", "tool"] },
   { slug: "shopify-canvas-sidekick", title: "쇼피파이 '캔버스', 가게 전체를 한 판에 펼쳐 놓고 AI와 고친다", desc: "쇼피파이가 10월 1일 내놓은 캔버스는 가게의 모든 페이지를 한 화면에 펼치고, 눌러서 고치거나 사이드킥에게 말로 시키는 작업대다. 무엇이 달라졌는지, 아직 안 되는 건 뭔지 그림과 표로 정리했다.", date: "2026-10-01", tag: "AI 디자인", min: 3, views: ["ai", "tool"] },
   { slug: "openai-devday-2026-designers", title: "챗GPT 안으로 들어온 캔바·피그마·어도비, 데브데이에서 디자이너가 볼 것", desc: "오늘 새벽 오픈AI 데브데이에서 발표가 스무 개 넘게 쏟아졌다. 그중 디자인 작업과 닿는 것만 골라, 그림과 숫자로 정리했다.", date: "2026-09-30", tag: "AI 디자인", min: 3, views: ["ai", "tool"] },

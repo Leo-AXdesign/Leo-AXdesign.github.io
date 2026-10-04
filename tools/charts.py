@@ -180,6 +180,56 @@ CHARTS = {
                       ("#767676 candidate", 4.54, "4.5"), ("#A3A3A3 domains, tags", 2.52, "2.5 ✕")]},
         ],
     },
+    # ---- 2026-10-03 '이미지 편집' 글 ----
+    "flux3-price": {
+        "title": "FLUX 3 Image, 크기마다 값이 이만큼 다르다",
+        "sub": "API 한 장 값 · 10월 8일까지는 발표 할인으로 절반",
+        "source": ["출처: OpenRouter·kingy.ai에 올라온 가격표 (2026. 10. 2).", "4K는 최대 5456 × 3072."],
+        "desc": "FLUX 3 Image 한 장 정가는 768px 0.041달러, 1K 0.048달러, 1.5K 0.07달러, 2K 0.1달러, 4K 0.607달러. 10월 8일까지는 절반 값.",
+        "panels": [
+            {"title": "정가", "hint": "10월 9일부터",
+             "rows": [("768px", 0.041, "$0.041"), ("1K", 0.048, "$0.048"), ("1.5K", 0.07, "$0.07"), ("2K", 0.1, "$0.10"), ("4K", 0.607, "$0.607")]},
+            {"title": "할인가", "hint": "10월 8일까지",
+             "rows": [("768px", 0.0205, "$0.021"), ("1K", 0.024, "$0.024"), ("1.5K", 0.035, "$0.035"), ("2K", 0.05, "$0.05"), ("4K", 0.3035, "$0.304")]},
+        ],
+    },
+    "flux3-price-en": {
+        "title": "FLUX 3 Image: how much size changes the price",
+        "sub": "API price per image · half off until October 8",
+        "source": ["Sources: price sheets on OpenRouter and kingy.ai (Oct 2, 2026).", "4K means up to 5456 × 3072."],
+        "desc": "FLUX 3 Image list price per image: 768px $0.041, 1K $0.048, 1.5K $0.07, 2K $0.10, 4K $0.607. Half price until October 8.",
+        "panels": [
+            {"title": "List price", "hint": "from October 9",
+             "rows": [("768px", 0.041, "$0.041"), ("1K", 0.048, "$0.048"), ("1.5K", 0.07, "$0.07"), ("2K", 0.1, "$0.10"), ("4K", 0.607, "$0.607")]},
+            {"title": "Launch price", "hint": "until October 8",
+             "rows": [("768px", 0.0205, "$0.021"), ("1K", 0.024, "$0.024"), ("1.5K", 0.035, "$0.035"), ("2K", 0.05, "$0.05"), ("4K", 0.3035, "$0.304")]},
+        ],
+    },
+    # ---- 2026-10-04 'InstructMesh' 글 ----
+    "instructmesh-rates": {
+        "title": "AI가 만든 3D, 그대로는 대부분 못 쓴다",
+        "sub": "MIT CSAIL 실험 · 씽기버스 인기 모델을 TRELLIS로 다시 만들어 봄",
+        "source": ["출처: MIT News(2026. 10. 1), arXiv 2608.28534.", "초보자 실험은 12명, 고친 결과는 전문가가 확인."],
+        "desc": "AI로 다시 만든 3D 모델의 약 80%에 구조 결함이 있었다. InstructMesh를 쓴 초보자들은 약 90%의 경우 결함을 찾아 고쳤다.",
+        "panels": [
+            {"title": "구조 결함이 있던 모델", "hint": "AI가 만든 그대로",
+             "rows": [("결함 있음", 80, "약 80%"), ("문제없음", 20, "약 20%")]},
+            {"title": "초보자가 찾아 고친 비율", "hint": "InstructMesh 사용",
+             "rows": [("고침", 90, "약 90%"), ("못 고침", 10, "약 10%")]},
+        ],
+    },
+    "instructmesh-rates-en": {
+        "title": "AI-made 3D models mostly can't be used as is",
+        "sub": "MIT CSAIL experiment · popular Thingiverse models regenerated with TRELLIS",
+        "source": ["Sources: MIT News (Oct 1, 2026), arXiv 2608.28534.", "12 novice participants; fixes checked by an expert."],
+        "desc": "About 80% of the regenerated 3D models had structural flaws. Novices using InstructMesh found and fixed them about 90% of the time.",
+        "panels": [
+            {"title": "Models with structural flaws", "hint": "straight from the AI",
+             "rows": [("Flawed", 80, "~80%"), ("Fine", 20, "~20%")]},
+            {"title": "Fixed by novices", "hint": "using InstructMesh",
+             "rows": [("Fixed", 90, "~90%"), ("Not fixed", 10, "~10%")]},
+        ],
+    },
 }
 
 

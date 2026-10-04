@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 459" role="img" aria-labelledby="t d">
+  <title id="t">AI가 만든 3D, 그대로는 대부분 못 쓴다</title>
+  <desc id="d">AI로 다시 만든 3D 모델의 약 80%에 구조 결함이 있었다. InstructMesh를 쓴 초보자들은 약 90%의 경우 결함을 찾아 고쳤다.</desc>
+  <rect width="1200" height="459" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="40" y="70" font-size="30" font-weight="800" fill="#111111" letter-spacing="-0.5">AI가 만든 3D, 그대로는 대부분 못 쓴다</text>
+    <text x="40" y="101" font-size="19" fill="#6B6B6B">MIT CSAIL 실험 · 씽기버스 인기 모델을 TRELLIS로 다시 만들어 봄</text>
+    <text x="40.0" y="165" font-size="24" font-weight="700" fill="#111111">구조 결함이 있던 모델</text>
+    <text x="40.0" y="193" font-size="18" fill="#6B6B6B">AI가 만든 그대로</text>
+    <text x="40.0" y="237" font-size="18" fill="#444444">결함 있음</text>
+    <path d="M40.0 247H467.0A7 7 0 0 1 474.0 254V270A7 7 0 0 1 467.0 277H40.0Z" fill="#111111"/>
+    <text x="486.0" y="269.92" font-size="22" font-weight="700" fill="#111111">약 80%</text>
+    <text x="40.0" y="315" font-size="18" fill="#444444">문제없음</text>
+    <path d="M40.0 325H141.5A7 7 0 0 1 148.5 332V348A7 7 0 0 1 141.5 355H40.0Z" fill="#111111"/>
+    <text x="160.5" y="347.92" font-size="22" font-weight="700" fill="#111111">약 20%</text>
+    <line x1="40.0" y1="219" x2="40.0" y2="375" stroke="#D9D9D9" stroke-width="1.6"/>
+    <text x="630.0" y="165" font-size="24" font-weight="700" fill="#111111">초보자가 찾아 고친 비율</text>
+    <text x="630.0" y="193" font-size="18" fill="#6B6B6B">InstructMesh 사용</text>
+    <text x="630.0" y="237" font-size="18" fill="#444444">고침</text>
+    <path d="M630.0 247H1057.0A7 7 0 0 1 1064.0 254V270A7 7 0 0 1 1057.0 277H630.0Z" fill="#111111"/>
+    <text x="1076.0" y="269.92" font-size="22" font-weight="700" fill="#111111">약 90%</text>
+    <text x="630.0" y="315" font-size="18" fill="#444444">못 고침</text>
+    <path d="M630.0 325H671.2222222222222A7 7 0 0 1 678.2222222222222 332V348A7 7 0 0 1 671.2222222222222 355H630.0Z" fill="#111111"/>
+    <text x="690.2222222222222" y="347.92" font-size="22" font-weight="700" fill="#111111">약 10%</text>
+    <line x1="630.0" y1="219" x2="630.0" y2="375" stroke="#D9D9D9" stroke-width="1.6"/>
+    <line x1="40" y1="397" x2="1160" y2="397" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="40" y="423" font-size="16" fill="#6B6B6B">출처: MIT News(2026. 10. 1), arXiv 2608.28534. 초보자 실험은 12명, 고친 결과는 전문가가 확인.</text>
+  </g>
+</svg>
