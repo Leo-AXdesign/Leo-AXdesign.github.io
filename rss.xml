@@ -6,7 +6,122 @@
     <atom:link href="https://designrefs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>디자인하면서 생각한 것들을 적습니다. AI와 같이 일하는 법, 스타일을 말로 옮기는 법, 레퍼런스와 커뮤니티 이야기.</description>
     <language>ko</language>
-    <lastBuildDate>Fri, 02 Oct 2026 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 04 Oct 2026 09:00:00 +0900</lastBuildDate>
+    <item>
+      <title>AI가 만든 3D 모델, 다섯 개 중 넷은 그대로 출력하면 못 쓴다</title>
+      <link>https://designrefs.com/articles/instructmesh-ai-3d-print/</link>
+      <guid isPermaLink="true">https://designrefs.com/articles/instructmesh-ai-3d-print/</guid>
+      <pubDate>Sun, 04 Oct 2026 09:00:00 +0900</pubDate>
+      <category>AI 디자인</category>
+      <description>MIT 연구진이 AI로 만든 3D 모델을 출력 전에 고치는 도구 InstructMesh를 내놓았다. 생성된 모델의 약 80%에 구조 결함이 있었고, 초보자들은 이 도구로 약 90%를 고쳤다. 고치는 순서와 출력 전에 확인할 것을 정리했다.</description>
+      <content:encoded><![CDATA[    <p class="ptext">글 한 줄이나 사진 한 장으로 3D 모델을 만드는 AI가 흔해졌다. 화면 속 결과물은 그럴듯하다. 그런데 3D 프린터로 뽑아 보면 이야기가 달라진다. 손잡이가 너무 가늘어 부러지고, 피리는 속이 막혀 소리가 안 나고, 벽은 얇아서 출력 중에 무너진다.</p>
+    <p class="ptext">MIT 컴퓨터과학·인공지능연구소(CSAIL)가 10월 1일 이 문제를 다룬 도구를 공개했다. 이름은 InstructMesh. AI가 만든 3D 모델에서 문제 있는 부위만 골라, 말로 고치고 나서 출력하게 해 준다.</p>
+    <p class="ptext"><strong>먼저 밝혀 둘 것.</strong> InstructMesh는 아직 연구 단계의 도구라 직접 써 보지 못했다. 아래 내용은 MIT의 발표와 논문을 바탕으로 했다. 논문은 11월 사용자 인터페이스 학회(UIST)에서 발표된다.</p>
+    <h2 class="psub" id="s1">보기에는 맞는데, 쓰기에는 틀리다</h2>
+    <p class="ptext">연구진의 진단은 한 문장으로 요약된다. AI는 물건이 어떻게 생겼는지는 알지만, 어떻게 쓰이는지는 모른다.</p>
+    <p class="ptext">그래서 연구진은 먼저 얼마나 자주 그런지 재 봤다. 3D 프린팅 공유 사이트 씽기버스(Thingiverse)의 인기 모델들을 3D 생성 AI TRELLIS로 다시 만들게 했다.</p>
+    <figure class="art__fig">
+      <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/instructmesh-rates-m.svg" width="600" height="881" /><img src="https://designrefs.com/articles/img/instructmesh-rates.svg" alt="AI로 다시 만든 3D 모델의 약 80%에 구조 결함이 있었다. InstructMesh를 쓴 초보자들은 그중 약 90%를 찾아 고쳤다." width="1200" height="459" loading="lazy" decoding="async" /></picture>
+      <figcaption>AI로 다시 만든 3D 모델의 약 80%에 구조 결함이 있었다. InstructMesh를 쓴 초보자들은 그중 약 90%를 찾아 고쳤다.</figcaption>
+    </figure>
+    <p class="ptext">약 80%가 구조적으로 결함이 있었다. 다섯 개 중 넷은 그대로 출력하면 제 역할을 못 한다는 뜻이다.</p>
+    <h2 class="psub" id="s2">고칠 곳만 칠하고, 말로 고친다</h2>
+    <p class="ptext">InstructMesh의 방식은 이렇다. 마이크로소프트의 3D 생성 모델 TRELLIS로 모델을 만들고, 언어 모델 GPT-4가 사용자의 말을 알아듣는 역할을 한다.</p>
+    <figure class="art__fig">
+      <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/instructmesh-flow-m.svg" width="600" height="937" /><img src="https://designrefs.com/articles/img/instructmesh-flow.svg" alt="InstructMesh로 고치는 순서. 만들고, 문제 있는 부위만 칠해 고르고, 말이나 슬라이더로 고친 뒤 출력한다." width="1200" height="545" loading="lazy" decoding="async" /></picture>
+      <figcaption>InstructMesh로 고치는 순서. 만들고, 문제 있는 부위만 칠해 고르고, 말이나 슬라이더로 고친 뒤 출력한다.</figcaption>
+    </figure>
+    <p class="ptext">중요한 건 두 번째 단계다. 모델 전체를 다시 만들지 않는다. 손잡이면 손잡이, 바닥이면 바닥처럼 문제가 보이는 부위만 칠해서 고른다. 그다음 &quot;손잡이를 두껍게&quot;처럼 말로 시키거나, 두께 같은 작은 조정은 슬라이더로 한다. 할 수 있는 일은 주로 세 가지다.</p>
+    <ul class="ptext-list">
+      <li><strong>구멍 열기.</strong> 피리나 물통처럼 속이 비어야 하는데 막혀 버린 곳을 연다.</li>
+      <li><strong>구멍 막기.</strong> 생기면 안 되는 틈을 메운다.</li>
+      <li><strong>두께 조절.</strong> 너무 얇아서 부러지거나 출력이 안 되는 부분을 두껍게 한다.</li>
+    </ul>
+    <p class="ptext">이 도구로 연구진이 실제로 뽑은 물건들이 재미있다. 용이 몸을 감고 있고 꼬리가 손잡이가 되는 머그잔, 렌즈 위로 나비 날개가 펼쳐진 안경, 조개를 닮은 파란 호루라기, 문어 모양 디스펜서, 데님처럼 보이는 무릎 보호대. 모양은 AI가 잡고, 쓸 수 있게 만드는 마무리는 사람이 했다.</p>
+    <p class="ptext">12명의 초보자에게 맡겨 보니, 결함을 찾아 고친 비율이 약 90%였다. 고친 결과는 전문가가 확인했다. 3D 모델링을 해 본 적 없는 사람도, 어디가 문제인지 보이기만 하면 말로 고칠 수 있었다는 뜻이다.</p>
+    <h2 class="psub" id="s3">2D에서 본 장면이 3D에서도</h2>
+    <p class="ptext">어제 <a href="https://designrefs.com/articles/image-ai-edit-not-reroll/">이미지 AI가 &#x27;편집&#x27; 쪽으로 간 한 주</a>를 정리했다. 이미지 모델들이 &quot;통째로 다시 뽑기&quot; 대신 &quot;고른 자리만 고치기&quot;를 앞세웠다는 이야기였다.</p>
+    <p class="ptext">InstructMesh도 같은 방향이다. 전체를 다시 만들면 고친 곳 말고 다른 데가 또 틀어진다. 그래서 부위를 고르고, 거기만 손댄다. 2D든 3D든, AI 결과물을 실제로 쓰려면 이 &#x27;부분 수정&#x27;이 빠질 수 없다는 게 점점 분명해진다.</p>
+    <p class="ptext">그리고 역할 분담도 같다. AI는 모양을 빠르게 내놓고, 그게 실제로 쓰일 수 있는지 판단하는 건 사람이다. 손잡이를 쥐었을 때 버틸지, 물이 샐지, 어디가 부러질지. 제품 디자이너가 원래 하던 일이 여기서 더 중요해진다.</p>
+    <h2 class="psub" id="s4">그래서 지금은</h2>
+    <p class="ptext">InstructMesh는 아직 내려받아 쓸 수 있는 제품이 아니다. 하지만 지금 쓰는 3D 생성 AI로 출력할 계획이라면, 연구진이 고친 세 가지를 그대로 확인 목록으로 쓸 수 있다.</p>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th>확인할 것</th><th>왜</th><th>어떻게 보나</th></tr></thead>
+      <tbody>
+        <tr><td>얇은 부분</td><td>출력 중에 무너지거나 쓰다가 부러진다</td><td>슬라이서의 얇은 벽 경고, 단면 보기</td></tr>
+        <tr><td>막힌 구멍</td><td>속이 비어야 하는 물건이 제 역할을 못 한다</td><td>단면을 잘라 속이 비었는지 본다</td></tr>
+        <tr><td>생기면 안 되는 틈</td><td>물이 새거나 출력이 끊긴다</td><td>메시 검사(구멍·뒤집힌 면 찾기)</td></tr>
+        <tr><td>쓰는 동작</td><td>쥐고, 끼우고, 세울 수 있어야 한다</td><td>손잡이·바닥·맞물리는 부분을 따로 본다</td></tr>
+      </tbody>
+    </table></div>
+    <p class="ptext">특히 마지막 줄이 중요하다. AI는 손으로 쥐는 상황을 상상하지 못한다. 출력 버튼을 누르기 전에 &quot;이걸 손에 들면 어디에 힘이 실리지?&quot;를 한 번만 떠올려 보자. 연구에서 초보자들이 고친 것도 눈으로 보고 알아챌 수 있는 결함들이었다. 알아채기만 하면 고칠 수 있다.</p>
+    <p class="ptext">3D와 목업 관련 도구는 <a href="https://designrefs.com/mockups/">목업</a>과 <a href="https://designrefs.com/ai/">AI 디자인 툴</a>에 모아 두었다. AI 결과물을 일에 들일 때의 고민은 <a href="https://designrefs.com/articles/ai-design-tools-in-practice/">AI가 시안을 서른 장 뽑아 줘도 일이 줄지 않는 이유</a>에 따로 적었다.</p>
+    <p class="art__note">출처: <a href="https://news.mit.edu/2026/instructmesh-tool-lets-users-repair-ai-3d-models-then-fabricate-them-1001" target="_blank" rel="noopener">MIT News</a>, <a href="https://www.csail.mit.edu/news/new-tool-lets-users-repair-ai-generated-3d-models-then-fabricate-them-just-way-they-want" target="_blank" rel="noopener">MIT CSAIL</a>, <a href="https://arxiv.org/abs/2608.28534" target="_blank" rel="noopener">arXiv 2608.28534 논문</a>, <a href="https://3dprinting.com/news/mit-researchers-let-users-repair-ai-generated-3d-models-before-printing/" target="_blank" rel="noopener">3D Printing</a>.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>다시 뽑지 말고 고쳐 쓴다, 이미지 AI가 &#x27;편집&#x27; 쪽으로 간 한 주</title>
+      <link>https://designrefs.com/articles/image-ai-edit-not-reroll/</link>
+      <guid isPermaLink="true">https://designrefs.com/articles/image-ai-edit-not-reroll/</guid>
+      <pubDate>Sat, 03 Oct 2026 09:00:00 +0900</pubDate>
+      <category>AI 디자인</category>
+      <description>9월 30일 Ideogram 4.5, 10월 2일 FLUX 3 Image. 이번 주 나온 두 이미지 모델은 더 예쁜 그림보다 &#x27;한 군데만 고치기&#x27;를 앞세웠다. 상자로 먼저 배치하는 방식과 크기별 가격까지 그림과 숫자로 정리했다.</description>
+      <content:encoded><![CDATA[    <p class="ptext">이미지 AI로 시안을 만들어 본 사람이라면 한 번쯤 겪었을 일이 있다. 제목 글자 하나만 바꿔 달라고 했는데, 돌아온 그림에서 모델 얼굴이 달라져 있고 병 색이 미묘하게 틀어져 있다. 두 번, 세 번 고칠수록 처음 그림에서 점점 멀어진다.</p>
+    <p class="ptext">이번 주 나온 두 이미지 모델은 바로 이 지점을 겨냥했다. 9월 30일 Ideogram 4.5, 그리고 10월 2일 발표된 Black Forest Labs의 FLUX 3 Image. 둘 다 &quot;더 멋진 그림&quot;보다 &quot;고른 곳만 고치고 나머지는 그대로&quot;를 앞에 내세웠다.</p>
+    <p class="ptext"><strong>먼저 밝혀 둘 것.</strong> 두 모델 모두 직접 돌려 보지 못했다. 아래 내용은 각 회사 발표와 이를 다룬 기사, 재판매처 가격표를 바탕으로 했다.</p>
+    <h2 class="psub" id="s1">다시 뽑기와 고쳐 쓰기</h2>
+    <p class="ptext">지금까지 이미지 AI의 &#x27;수정&#x27;은 사실 다시 그리기에 가까웠다. 원래 그림을 참고는 하지만, 매번 전체를 새로 만든다. 그래서 고칠 때마다 손대지 않은 자리까지 조금씩 흔들린다. 업계에서는 이걸 &#x27;드리프트(drift)&#x27;라고 부른다.</p>
+    <figure class="art__fig">
+      <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/image-edit-drift-m.svg" width="600" height="567" /><img src="https://designrefs.com/articles/img/image-edit-drift.svg" alt="같은 그림을 세 번 고칠 때. 예전 방식은 매번 전체가 흔들리고, 이번 주 모델들은 고른 자리만 바뀐다. 개념을 그린 그림이다." width="1200" height="777" loading="lazy" decoding="async" /></picture>
+      <figcaption>같은 그림을 세 번 고칠 때. 예전 방식은 매번 전체가 흔들리고, 이번 주 모델들은 고른 자리만 바뀐다. 개념을 그린 그림이다.</figcaption>
+    </figure>
+    <p class="ptext">이번 주 두 모델이 내건 약속은 아래 줄이다. 제목을 고치면 제목만, 병 색을 바꾸면 병만 바뀐다.</p>
+    <h2 class="psub" id="s2">Ideogram 4.5: 열 번 고쳐도 무너지지 않게</h2>
+    <p class="ptext">Ideogram은 4.5를 &quot;가장 정밀한 편집 모델&quot;이라고 소개했다. 핵심 주장은 하나다. 같은 그림을 두 번, 세 번, 열 번 고쳐도 디테일이 유지되도록 드리프트를 줄였다는 것.</p>
+    <p class="ptext">눈에 띄는 숫자는 크기다. 발표에서 4016 × 6016 픽셀, 약 2420만 화소짜리 원본을 줄이지 않고 그대로 고치는 장면을 보여 줬다. 고친 부분을 원본에 다시 붙여도 크게 뽑거나 가까이 들여다볼 때 티가 나지 않는다는 얘기다. 인쇄물을 다루는 사람에게는 반가운 대목이다.</p>
+    <p class="ptext">외부 평가에서는 중간 정도다. Artificial Analysis 순위로 그림 만들기는 167개 중 34위, 편집은 23위였다. 값은 재판매처 가격표 기준으로 한 장에 3센트(낮은 품질)부터 22센트(높은 품질)까지다.</p>
+    <h2 class="psub" id="s3">FLUX 3 Image: 상자로 먼저 자리를 잡는다</h2>
+    <p class="ptext">FLUX 3 Image는 한 걸음 더 갔다. 고칠 때 바꾸지 않은 픽셀은 숫자 하나까지 그대로 둔다고 했다. &#x27;비슷하게 유지&#x27;가 아니라 &#x27;똑같이 고정&#x27;이다.</p>
+    <p class="ptext">더 흥미로운 건 만드는 방식이다. 글로 장면을 설명하는 대신, 요소마다 상자를 그려 자리와 크기를 먼저 정할 수 있다.</p>
+    <figure class="art__fig">
+      <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/flux3-bbox-layout-m.svg" width="600" height="804" /><img src="https://designrefs.com/articles/img/flux3-bbox-layout.svg" alt="FLUX 3 Image의 상자 배치. 제목, 제품, 모델, 할인 딱지를 상자로 먼저 놓는다. 발표를 바탕으로 그린 예이고 실제 형식과는 다를 수 있다." width="1200" height="544" loading="lazy" decoding="async" /></picture>
+      <figcaption>FLUX 3 Image의 상자 배치. 제목, 제품, 모델, 할인 딱지를 상자로 먼저 놓는다. 발표를 바탕으로 그린 예이고 실제 형식과는 다를 수 있다.</figcaption>
+    </figure>
+    <p class="ptext">디자이너에게는 익숙한 순서다. 와이어프레임을 먼저 잡고 그 안을 채우는 것과 같다. &quot;왼쪽에 모델, 오른쪽 아래에 제품, 위에 큰 제목&quot;을 글로 길게 설명하고 운에 맡기던 일이, 상자 네 개로 바뀐다. 상자마다 참고 이미지를 붙일 수 있고, 한 번에 최대 10장까지 쓴다.</p>
+    <p class="ptext">출력은 최대 4K(5456 × 3072)다. 다만 크기에 따라 값이 크게 뛴다.</p>
+    <figure class="art__fig">
+      <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/flux3-price-m.svg" width="600" height="1445" /><img src="https://designrefs.com/articles/img/flux3-price.svg" alt="FLUX 3 Image의 크기별 한 장 값. 4K는 2K의 6배다. 10월 8일까지는 절반 값." width="1200" height="693" loading="lazy" decoding="async" /></picture>
+      <figcaption>FLUX 3 Image의 크기별 한 장 값. 4K는 2K의 6배다. 10월 8일까지는 절반 값.</figcaption>
+    </figure>
+    <p class="ptext">2K는 장당 10센트인데 4K는 61센트, 6배다. 시안은 1K~2K로 뽑아서 고르고, 최종 하나만 4K로 다시 뽑는 편이 맞다. 10월 8일까지는 발표 할인으로 절반 값이고, 내려받아 직접 돌릴 수 있는 오픈 가중치 판도 몇 주 안에 낸다고 했다.</p>
+    <h2 class="psub" id="s4">두 모델을 나란히</h2>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th></th><th>Ideogram 4.5</th><th>FLUX 3 Image</th></tr></thead>
+      <tbody>
+        <tr><td>나온 날</td><td>9월 30일</td><td>10월 1일 출시, 2일 발표</td></tr>
+        <tr><td>내세운 것</td><td>여러 번 고쳐도 덜 흔들림</td><td>안 고친 픽셀은 그대로 고정</td></tr>
+        <tr><td>배치</td><td>글로 설명</td><td>상자로 자리·크기 지정</td></tr>
+        <tr><td>참고 이미지</td><td>–</td><td>최대 10장</td></tr>
+        <tr><td>크기</td><td>2420만 화소 원본을 줄이지 않고 편집</td><td>최대 4K (1680만 화소)</td></tr>
+        <tr><td>한 장 값</td><td>약 3~22센트</td><td>약 4~61센트 (8일까지 절반)</td></tr>
+      </tbody>
+    </table></div>
+    <p class="art__note">출처: <a href="https://www.orcarouter.ai/blog/ideogram-4-5-launch-precise-edit-model" target="_blank" rel="noopener">Ideogram 4.5 정리(orcarouter)</a>, <a href="https://the-decoder.com/black-forest-labs-launches-flux-3-image-with-multi-step-editing-that-leaves-the-rest-of-your-picture-alone/" target="_blank" rel="noopener">the-decoder</a>, <a href="https://www.techtimes.com/articles/328502/20261002/black-forest-labs-launches-flux-3-image-json-bounding-boxes-lock-unchanged-pixels-numerically.htm" target="_blank" rel="noopener">Tech Times</a>, <a href="https://kingy.ai/blog/flux-3-image-specs-benchmarks-comparison/" target="_blank" rel="noopener">kingy.ai 가격 정리</a>. 가격은 재판매처 기준이라 쓰는 곳마다 다를 수 있다.</p>
+    <p class="ptext">같은 주에 Midjourney도 작은 갱신을 냈다. 만들기 전에 옆 막대에서 스타일을 미리 보는 기능, 그리고 고친 그림이 원래 비율을 지키도록 한 수정이 들어갔다. 크기는 달라도 방향은 같다. 뽑기 전에 예상하고, 뽑은 뒤엔 덜 흔들리게.</p>
+    <h2 class="psub" id="s5">디자이너에게 달라지는 것</h2>
+    <p class="ptext">지금까지 이미지 AI는 &#x27;뽑기&#x27;에 가까웠다. 마음에 드는 게 나올 때까지 여러 장을 뽑고, 고르고, 조금 다르면 처음부터 다시. 그래서 결과물이 무드보드나 초기 탐색 단계에 머무는 경우가 많았다.</p>
+    <p class="ptext">고친 자리만 바뀐다면 이야기가 달라진다. 클라이언트가 &quot;제목만 바꿔 주세요&quot;라고 할 때, 승인받은 나머지를 건드리지 않고 고칠 수 있다. 수정 요청이 오가는 실제 작업 흐름에 처음으로 들어올 수 있는 모양이 된 셈이다.</p>
+    <p class="ptext">그리고 상자 배치는 구도를 잡는 일이 다시 사람 쪽 일이 된다는 뜻이기도 하다. 어디에 무엇을 얼마나 크게 둘지는 여전히 디자이너가 정한다. 프롬프트를 길게 쓰는 요령보다 레이아웃 감각이 더 쓸모 있어지는 쪽이다.</p>
+    <h2 class="psub" id="s6">그래서 지금은</h2>
+    <p class="ptext">&#x27;안 바뀐다&#x27;는 말을 믿기 전에 확인하는 방법이 있다. 포토샵만 있으면 된다.</p>
+    <ol class="ptext-list">
+      <li>원본과 3~5번 고친 결과를 한 파일에 레이어로 겹친다.</li>
+      <li>위 레이어의 혼합 모드를 <strong>차이(Difference)</strong>로 바꾼다.</li>
+      <li>화면이 거의 까맣다면 정말 그대로인 것이다. 고치지 않은 자리에 밝은 얼룩이 보이면 그만큼 흔들린 것이다.</li>
+    </ol>
+    <p class="ptext">새 모델을 작업에 들이기 전에 한 번만 해 보면, 어디까지 믿고 맡겨도 될지 감이 온다. 두 모델 모두 짧게라도 써 볼 수 있으니, 평소 자주 받는 수정 요청 하나로 시험해 보자.</p>
+    <p class="ptext">원하는 분위기를 말로 전하는 법은 <a href="https://designrefs.com/articles/describing-design-style/">&#x27;느낌 있게&#x27;를 말로 옮기는 일</a>에, 만든 이미지를 일에 써도 되는지는 <a href="https://designrefs.com/articles/ai-image-commercial-use/">AI로 만든 이미지, 클라이언트 작업에 써도 될까</a>에 정리해 두었다. 이미지 도구들은 <a href="https://designrefs.com/ai/">AI 디자인 툴</a>에 모여 있다.</p>
+    <p class="art__note">출처: <a href="https://www.orcarouter.ai/blog/ideogram-4-5-launch-precise-edit-model" target="_blank" rel="noopener">Ideogram 4.5 정리(orcarouter)</a>, <a href="https://completeaitraining.com/news/ideogram-45-reduces-pixel-drift-in-multi-turn-edits/" target="_blank" rel="noopener">completeaitraining</a>, <a href="https://the-decoder.com/black-forest-labs-launches-flux-3-image-with-multi-step-editing-that-leaves-the-rest-of-your-picture-alone/" target="_blank" rel="noopener">the-decoder</a>, <a href="https://www.techtimes.com/articles/328502/20261002/black-forest-labs-launches-flux-3-image-json-bounding-boxes-lock-unchanged-pixels-numerically.htm" target="_blank" rel="noopener">Tech Times</a>, <a href="https://openrouter.ai/black-forest-labs/flux-3-image" target="_blank" rel="noopener">OpenRouter FLUX.3 Image</a>, <a href="https://kingy.ai/blog/flux-3-image-specs-benchmarks-comparison/" target="_blank" rel="noopener">kingy.ai</a>.</p>]]></content:encoded>
+    </item>
     <item>
       <title>AI에게 우리 디자인 규칙을 건네는 파일 한 장, DESIGN.md</title>
       <link>https://designrefs.com/articles/design-md-for-ai/</link>

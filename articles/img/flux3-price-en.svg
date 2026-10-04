@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 693" role="img" aria-labelledby="t d">
+  <title id="t">FLUX 3 Image: how much size changes the price</title>
+  <desc id="d">FLUX 3 Image list price per image: 768px $0.041, 1K $0.048, 1.5K $0.07, 2K $0.10, 4K $0.607. Half price until October 8.</desc>
+  <rect width="1200" height="693" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="40" y="70" font-size="30" font-weight="800" fill="#111111" letter-spacing="-0.5">FLUX 3 Image: how much size changes the price</text>
+    <text x="40" y="101" font-size="19" fill="#6B6B6B">API price per image · half off until October 8</text>
+    <text x="40.0" y="165" font-size="24" font-weight="700" fill="#111111">List price</text>
+    <text x="40.0" y="193" font-size="18" fill="#6B6B6B">from October 9</text>
+    <text x="40.0" y="237" font-size="18" fill="#444444">768px</text>
+    <path d="M40.0 247H63.0A7 7 0 0 1 70.0 254V270A7 7 0 0 1 63.0 277H40.0Z" fill="#111111"/>
+    <text x="82.0" y="269.92" font-size="22" font-weight="700" fill="#111111">$0.041</text>
+    <text x="40.0" y="315" font-size="18" fill="#444444">1K</text>
+    <path d="M40.0 325H67.31960461285009A7 7 0 0 1 74.31960461285009 332V348A7 7 0 0 1 67.31960461285009 355H40.0Z" fill="#111111"/>
+    <text x="86.31960461285009" y="347.92" font-size="22" font-weight="700" fill="#111111">$0.048</text>
+    <text x="40.0" y="393" font-size="18" fill="#444444">1.5K</text>
+    <path d="M40.0 403H83.04942339373972A7 7 0 0 1 90.04942339373972 410V426A7 7 0 0 1 83.04942339373972 433H40.0Z" fill="#111111"/>
+    <text x="102.04942339373972" y="425.92" font-size="22" font-weight="700" fill="#111111">$0.07</text>
+    <text x="40.0" y="471" font-size="18" fill="#444444">2K</text>
+    <path d="M40.0 481H104.49917627677101A7 7 0 0 1 111.49917627677101 488V504A7 7 0 0 1 104.49917627677101 511H40.0Z" fill="#111111"/>
+    <text x="123.49917627677101" y="503.92" font-size="22" font-weight="700" fill="#111111">$0.10</text>
+    <text x="40.0" y="549" font-size="18" fill="#444444">4K</text>
+    <path d="M40.0 559H467.0A7 7 0 0 1 474.0 566V582A7 7 0 0 1 467.0 589H40.0Z" fill="#111111"/>
+    <text x="486.0" y="581.92" font-size="22" font-weight="700" fill="#111111">$0.607</text>
+    <line x1="40.0" y1="219" x2="40.0" y2="609" stroke="#D9D9D9" stroke-width="1.6"/>
+    <text x="630.0" y="165" font-size="24" font-weight="700" fill="#111111">Launch price</text>
+    <text x="630.0" y="193" font-size="18" fill="#6B6B6B">until October 8</text>
+    <text x="630.0" y="237" font-size="18" fill="#444444">768px</text>
+    <path d="M630.0 247H653.0A7 7 0 0 1 660.0 254V270A7 7 0 0 1 653.0 277H630.0Z" fill="#111111"/>
+    <text x="672.0" y="269.92" font-size="22" font-weight="700" fill="#111111">$0.021</text>
+    <text x="630.0" y="315" font-size="18" fill="#444444">1K</text>
+    <path d="M630.0 325H657.3196046128501A7 7 0 0 1 664.3196046128501 332V348A7 7 0 0 1 657.3196046128501 355H630.0Z" fill="#111111"/>
+    <text x="676.3196046128501" y="347.92" font-size="22" font-weight="700" fill="#111111">$0.024</text>
+    <text x="630.0" y="393" font-size="18" fill="#444444">1.5K</text>
+    <path d="M630.0 403H673.0494233937397A7 7 0 0 1 680.0494233937397 410V426A7 7 0 0 1 673.0494233937397 433H630.0Z" fill="#111111"/>
+    <text x="692.0494233937397" y="425.92" font-size="22" font-weight="700" fill="#111111">$0.035</text>
+    <text x="630.0" y="471" font-size="18" fill="#444444">2K</text>
+    <path d="M630.0 481H694.499176276771A7 7 0 0 1 701.499176276771 488V504A7 7 0 0 1 694.499176276771 511H630.0Z" fill="#111111"/>
+    <text x="713.499176276771" y="503.92" font-size="22" font-weight="700" fill="#111111">$0.05</text>
+    <text x="630.0" y="549" font-size="18" fill="#444444">4K</text>
+    <path d="M630.0 559H1057.0A7 7 0 0 1 1064.0 566V582A7 7 0 0 1 1057.0 589H630.0Z" fill="#111111"/>
+    <text x="1076.0" y="581.92" font-size="22" font-weight="700" fill="#111111">$0.304</text>
+    <line x1="630.0" y1="219" x2="630.0" y2="609" stroke="#D9D9D9" stroke-width="1.6"/>
+    <line x1="40" y1="631" x2="1160" y2="631" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="40" y="657" font-size="16" fill="#6B6B6B">Sources: price sheets on OpenRouter and kingy.ai (Oct 2, 2026). 4K means up to 5456 × 3072.</text>
+  </g>
+</svg>

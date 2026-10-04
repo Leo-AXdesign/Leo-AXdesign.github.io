@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 777" role="img" aria-labelledby="t d">
+  <title id="t">Re-rolling vs. editing</title>
+  <desc id="d">With older models, asking for one change subtly redraws the whole image, so positions and colors drift. This week&#x27;s models change only the selected area and leave the rest alone.</desc>
+  <rect width="1200" height="777" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="40" y="70" font-size="30" font-weight="800" fill="#111111" text-anchor="start">Re-rolling vs. editing</text>
+    <text x="40" y="101" font-size="19" font-weight="400" fill="#6B6B6B" text-anchor="start">One image, edited three times. A conceptual sketch.</text>
+    <text x="40.0" y="141" font-size="16" font-weight="700" fill="#111111" text-anchor="start">Original</text>
+    <text x="325.0" y="141" font-size="16" font-weight="700" fill="#111111" text-anchor="start">Edit 1</text>
+    <text x="325.0" y="165" font-size="14" font-weight="400" fill="#6B6B6B" text-anchor="start">Change headline</text>
+    <text x="610.0" y="141" font-size="16" font-weight="700" fill="#111111" text-anchor="start">Edit 2</text>
+    <text x="610.0" y="165" font-size="14" font-weight="400" fill="#6B6B6B" text-anchor="start">Recolor bottle</text>
+    <text x="895.0" y="141" font-size="16" font-weight="700" fill="#111111" text-anchor="start">Edit 3</text>
+    <text x="895.0" y="165" font-size="14" font-weight="400" fill="#6B6B6B" text-anchor="start">Remove shadow</text>
+    <text x="40" y="195" font-size="20" font-weight="800" fill="#111111" text-anchor="start">Before: redraws every time</text>
+    <rect x="40.0" y="211" width="265.0" height="190.79999999999998" rx="8" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <rect x="52.0" y="223.0" width="132.5" height="17.171999999999997" rx="3" fill="#111111"/>
+    <rect x="204.3" y="279.688" width="47.699999999999996" height="91.58399999999999" rx="14.309999999999999" fill="#111111"/>
+    <rect x="218.61" y="264.424" width="19.08" height="19.08" rx="2" fill="#111111"/>
+    <ellipse cx="228.15" cy="377.272" rx="42.93" ry="5" fill="#D9D9D9"/>
+    <circle cx="106.25" cy="329.296" r="26.712" fill="#D9D9D9"/>
+    <rect x="325.0" y="211" width="265.0" height="190.79999999999998" rx="8" fill="#F2F2F2" stroke="#111111" stroke-width="1.5"/>
+    <rect x="340.0" y="221.8" width="143.10000000000002" height="17.171999999999997" rx="3" fill="#111111"/>
+    <rect x="495.3" y="275.688" width="51.516" height="98.91072" rx="15.454799999999999" fill="#444444"/>
+    <rect x="510.7548" y="260.424" width="20.6064" height="19.08" rx="2" fill="#444444"/>
+    <ellipse cx="522.858" cy="380.59871999999996" rx="46.364399999999996" ry="5" fill="#D9D9D9"/>
+    <circle cx="385.25" cy="325.296" r="28.84896" fill="#D9D9D9"/>
+    <rect x="328.0" y="214" width="259.0" height="184.79999999999998" rx="6" fill="none" stroke="#111111" stroke-width="2.5" stroke-dasharray="6 4"/>
+    <rect x="610.0" y="211" width="265.0" height="190.79999999999998" rx="8" fill="#F2F2F2" stroke="#111111" stroke-width="1.5"/>
+    <rect x="619.5" y="224.5" width="121.9" height="17.171999999999997" rx="3" fill="#111111"/>
+    <rect x="769.3" y="284.688" width="43.884" height="84.25728" rx="13.1652" fill="#111111"/>
+    <rect x="782.4652" y="269.424" width="17.5536" height="19.08" rx="2" fill="#111111"/>
+    <ellipse cx="789.742" cy="374.94527999999997" rx="39.4956" ry="5" fill="#D9D9D9"/>
+    <circle cx="681.25" cy="334.296" r="24.57504" fill="#D9D9D9"/>
+    <rect x="613.0" y="214" width="259.0" height="184.79999999999998" rx="6" fill="none" stroke="#111111" stroke-width="2.5" stroke-dasharray="6 4"/>
+    <rect x="895.0" y="211" width="265.0" height="190.79999999999998" rx="8" fill="#F2F2F2" stroke="#111111" stroke-width="1.5"/>
+    <rect x="911.5" y="222.4" width="148.4" height="17.171999999999997" rx="3" fill="#111111"/>
+    <rect x="1068.3" y="277.688" width="53.424" height="102.57408" rx="16.0272" fill="#444444"/>
+    <rect x="1084.3272" y="262.424" width="21.369600000000002" height="19.08" rx="2" fill="#444444"/>
+    <ellipse cx="1097.712" cy="386.26207999999997" rx="48.0816" ry="5" fill="#D9D9D9"/>
+    <circle cx="952.25" cy="327.296" r="29.917440000000003" fill="#D9D9D9"/>
+    <rect x="898.0" y="214" width="259.0" height="184.79999999999998" rx="6" fill="none" stroke="#111111" stroke-width="2.5" stroke-dasharray="6 4"/>
+    <text x="40" y="441.79999999999995" font-size="20" font-weight="800" fill="#111111" text-anchor="start">This week&#x27;s models: only the chosen area</text>
+    <rect x="40.0" y="457.79999999999995" width="265.0" height="190.79999999999998" rx="8" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <rect x="52.0" y="469.79999999999995" width="132.5" height="17.171999999999997" rx="3" fill="#111111"/>
+    <rect x="204.3" y="526.4879999999999" width="47.699999999999996" height="91.58399999999999" rx="14.309999999999999" fill="#111111"/>
+    <rect x="218.61" y="511.22399999999993" width="19.08" height="19.08" rx="2" fill="#111111"/>
+    <ellipse cx="228.15" cy="624.0719999999999" rx="42.93" ry="5" fill="#D9D9D9"/>
+    <circle cx="106.25" cy="576.096" r="26.712" fill="#D9D9D9"/>
+    <rect x="325.0" y="457.79999999999995" width="265.0" height="190.79999999999998" rx="8" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <rect x="337.0" y="469.79999999999995" width="145.75" height="17.171999999999997" rx="3" fill="#111111"/>
+    <rect x="489.3" y="526.4879999999999" width="47.699999999999996" height="91.58399999999999" rx="14.309999999999999" fill="#111111"/>
+    <rect x="503.61" y="511.22399999999993" width="19.08" height="19.08" rx="2" fill="#111111"/>
+    <ellipse cx="513.15" cy="624.0719999999999" rx="42.93" ry="5" fill="#D9D9D9"/>
+    <circle cx="391.25" cy="576.096" r="26.712" fill="#D9D9D9"/>
+    <rect x="331.0" y="463.79999999999995" width="164.3" height="29.171999999999997" rx="4" fill="none" stroke="#111111" stroke-width="2.5" stroke-dasharray="6 4"/>
+    <rect x="610.0" y="457.79999999999995" width="265.0" height="190.79999999999998" rx="8" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <rect x="622.0" y="469.79999999999995" width="145.75" height="17.171999999999997" rx="3" fill="#111111"/>
+    <rect x="774.3" y="526.4879999999999" width="47.699999999999996" height="91.58399999999999" rx="14.309999999999999" fill="#444444"/>
+    <rect x="788.6099999999999" y="511.22399999999993" width="19.08" height="19.08" rx="2" fill="#444444"/>
+    <ellipse cx="798.15" cy="624.0719999999999" rx="42.93" ry="5" fill="#D9D9D9"/>
+    <circle cx="676.25" cy="576.096" r="26.712" fill="#D9D9D9"/>
+    <rect x="768.3" y="505.22399999999993" width="59.699999999999996" height="118.84799999999998" rx="4" fill="none" stroke="#111111" stroke-width="2.5" stroke-dasharray="6 4"/>
+    <rect x="895.0" y="457.79999999999995" width="265.0" height="190.79999999999998" rx="8" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <rect x="907.0" y="469.79999999999995" width="145.75" height="17.171999999999997" rx="3" fill="#111111"/>
+    <rect x="1059.3" y="526.4879999999999" width="47.699999999999996" height="91.58399999999999" rx="14.309999999999999" fill="#444444"/>
+    <rect x="1073.61" y="511.22399999999993" width="19.08" height="19.08" rx="2" fill="#444444"/>
+    <circle cx="961.25" cy="576.096" r="26.712" fill="#D9D9D9"/>
+    <rect x="1035.45" y="616.0719999999999" width="95.39999999999999" height="18" rx="4" fill="none" stroke="#111111" stroke-width="2.5" stroke-dasharray="6 4"/>
+    <rect x="40" y="672.5999999999999" width="34" height="20" rx="4" fill="none" stroke="#111111" stroke-width="2.5" stroke-dasharray="6 4"/>
+    <text x="86" y="688.5999999999999" font-size="16" font-weight="400" fill="#444444" text-anchor="start">Changed area</text>
+    <line x1="40" y1="708.5999999999999" x2="1160" y2="708.5999999999999" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="40" y="736.5999999999999" font-size="16" font-weight="400" fill="#6B6B6B" text-anchor="start">Sources: Ideogram 4.5 (Sep 30), Black Forest Labs FLUX 3 Image (Oct 2)</text>
+  </g>
+</svg>

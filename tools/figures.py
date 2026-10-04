@@ -535,8 +535,275 @@ def designmd(lang, wide):
     return wrap(W, round(y + pad), t["title"], t["desc"], out)
 
 
+# =========================================================
+# 5. 다시 뽑기와 고쳐 쓰기 (2026-10-03 이미지 편집 글)
+# =========================================================
+DRIFT = {
+    "ko": {
+        "title": "다시 뽑기와 고쳐 쓰기",
+        "sub": "같은 그림을 세 번 고칠 때 바뀌는 자리. 개념을 그린 그림이다.",
+        "rows": ["예전 방식: 매번 다시 그림", "이번 주 모델: 고른 자리만"],
+        "cols": ["원본", "1차 수정", "2차 수정", "3차 수정"],
+        "asks": ["", "제목 글자 바꾸기", "병 색 바꾸기", "그림자 지우기"],
+        "legend": ["바뀐 자리"],
+        "source": "출처: Ideogram 4.5 발표(9. 30), Black Forest Labs FLUX 3 Image 발표(10. 2)",
+        "desc": "예전 방식은 한 군데를 고쳐 달라고 해도 매번 그림 전체가 조금씩 바뀌어 위치와 색이 틀어진다. 이번 주 나온 모델들은 고른 자리만 바꾸고 나머지는 그대로 둔다.",
+    },
+    "en": {
+        "title": "Re-rolling vs. editing",
+        "sub": "One image, edited three times. A conceptual sketch.",
+        "rows": ["Before: redraws every time", "This week's models: only the chosen area"],
+        "cols": ["Original", "Edit 1", "Edit 2", "Edit 3"],
+        "asks": ["", "Change headline", "Recolor bottle", "Remove shadow"],
+        "legend": ["Changed area"],
+        "source": "Sources: Ideogram 4.5 (Sep 30), Black Forest Labs FLUX 3 Image (Oct 2)",
+        "desc": "With older models, asking for one change subtly redraws the whole image, so positions and colors drift. This week's models change only the selected area and leave the rest alone.",
+    },
+}
+
+
+def scene(x, y, w, h, k, drift, region):
+    """간단한 광고 시안 한 장. drift 이면 차례마다 위치·크기가 조금씩 어긋납니다.
+    region 은 이번 차례에 바뀐 자리(0 없음, 1 제목, 2 병, 3 그림자)."""
+    dx = [0, 6, -5, 9][k] if drift else 0
+    dy = [0, -4, 5, -2][k] if drift else 0
+    ds = [1, 1.08, 0.92, 1.12][k] if drift else 1
+    o = [f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="8" fill="{SOFT if drift and k else BG}" stroke="{INK}" stroke-width="1.5"/>']
+    # 제목 막대
+    tw = w * (0.55 if (not drift and k >= 1) else 0.5) * (ds if drift else 1)
+    o.append(f'<rect x="{x + 12 + dx * 0.5}" y="{y + 12 + dy * 0.3}" width="{tw}" height="{h * 0.09}" rx="3" fill="{INK}"/>')
+    # 병
+    bw, bh = w * 0.18 * ds, h * 0.48 * ds
+    bx, by = x + w * 0.62 + dx, y + h * 0.36 + dy
+    fill = BODY if (not drift and k >= 2) or (drift and k % 2) else INK
+    o.append(f'<rect x="{bx}" y="{by}" width="{bw}" height="{bh}" rx="{bw * 0.3}" fill="{fill}"/>')
+    o.append(f'<rect x="{bx + bw * 0.3}" y="{by - h * 0.08}" width="{bw * 0.4}" height="{h * 0.1}" rx="2" fill="{fill}"/>')
+    # 그림자
+    if not (not drift and k >= 3):
+        o.append(f'<ellipse cx="{bx + bw / 2 + dx * 0.3}" cy="{by + bh + 6}" rx="{bw * 0.9}" ry="5" fill="{RULE}"/>')
+    # 해
+    o.append(f'<circle cx="{x + w * 0.25 - dx}" cy="{y + h * 0.62 + dy}" r="{h * 0.14 * ds}" fill="{RULE}"/>')
+    # 바뀐 자리 표시
+    if drift and k:
+        o.append(f'<rect x="{x + 3}" y="{y + 3}" width="{w - 6}" height="{h - 6}" rx="6" fill="none" stroke="{INK}" stroke-width="2.5" stroke-dasharray="6 4"/>')
+    elif region == 1:
+        o.append(f'<rect x="{x + 6}" y="{y + 6}" width="{w * 0.62}" height="{h * 0.09 + 12}" rx="4" fill="none" stroke="{INK}" stroke-width="2.5" stroke-dasharray="6 4"/>')
+    elif region == 2:
+        o.append(f'<rect x="{bx - 6}" y="{by - h * 0.08 - 6}" width="{bw + 12}" height="{bh + h * 0.08 + 12}" rx="4" fill="none" stroke="{INK}" stroke-width="2.5" stroke-dasharray="6 4"/>')
+    elif region == 3:
+        o.append(f'<rect x="{bx - bw * 0.5}" y="{by + bh - 2}" width="{bw * 2}" height="18" rx="4" fill="none" stroke="{INK}" stroke-width="2.5" stroke-dasharray="6 4"/>')
+    return o
+
+
+def drift(lang, wide):
+    t = DRIFT[lang]
+    if wide:
+        W, pad, ts, ss, ls, fs = 1200, 40, 30, 19, 20, 16
+    else:
+        W, pad, ts, ss, ls, fs = 600, 32, 34, 21, 23, 17
+    out, y = [], pad + ts
+    out.append(text(pad, y, t["title"], ts, weight=800))
+    y += ss + 12
+    out.append(text(pad, y, t["sub"], ss, MUTED))
+    y += 40
+    gap = 20 if wide else 12
+    cw = (W - pad * 2 - gap * 3) / 4
+    ch = cw * 0.72
+    # 열 머리
+    for k, (c, a) in enumerate(zip(t["cols"], t["asks"])):
+        cx = pad + k * (cw + gap)
+        out.append(text(cx, y, c, fs, INK, 700))
+        if a:
+            out.append(text(cx, y + fs + 8, a, fs - 2, MUTED))
+    y += fs * 2 + 22
+    for r, label in enumerate(t["rows"]):
+        out.append(text(pad, y, label, ls, INK, 800))
+        y += 16
+        for k in range(4):
+            out += scene(pad + k * (cw + gap), y, cw, ch, k, r == 0, 0 if r == 0 else k)
+        y += ch + 40
+    # 범례
+    out.append(f'<rect x="{pad}" y="{y - 16}" width="34" height="20" rx="4" fill="none" stroke="{INK}" stroke-width="2.5" stroke-dasharray="6 4"/>')
+    out.append(text(pad + 46, y, t["legend"][0], fs, BODY))
+    y += 34
+    out.append(f'<line x1="{pad}" y1="{y - 14}" x2="{W - pad}" y2="{y - 14}" stroke="{RULE}" stroke-width="1"/>')
+    y += 14
+    out.append(text(pad, y, t["source"], (ss - 3) if wide else (ss - 6), MUTED))
+    return wrap(W, round(y + pad), t["title"], t["desc"], out)
+
+
+# =========================================================
+# 6. 상자로 먼저 배치하기 (2026-10-03 이미지 편집 글)
+# =========================================================
+BBOX = {
+    "ko": {
+        "title": "글보다 먼저, 상자로 자리를 잡는다",
+        "sub": "FLUX 3 Image의 상자 배치. 발표를 바탕으로 그린 예이고 실제 형식과 다를 수 있다.",
+        "code_title": "배치 (JSON)",
+        "items": [("headline", "제목 글자", (0.06, 0.08, 0.6, 0.16)), ("product", "제품 (참고 이미지 1)", (0.6, 0.3, 0.3, 0.6)),
+                  ("model", "모델 (참고 이미지 2)", (0.08, 0.32, 0.4, 0.6)), ("badge", "할인 딱지", (0.72, 0.06, 0.2, 0.18))],
+        "canvas": "4K 캔버스 · 5456 × 3072",
+        "source": "출처: Black Forest Labs 발표, the-decoder, Tech Times (2026. 10. 2)",
+        "desc": "FLUX 3 Image는 그림을 그리기 전에 요소마다 상자로 자리와 크기를 정할 수 있다. 제목, 제품, 모델, 할인 딱지를 상자로 놓고 참고 이미지를 최대 10장까지 붙인다.",
+    },
+    "en": {
+        "title": "Boxes first, then the picture",
+        "sub": "Bounding-box layout in FLUX 3 Image. An illustrative example; the real format may differ.",
+        "code_title": "Layout (JSON)",
+        "items": [("headline", "Headline", (0.06, 0.08, 0.6, 0.16)), ("product", "Product (ref. 1)", (0.6, 0.3, 0.3, 0.6)),
+                  ("model", "Model (ref. 2)", (0.08, 0.32, 0.4, 0.6)), ("badge", "Sale badge", (0.72, 0.06, 0.2, 0.18))],
+        "canvas": "4K canvas · 5456 × 3072",
+        "source": "Sources: Black Forest Labs, the-decoder, Tech Times (Oct 2, 2026)",
+        "desc": "FLUX 3 Image lets you set each element's position and size with a box before generating. A headline, product, model and sale badge are placed as boxes, with up to ten reference images attached.",
+    },
+}
+
+
+def bbox(lang, wide):
+    t = BBOX[lang]
+    if wide:
+        W, pad, ts, ss, cs, lh, fs = 1200, 40, 30, 19, 14, 24, 16
+    else:
+        W, pad, ts, ss, cs, lh, fs = 600, 32, 34, 21, 15, 23, 17
+    out, y = [], pad + ts
+    out.append(text(pad, y, t["title"], ts, weight=800))
+    y += ss + 12
+    sub = t["sub"]
+    if wide:
+        out.append(text(pad, y, sub, ss, MUTED))
+    else:  # 폰판은 두 줄로
+        a, b = sub.split(". ", 1)
+        out.append(text(pad, y, a + ".", ss, MUTED))
+        y += ss + 10
+        out.append(text(pad, y, b, ss, MUTED))
+    y += 36
+    lines = ["["]
+    for i, (key, _, (bx, by, bw, bh)) in enumerate(t["items"]):
+        comma = "," if i < len(t["items"]) - 1 else ""
+        lines.append(f'  {{ "id": "{key}", "box": [{bx:.2f}, {by:.2f}, {bw:.2f}, {bh:.2f}] }}{comma}')
+    lines.append("]")
+    codew = (W - pad * 2) * 0.5 if wide else W - pad * 2
+    codeh = 46 + len(lines) * lh + 14
+    out.append(f'<rect x="{pad}" y="{y}" width="{codew}" height="{codeh}" rx="12" fill="{SOFT}" stroke="{INK}" stroke-width="1.5"/>')
+    out.append(text(pad + 18, y + 28, t["code_title"], fs - 1, INK, 700))
+    for i, ln in enumerate(lines):
+        out.append(f'<text x="{pad + 18}" y="{y + 46 + (i + 1) * lh - 6}" font-size="{cs if wide else cs - 2}" fill="{BODY}" '
+                   f'font-family="{MONO}" xml:space="preserve">{e(ln)}</text>')
+    # 캔버스
+    if wide:
+        cx, cy = pad + codew + 40, y
+        cw = W - pad - cx
+    else:
+        cx, cy = pad, y + codeh + 40
+        cw = W - pad * 2
+    chh = cw * 3072 / 5456
+    out.append(f'<rect x="{cx}" y="{cy}" width="{cw}" height="{chh}" rx="10" fill="{BG}" stroke="{INK}" stroke-width="2"/>')
+    for i, (key, label, (bx, by, bw, bh)) in enumerate(t["items"]):
+        rx, ry, rw, rh = cx + bx * cw, cy + by * chh, bw * cw, bh * chh
+        filled = key in ("product", "model")
+        out.append(f'<rect x="{rx}" y="{ry}" width="{rw}" height="{rh}" rx="6" fill="{SOFT if filled else BG}" stroke="{INK}" '
+                   f'stroke-width="2" stroke-dasharray="{"0" if filled else "6 4"}"/>')
+        out.append(text(rx + 10, ry + fs + 8, label, fs - 2 if not wide else fs - 1, INK, 700))
+    bottom = max(y + codeh, cy + chh)
+    out.append(text(cx, cy + chh + fs + 12, t["canvas"], fs - 2, MUTED))
+    y = bottom + (60 if wide else 52)
+    out.append(f'<line x1="{pad}" y1="{y - 14}" x2="{W - pad}" y2="{y - 14}" stroke="{RULE}" stroke-width="1"/>')
+    y += 14
+    out.append(text(pad, y, t["source"], (ss - 3) if wide else (ss - 6), MUTED))
+    return wrap(W, round(y + pad), t["title"], t["desc"], out)
+
+
+# =========================================================
+# 7. InstructMesh 고치는 순서 (2026-10-04 3D 출력 글)
+# =========================================================
+MESHFLOW = {
+    "ko": {
+        "title": "AI 3D 모델을 출력하기 전에 고치는 순서",
+        "sub": "MIT CSAIL의 InstructMesh. 논문과 발표를 바탕으로 정리했다.",
+        "steps": [("만든다", ["글이나 사진으로", "3D 모델 생성", "(TRELLIS)"]),
+                  ("고를 곳을 칠한다", ["문제가 보이는", "부위만 선택"]),
+                  ("말로 고친다", ["\"손잡이를 두껍게\"", "구멍 열기·막기,", "슬라이더로 두께"]),
+                  ("출력한다", ["고친 부위만 바뀌고", "나머지는 그대로"])],
+        "source": "출처: MIT News(2026. 10. 1), arXiv 2608.28534",
+        "desc": "InstructMesh는 글이나 사진으로 3D 모델을 만든 뒤, 문제가 보이는 부위만 칠해 고르고, 말이나 슬라이더로 두께를 바꾸거나 구멍을 열고 막는다. 고친 부위만 바뀐 채로 출력한다.",
+    },
+    "en": {
+        "title": "Fixing an AI 3D model before you print it",
+        "sub": "MIT CSAIL's InstructMesh, summarized from the paper and announcement.",
+        "steps": [("Generate", ["A 3D model from", "text or a photo", "(TRELLIS)"]),
+                  ("Paint the spot", ["Select only the", "region with a problem"]),
+                  ("Say the fix", ["\"Thicken the handle\"", "Open or seal holes,", "sliders for thickness"]),
+                  ("Print", ["Only the fixed part", "changes; the rest stays"])],
+        "source": "Sources: MIT News (Oct 1, 2026), arXiv 2608.28534",
+        "desc": "With InstructMesh, you generate a 3D model from text or a photo, paint the region with a problem, then thicken it, open or seal holes by describing the fix or using sliders. Only that region changes before printing.",
+    },
+}
+
+
+def mug(x, y, s, thin, sel):
+    """머그잔 옆모습. thin 이면 손잡이가 가늘다. sel 이면 손잡이 둘레에 선택 표시."""
+    o = [f'<rect x="{x}" y="{y}" width="{s * 0.62}" height="{s * 0.8}" rx="{s * 0.08}" fill="{SOFT}" stroke="{INK}" stroke-width="2"/>']
+    hw = 3 if thin else 9
+    o.append(f'<path d="M{x + s * 0.62} {y + s * 0.2} C{x + s * 0.95} {y + s * 0.2} {x + s * 0.95} {y + s * 0.6} {x + s * 0.62} {y + s * 0.6}" '
+             f'fill="none" stroke="{INK}" stroke-width="{hw}" stroke-linecap="round"/>')
+    if sel:
+        o.append(f'<ellipse cx="{x + s * 0.8}" cy="{y + s * 0.4}" rx="{s * 0.22}" ry="{s * 0.3}" fill="none" stroke="{INK}" '
+                 f'stroke-width="2" stroke-dasharray="5 4"/>')
+    return o
+
+
+def meshflow(lang, wide):
+    t = MESHFLOW[lang]
+    if wide:
+        W, pad, ts, ss, hs, fs = 1200, 40, 30, 19, 20, 16
+    else:
+        W, pad, ts, ss, hs, fs = 600, 32, 34, 21, 24, 19
+    out, y = [], pad + ts
+    out.append(text(pad, y, t["title"], ts, weight=800))
+    y += ss + 12
+    out.append(text(pad, y, t["sub"], ss, MUTED))
+    y += 40
+    n = len(t["steps"])
+    if wide:
+        gap = 44
+        bw = (W - pad * 2 - gap * (n - 1)) / n
+        bh = 300
+        for i, (head, body) in enumerate(t["steps"]):
+            bx = pad + i * (bw + gap)
+            out.append(f'<rect x="{bx}" y="{y}" width="{bw}" height="{bh}" rx="14" fill="{BG}" stroke="{INK}" stroke-width="1.5"/>')
+            out.append(badge(bx + 26, y + 28, str(i + 1)))
+            out.append(text(bx + 50, y + 34, head, hs, INK, 800))
+            s = 110
+            out += mug(bx + bw / 2 - s * 0.45, y + 64, s, i in (0, 1), i == 1)
+            for k, line in enumerate(body):
+                out.append(text(bx + 20, y + 214 + k * (fs + 8), line, fs, BODY))
+            if i < n - 1:
+                ax = bx + bw + 8
+                out.append(f'<path d="M{ax} {y + bh / 2}h{gap - 18}m-8 -7l8 7l-8 7" fill="none" stroke="{INK}" stroke-width="2"/>')
+        y += bh + 50
+    else:
+        bh = 150
+        for i, (head, body) in enumerate(t["steps"]):
+            out.append(f'<rect x="{pad}" y="{y}" width="{W - pad * 2}" height="{bh}" rx="14" fill="{BG}" stroke="{INK}" stroke-width="1.5"/>')
+            out.append(badge(pad + 28, y + 30, str(i + 1)))
+            out.append(text(pad + 54, y + 38, head, hs, INK, 800))
+            for k, line in enumerate(body):
+                out.append(text(pad + 26, y + 76 + k * (fs + 8), line, fs, BODY))
+            out += mug(W - pad - 150, y + 24, 100, i in (0, 1), i == 1)
+            y += bh
+            if i < n - 1:
+                out.append(f'<path d="M{W / 2} {y + 6}v22m-7 -8l7 8l7 -8" fill="none" stroke="{INK}" stroke-width="2"/>')
+                y += 34
+        y += 50
+    out.append(f'<line x1="{pad}" y1="{y - 14}" x2="{W - pad}" y2="{y - 14}" stroke="{RULE}" stroke-width="1"/>')
+    y += 14
+    out.append(text(pad, y, t["source"], (ss - 3) if wide else (ss - 4), MUTED))
+    return wrap(W, round(y + pad), t["title"], t["desc"], out)
+
+
 FIGS = {"openai-app-platforms": timeline, "chatgpt-plugin-extensions": scheme,
-        "shopify-canvas-compare": canvas_compare, "design-md-anatomy": designmd}
+        "shopify-canvas-compare": canvas_compare, "design-md-anatomy": designmd,
+        "image-edit-drift": drift, "flux3-bbox-layout": bbox, "instructmesh-flow": meshflow}
 
 if __name__ == "__main__":
     OUT.mkdir(parents=True, exist_ok=True)

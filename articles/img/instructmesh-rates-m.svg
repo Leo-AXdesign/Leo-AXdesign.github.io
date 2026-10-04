@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 881" role="img" aria-labelledby="t d">
+  <title id="t">AI가 만든 3D, 그대로는 대부분 못 쓴다</title>
+  <desc id="d">AI로 다시 만든 3D 모델의 약 80%에 구조 결함이 있었다. InstructMesh를 쓴 초보자들은 약 90%의 경우 결함을 찾아 고쳤다.</desc>
+  <rect width="600" height="881" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="32" y="68" font-size="36" font-weight="800" fill="#111111" letter-spacing="-0.5">AI가 만든 3D, 그대로는 대부분 못 쓴다</text>
+    <text x="32" y="102" font-size="22" fill="#6B6B6B">MIT CSAIL 실험</text>
+    <text x="32" y="136" font-size="22" fill="#6B6B6B">씽기버스 인기 모델을 TRELLIS로 다시 만들어 봄</text>
+    <text x="32" y="206" font-size="30" font-weight="700" fill="#111111">구조 결함이 있던 모델</text>
+    <text x="32" y="238" font-size="22" fill="#6B6B6B">AI가 만든 그대로</text>
+    <text x="32" y="291" font-size="23" fill="#444444">결함 있음</text>
+    <path d="M32 303H441.0A7 7 0 0 1 448.0 310V332A7 7 0 0 1 441.0 339H32Z" fill="#111111"/>
+    <text x="462.0" y="331.08" font-size="28" font-weight="700" fill="#111111">약 80%</text>
+    <text x="32" y="385" font-size="23" fill="#444444">문제없음</text>
+    <path d="M32 397H129.0A7 7 0 0 1 136.0 404V426A7 7 0 0 1 129.0 433H32Z" fill="#111111"/>
+    <text x="150.0" y="425.08" font-size="28" font-weight="700" fill="#111111">약 20%</text>
+    <line x1="32" y1="268" x2="32" y2="456" stroke="#D9D9D9" stroke-width="1.8"/>
+    <text x="32" y="530" font-size="30" font-weight="700" fill="#111111">초보자가 찾아 고친 비율</text>
+    <text x="32" y="562" font-size="22" fill="#6B6B6B">InstructMesh 사용</text>
+    <text x="32" y="615" font-size="23" fill="#444444">고침</text>
+    <path d="M32 627H441.0A7 7 0 0 1 448.0 634V656A7 7 0 0 1 441.0 663H32Z" fill="#111111"/>
+    <text x="462.0" y="655.08" font-size="28" font-weight="700" fill="#111111">약 90%</text>
+    <text x="32" y="709" font-size="23" fill="#444444">못 고침</text>
+    <path d="M32 721H71.22222222222223A7 7 0 0 1 78.22222222222223 728V750A7 7 0 0 1 71.22222222222223 757H32Z" fill="#111111"/>
+    <text x="92.22222222222223" y="749.08" font-size="28" font-weight="700" fill="#111111">약 10%</text>
+    <line x1="32" y1="592" x2="32" y2="780" stroke="#D9D9D9" stroke-width="1.8"/>
+    <line x1="32" y1="798" x2="568" y2="798" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="32" y="824" font-size="19" fill="#6B6B6B">출처: MIT News(2026. 10. 1), arXiv 2608.28534.</text>
+    <text x="32" y="853" font-size="19" fill="#6B6B6B">초보자 실험은 12명, 고친 결과는 전문가가 확인.</text>
+  </g>
+</svg>

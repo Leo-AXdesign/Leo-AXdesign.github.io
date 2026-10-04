@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 804" role="img" aria-labelledby="t d">
+  <title id="t">글보다 먼저, 상자로 자리를 잡는다</title>
+  <desc id="d">FLUX 3 Image는 그림을 그리기 전에 요소마다 상자로 자리와 크기를 정할 수 있다. 제목, 제품, 모델, 할인 딱지를 상자로 놓고 참고 이미지를 최대 10장까지 붙인다.</desc>
+  <rect width="600" height="804" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="32" y="66" font-size="34" font-weight="800" fill="#111111" text-anchor="start">글보다 먼저, 상자로 자리를 잡는다</text>
+    <text x="32" y="99" font-size="21" font-weight="400" fill="#6B6B6B" text-anchor="start">FLUX 3 Image의 상자 배치.</text>
+    <text x="32" y="130" font-size="21" font-weight="400" fill="#6B6B6B" text-anchor="start">발표를 바탕으로 그린 예이고 실제 형식과 다를 수 있다.</text>
+    <rect x="32" y="166" width="536" height="198" rx="12" fill="#F2F2F2" stroke="#111111" stroke-width="1.5"/>
+    <text x="50" y="194" font-size="16" font-weight="700" fill="#111111" text-anchor="start">배치 (JSON)</text>
+    <text x="50" y="229" font-size="13" fill="#444444" font-family="'SF Mono', Menlo, Consolas, 'D2Coding', monospace" xml:space="preserve">[</text>
+    <text x="50" y="252" font-size="13" fill="#444444" font-family="'SF Mono', Menlo, Consolas, 'D2Coding', monospace" xml:space="preserve">  { &quot;id&quot;: &quot;headline&quot;, &quot;box&quot;: [0.06, 0.08, 0.60, 0.16] },</text>
+    <text x="50" y="275" font-size="13" fill="#444444" font-family="'SF Mono', Menlo, Consolas, 'D2Coding', monospace" xml:space="preserve">  { &quot;id&quot;: &quot;product&quot;, &quot;box&quot;: [0.60, 0.30, 0.30, 0.60] },</text>
+    <text x="50" y="298" font-size="13" fill="#444444" font-family="'SF Mono', Menlo, Consolas, 'D2Coding', monospace" xml:space="preserve">  { &quot;id&quot;: &quot;model&quot;, &quot;box&quot;: [0.08, 0.32, 0.40, 0.60] },</text>
+    <text x="50" y="321" font-size="13" fill="#444444" font-family="'SF Mono', Menlo, Consolas, 'D2Coding', monospace" xml:space="preserve">  { &quot;id&quot;: &quot;badge&quot;, &quot;box&quot;: [0.72, 0.06, 0.20, 0.18] }</text>
+    <text x="50" y="344" font-size="13" fill="#444444" font-family="'SF Mono', Menlo, Consolas, 'D2Coding', monospace" xml:space="preserve">]</text>
+    <rect x="32" y="404" width="536" height="301.79472140762465" rx="10" fill="#FFFFFF" stroke="#111111" stroke-width="2"/>
+    <rect x="64.16" y="428.14357771260995" width="321.59999999999997" height="48.28715542521994" rx="6" fill="#FFFFFF" stroke="#111111" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="74.16" y="453.14357771260995" font-size="15" font-weight="700" fill="#111111" text-anchor="start">제목 글자</text>
+    <rect x="353.59999999999997" y="494.5384164222874" width="160.79999999999998" height="181.0768328445748" rx="6" fill="#F2F2F2" stroke="#111111" stroke-width="2" stroke-dasharray="0"/>
+    <text x="363.59999999999997" y="519.5384164222874" font-size="15" font-weight="700" fill="#111111" text-anchor="start">제품 (참고 이미지 1)</text>
+    <rect x="74.88" y="500.5743108504399" width="214.4" height="181.0768328445748" rx="6" fill="#F2F2F2" stroke="#111111" stroke-width="2" stroke-dasharray="0"/>
+    <text x="84.88" y="525.5743108504398" font-size="15" font-weight="700" fill="#111111" text-anchor="start">모델 (참고 이미지 2)</text>
+    <rect x="417.91999999999996" y="422.1076832844575" width="107.2" height="54.32304985337243" rx="6" fill="#FFFFFF" stroke="#111111" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="427.91999999999996" y="447.1076832844575" font-size="15" font-weight="700" fill="#111111" text-anchor="start">할인 딱지</text>
+    <text x="32" y="734.7947214076246" font-size="15" font-weight="400" fill="#6B6B6B" text-anchor="start">4K 캔버스 · 5456 × 3072</text>
+    <line x1="32" y1="743.7947214076246" x2="568" y2="743.7947214076246" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="32" y="771.7947214076246" font-size="15" font-weight="400" fill="#6B6B6B" text-anchor="start">출처: Black Forest Labs 발표, the-decoder, Tech Times (2026. 10. 2)</text>
+  </g>
+</svg>

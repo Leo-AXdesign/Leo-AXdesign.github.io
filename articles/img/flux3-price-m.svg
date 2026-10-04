@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 1445" role="img" aria-labelledby="t d">
+  <title id="t">FLUX 3 Image, 크기마다 값이 이만큼 다르다</title>
+  <desc id="d">FLUX 3 Image 한 장 정가는 768px 0.041달러, 1K 0.048달러, 1.5K 0.07달러, 2K 0.1달러, 4K 0.607달러. 10월 8일까지는 절반 값.</desc>
+  <rect width="600" height="1445" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="32" y="68" font-size="36" font-weight="800" fill="#111111" letter-spacing="-0.5">FLUX 3 Image, 크기마다 값이 이만큼 다르다</text>
+    <text x="32" y="102" font-size="22" fill="#6B6B6B">API 한 장 값</text>
+    <text x="32" y="136" font-size="22" fill="#6B6B6B">10월 8일까지는 발표 할인으로 절반</text>
+    <text x="32" y="206" font-size="30" font-weight="700" fill="#111111">정가</text>
+    <text x="32" y="238" font-size="22" fill="#6B6B6B">10월 9일부터</text>
+    <text x="32" y="291" font-size="23" fill="#444444">768px</text>
+    <path d="M32 303H61A7 7 0 0 1 68 310V332A7 7 0 0 1 61 339H32Z" fill="#111111"/>
+    <text x="82" y="331.08" font-size="28" font-weight="700" fill="#111111">$0.041</text>
+    <text x="32" y="385" font-size="23" fill="#444444">1K</text>
+    <path d="M32 397H61A7 7 0 0 1 68 404V426A7 7 0 0 1 61 433H32Z" fill="#111111"/>
+    <text x="82" y="425.08" font-size="28" font-weight="700" fill="#111111">$0.048</text>
+    <text x="32" y="479" font-size="23" fill="#444444">1.5K</text>
+    <path d="M32 491H72.97364085667218A7 7 0 0 1 79.97364085667218 498V520A7 7 0 0 1 72.97364085667218 527H32Z" fill="#111111"/>
+    <text x="93.97364085667218" y="519.08" font-size="28" font-weight="700" fill="#111111">$0.07</text>
+    <text x="32" y="573" font-size="23" fill="#444444">2K</text>
+    <path d="M32 585H93.5337726523888A7 7 0 0 1 100.5337726523888 592V614A7 7 0 0 1 93.5337726523888 621H32Z" fill="#111111"/>
+    <text x="114.5337726523888" y="613.08" font-size="28" font-weight="700" fill="#111111">$0.10</text>
+    <text x="32" y="667" font-size="23" fill="#444444">4K</text>
+    <path d="M32 679H441.0A7 7 0 0 1 448.0 686V708A7 7 0 0 1 441.0 715H32Z" fill="#111111"/>
+    <text x="462.0" y="707.08" font-size="28" font-weight="700" fill="#111111">$0.607</text>
+    <line x1="32" y1="268" x2="32" y2="738" stroke="#D9D9D9" stroke-width="1.8"/>
+    <text x="32" y="812" font-size="30" font-weight="700" fill="#111111">할인가</text>
+    <text x="32" y="844" font-size="22" fill="#6B6B6B">10월 8일까지</text>
+    <text x="32" y="897" font-size="23" fill="#444444">768px</text>
+    <path d="M32 909H61A7 7 0 0 1 68 916V938A7 7 0 0 1 61 945H32Z" fill="#111111"/>
+    <text x="82" y="937.08" font-size="28" font-weight="700" fill="#111111">$0.021</text>
+    <text x="32" y="991" font-size="23" fill="#444444">1K</text>
+    <path d="M32 1003H61A7 7 0 0 1 68 1010V1032A7 7 0 0 1 61 1039H32Z" fill="#111111"/>
+    <text x="82" y="1031.08" font-size="28" font-weight="700" fill="#111111">$0.024</text>
+    <text x="32" y="1085" font-size="23" fill="#444444">1.5K</text>
+    <path d="M32 1097H72.97364085667218A7 7 0 0 1 79.97364085667218 1104V1126A7 7 0 0 1 72.97364085667218 1133H32Z" fill="#111111"/>
+    <text x="93.97364085667218" y="1125.08" font-size="28" font-weight="700" fill="#111111">$0.035</text>
+    <text x="32" y="1179" font-size="23" fill="#444444">2K</text>
+    <path d="M32 1191H93.5337726523888A7 7 0 0 1 100.5337726523888 1198V1220A7 7 0 0 1 93.5337726523888 1227H32Z" fill="#111111"/>
+    <text x="114.5337726523888" y="1219.08" font-size="28" font-weight="700" fill="#111111">$0.05</text>
+    <text x="32" y="1273" font-size="23" fill="#444444">4K</text>
+    <path d="M32 1285H441.0A7 7 0 0 1 448.0 1292V1314A7 7 0 0 1 441.0 1321H32Z" fill="#111111"/>
+    <text x="462.0" y="1313.08" font-size="28" font-weight="700" fill="#111111">$0.304</text>
+    <line x1="32" y1="874" x2="32" y2="1344" stroke="#D9D9D9" stroke-width="1.8"/>
+    <line x1="32" y1="1362" x2="568" y2="1362" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="32" y="1388" font-size="19" fill="#6B6B6B">출처: OpenRouter·kingy.ai에 올라온 가격표 (2026. 10. 2).</text>
+    <text x="32" y="1417" font-size="19" fill="#6B6B6B">4K는 최대 5456 × 3072.</text>
+  </g>
+</svg>
