@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 1394" role="img" aria-labelledby="t d">
+  <title id="t">지난 일주일, 사람이 정하게 된 것</title>
+  <desc id="d">지난 일주일 나온 여섯 가지 소식. 쇼피파이 캔버스는 가게 전체, DESIGN.md는 규칙, Ideogram 4.5와 FLUX 3는 고칠 자리, InstructMesh는 3D의 고칠 부위, 챗GPT 이미지 광고는 새 광고 자리, 클링 4.0은 장면 순서를 다룬다.</desc>
+  <rect width="600" height="1394" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="32" y="66" font-size="34" font-weight="800" fill="#111111" text-anchor="start">지난 일주일, 사람이 정하게 된 것</text>
+    <text x="32" y="99" font-size="21" font-weight="400" fill="#6B6B6B" text-anchor="start">9월 30일 ~ 10월 6일.</text>
+    <text x="32" y="130" font-size="21" font-weight="400" fill="#6B6B6B" text-anchor="start">운에 맡기던 자리를 사람이 정하는 쪽으로</text>
+    <rect x="32.0" y="166" width="536.0" height="176" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <text x="52.0" y="198" font-size="17" font-weight="700" fill="#6B6B6B" text-anchor="start">10. 1</text>
+    <text x="52.0" y="228" font-size="20" font-weight="700" fill="#111111" text-anchor="start">쇼피파이 캔버스</text>
+    <rect x="52.0" y="244" width="164.0" height="44" rx="22.0" fill="#111111"/>
+    <text x="64.0" y="274" font-size="28" font-weight="800" fill="#FFFFFF" text-anchor="start">가게 전체</text>
+    <text x="52.0" y="322" font-size="18" font-weight="400" fill="#444444" text-anchor="start">한 판에 펼쳐 놓고 고친다</text>
+    <rect x="32.0" y="358" width="536.0" height="176" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <text x="52.0" y="390" font-size="17" font-weight="700" fill="#6B6B6B" text-anchor="start">10. 2</text>
+    <text x="52.0" y="420" font-size="20" font-weight="700" fill="#111111" text-anchor="start">DESIGN.md</text>
+    <rect x="52.0" y="436" width="80.0" height="44" rx="22.0" fill="#111111"/>
+    <text x="64.0" y="466" font-size="28" font-weight="800" fill="#FFFFFF" text-anchor="start">규칙</text>
+    <text x="52.0" y="514" font-size="18" font-weight="400" fill="#444444" text-anchor="start">AI가 읽는 디자인 규칙 한 장</text>
+    <rect x="32.0" y="550" width="536.0" height="176" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <text x="52.0" y="582" font-size="17" font-weight="700" fill="#6B6B6B" text-anchor="start">9. 30 · 10. 2</text>
+    <text x="52.0" y="612" font-size="20" font-weight="700" fill="#111111" text-anchor="start">Ideogram 4.5 · FLUX 3</text>
+    <rect x="52.0" y="628" width="164.0" height="44" rx="22.0" fill="#111111"/>
+    <text x="64.0" y="658" font-size="28" font-weight="800" fill="#FFFFFF" text-anchor="start">고칠 자리</text>
+    <text x="52.0" y="706" font-size="18" font-weight="400" fill="#444444" text-anchor="start">고른 곳만 바뀌고 나머지는 그대로</text>
+    <rect x="32.0" y="742" width="536.0" height="176" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <text x="52.0" y="774" font-size="17" font-weight="700" fill="#6B6B6B" text-anchor="start">10. 1</text>
+    <text x="52.0" y="804" font-size="20" font-weight="700" fill="#111111" text-anchor="start">InstructMesh</text>
+    <rect x="52.0" y="820" width="164.0" height="44" rx="22.0" fill="#111111"/>
+    <text x="64.0" y="850" font-size="28" font-weight="800" fill="#FFFFFF" text-anchor="start">고칠 부위</text>
+    <text x="52.0" y="898" font-size="18" font-weight="400" fill="#444444" text-anchor="start">3D 모델에서 문제 부위만 골라 고친다</text>
+    <rect x="32.0" y="934" width="536.0" height="176" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <text x="52.0" y="966" font-size="17" font-weight="700" fill="#6B6B6B" text-anchor="start">10. 5</text>
+    <text x="52.0" y="996" font-size="20" font-weight="700" fill="#111111" text-anchor="start">챗GPT 이미지 광고</text>
+    <rect x="52.0" y="1012" width="164.0" height="44" rx="22.0" fill="#111111"/>
+    <text x="64.0" y="1042" font-size="28" font-weight="800" fill="#FFFFFF" text-anchor="start">광고 자리</text>
+    <text x="52.0" y="1090" font-size="18" font-weight="400" fill="#444444" text-anchor="start">그림 옆에 붙는 새 지면</text>
+    <rect x="32.0" y="1126" width="536.0" height="176" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <text x="52.0" y="1158" font-size="17" font-weight="700" fill="#6B6B6B" text-anchor="start">9. 28 ~</text>
+    <text x="52.0" y="1188" font-size="20" font-weight="700" fill="#111111" text-anchor="start">클링 4.0</text>
+    <rect x="52.0" y="1204" width="164.0" height="44" rx="22.0" fill="#111111"/>
+    <text x="64.0" y="1234" font-size="28" font-weight="800" fill="#FFFFFF" text-anchor="start">장면 순서</text>
+    <text x="52.0" y="1282" font-size="18" font-weight="400" fill="#444444" text-anchor="start">키프레임 열 장으로 콘티를 건넨다</text>
+    <line x1="32" y1="1334" x2="568" y2="1334" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="32" y="1362" font-size="17" font-weight="400" fill="#6B6B6B" text-anchor="start">출처: 이 사이트 읽을거리 10월 1일 ~ 6일 글</text>
+  </g>
+</svg>

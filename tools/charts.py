@@ -251,6 +251,35 @@ CHARTS = {
              "rows": [("Kling 3.0", 15, "15 s"), ("Kling 4.0 Flash", 20, "20 s"), ("Kling 4.0", 30, "30 s")]},
         ],
     },
+    # ---- 2026-10-07 '주간 정리' 글 ----
+    "designer-ai-2026": {
+        "title": "디자이너의 AI, 1년 사이",
+        "sub": "Designer Fund·Foundation Capital 'AI in Design Report 2026' · 60여 개국 디자이너 900여 명",
+        "source": ["출처: AI in Design Report 2026 (2026. 5. 20).", "사용 비율은 해당 도구를 쓴다고 답한 디자이너 비율."],
+        "desc": "매주 AI를 쓰는 디자이너는 2025년 54%에서 2026년 91%로 늘었다. 평소 쓰는 AI 도구 수는 평균 3개에서 7개로. 가장 많이 쓰는 모델은 Claude 78%, ChatGPT 65%.",
+        "panels": [
+            {"title": "매주 AI를 쓴다", "hint": "디자이너 비율",
+             "rows": [("2025년", 54, "54%"), ("2026년", 91, "91%")]},
+            {"title": "평소 쓰는 AI 도구", "hint": "평균 개수",
+             "rows": [("2025년", 3, "3개"), ("2026년", 7, "7개")]},
+            {"title": "모델별 사용 (2026)", "hint": "디자이너 비율",
+             "rows": [("Claude", 78, "78%"), ("ChatGPT", 65, "65%")]},
+        ],
+    },
+    "designer-ai-2026-en": {
+        "title": "Designers and AI, one year on",
+        "sub": "AI in Design Report 2026 · 900+ designers, 60+ countries",
+        "source": ["Source: AI in Design Report 2026 (May 20, 2026).", "Usage is the share of designers who said they use each tool."],
+        "desc": "Designers using AI weekly rose from 54% in 2025 to 91% in 2026. AI tools used regularly rose from 3 to 7 on average. Most-used models: Claude 78%, ChatGPT 65%.",
+        "panels": [
+            {"title": "Use AI weekly", "hint": "share of designers",
+             "rows": [("2025", 54, "54%"), ("2026", 91, "91%")]},
+            {"title": "AI tools in regular use", "hint": "average count",
+             "rows": [("2025", 3, "3"), ("2026", 7, "7")]},
+            {"title": "Models used (2026)", "hint": "share of designers",
+             "rows": [("Claude", 78, "78%"), ("ChatGPT", 65, "65%")]},
+        ],
+    },
 }
 
 
