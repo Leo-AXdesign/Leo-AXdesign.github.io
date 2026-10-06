@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 411" role="img" aria-labelledby="t d">
+  <title id="t">ChatGPT ads, eight months in</title>
+  <desc id="d">ChatGPT ads began as text ads on US Free and Go plans on February 9, and self-serve Ads Manager opened May 5. On October 5, image ads during image generation were announced, with a test starting in late October.</desc>
+  <rect width="1200" height="411" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="40" y="70" font-size="30" font-weight="800" fill="#111111" text-anchor="start">ChatGPT ads, eight months in</text>
+    <text x="40" y="101" font-size="19" font-weight="400" fill="#6B6B6B" text-anchor="start">In the US. From text ads to image ads</text>
+    <line x1="40" y1="227" x2="1160" y2="227" stroke="#111111" stroke-width="2"/>
+    <circle cx="114.9090909090909" cy="227" r="9" fill="#FFFFFF" stroke="#111111" stroke-width="2.5"/>
+    <text x="114.9090909090909" y="271" font-size="16" font-weight="700" fill="#6B6B6B" text-anchor="middle">Feb 9</text>
+    <text x="114.9090909090909" y="297" font-size="20" font-weight="800" fill="#111111" text-anchor="middle">Text ads begin</text>
+    <text x="114.9090909090909" y="321" font-size="16" font-weight="400" fill="#444444" text-anchor="middle">Free and Go plans</text>
+    <circle cx="411.6363636363636" cy="227" r="9" fill="#FFFFFF" stroke="#111111" stroke-width="2.5"/>
+    <text x="411.6363636363636" y="157" font-size="16" font-weight="700" fill="#6B6B6B" text-anchor="middle">May 5</text>
+    <text x="411.6363636363636" y="183" font-size="20" font-weight="800" fill="#111111" text-anchor="middle">Ads Manager opens</text>
+    <text x="411.6363636363636" y="207" font-size="16" font-weight="400" fill="#444444" text-anchor="middle">Self-serve for all</text>
+    <circle cx="945.7454545454545" cy="227" r="9" fill="#111111" stroke="#111111" stroke-width="2.5"/>
+    <text x="945.7454545454545" y="271" font-size="16" font-weight="700" fill="#6B6B6B" text-anchor="middle">Oct 5</text>
+    <text x="945.7454545454545" y="297" font-size="20" font-weight="800" fill="#111111" text-anchor="middle">Image ads announced</text>
+    <text x="945.7454545454545" y="321" font-size="16" font-weight="400" fill="#444444" text-anchor="middle">During image generation</text>
+    <circle cx="1015.5636363636364" cy="227" r="9" fill="#111111" stroke="#111111" stroke-width="2.5"/>
+    <text x="1015.5636363636364" y="157" font-size="16" font-weight="700" fill="#6B6B6B" text-anchor="middle">Late Oct</text>
+    <text x="1015.5636363636364" y="183" font-size="20" font-weight="800" fill="#111111" text-anchor="middle">Test begins</text>
+    <text x="1015.5636363636364" y="207" font-size="16" font-weight="400" fill="#444444" text-anchor="middle">First advertisers</text>
+    <line x1="40" y1="343" x2="1160" y2="343" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="40" y="371" font-size="16" font-weight="400" fill="#6B6B6B" text-anchor="start">Sources: OpenAI, TechCrunch, industry coverage (2026)</text>
+  </g>
+</svg>

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 537" role="img" aria-labelledby="t d">
+  <title id="t">처음과 끝 두 장에서, 열 장의 콘티로</title>
+  <desc id="d">클링 3.0은 처음과 끝 두 장을 주면 최대 15초 사이를 AI가 채웠다. 클링 4.0은 최대 30초 길이에 키프레임을 10장까지 꽂아 장면 흐름을 정할 수 있다.</desc>
+  <rect width="600" height="537" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="32" y="66" font-size="34" font-weight="800" fill="#111111" text-anchor="start">처음과 끝 두 장에서, 열 장의 콘티로</text>
+    <text x="32" y="99" font-size="21" font-weight="400" fill="#6B6B6B" text-anchor="start">클링이 밝힌 사양을 바탕으로 그린 개념도</text>
+    <text x="32" y="151" font-size="24" font-weight="800" fill="#111111" text-anchor="start">클링 3.0</text>
+    <text x="32" y="179" font-size="18" font-weight="400" fill="#444444" text-anchor="start">처음·끝 2장 · 최대 15초</text>
+    <rect x="32" y="218.0" width="268.0" height="6" rx="3" fill="#D9D9D9"/>
+    <rect x="32.0" y="201" width="56.0" height="40" rx="5" fill="#111111"/>
+    <circle cx="51.6" cy="223.0" r="6.4" fill="#FFFFFF"/>
+    <rect x="244.0" y="201" width="56.0" height="40" rx="5" fill="#111111"/>
+    <circle cx="263.6" cy="223.0" r="6.4" fill="#FFFFFF"/>
+    <text x="166.0" y="211.0" font-size="17" font-weight="400" fill="#6B6B6B" text-anchor="middle">사이는 AI가 채움</text>
+    <text x="32.0" y="275" font-size="15" font-weight="400" fill="#6B6B6B" text-anchor="start">0초</text>
+    <text x="121.33333333333333" y="275" font-size="15" font-weight="400" fill="#6B6B6B" text-anchor="middle">5초</text>
+    <text x="210.66666666666666" y="275" font-size="15" font-weight="400" fill="#6B6B6B" text-anchor="middle">10초</text>
+    <text x="300.0" y="275" font-size="15" font-weight="400" fill="#6B6B6B" text-anchor="middle">15초</text>
+    <text x="32" y="321" font-size="24" font-weight="800" fill="#111111" text-anchor="start">클링 4.0</text>
+    <text x="32" y="349" font-size="18" font-weight="400" fill="#444444" text-anchor="start">키프레임 최대 10장 · 최대 30초</text>
+    <rect x="32" y="388.0" width="536.0" height="6" rx="3" fill="#D9D9D9"/>
+    <rect x="31.999999999999996" y="371" width="42.88" height="40" rx="5" fill="#111111"/>
+    <circle cx="47.007999999999996" cy="393.0" r="6.4" fill="#FFFFFF"/>
+    <rect x="86.79111111111112" y="371" width="42.88" height="40" rx="5" fill="#111111"/>
+    <circle cx="101.79911111111112" cy="393.0" r="6.4" fill="#FFFFFF"/>
+    <rect x="141.58222222222224" y="371" width="42.88" height="40" rx="5" fill="#111111"/>
+    <circle cx="156.59022222222225" cy="393.0" r="6.4" fill="#FFFFFF"/>
+    <rect x="196.37333333333333" y="371" width="42.88" height="40" rx="5" fill="#111111"/>
+    <circle cx="211.38133333333334" cy="393.0" r="6.4" fill="#FFFFFF"/>
+    <rect x="251.16444444444443" y="371" width="42.88" height="40" rx="5" fill="#111111"/>
+    <circle cx="266.1724444444444" cy="393.0" r="6.4" fill="#FFFFFF"/>
+    <rect x="305.9555555555555" y="371" width="42.88" height="40" rx="5" fill="#111111"/>
+    <circle cx="320.9635555555555" cy="393.0" r="6.4" fill="#FFFFFF"/>
+    <rect x="360.74666666666667" y="371" width="42.88" height="40" rx="5" fill="#111111"/>
+    <circle cx="375.75466666666665" cy="393.0" r="6.4" fill="#FFFFFF"/>
+    <rect x="415.5377777777778" y="371" width="42.88" height="40" rx="5" fill="#111111"/>
+    <circle cx="430.5457777777778" cy="393.0" r="6.4" fill="#FFFFFF"/>
+    <rect x="470.3288888888889" y="371" width="42.88" height="40" rx="5" fill="#111111"/>
+    <circle cx="485.3368888888889" cy="393.0" r="6.4" fill="#FFFFFF"/>
+    <rect x="525.1199999999999" y="371" width="42.88" height="40" rx="5" fill="#111111"/>
+    <circle cx="540.1279999999999" cy="393.0" r="6.4" fill="#FFFFFF"/>
+    <text x="32.0" y="445" font-size="15" font-weight="400" fill="#6B6B6B" text-anchor="start">0초</text>
+    <text x="121.33333333333333" y="445" font-size="15" font-weight="400" fill="#6B6B6B" text-anchor="middle">5초</text>
+    <text x="210.66666666666666" y="445" font-size="15" font-weight="400" fill="#6B6B6B" text-anchor="middle">10초</text>
+    <text x="300.0" y="445" font-size="15" font-weight="400" fill="#6B6B6B" text-anchor="middle">15초</text>
+    <text x="389.3333333333333" y="445" font-size="15" font-weight="400" fill="#6B6B6B" text-anchor="middle">20초</text>
+    <text x="478.6666666666667" y="445" font-size="15" font-weight="400" fill="#6B6B6B" text-anchor="middle">25초</text>
+    <text x="568.0" y="445" font-size="15" font-weight="400" fill="#6B6B6B" text-anchor="end">30초</text>
+    <line x1="32" y1="477" x2="568" y2="477" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="32" y="505" font-size="16" font-weight="400" fill="#6B6B6B" text-anchor="start">출처: 클링 4.0 사양 발표(2026. 9. 28), 업계 정리</text>
+  </g>
+</svg>

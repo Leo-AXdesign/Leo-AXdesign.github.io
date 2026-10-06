@@ -6,7 +6,108 @@
     <atom:link href="https://designrefs.com/en/rss.xml" rel="self" type="application/rss+xml" />
     <description>Notes from a designer in Korea: working with AI, putting style into words, collecting references and design communities. Translated from Korean.</description>
     <language>en</language>
-    <lastBuildDate>Sun, 04 Oct 2026 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 06 Oct 2026 09:00:00 +0900</lastBuildDate>
+    <item>
+      <title>AI video starts taking a storyboard. Kling 4.0&#x27;s ten keyframes</title>
+      <link>https://designrefs.com/en/articles/kling-4-keyframes/</link>
+      <guid isPermaLink="true">https://designrefs.com/en/articles/kling-4-keyframes/</guid>
+      <pubDate>Tue, 06 Oct 2026 09:00:00 +0900</pubDate>
+      <category>AI Design</category>
+      <description>Kling 4.0 takes 30 seconds, 10 keyframes and 15 references in one generation. It moves from giving just a first and last frame to laying out the flow of a scene yourself. Here&#x27;s what changes and what isn&#x27;t out yet, in a diagram and a table.</description>
+      <content:encoded><![CDATA[    <p class="ptext">Kling, the AI video model from China&#x27;s Kuaishou, published its 4.0 specs. The full release is due sometime in October, and a lighter version, 4.0 Flash, opened to some subscribers on September 28.</p>
+    <p class="ptext">The numbers stand out: up to 30 seconds per generation, up to 10 keyframes, up to 15 references. But as a designer, what I kept looking at was the keyframes. It means you can hand AI video a storyboard.</p>
+    <p class="ptext"><strong>First, a disclaimer.</strong> The full release isn&#x27;t out yet, and Flash is limited to top-tier yearly subscribers, so I haven&#x27;t tried it. What follows is based on Kling&#x27;s published specs and write-ups of them.</p>
+    <h2 class="psub" id="s1">From two frames to ten</h2>
+    <p class="ptext">Until now, there were two ways to direct AI video: describe it in words, or give a first and last frame. Kling 3.0 also took a first and last frame and let the AI fill in between.</p>
+    <figure class="art__fig">
+      <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/kling4-keyframes-en-m.svg" width="600" height="537" /><img src="https://designrefs.com/articles/img/kling4-keyframes-en.svg" alt="Kling 3.0 takes a first and last frame; Kling 4.0 takes up to 10 keyframes. A conceptual sketch based on Kling&#x27;s published specs." width="1200" height="511" loading="lazy" decoding="async" /></picture>
+      <figcaption>Kling 3.0 takes a first and last frame; Kling 4.0 takes up to 10 keyframes. A conceptual sketch based on Kling&#x27;s published specs.</figcaption>
+    </figure>
+    <p class="ptext">Set only the start and end, and the middle is luck. Which way the person walks, when the camera turns, at what second the product enters the frame: the AI decides. Kling 4.0 lets you pin eight more frames in between. Anyone who has worked in video knows this thing. It&#x27;s a storyboard.</p>
+    <h2 class="psub" id="s2">Twice the length</h2>
+    <figure class="art__fig">
+      <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/kling4-length-en-m.svg" width="600" height="651" /><img src="https://designrefs.com/articles/img/kling4-length-en.svg" alt="Maximum video length per generation. Kling 4.0 doubles 3.0 to 30 seconds." width="1200" height="537" loading="lazy" decoding="async" /></picture>
+      <figcaption>Maximum video length per generation. Kling 4.0 doubles 3.0 to 30 seconds.</figcaption>
+    </figure>
+    <p class="ptext">Thirty seconds fits a whole ad spot. Until now you had to make clips of around 15 seconds and stitch them together. At every seam, faces or lighting would shift slightly, a chronic problem with AI video. Generating longer in one go means fewer seams.</p>
+    <h2 class="psub" id="s3">Full release vs. Flash</h2>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th></th><th>Kling 3.0</th><th>Kling 4.0 Flash</th><th>Kling 4.0</th></tr></thead>
+      <tbody>
+        <tr><td>Availability</td><td>On sale</td><td>Sep 28, Ultra yearly subscribers only</td><td>October (date not set)</td></tr>
+        <tr><td>Max length per generation</td><td>15 s</td><td>20 s</td><td>30 s</td></tr>
+        <tr><td>Setting scenes</td><td>First and last frame</td><td>No multi-frame input</td><td>Up to 10 keyframes</td></tr>
+        <tr><td>References</td><td>–</td><td>–</td><td>Up to 15 (10 images, 5 videos)</td></tr>
+        <tr><td>Quality</td><td>Up to 4K</td><td>720p</td><td>Up to 4K, 10-bit HDR</td></tr>
+      </tbody>
+    </table></div>
+    <p class="art__note">Sources: <a href="https://www.atlascloud.ai/blog/tips/kling-4-flash-vs-full" target="_blank" rel="noopener">Atlas Cloud spec comparison</a>, <a href="https://pandaily.com/kling-ai-kling-4-0-30-second-native-video-multi-reference-control" target="_blank" rel="noopener">Pandaily</a>, <a href="https://morphic.com/resources/models/kling-4" target="_blank" rel="noopener">Morphic</a>. Credit pricing for 4.0 hasn&#x27;t been announced. 3.0 runs from 6 credits per second (720p) to 30 (4K).</p>
+    <p class="ptext">The middle column is what matters. Flash, which opened first, has no multi-keyframe input. So the most notable feature in this announcement is something nobody can use yet. Until the full release, the spec sheet is all there is to judge by.</p>
+    <h2 class="psub" id="s4">What changes for designers</h2>
+    <p class="ptext">I&#x27;ve seen the same current all week. Image AI moved toward <a href="https://designrefs.com/en/articles/image-ai-edit-not-reroll/">placing boxes first and editing only the chosen spot</a>, and 3D AI toward <a href="https://designrefs.com/en/articles/instructmesh-ai-3d-print/">picking and fixing only the problem area</a>. Kling 4.0&#x27;s keyframes are the same story: turning what was left to luck into something a person decides.</p>
+    <p class="ptext">That shifts where the work sits. Knowing how to split a scene into frames, and what must be visible at which second, becomes more useful than writing long, elaborate prompts. It&#x27;s a change that favors motion designers and ad producers who have drawn storyboards.</p>
+    <p class="ptext">One more thing. Ten keyframes are, in the end, ten images. They might come from image AI or be drawn by a designer. For the video to look natural, the same person, product and lighting have to hold across all ten. That&#x27;s where &quot;edits that don&#x27;t drift&quot; on the image side meet keyframes on the video side.</p>
+    <h2 class="psub" id="s5">So, for now</h2>
+    <p class="ptext">There&#x27;s some preparation worth doing before the full release.</p>
+    <ol class="ptext-list">
+      <li><strong>Start with a 15-second storyboard.</strong> With the video AI you use now, give only a first and last frame and generate 15 seconds. Mark the moments in the middle that go off course. Those are where you&#x27;ll pin keyframes in 4.0.</li>
+      <li><strong>Make keyframe images as one set.</strong> Make ten separately and the person and lighting change from frame to frame. It&#x27;s safer to keep one image as the original and derive the rest with <a href="https://designrefs.com/en/articles/image-ai-edit-not-reroll/">image edits that change only the chosen spot</a>.</li>
+      <li><strong>Judge price on the full release.</strong> 4.0 pricing isn&#x27;t out yet. Thirty seconds at 4K uses a lot of credits even on 3.0, so get in the habit of reviewing drafts short and low-res, and rendering only the final long and large.</li>
+    </ol>
+    <p class="ptext">AI tools for video and motion are collected under <a href="https://designrefs.com/en/#ai">AI design tools</a>.</p>
+    <p class="art__note">Sources: <a href="https://www.atlascloud.ai/blog/tips/kling-4-flash-vs-full" target="_blank" rel="noopener">Atlas Cloud</a>, <a href="https://pandaily.com/kling-ai-kling-4-0-30-second-native-video-multi-reference-control" target="_blank" rel="noopener">Pandaily</a>, <a href="https://morphic.com/resources/models/kling-4" target="_blank" rel="noopener">Morphic</a>, <a href="https://sloptv.co/news/kling-4-0-october-promise-flash-720p-only" target="_blank" rel="noopener">sloptv</a>, <a href="https://www.atlascloud.ai/blog/tips/kling-ai-pricing" target="_blank" rel="noopener">Atlas Cloud pricing</a>.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>While ChatGPT draws your picture, an ad appears beside it</title>
+      <link>https://designrefs.com/en/articles/chatgpt-image-generation-ads/</link>
+      <guid isPermaLink="true">https://designrefs.com/en/articles/chatgpt-image-generation-ads/</guid>
+      <pubDate>Mon, 05 Oct 2026 09:00:00 +0900</pubDate>
+      <category>AI Design</category>
+      <description>On October 5, OpenAI announced image ads that appear in ChatGPT&#x27;s image generation screen. Here&#x27;s the eight months from text ads to image ads, and what it means for designers, both the new work and the things to watch out for.</description>
+      <content:encoded><![CDATA[    <p class="ptext">On October 5, OpenAI announced a new ad format for ChatGPT. While ChatGPT generates an image, an image ad appears beside it.</p>
+    <p class="ptext">ChatGPT has 1.2 billion weekly users, and many of them come to make pictures. For OpenAI, the few seconds people spend waiting for an image to render are some of the longest they look at the screen. Now there&#x27;s an ad slot there.</p>
+    <p class="ptext"><strong>First, a disclaimer.</strong> The test starts in late October, so nobody has seen a real ad yet. What follows is based on OpenAI&#x27;s announcement and articles covering it. I&#x27;ll also note that I&#x27;m building this site with Claude Code.</p>
+    <h2 class="psub" id="s1">Where it goes, and how</h2>
+    <p class="ptext">The ad sits in a separate spot from the image you asked for. OpenAI made three promises. Ads are clearly labeled. They&#x27;re kept apart from your image so the two don&#x27;t blend. And ads don&#x27;t influence ChatGPT&#x27;s answers.</p>
+    <figure class="art__fig">
+      <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/chatgpt-image-ad-en-m.svg" width="600" height="1101" /><img src="https://designrefs.com/articles/img/chatgpt-image-ad-en.svg" alt="Where the ad appears while ChatGPT makes an image. A diagram based on the announcement; the actual screen may differ." width="1200" height="772" loading="lazy" decoding="async" /></picture>
+      <figcaption>Where the ad appears while ChatGPT makes an image. A diagram based on the announcement; the actual screen may differ.</figcaption>
+    </figure>
+    <p class="ptext">What&#x27;s interesting is the kind of ad. OpenAI describes images that inspire, show the product in context, or tell the story of the experience it makes possible. Ask for a campsite and a lantern in use might appear next to it. Less a banner, more a tile on a mood board.</p>
+    <h2 class="psub" id="s2">From text ads to image ads</h2>
+    <p class="ptext">ChatGPT ads didn&#x27;t appear out of nowhere. They&#x27;ve been expanding step by step since February.</p>
+    <figure class="art__fig">
+      <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/chatgpt-ads-timeline-en-m.svg" width="600" height="651" /><img src="https://designrefs.com/articles/img/chatgpt-ads-timeline-en.svg" alt="Eight months of ChatGPT ads, from text ads in February to image ads in October." width="1200" height="411" loading="lazy" decoding="async" /></picture>
+      <figcaption>Eight months of ChatGPT ads, from text ads in February to image ads in October.</figcaption>
+    </figure>
+    <p class="ptext">On February 9, text ads began for US users on the Free and Go plans. On May 5, Ads Manager opened so anyone could run ads themselves. Meanwhile the list of countries grew to include the UK, Canada and Australia. Alongside this announcement came more than ten new partners for measuring ad results. It&#x27;s a sign the ad business is being built out in earnest.</p>
+    <h2 class="psub" id="s3">Who will see them</h2>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th></th><th>Ads shown?</th></tr></thead>
+      <tbody>
+        <tr><td>Free plan</td><td>Yes</td></tr>
+        <tr><td>Go plan ($8/month)</td><td>Yes</td></tr>
+        <tr><td>Plus, Pro, Business, Enterprise, Edu</td><td>No</td></tr>
+        <tr><td>Accounts identified as under 18</td><td>No</td></tr>
+        <tr><td>Sensitive conversations</td><td>Blocked, per OpenAI</td></tr>
+      </tbody>
+    </table></div>
+    <p class="art__note">Sources: <a href="https://help.openai.com/en/articles/20001047-ads-in-chatgpt" target="_blank" rel="noopener">OpenAI Help, Ads in ChatGPT</a>, <a href="https://techcrunch.com/2026/10/05/openai-launches-visual-ads-that-appear-alongside-image-generation-results/" target="_blank" rel="noopener">TechCrunch</a>. The test starts in the US with an initial group of advertisers.</p>
+    <h2 class="psub" id="s4">What it means for designers</h2>
+    <p class="ptext"><strong>A new ad placement appears.</strong> Where there are advertisers, someone has to make the creative. This format differs from banners so far. It sits right beside the picture the user just asked for, so a photo that blends naturally into that scene will likely beat a loud discount message. One image that fits next to someone drawing &quot;a campsite at dusk&quot;. The eye for shooting and choosing styled lifestyle shots, more than plain product photos, starts to matter.</p>
+    <p class="ptext"><strong>References and ads share one screen.</strong> On the other hand, designers who use ChatGPT for mood boards or early directions have something to watch. Real brands&#x27; product photos will sit next to your images under the name &quot;inspiration&quot;. Even with clear labels, once you collect and save many images, it&#x27;s easy to lose track of which you made and which was an ad. Pass an ad image along as a reference and you&#x27;re using someone else&#x27;s brand photo.</p>
+    <p class="ptext"><strong>One more difference between free and paid.</strong> Until now, paid plans meant better models and more usage. Now add &quot;no ads next to your images&quot;. If you often share your screen while making drafts in front of clients, that difference may matter more than you&#x27;d think.</p>
+    <h2 class="psub" id="s5">So, for now</h2>
+    <p class="ptext">Outside the US, nothing changes yet. But given how text ads spread from the US to other countries within months, image ads will likely widen before long.</p>
+    <p class="ptext">Here&#x27;s what&#x27;s worth setting up now.</p>
+    <ol class="ptext-list">
+      <li><strong>Rules for your mood board folder.</strong> When collecting AI images, get in the habit of downloading rather than screenshotting. It keeps ads from slipping into captures.</li>
+      <li><strong>Use a paid account for client demos.</strong> It&#x27;s better to avoid other brands&#x27; ads popping up on a free account&#x27;s screen.</li>
+      <li><strong>If you make ad creative.</strong> Try drafting with the constraint of one image placed next to an image request. Even for the same product, a photo that explains and a photo that fits are different.</li>
+    </ol>
+    <p class="ptext">How AI tools are moving into the design workflow is covered in <a href="https://designrefs.com/en/articles/openai-devday-2026-designers/">what designers should take from DevDay</a>, and whether AI images can be used in your work is in <a href="https://designrefs.com/en/articles/ai-image-commercial-use/">Can you use AI-generated images in client work?</a>.</p>
+    <p class="art__note">Sources: <a href="https://techcrunch.com/2026/10/05/openai-launches-visual-ads-that-appear-alongside-image-generation-results/" target="_blank" rel="noopener">TechCrunch</a>, <a href="https://help.openai.com/en/articles/20001047-ads-in-chatgpt" target="_blank" rel="noopener">OpenAI Help</a>, <a href="https://winbuzzer.com/2026/10/05/chatgpt-to-test-visual-ads-during-image-generation-xcxwbn/" target="_blank" rel="noopener">WinBuzzer</a>, <a href="https://www.androidheadlines.com/2026/10/chatgpt-visual-ads-image-generation.html" target="_blank" rel="noopener">Android Headlines</a>, <a href="https://www.cnbc.com/2026/10/05/anthropic-openai-google-meta-execs-testify-nyc-council-ai-hearing.html" target="_blank" rel="noopener">CNBC (weekly users)</a>, <a href="https://www.honeyb.ai/blog/chatgpt-ads-february-2026" target="_blank" rel="noopener">Honeyb (February launch)</a>.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Four in five AI-made 3D models can&#x27;t be printed as they are</title>
       <link>https://designrefs.com/en/articles/instructmesh-ai-3d-print/</link>
