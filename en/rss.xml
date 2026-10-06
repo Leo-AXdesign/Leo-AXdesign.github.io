@@ -6,7 +6,65 @@
     <atom:link href="https://designrefs.com/en/rss.xml" rel="self" type="application/rss+xml" />
     <description>Notes from a designer in Korea: working with AI, putting style into words, collecting references and design communities. Translated from Korean.</description>
     <language>en</language>
-    <lastBuildDate>Tue, 06 Oct 2026 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 07 Oct 2026 09:00:00 +0900</lastBuildDate>
+    <item>
+      <title>Last week, AI design tools moved toward less luck</title>
+      <link>https://designrefs.com/en/articles/ai-design-week-1007/</link>
+      <guid isPermaLink="true">https://designrefs.com/en/articles/ai-design-week-1007/</guid>
+      <pubDate>Wed, 07 Oct 2026 09:00:00 +0900</pubDate>
+      <category>AI Design</category>
+      <description>Six AI and design stories from September 30 to October 6, on one page. The whole store, the rules, what to edit, the order of shots: what was left to luck is turning into something people decide. With numbers on how much designers use AI.</description>
+      <content:encoded><![CDATA[    <p class="ptext">Over the past week I posted one piece a day on AI and design: a store editor, a design rules file, two image models, a 3D printing tool, ChatGPT ads and a video model. On their own they look unrelated. Side by side, one thing stood out.</p>
+    <p class="ptext"><strong>Where we used to hand everything to AI and wait for the result, people can now decide for themselves.</strong></p>
+    <p class="ptext"><strong>First, a disclaimer.</strong> This is a roundup of the past week&#x27;s articles. Details and sources for each story are in the individual pieces. I&#x27;ll also note that I&#x27;m building this site with Claude Code, since Claude appears in the numbers below.</p>
+    <h2 class="psub" id="s1">Six stories on one page</h2>
+    <figure class="art__fig">
+      <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/week-1001-1006-en-m.svg" width="600" height="1394" /><img src="https://designrefs.com/articles/img/week-1001-1006-en.svg" alt="Six stories from last week, and what each one lets people decide." width="1200" height="609" loading="lazy" decoding="async" /></picture>
+      <figcaption>Six stories from last week, and what each one lets people decide.</figcaption>
+    </figure>
+    <p class="ptext">Here they are again, briefly.</p>
+    <ul class="ptext-list">
+      <li><strong><a href="https://designrefs.com/en/articles/shopify-canvas-sidekick/">Shopify Canvas</a> (Oct 1).</strong> Every page of a store laid out at once; click to edit, or tell the AI. From an editor that opens one page at a time to seeing the whole.</li>
+      <li><strong><a href="https://designrefs.com/en/articles/design-md-for-ai/">DESIGN.md</a> (Oct 2).</strong> Colors, type and what not to do, written in one file for AI. I also confirmed that when rules are blank, AI fills them in on its own.</li>
+      <li><strong><a href="https://designrefs.com/en/articles/image-ai-edit-not-reroll/">Ideogram 4.5 and FLUX 3 Image</a> (Sep 30, Oct 2).</strong> Only the chosen spot changes; the rest stays. FLUX 3 sets layout with boxes first.</li>
+      <li><strong><a href="https://designrefs.com/en/articles/instructmesh-ai-3d-print/">InstructMesh</a> (Oct 1).</strong> 80% of AI-made 3D models can&#x27;t be used if printed as is. Pick the flawed part and fix it in words.</li>
+      <li><strong><a href="https://designrefs.com/en/articles/chatgpt-image-generation-ads/">ChatGPT image ads</a> (Oct 5).</strong> An ad appears while your image is drawn. A new placement, and a spot where ads can slip into your references.</li>
+      <li><strong><a href="https://designrefs.com/en/articles/kling-4-keyframes/">Kling 4.0</a> (Sep 28 onward).</strong> Ten keyframes instead of a first and last frame. You hand AI video a storyboard.</li>
+    </ul>
+    <p class="ptext">The ads story is a little different. The other five are about more things designers can decide; ads are about more places designers will make work for. Still, the direction is the same. Inside the screens where AI works, there are more places a person&#x27;s hand can reach.</p>
+    <h2 class="psub" id="s2">How much do designers use AI?</h2>
+    <p class="ptext">The numbers explain why this is happening now. The AI in Design Report 2026, published in May, surveyed more than 900 designers in over 60 countries.</p>
+    <figure class="art__fig">
+      <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/designer-ai-2026-en-m.svg" width="600" height="1205" /><img src="https://designrefs.com/articles/img/designer-ai-2026-en.svg" alt="Designers and AI, one year on. Weekly use rose from 54% to 91%." width="1200" height="459" loading="lazy" decoding="async" /></picture>
+      <figcaption>Designers and AI, one year on. Weekly use rose from 54% to 91%.</figcaption>
+    </figure>
+    <p class="ptext">In one year, designers using AI weekly went from 54% to 91%. 75% use it daily. The average number of AI tools in regular use rose from 3 to 7, and half of designers said they&#x27;ve shipped AI-generated code to production.</p>
+    <p class="ptext">According to write-ups of the report, designers&#x27; biggest complaint was inconsistent output quality. Quality was also what decided whether a tool stayed in their workflow.</p>
+    <p class="ptext">Put those two together and you can see why last week&#x27;s stories went the way they did. Almost every designer uses AI now. The question left isn&#x27;t &quot;should I use it?&quot; but &quot;can I trust it?&quot; So tools are putting their effort less into more astonishing results and more into results that drift less and come out the way a person decided.</p>
+    <h2 class="psub" id="s3">What&#x27;s left for designers</h2>
+    <p class="ptext">Wherever luck shrinks, something appears for a person to decide.</p>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th>New handle</th><th>What the designer decides</th></tr></thead>
+      <tbody>
+        <tr><td>The whole store on one surface</td><td>Which rules must hold on every page</td></tr>
+        <tr><td>A rules file</td><td>The values for color and type, and why</td></tr>
+        <tr><td>Editing only the chosen spot</td><td>What to change and what to protect</td></tr>
+        <tr><td>Box layout</td><td>What goes where, and how big</td></tr>
+        <tr><td>Fixing the flawed part</td><td>Whether the object can actually be used</td></tr>
+        <tr><td>Ten keyframes</td><td>How to split the scene, and what shows at which second</td></tr>
+      </tbody>
+    </table></div>
+    <p class="ptext">Read the right-hand column again and there&#x27;s nothing new in it. Layout, rules, composition, usability, storyboards. It&#x27;s what designers have always done. As AI takes work off our hands, the places that need judgment stand out more clearly.</p>
+    <h2 class="psub" id="s4">One thing to try this week</h2>
+    <p class="ptext">You don&#x27;t need to try a whole week&#x27;s worth at once. Pick the one closest to what you do now.</p>
+    <ol class="ptext-list">
+      <li><strong>If you build web or apps.</strong> Write a <a href="https://designrefs.com/en/articles/design-md-for-ai/">DESIGN.md</a> with five colors, three type sizes and three things not to do.</li>
+      <li><strong>If you make image drafts.</strong> Edit the same image five times, then stack it on the original in Photoshop&#x27;s Difference mode. The method is in the <a href="https://designrefs.com/en/articles/image-ai-edit-not-reroll/">editing article</a>.</li>
+      <li><strong>If you make video.</strong> Generate 15 seconds with the video AI you use now and mark the moments that go off course. When <a href="https://designrefs.com/en/articles/kling-4-keyframes/">Kling 4.0</a> arrives, those are where keyframes go.</li>
+    </ol>
+    <p class="ptext">AI tools by use case are collected under <a href="https://designrefs.com/en/#ai">AI design tools</a>.</p>
+    <p class="art__note">Sources: this site&#x27;s articles from Oct 1–6 (see sources under each), <a href="https://stateofaidesign.com/chapters/tools" target="_blank" rel="noopener">AI in Design Report 2026</a>, <a href="https://designerfund.com/blog/ai-in-design-2026" target="_blank" rel="noopener">Designer Fund</a>, <a href="https://foundationcapital.com/ideas/how-ai-is-reshaping-design-in-tech" target="_blank" rel="noopener">Foundation Capital</a>.</p>]]></content:encoded>
+    </item>
     <item>
       <title>AI video starts taking a storyboard. Kling 4.0&#x27;s ten keyframes</title>
       <link>https://designrefs.com/en/articles/kling-4-keyframes/</link>

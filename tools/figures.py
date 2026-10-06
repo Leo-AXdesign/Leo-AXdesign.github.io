@@ -1039,10 +1039,80 @@ def keys(lang, wide):
     return wrap(W, round(y + pad), t["title"], t["desc"], out)
 
 
+# =========================================================
+# 11. 지난 일주일 한눈에 (2026-10-07 주간 정리 글)
+# =========================================================
+WEEK = {
+    "ko": {
+        "title": "지난 일주일, 사람이 정하게 된 것",
+        "sub": "9월 30일 ~ 10월 6일. 운에 맡기던 자리를 사람이 정하는 쪽으로",
+        "cards": [("10. 1", "쇼피파이 캔버스", "가게 전체", "한 판에 펼쳐 놓고 고친다"),
+                  ("10. 2", "DESIGN.md", "규칙", "AI가 읽는 디자인 규칙 한 장"),
+                  ("9. 30 · 10. 2", "Ideogram 4.5 · FLUX 3", "고칠 자리", "고른 곳만 바뀌고 나머지는 그대로"),
+                  ("10. 1", "InstructMesh", "고칠 부위", "3D 모델에서 문제 부위만 골라 고친다"),
+                  ("10. 5", "챗GPT 이미지 광고", "광고 자리", "그림 옆에 붙는 새 지면"),
+                  ("9. 28 ~", "클링 4.0", "장면 순서", "키프레임 열 장으로 콘티를 건넨다")],
+        "source": "출처: 이 사이트 읽을거리 10월 1일 ~ 6일 글",
+        "desc": "지난 일주일 나온 여섯 가지 소식. 쇼피파이 캔버스는 가게 전체, DESIGN.md는 규칙, Ideogram 4.5와 FLUX 3는 고칠 자리, InstructMesh는 3D의 고칠 부위, 챗GPT 이미지 광고는 새 광고 자리, 클링 4.0은 장면 순서를 다룬다.",
+    },
+    "en": {
+        "title": "Last week: what you now decide",
+        "sub": "Sep 30 – Oct 6. From leaving it to luck to deciding it yourself",
+        "cards": [("Oct 1", "Shopify Canvas", "The whole store", "Lay it all out and edit"),
+                  ("Oct 2", "DESIGN.md", "The rules", "One file of design rules for AI"),
+                  ("Sep 30 · Oct 2", "Ideogram 4.5 · FLUX 3", "What to edit", "Only the chosen spot changes"),
+                  ("Oct 1", "InstructMesh", "Which part to fix", "Fix only the flawed part of a 3D model"),
+                  ("Oct 5", "ChatGPT image ads", "An ad slot", "A new placement beside images"),
+                  ("Sep 28 –", "Kling 4.0", "Shot order", "Hand over a ten-frame storyboard")],
+        "source": "Source: this site's articles, Oct 1–6",
+        "desc": "Six stories from last week. Shopify Canvas covers the whole store, DESIGN.md the rules, Ideogram 4.5 and FLUX 3 what to edit, InstructMesh which 3D part to fix, ChatGPT image ads a new ad slot, and Kling 4.0 the order of shots.",
+    },
+}
+
+
+def week(lang, wide):
+    t = WEEK[lang]
+    if wide:
+        W, pad, ts, ss, ds, ns, ks, bs = 1200, 40, 30, 19, 15, 18, 26, 16
+        cols, gap, ch = 3, 24, 170
+    else:
+        W, pad, ts, ss, ds, ns, ks, bs = 600, 32, 34, 21, 17, 20, 28, 18
+        cols, gap, ch = 1, 16, 176
+    out, y = [], pad + ts
+    out.append(text(pad, y, t["title"], ts, weight=800))
+    y += ss + 12
+    sub = t["sub"]
+    if wide:
+        out.append(text(pad, y, sub, ss, MUTED))
+    else:
+        a, b = sub.split(". ", 1)
+        out.append(text(pad, y, a + ".", ss, MUTED))
+        y += ss + 10
+        out.append(text(pad, y, b, ss, MUTED))
+    y += 36
+    cw = (W - pad * 2 - gap * (cols - 1)) / cols
+    for i, (when, name, key, body) in enumerate(t["cards"]):
+        cx = pad + (i % cols) * (cw + gap)
+        cy = y + (i // cols) * (ch + gap)
+        out.append(f'<rect x="{cx}" y="{cy}" width="{cw}" height="{ch}" rx="14" fill="{BG}" stroke="{INK}" stroke-width="1.5"/>')
+        out.append(text(cx + 20, cy + 32, when, ds, MUTED, 700))
+        out.append(text(cx + 20, cy + 32 + ns + 10, name, ns, INK, 700))
+        out.append(f'<rect x="{cx + 20}" y="{cy + 32 + ns + 26}" width="{len(key) * ks * (1.0 if lang == "ko" else 0.56) + 24}" height="{ks + 16}" rx="{(ks + 16) / 2}" fill="{INK}"/>')
+        out.append(text(cx + 32, cy + 32 + ns + 26 + ks + 2, key, ks, BG, 800))
+        out.append(text(cx + 20, cy + ch - 20, body, bs, BODY))
+    rows = -(-len(t["cards"]) // cols)
+    y += rows * (ch + gap) + 30
+    out.append(f'<line x1="{pad}" y1="{y - 14}" x2="{W - pad}" y2="{y - 14}" stroke="{RULE}" stroke-width="1"/>')
+    y += 14
+    out.append(text(pad, y, t["source"], (ss - 3) if wide else (ss - 4), MUTED))
+    return wrap(W, round(y + pad), t["title"], t["desc"], out)
+
+
 FIGS = {"openai-app-platforms": timeline, "chatgpt-plugin-extensions": scheme,
         "shopify-canvas-compare": canvas_compare, "design-md-anatomy": designmd,
         "image-edit-drift": drift, "flux3-bbox-layout": bbox, "instructmesh-flow": meshflow,
-        "chatgpt-image-ad": adspot, "chatgpt-ads-timeline": adtime, "kling4-keyframes": keys}
+        "chatgpt-image-ad": adspot, "chatgpt-ads-timeline": adtime, "kling4-keyframes": keys,
+        "week-1001-1006": week}
 
 if __name__ == "__main__":
     OUT.mkdir(parents=True, exist_ok=True)

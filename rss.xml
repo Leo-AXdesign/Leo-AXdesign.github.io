@@ -6,7 +6,65 @@
     <atom:link href="https://designrefs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>디자인하면서 생각한 것들을 적습니다. AI와 같이 일하는 법, 스타일을 말로 옮기는 법, 레퍼런스와 커뮤니티 이야기.</description>
     <language>ko</language>
-    <lastBuildDate>Tue, 06 Oct 2026 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 07 Oct 2026 09:00:00 +0900</lastBuildDate>
+    <item>
+      <title>지난 일주일, AI 디자인 도구는 &#x27;운&#x27;을 줄이는 쪽으로 갔다</title>
+      <link>https://designrefs.com/articles/ai-design-week-1007/</link>
+      <guid isPermaLink="true">https://designrefs.com/articles/ai-design-week-1007/</guid>
+      <pubDate>Wed, 07 Oct 2026 09:00:00 +0900</pubDate>
+      <category>AI 디자인</category>
+      <description>9월 30일부터 10월 6일까지 나온 AI·디자인 소식 여섯 가지를 한 장에 모았다. 가게 전체, 규칙, 고칠 자리, 장면 순서까지, 운에 맡기던 것을 사람이 정하는 쪽으로 바뀌었다. 디자이너가 AI를 얼마나 쓰는지 숫자와 함께 정리했다.</description>
+      <content:encoded><![CDATA[    <p class="ptext">지난 일주일 동안 이 사이트에 AI와 디자인 이야기를 매일 한 편씩 올렸다. 쇼핑몰 편집기, 디자인 규칙 파일, 이미지 모델 둘, 3D 출력 도구, 챗GPT 광고, 영상 모델. 따로 보면 서로 상관없어 보이는데, 나란히 놓고 보니 공통점이 하나 보였다.</p>
+    <p class="ptext"><strong>AI에게 통째로 맡기고 결과를 기다리던 자리를, 사람이 직접 정할 수 있게 바뀌고 있다.</strong></p>
+    <p class="ptext"><strong>먼저 밝혀 둘 것.</strong> 이 글은 지난 글들을 묶은 정리다. 각 소식의 자세한 내용과 출처는 해당 글에 있다. 나는 이 사이트를 클로드 코드로 만들고 있다는 것도 함께 적어 둔다. 아래 숫자에 Claude가 나오기 때문이다.</p>
+    <h2 class="psub" id="s1">여섯 가지 소식, 한 장으로</h2>
+    <figure class="art__fig">
+      <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/week-1001-1006-m.svg" width="600" height="1394" /><img src="https://designrefs.com/articles/img/week-1001-1006.svg" alt="지난 일주일 나온 여섯 가지 소식과, 각각 사람이 정할 수 있게 된 것." width="1200" height="609" loading="lazy" decoding="async" /></picture>
+      <figcaption>지난 일주일 나온 여섯 가지 소식과, 각각 사람이 정할 수 있게 된 것.</figcaption>
+    </figure>
+    <p class="ptext">하나씩 짧게 다시 보면 이렇다.</p>
+    <ul class="ptext-list">
+      <li><strong><a href="https://designrefs.com/articles/shopify-canvas-sidekick/">쇼피파이 캔버스</a> (10/1).</strong> 가게의 모든 페이지를 한 판에 펼쳐 놓고, 눌러서 고치거나 AI에게 말로 시킨다. 한 페이지씩 열던 편집기에서 &#x27;전체&#x27;를 보는 쪽으로.</li>
+      <li><strong><a href="https://designrefs.com/articles/design-md-for-ai/">DESIGN.md</a> (10/2).</strong> 색, 글자, 하지 말 것을 파일 한 장에 적어 AI에게 건넨다. 규칙이 비어 있으면 AI가 알아서 채운다는 것도 확인했다.</li>
+      <li><strong><a href="https://designrefs.com/articles/image-ai-edit-not-reroll/">Ideogram 4.5와 FLUX 3 Image</a> (9/30, 10/2).</strong> 고른 자리만 바뀌고 나머지는 그대로. FLUX 3는 상자로 배치부터 정한다.</li>
+      <li><strong><a href="https://designrefs.com/articles/instructmesh-ai-3d-print/">InstructMesh</a> (10/1).</strong> AI가 만든 3D 모델의 80%가 그대로는 출력해도 못 쓴다. 문제 부위만 골라 말로 고친다.</li>
+      <li><strong><a href="https://designrefs.com/articles/chatgpt-image-generation-ads/">챗GPT 이미지 광고</a> (10/5).</strong> 그림이 그려지는 동안 옆에 광고가 붙는다. 새 광고 지면이자, 레퍼런스에 광고가 섞일 수 있는 자리.</li>
+      <li><strong><a href="https://designrefs.com/articles/kling-4-keyframes/">클링 4.0</a> (9/28~).</strong> 처음·끝 두 장 대신 키프레임 열 장. AI 영상에 콘티를 건넨다.</li>
+    </ul>
+    <p class="ptext">광고 소식만 결이 조금 다르다. 나머지 다섯은 디자이너가 정할 수 있는 게 늘어난 이야기고, 광고는 디자이너가 만들 지면이 늘어난 이야기다. 그래도 방향은 같다. AI가 일하는 화면 안에 사람의 손이 닿는 자리가 많아지고 있다.</p>
+    <h2 class="psub" id="s2">디자이너는 AI를 얼마나 쓰나</h2>
+    <p class="ptext">이 흐름이 왜 지금인지는 숫자를 보면 이해가 된다. 5월에 나온 &#x27;AI in Design Report 2026&#x27;은 60여 개국 디자이너 900여 명에게 물었다.</p>
+    <figure class="art__fig">
+      <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/designer-ai-2026-m.svg" width="600" height="1205" /><img src="https://designrefs.com/articles/img/designer-ai-2026.svg" alt="디자이너의 AI 사용, 1년 사이. 매주 쓰는 사람이 54%에서 91%로 늘었다." width="1200" height="459" loading="lazy" decoding="async" /></picture>
+      <figcaption>디자이너의 AI 사용, 1년 사이. 매주 쓰는 사람이 54%에서 91%로 늘었다.</figcaption>
+    </figure>
+    <p class="ptext">매주 AI를 쓰는 디자이너가 1년 사이 54%에서 91%가 됐다. 매일 쓰는 사람도 75%다. 평소 쓰는 AI 도구는 평균 3개에서 7개로 늘었고, 디자이너의 절반은 AI가 만든 코드를 실제 서비스에 내보낸 적이 있다고 답했다.</p>
+    <p class="ptext">이 보고서를 정리한 글들에 따르면, 디자이너들이 꼽은 가장 큰 불만은 결과물 품질이 들쭉날쭉하다는 것이었다. 도구가 작업 흐름에 남느냐 마느냐를 가르는 것도 결국 품질이었다.</p>
+    <p class="ptext">이 두 숫자를 겹쳐 보면 지난 일주일의 소식들이 왜 그쪽으로 갔는지 보인다. 이제 거의 모든 디자이너가 AI를 쓴다. 남은 문제는 &quot;쓸까 말까&quot;가 아니라 &quot;믿고 맡길 수 있나&quot;다. 그래서 도구들은 더 놀라운 결과보다, 결과가 덜 흔들리고 사람이 정한 대로 나오게 하는 쪽에 힘을 쓰고 있다.</p>
+    <h2 class="psub" id="s3">그래서 디자이너에게 남는 일</h2>
+    <p class="ptext">운이 줄어든 자리마다 사람이 정해야 할 것이 생긴다.</p>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th>새로 생긴 손잡이</th><th>디자이너가 정할 것</th></tr></thead>
+      <tbody>
+        <tr><td>가게 전체를 한 판에</td><td>어떤 규칙이 모든 페이지에 지켜져야 하는지</td></tr>
+        <tr><td>규칙 파일</td><td>색과 글자의 값, 그리고 그 값을 쓰는 이유</td></tr>
+        <tr><td>고른 자리만 고치기</td><td>어디를 고치고 어디를 지킬지</td></tr>
+        <tr><td>상자로 배치</td><td>무엇을 어디에 얼마나 크게 둘지</td></tr>
+        <tr><td>문제 부위 고치기</td><td>이 물건이 실제로 쓰일 수 있는지</td></tr>
+        <tr><td>키프레임 열 장</td><td>장면을 몇 장으로 나누고, 몇 초에 무엇이 보일지</td></tr>
+      </tbody>
+    </table></div>
+    <p class="ptext">표의 오른쪽 열을 다시 읽어 보면, 새로운 기술이 하나도 없다. 레이아웃, 규칙, 구도, 사용성, 콘티. 디자이너가 원래 하던 일이다. AI가 손을 덜어 준 만큼, 판단해야 할 자리가 더 또렷하게 드러나는 셈이다.</p>
+    <h2 class="psub" id="s4">이번 주에 해 볼 것 하나씩</h2>
+    <p class="ptext">일주일 치를 한 번에 다 해 볼 필요는 없다. 지금 하는 일에 가장 가까운 것 하나만 골라 보자.</p>
+    <ol class="ptext-list">
+      <li><strong>웹·앱을 만든다면.</strong> 색 다섯 개, 글자 크기 세 단계, 하지 말 것 세 줄로 <a href="https://designrefs.com/articles/design-md-for-ai/">DESIGN.md</a>를 써 보자.</li>
+      <li><strong>이미지 시안을 만든다면.</strong> 같은 그림을 다섯 번 고친 뒤 포토샵 &#x27;차이&#x27; 모드로 원본과 겹쳐 보자. <a href="https://designrefs.com/articles/image-ai-edit-not-reroll/">고쳐 쓰기 글</a>에 방법을 적어 두었다.</li>
+      <li><strong>영상을 만든다면.</strong> 지금 쓰는 영상 AI로 15초를 뽑고, 의도와 어긋나는 순간을 표시해 두자. <a href="https://designrefs.com/articles/kling-4-keyframes/">클링 4.0</a>이 나오면 그 자리가 키프레임을 꽂을 곳이다.</li>
+    </ol>
+    <p class="ptext">쓰임새별 AI 도구는 <a href="https://designrefs.com/ai/">AI 디자인 툴</a>에 모아 두었다.</p>
+    <p class="art__note">출처: 이 사이트 읽을거리 10월 1일~6일 글(각 글 아래 출처 참고), <a href="https://stateofaidesign.com/chapters/tools" target="_blank" rel="noopener">AI in Design Report 2026</a>, <a href="https://designerfund.com/blog/ai-in-design-2026" target="_blank" rel="noopener">Designer Fund 정리</a>, <a href="https://foundationcapital.com/ideas/how-ai-is-reshaping-design-in-tech" target="_blank" rel="noopener">Foundation Capital</a>.</p>]]></content:encoded>
+    </item>
     <item>
       <title>AI 영상이 콘티를 받기 시작했다, 클링 4.0의 키프레임 열 장</title>
       <link>https://designrefs.com/articles/kling-4-keyframes/</link>
