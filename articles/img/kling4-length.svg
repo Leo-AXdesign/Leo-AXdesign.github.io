@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 537" role="img" aria-labelledby="t d">
+  <title id="t">한 번에 만드는 영상 길이</title>
+  <desc id="d">한 번에 만드는 영상 최대 길이는 클링 3.0 15초, 클링 4.0 Flash 20초, 클링 4.0 30초.</desc>
+  <rect width="1200" height="537" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="40" y="70" font-size="30" font-weight="800" fill="#111111" letter-spacing="-0.5">한 번에 만드는 영상 길이</text>
+    <text x="40" y="101" font-size="19" fill="#6B6B6B">각 모델 최대값 · 클링 4.0 정식판은 10월 중 공개 예정</text>
+    <text x="40.0" y="165" font-size="24" font-weight="700" fill="#111111">최대 길이</text>
+    <text x="40.0" y="193" font-size="18" fill="#6B6B6B">초</text>
+    <text x="40.0" y="237" font-size="18" fill="#444444">클링 3.0</text>
+    <path d="M40.0 247H545.0A7 7 0 0 1 552.0 254V270A7 7 0 0 1 545.0 277H40.0Z" fill="#111111"/>
+    <text x="564.0" y="269.92" font-size="22" font-weight="700" fill="#111111">15초</text>
+    <text x="40.0" y="315" font-size="18" fill="#444444">클링 4.0 Flash</text>
+    <path d="M40.0 325H715.6666666666666A7 7 0 0 1 722.6666666666666 332V348A7 7 0 0 1 715.6666666666666 355H40.0Z" fill="#111111"/>
+    <text x="734.6666666666666" y="347.92" font-size="22" font-weight="700" fill="#111111">20초</text>
+    <text x="40.0" y="393" font-size="18" fill="#444444">클링 4.0</text>
+    <path d="M40.0 403H1057.0A7 7 0 0 1 1064.0 410V426A7 7 0 0 1 1057.0 433H40.0Z" fill="#111111"/>
+    <text x="1076.0" y="425.92" font-size="22" font-weight="700" fill="#111111">30초</text>
+    <line x1="40.0" y1="219" x2="40.0" y2="453" stroke="#D9D9D9" stroke-width="1.6"/>
+    <line x1="40" y1="475" x2="1160" y2="475" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="40" y="501" font-size="16" fill="#6B6B6B">출처: 클링 사양 발표(2026. 9. 28), 업계 정리. 4.0 Flash는 연간 Ultra 구독자에게만 먼저 열림.</text>
+  </g>
+</svg>

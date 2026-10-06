@@ -230,6 +230,27 @@ CHARTS = {
              "rows": [("Fixed", 90, "~90%"), ("Not fixed", 10, "~10%")]},
         ],
     },
+    # ---- 2026-10-06 '클링 4.0' 글 ----
+    "kling4-length": {
+        "title": "한 번에 만드는 영상 길이",
+        "sub": "각 모델 최대값 · 클링 4.0 정식판은 10월 중 공개 예정",
+        "source": ["출처: 클링 사양 발표(2026. 9. 28), 업계 정리.", "4.0 Flash는 연간 Ultra 구독자에게만 먼저 열림."],
+        "desc": "한 번에 만드는 영상 최대 길이는 클링 3.0 15초, 클링 4.0 Flash 20초, 클링 4.0 30초.",
+        "panels": [
+            {"title": "최대 길이", "hint": "초",
+             "rows": [("클링 3.0", 15, "15초"), ("클링 4.0 Flash", 20, "20초"), ("클링 4.0", 30, "30초")]},
+        ],
+    },
+    "kling4-length-en": {
+        "title": "Video length in one generation",
+        "sub": "Maximum for each model · full Kling 4.0 due later in October",
+        "source": ["Sources: Kling spec sheet (Sep 28, 2026), industry coverage.", "4.0 Flash opened first to Ultra yearly subscribers only."],
+        "desc": "Maximum length per generation: Kling 3.0 15 seconds, Kling 4.0 Flash 20 seconds, Kling 4.0 30 seconds.",
+        "panels": [
+            {"title": "Max length", "hint": "seconds",
+             "rows": [("Kling 3.0", 15, "15 s"), ("Kling 4.0 Flash", 20, "20 s"), ("Kling 4.0", 30, "30 s")]},
+        ],
+    },
 }
 
 

@@ -801,9 +801,248 @@ def meshflow(lang, wide):
     return wrap(W, round(y + pad), t["title"], t["desc"], out)
 
 
+# =========================================================
+# 8. 챗GPT 이미지 옆 광고 자리 (2026-10-05 광고 글)
+# =========================================================
+ADSPOT = {
+    "ko": {
+        "title": "그림이 그려지는 동안, 옆에 붙는 광고",
+        "sub": "발표를 바탕으로 그린 구조도. 실제 화면과는 다를 수 있다.",
+        "ask": "캠핑장 저녁 풍경, 따뜻한 조명으로 그려 줘",
+        "mine": "내가 요청한 그림",
+        "ad": "광고",
+        "ad_brand": "브랜드 랜턴",
+        "ad_copy": ["제품을 쓰는 장면,", "'영감'으로 제시"],
+        "notes": [("1", "광고라고 분명히 표시"), ("2", "만든 그림과 떨어진 자리"), ("3", "답변 내용에는 영향 없음")],
+        "source": "출처: OpenAI 발표(2026. 10. 5), TechCrunch",
+        "desc": "챗GPT가 그림을 만드는 동안, 만든 그림과 떨어진 자리에 광고라고 표시된 이미지 광고가 붙는다. 제품을 쓰는 장면이나 관련 경험을 '영감'처럼 보여 주는 형식이다.",
+    },
+    "en": {
+        "title": "An ad beside your new image",
+        "sub": "Based on the announcement; not the real screen.",
+        "ask": "A campsite at dusk, with warm lighting",
+        "mine": "The image I asked for",
+        "ad": "Ad",
+        "ad_brand": "Brand lantern",
+        "ad_copy": ["The product in use,", "shown as 'inspiration'"],
+        "notes": [("1", "Clearly labeled as an ad"), ("2", "Kept apart from your image"), ("3", "Doesn't change the answer")],
+        "source": "Sources: OpenAI (Oct 5, 2026), TechCrunch",
+        "desc": "While ChatGPT generates an image, a labeled image ad appears in a separate spot from your image. It shows the product in use or a related experience, framed as inspiration.",
+    },
+}
+
+
+def adspot(lang, wide):
+    t = ADSPOT[lang]
+    if wide:
+        W, pad, ts, ss, fs, ns = 1200, 40, 30, 19, 17, 17
+    else:
+        W, pad, ts, ss, fs, ns = 600, 32, 34, 21, 18, 20
+    out, y = [], pad + ts
+    out.append(text(pad, y, t["title"], ts, weight=800))
+    y += ss + 12
+    out.append(text(pad, y, t["sub"], ss, MUTED))
+    y += 32
+    wx, ww = pad, W - pad * 2
+    wh = 430 if wide else 760
+    out.append(f'<rect x="{wx}" y="{y}" width="{ww}" height="{wh}" rx="16" fill="{BG}" stroke="{INK}" stroke-width="2"/>')
+    out.append(f'<line x1="{wx}" y1="{y + 40}" x2="{wx + ww}" y2="{y + 40}" stroke="{RULE}" stroke-width="1.5"/>')
+    for k in range(3):
+        out.append(f'<circle cx="{wx + 24 + k * 18}" cy="{y + 20}" r="5" fill="{RULE}"/>')
+    out.append(text(wx + ww / 2, y + 26, "ChatGPT", fs - 2, MUTED, 700, "middle"))
+    # 요청 말풍선
+    bw = min(len(t["ask"]) * fs * (0.56 if lang == "en" else 0.98) + 36, ww - 40)
+    by = y + 60
+    out.append(f'<rect x="{wx + ww - 20 - bw}" y="{by}" width="{bw}" height="{fs + 22}" rx="{(fs + 22) / 2}" fill="{INK}"/>')
+    out.append(text(wx + ww - 20 - bw + 18, by + fs + 5, t["ask"], fs, BG))
+    gy = by + fs + 44
+    if wide:
+        iw, ih = ww * 0.5, wh - (gy - y) - 30
+        ix = wx + 24
+        ax, aw = ix + iw + 60, ww - iw - 60 - 48
+        ay, ah = gy, ih
+    else:
+        iw, ih = ww - 40, 300
+        ix = wx + 20
+        ax, aw = ix, iw
+        ay, ah = gy + ih + 36, 250
+    # 내가 만든 그림: 산과 텐트, 해
+    out.append(f'<rect x="{ix}" y="{gy}" width="{iw}" height="{ih}" rx="12" fill="{SOFT}" stroke="{INK}" stroke-width="1.5"/>')
+    out.append(f'<path d="M{ix} {gy + ih * 0.7}L{ix + iw * 0.3} {gy + ih * 0.35}L{ix + iw * 0.5} {gy + ih * 0.55}L{ix + iw * 0.72} {gy + ih * 0.3}L{ix + iw} {gy + ih * 0.65}V{gy + ih - 12}Q{ix + iw} {gy + ih} {ix + iw - 12} {gy + ih}H{ix + 12}Q{ix} {gy + ih} {ix} {gy + ih - 12}Z" fill="{RULE}"/>')
+    out.append(f'<path d="M{ix + iw * 0.38} {gy + ih * 0.88}L{ix + iw * 0.48} {gy + ih * 0.62}L{ix + iw * 0.58} {gy + ih * 0.88}Z" fill="{INK}"/>')
+    out.append(f'<circle cx="{ix + iw * 0.8}" cy="{gy + ih * 0.2}" r="{ih * 0.07}" fill="{BG}" stroke="{INK}" stroke-width="1.5"/>')
+    out.append(text(ix + 16, gy + fs + 12, t["mine"], fs, INK, 700))
+    # 광고 카드
+    out.append(f'<rect x="{ax}" y="{ay}" width="{aw}" height="{ah}" rx="12" fill="{BG}" stroke="{INK}" stroke-width="1.5" stroke-dasharray="7 5"/>')
+    tagw = len(t["ad"]) * fs * (1.05 if lang == "ko" else 0.62) + 24
+    out.append(f'<rect x="{ax + 14}" y="{ay + 14}" width="{tagw}" height="{fs + 12}" rx="{(fs + 12) / 2}" fill="{INK}"/>')
+    out.append(text(ax + 26, ay + 14 + fs + 2, t["ad"], fs - 2, BG, 800))
+    # 제품 사진 자리: 랜턴
+    px, py, pw, ph = ax + 14, ay + fs + 40, aw - 28, ah * 0.36
+    out.append(f'<rect x="{px}" y="{py}" width="{pw}" height="{ph}" rx="8" fill="{SOFT}"/>')
+    lx, lw = px + pw / 2 - 18, 36
+    out.append(f'<rect x="{lx}" y="{py + ph * 0.25}" width="{lw}" height="{ph * 0.55}" rx="8" fill="{BG}" stroke="{INK}" stroke-width="2"/>')
+    out.append(f'<path d="M{lx + 8} {py + ph * 0.25}Q{lx + lw / 2} {py + ph * 0.05} {lx + lw - 8} {py + ph * 0.25}" fill="none" stroke="{INK}" stroke-width="2"/>')
+    out.append(text(px, py + ph + fs + 14, t["ad_brand"], fs, INK, 700))
+    for k, line in enumerate(t["ad_copy"]):
+        out.append(text(px, py + ph + fs + 14 + (k + 1) * (fs + 8), line, fs - 2, BODY))
+    # 번호 표시
+    out.append(badge(ax + aw - 4, ay + 4, "1"))
+    if wide:
+        out.append(badge(ix + iw + 30, gy + ih / 2, "2"))
+        out.append(f'<line x1="{ix + iw + 8}" y1="{gy + ih / 2}" x2="{ix + iw + 14}" y2="{gy + ih / 2}" stroke="{INK}" stroke-width="2"/>')
+        out.append(f'<line x1="{ix + iw + 46}" y1="{gy + ih / 2}" x2="{ax - 8}" y2="{gy + ih / 2}" stroke="{INK}" stroke-width="2"/>')
+    else:
+        out.append(badge(ix + iw / 2, gy + ih + 18, "2"))
+    y += wh + 40
+    for n, label in t["notes"]:
+        out.append(badge(pad + 15, y - ns * 0.36, n, 14, 16))
+        out.append(text(pad + 40, y, label, ns, BODY))
+        y += ns + 18
+    y += 10
+    out.append(f'<line x1="{pad}" y1="{y - 14}" x2="{W - pad}" y2="{y - 14}" stroke="{RULE}" stroke-width="1"/>')
+    y += 14
+    out.append(text(pad, y, t["source"], (ss - 3) if wide else (ss - 4), MUTED))
+    return wrap(W, round(y + pad), t["title"], t["desc"], out)
+
+
+# =========================================================
+# 9. 챗GPT 광고 흐름 (2026-10-05 광고 글)
+# =========================================================
+ADTIME = {
+    "ko": {
+        "title": "챗GPT 광고, 여덟 달 사이",
+        "sub": "미국 기준. 글 광고에서 이미지 광고로",
+        "events": [("2. 9", "글 광고 시작", "무료·Go 요금제"), ("5. 5", "광고 관리자 공개", "누구나 직접 집행"),
+                   ("10. 5", "이미지 광고 발표", "그림 만들 때"), ("10월 말", "시험 시작", "일부 광고주")],
+        "source": "출처: OpenAI 발표, TechCrunch, 업계 정리 (2026)",
+        "desc": "챗GPT 광고는 2월 9일 미국 무료·Go 요금제에서 글 광고로 시작했고, 5월 5일 광고 관리자가 열렸다. 10월 5일 그림을 만들 때 붙는 이미지 광고를 발표했고, 10월 말 일부 광고주와 시험을 시작한다.",
+    },
+    "en": {
+        "title": "ChatGPT ads, eight months in",
+        "sub": "In the US. From text ads to image ads",
+        "events": [("Feb 9", "Text ads begin", "Free and Go plans"), ("May 5", "Ads Manager opens", "Self-serve for all"),
+                   ("Oct 5", "Image ads announced", "During image generation"), ("Late Oct", "Test begins", "First advertisers")],
+        "source": "Sources: OpenAI, TechCrunch, industry coverage (2026)",
+        "desc": "ChatGPT ads began as text ads on US Free and Go plans on February 9, and self-serve Ads Manager opened May 5. On October 5, image ads during image generation were announced, with a test starting in late October.",
+    },
+}
+
+
+def adtime(lang, wide):
+    t = ADTIME[lang]
+    if wide:
+        W, pad, ts, ss, hs, fs = 1200, 40, 30, 19, 20, 16
+    else:
+        W, pad, ts, ss, hs, fs = 600, 32, 34, 21, 23, 19
+    out, y = [], pad + ts
+    out.append(text(pad, y, t["title"], ts, weight=800))
+    y += ss + 12
+    out.append(text(pad, y, t["sub"], ss, MUTED))
+    y += 56
+    ev = t["events"]
+    if wide:
+        # 2월 9일(40일째) ~ 10월 말(300일째) 를 한 축에
+        days = [40, 125, 278, 298]
+        y += 50
+        X = lambda d: pad + 40 + (W - pad * 2 - 160) * (d - 30) / (305 - 30)
+        ly = y + 20
+        out.append(f'<line x1="{pad}" y1="{ly}" x2="{W - pad}" y2="{ly}" stroke="{INK}" stroke-width="2"/>')
+        for i, (d, (when, head, sub)) in enumerate(zip(days, ev)):
+            x = X(d)
+            new = i >= 2
+            out.append(f'<circle cx="{x}" cy="{ly}" r="9" fill="{INK if new else BG}" stroke="{INK}" stroke-width="2.5"/>')
+            up = i % 2 == 1
+            ty = ly - 70 if up else ly + 44
+            out.append(text(x, ty, when, fs, MUTED, 700, "middle"))
+            out.append(text(x, ty + hs + 6, head, hs, INK, 800, "middle"))
+            out.append(text(x, ty + hs + fs + 14, sub, fs, BODY, 400, "middle"))
+        y = ly + 44 + hs + fs + 50
+    else:
+        for i, (when, head, sub) in enumerate(ev):
+            new = i >= 2
+            out.append(f'<circle cx="{pad + 12}" cy="{y}" r="10" fill="{INK if new else BG}" stroke="{INK}" stroke-width="2.5"/>')
+            if i < len(ev) - 1:
+                out.append(f'<line x1="{pad + 12}" y1="{y + 12}" x2="{pad + 12}" y2="{y + 98}" stroke="{INK}" stroke-width="2"/>')
+            out.append(text(pad + 40, y - 14, when, fs, MUTED, 700))
+            out.append(text(pad + 40, y + hs - 4, head, hs, INK, 800))
+            out.append(text(pad + 40, y + hs + fs + 6, sub, fs, BODY))
+            y += 110
+        y += 10
+    out.append(f'<line x1="{pad}" y1="{y - 14}" x2="{W - pad}" y2="{y - 14}" stroke="{RULE}" stroke-width="1"/>')
+    y += 14
+    out.append(text(pad, y, t["source"], (ss - 3) if wide else (ss - 4), MUTED))
+    return wrap(W, round(y + pad), t["title"], t["desc"], out)
+
+
+# =========================================================
+# 10. 처음·끝 두 장 대 키프레임 열 장 (2026-10-06 클링 글)
+# =========================================================
+KEYS = {
+    "ko": {
+        "title": "처음과 끝 두 장에서, 열 장의 콘티로",
+        "sub": "클링이 밝힌 사양을 바탕으로 그린 개념도",
+        "rows": [("클링 3.0", "처음·끝 2장 · 최대 15초", 15, 2), ("클링 4.0", "키프레임 최대 10장 · 최대 30초", 30, 10)],
+        "unit": "초",
+        "fill": "사이는 AI가 채움",
+        "source": "출처: 클링 4.0 사양 발표(2026. 9. 28), 업계 정리",
+        "desc": "클링 3.0은 처음과 끝 두 장을 주면 최대 15초 사이를 AI가 채웠다. 클링 4.0은 최대 30초 길이에 키프레임을 10장까지 꽂아 장면 흐름을 정할 수 있다.",
+    },
+    "en": {
+        "title": "Two frames become ten",
+        "sub": "A conceptual sketch based on Kling's published specs",
+        "rows": [("Kling 3.0", "First and last frame · up to 15 s", 15, 2), ("Kling 4.0", "Up to 10 keyframes · up to 30 s", 30, 10)],
+        "unit": "s",
+        "fill": "AI fills in between",
+        "source": "Sources: Kling 4.0 spec sheet (Sep 28, 2026), industry coverage",
+        "desc": "With Kling 3.0, you gave a first and last frame and the AI filled up to 15 seconds between. Kling 4.0 lets you pin up to 10 keyframes across up to 30 seconds to set the flow of a scene.",
+    },
+}
+
+
+def keys(lang, wide):
+    t = KEYS[lang]
+    if wide:
+        W, pad, ts, ss, hs, fs = 1200, 40, 30, 19, 21, 16
+    else:
+        W, pad, ts, ss, hs, fs = 600, 32, 34, 21, 24, 18
+    out, y = [], pad + ts
+    out.append(text(pad, y, t["title"], ts if wide or lang == "ko" else ts - 6, weight=800))
+    y += ss + 12
+    out.append(text(pad, y, t["sub"], ss, MUTED))
+    y += 52
+    x0, x1 = pad, W - pad
+    X = lambda sec: x0 + (x1 - x0) * sec / 30
+    fh = 52 if wide else 40
+    for name, note, length, n in t["rows"]:
+        out.append(text(pad, y, name, hs, INK, 800))
+        out.append(text(pad + (130 if wide else 0), y + (0 if wide else fs + 10), note, fs, BODY))
+        y += 22 if wide else fs + 32
+        # 시간 막대
+        out.append(f'<rect x="{x0}" y="{y + fh / 2 - 3}" width="{X(length) - x0}" height="6" rx="3" fill="{RULE}"/>')
+        # 키프레임
+        fw = min(fh * 1.4, (X(length) - x0) / n * 0.8)
+        for k in range(n):
+            cx = x0 + fw / 2 + (X(length) - fw - x0) * k / (n - 1)
+            out.append(f'<rect x="{cx - fw / 2}" y="{y}" width="{fw}" height="{fh}" rx="5" fill="{INK}"/>')
+            out.append(f'<circle cx="{cx - fw * 0.15}" cy="{y + fh * 0.55}" r="{fh * 0.16}" fill="{BG}"/>')
+        if n == 2:
+            out.append(text((X(0) + X(length)) / 2, y + fh / 2 - 10, t["fill"], fs - 1, MUTED, 400, "middle"))
+        y += fh + 16
+        # 눈금
+        for sec in range(0, length + 1, 5):
+            out.append(text(X(sec), y + fs, f"{sec}{t['unit']}", fs - 3, MUTED, 400, "middle" if 0 < sec < 30 else ("start" if sec == 0 else "end")))
+        y += fs + 46
+    out.append(f'<line x1="{pad}" y1="{y - 14}" x2="{W - pad}" y2="{y - 14}" stroke="{RULE}" stroke-width="1"/>')
+    y += 14
+    out.append(text(pad, y, t["source"], (ss - 3) if wide else (ss - 5), MUTED))
+    return wrap(W, round(y + pad), t["title"], t["desc"], out)
+
+
 FIGS = {"openai-app-platforms": timeline, "chatgpt-plugin-extensions": scheme,
         "shopify-canvas-compare": canvas_compare, "design-md-anatomy": designmd,
-        "image-edit-drift": drift, "flux3-bbox-layout": bbox, "instructmesh-flow": meshflow}
+        "image-edit-drift": drift, "flux3-bbox-layout": bbox, "instructmesh-flow": meshflow,
+        "chatgpt-image-ad": adspot, "chatgpt-ads-timeline": adtime, "kling4-keyframes": keys}
 
 if __name__ == "__main__":
     OUT.mkdir(parents=True, exist_ok=True)
