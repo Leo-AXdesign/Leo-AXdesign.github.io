@@ -1108,11 +1108,181 @@ def week(lang, wide):
     return wrap(W, round(y + pad), t["title"], t["desc"], out)
 
 
+# =========================================================
+# 12. 같은 질문, 글로 된 답과 화면으로 된 답 (2026-10-08 Intelligent UI 글)
+# =========================================================
+IUI = {
+    "ko": {
+        "title": "같은 질문, 두 가지 답",
+        "sub": "설명을 위한 예시예요. 실제 챗GPT의 답과는 다를 수 있습니다.",
+        "q": "외주 견적, 시간당 얼마로 잡아야 할까?",
+        "left": "글로 된 답", "right": "화면으로 된 답 (Intelligent UI)",
+        "s1": ("작업 시간", "40시간"), "s2": ("시간당 단가", "5만 원"),
+        "total_l": "예상 견적", "total": "200만 원",
+        "chips": ["주니어", "미드", "시니어"], "btn": "견적서 문구 만들기",
+        "source": "구성 요소(버튼·폼·차트·작은 도구)는 OpenAI 발표 기준 · 2026. 10. 7",
+        "desc": "같은 질문에 글로만 답하면 문단이 이어지고, Intelligent UI로 답하면 작업 시간과 단가를 조절하는 슬라이더, 예상 견적 숫자, 경력 단계 버튼, 견적서 문구 버튼이 함께 나온다.",
+    },
+    "en": {
+        "title": "Same question, two kinds of answer",
+        "sub": "An illustration. Actual ChatGPT answers may differ.",
+        "q": "How much should I charge per hour for freelance work?",
+        "left": "Answer in text", "right": "Answer as an interface (Intelligent UI)",
+        "s1": ("Hours", "40 h"), "s2": ("Hourly rate", "$40"),
+        "total_l": "Estimate", "total": "$1,600",
+        "chips": ["Junior", "Mid", "Senior"], "btn": "Draft the quote",
+        "source": "Component types (buttons, forms, charts, small tools) per OpenAI, Oct 7, 2026",
+        "desc": "Answered in text, the reply is paragraphs. Answered with Intelligent UI, it includes sliders for hours and rate, an estimate, experience-level buttons and a button to draft the quote.",
+    },
+}
+
+
+def iui(lang, wide):
+    t = IUI[lang]
+    W, pad = (1200, 40) if wide else (600, 32)
+    ts, ss, fs = (30, 19, 17) if wide else (34, 21, 20)
+    out, y = [], pad + ts
+    out.append(text(pad, y, t["title"], ts, weight=800))
+    y += ss + 12
+    out.append(text(pad, y, t["sub"], ss, MUTED))
+    y += 34
+    # 질문 말풍선
+    qw = min(len(t["q"]) * fs * (0.55 if lang == "en" else 0.98) + 40, W - pad * 2)
+    out.append(f'<rect x="{W - pad - qw}" y="{y}" width="{qw}" height="{fs + 26}" rx="{(fs + 26) / 2}" fill="{INK}"/>')
+    out.append(text(W - pad - qw + 20, y + fs + 7, t["q"], fs, BG, 600))
+    y += fs + (50 if wide else 70)
+    gap = 28
+    pw = (W - pad * 2 - gap) / 2 if wide else W - pad * 2
+    ph = 330
+    # 왼쪽: 글로 된 답 (회색 줄)
+    lx, ly = pad, y
+    out.append(text(lx, ly, t["left"], fs, INK, 700))
+    by = ly + 18
+    out.append(f'<rect x="{lx}" y="{by}" width="{pw}" height="{ph}" rx="14" fill="{BG}" stroke="{RULE}" stroke-width="1.5"/>')
+    widths = [0.92, 0.86, 0.9, 0.55, 0, 0.88, 0.93, 0.8, 0.62, 0, 0.9, 0.7]
+    for k, wv in enumerate(widths):
+        if wv:
+            out.append(f'<rect x="{lx + 22}" y="{by + 26 + k * 24}" width="{(pw - 44) * wv}" height="10" rx="5" fill="{SOFT if k % 5 else RULE}"/>')
+    # 오른쪽(폰판은 아래): 화면으로 된 답
+    rx_, ry = (pad + pw + gap, y) if wide else (pad, by + ph + 44)
+    out.append(text(rx_, ry, t["right"], fs, INK, 700))
+    cy = ry + 18
+    out.append(f'<rect x="{rx_}" y="{cy}" width="{pw}" height="{ph}" rx="14" fill="{BG}" stroke="{INK}" stroke-width="2"/>')
+    ix, iw = rx_ + 24, pw - 48
+    sy = cy + 40
+    for label, val in (t["s1"], t["s2"]):
+        out.append(text(ix, sy, label, fs - 2, BODY))
+        out.append(text(ix + iw, sy, val, fs - 2, INK, 700, "end"))
+        out.append(f'<rect x="{ix}" y="{sy + 14}" width="{iw}" height="6" rx="3" fill="{RULE}"/>')
+        out.append(f'<rect x="{ix}" y="{sy + 14}" width="{iw * 0.55}" height="6" rx="3" fill="{INK}"/>')
+        out.append(f'<circle cx="{ix + iw * 0.55}" cy="{sy + 17}" r="10" fill="{BG}" stroke="{INK}" stroke-width="2.5"/>')
+        sy += 64
+    out.append(text(ix, sy + 6, t["total_l"], fs - 2, MUTED))
+    out.append(text(ix, sy + 52, t["total"], 40 if wide else 44, INK, 800))
+    sy += 82
+    cx = ix
+    for k, c in enumerate(t["chips"]):
+        cw = len(c) * (fs - 2) * (0.62 if lang == "en" else 1.0) + 30
+        on = k == 1
+        out.append(f'<rect x="{cx}" y="{sy}" width="{cw}" height="32" rx="16" fill="{INK if on else BG}" stroke="{INK if on else RULE}" stroke-width="1.5"/>')
+        out.append(text(cx + cw / 2, sy + 21, c, fs - 3, BG if on else BODY, 600, "middle"))
+        cx += cw + 8
+    bw = len(t["btn"]) * (fs - 2) * (0.6 if lang == "en" else 1.0) + 40
+    out.append(f'<rect x="{ix + iw - bw}" y="{sy}" width="{bw}" height="32" rx="8" fill="{SOFT}" stroke="{INK}" stroke-width="1.5"/>')
+    out.append(text(ix + iw - bw / 2, sy + 21, t["btn"], fs - 3, INK, 700, "middle"))
+    y = (cy if wide else cy) + ph + 44
+    out.append(f'<line x1="{pad}" y1="{y - 14}" x2="{W - pad}" y2="{y - 14}" stroke="{RULE}" stroke-width="1"/>')
+    y += 10
+    out.append(text(pad, y, t["source"], (ss - 3) if wide else (ss - 5), MUTED))
+    return wrap(W, round(y + pad), t["title"], t["desc"], out)
+
+
+# =========================================================
+# 13. AI가 그리는 화면, 규칙은 누가 정하나 (2026-10-08 글)
+# =========================================================
+RULES = {
+    "ko": {
+        "title": "AI가 그리는 화면, 규칙은 어디서 오나",
+        "sub": "같은 주에 나온 두 기능의 구조 비교",
+        "cols": [
+            ("챗GPT Intelligent UI", "규칙 주인: 오픈AI",
+             ["오픈AI가 만든 부품 모음", "버튼 · 폼 · 차트 · 작은 도구"],
+             ["GPT-6가 질문마다 조립", "어떤 모양이 맞을지 모델이 판단"],
+             ["대화 속 답 화면", "모든 사용자에게 같은 디자인"]),
+            ("피그마 에이전트", "규칙 주인: 우리 팀",
+             ["우리 팀 디자인 라이브러리", "+ 가이드라인 마크다운 파일"],
+             ["에이전트가 매번 읽고 작업", "규칙 · 모범 사례 · 금지 사례"],
+             ["우리 파일 속 화면", "우리 브랜드 디자인"]),
+        ],
+        "source": "출처: OpenAI 발표(2026. 10. 7), 피그마 릴리스 노트(2026. 10. 6)",
+        "desc": "챗GPT Intelligent UI는 오픈AI의 부품 모음을 GPT-6가 질문마다 조립해 대화 속 화면을 만든다. 피그마 에이전트는 팀의 디자인 라이브러리와 가이드라인 마크다운 파일을 매번 읽고 팀 파일 안에서 작업한다.",
+    },
+    "en": {
+        "title": "AI draws the screen. Whose rules does it follow?",
+        "sub": "Two features from the same week, side by side",
+        "cols": [
+            ("ChatGPT Intelligent UI", "Rules owned by: OpenAI",
+             ["OpenAI's component library", "buttons · forms · charts · small tools"],
+             ["GPT-6 assembles per question", "the model decides what fits"],
+             ["An answer screen in the chat", "same design for every user"]),
+            ("Figma agent", "Rules owned by: your team",
+             ["Your team's design library", "+ guideline markdown files"],
+             ["The agent reads them every time", "rules · best practices · antipatterns"],
+             ["Screens in your file", "your brand's design"]),
+        ],
+        "source": "Sources: OpenAI (Oct 7, 2026), Figma release notes (Oct 6, 2026)",
+        "desc": "ChatGPT Intelligent UI assembles OpenAI's component library per question into an answer screen. The Figma agent reads your team's design library and guideline markdown files every time and works inside your file.",
+    },
+}
+
+
+def rules(lang, wide):
+    t = RULES[lang]
+    W, pad = (1200, 40) if wide else (600, 32)
+    ts, ss, fs = (30, 19, 18) if wide else (34, 21, 20)
+    out, y = [], pad + ts
+    out.append(text(pad, y, t["title"], ts, weight=800))
+    y += ss + 12
+    out.append(text(pad, y, t["sub"], ss, MUTED))
+    y += 44
+    gap = 40
+    cw = (W - pad * 2 - gap) / 2 if wide else W - pad * 2
+    bh, ah = (84, 34) if wide else (84, 30)
+    bottoms = []
+    for k, (name, owner, *steps) in enumerate(t["cols"]):
+        x = pad + k * (cw + gap) if wide else pad
+        top = y if wide else (y if k == 0 else bottoms[-1] + 50)
+        out.append(text(x, top, name, fs + 4, INK, 800))
+        ow = len(owner) * (fs - 3) * (0.58 if lang == "en" else 1.0) + 28
+        mine = k == 1
+        out.append(f'<rect x="{x}" y="{top + 14}" width="{ow}" height="30" rx="15" fill="{INK if mine else BG}" stroke="{INK}" stroke-width="1.5"/>')
+        out.append(text(x + 14, top + 34, owner, fs - 3, BG if mine else INK, 700))
+        by = top + 64
+        for j, (a, b) in enumerate(steps):
+            filled = j == 0
+            out.append(f'<rect x="{x}" y="{by}" width="{cw}" height="{bh}" rx="12" fill="{SOFT if filled else BG}" stroke="{INK}" stroke-width="{2 if filled else 1.5}"/>')
+            out.append(text(x + 20, by + 36, a, fs, INK, 700))
+            out.append(text(x + 20, by + 64, b, fs - 3, MUTED))
+            by += bh
+            if j < len(steps) - 1:
+                mx = x + cw / 2
+                out.append(f'<line x1="{mx}" y1="{by + 4}" x2="{mx}" y2="{by + ah - 8}" stroke="{INK}" stroke-width="2"/>')
+                out.append(f'<path d="M{mx - 7} {by + ah - 14} L{mx} {by + ah - 4} L{mx + 7} {by + ah - 14}" fill="none" stroke="{INK}" stroke-width="2"/>')
+                by += ah
+        bottoms.append(by)
+    y = max(bottoms) + 44
+    out.append(f'<line x1="{pad}" y1="{y - 14}" x2="{W - pad}" y2="{y - 14}" stroke="{RULE}" stroke-width="1"/>')
+    y += 10
+    out.append(text(pad, y, t["source"], (ss - 3) if wide else (ss - 5), MUTED))
+    return wrap(W, round(y + pad), t["title"], t["desc"], out)
+
+
 FIGS = {"openai-app-platforms": timeline, "chatgpt-plugin-extensions": scheme,
         "shopify-canvas-compare": canvas_compare, "design-md-anatomy": designmd,
         "image-edit-drift": drift, "flux3-bbox-layout": bbox, "instructmesh-flow": meshflow,
         "chatgpt-image-ad": adspot, "chatgpt-ads-timeline": adtime, "kling4-keyframes": keys,
-        "week-1001-1006": week}
+        "week-1001-1006": week,
+        "intelligent-ui-answer": iui, "ui-rules-owner": rules}
 
 if __name__ == "__main__":
     OUT.mkdir(parents=True, exist_ok=True)

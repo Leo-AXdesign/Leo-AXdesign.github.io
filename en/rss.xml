@@ -6,7 +6,57 @@
     <atom:link href="https://designrefs.com/en/rss.xml" rel="self" type="application/rss+xml" />
     <description>Notes from a designer in Korea: working with AI, putting style into words, collecting references and design communities. Translated from Korean.</description>
     <language>en</language>
-    <lastBuildDate>Wed, 07 Oct 2026 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 08 Oct 2026 09:00:00 +0900</lastBuildDate>
+    <item>
+      <title>The week AI started drawing screens. Who holds the design rules?</title>
+      <link>https://designrefs.com/en/articles/chatgpt-intelligent-ui-figma-agent/</link>
+      <guid isPermaLink="true">https://designrefs.com/en/articles/chatgpt-intelligent-ui-figma-agent/</guid>
+      <pubDate>Thu, 08 Oct 2026 09:00:00 +0900</pubDate>
+      <category>AI Design</category>
+      <description>ChatGPT now answers with buttons and charts, and the Figma agent is out of beta. Two features from the same week, side by side, with diagrams on who sets the rules for the screen.</description>
+      <content:encoded><![CDATA[    <p class="ptext">This week brought two announcements in a row about AI drawing screens.</p>
+    <p class="ptext">On October 6, Figma took its design agent out of beta. The next day, OpenAI brought GPT-6 to ChatGPT and introduced &quot;Intelligent UI&quot;: instead of answering only in text, ChatGPT can answer with a screen that includes buttons, forms and charts. It opened to paid users first, and reaches free users starting today.</p>
+    <p class="ptext">One lives in a chat window, the other inside a design tool. Different places, but in both, AI draws the screen itself. Which raises the same question: who sets the rules for that screen?</p>
+    <p class="ptext"><strong>First, a disclaimer.</strong> Both features are only days old, so there are almost no hands-on reviews yet. This is based on the companies&#x27; announcements and coverage. I&#x27;ll also note that I&#x27;m building this site with Claude Code.</p>
+    <h2 class="psub" id="s1">Answers arrive as screens</h2>
+    <p class="ptext">OpenAI&#x27;s description: GPT-6 composes answers from text, visuals and interactive elements, and decides how to lay them out for each question. Comparisons sit side by side, explanations become diagrams you can play with, and simple questions still get plain text.</p>
+    <p class="ptext">OpenAI&#x27;s examples: a cooking timeline next to a recipe, road-trip stops on a map, and small tools built on the spot. A savings calculator, a bill splitter, even a game you can play inside the chat.</p>
+    <figure class="art__fig">
+      <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/intelligent-ui-answer-en-m.svg" width="600" height="1049" /><img src="https://designrefs.com/articles/img/intelligent-ui-answer-en.svg" alt="The same question answered in text and as an interface. An illustration; actual answers may differ." width="1200" height="644" loading="lazy" decoding="async" /></picture>
+      <figcaption>The same question answered in text and as an interface. An illustration; actual answers may differ.</figcaption>
+    </figure>
+    <p class="ptext">Turn it into a designer&#x27;s question and it clicks. Ask &quot;how much should I charge per hour for freelance work?&quot; and you used to get a few paragraphs. Now you might get sliders for hours and rate, with the estimate calculated next to them. The illustration above was drawn to show that difference.</p>
+    <p class="ptext">OpenAI also shared how it works. There&#x27;s a library of components OpenAI built in advance, and the model renders them onto the screen while it&#x27;s still writing the answer. It doesn&#x27;t wait to finish thinking; it fills in the screen as it goes. OpenAI says the model checks the interfaces it makes for clarity, usefulness and completeness, while admitting that improving its design judgment is still a work in progress.</p>
+    <p class="ptext">Here&#x27;s who can use it:</p>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th></th><th>Details</th></tr></thead>
+      <tbody>
+        <tr><td>Paid (Plus · Pro · Business · Enterprise)</td><td>From Oct 7, in the Chat tab</td></tr>
+        <tr><td>Free · Go</td><td>From Oct 8</td></tr>
+        <tr><td>Not supported</td><td>Pro&#x27;s thinking mode, outdated desktop apps</td></tr>
+        <tr><td>How to turn it off</td><td>&quot;Layout and visuals&quot; in web settings; some visuals may still appear</td></tr>
+      </tbody>
+    </table></div>
+    <p class="art__note">Sources: <a href="https://openai.com/index/gpt-6-for-everyone/" target="_blank" rel="noopener">OpenAI, GPT-6 and Intelligent UI for everyone</a>, <a href="https://9to5mac.com/2026/10/07/openai-brings-gpt-6-to-chatgpt-and-debuts-intelligent-ui/" target="_blank" rel="noopener">9to5Mac</a>, <a href="https://relevantaudience.com/ai/gpt-6-intelligent-ui-chatgpt-answers" target="_blank" rel="noopener">Relevant Audience</a>. Press reports say paid plans run on GPT-6 Sol and free plans on GPT-6 Luna.</p>
+    <h2 class="psub" id="s2">The same week, the Figma agent left beta</h2>
+    <p class="ptext">Figma&#x27;s announcement came a day earlier. According to its October 6 release notes, the design agent is now generally available. It&#x27;s faster, and you can search for Figma files and attach them during a chat. You can also watch an agent working on a teammate&#x27;s request live on the canvas.</p>
+    <p class="ptext">The part designers should notice is &quot;library guidelines&quot;. You upload markdown files to a design library with rules, best practices and antipatterns, and the agent reads them every time someone prompts with that library enabled.</p>
+    <p class="ptext">The free ride is over, though. From October 6, the agent uses AI credits, drawn from the same pool as Figma Make. There&#x27;s no fixed price per request. Figma only says usage depends on how complex the prompt is, how many actions the agent takes and how much context you attach, like libraries or files. The agent in FigJam and Slides is still in closed beta and doesn&#x27;t use credits.</p>
+    <h2 class="psub" id="s3">Who holds the rules?</h2>
+    <p class="ptext">Put the two side by side and the difference is clear.</p>
+    <figure class="art__fig">
+      <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/ui-rules-owner-en-m.svg" width="600" height="1031" /><img src="https://designrefs.com/articles/img/ui-rules-owner-en.svg" alt="ChatGPT Intelligent UI builds screens from OpenAI&#x27;s components; the Figma agent reads your team&#x27;s library and guidelines." width="1200" height="623" loading="lazy" decoding="async" /></picture>
+      <figcaption>ChatGPT Intelligent UI builds screens from OpenAI&#x27;s components; the Figma agent reads your team&#x27;s library and guidelines.</figcaption>
+    </figure>
+    <p class="ptext">The screens ChatGPT draws are made of OpenAI&#x27;s components. Whoever asks, the buttons and charts look the same. The announcement said nothing about other companies bringing their own components or design rules. OpenAI owns the rules.</p>
+    <p class="ptext">The Figma agent is the opposite. It uses components your team made and reads guidelines your team wrote. Your team owns the rules. And those rules fit in a single markdown file, the same idea as <a href="https://designrefs.com/en/articles/design-md-for-ai/">DESIGN.md</a>, which I covered last week. If you want AI to do the work, you have to write the rules down in a form AI can read.</p>
+    <h2 class="psub" id="s4">What&#x27;s left for designers</h2>
+    <p class="ptext"><strong>Judging when a screen beats text.</strong> OpenAI says the model decides the format for each question. That judgment is what UI designers do every day: a calculator, a table, or one sentence? OpenAI says this is still being improved, so for now a person&#x27;s eye is better.</p>
+    <p class="ptext"><strong>Writing the rules down.</strong> If you&#x27;ll use the Figma agent, start with library guidelines. They don&#x27;t need to be long. Five lines of don&#x27;ts is enough: one accent color per screen, body text never below 16px, shadows only on cards. If you already have a DESIGN.md, carry the same content over.</p>
+    <p class="ptext"><strong>Watching credits for a month.</strong> More complex requests and more attached files cost more credits. For the first month, attach only what you need instead of a whole library, and count how fast the credits go.</p>
+    <p class="ptext">There will only be more screens drawn by AI. Which rules they follow will come down to who writes those rules down first. AI tools by use case are under <a href="https://designrefs.com/en/#ai">AI tools</a>, and design system references under <a href="https://designrefs.com/en/#dev">Design &amp; Code</a>.</p>
+    <p class="art__note">Sources: <a href="https://openai.com/index/gpt-6-for-everyone/" target="_blank" rel="noopener">OpenAI</a> (Oct 7), <a href="https://www.figma.com/release-notes/" target="_blank" rel="noopener">Figma release notes</a> (Oct 6), <a href="https://fourweekmba.com/ai-figma-design-agent-leaves-beta-now-draws-ai-credits/" target="_blank" rel="noopener">FourWeekMBA</a>, <a href="https://9to5mac.com/2026/10/07/openai-brings-gpt-6-to-chatgpt-and-debuts-intelligent-ui/" target="_blank" rel="noopener">9to5Mac</a>, <a href="https://relevantaudience.com/ai/gpt-6-intelligent-ui-chatgpt-answers" target="_blank" rel="noopener">Relevant Audience</a>.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Last week, AI design tools moved toward less luck</title>
       <link>https://designrefs.com/en/articles/ai-design-week-1007/</link>

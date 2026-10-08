@@ -1,6 +1,7 @@
 // 이 파일은 tools/build-articles.py 가 만듭니다. 직접 고치지 마세요.
 // 글은 content/articles/*.md 에서 고칩니다.
 const ARTICLES = [
+  { slug: "chatgpt-intelligent-ui-figma-agent", title: "AI가 화면을 직접 그리기 시작한 주, 디자인 규칙은 누가 쥐고 있나", desc: "챗GPT는 답을 버튼과 차트로 그려 주기 시작했고, 피그마 에이전트는 베타를 끝냈다. 같은 주에 나온 두 기능을 나란히 놓고, 화면의 규칙을 누가 정하는지 그림으로 정리했다.", date: "2026-10-08", tag: "AI 디자인", min: 4, views: ["ai", "tool", "dev"] },
   { slug: "ai-design-week-1007", title: "지난 일주일, AI 디자인 도구는 '운'을 줄이는 쪽으로 갔다", desc: "9월 30일부터 10월 6일까지 나온 AI·디자인 소식 여섯 가지를 한 장에 모았다. 가게 전체, 규칙, 고칠 자리, 장면 순서까지, 운에 맡기던 것을 사람이 정하는 쪽으로 바뀌었다. 디자이너가 AI를 얼마나 쓰는지 숫자와 함께 정리했다.", date: "2026-10-07", tag: "AI 디자인", min: 3, views: ["ai", "tool"] },
   { slug: "kling-4-keyframes", title: "AI 영상이 콘티를 받기 시작했다, 클링 4.0의 키프레임 열 장", desc: "클링 4.0은 한 번에 30초, 키프레임 10장, 참고 자료 15개를 받는다. 처음과 끝 두 장만 주던 방식에서 장면 흐름을 직접 짜는 쪽으로 바뀌었다. 무엇이 달라지는지, 아직 나오지 않은 것은 뭔지 그림과 표로 정리했다.", date: "2026-10-06", tag: "AI 디자인", min: 3, views: ["ai", "tool"] },
   { slug: "chatgpt-image-generation-ads", title: "챗GPT가 그림을 그리는 동안, 옆에 광고가 붙는다", desc: "오픈AI가 10월 5일 챗GPT 이미지 생성 화면에 붙는 이미지 광고를 발표했다. 글 광고에서 이미지 광고로 넘어온 여덟 달을 짚고, 디자이너에게 새로 생기는 일과 조심할 점을 정리했다.", date: "2026-10-05", tag: "AI 디자인", min: 3, views: ["ai", "tool"] },
