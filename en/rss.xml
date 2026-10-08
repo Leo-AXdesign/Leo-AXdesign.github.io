@@ -623,7 +623,7 @@
     <p class="ptext">On the 16th of the same month, Figma let people publish Figma Weave, its workflow tool for generating images and vectors, to the Community. It&#x27;s free for now while in open beta. But Figma has already announced that it will consume AI credits once it&#x27;s generally available. Free is for the beta only.</p>
     <h2 class="psub" id="s4">What&#x27;s getting cheaper is the price, not the result</h2>
     <p class="ptext">At the same event, Field also said this: &quot;Hallucination is a huge issue.&quot; Pulling a design system into the wrong context is still a problem too, he said. His assessment was that frontier models are improving at design work only incrementally.</p>
-    <p class="ptext">Designers&#x27; experience isn&#x27;t much different. The <a href="https://stateofaidesign.com/" target="_blank" rel="noopener">AI in Design Report 2026</a>, published September 16 by Designer Fund and Foundation Capital, surveyed more than 900 designers in over 60 countries. The survey was run in the first quarter of this year.</p>
+    <p class="ptext">Designers&#x27; experience isn&#x27;t much different. The <a href="https://stateofaidesign.com/" target="_blank" rel="noopener">AI in Design Report 2026</a>, published May 20 by Designer Fund and Foundation Capital, surveyed more than 900 designers in over 60 countries. The survey was run in the first quarter of this year.</p>
     <ul class="ptext-list">
       <li>91% of designers use AI every week, up sharply from 54% last year.</li>
       <li>The average designer uses 7 AI tools, more than double last year&#x27;s 3.</li>
@@ -635,7 +635,8 @@
     <p class="ptext">If you use seven tools, it&#x27;s probably time for a cleanup. There&#x27;s a good chance two subscriptions are doing the same job.</p>
     <p class="ptext">It&#x27;s also worth checking which model each of your tools uses. It&#x27;s usually listed in the settings or the help pages. If the underlying cost has halved and the credit price hasn&#x27;t moved in three months, that&#x27;s one reason to switch tools.</p>
     <p class="ptext">You can hold off on annual plans for a bit. Unit prices have dropped three months in a row, and there&#x27;s another announcement on the 29th. Paying month to month hurts less right now.</p>
-    <p class="ptext">Lower costs don&#x27;t immediately bring subscription prices down. Sometimes the price stays the same and you get a few more credits instead. Next month, count once more what one credit on your plan actually buys you, and how many times. AI tools by use case are collected under <a href="https://designrefs.com/en/#ai">AI tools</a>.</p>]]></content:encoded>
+    <p class="ptext">Lower costs don&#x27;t immediately bring subscription prices down. Sometimes the price stays the same and you get a few more credits instead. Next month, count once more what one credit on your plan actually buys you, and how many times. AI tools by use case are collected under <a href="https://designrefs.com/en/#ai">AI tools</a>.</p>
+    <p class="art__note">Corrected Oct 8: the AI in Design Report 2026 was published on May 20, not September 16 as originally stated.</p>]]></content:encoded>
     </item>
     <item>
       <title>Claude Fable 5.1 vs GPT-6 Astra, by the numbers</title>

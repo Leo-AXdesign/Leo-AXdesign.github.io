@@ -45,7 +45,7 @@ On the 16th of the same month, Figma let people publish Figma Weave, its workflo
 
 At the same event, Field also said this: "Hallucination is a huge issue." Pulling a design system into the wrong context is still a problem too, he said. His assessment was that frontier models are improving at design work only incrementally.
 
-Designers' experience isn't much different. The [AI in Design Report 2026](https://stateofaidesign.com/), published September 16 by Designer Fund and Foundation Capital, surveyed more than 900 designers in over 60 countries. The survey was run in the first quarter of this year.
+Designers' experience isn't much different. The [AI in Design Report 2026](https://stateofaidesign.com/), published May 20 by Designer Fund and Foundation Capital, surveyed more than 900 designers in over 60 countries. The survey was run in the first quarter of this year.
 
 - 91% of designers use AI every week, up sharply from 54% last year.
 - The average designer uses 7 AI tools, more than double last year's 3.
@@ -63,3 +63,5 @@ It's also worth checking which model each of your tools uses. It's usually liste
 You can hold off on annual plans for a bit. Unit prices have dropped three months in a row, and there's another announcement on the 29th. Paying month to month hurts less right now.
 
 Lower costs don't immediately bring subscription prices down. Sometimes the price stays the same and you get a few more credits instead. Next month, count once more what one credit on your plan actually buys you, and how many times. AI tools by use case are collected under [AI tools](https://designrefs.com/en/#ai).
+
+※ Corrected Oct 8: the AI in Design Report 2026 was published on May 20, not September 16 as originally stated.
