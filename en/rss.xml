@@ -6,7 +6,67 @@
     <atom:link href="https://designrefs.com/en/rss.xml" rel="self" type="application/rss+xml" />
     <description>Notes from a designer in Korea: working with AI, putting style into words, collecting references and design communities. Translated from Korean.</description>
     <language>en</language>
-    <lastBuildDate>Thu, 08 Oct 2026 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 09 Oct 2026 09:00:00 +0900</lastBuildDate>
+    <item>
+      <title>Seven free &quot;Photoshops&quot; rebuilt with AI. Can designers switch?</title>
+      <link>https://designrefs.com/en/articles/artcraft-free-adobe-alternatives/</link>
+      <guid isPermaLink="true">https://designrefs.com/en/articles/artcraft-free-adobe-alternatives/</guid>
+      <pubDate>Fri, 09 Oct 2026 09:00:00 +0900</pubDate>
+      <category>AI Design</category>
+      <description>A developer is building seven free, open-source apps with AI to replace Adobe&#x27;s. The Photoshop replacement opens and saves PSDs but is still in early alpha. Here&#x27;s where it stands and what designers should look at.</description>
+      <content:encoded><![CDATA[    <p class="ptext">A story made the rounds in design circles this week. A developer released seven free apps meant to stand in for Photoshop, Illustrator, Premiere, Lightroom, After Effects, InDesign and Acrobat. The project is called ArtCraft, and he says he built it with AI.</p>
+    <p class="ptext">Headlines everywhere said you can finally cancel Adobe. I took a calm look at whether that&#x27;s true and how far along it is.</p>
+    <p class="ptext"><strong>First, a disclaimer.</strong> These apps were reportedly built with Anthropic&#x27;s Claude Opus 5.5. I&#x27;m building this site with Claude Code from the same company. So I&#x27;ve leaned on what the repositories say and on other outlets&#x27; checks rather than the developer&#x27;s claims. I haven&#x27;t installed the apps myself.</p>
+    <h2 class="psub" id="s1">Who, why, and how</h2>
+    <p class="ptext">The developer is software engineer Brandon Thomas. He says Adobe&#x27;s cancellation fees were the trigger. On Adobe&#x27;s &quot;annual, paid monthly&quot; plan, canceling before the year is up costs half of the remaining amount. The US Federal Trade Commission sued Adobe over this in 2024, and the case ended in a settlement.</p>
+    <p class="ptext">Here&#x27;s how it&#x27;s made.</p>
+    <ul class="ptext-list">
+      <li><strong>Written with AI.</strong> He says the code was written using Claude Opus 5.5.</li>
+      <li><strong>Rebuilt from scratch in Rust.</strong> He describes it as a &quot;clean-room&quot; approach: not taking Adobe&#x27;s code, but rebuilding from how the tools work and look.</li>
+      <li><strong>Free and open source.</strong> Released under MIT and Apache 2.0, so anyone can download and modify it.</li>
+    </ul>
+    <h2 class="psub" id="s2">Seven apps: where they stand</h2>
+    <figure class="art__fig">
+      <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/artcraft-suite-en-m.svg" width="600" height="968" /><img src="https://designrefs.com/articles/img/artcraft-suite-en.svg" alt="The current status of ArtCraft&#x27;s seven apps. Solid outlines are early alpha; dashed are in development." width="1200" height="559" loading="lazy" decoding="async" /></picture>
+      <figcaption>The current status of ArtCraft&#x27;s seven apps. Solid outlines are early alpha; dashed are in development.</figcaption>
+    </figure>
+    <p class="ptext">Only two have reached a usable stage. PhotoCraft (Photoshop) and the Acrobat replacement are in &quot;early alpha&quot;; the other five are still &quot;in development&quot;. The developer first said feature parity would come within a month, then changed that to &quot;months, not years&quot;.</p>
+    <h2 class="psub" id="s3">PhotoCraft opens PSDs</h2>
+    <p class="ptext">PhotoCraft, the furthest along, went after what matters most to designers first: the PSD. Its repository says it can open and save 8-, 16- and 32-bit PSDs, plus PSB for large files.</p>
+    <figure class="art__fig">
+      <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/photocraft-psd-en-m.svg" width="600" height="557" /><img src="https://designrefs.com/articles/img/photocraft-psd-en.svg" alt="PhotoCraft opened and re-saved 309 test files, and 307 rendered correctly. The developer&#x27;s own test." width="1200" height="459" loading="lazy" decoding="async" /></picture>
+      <figcaption>PhotoCraft opened and re-saved 309 test files, and 307 rendered correctly. The developer&#x27;s own test.</figcaption>
+    </figure>
+    <p class="ptext">Of 309 public PSD test files opened and re-saved, 307 reportedly rendered correctly. The number looks high. But it&#x27;s the developer&#x27;s own test, and re-saved files aren&#x27;t byte-identical to the originals, because the layer records and composite are rewritten.</p>
+    <p class="ptext">What&#x27;s missing is clear too.</p>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th></th><th>In PhotoCraft today</th></tr></thead>
+      <tbody>
+        <tr><td>Opening and saving PSD/PSB</td><td>Works (8, 16, 32-bit)</td></tr>
+        <tr><td>Generative AI features</td><td>None</td></tr>
+        <tr><td>Tools</td><td>About 20 missing vs. Photoshop</td></tr>
+        <tr><td>Type handling</td><td>Still weak</td></tr>
+        <tr><td>Plug-ins</td><td>Not supported</td></tr>
+        <tr><td>After Effects files (AEP)</td><td>EffectCraft can&#x27;t open them</td></tr>
+      </tbody>
+    </table></div>
+    <p class="art__note">Sources: <a href="https://github.com/storytold/photocraft" target="_blank" rel="noopener">PhotoCraft repository</a>, <a href="https://windowsforum.com/news/artcrafts-open-source-adobe-alternatives-on-windows-what-works-in-alpha.447649/" target="_blank" rel="noopener">Windows Forum</a>, <a href="https://cybernews.com/ai-news/ai-adobe-alternatives-open-source/" target="_blank" rel="noopener">Cybernews</a>. Early testers say it&#x27;s nowhere near replacing real work yet.</p>
+    <p class="ptext">Legal questions remain too. Even without copying code, an interface that looks too similar could raise &quot;trade dress&quot; issues, and commentators note Adobe holds many patents on how features work.</p>
+    <h2 class="psub" id="s4">What designers should watch: the file, not the app</h2>
+    <p class="ptext">The takeaway for designers isn&#x27;t whether you can cancel Adobe today. The answer right now is clearly no. You can&#x27;t hand client work to an alpha.</p>
+    <p class="ptext">There are two things worth watching instead.</p>
+    <p class="ptext"><strong>First, what holds us is the file format.</strong> Designers stay with Adobe partly because the apps are good, but also because the files we trade are PSD, AI, INDD and AEP. That&#x27;s why PhotoCraft put PSD compatibility first. A replacement becomes a real threat not when it has more features, but when it can open a client&#x27;s file as is and send it back as is.</p>
+    <p class="ptext"><strong>Second, the cost of building software is falling.</strong> One person, working with AI, put out the skeleton of seven apps. The polish is far off, but there will be more attempts like this. For Adobe, pressure on pricing and cancellation terms will likely come before pressure on features. That&#x27;s not bad news for designers.</p>
+    <h2 class="psub" id="s5">So, for now</h2>
+    <p class="ptext">Don&#x27;t switch. Watch, and try one thing.</p>
+    <ol class="ptext-list">
+      <li><strong>Test with a copy of a work file.</strong> Copy a PSD you use often and open it in PhotoCraft. See which of layers, masks, adjustment layers and type layers break, and you&#x27;ll get a feel for how close it is to your work. Never overwrite the original.</li>
+      <li><strong>Recheck your subscription terms.</strong> If you&#x27;re on Adobe&#x27;s &quot;annual, paid monthly&quot; plan, check when you can cancel and what the fee is. After the first year, you can generally cancel without a fee.</li>
+      <li><strong>Compare with existing free options.</strong> Long-standing free tools (GIMP, Inkscape, DaVinci Resolve and others) are still far more polished. They make a good baseline before getting excited about the new thing.</li>
+    </ol>
+    <p class="ptext">How design tools are changing in the AI era is covered in <a href="https://designrefs.com/en/articles/ai-design-tools-in-practice/">Why thirty AI drafts don&#x27;t make the work any shorter</a>, and design tools are collected under <a href="https://designrefs.com/en/#tool">Design tools</a>.</p>
+    <p class="art__note">Sources: <a href="https://cybernews.com/ai-news/ai-adobe-alternatives-open-source/" target="_blank" rel="noopener">Cybernews</a>, <a href="https://gigazine.net/gsc_news/en/20261005-artcraft-crafting-apps/" target="_blank" rel="noopener">GIGAZINE</a>, <a href="https://github.com/storytold/photocraft" target="_blank" rel="noopener">PhotoCraft repository</a>, <a href="https://windowsforum.com/news/artcrafts-open-source-adobe-alternatives-on-windows-what-works-in-alpha.447649/" target="_blank" rel="noopener">Windows Forum</a>, <a href="https://en.softonic.com/articles/artcraft-is-now-a-seven-app-open-source-creative-cloud-alternative" target="_blank" rel="noopener">Softonic</a>, <a href="https://www.engadget.com/big-tech/adobe-agrees-to-pay-settlement-for-making-its-subscriptions-hard-to-cancel-210336635.html" target="_blank" rel="noopener">Engadget (FTC settlement)</a>.</p>]]></content:encoded>
+    </item>
     <item>
       <title>The week AI started drawing screens. Who holds the design rules?</title>
       <link>https://designrefs.com/en/articles/chatgpt-intelligent-ui-figma-agent/</link>

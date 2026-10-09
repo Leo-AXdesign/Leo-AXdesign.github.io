@@ -1277,11 +1277,92 @@ def rules(lang, wide):
     return wrap(W, round(y + pad), t["title"], t["desc"], out)
 
 
+# =========================================================
+# 12. ArtCraft 일곱 개 앱의 현재 상태 (2026-10-09 ArtCraft 글)
+# =========================================================
+ARTCRAFT = {
+    "ko": {
+        "title": "AI로 다시 만든 일곱 개, 지금 어디까지 왔나",
+        "sub": "ArtCraft 저장소와 보도 기준, 10월 9일. 상태는 자주 바뀐다",
+        "apps": [("PhotoCraft", "Photoshop", "alpha", "PSD·PSB 열기·저장"),
+                 ("VectorCraft", "Illustrator", "dev", ""),
+                 ("DesignCraft", "InDesign", "dev", ""),
+                 ("LightCraft", "Lightroom", "dev", ""),
+                 ("FilmCraft", "Premiere", "dev", ""),
+                 ("EffectCraft", "After Effects", "dev", "AEP 파일은 못 엶"),
+                 ("PrintCraft", "Acrobat", "alpha", "기사에 따라 PDFCraft")],
+        "status": {"alpha": "초기 알파", "dev": "개발 중"},
+        "vs": "대체 대상",
+        "source": "출처: ArtCraft·PhotoCraft 저장소, Windows Forum, GIGAZINE, Cybernews",
+        "desc": "ArtCraft의 일곱 개 앱. 포토샵을 대체하는 PhotoCraft와 애크로뱃을 대체하는 PrintCraft는 초기 알파, 일러스트레이터·인디자인·라이트룸·프리미어·애프터 이펙트를 대체하는 나머지 다섯 개는 개발 중이다.",
+    },
+    "en": {
+        "title": "Seven AI-rebuilt apps, today",
+        "sub": "Per repositories and coverage, Oct 9. Status changes often",
+        "apps": [("PhotoCraft", "Photoshop", "alpha", "Opens and saves PSD/PSB"),
+                 ("VectorCraft", "Illustrator", "dev", ""),
+                 ("DesignCraft", "InDesign", "dev", ""),
+                 ("LightCraft", "Lightroom", "dev", ""),
+                 ("FilmCraft", "Premiere", "dev", ""),
+                 ("EffectCraft", "After Effects", "dev", "Can't open AEP files"),
+                 ("PrintCraft", "Acrobat", "alpha", "Some reports: PDFCraft")],
+        "status": {"alpha": "Early alpha", "dev": "In development"},
+        "vs": "replaces",
+        "source": "Sources: ArtCraft repos, Windows Forum, GIGAZINE, Cybernews",
+        "desc": "ArtCraft's seven apps. PhotoCraft (Photoshop) and PrintCraft (Acrobat) are in early alpha; the five replacing Illustrator, InDesign, Lightroom, Premiere and After Effects are in development.",
+    },
+}
+
+
+def artcraft(lang, wide):
+    t = ARTCRAFT[lang]
+    if wide:
+        W, pad, ts, ss, ns, fs, ps = 1200, 40, 30, 19, 20, 16, 15
+        cols, gap, ch = 4, 20, 150
+    else:
+        W, pad, ts, ss, ns, fs, ps = 600, 32, 34, 21, 22, 18, 17
+        cols, gap, ch = 2, 14, 168
+    out, y = [], pad + ts
+    out.append(text(pad, y, t["title"], ts if wide or lang == "ko" else ts - 4, weight=800))
+    y += ss + 12
+    sub = t["sub"]
+    if wide:
+        out.append(text(pad, y, sub, ss, MUTED))
+    else:
+        a, b = sub.split(". ", 1) if ". " in sub else (sub, "")
+        out.append(text(pad, y, a + ".", ss, MUTED))
+        y += ss + 10
+        out.append(text(pad, y, b, ss, MUTED))
+    y += 34
+    cw = (W - pad * 2 - gap * (cols - 1)) / cols
+    for i, (name, adobe, st, note) in enumerate(t["apps"]):
+        cx = pad + (i % cols) * (cw + gap)
+        cy = y + (i // cols) * (ch + gap)
+        alpha = st == "alpha"
+        out.append(f'<rect x="{cx}" y="{cy}" width="{cw}" height="{ch}" rx="14" fill="{BG}" stroke="{INK}" '
+                   f'stroke-width="{2.5 if alpha else 1.5}" stroke-dasharray="{"0" if alpha else "6 5"}"/>')
+        out.append(text(cx + 18, cy + 36, name, ns, INK, 800))
+        out.append(text(cx + 18, cy + 36 + fs + 10, f'{t["vs"]} {adobe}' if lang == "en" else f'{adobe} {t["vs"]}', fs - 1, MUTED))
+        lab = t["status"][st]
+        pw = len(lab) * ps * (1.0 if lang == "ko" else 0.58) + 24
+        out.append(f'<rect x="{cx + 18}" y="{cy + 36 + fs + 26}" width="{pw}" height="{ps + 14}" rx="{(ps + 14) / 2}" '
+                   f'fill="{INK if alpha else BG}" stroke="{INK}" stroke-width="1.5"/>')
+        out.append(text(cx + 30, cy + 36 + fs + 26 + ps + 3, lab, ps, BG if alpha else INK, 700))
+        if note:
+            out.append(text(cx + 18, cy + ch - 18, note, fs - 2, BODY))
+    rows = -(-len(t["apps"]) // cols)
+    y += rows * (ch + gap) + 30
+    out.append(f'<line x1="{pad}" y1="{y - 14}" x2="{W - pad}" y2="{y - 14}" stroke="{RULE}" stroke-width="1"/>')
+    y += 14
+    out.append(text(pad, y, t["source"], (ss - 3) if wide else (ss - 6), MUTED))
+    return wrap(W, round(y + pad), t["title"], t["desc"], out)
+
+
 FIGS = {"openai-app-platforms": timeline, "chatgpt-plugin-extensions": scheme,
         "shopify-canvas-compare": canvas_compare, "design-md-anatomy": designmd,
         "image-edit-drift": drift, "flux3-bbox-layout": bbox, "instructmesh-flow": meshflow,
         "chatgpt-image-ad": adspot, "chatgpt-ads-timeline": adtime, "kling4-keyframes": keys,
-        "week-1001-1006": week,
+        "week-1001-1006": week, "artcraft-suite": artcraft,
         "intelligent-ui-answer": iui, "ui-rules-owner": rules}
 
 if __name__ == "__main__":

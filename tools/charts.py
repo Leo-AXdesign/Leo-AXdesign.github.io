@@ -280,6 +280,27 @@ CHARTS = {
              "rows": [("Claude", 78, "78%"), ("ChatGPT", 65, "65%")]},
         ],
     },
+    # ---- 2026-10-09 'ArtCraft' 글 ----
+    "photocraft-psd": {
+        "title": "PSD를 열었다 다시 저장하면",
+        "sub": "PhotoCraft 저장소의 자체 시험 · psd-tools 시험 파일 309개",
+        "source": ["출처: PhotoCraft 저장소 README (2026. 10).", "개발자 자체 시험. 실제 작업 파일과는 다를 수 있다."],
+        "desc": "PhotoCraft로 psd-tools 시험 파일 309개를 열었다 다시 저장했을 때, 307개는 제대로 그려졌고 2개는 그렇지 않았다.",
+        "panels": [
+            {"title": "다시 저장한 뒤", "hint": "파일 개수",
+             "rows": [("제대로 그려짐", 307, "307개"), ("문제 있음", 2, "2개")]},
+        ],
+    },
+    "photocraft-psd-en": {
+        "title": "Open a PSD, save it again",
+        "sub": "PhotoCraft repository's own test · 309 psd-tools test files",
+        "source": ["Source: PhotoCraft repository README (Oct 2026).", "The developer's own test. Real work files may differ."],
+        "desc": "When PhotoCraft opened and re-saved 309 psd-tools test files, 307 rendered correctly and 2 did not.",
+        "panels": [
+            {"title": "After re-saving", "hint": "number of files",
+             "rows": [("Rendered correctly", 307, "307"), ("Had problems", 2, "2")]},
+        ],
+    },
 }
 
 
