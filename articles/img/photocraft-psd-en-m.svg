@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 557" role="img" aria-labelledby="t d">
+  <title id="t">Open a PSD, save it again</title>
+  <desc id="d">When PhotoCraft opened and re-saved 309 psd-tools test files, 307 rendered correctly and 2 did not.</desc>
+  <rect width="600" height="557" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="32" y="68" font-size="36" font-weight="800" fill="#111111" letter-spacing="-0.5">Open a PSD, save it again</text>
+    <text x="32" y="102" font-size="22" fill="#6B6B6B">PhotoCraft repository&#x27;s own test</text>
+    <text x="32" y="136" font-size="22" fill="#6B6B6B">309 psd-tools test files</text>
+    <text x="32" y="206" font-size="30" font-weight="700" fill="#111111">After re-saving</text>
+    <text x="32" y="238" font-size="22" fill="#6B6B6B">number of files</text>
+    <text x="32" y="291" font-size="23" fill="#444444">Rendered correctly</text>
+    <path d="M32 303H441.0A7 7 0 0 1 448.0 310V332A7 7 0 0 1 441.0 339H32Z" fill="#111111"/>
+    <text x="462.0" y="331.08" font-size="28" font-weight="700" fill="#111111">307</text>
+    <text x="32" y="385" font-size="23" fill="#444444">Had problems</text>
+    <path d="M32 397H61A7 7 0 0 1 68 404V426A7 7 0 0 1 61 433H32Z" fill="#111111"/>
+    <text x="82" y="425.08" font-size="28" font-weight="700" fill="#111111">2</text>
+    <line x1="32" y1="268" x2="32" y2="456" stroke="#D9D9D9" stroke-width="1.8"/>
+    <line x1="32" y1="474" x2="568" y2="474" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="32" y="500" font-size="19" fill="#6B6B6B">Source: PhotoCraft repository README (Oct 2026).</text>
+    <text x="32" y="529" font-size="19" fill="#6B6B6B">The developer&#x27;s own test. Real work files may differ.</text>
+  </g>
+</svg>
