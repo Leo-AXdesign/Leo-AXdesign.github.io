@@ -301,6 +301,35 @@ CHARTS = {
              "rows": [("Rendered correctly", 307, "307"), ("Had problems", 2, "2")]},
         ],
     },
+    # ---- 2026-10-10 '환타 AI 캠페인' 글 ----
+    "fanta-ai-numbers": {
+        "title": "같은 브랜드, 엇갈린 숫자",
+        "sub": "제품 반응은 좋고, AI 광고에 대한 경계는 크다",
+        "source": ["출처: Zappi 분석, Rival Technologies 조사(eMarketer).", "두 조사는 대상과 질문이 다르다."],
+        "desc": "Zappi 조사에서 환타 할로윈 제품의 차별성은 85%로 평균 71%보다, 장점 인식은 62%로 평균 47%보다 높았다. 한편 Z세대 조사에서는 74%가 AI로 만든 마케팅에 부정적으로 반응했다.",
+        "panels": [
+            {"title": "제품이 남다르다", "hint": "Zappi · 환타 할로윈 제품",
+             "rows": [("환타", 85, "85%"), ("평균", 71, "71%")]},
+            {"title": "더 낫다고 느낌", "hint": "Zappi · 환타 할로윈 제품",
+             "rows": [("환타", 62, "62%"), ("평균", 47, "47%")]},
+            {"title": "AI 마케팅에 부정적", "hint": "Z세대 · Rival Technologies",
+             "rows": [("부정적 반응", 74, "74%"), ("브랜드에 행동", 72, "72%")]},
+        ],
+    },
+    "fanta-ai-numbers-en": {
+        "title": "Same brand, mixed numbers",
+        "sub": "The product lands well; wariness of AI ads runs high",
+        "source": ["Sources: Zappi; Rival Technologies (via eMarketer).", "The surveys differ in audience and questions."],
+        "desc": "In Zappi testing, Fanta's Halloween products scored 85% on distinctiveness vs. a 71% norm and 62% on advantage vs. 47%. In a Gen Z survey, 74% reacted negatively to AI-made marketing.",
+        "panels": [
+            {"title": "Product feels distinct", "hint": "Zappi · Fanta Halloween",
+             "rows": [("Fanta", 85, "85%"), ("Norm", 71, "71%")]},
+            {"title": "Feels better", "hint": "Zappi · Fanta Halloween",
+             "rows": [("Fanta", 62, "62%"), ("Norm", 47, "47%")]},
+            {"title": "Negative on AI marketing", "hint": "Gen Z · Rival Technologies",
+             "rows": [("React negatively", 74, "74%"), ("Took action", 72, "72%")]},
+        ],
+    },
 }
 
 

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 499" role="img" aria-labelledby="t d">
+  <title id="t">Haunted Universe: who did what</title>
+  <desc id="d">In Fanta&#x27;s Haunted Universe, people handled character concepts, story and final decisions, while AI handled research exploration and video and image production. Online comments were largely negative, but consumer testing was positive.</desc>
+  <rect width="1200" height="499" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="40" y="70" font-size="30" font-weight="800" fill="#111111" text-anchor="start">Haunted Universe: who did what</text>
+    <text x="40" y="101" font-size="19" font-weight="400" fill="#6B6B6B" text-anchor="start">Based on what Fanta and its studio have said</text>
+    <rect x="40.0" y="137" width="357.3333333333333" height="230" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <text x="62.0" y="181" font-size="24" font-weight="800" fill="#111111" text-anchor="start">People</text>
+    <circle cx="68.0" cy="223.05" r="4" fill="#111111"/>
+    <text x="84.0" y="229" font-size="17" font-weight="400" fill="#444444" text-anchor="start">Writers and artists shaped characters</text>
+    <circle cx="68.0" cy="266.05" r="4" fill="#111111"/>
+    <text x="84.0" y="272" font-size="17" font-weight="400" fill="#444444" text-anchor="start">Story and world</text>
+    <circle cx="68.0" cy="309.05" r="4" fill="#111111"/>
+    <text x="84.0" y="315" font-size="17" font-weight="400" fill="#444444" text-anchor="start">Final calls</text>
+    <rect x="421.3333333333333" y="137" width="357.3333333333333" height="230" rx="14" fill="#111111" stroke="#111111" stroke-width="1.5"/>
+    <text x="443.3333333333333" y="181" font-size="24" font-weight="800" fill="#FFFFFF" text-anchor="start">AI</text>
+    <circle cx="449.3333333333333" cy="223.05" r="4" fill="#FFFFFF"/>
+    <text x="465.3333333333333" y="229" font-size="17" font-weight="400" fill="#FFFFFF" text-anchor="start">Exploration during research</text>
+    <circle cx="449.3333333333333" cy="266.05" r="4" fill="#FFFFFF"/>
+    <text x="465.3333333333333" y="272" font-size="17" font-weight="400" fill="#FFFFFF" text-anchor="start">Video and image production</text>
+    <circle cx="449.3333333333333" cy="309.05" r="4" fill="#FFFFFF"/>
+    <text x="465.3333333333333" y="315" font-size="17" font-weight="400" fill="#FFFFFF" text-anchor="start">Fast versions</text>
+    <rect x="802.6666666666666" y="137" width="357.3333333333333" height="230" rx="14" fill="#F2F2F2" stroke="#111111" stroke-width="1.5"/>
+    <text x="824.6666666666666" y="181" font-size="24" font-weight="800" fill="#111111" text-anchor="start">Reaction</text>
+    <circle cx="830.6666666666666" cy="223.05" r="4" fill="#111111"/>
+    <text x="846.6666666666666" y="229" font-size="17" font-weight="400" fill="#444444" text-anchor="start">YouTube comments: &#x27;AI slop&#x27;</text>
+    <circle cx="830.6666666666666" cy="266.05" r="4" fill="#111111"/>
+    <text x="846.6666666666666" y="272" font-size="17" font-weight="400" fill="#444444" text-anchor="start">Vows to stop buying</text>
+    <circle cx="830.6666666666666" cy="309.05" r="4" fill="#111111"/>
+    <text x="846.6666666666666" y="315" font-size="17" font-weight="400" fill="#444444" text-anchor="start">Consumer testing: positive</text>
+    <text x="40" y="405" font-size="16" font-weight="400" fill="#444444" text-anchor="start">Made with AI studio GRAiL · Trailer Aug 24 · Ran in 50 markets</text>
+    <line x1="40" y1="431" x2="1160" y2="431" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="40" y="459" font-size="16" font-weight="400" fill="#6B6B6B" text-anchor="start">Sources: DesignRush, Marketing-Interactive, Creative Bloq, Zappi (2026)</text>
+  </g>
+</svg>

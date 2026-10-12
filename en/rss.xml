@@ -6,7 +6,158 @@
     <atom:link href="https://designrefs.com/en/rss.xml" rel="self" type="application/rss+xml" />
     <description>Notes from a designer in Korea: working with AI, putting style into words, collecting references and design communities. Translated from Korean.</description>
     <language>en</language>
-    <lastBuildDate>Fri, 09 Oct 2026 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 12 Oct 2026 09:00:00 +0900</lastBuildDate>
+    <item>
+      <title>When an AI answer replaces search results, how does your brand show up?</title>
+      <link>https://designrefs.com/en/articles/ai-search-brand-visibility/</link>
+      <guid isPermaLink="true">https://designrefs.com/en/articles/ai-search-brand-visibility/</guid>
+      <pubDate>Mon, 12 Oct 2026 09:00:00 +0900</pubDate>
+      <category>AI Design</category>
+      <description>Heathrow Airport teamed up with Adobe to measure how AI answers mention its brand. With one in four travelers reportedly turning to AI first, here&#x27;s what designers working on brands should look at, with a diagram and tables.</description>
+      <content:encoded><![CDATA[    <p class="ptext">On October 8, London&#x27;s Heathrow Airport expanded its deal with Adobe. The headline was a new website built on Adobe technology, but another part stood out: Heathrow will measure how AI like ChatGPT, Copilot and Perplexity talks about it, and look for gaps.</p>
+    <p class="ptext">Adobe&#x27;s reasoning: one in four consumers now turn to AI first when making travel decisions. Once people ask AI instead of typing into a search box, the &quot;first screen&quot; a brand has to care about changes.</p>
+    <p class="ptext"><strong>First, a disclaimer.</strong> Adobe didn&#x27;t publish how it arrived at the one-in-four figure. Below, I focus on where this trend meets designers&#x27; work. I&#x27;ll also note that this site keeps a guide file for AI, llms.txt, to make it easier for AI to read.</p>
+    <h2 class="psub" id="s1">Where AI answers find brands</h2>
+    <figure class="art__fig">
+      <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/ai-search-brand-en-m.svg" width="600" height="877" /><img src="https://designrefs.com/articles/img/ai-search-brand-en.svg" alt="AI reads site text, image descriptions, reviews and articles, and structured data to build answers. Brands measure how often and how accurately they appear." width="1200" height="511" loading="lazy" decoding="async" /></picture>
+      <figcaption>AI reads site text, image descriptions, reviews and articles, and structured data to build answers. Brands measure how often and how accurately they appear.</figcaption>
+    </figure>
+    <p class="ptext">On a search results page, logos, photos, colors and banners caught people&#x27;s eyes. AI answers have almost none of that. A sentence or two of summary, one name in a recommended list, a few cited links. That&#x27;s it.</p>
+    <p class="ptext">And those sentences come from what the AI has read: descriptions on the official site, the alt text attached to each image, reviews and articles, and information structured for machines. However strong a brand looks visually, if its written traces are thin, it comes out blurry in AI answers.</p>
+    <h2 class="psub" id="s2">The tool Heathrow uses</h2>
+    <p class="ptext">Heathrow is using Adobe&#x27;s &quot;Brand Visibility&quot;, launched in June. It does three main things.</p>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th></th><th>What it does</th></tr></thead>
+      <tbody>
+        <tr><td>Measure</td><td>How often, and how accurately, the brand is mentioned on ChatGPT, Google AI Mode, Copilot and Perplexity</td></tr>
+        <tr><td>Find</td><td>Questions where competitors appear but you don&#x27;t, and places you&#x27;re described wrongly</td></tr>
+        <tr><td>Fix</td><td>Suggests which content and information to strengthen</td></tr>
+      </tbody>
+    </table></div>
+    <p class="art__note">Sources: <a href="https://news.adobe.com/news/2026/10/adobe-and-heathrow-airport-partner" target="_blank" rel="noopener">Adobe and Heathrow</a>, <a href="https://www.cmswire.com/digital-experience/adobe-launches-brand-visibility-tool-for-ai-search/" target="_blank" rel="noopener">CMSWire</a>, <a href="https://thenextweb.com/news/heathrow-adobe-agentic-ai-website" target="_blank" rel="noopener">The Next Web</a>. Adobe says it draws on 289 million real AI search prompts. It&#x27;s enterprise software, and pricing isn&#x27;t public.</p>
+    <p class="ptext">That tools like this are sold to large companies means &quot;your brand in AI answers&quot; already has marketing budgets attached. Like search engine optimization (SEO), optimizing for AI answers is becoming its own job.</p>
+    <h2 class="psub" id="s3">Work that lands on designers</h2>
+    <p class="ptext">There&#x27;s a reason this can&#x27;t stay a marketers-only job. Much of what AI reads passes through designers&#x27; hands.</p>
+    <p class="ptext"><strong>Image descriptions (alt text).</strong> The short description attached to each image on a site. It started as an accessibility tool for people who can&#x27;t see the screen, but AI reads it too. Instead of &quot;image01.jpg&quot; or a blank, a description of what&#x27;s visible, like &quot;Heathrow Terminal 2 departures, self-service bag drop&quot;, helps both people and AI.</p>
+    <p class="ptext"><strong>The sentence that describes the brand.</strong> Logos and colors don&#x27;t appear in AI answers. Instead, a sentence or two explaining &quot;what kind of brand we are&quot; gets quoted directly. If your brand guide has tone and manner but no single sentence describing the brand, now is the time to write one.</p>
+    <p class="ptext"><strong>Page structure.</strong> AI reads pages with proper headings, subheadings, tables and lists far better. A real heading tag beats large text that only looks like a heading. That&#x27;s why a design system should cover the structure of text too.</p>
+    <p class="ptext">This echoes the <a href="https://designrefs.com/en/articles/design-md-for-ai/">DESIGN.md</a> story. That was about letting AI read our design rules; this is about letting AI read our brand. Both come down to describing ourselves in text a machine can read.</p>
+    <h2 class="psub" id="s4">So, for now</h2>
+    <p class="ptext">There&#x27;s something you can try without big tools.</p>
+    <ol class="ptext-list">
+      <li><strong>Ask AI directly.</strong> Ask ChatGPT or Perplexity &quot;what kind of place is brand X?&quot; and &quot;what would you recommend in field Y?&quot;. Just checking how your brand or your client is introduced, and whether anything is wrong, is a start.</li>
+      <li><strong>Fill in image descriptions first.</strong> Pick ten key images on a site you worked on and check that their descriptions aren&#x27;t empty. If they are, fill them with one sentence on what&#x27;s visible.</li>
+      <li><strong>Write one brand sentence.</strong> On the first page of the brand guide, write in one sentence who the brand serves and what it does. It&#x27;s the sentence AI is most likely to quote.</li>
+    </ol>
+    <p class="ptext">How to hand AI your design rules is in <a href="https://designrefs.com/en/articles/design-md-for-ai/">the DESIGN.md article</a>, and branding references are under <a href="https://designrefs.com/en/#graphic">Graphic / Branding</a>.</p>
+    <p class="art__note">Sources: <a href="https://news.adobe.com/news/2026/10/adobe-and-heathrow-airport-partner" target="_blank" rel="noopener">Adobe and Heathrow</a>, <a href="https://itbrief.co.uk/story/heathrow-extends-adobe-deal-to-boost-ai-travel-search" target="_blank" rel="noopener">IT Brief UK</a>, <a href="https://thenextweb.com/news/heathrow-adobe-agentic-ai-website" target="_blank" rel="noopener">The Next Web</a>, <a href="https://www.cmswire.com/digital-experience/adobe-launches-brand-visibility-tool-for-ai-search/" target="_blank" rel="noopener">CMSWire</a>, <a href="https://www.techradar.com/pro/security/forget-about-seo-adobe-already-has-an-llm-optimizer-to-help-businesses-rank-on-chatgpt-gemini-and-claude" target="_blank" rel="noopener">TechRadar</a>.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>The switch to turn off Mac AI all at once is gone. An off button is design too</title>
+      <link>https://designrefs.com/en/articles/macos-27-ai-off-switch/</link>
+      <guid isPermaLink="true">https://designrefs.com/en/articles/macos-27-ai-off-switch/</guid>
+      <pubDate>Sun, 11 Oct 2026 09:00:00 +0900</pubDate>
+      <category>AI Design</category>
+      <description>macOS 27 removed the switch that turned off Apple Intelligence entirely. Users are building outside tools to strip AI out. What changed, what to check on a designer&#x27;s Mac, and the question left for anyone designing AI features.</description>
+      <content:encoded><![CDATA[    <p class="ptext">A tool spread quietly among Mac users this week. It&#x27;s called RemoveMacAI. It turns off Apple&#x27;s AI features on a Mac and deletes the model files they use. Several people reported getting back more than 12GB of storage.</p>
+    <p class="ptext">There&#x27;s a reason a tool like this appeared. In macOS 27, released this fall, the switch that turned off all AI features at once is gone.</p>
+    <p class="ptext"><strong>First, a disclaimer.</strong> I haven&#x27;t run this tool on macOS 27 myself. What follows is based on reporting from Mac-focused outlets. Apple hasn&#x27;t explained why it removed the switch.</p>
+    <h2 class="psub" id="s1">What changed</h2>
+    <figure class="art__fig">
+      <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/macos27-ai-switch-en-m.svg" width="600" height="1060" /><img src="https://designrefs.com/articles/img/macos27-ai-switch-en.svg" alt="In macOS 26, one switch turned off every AI feature; in macOS 27, each feature has to be turned off separately. A sketch based on reports." width="1200" height="639" loading="lazy" decoding="async" /></picture>
+      <figcaption>In macOS 26, one switch turned off every AI feature; in macOS 27, each feature has to be turned off separately. A sketch based on reports.</figcaption>
+    </figure>
+    <p class="ptext">Through macOS 26, there was a switch for all of Apple Intelligence. Flip it, and Writing Tools, Genmoji, Image Playground and the rest turned off, and the model files were removed.</p>
+    <p class="ptext">In macOS 27, that switch is gone. You have to find and turn off each feature, and reports say the toggles are spread across several settings screens, about a dozen in all. The bigger difference is that turning them off leaves the model files in place. By Apple&#x27;s own figure, that&#x27;s up to 14GB on Macs with M3 or later.</p>
+    <p class="ptext">RemoveMacAI fills the gap. Using a configuration-profile mechanism Apple provides for organizations, it turns features off, deletes the models and blocks them from downloading again. The developer says it doesn&#x27;t touch system files directly and can be reversed. It&#x27;s not a method Apple officially recommends, though.</p>
+    <h2 class="psub" id="s2">What to check on a designer&#x27;s Mac</h2>
+    <p class="ptext">There are two reasons designers shouldn&#x27;t just skip past this.</p>
+    <p class="ptext"><strong>Storage.</strong> A designer&#x27;s Mac is always short on space. A few PSDs and some video sources fill it fast. Unused AI models taking 14GB is a size worth noticing.</p>
+    <p class="ptext"><strong>Client material.</strong> Writing Tools rewrites selected text, and the ChatGPT extension can send content to an outside service. If you handle contracts or pre-launch material, you should at least know which features are on.</p>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th>What to check</th><th>Where</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td>Writing Tools</td><td>System Settings &gt; Apple Intelligence &amp; Siri</td><td>So you don&#x27;t use it on client documents by accident</td></tr>
+        <tr><td>ChatGPT extension</td><td>Same place</td><td>A path for content to reach an outside service</td></tr>
+        <tr><td>Image Playground, Genmoji</td><td>Same place (also check Screen Time)</td><td>Turn off if unused</td></tr>
+        <tr><td>Space used by models</td><td>System Settings &gt; General &gt; Storage</td><td>See how big the leftover model files are</td></tr>
+      </tbody>
+    </table></div>
+    <p class="art__note">Sources: <a href="https://www.macrumors.com/2026/10/06/strip-apple-intelligence-from-macos-27/" target="_blank" rel="noopener">MacRumors</a>, <a href="https://www.digitaltrends.com/computing/macos-27-removed-the-apple-intelligence-off-switch-heres-how-to-get-rid-of-it-anyway/" target="_blank" rel="noopener">Digital Trends</a>, <a href="https://futurism.com/artificial-intelligence/mac-users-nuking-every-trace-of-apple-ai" target="_blank" rel="noopener">Futurism</a>. Menu names and locations may vary by macOS version.</p>
+    <p class="ptext">Using an outside tool to delete the models is your call. On a work Mac, talk to IT first; configuration profiles can clash with company management settings.</p>
+    <h2 class="psub" id="s3">An off button is design too</h2>
+    <p class="ptext">This doesn&#x27;t end with Mac settings. Many designers are now putting AI features into their own products. So the same question sits in front of us: when a user wants to turn this off, can they do it easily?</p>
+    <p class="ptext">Apple&#x27;s choice is a useful cautionary example.</p>
+    <ul class="ptext-list">
+      <li><strong>One step to turn on, ten to turn off.</strong> It&#x27;s on by default, and turning it off means visiting several screens. Users read that as &quot;please don&#x27;t turn this off.&quot;</li>
+      <li><strong>What stays after you turn it off.</strong> If files remain after a feature is off, users don&#x27;t trust that it&#x27;s really off. So they go looking for outside tools.</li>
+      <li><strong>Changes without explanation.</strong> When a switch disappears with no reason given, people assume the worst.</li>
+    </ul>
+    <p class="ptext">Do the opposite. If you design AI features, put the off controls in one place, and tell users in one line what turns off and what remains. If you change a feature, say why. If users start looking for outside tools, that&#x27;s a sign the settings screen&#x27;s design has failed.</p>
+    <h2 class="psub" id="s4">So, for now</h2>
+    <ol class="ptext-list">
+      <li><strong>Start with your own Mac.</strong> Use the table above to see which AI features are on and how much space the models use. Turn off what you don&#x27;t use.</li>
+      <li><strong>Ask the same of what you build.</strong> For the AI feature you&#x27;re working on, find where &quot;off&quot; is and count how many taps it takes. More than three is worth another look.</li>
+      <li><strong>Change with a reason.</strong> If you need to change or remove a setting, write the reason down, even as one line in the release notes.</li>
+    </ol>
+    <p class="ptext">Who sets the rules when AI draws the interface is covered in <a href="https://designrefs.com/en/articles/chatgpt-intelligent-ui-figma-agent/">the week AI started drawing screens</a>, and UI references are under <a href="https://designrefs.com/en/#uiux">UI/UX references</a>.</p>
+    <p class="art__note">Sources: <a href="https://futurism.com/artificial-intelligence/mac-users-nuking-every-trace-of-apple-ai" target="_blank" rel="noopener">Futurism</a>, <a href="https://www.macrumors.com/2026/10/06/strip-apple-intelligence-from-macos-27/" target="_blank" rel="noopener">MacRumors</a>, <a href="https://www.macrumors.com/2026/10/05/apple-intelligence-removal-tool-frees-mac-storage/" target="_blank" rel="noopener">MacRumors (storage)</a>, <a href="https://www.digitaltrends.com/computing/macos-27-removed-the-apple-intelligence-off-switch-heres-how-to-get-rid-of-it-anyway/" target="_blank" rel="noopener">Digital Trends</a>, <a href="https://daringfireball.net/linked/2026/10/06/cli-tool-removes-apple-intelligence-from-macos-27" target="_blank" rel="noopener">Daring Fireball</a>.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Comments say &quot;AI slop&quot;, surveys say yes. What Fanta&#x27;s AI Halloween campaign leaves behind</title>
+      <link>https://designrefs.com/en/articles/fanta-ai-halloween-campaign/</link>
+      <guid isPermaLink="true">https://designrefs.com/en/articles/fanta-ai-halloween-campaign/</guid>
+      <pubDate>Sat, 10 Oct 2026 09:00:00 +0900</pubDate>
+      <category>AI Design</category>
+      <description>Fanta&#x27;s Halloween campaign, made with an AI studio, is getting slammed online. Yet consumer testing came out the other way. Who did what, why reactions split, and what designers working on brands should take from it.</description>
+      <content:encoded><![CDATA[    <p class="ptext">Three weeks before Halloween, one drinks campaign has become a regular topic in design media: Coca-Cola&#x27;s Fanta and its &quot;Haunted Universe&quot;.</p>
+    <p class="ptext">Fanta wants to own Halloween, the way Coca-Cola calls Christmas to mind. So unlike the past two years of borrowing film characters, this year it created four monsters of its own, including a cyborg Frankenstein and a werewolf DJ. And it made them with an AI studio.</p>
+    <p class="ptext"><strong>First, a disclaimer.</strong> The campaign videos are public, but there&#x27;s little hard data on the reaction. For each number below, I&#x27;ve noted who measured it and how.</p>
+    <h2 class="psub" id="s1">Who did what</h2>
+    <figure class="art__fig">
+      <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/fanta-who-did-what-en-m.svg" width="600" height="883" /><img src="https://designrefs.com/articles/img/fanta-who-did-what-en.svg" alt="What people and AI did on Fanta&#x27;s Haunted Universe, and the reaction. Based on what Fanta and its studio have said." width="1200" height="499" loading="lazy" decoding="async" /></picture>
+      <figcaption>What people and AI did on Fanta&#x27;s Haunted Universe, and the reaction. Based on what Fanta and its studio have said.</figcaption>
+    </figure>
+    <p class="ptext">The AI studio GRAiL produced it. A cinematic trailer came out on August 24, and the campaign then expanded to 50 markets. Fanta&#x27;s account: writers, technologists, creators and artists worked together, and AI was used in the research and production phases. A human-led effort, in other words.</p>
+    <p class="ptext">Ibrahim Khan, Fanta&#x27;s global VP of marketing, said: &quot;Some people think you press a few buttons and Fanta Universe pops up — it&#x27;s taken us a year and a half.&quot;</p>
+    <h2 class="psub" id="s2">Comments and numbers went opposite ways</h2>
+    <p class="ptext">The reaction split in two.</p>
+    <p class="ptext">Online, it was mostly harsh. YouTube commenters quickly labeled the trailer &quot;AI slop&quot;, and Creative Bloq reported that almost all comments were negative, with many vowing never to buy Fanta again. Alongside complaints that the visuals lacked polish, there was strong opposition to AI imagery itself.</p>
+    <p class="ptext">The survey numbers tell another story.</p>
+    <figure class="art__fig">
+      <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/fanta-ai-numbers-en-m.svg" width="600" height="1171" /><img src="https://designrefs.com/articles/img/fanta-ai-numbers-en.svg" alt="Same brand, mixed numbers. The Halloween products beat the norm, but wariness of AI marketing runs high." width="1200" height="459" loading="lazy" decoding="async" /></picture>
+      <figcaption>Same brand, mixed numbers. The Halloween products beat the norm, but wariness of AI marketing runs high.</figcaption>
+    </figure>
+    <p class="ptext">When consumer research firm Zappi tested Fanta&#x27;s limited Halloween products, 85% said they felt distinct, against a 71% norm, and 62% said they seemed better, against 47%. Zappi&#x27;s read is that people who watched the ad itself mostly liked it and weren&#x27;t very concerned with the technology behind it.</p>
+    <p class="ptext">Meanwhile, in a separate July survey, 74% of Gen Z said they react negatively to AI-made marketing, and 72% said they&#x27;d taken some action against a brand because of it.</p>
+    <p class="ptext">The two surveys differ in audience and questions, so neither settles it. One thing is clear, though: people quietly choosing products and people writing comments can react very differently.</p>
+    <h2 class="psub" id="s3">Why the split?</h2>
+    <p class="ptext">Several things seem to overlap.</p>
+    <p class="ptext"><strong>&quot;Made with AI&quot; came first.</strong> Fanta didn&#x27;t hide its AI use. That&#x27;s good, but from that moment people read every small awkwardness as AI&#x27;s fault. What would have been &quot;style&quot; from a human becomes &quot;because it&#x27;s AI&quot;.</p>
+    <p class="ptext"><strong>The characters were new.</strong> For the past two years, Fanta borrowed beloved characters like Chucky and Beetlejuice. This year&#x27;s monsters are unfamiliar. Without the affection a known face brings, craft gets judged more harshly.</p>
+    <p class="ptext"><strong>People watched in different places.</strong> In a survey, people watch the whole ad, then answer. In a comment section, they judge on a first impression in a few seconds. The subtle awkwardness of AI video shows more in quick first impressions.</p>
+    <h2 class="psub" id="s4">What designers working on brands should take away</h2>
+    <p class="ptext">Fanta&#x27;s case isn&#x27;t about whether to use AI. Many brands already do, and as I noted last week, 91% of designers use AI weekly. The question is how you use it, and how you talk about it.</p>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th>Decision</th><th>Fanta&#x27;s choice</th><th>Worth considering</th></tr></thead>
+      <tbody>
+        <tr><td>Disclose AI use?</td><td>Yes</td><td>Right call. But be specific about where it was used</td></tr>
+        <tr><td>Use it for what?</td><td>The whole character video</td><td>Be careful where awkwardness shows, like faces and motion</td></tr>
+        <tr><td>What to make new?</td><td>Unfamiliar characters</td><td>New characters get judged on craft more strictly</td></tr>
+        <tr><td>Judge reaction by?</td><td>Surveys and comments</td><td>Expect numbers and comments to disagree, from the start</td></tr>
+      </tbody>
+    </table></div>
+    <p class="art__note">Sources: <a href="https://www.creativebloq.com/ai/fantas-ai-slop-halloween-advert-is-a-real-horror-show" target="_blank" rel="noopener">Creative Bloq</a>, <a href="https://www.emarketer.com/content/fanta-bets-on-original-ip-own-halloween--ai-concerns-could-way" target="_blank" rel="noopener">eMarketer</a>, <a href="https://www.zappi.io/web/blog/innovation-spotlight-fantas-haunted-collection" target="_blank" rel="noopener">Zappi product analysis</a>, <a href="https://www.zappi.io/web/blog/admiration-feature-fantas-halloween-reveal" target="_blank" rel="noopener">Zappi ad analysis</a>, <a href="https://news.designrush.com/fanta-haunted-universe-halloween-2026" target="_blank" rel="noopener">DesignRush</a>, <a href="https://www.marketing-interactive.com/can-ai-help-fanta-build-the-next-horror-universe" target="_blank" rel="noopener">Marketing-Interactive</a>.</p>
+    <h2 class="psub" id="s5">So, for now</h2>
+    <p class="ptext">When a client asks &quot;should we do this campaign with AI?&quot;, there are now some questions worth raising.</p>
+    <ol class="ptext-list">
+      <li><strong>Split where to use it first.</strong> Decide separately between places where awkwardness hides, like concept exploration, backgrounds and props, and places where it shows instantly, like faces and hands.</li>
+      <li><strong>Write how you&#x27;ll say &quot;made with AI&quot; in advance.</strong> Don&#x27;t hide it, but be specific: rather than &quot;an AI ad&quot;, say &quot;planned by people, with AI used for this part&quot;.</li>
+      <li><strong>Watch the first three seconds on their own.</strong> Beyond screening the full cut, review it like a social feed, a few seconds before scrolling past. That&#x27;s where the comments come from.</li>
+    </ol>
+    <p class="ptext">Whether AI images can be used in client work is covered in <a href="https://designrefs.com/en/articles/ai-image-commercial-use/">Can you use AI-generated images in client work?</a>, and graphic and branding references are under <a href="https://designrefs.com/en/#graphic">Graphic / Branding</a>.</p>
+    <p class="art__note">Sources: <a href="https://www.creativebloq.com/ai/fantas-ai-slop-halloween-advert-is-a-real-horror-show" target="_blank" rel="noopener">Creative Bloq</a>, <a href="https://www.emarketer.com/content/fanta-bets-on-original-ip-own-halloween--ai-concerns-could-way" target="_blank" rel="noopener">eMarketer</a>, <a href="https://www.zappi.io/web/blog/innovation-spotlight-fantas-haunted-collection" target="_blank" rel="noopener">Zappi</a>, <a href="https://www.adweek.com/creativity/fantas-big-bet-to-own-halloween-an-original-cinematic-universe/" target="_blank" rel="noopener">Adweek</a>, <a href="https://news.designrush.com/fanta-haunted-universe-halloween-2026" target="_blank" rel="noopener">DesignRush</a>, <a href="https://www.marketing-interactive.com/can-ai-help-fanta-build-the-next-horror-universe" target="_blank" rel="noopener">Marketing-Interactive</a>.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Seven free &quot;Photoshops&quot; rebuilt with AI. Can designers switch?</title>
       <link>https://designrefs.com/en/articles/artcraft-free-adobe-alternatives/</link>
