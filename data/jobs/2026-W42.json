@@ -1,0 +1,49 @@
+{
+ "updated": "2026-10-12T21:19:14.283900+09:00",
+ "since": "2026-10-05T21:19:14.283900+09:00",
+ "report": [
+  "사람인: 건너뜀 (키 없음)",
+  "Remotive: 0건 중 0건",
+  "We Work Remotely: 3건 중 3건",
+  "Remote OK: 1건 중 1건"
+ ],
+ "kr": [],
+ "global": [
+  {
+   "source": "Remote OK",
+   "title": "Product Design Lead",
+   "company": "Fuel50",
+   "url": "https://remoteOK.com/remote-jobs/remote-product-design-lead-fuel50-1137474",
+   "posted": "2026-10-09T17:00:04+09:00",
+   "location": "Remote",
+   "deadline": ""
+  },
+  {
+   "source": "We Work Remotely",
+   "title": "Designer, Creative Services",
+   "company": "Abnormal",
+   "url": "https://weworkremotely.com/remote-jobs/abnormal-designer-creative-services",
+   "posted": "2026-10-07T16:30:42+09:00",
+   "location": "Anywhere in the World",
+   "deadline": ""
+  },
+  {
+   "source": "We Work Remotely",
+   "title": "Senior 3D Designer",
+   "company": "Contra",
+   "url": "https://weworkremotely.com/remote-jobs/contra-senior-3d-designer",
+   "posted": "2026-10-07T09:11:33+09:00",
+   "location": "Anywhere in the World",
+   "deadline": ""
+  },
+  {
+   "source": "We Work Remotely",
+   "title": "Senior Game Designer",
+   "company": "Contra",
+   "url": "https://weworkremotely.com/remote-jobs/contra-senior-game-designer",
+   "posted": "2026-10-07T09:08:54+09:00",
+   "location": "Anywhere in the World",
+   "deadline": ""
+  }
+ ]
+}
