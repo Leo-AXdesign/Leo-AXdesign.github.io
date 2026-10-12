@@ -129,6 +129,7 @@ git config user.name "이름" && git config user.email "메일주소"
    <meta name="google-site-verification" content="받은_코드" />
    ```
 4. 확인이 끝나면 좌측 **Sitemaps** 에서 `sitemap.xml` 제출
+   - 읽을거리만 따로 보려면 `sitemap-articles.xml` 도 함께 제출하세요. 페이지 색인 보고서에서 사이트맵을 이것으로 골라 글들의 색인 상태만 볼 수 있습니다.
 5. **URL 검사** 에 사이트 주소를 넣고 "색인 생성 요청" 을 누르면 더 빨리 수집됩니다
 
 ### 2. 네이버
