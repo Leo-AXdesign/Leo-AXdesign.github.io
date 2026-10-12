@@ -57,6 +57,35 @@ sitemap = ('<?xml version="1.0" encoding="UTF-8"?>\n'
            + body + "\n</urlset>\n")
 (ROOT / "sitemap.xml").write_text(sitemap, encoding="utf-8")
 
+# ---------- sitemap-articles.xml ----------
+# 읽을거리만 따로 모은 사이트맵. 서치 콘솔에 따로 제출하면 글들의 색인 상태만 모아서 볼 수 있습니다.
+# 한국어·영문판을 hreflang 으로 짝지어 주고, 공유 이미지가 있으면 함께 알립니다.
+en_slugs = {x["slug"] for x in posts_en}
+
+
+def article_entry(slug, lastmod, lang):
+    ko_u, en_u = f"{SITE}articles/{slug}/", f"{SITE}en/articles/{slug}/"
+    loc = en_u if lang == "en" else ko_u
+    alts = ""
+    if slug in en_slugs:
+        alts = (f'\n    <xhtml:link rel="alternate" hreflang="ko" href="{ko_u}"/>'
+                f'\n    <xhtml:link rel="alternate" hreflang="en" href="{en_u}"/>'
+                f'\n    <xhtml:link rel="alternate" hreflang="x-default" href="{ko_u}"/>')
+    og = ROOT / "og" / ("en" if lang == "en" else "") / f"{slug}.png"
+    img = (f'\n    <image:image><image:loc>{SITE}og/{"en/" if lang == "en" else ""}{slug}.png</image:loc></image:image>'
+           if og.exists() else "")
+    return f"  <url>\n    <loc>{loc}</loc>\n    <lastmod>{lastmod}</lastmod>{alts}{img}\n  </url>"
+
+
+art_entries = [article_entry(x["slug"], x["updated"], "ko") for x in posts]
+art_entries += [article_entry(x["slug"], x["updated"], "en") for x in posts_en]
+sitemap_articles = ('<?xml version="1.0" encoding="UTF-8"?>\n'
+                    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n'
+                    '        xmlns:xhtml="http://www.w3.org/1999/xhtml"\n'
+                    '        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n'
+                    + "\n".join(art_entries) + "\n</urlset>\n")
+(ROOT / "sitemap-articles.xml").write_text(sitemap_articles, encoding="utf-8")
+
 # ---------- JSON-LD ----------
 jsonld = {
     "@context": "https://schema.org",

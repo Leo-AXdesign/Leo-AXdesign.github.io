@@ -54,3 +54,4 @@ User-agent: CCBot
 Allow: /
 
 Sitemap: https://designrefs.com/sitemap.xml
+Sitemap: https://designrefs.com/sitemap-articles.xml
