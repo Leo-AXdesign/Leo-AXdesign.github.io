@@ -14,6 +14,11 @@
  *
  * lang 이 "en" 이면 오류 문구를 영어로 돌려줍니다 (영문판 /en/talk/).
  *
+ * 읽을거리 조회수 (js/views.js 가 씁니다)
+ *   POST   /views  {path}             조회 1 올리기. 같은 사람이 같은 글을 하루에 여러 번 봐도 1번만 셉니다
+ *   GET    /views?path=/articles/x/   글 하나의 조회수
+ *   GET    /views                     모든 글의 조회수 (많은 순)
+ *
  * 글쓴이가 정한 비밀번호(4~12자)로 자기 글을 지울 수 있습니다.
  * 비밀번호는 그대로 두지 않고, 글마다 다른 소금과 IP_SALT 를 섞어 해시로만 저장합니다.
  *
@@ -261,12 +266,64 @@ async function remove(req, env, url, origin) {
   return json({ ok: true }, 200, origin);
 }
 
+// ---------- 읽을거리 조회수 ----------
+// 표는 처음 쓸 때 알아서 만듭니다. 그래서 wrangler deploy 만 하면 바로 동작합니다.
+const VIEW_PATH = /^\/(en\/)?articles\/[a-z0-9-]+\/$/;
+let viewTablesReady = false;
+
+async function ensureViewTables(env) {
+  if (viewTablesReady) return;
+  await env.DB.exec(
+    "CREATE TABLE IF NOT EXISTS views (path TEXT PRIMARY KEY, n INTEGER NOT NULL DEFAULT 0);" +
+    "CREATE TABLE IF NOT EXISTS views_seen (key TEXT PRIMARY KEY, day TEXT NOT NULL);"
+  );
+  viewTablesReady = true;
+}
+
+async function views(req, env, url, origin) {
+  await ensureViewTables(env);
+  if (req.method === "GET") {
+    const path = url.searchParams.get("path");
+    if (path) {
+      const row = await env.DB.prepare("SELECT n FROM views WHERE path = ?1").bind(path).first();
+      return json({ ok: true, path, n: row ? row.n : 0 }, 200, origin);
+    }
+    const { results } = await env.DB.prepare("SELECT path, n FROM views ORDER BY n DESC LIMIT 500").all();
+    return json({ ok: true, items: results }, 200, origin);
+  }
+  if (req.method !== "POST") return json({ ok: false, error: "허용하지 않는 방식입니다." }, 405, origin);
+
+  let path = "";
+  try { path = String(((await req.json()) || {}).path || ""); } catch { /* 본문 없음 */ }
+  if (!VIEW_PATH.test(path)) return json({ ok: false, error: "읽을거리 주소가 아닙니다." }, 400, origin);
+
+  // 같은 사람(IP 해시) · 같은 글 · 같은 날은 한 번만 셉니다. 기록은 이틀 뒤 지웁니다.
+  const day = new Date(Date.now() + 9 * 3600000).toISOString().slice(0, 10);   // 한국 날짜
+  const key = (await sha256((await idOf(req, env)) + "|" + path + "|" + day)).slice(0, 24);
+  const seen = await env.DB.prepare("INSERT OR IGNORE INTO views_seen (key, day) VALUES (?1, ?2)").bind(key, day).run();
+  if (seen.meta && seen.meta.changes) {
+    await env.DB.prepare(
+      "INSERT INTO views (path, n) VALUES (?1, 1) ON CONFLICT(path) DO UPDATE SET n = n + 1"
+    ).bind(path).run();
+    if (Math.random() < 0.02) {
+      const old = new Date(Date.now() + 9 * 3600000 - 2 * 86400000).toISOString().slice(0, 10);
+      await env.DB.prepare("DELETE FROM views_seen WHERE day < ?1").bind(old).run();
+    }
+  }
+  const row = await env.DB.prepare("SELECT n FROM views WHERE path = ?1").bind(path).first();
+  return json({ ok: true, path, n: row ? row.n : 0 }, 200, origin);
+}
+
 export default {
   async fetch(req, env) {
     const url = new URL(req.url);
     const origin = pickOrigin(req, env);
 
     if (req.method === "OPTIONS") return new Response(null, { status: 204, headers: cors(origin) });
+    if (url.pathname === "/views") {
+      try { return await views(req, env, url, origin); }
+      catch (err) { return json({ ok: false, error: "서버에서 처리하지 못했습니다." }, 500, origin); }
+    }
     if (url.pathname !== "/comments")
       return json({ ok: false, error: "없는 주소입니다." }, 404, origin);
 

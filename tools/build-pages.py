@@ -221,6 +221,9 @@ PRIVACY = f"""
     운영자도 어떤 비밀번호를 쓰셨는지 알 수 없습니다.</p>
     <p class="ptext">스팸을 막기 위해 접속 IP 를 그대로 저장하지 않고, 되돌릴 수 없는 형태로 바꾼 값만 남깁니다.
     이 값은 같은 사람이 짧은 시간에 여러 번 글을 올리는지 확인하는 데만 씁니다.</p>
+    <p class="ptext"><a href="{SITE}articles/">읽을거리</a> 글의 조회수를 셀 때도 같은 방식으로 바꾼 값을 씁니다.
+    같은 사람이 하루에 같은 글을 여러 번 열어도 한 번만 세기 위한 것이고, 이 기록은 이틀 뒤 지웁니다.
+    글마다 몇 번 읽혔는지 외에는 아무것도 남기지 않습니다.</p>
     <p class="ptext">남긴 글을 지우고 싶으시면 <a href="mailto:nisov0924@gmail.com">nisov0924@gmail.com</a> 으로 알려 주세요.
     광고, 욕설, 타인의 개인정보가 담긴 글은 예고 없이 지웁니다.</p>
 
@@ -332,6 +335,9 @@ for slug, title, intro, body, n, names, navlabel in pages:
     # 제목 틀은 메인 화면과 같게: 제목 · 개수 · 오른쪽 짧은 설명 · 검은 줄.
     # 목록 페이지는 검색으로 들어온 사람을 위해 긴 소개를 한 줄 더 둡니다.
     intro_html = f'      <p class="page__intro">{e(intro)}</p>\n' if n else ""
+    if slug == "jobs":   # 매주 모으는 채용 공고 (tools/build-jobs.py)
+        intro_html += (f'      <p class="ptext"><a href="{SITE}jobs/weekly/">이번 주 디자이너 채용 공고 보기 →</a> '
+                       '국내·해외 원격 공고를 매주 월요일 모아 둡니다.</p>\n')
     body_full = f"""    <section class="section">
 {section_head(navlabel, n or ("" if slug in COUNT_BY_JS else None), SHORT_DESC.get(slug, ""))}
 {intro_html}{body}
