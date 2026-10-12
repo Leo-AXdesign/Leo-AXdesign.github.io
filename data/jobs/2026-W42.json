@@ -1,14 +1,97 @@
 {
- "updated": "2026-10-12T21:19:14.283900+09:00",
- "since": "2026-10-05T21:19:14.283900+09:00",
+ "updated": "2026-10-12T21:21:33.911839+09:00",
+ "since": "2026-10-05T21:21:33.911839+09:00",
  "report": [
   "사람인: 건너뜀 (키 없음)",
   "Remotive: 0건 중 0건",
   "We Work Remotely: 3건 중 3건",
-  "Remote OK: 1건 중 1건"
+  "Remote OK: 1건 중 1건",
+  "Himalayas: 0건 중 0건",
+  "Jobicy: 18건 중 18건"
  ],
  "kr": [],
  "global": [
+  {
+   "source": "Jobicy",
+   "title": "Senior Product Designer",
+   "company": "Paddle",
+   "url": "https://jobicy.com/jobs/155092-senior-product-designer-15",
+   "posted": "2026-10-12T16:02:33+09:00",
+   "location": "Ireland, Portugal, UK",
+   "deadline": ""
+  },
+  {
+   "source": "Jobicy",
+   "title": "Senior Product Designer",
+   "company": "Kinsta",
+   "url": "https://jobicy.com/jobs/153063-senior-product-designer-11",
+   "posted": "2026-10-12T11:42:02+09:00",
+   "location": "Hungary",
+   "deadline": ""
+  },
+  {
+   "source": "Jobicy",
+   "title": "Senior Product Designer",
+   "company": "capital.com",
+   "url": "https://jobicy.com/jobs/153043-senior-product-designer-10",
+   "posted": "2026-10-12T11:40:28+09:00",
+   "location": "Bulgaria, Cyprus, Poland, Portugal, Serbia",
+   "deadline": ""
+  },
+  {
+   "source": "Jobicy",
+   "title": "Head of Brand & Creative",
+   "company": "Atomic",
+   "url": "https://jobicy.com/jobs/155002-head-of-brand-creative-2",
+   "posted": "2026-10-11T15:01:35+09:00",
+   "location": "USA",
+   "deadline": ""
+  },
+  {
+   "source": "Jobicy",
+   "title": "Creative Director",
+   "company": "NVE Experience Agency",
+   "url": "https://jobicy.com/jobs/154993-creative-director-3",
+   "posted": "2026-10-11T14:59:13+09:00",
+   "location": "USA",
+   "deadline": ""
+  },
+  {
+   "source": "Jobicy",
+   "title": "Senior Brand Designer, Experiential",
+   "company": "Synthesia",
+   "url": "https://jobicy.com/jobs/152993-senior-brand-designer-experiential",
+   "posted": "2026-10-11T12:50:08+09:00",
+   "location": "EMEA",
+   "deadline": ""
+  },
+  {
+   "source": "Jobicy",
+   "title": "Freelance Product and Brand Designers – Join Our Network",
+   "company": "Instrument",
+   "url": "https://jobicy.com/jobs/152896-freelance-product-and-brand-designers-join-our-network",
+   "posted": "2026-10-10T12:23:49+09:00",
+   "location": "USA",
+   "deadline": ""
+  },
+  {
+   "source": "Jobicy",
+   "title": "Senior Product Designer",
+   "company": "Tremendous",
+   "url": "https://jobicy.com/jobs/152864-senior-product-designer-9",
+   "posted": "2026-10-10T12:20:12+09:00",
+   "location": "Canada, Mexico, USA",
+   "deadline": ""
+  },
+  {
+   "source": "Jobicy",
+   "title": "Art Director, Brand Social",
+   "company": "Upstart",
+   "url": "https://jobicy.com/jobs/154937-art-director-brand-social",
+   "posted": "2026-10-10T02:58:40+09:00",
+   "location": "Canada, USA",
+   "deadline": ""
+  },
   {
    "source": "Remote OK",
    "title": "Product Design Lead",
@@ -16,6 +99,60 @@
    "url": "https://remoteOK.com/remote-jobs/remote-product-design-lead-fuel50-1137474",
    "posted": "2026-10-09T17:00:04+09:00",
    "location": "Remote",
+   "deadline": ""
+  },
+  {
+   "source": "Jobicy",
+   "title": "Head of Design",
+   "company": "Dataiku",
+   "url": "https://jobicy.com/jobs/152711-head-of-design",
+   "posted": "2026-10-08T13:40:07+09:00",
+   "location": "USA",
+   "deadline": ""
+  },
+  {
+   "source": "Jobicy",
+   "title": "Freelance Brand Designer",
+   "company": "TripActions",
+   "url": "https://jobicy.com/jobs/154800-freelance-brand-designer-2",
+   "posted": "2026-10-08T04:37:32+09:00",
+   "location": "USA",
+   "deadline": ""
+  },
+  {
+   "source": "Jobicy",
+   "title": "Digital & Motion Designer",
+   "company": "Wpromote",
+   "url": "https://jobicy.com/jobs/154789-digital-motion-designer-2",
+   "posted": "2026-10-08T02:15:52+09:00",
+   "location": "USA",
+   "deadline": ""
+  },
+  {
+   "source": "Jobicy",
+   "title": "Content Designer II, Personalization",
+   "company": "Pinterest",
+   "url": "https://jobicy.com/jobs/154776-content-designer-ii-personalization",
+   "posted": "2026-10-07T22:00:14+09:00",
+   "location": "USA",
+   "deadline": ""
+  },
+  {
+   "source": "Jobicy",
+   "title": "Senior Product Designer, Design Systems",
+   "company": "DuckDuckGo",
+   "url": "https://jobicy.com/jobs/154773-senior-product-designer-design-systems",
+   "posted": "2026-10-07T22:00:12+09:00",
+   "location": "Anywhere",
+   "deadline": ""
+  },
+  {
+   "source": "Jobicy",
+   "title": "Senior Marketing Designer",
+   "company": "TrustedHousesitters",
+   "url": "https://jobicy.com/jobs/154762-senior-marketing-designer",
+   "posted": "2026-10-07T17:50:11+09:00",
+   "location": "UK",
    "deadline": ""
   },
   {
@@ -43,6 +180,33 @@
    "url": "https://weworkremotely.com/remote-jobs/contra-senior-game-designer",
    "posted": "2026-10-07T09:08:54+09:00",
    "location": "Anywhere in the World",
+   "deadline": ""
+  },
+  {
+   "source": "Jobicy",
+   "title": "Senior UX Designer",
+   "company": "SeatGeek",
+   "url": "https://jobicy.com/jobs/154705-senior-ux-designer",
+   "posted": "2026-10-06T22:16:30+09:00",
+   "location": "USA",
+   "deadline": ""
+  },
+  {
+   "source": "Jobicy",
+   "title": "Product Designer, Shop Everything",
+   "company": "Meta",
+   "url": "https://jobicy.com/jobs/150188-product-designer-shop-everything",
+   "posted": "2026-10-06T13:45:13+09:00",
+   "location": "USA",
+   "deadline": ""
+  },
+  {
+   "source": "Jobicy",
+   "title": "Senior CRO Designer, Paywalls and Funnels",
+   "company": "RevenueCat",
+   "url": "https://jobicy.com/jobs/154654-senior-cro-designer-paywalls-and-funnels",
+   "posted": "2026-10-06T03:54:51+09:00",
+   "location": "APAC, EMEA, Canada, USA",
    "deadline": ""
   }
  ]
