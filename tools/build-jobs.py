@@ -11,6 +11,8 @@ GitHub Actions(.github/workflows/jobs-weekly.yml)가 매주 월요일 아침에 
 - Remotive 공개 API   : 해외 원격 디자인 공고 (출처 표기·원문 링크 필수)
 - We Work Remotely RSS: 해외 원격 디자인 공고
 - Remote OK 공개 API  : 해외 원격 디자인 공고 (출처 표기·원문 링크 필수)
+- Himalayas 공개 API  : 해외 원격 공고 (제목으로 디자인 직무만 거름)
+- Jobicy 공개 API     : 해외 원격 디자인·멀티미디어 공고
 
 원티드·잡코리아처럼 약관으로 자동 수집을 막은 곳은 쓰지 않습니다.
 공고는 제목·회사·지역·날짜와 원문 링크만 싣고, 본문은 옮기지 않습니다.
@@ -115,13 +117,34 @@ def remoteok():
     return out
 
 
+def himalayas():
+    d = json.loads(get("https://himalayas.app/jobs/api?limit=100", {"Accept": "application/json"}))
+    out = []
+    for j in d.get("jobs") or []:
+        loc = j.get("locationRestrictions") or []
+        out.append(job("Himalayas", j.get("title"), j.get("companyName"),
+                       j.get("applicationLink") or j.get("guid"), to_dt(j.get("pubDate")),
+                       ", ".join(loc) if isinstance(loc, list) and loc else "Remote"))
+    return out
+
+
+def jobicy():
+    d = json.loads(get("https://jobicy.com/api/v2/remote-jobs?count=50&industry=design-multimedia",
+                       {"Accept": "application/json"}))
+    return [job("Jobicy", j.get("jobTitle"), j.get("companyName"), j.get("url"), to_dt(j.get("pubDate")),
+                j.get("jobGeo") or "Remote") for j in d.get("jobs") or []]
+
+
 SOURCES = [("사람인", saramin, "kr"), ("Remotive", remotive, "global"),
-           ("We Work Remotely", weworkremotely, "global"), ("Remote OK", remoteok, "global")]
+           ("We Work Remotely", weworkremotely, "global"), ("Remote OK", remoteok, "global"),
+           ("Himalayas", himalayas, "global"), ("Jobicy", jobicy, "global")]
 CREDIT = {
     "사람인": ("사람인", "https://www.saramin.co.kr"),
     "Remotive": ("Remotive", "https://remotive.com"),
     "We Work Remotely": ("We Work Remotely", "https://weworkremotely.com"),
     "Remote OK": ("Remote OK", "https://remoteok.com"),
+    "Himalayas": ("Himalayas", "https://himalayas.app"),
+    "Jobicy": ("Jobicy", "https://jobicy.com"),
 }
 
 
@@ -200,7 +223,7 @@ def build(groups, report):
     </section>
 {block("국내", "사람인 공개 API", groups["kr"],
        "국내 공고는 준비 중입니다." if kr_skipped else "이번 주에 새로 올라온 국내 공고를 가져오지 못했습니다.")}
-{block("해외 · 원격 근무", "Remotive · We Work Remotely · Remote OK", groups["global"],
+{block("해외 · 원격 근무", "Remotive · We Work Remotely · Remote OK · Himalayas · Jobicy", groups["global"],
        "이번 주에 새로 올라온 해외 원격 공고를 가져오지 못했습니다.")}
     <p class="ptext ptext--note">공고 출처: {credits or "없음"}. 공고의 저작권은 각 회사와 출처 사이트에 있습니다.
     마지막 갱신 {NOW.strftime("%Y. %m. %d %H:%M")} (한국 시간).</p>"""

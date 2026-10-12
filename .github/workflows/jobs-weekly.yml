@@ -24,6 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       TZ: Asia/Seoul
+      PYTHONDONTWRITEBYTECODE: "1"
       SARAMIN_KEY: ${{ secrets.SARAMIN_KEY }}
     steps:
       - uses: actions/checkout@v4
