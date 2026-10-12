@@ -201,7 +201,7 @@ def build(lang, ko_slugs, en_slugs):
       <p class="art__kicker"><a href="{list_url}">{L["list"]}</a>{f' · {e(x["tag"])}' if x.get("tag") else ''}</p>
       <h1 class="page__title">{A.nobreak(e(x["title"]))}</h1>
       <p class="page__intro">{e(x["desc"])}</p>
-      <p class="art__meta"><time datetime="{x["date"]}">{L["date"](y, m, d)}</time> · {L["read"](x["min"])}</p>
+      <p class="art__meta"><time datetime="{x["date"]}">{L["date"](y, m, d)}</time> · {L["read"](x["min"])}<span data-views hidden></span></p>
 {note}{toc_block(x)}{x["body"]}
       <div class="share">
         <button class="share__btn" type="button" data-share>{L["share"]}</button>
@@ -209,6 +209,7 @@ def build(lang, ko_slugs, en_slugs):
         <span class="share__msg" role="status"></span>
       </div>
     </article>
+    <script src="{SITE}js/views.js" defer></script>
 
     {related_links(x.get("related", []))}
 

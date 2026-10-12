@@ -279,6 +279,26 @@ python3 tools/indexnow.py
 
 루트의 `fac1ebe51d5f2cbef4f356705c5fc430.txt` 는 IndexNow 키 파일이라 지우면 안 됩니다.
 
+## 이번 주 디자이너 채용 공고 (/jobs/weekly/)
+
+`tools/build-jobs.py` 가 매주 월요일 오전 9시에 디자이너 채용 공고를 모아 `/jobs/weekly/` 를 새로 만듭니다.
+GitHub Actions(`.github/workflows/jobs-weekly.yml`)가 자동으로 돌리고, 끝나면 배포와 검색엔진 알림까지 이어집니다.
+
+- 해외 원격 공고: Remotive, We Work Remotely, Remote OK 의 공개 API·RSS. 키 없이 바로 됩니다.
+- 국내 공고: 사람인 오픈 API. https://oapi.saramin.co.kr 에서 키를 받아 저장소 → Settings → Secrets and variables → Actions 에 `SARAMIN_KEY` 로 넣으면 다음 실행부터 나옵니다.
+- 원티드·잡코리아처럼 약관으로 자동 수집을 막은 곳은 쓰지 않습니다. 공고는 제목·회사·지역·날짜와 원문 링크만 싣습니다.
+- 바로 돌리려면 GitHub 저장소 → Actions → Weekly design jobs → Run workflow.
+- 매주 가져온 목록은 `data/jobs/<연도>-W<주>.json` 에 남습니다.
+
+## 읽을거리 조회수
+
+글 페이지 날짜 옆에 "조회 123" 이 나옵니다. `js/views.js` 가 댓글 서버(`worker/`)의 `/views` 로 셉니다.
+같은 사람이 하루에 같은 글을 여러 번 열어도 한 번만 셉니다(IP 는 해시로만, 이틀 뒤 삭제).
+
+- 처음 한 번: `cd worker && npx wrangler deploy` (표는 서버가 알아서 만듭니다)
+- 모든 글의 조회수 보기: https://designrefs-talk.designrefs-talk.workers.dev/views
+- 방문자 전체 흐름은 구글 애널리틱스 → 보고서 → 참여도 → 페이지 및 화면에서 `/articles/` 로 걸러 봅니다.
+
 ## 기능
 
 - 카테고리별 탐색, 사이트명·설명·도메인·태그 통합 검색 (`/` 키로 검색창 포커스)

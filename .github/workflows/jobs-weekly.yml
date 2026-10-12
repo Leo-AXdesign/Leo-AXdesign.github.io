@@ -1,0 +1,46 @@
+# 매주 월요일 아침 9시(한국 시간)에 디자이너 채용 공고를 모아 /jobs/weekly/ 를 새로 만듭니다.
+# 만든 결과를 main 에 올리면, 끝난 뒤 deploy.yml 이 사이트 배포와 검색엔진 알림을 이어서 합니다.
+# 손으로 돌리려면: GitHub 저장소 → Actions → Weekly design jobs → Run workflow
+#
+# 국내(사람인) 공고는 사람인 오픈 API 키가 있어야 나옵니다.
+#   저장소 → Settings → Secrets and variables → Actions → New repository secret
+#   이름: SARAMIN_KEY / 값: 사람인 개발자센터(https://oapi.saramin.co.kr)에서 받은 키
+name: Weekly design jobs
+
+on:
+  schedule:
+    - cron: "0 0 * * 1"   # 매주 월요일 00:00 UTC = 한국 시간 09:00
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: jobs-weekly
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      TZ: Asia/Seoul
+      SARAMIN_KEY: ${{ secrets.SARAMIN_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Collect this week's design jobs
+        run: python3 tools/build-jobs.py
+      - name: Update sitemap and menu pages
+        run: |
+          python3 tools/build-pages.py
+          python3 tools/build-seo.py
+      - name: Commit
+        run: |
+          git config user.name "designrefs-bot"
+          git config user.email "nisov0924@gmail.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "바뀐 것이 없습니다."
+          else
+            git commit -m "이번 주 디자이너 채용 공고 갱신 ($(date +%Y-%m-%d))"
+            git push
+          fi

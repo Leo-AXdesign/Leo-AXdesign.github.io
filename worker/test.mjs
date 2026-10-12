@@ -8,16 +8,21 @@
 import worker from "./src/index.js";
 
 const rows = [];
+const viewCounts = new Map();
+const seenKeys = new Set();
 let tries = [];
 let next = 1;
 
 // D1 대신 쓰는 아주 작은 가짜 데이터베이스
 const DB = {
+  async exec() { return {}; },
   prepare(sql) {
     let args = [];
     const api = {
       bind(...a) { args = a; return api; },
       async all() {
+        if (sql.includes("SELECT path, n FROM views"))
+          return { results: [...viewCounts].map(([path, n]) => ({ path, n })).sort((a, b) => b.n - a.n) };
         if (sql.includes("SELECT id, name, body, at, hidden"))
           return { results: rows.filter(r => r.page === args[0])
             .map(({ id, name, body, at, hidden }) => ({ id, name, body, at, hidden })).reverse() };
@@ -27,6 +32,7 @@ const DB = {
         return { results: [] };
       },
       async first() {
+        if (sql.includes("SELECT n FROM views")) return viewCounts.has(args[0]) ? { n: viewCounts.get(args[0]) } : null;
         if (sql.includes("SELECT at FROM comments WHERE who")) {
           const r = rows.filter(r => r.who === args[0]).pop();
           return r ? { at: r.at } : null;
@@ -44,6 +50,11 @@ const DB = {
         return null;
       },
       async run() {
+        if (sql.startsWith("INSERT OR IGNORE INTO views_seen")) {
+          if (seenKeys.has(args[0])) return { meta: { changes: 0 } };
+          seenKeys.add(args[0]); return { meta: { changes: 1 } };
+        }
+        if (sql.startsWith("INSERT INTO views")) { viewCounts.set(args[0], (viewCounts.get(args[0]) || 0) + 1); return { meta: {} }; }
         if (sql.startsWith("INSERT INTO comments")) {
           rows.push({ id: next, page: args[0], name: args[1], body: args[2],
                       at: args[3], who: args[4], pw: args[5], hidden: args[6] });
@@ -202,6 +213,25 @@ check("프리플라이트 204", r.status === 204);
 
 d = await (await worker.fetch(post({ ...good, pw: "5678" }, "4.4.4.9"), { ...env, MODERATE: "1" })).json();
 check("승인 모드", d.ok && d.pending === true && d.item === null);
+
+/* ---------- 읽을거리 조회수 ---------- */
+const view = (path, ip) => new Request("https://x/views", {
+  method: "POST", headers: { Origin: ORIGIN, "Content-Type": "application/json", "CF-Connecting-IP": ip },
+  body: JSON.stringify({ path }),
+});
+d = await (await worker.fetch(view("/articles/kling-4-keyframes/", "7.7.7.1"), env)).json();
+check("조회 1", d.ok && d.n === 1);
+d = await (await worker.fetch(view("/articles/kling-4-keyframes/", "7.7.7.1"), env)).json();
+check("같은 사람 같은 날은 한 번만", d.ok && d.n === 1);
+d = await (await worker.fetch(view("/articles/kling-4-keyframes/", "7.7.7.2"), env)).json();
+check("다른 사람이면 2", d.ok && d.n === 2);
+await worker.fetch(view("/en/articles/kling-4-keyframes/", "7.7.7.3"), env);
+r = await worker.fetch(view("/talk/", "7.7.7.4"), env);
+check("읽을거리가 아닌 주소는 거부", r.status === 400);
+d = await (await worker.fetch(new Request("https://x/views?path=/articles/kling-4-keyframes/", { headers: { Origin: ORIGIN } }), env)).json();
+check("글 하나 조회", d.n === 2);
+d = await (await worker.fetch(new Request("https://x/views", { headers: { Origin: ORIGIN } }), env)).json();
+check("전체 목록은 많은 순", d.items.length === 2 && d.items[0].n === 2);
 
 console.log("통과 " + ok.length + "개");
 ok.forEach(x => console.log("  ✓ " + x));

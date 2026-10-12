@@ -18,3 +18,8 @@ CREATE TABLE IF NOT EXISTS tries (
   at  INTEGER NOT NULL
 );
 CREATE INDEX IF NOT EXISTS idx_tries_who ON tries (who, at);
+
+-- 읽을거리 조회수. 서버가 처음 쓸 때 알아서 만들지만, 여기에도 적어 둡니다.
+CREATE TABLE IF NOT EXISTS views (path TEXT PRIMARY KEY, n INTEGER NOT NULL DEFAULT 0);
+-- 같은 사람이 같은 글을 하루에 여러 번 봐도 한 번만 세려고 남기는 기록 (IP 해시 · 글 · 날짜를 섞은 값). 이틀 뒤 지웁니다.
+CREATE TABLE IF NOT EXISTS views_seen (key TEXT PRIMARY KEY, day TEXT NOT NULL);
