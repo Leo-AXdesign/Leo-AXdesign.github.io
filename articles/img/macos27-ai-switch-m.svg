@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 1060" role="img" aria-labelledby="t d">
+  <title id="t">한 번에 끄던 스위치가 사라졌다</title>
+  <desc id="d">macOS 26에서는 Apple Intelligence 전체를 스위치 하나로 끄고 모델도 지울 수 있었다. macOS 27에서는 그 스위치가 사라져 기능을 하나씩 꺼야 하고, 꺼도 모델 파일은 남는다.</desc>
+  <rect width="600" height="1060" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="32" y="66" font-size="34" font-weight="800" fill="#111111" text-anchor="start">한 번에 끄던 스위치가 사라졌다</text>
+    <text x="32" y="99" font-size="21" font-weight="400" fill="#6B6B6B" text-anchor="start">macOS 26과 27의 &#x27;Apple Intelligence&#x27; 끄기.</text>
+    <text x="32" y="130" font-size="21" font-weight="400" fill="#6B6B6B" text-anchor="start">보도를 바탕으로 그린 개념도</text>
+    <rect x="32" y="166" width="536" height="380" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <text x="54" y="208" font-size="24" font-weight="800" fill="#111111" text-anchor="start">macOS 26</text>
+    <rect x="44" y="230" width="512" height="44" rx="8" fill="#F2F2F2"/>
+    <text x="56" y="256" font-size="18" font-weight="800" fill="#111111" text-anchor="start">Apple Intelligence 전체</text>
+    <rect x="488" y="234" width="52.0" height="30.0" rx="15.0" fill="#D9D9D9"/>
+    <circle cx="503.0" cy="249.0" r="11.0" fill="#FFFFFF"/>
+    <text x="76" y="310" font-size="17" font-weight="400" fill="#6B6B6B" text-anchor="start">글쓰기 도구</text>
+    <rect x="492" y="291" width="44.199999999999996" height="25.5" rx="12.75" fill="#D9D9D9"/>
+    <circle cx="504.75" cy="303.75" r="8.75" fill="#FFFFFF"/>
+    <line x1="52" y1="332" x2="548" y2="332" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="76" y="350" font-size="17" font-weight="400" fill="#6B6B6B" text-anchor="start">Genmoji</text>
+    <rect x="492" y="331" width="44.199999999999996" height="25.5" rx="12.75" fill="#D9D9D9"/>
+    <circle cx="504.75" cy="343.75" r="8.75" fill="#FFFFFF"/>
+    <line x1="52" y1="372" x2="548" y2="372" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="76" y="390" font-size="17" font-weight="400" fill="#6B6B6B" text-anchor="start">Image Playground</text>
+    <rect x="492" y="371" width="44.199999999999996" height="25.5" rx="12.75" fill="#D9D9D9"/>
+    <circle cx="504.75" cy="383.75" r="8.75" fill="#FFFFFF"/>
+    <line x1="52" y1="412" x2="548" y2="412" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="76" y="430" font-size="17" font-weight="400" fill="#6B6B6B" text-anchor="start">Siri</text>
+    <rect x="492" y="411" width="44.199999999999996" height="25.5" rx="12.75" fill="#D9D9D9"/>
+    <circle cx="504.75" cy="423.75" r="8.75" fill="#FFFFFF"/>
+    <line x1="52" y1="452" x2="548" y2="452" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="76" y="470" font-size="17" font-weight="400" fill="#6B6B6B" text-anchor="start">ChatGPT 연결</text>
+    <rect x="492" y="451" width="44.199999999999996" height="25.5" rx="12.75" fill="#D9D9D9"/>
+    <circle cx="504.75" cy="463.75" r="8.75" fill="#FFFFFF"/>
+    <line x1="52" y1="492" x2="548" y2="492" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="76" y="510" font-size="17" font-weight="400" fill="#6B6B6B" text-anchor="start">그 밖에 여러 개</text>
+    <line x1="52" y1="532" x2="548" y2="532" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="32" y="578" font-size="17" font-weight="400" fill="#444444" text-anchor="start">스위치 하나로 전부 끄고 모델도 지움</text>
+    <rect x="32" y="612" width="536" height="326" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <text x="54" y="654" font-size="24" font-weight="800" fill="#111111" text-anchor="start">macOS 27</text>
+    <text x="56" y="702" font-size="17" font-weight="400" fill="#444444" text-anchor="start">글쓰기 도구</text>
+    <rect x="492" y="683" width="44.199999999999996" height="25.5" rx="12.75" fill="#D9D9D9"/>
+    <circle cx="504.75" cy="695.75" r="8.75" fill="#FFFFFF"/>
+    <line x1="52" y1="724" x2="548" y2="724" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="56" y="742" font-size="17" font-weight="400" fill="#444444" text-anchor="start">Genmoji</text>
+    <rect x="492" y="723" width="44.199999999999996" height="25.5" rx="12.75" fill="#D9D9D9"/>
+    <circle cx="504.75" cy="735.75" r="8.75" fill="#FFFFFF"/>
+    <line x1="52" y1="764" x2="548" y2="764" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="56" y="782" font-size="17" font-weight="400" fill="#444444" text-anchor="start">Image Playground</text>
+    <rect x="492" y="763" width="44.199999999999996" height="25.5" rx="12.75" fill="#D9D9D9"/>
+    <circle cx="504.75" cy="775.75" r="8.75" fill="#FFFFFF"/>
+    <line x1="52" y1="804" x2="548" y2="804" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="56" y="822" font-size="17" font-weight="400" fill="#444444" text-anchor="start">Siri</text>
+    <rect x="492" y="803" width="44.199999999999996" height="25.5" rx="12.75" fill="#D9D9D9"/>
+    <circle cx="504.75" cy="815.75" r="8.75" fill="#FFFFFF"/>
+    <line x1="52" y1="844" x2="548" y2="844" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="56" y="862" font-size="17" font-weight="400" fill="#444444" text-anchor="start">ChatGPT 연결</text>
+    <rect x="492" y="843" width="44.199999999999996" height="25.5" rx="12.75" fill="#D9D9D9"/>
+    <circle cx="504.75" cy="855.75" r="8.75" fill="#FFFFFF"/>
+    <line x1="52" y1="884" x2="548" y2="884" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="56" y="902" font-size="17" font-weight="400" fill="#444444" text-anchor="start">그 밖에 여러 개</text>
+    <line x1="52" y1="924" x2="548" y2="924" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="32" y="970" font-size="17" font-weight="400" fill="#444444" text-anchor="start">기능마다 따로 끈다. 꺼도 모델(최대 14GB)은 남음</text>
+    <line x1="32" y1="1000" x2="568" y2="1000" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="32" y="1028" font-size="16" font-weight="400" fill="#6B6B6B" text-anchor="start">출처: MacRumors, Digital Trends, Futurism (2026. 10)</text>
+  </g>
+</svg>

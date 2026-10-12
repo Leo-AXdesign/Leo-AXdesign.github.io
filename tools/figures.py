@@ -1358,11 +1358,264 @@ def artcraft(lang, wide):
     return wrap(W, round(y + pad), t["title"], t["desc"], out)
 
 
+# =========================================================
+# 13. 같은 캠페인, 사람과 AI가 나눈 일 (2026-10-10 환타 글)
+# =========================================================
+FANTA = {
+    "ko": {
+        "title": "환타 '호러 유니버스', 누가 무엇을 했나",
+        "sub": "환타와 제작사가 밝힌 내용을 바탕으로 정리",
+        "cols": [("사람", ["작가·아티스트가 캐릭터 기획", "이야기와 세계관", "최종 판단"]),
+                 ("AI", ["리서치 단계의 탐색", "영상·이미지 제작", "여러 버전 빠르게 만들기"]),
+                 ("반응", ["유튜브 댓글: 'AI 슬롭'", "다시는 안 산다는 댓글", "소비자 조사는 호평"])],
+        "foot": "제작: AI 스튜디오 GRAiL · 8월 24일 예고편 공개 · 50개 시장 집행",
+        "source": "출처: DesignRush, Marketing-Interactive, Creative Bloq, Zappi (2026)",
+        "desc": "환타 호러 유니버스 캠페인에서 사람은 캐릭터 기획과 이야기, 최종 판단을, AI는 리서치 탐색과 영상·이미지 제작을 맡았다. 온라인 댓글은 혹평이 많았지만 소비자 조사 결과는 좋았다.",
+    },
+    "en": {
+        "title": "Haunted Universe: who did what",
+        "sub": "Based on what Fanta and its studio have said",
+        "cols": [("People", ["Writers and artists shaped characters", "Story and world", "Final calls"]),
+                 ("AI", ["Exploration during research", "Video and image production", "Fast versions"]),
+                 ("Reaction", ["YouTube comments: 'AI slop'", "Vows to stop buying", "Consumer testing: positive"])],
+        "foot": "Made with AI studio GRAiL · Trailer Aug 24 · Ran in 50 markets",
+        "source": "Sources: DesignRush, Marketing-Interactive, Creative Bloq, Zappi (2026)",
+        "desc": "In Fanta's Haunted Universe, people handled character concepts, story and final decisions, while AI handled research exploration and video and image production. Online comments were largely negative, but consumer testing was positive.",
+    },
+}
+
+
+def fanta(lang, wide):
+    t = FANTA[lang]
+    if wide:
+        W, pad, ts, ss, hs, fs = 1200, 40, 30, 19, 24, 17
+        cols, gap, ch = 3, 24, 230
+    else:
+        W, pad, ts, ss, hs, fs = 600, 32, 34, 21, 26, 19
+        cols, gap, ch = 1, 16, 200
+    out, y = [], pad + ts
+    out.append(text(pad, y, t["title"], ts if wide or lang == "ko" else ts - 4, weight=800))
+    y += ss + 12
+    out.append(text(pad, y, t["sub"], ss, MUTED))
+    y += 36
+    cw = (W - pad * 2 - gap * (cols - 1)) / cols
+    for i, (head, items) in enumerate(t["cols"]):
+        cx = pad + (i % cols) * (cw + gap)
+        cy = y + (i // cols) * (ch + gap)
+        dark = i == 1
+        out.append(f'<rect x="{cx}" y="{cy}" width="{cw}" height="{ch}" rx="14" fill="{INK if dark else (SOFT if i == 2 else BG)}" stroke="{INK}" stroke-width="1.5"/>')
+        out.append(text(cx + 22, cy + 44, head, hs, BG if dark else INK, 800))
+        for k, it in enumerate(items):
+            iy = cy + 92 + k * (fs + 26)
+            out.append(f'<circle cx="{cx + 28}" cy="{iy - fs * 0.35}" r="4" fill="{BG if dark else INK}"/>')
+            out.append(text(cx + 44, iy, it, fs, BG if dark else BODY))
+    rows = -(-len(t["cols"]) // cols)
+    y += rows * (ch + gap) + 14
+    out.append(text(pad, y, t["foot"], fs - 1 if wide else fs - 3, BODY))
+    y += 40
+    out.append(f'<line x1="{pad}" y1="{y - 14}" x2="{W - pad}" y2="{y - 14}" stroke="{RULE}" stroke-width="1"/>')
+    y += 14
+    out.append(text(pad, y, t["source"], (ss - 3) if wide else (ss - 6), MUTED))
+    return wrap(W, round(y + pad), t["title"], t["desc"], out)
+
+
+# =========================================================
+# 14. 맥의 AI 끄는 스위치 (2026-10-11 macOS 27 글)
+# =========================================================
+MACSW = {
+    "ko": {
+        "title": "한 번에 끄던 스위치가 사라졌다",
+        "sub": "macOS 26과 27의 'Apple Intelligence' 끄기. 보도를 바탕으로 그린 개념도",
+        "before": "macOS 26", "after": "macOS 27",
+        "master": "Apple Intelligence 전체",
+        "items": ["글쓰기 도구", "Genmoji", "Image Playground", "Siri", "ChatGPT 연결", "그 밖에 여러 개"],
+        "note_b": "스위치 하나로 전부 끄고 모델도 지움",
+        "note_a": "기능마다 따로 끈다. 꺼도 모델(최대 14GB)은 남음",
+        "source": "출처: MacRumors, Digital Trends, Futurism (2026. 10)",
+        "desc": "macOS 26에서는 Apple Intelligence 전체를 스위치 하나로 끄고 모델도 지울 수 있었다. macOS 27에서는 그 스위치가 사라져 기능을 하나씩 꺼야 하고, 꺼도 모델 파일은 남는다.",
+    },
+    "en": {
+        "title": "The all-off switch is gone",
+        "sub": "Turning off Apple Intelligence in macOS 26 vs 27. A sketch based on reports",
+        "before": "macOS 26", "after": "macOS 27",
+        "master": "All of Apple Intelligence",
+        "items": ["Writing Tools", "Genmoji", "Image Playground", "Siri", "ChatGPT extension", "and several more"],
+        "note_b": "One switch turned it all off and removed models",
+        "note_a": "Turn off each feature; models (up to 14GB) stay",
+        "source": "Sources: MacRumors, Digital Trends, Futurism (Oct 2026)",
+        "desc": "In macOS 26, one switch turned off all of Apple Intelligence and removed its models. In macOS 27 that switch is gone: features must be turned off one by one, and the model files remain.",
+    },
+}
+
+
+def toggle(x, y, on, s=1.0):
+    w, h = 52 * s, 30 * s
+    o = [f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{h / 2}" fill="{INK if on else RULE}"/>']
+    cx = x + (w - h / 2) if on else x + h / 2
+    o.append(f'<circle cx="{cx}" cy="{y + h / 2}" r="{h / 2 - 4}" fill="{BG}"/>')
+    return o
+
+
+def macsw(lang, wide):
+    t = MACSW[lang]
+    if wide:
+        W, pad, ts, ss, hs, fs = 1200, 40, 30, 19, 22, 17
+    else:
+        W, pad, ts, ss, hs, fs = 600, 32, 34, 21, 24, 18
+    out, y = [], pad + ts
+    out.append(text(pad, y, t["title"], ts if wide or lang == "ko" else ts - 6, weight=800))
+    y += ss + 12
+    sub = t["sub"]
+    if wide:
+        out.append(text(pad, y, sub, ss, MUTED))
+    else:
+        a, b = sub.split(". ", 1)
+        out.append(text(pad, y, a + ".", ss, MUTED))
+        y += ss + 10
+        out.append(text(pad, y, b, ss, MUTED))
+    y += 36
+    gap = 40
+    pw = (W - pad * 2 - gap) / 2 if wide else W - pad * 2
+    rowh = fs + 22
+
+    def panel(px, py, label, master, note):
+        n = len(t["items"])
+        ph = 70 + (rowh + 14 if master else 0) + n * rowh + 16
+        o = [f'<rect x="{px}" y="{py}" width="{pw}" height="{ph}" rx="14" fill="{BG}" stroke="{INK}" stroke-width="1.5"/>',
+             text(px + 22, py + 42, label, hs, INK, 800)]
+        ry = py + 70
+        if master:
+            o.append(f'<rect x="{px + 12}" y="{ry - 6}" width="{pw - 24}" height="{rowh + 4}" rx="8" fill="{SOFT}"/>')
+            o.append(text(px + 24, ry + fs + 2, t["master"], fs, INK, 800))
+            o += toggle(px + pw - 80, ry - 2, False)
+            ry += rowh + 14
+        for k, it in enumerate(t["items"]):
+            o.append(text(px + (44 if master else 24), ry + fs + 2, it, fs - 1, MUTED if master else BODY))
+            if k < n - 1:
+                o += toggle(px + pw - 76, ry + 1, False, 0.85)
+            o.append(f'<line x1="{px + 20}" y1="{ry + rowh + 2}" x2="{px + pw - 20}" y2="{ry + rowh + 2}" stroke="{RULE}" stroke-width="1"/>')
+            ry += rowh
+        o.append(text(px, py + ph + fs + 14, note, fs - 1, BODY))
+        return o, py + ph + fs + 14
+
+    a, ya = panel(pad, y, t["before"], True, t["note_b"])
+    if wide:
+        b, yb = panel(pad + pw + gap, y, t["after"], False, t["note_a"])
+        y = max(ya, yb) + 44
+    else:
+        b, yb = panel(pad, ya + 34, t["after"], False, t["note_a"])
+        y = yb + 44
+    out += a + b
+    out.append(f'<line x1="{pad}" y1="{y - 14}" x2="{W - pad}" y2="{y - 14}" stroke="{RULE}" stroke-width="1"/>')
+    y += 14
+    out.append(text(pad, y, t["source"], (ss - 3) if wide else (ss - 5), MUTED))
+    return wrap(W, round(y + pad), t["title"], t["desc"], out)
+
+
+# =========================================================
+# 15. AI 답변에 브랜드가 닿는 길 (2026-10-12 AI 검색 글)
+# =========================================================
+AISEARCH = {
+    "ko": {
+        "title": "AI 답변 속 브랜드는 어디서 오나",
+        "sub": "검색 결과 대신 AI의 답이 첫 화면이 될 때. 개념도",
+        "src_head": "AI가 읽는 것",
+        "srcs": ["공식 사이트의 글", "그림 설명(alt)", "리뷰·기사·커뮤니티", "구조화된 정보"],
+        "ai": "ChatGPT · Copilot · Perplexity · Google AI 모드",
+        "out_head": "사용자가 보는 것",
+        "outs": ["한두 문장의 요약", "추천 목록 속 이름", "인용된 링크 몇 개"],
+        "check": "브랜드 쪽에서 재는 것: 얼마나 자주, 얼마나 정확히 언급되나",
+        "source": "출처: Adobe·Heathrow 발표(2026. 10. 8), CMSWire, The Next Web",
+        "desc": "AI는 공식 사이트의 글, 그림 설명, 리뷰와 기사, 구조화된 정보를 읽고 요약, 추천 목록, 인용 링크로 답한다. 브랜드는 그 답에 얼마나 자주, 정확히 언급되는지 잰다.",
+    },
+    "en": {
+        "title": "Where AI answers find brands",
+        "sub": "When an AI answer becomes the first screen. A sketch",
+        "src_head": "What AI reads",
+        "srcs": ["Text on the official site", "Image descriptions (alt)", "Reviews, articles, forums", "Structured data"],
+        "ai": "ChatGPT · Copilot · Perplexity · Google AI Mode",
+        "out_head": "What users see",
+        "outs": ["A one- or two-line summary", "A name in a list", "A few cited links"],
+        "check": "What brands measure: how often, and how accurately, they're mentioned",
+        "source": "Sources: Adobe and Heathrow (Oct 8, 2026), CMSWire, The Next Web",
+        "desc": "AI reads site text, image descriptions, reviews and articles, and structured data, then answers with summaries, lists and cited links. Brands measure how often and how accurately they appear.",
+    },
+}
+
+
+def aisearch(lang, wide):
+    t = AISEARCH[lang]
+    if wide:
+        W, pad, ts, ss, hs, fs = 1200, 40, 30, 19, 20, 17
+    else:
+        W, pad, ts, ss, hs, fs = 600, 32, 34, 21, 22, 18
+    out, y = [], pad + ts
+    out.append(text(pad, y, t["title"], ts if wide or lang == "ko" else ts - 6, weight=800))
+    y += ss + 12
+    out.append(text(pad, y, t["sub"], ss, MUTED))
+    y += 40
+    if wide:
+        bw, gap = 330, 60
+        x1, x3 = pad, W - pad - bw
+        x2, w2 = pad + bw + gap, W - pad * 2 - bw * 2 - gap * 2
+        bh = 60 + len(t["srcs"]) * (fs + 26)
+        # 왼쪽
+        out.append(f'<rect x="{x1}" y="{y}" width="{bw}" height="{bh}" rx="14" fill="{BG}" stroke="{INK}" stroke-width="1.5"/>')
+        out.append(text(x1 + 22, y + 38, t["src_head"], hs, INK, 800))
+        for k, it in enumerate(t["srcs"]):
+            out.append(f'<rect x="{x1 + 20}" y="{y + 58 + k * (fs + 26)}" width="{bw - 40}" height="{fs + 16}" rx="8" fill="{SOFT}"/>')
+            out.append(text(x1 + 34, y + 58 + k * (fs + 26) + fs + 3, it, fs - 1, BODY))
+        # 가운데 AI
+        out.append(f'<rect x="{x2}" y="{y + bh / 2 - 60}" width="{w2}" height="120" rx="60" fill="{INK}"/>')
+        out.append(text(x2 + w2 / 2, y + bh / 2 - 4, "AI", hs + 8, BG, 800, "middle"))
+        parts = t["ai"].split(" · ")
+        out.append(text(x2 + w2 / 2, y + bh / 2 + 28, " · ".join(parts[:2]), fs - 4, BG, 400, "middle"))
+        out.append(text(x2 + w2 / 2, y + bh / 2 + 48, " · ".join(parts[2:]), fs - 4, BG, 400, "middle"))
+        for ax0, ax1 in ((x1 + bw + 8, x2 - 8), (x2 + w2 + 8, x3 - 8)):
+            out.append(f'<path d="M{ax0} {y + bh / 2}H{ax1}m-9 -8l9 8l-9 8" fill="none" stroke="{INK}" stroke-width="2"/>')
+        # 오른쪽
+        out.append(f'<rect x="{x3}" y="{y}" width="{bw}" height="{bh}" rx="14" fill="{BG}" stroke="{INK}" stroke-width="1.5"/>')
+        out.append(text(x3 + 22, y + 38, t["out_head"], hs, INK, 800))
+        for k, it in enumerate(t["outs"]):
+            out.append(text(x3 + 22, y + 58 + k * (fs + 26) + fs + 3, "· " + it, fs - 1, BODY))
+        y += bh + 40
+    else:
+        bw = W - pad * 2
+        bh = 60 + len(t["srcs"]) * (fs + 26)
+        out.append(f'<rect x="{pad}" y="{y}" width="{bw}" height="{bh}" rx="14" fill="{BG}" stroke="{INK}" stroke-width="1.5"/>')
+        out.append(text(pad + 22, y + 38, t["src_head"], hs, INK, 800))
+        for k, it in enumerate(t["srcs"]):
+            out.append(f'<rect x="{pad + 20}" y="{y + 58 + k * (fs + 26)}" width="{bw - 40}" height="{fs + 16}" rx="8" fill="{SOFT}"/>')
+            out.append(text(pad + 34, y + 58 + k * (fs + 26) + fs + 3, it, fs - 1, BODY))
+        y += bh + 10
+        out.append(f'<path d="M{W / 2} {y}v26m-8 -9l8 9l8 -9" fill="none" stroke="{INK}" stroke-width="2"/>')
+        y += 36
+        out.append(f'<rect x="{pad}" y="{y}" width="{bw}" height="100" rx="50" fill="{INK}"/>')
+        out.append(text(W / 2, y + 46, "AI", hs + 8, BG, 800, "middle"))
+        out.append(text(W / 2, y + 76, t["ai"], fs - 5, BG, 400, "middle"))
+        y += 110
+        out.append(f'<path d="M{W / 2} {y}v26m-8 -9l8 9l8 -9" fill="none" stroke="{INK}" stroke-width="2"/>')
+        y += 36
+        bh2 = 60 + len(t["outs"]) * (fs + 22)
+        out.append(f'<rect x="{pad}" y="{y}" width="{bw}" height="{bh2}" rx="14" fill="{BG}" stroke="{INK}" stroke-width="1.5"/>')
+        out.append(text(pad + 22, y + 38, t["out_head"], hs, INK, 800))
+        for k, it in enumerate(t["outs"]):
+            out.append(text(pad + 22, y + 58 + k * (fs + 22) + fs + 3, "· " + it, fs - 1, BODY))
+        y += bh2 + 40
+    out.append(text(pad, y, t["check"], fs - 1 if wide else fs - 4, INK, 700))
+    y += 44
+    out.append(f'<line x1="{pad}" y1="{y - 14}" x2="{W - pad}" y2="{y - 14}" stroke="{RULE}" stroke-width="1"/>')
+    y += 14
+    out.append(text(pad, y, t["source"], (ss - 3) if wide else (ss - 6), MUTED))
+    return wrap(W, round(y + pad), t["title"], t["desc"], out)
+
+
 FIGS = {"openai-app-platforms": timeline, "chatgpt-plugin-extensions": scheme,
         "shopify-canvas-compare": canvas_compare, "design-md-anatomy": designmd,
         "image-edit-drift": drift, "flux3-bbox-layout": bbox, "instructmesh-flow": meshflow,
         "chatgpt-image-ad": adspot, "chatgpt-ads-timeline": adtime, "kling4-keyframes": keys,
         "week-1001-1006": week, "artcraft-suite": artcraft,
+        "fanta-who-did-what": fanta, "macos27-ai-switch": macsw, "ai-search-brand": aisearch,
         "intelligent-ui-answer": iui, "ui-rules-owner": rules}
 
 if __name__ == "__main__":

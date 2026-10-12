@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 499" role="img" aria-labelledby="t d">
+  <title id="t">환타 &#x27;호러 유니버스&#x27;, 누가 무엇을 했나</title>
+  <desc id="d">환타 호러 유니버스 캠페인에서 사람은 캐릭터 기획과 이야기, 최종 판단을, AI는 리서치 탐색과 영상·이미지 제작을 맡았다. 온라인 댓글은 혹평이 많았지만 소비자 조사 결과는 좋았다.</desc>
+  <rect width="1200" height="499" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="40" y="70" font-size="30" font-weight="800" fill="#111111" text-anchor="start">환타 &#x27;호러 유니버스&#x27;, 누가 무엇을 했나</text>
+    <text x="40" y="101" font-size="19" font-weight="400" fill="#6B6B6B" text-anchor="start">환타와 제작사가 밝힌 내용을 바탕으로 정리</text>
+    <rect x="40.0" y="137" width="357.3333333333333" height="230" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <text x="62.0" y="181" font-size="24" font-weight="800" fill="#111111" text-anchor="start">사람</text>
+    <circle cx="68.0" cy="223.05" r="4" fill="#111111"/>
+    <text x="84.0" y="229" font-size="17" font-weight="400" fill="#444444" text-anchor="start">작가·아티스트가 캐릭터 기획</text>
+    <circle cx="68.0" cy="266.05" r="4" fill="#111111"/>
+    <text x="84.0" y="272" font-size="17" font-weight="400" fill="#444444" text-anchor="start">이야기와 세계관</text>
+    <circle cx="68.0" cy="309.05" r="4" fill="#111111"/>
+    <text x="84.0" y="315" font-size="17" font-weight="400" fill="#444444" text-anchor="start">최종 판단</text>
+    <rect x="421.3333333333333" y="137" width="357.3333333333333" height="230" rx="14" fill="#111111" stroke="#111111" stroke-width="1.5"/>
+    <text x="443.3333333333333" y="181" font-size="24" font-weight="800" fill="#FFFFFF" text-anchor="start">AI</text>
+    <circle cx="449.3333333333333" cy="223.05" r="4" fill="#FFFFFF"/>
+    <text x="465.3333333333333" y="229" font-size="17" font-weight="400" fill="#FFFFFF" text-anchor="start">리서치 단계의 탐색</text>
+    <circle cx="449.3333333333333" cy="266.05" r="4" fill="#FFFFFF"/>
+    <text x="465.3333333333333" y="272" font-size="17" font-weight="400" fill="#FFFFFF" text-anchor="start">영상·이미지 제작</text>
+    <circle cx="449.3333333333333" cy="309.05" r="4" fill="#FFFFFF"/>
+    <text x="465.3333333333333" y="315" font-size="17" font-weight="400" fill="#FFFFFF" text-anchor="start">여러 버전 빠르게 만들기</text>
+    <rect x="802.6666666666666" y="137" width="357.3333333333333" height="230" rx="14" fill="#F2F2F2" stroke="#111111" stroke-width="1.5"/>
+    <text x="824.6666666666666" y="181" font-size="24" font-weight="800" fill="#111111" text-anchor="start">반응</text>
+    <circle cx="830.6666666666666" cy="223.05" r="4" fill="#111111"/>
+    <text x="846.6666666666666" y="229" font-size="17" font-weight="400" fill="#444444" text-anchor="start">유튜브 댓글: &#x27;AI 슬롭&#x27;</text>
+    <circle cx="830.6666666666666" cy="266.05" r="4" fill="#111111"/>
+    <text x="846.6666666666666" y="272" font-size="17" font-weight="400" fill="#444444" text-anchor="start">다시는 안 산다는 댓글</text>
+    <circle cx="830.6666666666666" cy="309.05" r="4" fill="#111111"/>
+    <text x="846.6666666666666" y="315" font-size="17" font-weight="400" fill="#444444" text-anchor="start">소비자 조사는 호평</text>
+    <text x="40" y="405" font-size="16" font-weight="400" fill="#444444" text-anchor="start">제작: AI 스튜디오 GRAiL · 8월 24일 예고편 공개 · 50개 시장 집행</text>
+    <line x1="40" y1="431" x2="1160" y2="431" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="40" y="459" font-size="16" font-weight="400" fill="#6B6B6B" text-anchor="start">출처: DesignRush, Marketing-Interactive, Creative Bloq, Zappi (2026)</text>
+  </g>
+</svg>
