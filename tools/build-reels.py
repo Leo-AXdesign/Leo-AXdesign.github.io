@@ -110,6 +110,53 @@ def outro_frame(title, url):
            .s { margin-top: 32px; font-size: 34px; color: #A3A3A3; }""")
 
 
+
+# ---------- 사이트 화면 찍기 ----------
+
+MOBILE_UA = ("Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 "
+             "(KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1")
+CONSENT = ["Accept all", "Accept All", "Accept", "Allow all", "I agree", "Agree", "Got it", "OK",
+           "모두 허용", "모두 동의", "동의", "확인"]
+
+
+def capture(url, out, max_h=4500):
+    """사이트를 모바일 화면(폭 432, 2.5배 → 1080px)으로 위에서부터 길게 찍습니다.
+    Playwright 가 있으면 페이지가 뜰 때까지 기다리고, 쿠키 동의 창을 닫고, 아래까지 한 번 내려
+    늦게 뜨는 이미지까지 불러온 뒤 찍습니다. 없으면 크롬 스크린샷으로 찍습니다."""
+    try:
+        from playwright.sync_api import sync_playwright
+    except ImportError:
+        shoot(url, out, size=(432, 1500), timeout=60, scale=2.5)
+        return
+    with sync_playwright() as p:
+        browser = p.chromium.launch()
+        try:
+            ctx = browser.new_context(viewport={"width": 432, "height": 900}, device_scale_factor=2.5,
+                                      is_mobile=True, has_touch=True, locale="ko-KR", user_agent=MOBILE_UA)
+            page = ctx.new_page()
+            page.goto(url, wait_until="domcontentloaded", timeout=30000)
+            try:
+                page.wait_for_load_state("networkidle", timeout=8000)
+            except Exception:
+                pass
+            for label in CONSENT:
+                try:
+                    page.get_by_role("button", name=label, exact=True).first.click(timeout=600)
+                    break
+                except Exception:
+                    continue
+            for y in range(0, 2400, 300):   # 늦게 뜨는 이미지를 불러오려고 한 번 훑습니다
+                page.evaluate(f"window.scrollTo(0, {y})")
+                page.wait_for_timeout(120)
+            page.evaluate("window.scrollTo(0, 0)")
+            page.wait_for_timeout(1200)
+            page.screenshot(path=str(out), full_page=True, timeout=30000)
+        finally:
+            browser.close()
+    im = Image.open(out)
+    if im.height > max_h:
+        im.crop((0, 0, im.width, max_h)).save(out)
+
 # ---------- ffmpeg ----------
 
 def ffmpeg(args):
@@ -205,11 +252,21 @@ def reel_tour(set_id):
             s = BC.find_site(c["name"])
             hdr = render(tmp, f"h{i}", tour_header(i, s["name"], BC.host(s["url"]), c.get("when") or s["desc"]), size=(W, 520))
             shot = pathlib.Path(tmp) / f"s{i}.png"
-            # 모바일 폭(432)으로, 2.5배 선명하게 찍으면 가로 1080px 가 됩니다
-            shoot(s["url"], shot, size=(432, 1500), timeout=60, scale=2.5)
-            clips.append(pathlib.Path(tmp) / f"c{i:02d}.mp4"); durs.append(4.6)
-            scroll_clip(hdr, shot, 4.6, clips[-1])
-            print(f"  {i}. {s['name']} 찍음")
+            clips.append(pathlib.Path(tmp) / f"c{i:02d}.mp4")
+            try:
+                capture(s["url"], shot)
+                durs.append(4.6)
+                scroll_clip(hdr, shot, 4.6, clips[-1])
+                print(f"  {i}. {s['name']} 찍음")
+            except (Exception, SystemExit) as ex:
+                # 막혀 있거나 너무 느린 사이트는 카드 이미지로 대신합니다
+                card = CARDS / set_id / f"{spec['cards'].index(c) + 1:02d}.jpg"
+                if not card.exists():
+                    raise SystemExit(f"{s['name']} 화면을 찍지 못했고 대신할 카드도 없습니다: {ex}")
+                fr = render(tmp, f"f{i}", card_frame(card, spec["title"]))
+                durs.append(3.2)
+                still_clip(fr, 3.2, clips[-1])
+                print(f"  {i}. {s['name']} 화면을 못 찍어 카드로 대신함 ({str(ex)[:120]})")
         end = render(tmp, "end", outro_frame(outro["title"], outro["url"]))
         clips.append(pathlib.Path(tmp) / "c99.mp4"); durs.append(3.0)
         still_clip(end, 3.0, clips[-1])
@@ -222,7 +279,7 @@ def finish(name, clips, durs, cover_png, info):
     mp4 = OUT / f"{name}.mp4"
     total = join(clips, durs, mp4)
     Image.open(cover_png).convert("RGB").save(OUT / f"{name}.jpg", "JPEG", quality=90)
-    print(f"{name}: {total:.1f}초, {mp4.stat().st_size / 1e6:.1f}MB → {mp4.relative_to(ROOT)}")
+    print(f"{name}: {total:.1f}초, {mp4.stat().st_size / 1e6:.1f}MB → social/reels/{mp4.name}")
     return {"id": name, "title": info["title"], "seconds": round(total, 1),
             "video": f"{SITE}social/reels/{name}.mp4", "cover": f"{SITE}social/reels/{name}.jpg",
             "caption": info.get("caption", "")}
