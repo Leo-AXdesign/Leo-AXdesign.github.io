@@ -31,11 +31,12 @@ jobs:
       CHROME_FLAGS: "--no-sandbox --lang=ko-KR"
     steps:
       - uses: actions/checkout@v4
-      - name: Install ffmpeg, Korean fonts, Pillow
+      - name: Install ffmpeg, Korean fonts, Pillow, Playwright
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y -qq ffmpeg fonts-noto-cjk
-          pip install -q pillow
+          pip install -q pillow playwright
+          python3 -m playwright install --with-deps chromium
       - name: Build reels
         env:
           TARGETS: ${{ inputs.targets }}
