@@ -248,6 +248,7 @@ const SITES_EN = {
   "https://99designs.com": [null, "Design contests and one-to-one projects."],
   "https://contra.com": [null, "A commission-free platform for independent freelancers, with a built-in portfolio."],
   "https://www.wanted.co.kr": ["Wanted", "Korea's hub for tech and startup hiring. Lots of product designer openings."],
+  "https://zighang.com": ["Zighang", "Gathers openings from Korean job sites and company career pages in one place, with a design-only view."],
   "https://www.saramin.co.kr": ["Saramin", "One of Korea's biggest job sites."],
   "https://www.jobkorea.co.kr": ["JobKorea", "One of Korea's biggest job sites."],
   "https://www.rocketpunch.com": ["Rocketpunch", "Korean startup jobs and business networking."],

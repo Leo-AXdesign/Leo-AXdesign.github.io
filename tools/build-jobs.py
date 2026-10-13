@@ -185,6 +185,14 @@ def collect():
 
 
 # ---------- 페이지 ----------
+# 공고를 옮겨 오지 않고 바로 가는 링크만 거는 곳 (약관상 퍼올 수 없는 곳도 링크는 괜찮습니다)
+MORE = [("원티드 디자인", "https://www.wanted.co.kr/wdlist/511"),
+        ("직행 디자인", "https://zighang.com/design"),
+        ("디자이너잡", "https://www.designerjob.co.kr"),
+        ("랠릿", "https://www.rallit.com"),
+        ("리멤버", "https://www.rememberapp.co.kr"),
+        ("Dribbble Jobs", "https://dribbble.com/jobs")]
+
 def row(j):
     posted = to_dt(j["posted"])
     when = f"{posted.month}. {posted.day}" if posted else ""
@@ -215,11 +223,14 @@ def build(groups, report):
     kr_skipped = any(r.startswith("사람인: 건너뜀") for r in report)
     used = [n for n, *_ in SOURCES if any(j["source"] == n for g in groups.values() for j in g)]
     credits = " · ".join(f'<a href="{CREDIT[n][1]}" target="_blank" rel="noopener">{CREDIT[n][0]}</a>' for n in used)
+    more = "".join(f'<a href="{u}" target="_blank" rel="noopener">{e(n)}</a>' for n, u in MORE)
     body = f"""    <section class="section">
 {section_head(title, sum(len(g) for g in groups.values()), f"{year}년 {week}주차 · 매주 월요일 갱신")}
       <p class="page__intro">{e(desc)}</p>
       <p class="ptext ptext--note">공고를 누르면 원래 올라온 곳으로 갑니다. 지원 조건과 마감은 원문에서 꼭 다시 확인하세요.
       채용 사이트 모음은 <a href="{SITE}jobs/">디자이너 채용 사이트</a>에 있습니다.</p>
+      <h2 class="psub">더 많은 디자이너 공고</h2>
+      <div class="page__navlinks">{more}</div>
     </section>
 {block("국내", "사람인 공개 API", groups["kr"],
        "국내 공고는 준비 중입니다." if kr_skipped else "이번 주에 새로 올라온 국내 공고를 가져오지 못했습니다.")}

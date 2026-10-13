@@ -255,6 +255,7 @@ const SITES = [
   { name: '잡코리아', url: 'https://www.jobkorea.co.kr', desc: '국내 대표 채용 사이트.', cat: 'job', tags: ['한국'] },
   { name: '로켓펀치', url: 'https://www.rocketpunch.com', desc: '스타트업 채용·비즈니스 네트워크.', cat: 'job', tags: ['한국'] },
   { name: '디자이너잡', url: 'https://www.designerjob.co.kr', desc: '디자이너 전문 채용 사이트.', cat: 'job', tags: ['한국'] },
+  { name: '직행', url: 'https://zighang.com', desc: '여러 채용 사이트와 기업 채용 페이지의 공고를 한곳에 모아 보여 줍니다. 디자인 직군만 따로 볼 수 있습니다.', cat: 'job', tags: ['한국'] },
   { name: '랠릿', url: 'https://www.rallit.com', desc: '인크루트의 IT·디자인 직군 채용 플랫폼.', cat: 'job', tags: ['한국'] },
   { name: '리멤버', url: 'https://www.rememberapp.co.kr', desc: '명함 앱 기반 경력직 채용 제안.', cat: 'job', tags: ['한국'] },
   { name: '잡플래닛', url: 'https://www.jobplanet.co.kr', desc: '기업 리뷰·연봉 정보. 지원 전 회사 분위기 확인.', cat: 'job', tags: ['한국'] },
