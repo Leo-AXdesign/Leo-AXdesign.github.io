@@ -1,6 +1,7 @@
 // 이 파일은 tools/build-articles.py 가 만듭니다. 직접 고치지 마세요.
 // 글은 content/articles/*.md 에서 고칩니다.
 const ARTICLES = [
+  { slug: "ai-draft-client-pixel-pusher", title: "클라이언트가 AI 시안을 보내며 \"이것만 다듬어 주세요\" 할 때", desc: "클라이언트와 상사가 챗GPT, 클로드로 만든 시안을 건네며 마무리만 부탁하는 일이 늘고 있다. 값은 깎이고 일은 그대로인 이 상황에서, 무엇이 남아 있는지 그림으로 정리하고 견적과 대화에 쓸 수 있는 순서를 담았다.", date: "2026-10-13", tag: "AI 디자인", min: 4, views: ["ai", "graphic"] },
   { slug: "ai-search-brand-visibility", title: "검색 결과 대신 AI의 답이 첫 화면이 될 때, 브랜드는 어떻게 보이나", desc: "히드로 공항이 어도비와 손잡고 AI 답변 속에 자기 브랜드가 어떻게 언급되는지 재기 시작했다. 여행자 넷 중 하나가 AI로 정보를 찾는다는 지금, 브랜드를 다루는 디자이너가 챙길 것을 그림과 표로 정리했다.", date: "2026-10-12", tag: "AI 디자인", min: 3, views: ["ai", "graphic"] },
   { slug: "macos-27-ai-off-switch", title: "맥에서 AI를 한 번에 끄는 스위치가 사라졌다, '끄는 버튼'도 디자인이다", desc: "macOS 27에서 애플 인텔리전스를 통째로 끄던 스위치가 없어졌다. 사용자들은 외부 도구까지 만들어 AI를 지우고 있다. 무엇이 바뀌었는지, 디자이너의 맥에서는 무엇을 확인할지, AI 기능을 설계하는 사람에게 남는 질문을 정리했다.", date: "2026-10-11", tag: "AI 디자인", min: 3, views: ["ai", "uiux"] },
   { slug: "fanta-ai-halloween-campaign", title: "댓글은 'AI 슬롭', 조사는 호평. 환타의 AI 할로윈 캠페인이 남긴 것", desc: "환타가 AI 스튜디오와 만든 할로윈 캠페인이 온라인에서 혹평을 받고 있다. 그런데 소비자 조사 숫자는 반대로 나왔다. 누가 무엇을 했는지, 왜 반응이 갈렸는지, 브랜드 일을 하는 디자이너가 챙길 것을 정리했다.", date: "2026-10-10", tag: "AI 디자인", min: 3, views: ["ai", "graphic"] },

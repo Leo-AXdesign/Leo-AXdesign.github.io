@@ -1610,12 +1610,183 @@ def aisearch(lang, wide):
     return wrap(W, round(y + pad), t["title"], t["desc"], out)
 
 
+# =========================================================
+# 16. AI 시안 아래에 남은 일 (2026-10-13 'AI 시안 다듬기' 글)
+# =========================================================
+ICEBERG = {
+    "ko": {
+        "title": "\"이것만 다듬어 주세요\" 아래에 남은 일",
+        "sub": "클라이언트가 AI로 만든 시안을 보낼 때. 개념도",
+        "top_head": "보이는 부분",
+        "top": "AI가 만든 그림 한 장",
+        "water": "수면",
+        "below_head": "실제로 남은 일",
+        "below": [("권리 확인", "상업적으로 써도 되나, 닮은 로고·인물은 없나"),
+                  ("다시 만들기", "해상도, 벡터, 레이어. 고칠 수 있는 파일로"),
+                  ("글자 다시 짜기", "AI가 그린 글자는 대개 쓸 수 없다"),
+                  ("브랜드 맞추기", "색·서체·간격을 가이드에 맞게"),
+                  ("매체별 파일", "인쇄·웹·SNS 크기와 형식"),
+                  ("수정 대응", "\"조금만 더\"가 몇 번 오갈지")],
+        "source": "출처: Fast Company(2026. 10. 12) 디자이너 인터뷰를 바탕으로 정리",
+        "desc": "클라이언트가 보낸 AI 시안은 결과물의 일부만 보여 준다. 그 아래에는 권리 확인, 고칠 수 있는 파일로 다시 만들기, 글자 다시 짜기, 브랜드 맞추기, 매체별 파일, 수정 대응이 남아 있다.",
+    },
+    "en": {
+        "title": "What sits under \"just polish this\"",
+        "sub": "When a client sends an AI-made draft. A sketch",
+        "top_head": "What you see",
+        "top": "One AI-generated image",
+        "water": "Waterline",
+        "below_head": "The work that's left",
+        "below": [("Rights check", "Can it be used commercially? Lookalike logos or people?"),
+                  ("Rebuild", "Resolution, vectors, layers. An editable file"),
+                  ("Reset the type", "AI-drawn lettering is usually unusable"),
+                  ("Match the brand", "Color, type and spacing per the guide"),
+                  ("Files per medium", "Print, web and social sizes and formats"),
+                  ("Revisions", "How many rounds of \"just a bit more\"")],
+        "source": "Source: based on designer interviews in Fast Company (Oct 12, 2026)",
+        "desc": "An AI draft from a client shows only part of the finished work. Below it: checking rights, rebuilding as an editable file, resetting type, matching the brand, preparing files per medium, and handling revisions.",
+    },
+}
+
+
+def iceberg(lang, wide):
+    t = ICEBERG[lang]
+    if wide:
+        W, pad, ts, ss, hs, fs, ds = 1200, 40, 30, 19, 21, 18, 16
+    else:
+        W, pad, ts, ss, hs, fs, ds = 600, 32, 34, 21, 23, 20, 17
+    out, y = [], pad + ts
+    out.append(text(pad, y, t["title"], ts if wide or lang == "ko" else ts - 6, weight=800))
+    y += ss + 12
+    out.append(text(pad, y, t["sub"], ss, MUTED))
+    y += 40
+    cx = W / 2
+    # 물 위: 작은 카드 (AI 시안)
+    cw, chh = (360, 120) if wide else (300, 110)
+    out.append(text(pad, y + 20, t["top_head"], hs, INK, 800))
+    cy = y + 36
+    out.append(f'<rect x="{cx - cw / 2}" y="{cy}" width="{cw}" height="{chh}" rx="10" fill="{SOFT}" stroke="{INK}" stroke-width="2"/>')
+    out.append(f'<circle cx="{cx + cw * 0.28}" cy="{cy + chh * 0.32}" r="{chh * 0.13}" fill="{RULE}"/>')
+    out.append(f'<path d="M{cx - cw / 2 + 2} {cy + chh - 2}L{cx - cw * 0.15} {cy + chh * 0.45}L{cx + cw * 0.05} {cy + chh * 0.7}L{cx + cw * 0.22} {cy + chh * 0.55}L{cx + cw / 2 - 2} {cy + chh - 2}Z" fill="{RULE}"/>')
+    out.append(text(cx, cy + chh + fs + 12, t["top"], fs, BODY, 700, "middle"))
+    # 수면
+    wy = cy + chh + fs + 40
+    out.append(f'<path d="M{pad} {wy}' + "".join(f'q{15} {-8} {30} 0' for _ in range(int((W - pad * 2) / 30))) + f'" fill="none" stroke="{INK}" stroke-width="2"/>')
+    out.append(text(W - pad, wy - 10, t["water"], ds - 2, MUTED, 400, "end"))
+    # 물 아래: 큰 덩어리
+    y = wy + 30
+    out.append(text(pad, y + 20, t["below_head"], hs, INK, 800))
+    y += 40
+    items = t["below"]
+    if wide:
+        cols, gap, bh = 3, 18, 104
+    else:
+        cols, gap, bh = 1, 12, 92
+    bw = (W - pad * 2 - gap * (cols - 1)) / cols
+    for i, (head, body) in enumerate(items):
+        bx = pad + (i % cols) * (bw + gap)
+        by = y + (i // cols) * (bh + gap)
+        out.append(f'<rect x="{bx}" y="{by}" width="{bw}" height="{bh}" rx="12" fill="{INK}"/>')
+        out.append(text(bx + 20, by + 36, head, fs, BG, 800))
+        # 설명은 폭에 맞게 두 줄까지
+        limit = int((bw - 40) / (ds * (0.98 if lang == "ko" else 0.52)))
+        words, lines, cur = body.split(" "), [], ""
+        for w_ in words:
+            if len(cur) + len(w_) + 1 > limit and cur:
+                lines.append(cur); cur = w_
+            else:
+                cur = (cur + " " + w_).strip()
+        lines.append(cur)
+        for k, line in enumerate(lines[:2]):
+            out.append(text(bx + 20, by + 64 + k * (ds + 8), line, ds - 1, RULE))
+    rows = -(-len(items) // cols)
+    y += rows * (bh + gap) + 30
+    out.append(f'<line x1="{pad}" y1="{y - 14}" x2="{W - pad}" y2="{y - 14}" stroke="{RULE}" stroke-width="1"/>')
+    y += 14
+    out.append(text(pad, y, t["source"], (ss - 3) if wide else (ss - 6), MUTED))
+    return wrap(W, round(y + pad), t["title"], t["desc"], out)
+
+
+# =========================================================
+# 17. AI 시안을 받았을 때 네 단계 (2026-10-13 'AI 시안 다듬기' 글)
+# =========================================================
+AISTEPS = {
+    "ko": {
+        "title": "AI 시안을 받았을 때, 네 단계",
+        "sub": "견적을 내기 전에 정리해 두면 좋은 순서",
+        "steps": [("확인", ["어느 AI로 만들었나", "상업적 이용이 되나", "닮은 게 없나"]),
+                  ("나누기", ["살릴 것: 방향·분위기", "다시 할 것: 글자·로고", "새로 할 것: 파일·매체"]),
+                  ("견적", ["시간이 아니라", "남은 일 목록으로", "수정 횟수도 적기"]),
+                  ("기록", ["무엇을 받아", "무엇을 만들었는지", "메일 한 통으로 남기기"])],
+        "source": "이 글에서 정리한 순서",
+        "desc": "클라이언트가 AI 시안을 보내면 먼저 어느 AI로 만들었는지와 상업적 이용 가능 여부를 확인하고, 살릴 것과 다시 할 것을 나누고, 남은 일 목록으로 견적을 낸 뒤, 주고받은 내용을 기록으로 남긴다.",
+    },
+    "en": {
+        "title": "Four steps when an AI draft arrives",
+        "sub": "A useful order before you quote",
+        "steps": [("Check", ["Which AI made it", "Commercial use allowed?", "Any lookalikes?"]),
+                  ("Split", ["Keep: direction, mood", "Redo: type, logo", "New: files, formats"]),
+                  ("Quote", ["Not by hours", "but by the list of work", "Include revision rounds"]),
+                  ("Record", ["What you received", "and what you made,", "in one email"])],
+        "source": "The order laid out in this article",
+        "desc": "When a client sends an AI draft: check which AI made it and whether commercial use is allowed, split what to keep from what to redo, quote by the list of remaining work, then record it all in writing.",
+    },
+}
+
+
+def aisteps(lang, wide):
+    t = AISTEPS[lang]
+    if wide:
+        W, pad, ts, ss, hs, fs = 1200, 40, 30, 19, 21, 16
+    else:
+        W, pad, ts, ss, hs, fs = 600, 32, 34, 21, 24, 19
+    out, y = [], pad + ts
+    out.append(text(pad, y, t["title"], ts if wide or lang == "ko" else ts - 4, weight=800))
+    y += ss + 12
+    out.append(text(pad, y, t["sub"], ss, MUTED))
+    y += 40
+    n = len(t["steps"])
+    if wide:
+        gap = 44
+        bw = (W - pad * 2 - gap * (n - 1)) / n
+        bh = 200
+        for i, (head, body) in enumerate(t["steps"]):
+            bx = pad + i * (bw + gap)
+            out.append(f'<rect x="{bx}" y="{y}" width="{bw}" height="{bh}" rx="14" fill="{BG}" stroke="{INK}" stroke-width="1.5"/>')
+            out.append(badge(bx + 26, y + 30, str(i + 1)))
+            out.append(text(bx + 50, y + 37, head, hs, INK, 800))
+            for k, line in enumerate(body):
+                out.append(text(bx + 22, y + 84 + k * (fs + 14), line, fs, BODY))
+            if i < n - 1:
+                ax = bx + bw + 8
+                out.append(f'<path d="M{ax} {y + bh / 2}h{gap - 18}m-8 -7l8 7l-8 7" fill="none" stroke="{INK}" stroke-width="2"/>')
+        y += bh + 50
+    else:
+        bh = 150
+        for i, (head, body) in enumerate(t["steps"]):
+            out.append(f'<rect x="{pad}" y="{y}" width="{W - pad * 2}" height="{bh}" rx="14" fill="{BG}" stroke="{INK}" stroke-width="1.5"/>')
+            out.append(badge(pad + 28, y + 30, str(i + 1)))
+            out.append(text(pad + 54, y + 38, head, hs, INK, 800))
+            for k, line in enumerate(body):
+                out.append(text(pad + 26, y + 74 + k * (fs + 8), line, fs, BODY))
+            y += bh
+            if i < n - 1:
+                out.append(f'<path d="M{W / 2} {y + 6}v22m-7 -8l7 8l7 -8" fill="none" stroke="{INK}" stroke-width="2"/>')
+                y += 34
+        y += 50
+    out.append(f'<line x1="{pad}" y1="{y - 14}" x2="{W - pad}" y2="{y - 14}" stroke="{RULE}" stroke-width="1"/>')
+    y += 14
+    out.append(text(pad, y, t["source"], (ss - 3) if wide else (ss - 4), MUTED))
+    return wrap(W, round(y + pad), t["title"], t["desc"], out)
+
+
 FIGS = {"openai-app-platforms": timeline, "chatgpt-plugin-extensions": scheme,
         "shopify-canvas-compare": canvas_compare, "design-md-anatomy": designmd,
         "image-edit-drift": drift, "flux3-bbox-layout": bbox, "instructmesh-flow": meshflow,
         "chatgpt-image-ad": adspot, "chatgpt-ads-timeline": adtime, "kling4-keyframes": keys,
         "week-1001-1006": week, "artcraft-suite": artcraft,
         "fanta-who-did-what": fanta, "macos27-ai-switch": macsw, "ai-search-brand": aisearch,
+        "ai-draft-iceberg": iceberg, "ai-draft-steps": aisteps,
         "intelligent-ui-answer": iui, "ui-rules-owner": rules}
 
 if __name__ == "__main__":

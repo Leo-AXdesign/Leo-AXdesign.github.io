@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 753" role="img" aria-labelledby="t d">
+  <title id="t">What sits under &quot;just polish this&quot;</title>
+  <desc id="d">An AI draft from a client shows only part of the finished work. Below it: checking rights, rebuilding as an editable file, resetting type, matching the brand, preparing files per medium, and handling revisions.</desc>
+  <rect width="1200" height="753" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="40" y="70" font-size="30" font-weight="800" fill="#111111" text-anchor="start">What sits under &quot;just polish this&quot;</text>
+    <text x="40" y="101" font-size="19" font-weight="400" fill="#6B6B6B" text-anchor="start">When a client sends an AI-made draft. A sketch</text>
+    <text x="40" y="161" font-size="21" font-weight="800" fill="#111111" text-anchor="start">What you see</text>
+    <rect x="420.0" y="177" width="360" height="120" rx="10" fill="#F2F2F2" stroke="#111111" stroke-width="2"/>
+    <circle cx="700.8" cy="215.4" r="15.600000000000001" fill="#D9D9D9"/>
+    <path d="M422.0 295L546.0 231.0L618.0 261.0L679.2 243.0L778.0 295Z" fill="#D9D9D9"/>
+    <text x="600.0" y="327" font-size="18" font-weight="700" fill="#444444" text-anchor="middle">One AI-generated image</text>
+    <path d="M40 355q15 -8 30 0q15 -8 30 0q15 -8 30 0q15 -8 30 0q15 -8 30 0q15 -8 30 0q15 -8 30 0q15 -8 30 0q15 -8 30 0q15 -8 30 0q15 -8 30 0q15 -8 30 0q15 -8 30 0q15 -8 30 0q15 -8 30 0q15 -8 30 0q15 -8 30 0q15 -8 30 0q15 -8 30 0q15 -8 30 0q15 -8 30 0q15 -8 30 0q15 -8 30 0q15 -8 30 0q15 -8 30 0q15 -8 30 0q15 -8 30 0q15 -8 30 0q15 -8 30 0q15 -8 30 0q15 -8 30 0q15 -8 30 0q15 -8 30 0q15 -8 30 0q15 -8 30 0q15 -8 30 0q15 -8 30 0" fill="none" stroke="#111111" stroke-width="2"/>
+    <text x="1160" y="345" font-size="14" font-weight="400" fill="#6B6B6B" text-anchor="end">Waterline</text>
+    <text x="40" y="405" font-size="21" font-weight="800" fill="#111111" text-anchor="start">The work that&#x27;s left</text>
+    <rect x="40.0" y="425" width="361.3333333333333" height="104" rx="12" fill="#111111"/>
+    <text x="60.0" y="461" font-size="18" font-weight="800" fill="#FFFFFF" text-anchor="start">Rights check</text>
+    <text x="60.0" y="489" font-size="15" font-weight="400" fill="#D9D9D9" text-anchor="start">Can it be used commercially? Lookalike</text>
+    <text x="60.0" y="513" font-size="15" font-weight="400" fill="#D9D9D9" text-anchor="start">logos or people?</text>
+    <rect x="419.3333333333333" y="425" width="361.3333333333333" height="104" rx="12" fill="#111111"/>
+    <text x="439.3333333333333" y="461" font-size="18" font-weight="800" fill="#FFFFFF" text-anchor="start">Rebuild</text>
+    <text x="439.3333333333333" y="489" font-size="15" font-weight="400" fill="#D9D9D9" text-anchor="start">Resolution, vectors, layers. An</text>
+    <text x="439.3333333333333" y="513" font-size="15" font-weight="400" fill="#D9D9D9" text-anchor="start">editable file</text>
+    <rect x="798.6666666666666" y="425" width="361.3333333333333" height="104" rx="12" fill="#111111"/>
+    <text x="818.6666666666666" y="461" font-size="18" font-weight="800" fill="#FFFFFF" text-anchor="start">Reset the type</text>
+    <text x="818.6666666666666" y="489" font-size="15" font-weight="400" fill="#D9D9D9" text-anchor="start">AI-drawn lettering is usually unusable</text>
+    <rect x="40.0" y="547" width="361.3333333333333" height="104" rx="12" fill="#111111"/>
+    <text x="60.0" y="583" font-size="18" font-weight="800" fill="#FFFFFF" text-anchor="start">Match the brand</text>
+    <text x="60.0" y="611" font-size="15" font-weight="400" fill="#D9D9D9" text-anchor="start">Color, type and spacing per the guide</text>
+    <rect x="419.3333333333333" y="547" width="361.3333333333333" height="104" rx="12" fill="#111111"/>
+    <text x="439.3333333333333" y="583" font-size="18" font-weight="800" fill="#FFFFFF" text-anchor="start">Files per medium</text>
+    <text x="439.3333333333333" y="611" font-size="15" font-weight="400" fill="#D9D9D9" text-anchor="start">Print, web and social sizes and</text>
+    <text x="439.3333333333333" y="635" font-size="15" font-weight="400" fill="#D9D9D9" text-anchor="start">formats</text>
+    <rect x="798.6666666666666" y="547" width="361.3333333333333" height="104" rx="12" fill="#111111"/>
+    <text x="818.6666666666666" y="583" font-size="18" font-weight="800" fill="#FFFFFF" text-anchor="start">Revisions</text>
+    <text x="818.6666666666666" y="611" font-size="15" font-weight="400" fill="#D9D9D9" text-anchor="start">How many rounds of &quot;just a bit more&quot;</text>
+    <line x1="40" y1="685" x2="1160" y2="685" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="40" y="713" font-size="16" font-weight="400" fill="#6B6B6B" text-anchor="start">Source: based on designer interviews in Fast Company (Oct 12, 2026)</text>
+  </g>
+</svg>
