@@ -276,6 +276,8 @@ def reel_tour(set_id):
             shot = pathlib.Path(tmp) / f"s{i}.png"
             clips.append(pathlib.Path(tmp) / f"c{i:02d}.mp4")
             try:
+                if c.get("tour") == "card":   # 팝업 등으로 화면이 지저분한 사이트는 카드로 보여 줍니다
+                    raise RuntimeError("SETS 에서 카드로 보여 주도록 지정함")
                 capture(s["url"], shot)
                 durs.append(4.6)
                 scroll_clip(hdr, shot, 4.6, clips[-1])
