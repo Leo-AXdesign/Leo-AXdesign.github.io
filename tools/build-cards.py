@@ -38,6 +38,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "social" / "cards"
 SITE = "https://designrefs.com/"
 SIZE = (1080, 1350)
+CNT = D.counts()  # 카테고리별 사이트 수
 e = html.escape
 
 SETS = {
@@ -74,6 +75,51 @@ SETS = {
              "sub": "저장해 두면 필요할 때 바로 꺼내 볼 수 있어요"},
         ],
         "tags": ["디자인레퍼런스", "디자이너", "폰트추천", "타이포그래피", "그래픽디자인"],
+    },
+
+    "colors-pick": {
+        "title": "컬러 막힐 때 열어 볼 사이트 5",
+        "cards": [
+            {"kind": "cover", "title": "컬러 막힐 때\n열어 볼\n사이트 5", "sub": "뽑고, 입혀 보고, 단계 만들고, 검사까지"},
+            {"kind": "site", "name": "Coolors", "when": "일단 팔레트를 빠르게 여러 개 뽑아 볼 때"},
+            {"kind": "site", "name": "Realtime Colors", "when": "고른 색을 실제 웹 화면에 입혀 보고 싶을 때"},
+            {"kind": "site", "name": "UI Colors", "when": "브랜드 색 하나로 50~950 단계를 만들 때"},
+            {"kind": "site", "name": "WebAIM Contrast Checker", "when": "글자색과 배경색 대비가 충분한지 확인할 때"},
+            {"kind": "site", "name": "Color Leap", "when": "시대 분위기가 나는 색 조합이 필요할 때"},
+            {"kind": "outro", "title": f"컬러 사이트 {CNT['color']}곳,\n한 페이지에 모아 뒀어요", "url": "designrefs.com/color",
+             "sub": "저장해 두면 필요할 때 바로 꺼내 볼 수 있어요"},
+        ],
+        "tags": ["디자인레퍼런스", "디자이너", "컬러팔레트", "배색", "UI디자인"],
+    },
+
+    "mockups-pick": {
+        "title": "포트폴리오 목업, 이 다섯 곳이면 충분해요",
+        "cards": [
+            {"kind": "cover", "title": "포트폴리오 목업,\n이 다섯 곳이면\n충분해요", "sub": "이미지부터 영상, 앱스토어 이미지까지"},
+            {"kind": "site", "name": "Shots", "when": "스크린샷 한 장을 바로 목업으로 만들 때"},
+            {"kind": "site", "name": "Mockuuups Studio", "when": "여러 장면에 한 번에 입혀 보고 싶을 때"},
+            {"kind": "site", "name": "Rotato", "when": "기기가 돌아가는 목업 영상이 필요할 때"},
+            {"kind": "site", "name": "Previewed", "when": "앱스토어용 소개 이미지를 만들 때"},
+            {"kind": "site", "name": "Mockups-Design", "when": "포토샵으로 직접 다듬을 무료 PSD가 필요할 때"},
+            {"kind": "outro", "title": f"목업 사이트 {CNT['mockup']}곳,\n한 페이지에 모아 뒀어요", "url": "designrefs.com/mockups",
+             "sub": "저장해 두면 필요할 때 바로 꺼내 볼 수 있어요"},
+        ],
+        "tags": ["디자인레퍼런스", "디자이너", "목업", "포트폴리오", "UXUI"],
+    },
+
+    "ai-ui-tools": {
+        "title": "프롬프트로 화면 시안 뽑는 AI 툴 5",
+        "cards": [
+            {"kind": "cover", "title": "프롬프트로\n화면 시안 뽑는\nAI 툴 5", "sub": "어디까지 되는지, 언제 쓰면 좋은지"},
+            {"kind": "site", "name": "Google Stitch", "when": "말로 설명한 화면을 피그마로 가져가고 싶을 때"},
+            {"kind": "site", "name": "Figma Make", "when": "피그마 안에서 눌러 볼 수 있는 시안이 필요할 때"},
+            {"kind": "site", "name": "Relume", "when": "사이트맵과 와이어프레임부터 잡을 때"},
+            {"kind": "site", "name": "v0", "when": "개발자에게 넘길 컴포넌트 코드까지 보고 싶을 때"},
+            {"kind": "site", "name": "Uizard", "when": "손 스케치를 화면 초안으로 바꿀 때"},
+            {"kind": "outro", "title": f"AI 디자인 툴 {CNT['ai']}곳,\n쓰임새별로 모아 뒀어요", "url": "designrefs.com/ai",
+             "sub": "이미지·영상·UI·코드까지 한 페이지에"},
+        ],
+        "tags": ["디자인레퍼런스", "디자이너", "AI디자인", "UIUX", "AI툴"],
     },
 
     # D. 용어 사전: 타이포 기본 넷
@@ -221,8 +267,12 @@ def article_set(slug):
     now = re.search(r"## 그래서 지금은\n(.*?)(\n\n[^\d]|\Z)", body, re.S)
     if now:
         points = []
-        for m in re.finditer(r"^\d+\.\s+\*\*(.+?)\*\*\s*(.*)$", now.group(1), re.M):
-            points.append((m.group(1).rstrip(".").strip(), first_sentence(m.group(2))))
+        for m in re.finditer(r"^\d+\.\s+(.*)$", now.group(1), re.M):
+            b = re.match(r"\*\*(.+?)\*\*\s*(.*)$", m.group(1))
+            if b:   # "1. **굵은 제목.** 설명" 꼴
+                points.append((b.group(1).rstrip(".").strip(), first_sentence(b.group(2))))
+            else:   # 굵은 제목 없이 문장만 있는 순서 목록
+                points.append((first_sentence(m.group(1), 40) or plain(m.group(1))[:40], ""))
         if points:
             cards.append({"kind": "tip", "title": "그래서 지금은", "points": points[:3]})
     cards.append({"kind": "outro", "title": "전문은 프로필 링크에서\n읽을 수 있어요", "url": "designrefs.com",
