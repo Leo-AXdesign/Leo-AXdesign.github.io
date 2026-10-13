@@ -210,7 +210,7 @@ PRIVACY = f"""
     브라우저 설정에서 쿠키를 차단하시면 됩니다.</p>
 
     <h2 class="psub">3. 광고</h2>
-    <p class="ptext">향후 이 사이트에 구글 애드센스 광고가 게재될 수 있습니다.
+    <p class="ptext">이 사이트에는 구글 애드센스 광고가 게재됩니다.
     구글을 비롯한 제3자 광고 사업자는 쿠키를 사용해 이용자의 이전 방문 기록을 바탕으로 광고를 게재할 수 있습니다.
     맞춤 광고를 원하지 않으시면 <a href="https://myadcenter.google.com" target="_blank" rel="noopener">구글 광고 설정</a>에서 끌 수 있습니다.</p>
 

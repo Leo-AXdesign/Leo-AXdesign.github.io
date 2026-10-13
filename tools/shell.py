@@ -160,8 +160,8 @@ def document(*, title, desc, url, body, jsonld, og_type="website",
   <link rel="icon" type="image/svg+xml" href="{SITE}favicon.svg" />
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
   <link rel="stylesheet" href="{SITE}css/style.css" />
-  <!-- 구글 애드센스: 승인 신청 시 아래 주석을 풀고 ca-pub- 번호를 채우세요. -->
-  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+  <!-- 구글 애드센스 -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5831827822584395" crossorigin="anonymous"></script>
 
   <!-- Google Analytics (GA4) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>
