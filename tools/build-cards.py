@@ -20,7 +20,8 @@
 
 카드 종류
   cover   표지      title, sub
-  site    사이트    name (data.js 의 사이트 이름), when (선택: "이럴 때 좋아요" 한 줄)
+  site    사이트    name (data.js 의 사이트 이름), when (선택: "이럴 때 좋아요" 한 줄),
+                    tour (선택: "card" 면 릴스 투어에서 화면 대신 카드를 보여 줌)
   lead    요약      label, text
   figure  그림      src (articles/img 의 SVG 이름)
   term    용어      name (data.js 의 용어 이름)
@@ -66,7 +67,8 @@ SETS = {
         "title": "폰트 고를 때 북마크해 둘 사이트 5",
         "cards": [
             {"kind": "cover", "title": "폰트 고를 때\n북마크해 둘\n사이트 5", "sub": "찾고, 맞춰 보고, 크기 정하는 순서대로"},
-            {"kind": "site", "name": "WhatTheFont", "when": "레퍼런스 이미지 속 폰트가 궁금할 때"},
+            # 사이트에 큰 할인 팝업이 떠서 릴스 투어에서는 카드로 보여 줍니다
+            {"kind": "site", "name": "WhatTheFont", "when": "레퍼런스 이미지 속 폰트가 궁금할 때", "tour": "card"},
             {"kind": "site", "name": "Fonts In Use", "when": "이 폰트가 실제로 어디에 쓰였는지 보고 싶을 때"},
             {"kind": "site", "name": "Typewolf", "when": "비싼 폰트의 무료 대체재, 어울리는 조합을 찾을 때"},
             {"kind": "site", "name": "Wordmark", "when": "내 컴퓨터 폰트로 문구를 한 번에 비교할 때"},
