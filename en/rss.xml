@@ -6,7 +6,68 @@
     <atom:link href="https://designrefs.com/en/rss.xml" rel="self" type="application/rss+xml" />
     <description>Notes from a designer in Korea: working with AI, putting style into words, collecting references and design communities. Translated from Korean.</description>
     <language>en</language>
-    <lastBuildDate>Mon, 12 Oct 2026 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 13 Oct 2026 09:00:00 +0900</lastBuildDate>
+    <item>
+      <title>When a client sends an AI draft and says &quot;just polish this&quot;</title>
+      <link>https://designrefs.com/en/articles/ai-draft-client-pixel-pusher/</link>
+      <guid isPermaLink="true">https://designrefs.com/en/articles/ai-draft-client-pixel-pusher/</guid>
+      <pubDate>Tue, 13 Oct 2026 09:00:00 +0900</pubDate>
+      <category>AI Design</category>
+      <description>More clients and bosses are handing designers drafts made in ChatGPT or Claude and asking only for a finish. Rates go down while the work stays. A diagram of what&#x27;s actually left, and an order you can use for quotes and conversations.</description>
+      <content:encoded><![CDATA[    <p class="ptext">&quot;I roughed this out with AI. Could you just polish it up?&quot;</p>
+    <p class="ptext">Plenty of designers are getting emails like this. Attached is a logo, poster or landing page draft made in ChatGPT or Claude. And there&#x27;s usually one more line: &quot;Since it&#x27;s almost done, could you bring the price down a bit?&quot;</p>
+    <p class="ptext">On October 12, Fast Company covered this. It interviewed more than a dozen graphic designers, and many described something similar over the past year and a half. Clients send AI drafts and push rates down; at work, bosses hold up AI-made screens and say &quot;build it like this&quot;. Some designers who offered opinions were told &quot;ask ChatGPT&quot;, and some lost jobs after being told AI could do the work. The piece described designers being turned into &quot;pixel pushers&quot;.</p>
+    <p class="ptext"><strong>First, a disclaimer.</strong> This article draws on an interview-based report and a few surveys. There&#x27;s no precise statistic yet on how common this is. The diagrams and steps below are this site&#x27;s summary, based on what the designers in the report described.</p>
+    <h2 class="psub" id="s1">The &quot;almost done&quot; illusion</h2>
+    <p class="ptext">To a client, an AI draft looks close to finished. Plausible colors, plausible composition, plausible lettering. But actually using it leaves quite a lot of work.</p>
+    <figure class="art__fig">
+      <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/ai-draft-iceberg-en-m.svg" width="600" height="1115" /><img src="https://designrefs.com/articles/img/ai-draft-iceberg-en.svg" alt="What the client sees is one AI image. Underneath sit rights checks, rebuilding, type, brand, files per medium and revisions." width="1200" height="753" loading="lazy" decoding="async" /></picture>
+      <figcaption>What the client sees is one AI image. Underneath sit rights checks, rebuilding, type, brand, files per medium and revisions.</figcaption>
+    </figure>
+    <p class="ptext">A few points worth spelling out.</p>
+    <p class="ptext"><strong>The type usually has to be set from scratch.</strong> AI-drawn lettering is a picture. You can&#x27;t edit it, and non-Latin scripts break often. For a logo, it ends up being redrawn by hand.</p>
+    <p class="ptext"><strong>There are no files.</strong> AI gives you one image. No layers, no vectors, no print resolution. Using it on business cards, signage and social posts is no different from making it again.</p>
+    <p class="ptext"><strong>The rights check is still open.</strong> Can this image be used commercially? Does it resemble another brand&#x27;s logo or a real person? That&#x27;s covered in detail in <a href="https://designrefs.com/en/articles/ai-image-commercial-use/">Can you use AI-generated images in client work?</a></p>
+    <p class="ptext">What the AI draft did was settle &quot;this kind of feel&quot;. That&#x27;s useful, but in the whole design job it&#x27;s the front end.</p>
+    <h2 class="psub" id="s2">Is the work actually shrinking?</h2>
+    <p class="ptext">It&#x27;s not just a mood. Some numbers exist.</p>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th>Study</th><th>What it looked at</th><th>Result</th></tr></thead>
+      <tbody>
+        <tr><td>Harvard Business School and Imperial College research</td><td>Job posts on freelance platforms</td><td>Within eight months of image AI launching, image-related posts fell about 17%</td></tr>
+        <tr><td>Fast Company and AIGA pricing project</td><td>About 1,273 freelance designers and 150 hiring managers</td><td>Asked whether clients are replacing designers with AI. Detailed rate tables are paywalled</td></tr>
+        <tr><td>Envato State of AI in Creative Work 2026</td><td>1,780 creatives</td><td>Most say AI is already part of their toolkit</td></tr>
+      </tbody>
+    </table></div>
+    <p class="art__note">Sources: <a href="https://hbr.org/2024/11/research-how-gen-ai-is-already-impacting-the-labor-market" target="_blank" rel="noopener">HBR (research summary)</a>, <a href="https://www.fastcompany.com/91571502/freelance-design-pricing-transparency-project-report" target="_blank" rel="noopener">Fast Company pricing project</a>, <a href="https://elements.envato.com/learn/creative-ai-tools" target="_blank" rel="noopener">Envato</a>. Each has a different audience and questions, so they don&#x27;t compare side by side.</p>
+    <p class="ptext">The work that shrank was mostly simple and fast. Put the other way, the work below the waterline in the diagram, the part that needs judgment and accountability, is still a person&#x27;s job. The trouble is that clients rarely see it.</p>
+    <h2 class="psub" id="s3">How to answer a request to cut the price</h2>
+    <p class="ptext">&quot;AI did most of it, so it should be cheaper&quot; comes from pricing work by time. The image already exists, so it must take less time. So it&#x27;s better to answer not with time, but with the work that&#x27;s left.</p>
+    <figure class="art__fig">
+      <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/ai-draft-steps-en-m.svg" width="600" height="937" /><img src="https://designrefs.com/articles/img/ai-draft-steps-en.svg" alt="Handle an AI draft in four steps: check, split, quote and record." width="1200" height="445" loading="lazy" decoding="async" /></picture>
+      <figcaption>Handle an AI draft in four steps: check, split, quote and record.</figcaption>
+    </figure>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th>What the client says</th><th>You might answer</th></tr></thead>
+      <tbody>
+        <tr><td>&quot;It&#x27;s almost done, just polish it&quot;</td><td>&quot;The direction is good. I&#x27;ll show you what can be used as is and what needs rebuilding.&quot;</td></tr>
+        <tr><td>&quot;AI made it, so cheaper&quot;</td><td>&quot;I&#x27;ll quote by the work left, not by hours. Look at the list and drop what you don&#x27;t need.&quot;</td></tr>
+        <tr><td>&quot;Use this image as the logo&quot;</td><td>&quot;A logo needs to scale and clear trademark checks, so I&#x27;ll redraw it based on this.&quot;</td></tr>
+        <tr><td>&quot;ChatGPT said to do it this way&quot;</td><td>&quot;I&#x27;ll try that direction too. Then let&#x27;s put both side by side and pick.&quot;</td></tr>
+      </tbody>
+    </table></div>
+    <p class="art__note">Examples put together by this site. Adjust the tone to the situation and relationship.</p>
+    <p class="ptext">The key is not to dismiss the AI draft. A client showing the direction they want as a picture is actually helpful; it&#x27;s much faster than explaining in words. Just show, with a list of remaining work, that the picture is a starting point.</p>
+    <p class="ptext">It&#x27;s the same inside a company. When a boss holds up an AI-made screen, take it as a starting point, but separately note &quot;what I decided from here&quot;: what you changed and why. Over time, that becomes a record that the designer did more than push pixels.</p>
+    <h2 class="psub" id="s4">So, for now</h2>
+    <ol class="ptext-list">
+      <li><strong>Split the lines on your quote.</strong> Instead of &quot;design, one lot&quot;, list the remaining work line by line: rights check, resetting type, file prep, per-medium production, number of revision rounds. Clients can see what they&#x27;re paying for.</li>
+      <li><strong>Ask where the draft came from.</strong> Which AI made it, and whether that service allows commercial use. Keep it in an email so the designer isn&#x27;t left holding the problem later.</li>
+      <li><strong>Record what you changed.</strong> Save the original AI draft and the final work side by side. It&#x27;s useful for your portfolio and for the next quote negotiation.</li>
+    </ol>
+    <p class="ptext">How AI tools are actually used on the job is in <a href="https://designrefs.com/en/articles/ai-design-tools-in-practice/">AI design tools in practice</a>, and AI tools by use are under <a href="https://designrefs.com/en/#ai">AI design tools</a>.</p>
+    <p class="art__note">Sources: <a href="https://www.fastcompany.com/91621558/ai-pilled-bosses-and-clients-turning-designers-into-pixel-pushers" target="_blank" rel="noopener">Fast Company (Oct 12, 2026)</a>, <a href="https://www.fastcompany.com/91571502/freelance-design-pricing-transparency-project-report" target="_blank" rel="noopener">Fast Company pricing project</a>, <a href="https://hbr.org/2024/11/research-how-gen-ai-is-already-impacting-the-labor-market" target="_blank" rel="noopener">HBR</a>, <a href="https://elements.envato.com/learn/creative-ai-tools" target="_blank" rel="noopener">Envato</a>.</p>]]></content:encoded>
+    </item>
     <item>
       <title>When an AI answer replaces search results, how does your brand show up?</title>
       <link>https://designrefs.com/en/articles/ai-search-brand-visibility/</link>
