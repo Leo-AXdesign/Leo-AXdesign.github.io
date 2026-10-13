@@ -1,6 +1,6 @@
 # 디자인 허브 (Design Hub) 전체 내용
 
-> 출처: https://designrefs.com/ · 사이트 393개, 스타일 34가지, 트렌드 15가지, 용어 155개
+> 출처: https://designrefs.com/ · 사이트 394개, 스타일 34가지, 트렌드 15가지, 용어 155개
 
 ## UI/UX 레퍼런스
 
@@ -292,6 +292,7 @@
 - [잡코리아](https://www.jobkorea.co.kr): 국내 대표 채용 사이트.
 - [로켓펀치](https://www.rocketpunch.com): 스타트업 채용·비즈니스 네트워크.
 - [디자이너잡](https://www.designerjob.co.kr): 디자이너 전문 채용 사이트.
+- [직행](https://zighang.com): 여러 채용 사이트와 기업 채용 페이지의 공고를 한곳에 모아 보여 줍니다. 디자인 직군만 따로 볼 수 있습니다.
 - [랠릿](https://www.rallit.com): 인크루트의 IT·디자인 직군 채용 플랫폼.
 - [리멤버](https://www.rememberapp.co.kr): 명함 앱 기반 경력직 채용 제안.
 - [잡플래닛](https://www.jobplanet.co.kr): 기업 리뷰·연봉 정보. 지원 전 회사 분위기 확인.
