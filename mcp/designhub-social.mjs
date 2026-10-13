@@ -86,6 +86,22 @@ async function waitTh(id) {
 // ---------- 도구 ----------
 
 const TOOLS = {
+  card_sets: {
+    description: "디자인 허브가 미리 만들어 둔 인스타 카드뉴스 묶음 목록(이미지 주소, 캡션 초안)을 봅니다. 캐러셀을 올릴 때 먼저 이걸로 이미지 주소와 캡션을 가져오세요.",
+    schema: { type: "object", properties: { id: { type: "string", description: "선택: 묶음 id (예: fonts-pick). 비우면 전체 목록" } } },
+    run: async ({ id }) => {
+      const res = await fetch("https://designrefs.com/social/cards/index.json", { cache: "no-store" });
+      if (!res.ok) throw new Error(`카드 목록을 불러오지 못했습니다 (${res.status})`);
+      const { sets } = await res.json();
+      if (id) {
+        const s = sets.find((x) => x.id === id);
+        if (!s) throw new Error(`없는 묶음입니다: ${id}. 있는 것: ${sets.map((x) => x.id).join(", ")}`);
+        return s;
+      }
+      return sets.map(({ id, title, count }) => ({ id, title, count }));
+    },
+  },
+
   ig_profile: {
     description: "인스타그램 계정 정보(아이디, 이름, 팔로워, 게시물 수, 소개)를 봅니다.",
     schema: { type: "object", properties: {} },
@@ -234,7 +250,7 @@ async function handle(req) {
       return send({ id, result: {
         protocolVersion: params.protocolVersion || "2025-06-18",
         capabilities: { tools: {} },
-        serverInfo: { name: "designhub-social", version: "1.0.0" },
+        serverInfo: { name: "designhub-social", version: "1.1.0" },
       } });
     }
     if (method === "ping") return send({ id, result: {} });
