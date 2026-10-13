@@ -90,6 +90,10 @@
   .hist div { display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--line); }
   .hist time { color: var(--muted); flex: none; width: 110px; }
   .hist a { color: var(--ink); }
+  .btn--sm { padding: 6px 12px; font-size: 12px; }
+  .hist .cm { border: 0; background: none; padding: 0; font: inherit; font-size: 12px; color: var(--muted); text-decoration: underline; cursor: pointer; }
+  .hist .cmbox { display: block; border: 0; padding: 4px 0 10px; }
+  .hist .cmbox textarea { min-height: 90px; }
   .tabs { display: flex; gap: 4px; margin-left: 12px; }
   .tab { border: 0; background: none; padding: 8px 14px; border-radius: 999px; font-weight: 700; color: var(--muted); cursor: pointer; }
   .tab.on { background: var(--ink); color: #fff; }
@@ -213,14 +217,37 @@ async function load() {
     (r.type ? `<div class="reco__title">${esc(r.title)}</div><button class="btn" id="go">이걸로 만들기</button>`
             : `<div class="reco__note">${esc(r.note)}</div>`) + `</div>`;
   if (r.type) $("#go").onclick = () => { pick(r.type, r.source); doMake(); };
-  $("#hist").innerHTML = S.history.length ? S.history.slice(0, 12).map((h) =>
+  $("#hist").innerHTML = S.history.length ? S.history.slice(0, 12).map((h, i) =>
     `<div><time>${esc(h.at.replace("T", " "))}</time><span>${esc({ carousel: "캐러셀", reel: "릴스", thread: "스레드" }[h.type])} · ${esc(h.title)} ` +
-    Object.entries(h.links || {}).map(([k, v]) => v ? `<a href="${esc(v)}" target="_blank">${k === "instagram" ? "인스타" : "스레드"} ↗</a>` : "").join(" ") +
-    `</span></div>`).join("") : `<div style="color:var(--muted)">아직 없습니다.</div>`;
+    Object.entries(h.links || {}).map(([k, v]) => v ? `<a href="${esc(v)}" target="_blank">${k === "instagram" ? "인스타" : "스레드"} ↗</a>` +
+      ((h.ids || {})[k] ? ` <button class="cm" data-i="${i}" data-p="${k}">댓글</button>` : "") : "").join(" ") +
+    `</span></div><div class="cmbox" id="cm-${i}" hidden></div>`).join("") : `<div style="color:var(--muted)">아직 없습니다.</div>`;
+  document.querySelectorAll(".hist .cm").forEach((b) => b.onclick = () => openComment(+b.dataset.i, b.dataset.p));
   if (type) renderList();
 }
 
 const isDone = (key) => S.published.includes(key);
+
+function openComment(i, plat) {
+  const box = $("#cm-" + i), name = plat === "instagram" ? "인스타그램" : "스레드";
+  box.hidden = false;
+  box.innerHTML = `<textarea placeholder="${name} 게시물에 달 댓글${plat === "threads" ? " — '---' 한 줄로 나누면 차례로 이어 달아요" : ""}"></textarea>` +
+    `<div class="row" style="margin-top:6px"><button class="btn btn--dark btn--sm">${name}에 댓글 달기</button><button class="btn btn--sm">닫기</button><span class="msg" style="font-size:12px;color:var(--muted)"></span></div>`;
+  const [send, close] = box.querySelectorAll("button"), ta = box.querySelector("textarea"), msg = box.querySelector(".msg");
+  ta.focus();
+  close.onclick = () => { box.hidden = true; box.innerHTML = ""; };
+  send.onclick = async () => {
+    if (!ta.value.trim()) return;
+    if (!confirm(`${name}에 공개 댓글로 답니다. 달면 되돌릴 수 없어요. 계속할까요?`)) return;
+    send.disabled = true; msg.textContent = "다는 중…";
+    try {
+      const r = await api("comment", { index: i, platform: plat, text: ta.value });
+      msg.innerHTML = `${esc(r.message)} ${r.link ? `<a href="${esc(r.link)}" target="_blank">보기 ↗</a>` : ""}`;
+      ta.value = "";
+    } catch (e) { msg.textContent = e.message; }
+    send.disabled = false;
+  };
+}
 
 function options() {
   if (type === "carousel") {
@@ -293,6 +320,8 @@ function showPreview() {
     `${m.published ? " · <b>이미 올린 적 있음</b>" : ""}</div>${media}` +
     (isIG ? `<label class="f">인스타 캡션</label><textarea id="cap">${esc(m.caption)}</textarea><div class="count" id="capc"></div>` +
             `<div class="ask"><input class="inp" id="req-caption" placeholder="수정 요청: 예) 첫 줄을 질문으로, 해시태그는 3개만" /><button class="btn btn--dark" data-edit="caption">수정본 받기</button><button class="btn" data-copy="caption">데스크톱에 보낼 문장 복사 (무료)</button></div><div id="ai-caption"></div>` +
+            `<label class="f">첫 댓글 <span style="font-weight:400;color:var(--muted)">— 캡션의 링크는 눌리지 않아서 주소·출처를 댓글로 따로 달아요. 비우면 달지 않아요</span></label>` +
+            `<textarea id="cmt" style="min-height:140px">${esc(m.comment || "")}</textarea><div class="count" id="cmtc"></div>` +
             `<div class="also"><label class="check"><input type="checkbox" id="also" /> 스레드에도 함께 알리기 (링크 미리보기 포함)</label>` +
             `<textarea id="thtext" hidden>${esc(thDefault)}</textarea><div class="count" id="thc" hidden></div></div>`
           : `<label class="f">올릴 계정</label><select class="inp" id="acct" style="width:auto">${S.accounts.filter((a) => a.connected).map((a) =>
@@ -306,6 +335,7 @@ function showPreview() {
     `<ul class="steps" id="steps"></ul><div id="res"></div>`;
   if (isIG) {
     counter($("#cap"), 2200, $("#capc"));
+    counter($("#cmt"), 2200, $("#cmtc"));
     $("#also").onchange = () => { $("#thtext").hidden = $("#thc").hidden = !$("#also").checked; };
   }
   if (isIG) counter($("#thtext"), 500, $("#thc"));
@@ -375,7 +405,7 @@ async function doPublish() {
   }
   if (!confirm(`${what} 공개로 올립니다. 올리면 되돌릴 수 없어요. 발행할까요?`)) return;
   const body = { type: m.type, id: m.id, title: m.title, link: isIG ? m.link : $("#link").value.trim(), draft: m.draft };
-  if (isIG) Object.assign(body, { caption: $("#cap").value, also_thread: $("#also").checked, thread_text: $("#thtext").value });
+  if (isIG) Object.assign(body, { caption: $("#cap").value, comment: $("#cmt").value, also_thread: $("#also").checked, thread_text: $("#thtext").value });
   else Object.assign(body, { text: $("#thtext").value, account: $("#acct").value });
   $("#pub").disabled = true;
   $("#steps").innerHTML = `<li><span class="spin"></span>시작합니다…</li>`;

@@ -220,6 +220,19 @@ def reel_info(rid):
     return next((r for r in idx["reels"] if r["id"] == rid), None)
 
 
+def info_comment(sid):
+    """인스타 첫 댓글 초안 (주소·출처). 묶음 목록에 없으면 그 자리에서 만듭니다."""
+    info = set_info(sid) or {}
+    if info.get("comment"):
+        return info["comment"]
+    try:
+        bc = _cards_module()
+        spec = bc.SETS.get(sid) or bc.article_set(sid.removeprefix("article-"))
+        return bc.comment(sid, spec)
+    except (Exception, SystemExit):
+        return ""
+
+
 def local(url):
     """공개 주소 → 이 화면에서 볼 수 있는 내 맥 주소"""
     return "/" + url.removeprefix(SITE) + f"?v={int(time.time())}"
@@ -238,7 +251,7 @@ def make(p):
         if not info:
             raise Oops("만든 캐러셀을 찾지 못했습니다.\n" + "\n".join(log))
         return {"ok": True, "type": kind, "id": sid, "title": info["title"], "caption": info["caption"],
-                "images": [local(u) for u in info["images"]], "link": info.get("article", SITE),
+                "images": [local(u) for u in info["images"]], "link": info.get("article", SITE), "comment": info_comment(sid),
                 "published": f"carousel:{sid}" in published_keys(), "log": "\n".join(log)}
     if kind == "reel":
         rid = source
@@ -262,6 +275,7 @@ def make(p):
             raise Oops("만든 릴스를 찾지 못했습니다.\n" + "\n".join(log))
         return {"ok": True, "type": kind, "id": rid, "title": info["title"], "caption": info["caption"],
                 "video": local(info["video"]), "cover": local(info["cover"]), "seconds": info["seconds"],
+                "comment": info_comment(rid.removesuffix("-cards").removesuffix("-tour")),
                 "link": SITE, "published": f"reel:{rid}" in published_keys(), "log": "\n".join(log)}
     if kind == "thread":
         if source.startswith("article:"):
@@ -363,7 +377,22 @@ def ig_publish(kind, info, caption, step):
                                                         "cover_url": info["cover"], "caption": caption, "share_to_feed": "true"})
     ig_wait(ig, parent["id"], step)
     post = meta(IG, ig, "POST", f"/{uid}/media_publish", {"creation_id": parent["id"]})
-    return meta(IG, ig, "GET", f"/{post['id']}", {"fields": "permalink"}).get("permalink", "")
+    return meta(IG, ig, "GET", f"/{post['id']}", {"fields": "permalink"}).get("permalink", ""), post["id"]
+
+
+def ig_comment(media_id, text):
+    ig, _ = tokens()
+    text = text.strip()
+    if not text:
+        raise Oops("댓글이 비어 있어요.")
+    if len(text) > 2200:
+        raise Oops("인스타 댓글은 2,200자까지입니다.")
+    try:
+        return meta(IG, ig, "POST", f"/{media_id}/comments", {"message": text})["id"]
+    except Oops as err:
+        if "ermission" in str(err) or "오류 10:" in str(err) or "오류 200:" in str(err):
+            raise Oops(f"{err}\n인스타 토큰에 댓글 권한(instagram_business_manage_comments)이 있어야 합니다. 메타 앱에서 권한을 켜고 토큰을 다시 받아 주세요.")
+        raise
 
 
 def split_posts(text):
@@ -379,7 +408,7 @@ def split_posts(text):
     return [x for x in parts if x]
 
 
-def th_publish(text, link, step, account=""):
+def th_publish(text, link, step, account="", reply_to=None):
     """글 하나, 또는 '---' 로 나눈 묶음(첫 글 + 이어지는 댓글)을 올립니다. 링크는 마지막 글에 붙입니다."""
     th = th_token(account)
     posts = split_posts(text)
@@ -391,14 +420,14 @@ def th_publish(text, link, step, account=""):
         if len(t) > 500:
             raise Oops(f"스레드 글은 500자까지입니다. {i}번째 글이 지금 {len(t)}자예요.")
     uid = meta(TH, th, "GET", "/me", {"fields": "id"})["id"]
-    first, prev = "", None
+    first, first_id, prev = "", None, reply_to
     for i, t in enumerate(posts, 1):
         params = {"media_type": "TEXT", "text": t}
         if link and i == len(posts):
             params["link_attachment"] = link
         if prev:
             params["reply_to_id"] = prev
-        step("스레드에 올리는 중" if len(posts) == 1 else f"스레드에 올리는 중 ({i}/{len(posts)}{' 첫 글' if i == 1 else ' 댓글'})")
+        step("스레드에 올리는 중" if len(posts) == 1 else f"스레드에 올리는 중 ({i}/{len(posts)}{' 첫 글' if i == 1 and not reply_to else ' 댓글'})")
         try:
             c = meta(TH, th, "POST", f"/{uid}/threads", params)
             for _ in range(30):
@@ -415,8 +444,9 @@ def th_publish(text, link, step, account=""):
             hint = " 댓글을 달려면 토큰에 threads_manage_replies 권한이 필요해요." if "권한" in str(err) or "ermission" in str(err) else ""
             raise Oops(f"첫 글부터 {i - 1}개까지 올렸고, {i}번째에서 멈췄습니다: {err}{hint}\n올라간 글: {first}")
         if i == 1:
+            first_id = prev
             first = meta(TH, th, "GET", f"/{prev}", {"fields": "permalink"}).get("permalink", "")
-    return first
+    return first, first_id
 
 
 def check_text(text):
@@ -429,7 +459,7 @@ def do_publish(job, p):
         job["steps"].append(msg)
 
     kind, rid = p["type"], p["id"]
-    links = {}
+    links, ids = {}, {}
     if kind in ("carousel", "reel"):
         info = set_info(rid) if kind == "carousel" else reel_info(rid)
         caption = p.get("caption", "").strip()
@@ -442,23 +472,29 @@ def do_publish(job, p):
         urls = info["images"] if kind == "carousel" else [info["video"], info["cover"]]
         wait_public(urls, step)
         step("2. 공개 주소 확인 완료. 인스타그램에 게시합니다.")
-        links["instagram"] = ig_publish(kind, info, caption, step)
+        links["instagram"], ids["instagram"] = ig_publish(kind, info, caption, step)
         step("인스타그램 게시 완료")
+        if p.get("comment", "").strip():
+            try:
+                ig_comment(ids["instagram"], p["comment"])
+                step("첫 댓글(정보) 달기 완료")
+            except Oops as err:   # 게시물은 이미 올라갔으니 멈추지 않고 알려만 줍니다
+                step(f"첫 댓글은 달지 못했어요 — 최근 발행의 '댓글' 버튼으로 다시 달 수 있어요. ({err})")
         if p.get("also_thread") and p.get("thread_text", "").strip():
             check_text(p["thread_text"])
-            links["threads"] = th_publish(p["thread_text"].strip(), p.get("link") or SITE, step)
+            links["threads"], ids["threads"] = th_publish(p["thread_text"].strip(), p.get("link") or SITE, step)
             step("스레드 게시 완료")
     elif kind == "thread":
         text = p.get("text", "").strip()
         if not text:
             raise Oops("올릴 글이 비어 있어요.")
         check_text(text)
-        links["threads"] = th_publish(text, p.get("link", ""), step, p.get("account", ""))
+        links["threads"], ids["threads"] = th_publish(text, p.get("link", ""), step, p.get("account", ""))
         step("스레드 게시 완료")
         if p.get("draft"):
             save_draft({"id": p["draft"], "text": text})
     add_history({"type": kind, "id": rid, "title": p.get("title", rid) + (f" (@{p['account']})" if p.get("account") and p["account"] != "designhub" else ""), "at": datetime.datetime.now().isoformat(timespec="minutes"),
-                 "links": links})
+                 "links": links, "ids": ids, "account": p.get("account") or "designhub"})
     job["links"] = links
 
 
@@ -627,7 +663,30 @@ def site_publish(p):
     return background(work)
 
 
-API = {"state": state, "make": make, "publish": publish, "job": job_status, "tour": tour, "save_draft": save_draft,
+def comment(p):
+    """올린 글에 댓글 달기. 인스타는 댓글 하나, 스레드는 '---' 로 나누면 차례로 이어 답니다."""
+    text = p.get("text", "").strip()
+    if not text:
+        raise Oops("댓글이 비어 있어요.")
+    check_text(text)
+    h = history()
+    i = int(p.get("index", -1))
+    if not 0 <= i < len(h):
+        raise Oops("발행 기록을 찾지 못했어요.")
+    item, plat = h[i], p.get("platform")
+    pid = (item.get("ids") or {}).get(plat)
+    if not pid:
+        raise Oops("이 기록에는 게시물 번호가 없어요. 이번 업데이트 뒤에 올린 글부터 댓글을 달 수 있어요.")
+    with LOCK:
+        if plat == "instagram":
+            ig_comment(pid, text)
+            return {"ok": True, "message": "인스타그램에 댓글을 달았어요.", "link": item["links"].get("instagram", "")}
+        steps = []
+        th_publish(text, "", steps.append, item.get("account", ""), reply_to=pid)
+        return {"ok": True, "message": f"스레드에 댓글 {len(split_posts(text))}개를 달았어요.", "link": item["links"].get("threads", "")}
+
+
+API = {"state": state, "comment": comment, "make": make, "publish": publish, "job": job_status, "tour": tour, "save_draft": save_draft,
        "coach_state": coach_state, "coach_key": coach_key, "coach_forget": coach_forget, "coach_article": coach_article,
        "coach_apply": coach_apply, "coach_post": coach_post, "site_publish": site_publish,
        "coach_edit_article": coach_edit_article, "coach_edit_post": coach_edit_post}
