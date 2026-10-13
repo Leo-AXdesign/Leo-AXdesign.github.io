@@ -39,6 +39,7 @@ TOKEN = secrets.token_urlsafe(24)
 CONF_DIR = pathlib.Path.home() / ".config" / "designhub"
 HISTORY = CONF_DIR / "studio-history.json"
 DRAFTS = CONF_DIR / "threads-drafts.json"          # 내가 고친 스레드 초안만 (id → 글)
+ACCOUNTS = pathlib.Path.home() / ".designhub" / "accounts.json"   # 더 연결한 스레드 계정 (add-threads-account.sh)
 CLAUDE_CONF = pathlib.Path.home() / "Library" / "Application Support" / "Claude" / "claude_desktop_config.json"
 CARDS = ROOT / "social" / "cards"
 REELS = ROOT / "social" / "reels"
@@ -127,9 +128,26 @@ def tokens():
     return "", ""
 
 
+def th_accounts():
+    """스레드 계정 목록: designhub(설정 파일) + accounts.json 에 연결한 계정"""
+    out = [{"id": "designhub", "label": "디자인 허브", "connected": bool(tokens()[1])}]
+    for k, a in read_json(ACCOUNTS, {}).items():
+        out.append({"id": k, "label": "@" + a["username"] if a.get("username") else k, "connected": bool(a.get("threads_token"))})
+    return out
+
+
+def th_token(account):
+    if not account or account == "designhub":
+        return tokens()[1]
+    a = read_json(ACCOUNTS, {}).get(account)
+    if not a or not a.get("threads_token"):
+        raise Oops(f"스레드 계정 '{account}' 이(가) 연결되지 않았습니다. 터미널에서 add-threads-account.sh 를 실행해 주세요.")
+    return a["threads_token"]
+
+
 def hide(text):
     s = str(text)
-    for t in tokens():
+    for t in [*tokens(), *(a.get("threads_token", "") for a in read_json(ACCOUNTS, {}).values())]:
         if t:
             s = s.replace(t, "[토큰]")
     return s
@@ -258,7 +276,7 @@ def make(p):
             if not d:
                 raise Oops("없는 초안입니다.")
             return {"ok": True, "type": kind, "id": source, "title": d["label"], "text": d["text"],
-                    "link": d.get("link", ""), "draft": d["id"], "published": f"thread:{source}" in published_keys()}
+                    "link": d.get("link", ""), "draft": d["id"], "account": d.get("account", ""), "published": f"thread:{source}" in published_keys()}
         return {"ok": True, "type": kind, "id": "custom:" + datetime.datetime.now().strftime("%Y%m%d%H%M%S"),
                 "title": "직접 쓰기", "text": "", "link": "", "published": False}
     raise Oops("무엇을 만들지 골라 주세요.")
@@ -348,25 +366,57 @@ def ig_publish(kind, info, caption, step):
     return meta(IG, ig, "GET", f"/{post['id']}", {"fields": "permalink"}).get("permalink", "")
 
 
-def th_publish(text, link, step):
-    _, th = tokens()
-    if len(text) > 500:
-        raise Oops(f"스레드 글은 500자까지입니다. 지금 {len(text)}자예요.")
+def split_posts(text):
+    """'---' 한 줄로 나눈 글 → [첫 글, 댓글 1, 댓글 2, …]"""
+    parts, cur = [], []
+    for line in text.strip().splitlines():
+        if line.strip() == "---":
+            parts.append("\n".join(cur).strip())
+            cur = []
+        else:
+            cur.append(line)
+    parts.append("\n".join(cur).strip())
+    return [x for x in parts if x]
+
+
+def th_publish(text, link, step, account=""):
+    """글 하나, 또는 '---' 로 나눈 묶음(첫 글 + 이어지는 댓글)을 올립니다. 링크는 마지막 글에 붙입니다."""
+    th = th_token(account)
+    posts = split_posts(text)
+    if not posts:
+        raise Oops("올릴 글이 비어 있어요.")
+    if len(posts) > 10:
+        raise Oops("한 번에 10개까지만 올릴 수 있어요.")
+    for i, t in enumerate(posts, 1):
+        if len(t) > 500:
+            raise Oops(f"스레드 글은 500자까지입니다. {i}번째 글이 지금 {len(t)}자예요.")
     uid = meta(TH, th, "GET", "/me", {"fields": "id"})["id"]
-    params = {"media_type": "TEXT", "text": text}
-    if link:
-        params["link_attachment"] = link
-    step("스레드에 올리는 중")
-    c = meta(TH, th, "POST", f"/{uid}/threads", params)
-    for _ in range(30):
-        s = meta(TH, th, "GET", f"/{c['id']}", {"fields": "status,error_message"})
-        if s.get("status") == "FINISHED":
-            break
-        if s.get("status") in ("ERROR", "EXPIRED"):
-            raise Oops(f"스레드가 글을 처리하지 못했습니다: {s.get('error_message') or s.get('status')}")
-        time.sleep(2)
-    post = meta(TH, th, "POST", f"/{uid}/threads_publish", {"creation_id": c["id"]})
-    return meta(TH, th, "GET", f"/{post['id']}", {"fields": "permalink"}).get("permalink", "")
+    first, prev = "", None
+    for i, t in enumerate(posts, 1):
+        params = {"media_type": "TEXT", "text": t}
+        if link and i == len(posts):
+            params["link_attachment"] = link
+        if prev:
+            params["reply_to_id"] = prev
+        step("스레드에 올리는 중" if len(posts) == 1 else f"스레드에 올리는 중 ({i}/{len(posts)}{' 첫 글' if i == 1 else ' 댓글'})")
+        try:
+            c = meta(TH, th, "POST", f"/{uid}/threads", params)
+            for _ in range(30):
+                s = meta(TH, th, "GET", f"/{c['id']}", {"fields": "status,error_message"})
+                if s.get("status") == "FINISHED":
+                    break
+                if s.get("status") in ("ERROR", "EXPIRED"):
+                    raise Oops(f"스레드가 글을 처리하지 못했습니다: {s.get('error_message') or s.get('status')}")
+                time.sleep(2)
+            prev = meta(TH, th, "POST", f"/{uid}/threads_publish", {"creation_id": c["id"]})["id"]
+        except Oops as err:
+            if i == 1:
+                raise
+            hint = " 댓글을 달려면 토큰에 threads_manage_replies 권한이 필요해요." if "권한" in str(err) or "ermission" in str(err) else ""
+            raise Oops(f"첫 글부터 {i - 1}개까지 올렸고, {i}번째에서 멈췄습니다: {err}{hint}\n올라간 글: {first}")
+        if i == 1:
+            first = meta(TH, th, "GET", f"/{prev}", {"fields": "permalink"}).get("permalink", "")
+    return first
 
 
 def check_text(text):
@@ -403,11 +453,11 @@ def do_publish(job, p):
         if not text:
             raise Oops("올릴 글이 비어 있어요.")
         check_text(text)
-        links["threads"] = th_publish(text, p.get("link", ""), step)
+        links["threads"] = th_publish(text, p.get("link", ""), step, p.get("account", ""))
         step("스레드 게시 완료")
         if p.get("draft"):
             save_draft({"id": p["draft"], "text": text})
-    add_history({"type": kind, "id": rid, "title": p.get("title", rid), "at": datetime.datetime.now().isoformat(timespec="minutes"),
+    add_history({"type": kind, "id": rid, "title": p.get("title", rid) + (f" (@{p['account']})" if p.get("account") and p["account"] != "designhub" else ""), "at": datetime.datetime.now().isoformat(timespec="minutes"),
                  "links": links})
     job["links"] = links
 
@@ -467,7 +517,8 @@ def recommend(sources):
                  for r in sources["reels"] if f"reel:{r['id']}" not in done]
         src = lambda c: c[0]
     else:
-        cands = [(f"draft:{d['id']}", d["label"]) for d in sources["drafts"] if f"thread:draft:{d['id']}" not in done]
+        cands = [(f"draft:{d['id']}", d["label"]) for d in sources["drafts"]
+                 if not d.get("account") and f"thread:draft:{d['id']}" not in done]
         src = lambda c: c[0]
     if not cands:
         return {"label": label, "note": "추천할 재료를 다 올렸어요. 새 글이나 묶음을 만들어 주세요."}
@@ -488,7 +539,7 @@ def state(_=None):
     sources = {"articles": articles(), "refs": refs, "reels": reel_opts, "drafts": drafts()}
     ig, th = tokens()
     return {"ok": True, **sources, "history": history()[:30], "published": sorted(published_keys()),
-            "tokens": {"instagram": bool(ig), "threads": bool(th)},
+            "tokens": {"instagram": bool(ig), "threads": bool(th)}, "accounts": th_accounts(),
             "tools": {"ffmpeg": bool(shutil.which("ffmpeg")), "gh": bool(shutil.which("gh"))},
             "recommend": recommend(sources)}
 

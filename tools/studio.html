@@ -206,6 +206,7 @@ async function load() {
   $("#chips").innerHTML =
     `<span class="chip ${t.instagram ? "on" : "off"}">인스타그램 ${t.instagram ? "연결됨" : "토큰 없음"}</span>` +
     `<span class="chip ${t.threads ? "on" : "off"}">스레드 ${t.threads ? "연결됨" : "토큰 없음"}</span>` +
+    S.accounts.filter((a) => a.id !== "designhub").map((a) => `<span class="chip ${a.connected ? "on" : "off"}">${esc(a.label)} 연결됨</span>`).join("") +
     `<span class="chip ${S.tools.ffmpeg ? "on" : ""}">${S.tools.ffmpeg ? "영상 도구 있음" : "영상 도구 없음 (brew install ffmpeg)"}</span>`;
   const r = S.recommend;
   $("#reco").innerHTML = `<div class="reco"><div class="reco__label">오늘의 추천 · ${esc(r.label)}</div>` +
@@ -230,13 +231,16 @@ function options() {
     s: (r.id.endsWith("-tour") ? "사이트 투어" : "카드 넘김") + (r.seconds ? ` · ${r.seconds}초` : " · 새로 만들기"), done: isDone("reel:" + r.id) }));
   if (sub === "article") return S.articles.map((a) => ({ src: "article:" + a.slug, t: a.title, s: a.date + " · 제목과 요약 + 링크", done: isDone("thread:article:" + a.slug) }));
   if (sub === "custom") return [{ src: "custom", t: "빈 글에서 시작", s: "직접 쓰기" }];
-  return S.drafts.map((d) => ({ src: "draft:" + d.id, t: d.label, s: d.text.split("\n")[0].slice(0, 40) + "…", done: isDone("thread:draft:" + d.id) }));
+  const mine = sub === "mine";
+  return S.drafts.filter((d) => Boolean(d.account) === mine).map((d) => ({ src: "draft:" + d.id, t: d.label,
+    s: (d.text.includes("\n---\n") ? `첫 글 + 댓글 ${d.text.split("\n---\n").length - 1}개 · ` : "") + d.text.split("\n")[0].slice(0, 40) + "…",
+    done: isDone("thread:draft:" + d.id) }));
 }
 
 function renderList() {
   document.querySelectorAll("#seg button").forEach((b) => b.classList.toggle("on", b.dataset.type === type));
   const tabs = type === "carousel" ? [["ref", "레퍼런스·용어"], ["article", "읽을거리"]]
-             : type === "thread" ? [["draft", "초안"], ["article", "읽을거리 소개"], ["custom", "직접 쓰기"]] : [];
+             : type === "thread" ? [["draft", "디자인 허브 초안"], ["mine", "내 계정 초안"], ["article", "읽을거리 소개"], ["custom", "직접 쓰기"]] : [];
   if (tabs.length && !tabs.some(([k]) => k === sub)) sub = tabs[0][0];
   $("#subtabs").innerHTML = tabs.map(([k, l]) => `<button data-sub="${k}" class="${k === sub ? "on" : ""}">${l}</button>`).join("");
   $("#subtabs").querySelectorAll("button").forEach((b) => b.onclick = () => { sub = b.dataset.sub; source = null; renderList(); });
@@ -250,7 +254,8 @@ function renderList() {
 
 function pick(t, src) {
   type = t; source = src || null;
-  if (src && t !== "reel") sub = src.startsWith("article:") ? "article" : src.startsWith("draft:") ? "draft" : src === "custom" ? "custom" : "ref";
+  const draftSub = (id) => (S.drafts.find((d) => "draft:" + d.id === id) || {}).account ? "mine" : "draft";
+  if (src && t !== "reel") sub = src.startsWith("article:") ? "article" : src.startsWith("draft:") ? draftSub(src) : src === "custom" ? "custom" : "ref";
   renderList();
 }
 document.querySelectorAll("#seg button").forEach((b) => b.onclick = () => pick(b.dataset.type));
@@ -290,7 +295,10 @@ function showPreview() {
             `<div class="ask"><input class="inp" id="req-caption" placeholder="수정 요청: 예) 첫 줄을 질문으로, 해시태그는 3개만" /><button class="btn btn--dark" data-edit="caption">수정본 받기</button><button class="btn" data-copy="caption">데스크톱에 보낼 문장 복사 (무료)</button></div><div id="ai-caption"></div>` +
             `<div class="also"><label class="check"><input type="checkbox" id="also" /> 스레드에도 함께 알리기 (링크 미리보기 포함)</label>` +
             `<textarea id="thtext" hidden>${esc(thDefault)}</textarea><div class="count" id="thc" hidden></div></div>`
-          : `<label class="f">스레드 글</label><textarea id="thtext">${esc(m.text)}</textarea><div class="count" id="thc"></div>` +
+          : `<label class="f">올릴 계정</label><select class="inp" id="acct" style="width:auto">${S.accounts.filter((a) => a.connected).map((a) =>
+              `<option value="${esc(a.id)}" ${a.id === (m.account || "designhub") ? "selected" : ""}>${esc(a.label)}</option>`).join("")}</select>` +
+            `<label class="f">스레드 글 <span style="font-weight:400;color:var(--muted)">— <code>---</code> 한 줄로 나누면 첫 글 아래 댓글로 차례로 이어 올라가요</span></label>` +
+            `<textarea id="thtext" style="min-height:260px">${esc(m.text)}</textarea><div class="count" id="thc"></div>` +
             `<div class="ask"><input class="inp" id="req-thread" placeholder="수정 요청: 예) 둘째 문단을 한 문장으로 줄이고 끝을 질문으로" /><button class="btn btn--dark" data-edit="thread">수정본 받기</button><button class="btn" data-copy="thread">데스크톱에 보낼 문장 복사 (무료)</button></div><div id="ai-thread"></div>` +
             `<label class="f">함께 붙일 링크 (선택)</label><input class="inp" id="link" value="${esc(m.link || "")}" placeholder="https://designrefs.com/..." />`) +
     `<div class="warn" id="warn"></div>` +
@@ -300,7 +308,15 @@ function showPreview() {
     counter($("#cap"), 2200, $("#capc"));
     $("#also").onchange = () => { $("#thtext").hidden = $("#thc").hidden = !$("#also").checked; };
   }
-  counter($("#thtext"), 500, $("#thc"));
+  if (isIG) counter($("#thtext"), 500, $("#thc"));
+  else {
+    const f = () => {
+      const parts = splitPosts($("#thtext").value), max = Math.max(0, ...parts.map((x) => x.length));
+      $("#thc").textContent = parts.length > 1 ? `첫 글 + 댓글 ${parts.length - 1}개 · 가장 긴 글 ${max} / 500` : `${max} / 500`;
+      $("#thc").classList.toggle("over", max > 500 || parts.length > 10);
+    };
+    $("#thtext").addEventListener("input", f); f();
+  }
   const warn = () => { const t = $("#thtext").value; $("#warn").textContent = /\[[^\]]*\]/.test(t) && (!isIG || $("#also").checked)
     ? "[ ] 로 비워 둔 자리가 있어요. 실제 경험으로 바꾸거나 지워야 발행할 수 있습니다." : ""; };
   $("#thtext").addEventListener("input", warn); warn();
@@ -311,6 +327,10 @@ function showPreview() {
     if (!req) { alert("어떻게 고칠지 먼저 적어 주세요."); return; }
     copyText(`designhub 의 edit_post 순서대로 아래 ${kind === "caption" ? "인스타 캡션" : "스레드 글"}을 고쳐 줘.\n\n요청: ${req}\n\n글:\n${ta.value}`);
   });
+}
+
+function splitPosts(text) {
+  return text.split(/\n[ \t]*---[ \t]*(?:\n|$)/).map((x) => x.trim()).filter(Boolean);
 }
 
 async function waitJob(job, onStep) {
@@ -348,11 +368,15 @@ async function editPost(kind, btn) {
 
 async function doPublish() {
   const m = made, isIG = m.type !== "thread";
-  const what = { carousel: "인스타그램에 캐러셀을", reel: "인스타그램에 릴스를", thread: "스레드에 글을" }[m.type];
+  let what = { carousel: "인스타그램에 캐러셀을", reel: "인스타그램에 릴스를", thread: "스레드에 글을" }[m.type];
+  if (!isIG) {
+    const n = splitPosts($("#thtext").value).length, acct = $("#acct");
+    what = `스레드(${acct.options[acct.selectedIndex]?.text || "디자인 허브"})에 ${n > 1 ? `첫 글 + 댓글 ${n - 1}개를` : "글을"}`;
+  }
   if (!confirm(`${what} 공개로 올립니다. 올리면 되돌릴 수 없어요. 발행할까요?`)) return;
   const body = { type: m.type, id: m.id, title: m.title, link: isIG ? m.link : $("#link").value.trim(), draft: m.draft };
   if (isIG) Object.assign(body, { caption: $("#cap").value, also_thread: $("#also").checked, thread_text: $("#thtext").value });
-  else body.text = $("#thtext").value;
+  else Object.assign(body, { text: $("#thtext").value, account: $("#acct").value });
   $("#pub").disabled = true;
   $("#steps").innerHTML = `<li><span class="spin"></span>시작합니다…</li>`;
   try {

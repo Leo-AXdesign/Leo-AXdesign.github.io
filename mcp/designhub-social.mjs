@@ -14,6 +14,10 @@
  *   INSTAGRAM_USER_ID       (선택: 없으면 /me 로 알아냅니다)
  *   THREADS_ACCESS_TOKEN    (필수: 스레드 도구)
  *   THREADS_USER_ID         (선택)
+ *
+ * 스레드 계정을 여러 개 쓸 때: ~/.designhub/accounts.json (add-threads-account.sh 가 만듭니다)
+ *   { "me": { "threads_token": "...", "threads_user_id": "...", "username": "..." } }
+ *   도구의 account 에 "me" 처럼 이름을 넣으면 그 계정으로, 비우면 디자인 허브 계정으로 올립니다.
  */
 import fs from "node:fs";
 import os from "node:os";
@@ -23,6 +27,7 @@ import { spawn } from "node:child_process";
 
 const IG = "https://graph.instagram.com/v23.0";
 const TH = "https://graph.threads.net/v1.0";
+const ACCOUNTS = path.join(os.homedir(), ".designhub", "accounts.json");
 const CONFIG = path.join(os.homedir(), "Library/Application Support/Claude/claude_desktop_config.json");
 const env = process.env;
 const log = (...a) => console.error("[designhub-social]", ...a);
@@ -30,10 +35,15 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 // ---------- 메타 API 호출 ----------
 
+function accounts() {
+  try { return JSON.parse(fs.readFileSync(ACCOUNTS, "utf8")) || {}; } catch { return {}; }
+}
+
 function hide(text) {
   // 오류 메시지에 토큰이 섞여 나오지 않도록 지웁니다
   let s = String(text);
-  for (const t of [env.INSTAGRAM_ACCESS_TOKEN, env.THREADS_ACCESS_TOKEN]) if (t) s = s.split(t).join("[토큰]");
+  const all = [env.INSTAGRAM_ACCESS_TOKEN, env.THREADS_ACCESS_TOKEN, ...Object.values(accounts()).map((a) => a.threads_token)];
+  for (const t of all) if (t) s = s.split(t).join("[토큰]");
   return s;
 }
 
@@ -52,17 +62,30 @@ async function call(base, token, method, p, params = {}) {
   return data;
 }
 const ig = (m, p, params) => call(IG, env.INSTAGRAM_ACCESS_TOKEN, m, p, params);
-const th = (m, p, params) => call(TH, env.THREADS_ACCESS_TOKEN, m, p, params);
+
+// 스레드 계정: 비우거나 "designhub" 면 디자인 허브 계정(설정 파일 env), 그 밖의 이름은 accounts.json
+const MAIN = "designhub";
+function thAccount(name) {
+  if (!name || name === MAIN) return { name: MAIN, token: env.THREADS_ACCESS_TOKEN, id: env.THREADS_USER_ID || "" };
+  const a = accounts()[name];
+  if (!a || !a.threads_token) {
+    const have = [MAIN, ...Object.keys(accounts())].join(", ");
+    throw new Error(`스레드 계정 '${name}' 이(가) 연결되지 않았습니다. 연결된 계정: ${have}. 터미널에서 add-threads-account.sh 로 연결할 수 있어요.`);
+  }
+  return { name, token: a.threads_token, id: a.threads_user_id || "" };
+}
+const thIds = {};
+const th = (acc, m, p, params) => call(TH, acc.token, m, p, params);
 
 let igId = env.INSTAGRAM_USER_ID || "";
-let thId = env.THREADS_USER_ID || "";
 async function igUser() {
   if (!igId) igId = (await ig("GET", "/me", { fields: "user_id" })).user_id;
   return igId;
 }
-async function thUser() {
-  if (!thId) thId = (await th("GET", "/me", { fields: "id" })).id;
-  return thId;
+async function thUser(acc) {
+  if (acc.id) return acc.id;
+  if (!thIds[acc.name]) thIds[acc.name] = (await th(acc, "GET", "/me", { fields: "id" })).id;
+  return thIds[acc.name];
 }
 
 // 컨테이너(올릴 준비가 된 미디어)가 다 만들어질 때까지 기다립니다
@@ -75,14 +98,36 @@ async function waitIg(id, tries = 30) {
   }
   throw new Error(`인스타그램 미디어 처리가 ${Math.round(tries * 2 / 60)}분 넘게 끝나지 않았습니다. 잠시 뒤 ig_recent_media 로 올라갔는지 확인하세요.`);
 }
-async function waitTh(id) {
+async function waitTh(acc, id) {
   for (let i = 0; i < 30; i++) {
-    const { status, error_message } = await th("GET", `/${id}`, { fields: "status,error_message" });
+    const { status, error_message } = await th(acc, "GET", `/${id}`, { fields: "status,error_message" });
     if (status === "FINISHED") return;
     if (status === "ERROR" || status === "EXPIRED") throw new Error(`스레드가 게시물을 처리하지 못했습니다: ${error_message || status}`);
     await sleep(2000);
   }
   throw new Error("스레드 게시물 처리가 1분 넘게 끝나지 않았습니다.");
+}
+
+// 글 하나 올리기. reply_to_id 를 주면 그 글의 댓글(답글)로 올라갑니다
+async function thPost(acc, { text, image_url, link_attachment, reply_to_id }) {
+  if (!text || !text.trim()) throw new Error("올릴 글이 비어 있습니다.");
+  if ([...text].length > 500) throw new Error(`스레드 글은 500자까지입니다. 지금 ${[...text].length}자: "${text.slice(0, 30)}…"`);
+  const uid = await thUser(acc);
+  const params = image_url
+    ? { media_type: "IMAGE", image_url, text }
+    : { media_type: "TEXT", text, ...(link_attachment ? { link_attachment } : {}) };
+  if (reply_to_id) params.reply_to_id = reply_to_id;
+  let id;
+  try {
+    ({ id } = await th(acc, "POST", `/${uid}/threads`, params));
+  } catch (e) {
+    if (reply_to_id && /permission|\(#10\)|오류 10:|오류 200:/i.test(e.message))
+      throw new Error(e.message + " — 댓글을 달려면 토큰을 만들 때 threads_manage_replies 권한을 켜야 합니다.");
+    throw e;
+  }
+  await waitTh(acc, id);
+  const post = await th(acc, "POST", `/${uid}/threads_publish`, { creation_id: id });
+  return th(acc, "GET", `/${post.id}`, { fields: "id,permalink,timestamp" });
 }
 
 
@@ -136,6 +181,8 @@ function runPublish(message) {
 }
 
 // ---------- 도구 ----------
+
+const ACCOUNT = { type: "string", description: "스레드 계정 이름. 비우면 디자인 허브 계정(designhub). 개인 계정은 threads_accounts 로 확인" };
 
 const TOOLS = {
   card_sets: {
@@ -282,42 +329,109 @@ const TOOLS = {
     run: async () => ig("GET", `/${await igUser()}/content_publishing_limit`, { fields: "quota_usage,config" }),
   },
 
+  threads_accounts: {
+    description: "연결된 스레드 계정 목록을 봅니다. 'designhub' 는 디자인 허브 계정, 나머지는 add-threads-account.sh 로 연결한 계정입니다.",
+    schema: { type: "object", properties: {} },
+    run: async () => [
+      { account: MAIN, note: "디자인 허브 공식 계정", connected: Boolean(env.THREADS_ACCESS_TOKEN) },
+      ...Object.entries(accounts()).map(([k, a]) => ({ account: k, username: a.username || "", connected: Boolean(a.threads_token) })),
+    ],
+  },
+
   threads_profile: {
     description: "스레드 계정 정보(아이디, 이름, 소개)를 봅니다.",
-    schema: { type: "object", properties: {} },
-    run: async () => th("GET", "/me", { fields: "id,username,name,threads_profile_picture_url,threads_biography" }),
+    schema: { type: "object", properties: { account: ACCOUNT } },
+    run: async ({ account }) => th(thAccount(account), "GET", "/me", { fields: "id,username,name,threads_profile_picture_url,threads_biography" }),
   },
 
   threads_recent_posts: {
     description: "스레드 최근 게시물 목록을 봅니다.",
-    schema: { type: "object", properties: { limit: { type: "number", description: "가져올 개수 (기본 10, 최대 50)" } } },
-    run: async ({ limit = 10 }) => th("GET", `/${await thUser()}/threads`, {
-      fields: "id,text,media_type,permalink,timestamp",
-      limit: String(Math.min(Math.max(1, limit), 50)),
-    }),
+    schema: { type: "object", properties: { account: ACCOUNT, limit: { type: "number", description: "가져올 개수 (기본 10, 최대 50)" } } },
+    run: async ({ account, limit = 10 }) => {
+      const acc = thAccount(account);
+      return th(acc, "GET", `/${await thUser(acc)}/threads`, {
+        fields: "id,text,media_type,permalink,timestamp",
+        limit: String(Math.min(Math.max(1, limit), 50)),
+      });
+    },
   },
 
   threads_publish: {
-    description: "스레드에 글을 공개 게시합니다. 글만, 또는 글+사진 한 장. 링크를 넣으면 미리보기 카드가 붙습니다. 되돌릴 수 없는 공개 게시이니, 사용자가 내용을 확인한 뒤에만 쓰세요.",
+    description: "스레드에 글 하나를 공개 게시합니다. 글만, 또는 글+사진 한 장. 링크를 넣으면 미리보기 카드가 붙습니다. 되돌릴 수 없는 공개 게시이니, 사용자가 내용을 확인한 뒤에만 쓰세요. 이어지는 글(댓글 묶음)은 threads_publish_chain 을 쓰세요.",
     schema: {
       type: "object",
       properties: {
+        account: ACCOUNT,
         text: { type: "string", description: "본문 (최대 500자)" },
         image_url: { type: "string", description: "선택: 공개 https 이미지 주소" },
         link_attachment: { type: "string", description: "선택: 미리보기로 붙일 링크 (글만 올릴 때)" },
       },
       required: ["text"],
     },
-    run: async ({ text, image_url, link_attachment }) => {
-      const uid = await thUser();
-      const params = image_url
-        ? { media_type: "IMAGE", image_url, text }
-        : { media_type: "TEXT", text, ...(link_attachment ? { link_attachment } : {}) };
-      const { id } = await th("POST", `/${uid}/threads`, params);
-      await waitTh(id);
-      const post = await th("POST", `/${uid}/threads_publish`, { creation_id: id });
-      return th("GET", `/${post.id}`, { fields: "id,permalink,timestamp" });
+    run: async ({ account, ...post }) => thPost(thAccount(account), post),
+  },
+
+  threads_publish_chain: {
+    description: "후킹하는 첫 글을 올리고, 이어지는 글을 차례로 그 아래 댓글로 답니다 (첫 글 → 댓글 1 → 댓글 2 …, 각 댓글은 바로 앞 글에 달림). 되돌릴 수 없는 공개 게시이니, 사용자가 전체 내용을 확인한 뒤에만 쓰세요. 중간에 실패하면 거기까지 올린 글과 마지막 글 id 를 돌려줍니다 (threads_reply 로 이어서 달 수 있음).",
+    schema: {
+      type: "object",
+      properties: {
+        account: ACCOUNT,
+        posts: { type: "array", items: { type: "string" }, description: "첫 글부터 순서대로. 각 500자 이내, 2~10개" },
+        link_attachment: { type: "string", description: "선택: 마지막 글에 미리보기로 붙일 링크" },
+        image_url: { type: "string", description: "선택: 첫 글에 붙일 공개 https 이미지 주소" },
+      },
+      required: ["posts"],
     },
+    run: async ({ account, posts = [], link_attachment, image_url }) => {
+      const acc = thAccount(account);
+      posts = posts.map((t) => String(t).trim()).filter(Boolean);
+      if (!posts.length) throw new Error("올릴 글이 없습니다.");
+      if (posts.length > 10) throw new Error("한 번에 10개까지만 올립니다.");
+      posts.forEach((t, i) => { if ([...t].length > 500) throw new Error(`${i + 1}번째 글이 500자를 넘습니다 (${[...t].length}자).`); });
+      const done = [];
+      let prev = null;
+      for (let i = 0; i < posts.length; i++) {
+        const last = i === posts.length - 1;
+        try {
+          const r = await thPost(acc, {
+            text: posts[i],
+            reply_to_id: prev || undefined,
+            image_url: i === 0 ? image_url : undefined,
+            link_attachment: last && !(i === 0 && image_url) ? link_attachment : undefined,
+          });
+          done.push({ n: i + 1, id: r.id, permalink: r.permalink });
+          prev = r.id;
+        } catch (e) {
+          return { ok: false, account: acc.name, posted: done, failed_at: i + 1, error: hide(e.message), last_id: prev,
+            next: prev ? "threads_reply 에 reply_to_id=last_id 로 남은 글을 이어서 달 수 있어요." : "첫 글부터 올리지 못했습니다." };
+        }
+      }
+      return { ok: true, account: acc.name, permalink: done[0].permalink, posted: done };
+    },
+  },
+
+  threads_reply: {
+    description: "스레드 글(내 글 또는 남의 글) 아래에 댓글을 답니다. reply_to_id 는 threads_recent_posts 나 threads_publish_chain 결과의 id. 공개 게시이니 사용자가 확인한 뒤에만 쓰세요.",
+    schema: {
+      type: "object",
+      properties: {
+        account: ACCOUNT,
+        reply_to_id: { type: "string", description: "댓글을 달 글의 id" },
+        text: { type: "string", description: "댓글 (최대 500자)" },
+        link_attachment: { type: "string", description: "선택: 미리보기로 붙일 링크" },
+      },
+      required: ["reply_to_id", "text"],
+    },
+    run: async ({ account, ...post }) => thPost(thAccount(account), post),
+  },
+
+  threads_replies: {
+    description: "내 스레드 글에 달린 댓글을 봅니다 (답할 댓글을 고를 때).",
+    schema: { type: "object", properties: { account: ACCOUNT, post_id: { type: "string", description: "글 id" } }, required: ["post_id"] },
+    run: async ({ account, post_id }) => th(thAccount(account), "GET", `/${post_id}/replies`, {
+      fields: "id,text,username,permalink,timestamp",
+    }),
   },
 
   editor_guide: {
@@ -406,6 +520,18 @@ const TOOLS = {
       }
       fs.copyFileSync(CONFIG, CONFIG + ".bak");
       fs.writeFileSync(CONFIG, JSON.stringify(conf, null, 2));
+      const accs = accounts();
+      let changed = false;
+      for (const [k, a] of Object.entries(accs)) {
+        if (!a.threads_token) continue;
+        try {
+          const r = await call(TH, a.threads_token, "GET", "https://graph.threads.net/refresh_access_token", { grant_type: "th_refresh_token" });
+          a.threads_token = r.access_token;
+          changed = true;
+          out[`threads:${k}`] = `연장됨 (약 ${Math.round(r.expires_in / 86400)}일 남음)`;
+        } catch (e) { out[`threads:${k}`] = e.message; }
+      }
+      if (changed) fs.writeFileSync(ACCOUNTS, JSON.stringify(accs, null, 2), { mode: 0o600 });
       return out;
     },
   },
@@ -449,6 +575,24 @@ const PROMPTS = {
 글:
 ${text}`,
   },
+  write_chain: {
+    description: "내 스레드 계정에 올릴 '후킹 첫 글 + 댓글로 이어지는 글' 묶음을 같이 씁니다. 확인하면 첫 글을 올리고 댓글로 차례로 이어 답니다 (구독으로, 추가 요금 없음)",
+    arguments: [
+      { name: "topic", description: "무엇에 대해 (예: 이번 주 AI로 만든 것 리뷰, 소개하고 싶은 도구)", required: true },
+      { name: "account", description: "스레드 계정 이름 (비우면 me)", required: false },
+    ],
+    text: ({ topic = "", account = "me" }) => `designhub 도구로 내 스레드 계정(${account || "me"})에 올릴 글 묶음을 같이 쓰자.
+
+주제: ${topic}
+
+1. editor_guide 로 기준을 읽어. 특히 '운영자 이야기'와 '개인 스레드 계정' 부분.
+2. 필요하면 threads_recent_posts(account: "${account || "me"}") 로 최근 글을 보고 겹치지 않게 해.
+3. 첫 글(후킹) 1개 + 이어지는 댓글 3~6개를 번호 붙여 보여 줘. 각 500자 이내.
+   - 첫 글은 결과·숫자·반전 중 하나로 시작하고, 끝에서 "댓글에 이어서" 같은 장치로 다음을 궁금하게.
+   - 사실만 쓰고, 기준에 없는 경험이나 숫자는 지어내지 말고 [ ] 로 비워 둬.
+4. 내가 고칠 곳을 말하면 그 부분만 고쳐서 다시 보여 줘.
+5. 내가 "올려"라고 하면 [ ] 가 남아 있지 않은지 확인하고 threads_publish_chain 으로 올린 뒤 첫 글 링크를 알려 줘.`,
+  },
   polish_post: {
     description: "인스타 캡션이나 스레드 글을 편집 기준에 맞게 다듬습니다 (구독으로, 추가 요금 없음)",
     arguments: [{ name: "text", description: "다듬을 글", required: true }],
@@ -468,7 +612,7 @@ async function handle(req) {
       return send({ id, result: {
         protocolVersion: params.protocolVersion || "2025-06-18",
         capabilities: { tools: {}, prompts: {} },
-        serverInfo: { name: "designhub-social", version: "1.3.0" },
+        serverInfo: { name: "designhub-social", version: "1.4.0" },
       } });
     }
     if (method === "ping") return send({ id, result: {} });

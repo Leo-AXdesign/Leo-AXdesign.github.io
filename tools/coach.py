@@ -276,11 +276,13 @@ def edit_post(kind, text, request, mode=None):
     mode = mode or DEFAULT["post"]
     name = {"thread": "스레드 글", "caption": "인스타 캡션"}.get(kind, "글")
     system = ("너는 디자인 허브의 SNS 편집자다. 사용자가 원하는 편집을 정확히 반영하고, 요청하지 않은 곳은 그대로 둔다.\n\n"
-              + guide() + "\n\n마지막에 ```json 블록 하나로만 답한다:\n"
+              + guide() + "\n\n스레드 글에 '---' 한 줄이 있으면 첫 글과 댓글을 나누는 표시다. 표시를 지키고, 나뉜 글 하나하나가 500자를 넘지 않게 한다.\n"
+              "\n마지막에 ```json 블록 하나로만 답한다:\n"
               '{"summary": "무엇을 고쳤는지 한 문장", "points": ["고친 점"], "revised": "고친 전체 글"}')
     out, _, _ = call(system, f"<request>\n{request}\n</request>\n\n<{name}>\n{text}\n</{name}>", mode=mode, effort="low")
     data = parse_json(out)
     limit = 500 if kind == "thread" else 2200
-    if len(data.get("revised", "")) > limit:
+    parts = [x for x in data.get("revised", "").split("\n---\n")] if kind == "thread" else [data.get("revised", "")]
+    if any(len(x.strip()) > limit for x in parts):
         data["points"] = data.get("points", []) + [f"주의: 고친 글이 {limit}자를 넘습니다."]
     return data
