@@ -45,6 +45,7 @@ e = html.escape
 SETS = {
     # 한글날(10/9) 특집
     "fonts-hangul": {
+        "kicker": "레퍼런스 · 폰트",
         "title": "상업용 무료 한글 폰트, 여기서 받으세요",
         "cards": [
             {"kind": "cover", "title": "상업용 무료 한글 폰트,\n여기서 받으세요", "sub": "한글날에 저장해 두는 폰트 사이트 4곳"},
@@ -64,6 +65,7 @@ SETS = {
 
     # A. 레퍼런스 소개: 폰트 고르는 과정 순서대로
     "fonts-pick": {
+        "kicker": "레퍼런스 · 폰트",
         "title": "폰트 고를 때 북마크해 둘 사이트 5",
         "cards": [
             {"kind": "cover", "title": "폰트 고를 때\n북마크해 둘\n사이트 5", "sub": "찾고, 맞춰 보고, 크기 정하는 순서대로"},
@@ -80,6 +82,7 @@ SETS = {
     },
 
     "colors-pick": {
+        "kicker": "레퍼런스 · 컬러",
         "title": "컬러 막힐 때 열어 볼 사이트 5",
         "cards": [
             {"kind": "cover", "title": "컬러 막힐 때\n열어 볼\n사이트 5", "sub": "뽑고, 입혀 보고, 단계 만들고, 검사까지"},
@@ -95,6 +98,7 @@ SETS = {
     },
 
     "mockups-pick": {
+        "kicker": "레퍼런스 · 목업",
         "title": "포트폴리오 목업, 이 다섯 곳이면 충분해요",
         "cards": [
             {"kind": "cover", "title": "포트폴리오 목업,\n이 다섯 곳이면\n충분해요", "sub": "이미지부터 영상, 앱스토어 이미지까지"},
@@ -110,6 +114,7 @@ SETS = {
     },
 
     "ai-ui-tools": {
+        "kicker": "레퍼런스 · AI 툴",
         "title": "프롬프트로 화면 시안 뽑는 AI 툴 5",
         "cards": [
             {"kind": "cover", "title": "프롬프트로\n화면 시안 뽑는\nAI 툴 5", "sub": "어디까지 되는지, 언제 쓰면 좋은지"},
@@ -126,6 +131,7 @@ SETS = {
 
     # D. 용어 사전: 타이포 기본 넷
     "terms-typo-basic": {
+        "kicker": "용어 사전 · 타이포",
         "title": "디자이너가 매일 쓰는 타이포 용어 4",
         "cards": [
             {"kind": "cover", "title": "디자이너가\n매일 쓰는\n타이포 용어 4", "sub": "헷갈릴 때 꺼내 보는 용어 사전"},
@@ -141,75 +147,85 @@ SETS = {
 }
 
 CSS = """
+/* 위계: 휴대폰에서 카드는 가로 약 390px 로 보입니다(약 0.36배).
+   그래서 가장 작은 글자도 32px(화면에서 약 12px) 아래로 내리지 않고, 단계를 넷으로 나눕니다.
+     L1 제목   104~150px · 800        무엇에 대한 장인지
+     L2 핵심   54~60px  · 700~800     이 장에서 기억할 한 줄
+     L3 설명   40px     · 500 · #555  덧붙이는 말
+     메타      32~36px  · 700 · #767676 번호·주소·분류 */
 html, body { margin: 0; width: 1080px; height: 1350px; overflow: hidden; background: #fff; }
 body { font-family: "Pretendard Variable", Pretendard, "Apple SD Gothic Neo", sans-serif; color: #111;
-       -webkit-font-smoothing: antialiased; }
-.card { box-sizing: border-box; width: 1080px; height: 1350px; padding: 88px 88px 80px; display: flex; flex-direction: column; }
-.top { display: flex; justify-content: space-between; align-items: baseline; }
-.logo { font-size: 56px; font-weight: 800; letter-spacing: -0.04em; }
+       -webkit-font-smoothing: antialiased; word-break: keep-all; }
+.card { box-sizing: border-box; width: 1080px; height: 1350px; padding: 80px 88px 72px; display: flex; flex-direction: column; }
+
+/* 위 · 아래 공통 */
+.top { display: flex; align-items: center; gap: 22px; }
+.logo { font-size: 52px; font-weight: 800; letter-spacing: -0.04em; line-height: 1; }
 .logo span { color: #A3A3A3; }
-.page { font-size: 28px; color: #8A8A8A; font-variant-numeric: tabular-nums; }
-.bottom { display: flex; justify-content: space-between; align-items: baseline; font-size: 28px; color: #6B6B6B; }
-.bottom b { color: #111; }
-.rule { height: 5px; background: #111; margin: 48px 0 28px; }
-.label { font-size: 30px; font-weight: 700; color: #8A8A8A; }
+.kicker { font-size: 32px; font-weight: 700; color: #767676; letter-spacing: -0.01em; }
+.page { margin-left: auto; font-size: 32px; font-weight: 700; color: #767676; font-variant-numeric: tabular-nums; }
+.progress { display: flex; gap: 10px; margin-top: 64px; }
+.progress i { flex: 1; height: 6px; border-radius: 3px; background: #E4E4E4; }
+.progress i.on { background: #111; }
+.pill { align-self: flex-start; display: inline-block; font-size: 32px; font-weight: 700; line-height: 1;
+        padding: 14px 26px; border-radius: 999px; background: #111; color: #fff; }
+.meta { font-size: 34px; font-weight: 700; color: #767676; }
+.l3 { font-size: 40px; line-height: 1.55; font-weight: 500; color: #555; letter-spacing: -0.02em; text-wrap: pretty; }
 
 /* 표지 */
-.cover .label { margin-top: auto; }
-.cover .title { margin-top: 24px; font-size: 104px; line-height: 1.16; font-weight: 800; letter-spacing: -0.045em;
-                white-space: pre-line; word-break: keep-all; }
-.cover .sub { margin-top: 36px; font-size: 38px; color: #6B6B6B; letter-spacing: -0.02em; word-break: keep-all; }
+.cover .title { margin-top: auto; font-size: 124px; line-height: 1.13; font-weight: 800; letter-spacing: -0.05em; white-space: pre-line; }
+.cover .title.long { font-size: 100px; line-height: 1.16; }
+.cover .sub { margin-top: 40px; font-size: 46px; line-height: 1.4; font-weight: 500; color: #555; letter-spacing: -0.02em; }
+.cover .pill { margin-top: 56px; }
 
-/* 사이트 */
-.site .num { margin-top: auto; font-size: 30px; font-weight: 700; color: #8A8A8A; }
-.site .name { margin-top: 18px; font-size: 104px; line-height: 1.1; font-weight: 800; letter-spacing: -0.045em;
-              word-break: keep-all; text-wrap: balance; }
-.site .host { margin-top: 22px; font-size: 34px; color: #8A8A8A; }
-.site .when { font-size: 30px; font-weight: 700; color: #8A8A8A; margin-bottom: 14px; }
-.site .whentext { font-size: 50px; line-height: 1.4; font-weight: 700; letter-spacing: -0.03em; word-break: keep-all; text-wrap: balance; }
-.site .desc { margin-top: 28px; font-size: 38px; line-height: 1.55; letter-spacing: -0.02em; color: #444; word-break: keep-all; }
-.site .tags { display: flex; gap: 14px; margin: 40px 0 72px; }
-.site .tag { font-size: 28px; font-weight: 600; padding: 10px 26px; border: 2px solid #111; border-radius: 999px; }
+/* 사이트 · 용어: 위에 '무엇', 아래에 '왜' */
+.head { margin-top: 104px; }
+.head .name { margin-top: 14px; font-size: 112px; line-height: 1.06; font-weight: 800; letter-spacing: -0.05em; text-wrap: balance; }
+.head .host { margin-top: 18px; font-size: 36px; color: #767676; }
+.msg { margin-top: auto; display: flex; flex-direction: column; }
+.msg .key { margin-top: 26px; font-size: 60px; line-height: 1.3; font-weight: 800; letter-spacing: -0.035em; text-wrap: balance; }
+.msg .l3 { margin-top: 26px; }
+.tags { display: flex; gap: 12px; margin-top: 36px; }
+.tag { font-size: 32px; font-weight: 700; padding: 10px 24px; border: 3px solid #111; border-radius: 999px; }
+.term .head .name { font-size: 150px; }
+.term .msg { margin-top: 88px; }
+.term .msg .key { font-size: 56px; line-height: 1.5; font-weight: 700; }
+.term .progress { margin-top: auto; }
 
 /* 요약 */
-.lead .label { margin-top: 120px; }
-.lead .text { margin-top: 36px; font-size: 52px; line-height: 1.5; font-weight: 600; letter-spacing: -0.03em;
-              word-break: keep-all; text-wrap: pretty; }
+.lead .pill { margin-top: 104px; }
+.lead .text { margin-top: 44px; font-size: 60px; line-height: 1.45; font-weight: 700; letter-spacing: -0.035em; text-wrap: pretty; }
+.lead .progress { margin-top: auto; }
 
-/* 그림: 글자가 읽히도록 여백을 줄이고 그림을 최대한 크게 */
-.card.figure { padding: 40px 36px 36px; }
-.figure .top { padding: 0 20px; }
-.figure .logo { font-size: 40px; }
-.figure .fig { flex: 1; min-height: 0; margin-top: 16px; display: flex; align-items: center; justify-content: center; }
+/* 그림: 위에 한 줄 요지, 아래 그림을 크게 */
+.card.figure { padding: 64px 48px 64px; }
+.figure .top { padding: 0 40px; }
+.figure .cap { margin: 40px 40px 0; font-size: 50px; line-height: 1.32; font-weight: 800; letter-spacing: -0.03em; text-wrap: balance; }
+.figure .cap.long { font-size: 44px; }
+.figure .fig { flex: 1; min-height: 0; margin-top: 28px; display: flex; align-items: center; justify-content: center; }
 .figure .fig img { width: 100%; height: 100%; object-fit: contain; }
+.figure .progress { margin: 40px 40px 0; }
 
-/* 용어 */
-.term .num { margin-top: auto; font-size: 30px; font-weight: 700; color: #8A8A8A; }
-.term .name { margin-top: 18px; font-size: 120px; line-height: 1.1; font-weight: 800; letter-spacing: -0.045em; word-break: keep-all; }
-.term .en { margin-top: 22px; font-size: 38px; color: #8A8A8A; }
-.term .desc { font-size: 46px; line-height: 1.55; letter-spacing: -0.02em; word-break: keep-all; text-wrap: pretty; margin-bottom: 72px; }
-
-/* 정보 */
-.tip .title { margin-top: 120px; font-size: 76px; font-weight: 800; letter-spacing: -0.04em; word-break: keep-all; }
-.tip ol { list-style: none; margin: 64px 0 0; padding: 0; counter-reset: n; }
-.tip li { counter-increment: n; position: relative; padding: 36px 0 36px 96px; border-top: 2px solid #E2E2E2;
-          font-size: 42px; line-height: 1.5; letter-spacing: -0.02em; word-break: keep-all; text-wrap: pretty; }
-.tip li b { display: block; font-weight: 800; }
-.tip li span { display: block; margin-top: 8px; font-size: 34px; color: #555; }
-.tip li:last-child { border-bottom: 2px solid #E2E2E2; }
-.tip li::before { content: counter(n, decimal-leading-zero); position: absolute; left: 0; top: 40px;
-                  font-size: 32px; font-weight: 700; color: #8A8A8A; }
+/* 정리 */
+.tip .title { margin-top: 88px; font-size: 92px; font-weight: 800; letter-spacing: -0.045em; }
+.tip ol { list-style: none; margin: 48px 0 0; padding: 0; counter-reset: n; }
+.tip li { counter-increment: n; position: relative; padding: 38px 0 38px 92px; border-top: 3px solid #111; }
+.tip li + li { border-top: 2px solid #E4E4E4; }
+.tip li::before { content: counter(n, decimal-leading-zero); position: absolute; left: 0; top: 46px;
+                  font-size: 36px; font-weight: 800; color: #767676; }
+.tip li b { display: block; font-size: 54px; line-height: 1.3; font-weight: 800; letter-spacing: -0.035em; }
+.tip li span { display: block; margin-top: 12px; font-size: 40px; line-height: 1.45; color: #555; }
+.tip .progress { margin-top: auto; }
 
 /* 마무리 */
 .outro { background: #111; color: #fff; }
-.outro .logo span { color: #6B6B6B; }
-.outro .title { margin-top: auto; font-size: 92px; line-height: 1.18; font-weight: 800; letter-spacing: -0.045em;
-                white-space: pre-line; word-break: keep-all; }
-.outro .url { margin-top: 56px; display: inline-block; align-self: flex-start; font-size: 44px; font-weight: 700;
-              padding: 22px 40px; border-radius: 999px; background: #fff; color: #111; }
-.outro .sub { margin-top: 36px; font-size: 34px; color: #A3A3A3; }
-.outro .rule { background: #fff; }
-.outro .bottom, .outro .bottom b { color: #A3A3A3; }
+.outro .logo span, .outro .kicker, .outro .page { color: #9A9A9A; }
+.outro .title { margin-top: auto; font-size: 100px; line-height: 1.16; font-weight: 800; letter-spacing: -0.05em; white-space: pre-line; }
+.outro .url { margin-top: 56px; align-self: flex-start; font-size: 50px; font-weight: 800; padding: 24px 44px;
+              border-radius: 999px; background: #fff; color: #111; }
+.outro .sub { margin-top: 32px; font-size: 40px; color: #BDBDBD; }
+.outro .progress i { background: #3A3A3A; }
+.outro .progress i.on { background: #fff; }
 """
 
 
@@ -262,10 +278,10 @@ def article_set(slug):
     text = path.read_text(encoding="utf-8")
     head, body = text.split("---", 2)[1:]
     meta = dict(re.findall(r"^(\w+):\s*(.*)$", head, re.M))
-    cards = [{"kind": "cover", "label": "읽을거리 · AI 디자인", "title": meta["title"], "sub": ""}]
+    cards = [{"kind": "cover", "title": meta["title"], "sub": ""}]
     cards.append({"kind": "lead", "label": "무슨 일이 있었나", "text": meta["desc"]})
     for m in re.finditer(r"!\[([^\]]*)\]\(https://designrefs\.com/articles/img/([\w-]+)\.svg\)", body):
-        cards.append({"kind": "figure", "src": m.group(2)})
+        cards.append({"kind": "figure", "src": m.group(2), "caption": first_sentence(m.group(1), 84)})
     now = re.search(r"## 그래서 지금은\n(.*?)(\n\n[^\d]|\Z)", body, re.S)
     if now:
         points = []
@@ -279,65 +295,64 @@ def article_set(slug):
             cards.append({"kind": "tip", "title": "그래서 지금은", "points": points[:3]})
     cards.append({"kind": "outro", "title": "전문은 프로필 링크에서\n읽을 수 있어요", "url": "designrefs.com",
                   "sub": "출처와 표는 본문에 함께 정리해 뒀어요"})
-    return {"title": meta["title"], "cards": cards[:10],
+    return {"title": meta["title"], "kicker": "읽을거리 · AI 디자인", "cards": cards[:10],
             "tags": ["디자인레퍼런스", "디자이너", "AI디자인", "디자인인사이트", "UXUI"],
             "lead": meta["desc"], "url": f"{SITE}articles/{slug}/"}
 
 
 # ---------- 그리기 ----------
 
-def render(card, i, total, n):
-    top = (f'<div class="top"><div class="logo">d<span>.</span></div>'
-           f'<div class="page">{i} / {total}</div></div>')
-    foot = ('<div class="bottom"><span><b>디자인 허브</b> · 디자이너를 위한 레퍼런스 모음</span>'
-            '<span>designrefs.com</span></div>')
+def render(card, i, total, n, kicker=""):
+    top = (f'<div class="top"><div class="logo">d<span>.</span></div><div class="kicker">{e(kicker)}</div>'
+           f'<div class="page">{i:02d} / {total:02d}</div></div>')
+    bar = '<div class="progress">' + "".join(f'<i class="{"on" if j == i else ""}"></i>' for j in range(1, total + 1)) + "</div>"
     k = card["kind"]
     if k == "cover":
-        label = f'<div class="label">{e(card["label"])}</div>' if card.get("label") else '<div style="margin-top:auto"></div>'
+        long = " long" if len(card["title"]) > 26 else ""
         sub = f'<div class="sub">{e(card["sub"])}</div>' if card.get("sub") else ""
-        mid = f'{label}<div class="title">{e(card["title"])}</div>{sub}<div class="rule"></div>'
-        foot = '<div class="bottom"><span><b>디자인 허브</b></span><span>넘겨서 보기 →</span></div>'
+        mid = f'<div class="title{long}">{e(card["title"])}</div>{sub}<div class="pill">넘겨서 보기 →</div>'
     elif k == "site":
         s = find_site(card["name"])
         tags = "".join(f'<span class="tag">{e(t)}</span>' for t in site_tags(s["name"]))
         if card.get("when"):
-            body = (f'<div class="when">이럴 때 좋아요</div><div class="whentext">{e(card["when"])}</div>'
-                    f'<div class="desc">{e(s["desc"])}</div>')
+            msg = (f'<div class="pill">이럴 때 좋아요</div><div class="key">{e(card["when"])}</div>'
+                   f'<div class="l3">{e(s["desc"])}</div>')
         else:
-            body = f'<div class="desc" style="margin-top:0;font-size:44px;color:#111">{e(s["desc"])}</div>'
-        mid = (f'<div class="num">{n:02d}</div><div class="name">{e(s["name"])}</div>'
-               f'<div class="host">{e(host(s["url"]))}</div><div class="rule"></div>'
-               f'{body}<div class="tags">{tags}</div>')
+            msg = f'<div class="key">{e(s["desc"])}</div>'
+        mid = (f'<div class="head"><div class="meta">No. {n:02d}</div><div class="name">{e(s["name"])}</div>'
+               f'<div class="host">{e(host(s["url"]))}</div></div>'
+               f'<div class="msg">{msg}<div class="tags">{tags}</div></div>')
     elif k == "lead":
-        mid = (f'<div class="label">{e(card["label"])}</div><div class="text">{e(card["text"])}</div>'
-               '<div style="margin-top:auto"></div><div class="rule"></div>')
+        mid = f'<div class="pill">{e(card["label"])}</div><div class="text">{e(card["text"])}</div>'
     elif k == "figure":
         src = ROOT / "articles" / "img" / f'{card["src"]}-m.svg'
         if not src.exists():
             src = ROOT / "articles" / "img" / f'{card["src"]}.svg'
-        mid = f'<div class="fig"><img src="{src.as_uri()}"></div>'
+        c = card.get("caption", "")
+        cap = f'<div class="cap{" long" if len(c) > 48 else ""}">{e(c)}</div>' if c else ""
+        mid = f'{cap}<div class="fig"><img src="{src.as_uri()}"></div>'
     elif k == "term":
         t = find_term(card["name"])
-        mid = (f'<div class="num">용어 {n:02d}</div><div class="name">{e(t["term"])}</div>'
-               f'<div class="en">{e(t.get("en", ""))}</div><div class="rule"></div>'
-               f'<div class="desc">{e(t["desc"])}</div>')
+        mid = (f'<div class="head"><div class="meta">용어 {n:02d}</div><div class="name">{e(t["term"])}</div>'
+               f'<div class="host">{e(t.get("en", ""))}</div></div>'
+               f'<div class="msg"><div class="key">{e(t["desc"])}</div></div>')
     elif k == "tip":
         items = ""
         for p in card["points"]:
-            items += ((f"<li><b>{e(p[0])}</b><span>{e(p[1])}</span></li>" if p[1] else f"<li><b>{e(p[0])}</b></li>") if isinstance(p, (list, tuple))
-                      else f"<li>{e(p)}</li>")
-        mid = f'<div class="title">{e(card["title"])}</div><ol>{items}</ol><div style="margin-top:auto"></div><div class="rule"></div>'
+            if isinstance(p, (list, tuple)):
+                items += f"<li><b>{e(p[0])}</b>" + (f"<span>{e(p[1])}</span>" if p[1] else "") + "</li>"
+            else:
+                items += f"<li><b>{e(p)}</b></li>"
+        mid = f'<div class="title">{e(card["title"])}</div><ol>{items}</ol>'
     elif k == "outro":
         mid = (f'<div class="title">{e(card["title"])}</div><div class="url">{e(card["url"])}</div>'
-               f'<div class="sub">{e(card["sub"])}</div><div class="rule"></div>')
+               f'<div class="sub">{e(card["sub"])}</div>')
     else:
         raise SystemExit(f"모르는 카드 종류: {k}")
-    if k == "figure":
-        foot = ""
     return ('<!doctype html><html lang="ko"><head><meta charset="utf-8">'
             '<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/'
             'dist/web/variable/pretendardvariable-dynamic-subset.min.css">'
-            f'<style>{CSS}</style></head><body><div class="card {k}">{top}{mid}{foot}</div></body></html>')
+            f'<style>{CSS}</style></head><body><div class="card {k}">{top}{mid}{bar}</div></body></html>')
 
 
 def caption(set_id, spec):
@@ -381,7 +396,7 @@ def build(set_id, spec):
                 n += 1
             page = pathlib.Path(tmp) / f"{i:02d}.html"
             png = pathlib.Path(tmp) / f"{i:02d}.png"
-            page.write_text(render(card, i, len(cards), n), encoding="utf-8")
+            page.write_text(render(card, i, len(cards), n, spec.get("kicker", "")), encoding="utf-8")
             shoot(page, png, size=SIZE)
             Image.open(png).convert("RGB").save(out / f"{i:02d}.jpg", "JPEG", quality=90, optimize=True)
     cap = caption(set_id, spec)
