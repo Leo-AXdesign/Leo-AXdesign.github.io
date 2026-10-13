@@ -3,6 +3,7 @@
  * 디자인 허브 SNS MCP 서버 (인스타그램 · 스레드)
  *
  * Claude 데스크톱에서 인스타그램(사진·캐러셀·릴스·스토리)과 스레드에 글을 올리고 계정 정보를 봅니다.
+ * 읽을거리 글을 읽고 고치고 사이트에 반영하는 도구와, 검토·다듬기 프롬프트도 있습니다 (구독 안에서, API 요금 없음).
  * - 인스타그램: "Instagram 로그인이 포함된 API" 토큰(IGAA…)을 씁니다. graph.instagram.com
  * - 스레드:     Threads API 토큰을 씁니다. graph.threads.net
  * - 외부 패키지 없이 Node.js 18 이상만 있으면 됩니다.
@@ -18,6 +19,7 @@ import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import readline from "node:readline";
+import { spawn } from "node:child_process";
 
 const IG = "https://graph.instagram.com/v23.0";
 const TH = "https://graph.threads.net/v1.0";
@@ -81,6 +83,56 @@ async function waitTh(id) {
     await sleep(2000);
   }
   throw new Error("스레드 게시물 처리가 1분 넘게 끝나지 않았습니다.");
+}
+
+
+// ---------- 읽을거리 글 (Claude 구독으로 검토·수정, API 요금 없음) ----------
+// DESIGNHUB_REPO: 이 맥의 사이트 저장소 폴더 (setup-studio.sh 가 설정 파일에 넣어 둡니다)
+
+function repo() {
+  const r = env.DESIGNHUB_REPO;
+  if (!r || !fs.existsSync(path.join(r, "tools", "admin.py")))
+    throw new Error("사이트 저장소 폴더를 모릅니다. 터미널에서 설치 한 줄(setup-studio.sh)을 다시 실행해 주세요.");
+  return r;
+}
+
+function articlePath(slug) {
+  if (!/^[a-z0-9-]+$/.test(slug || "")) throw new Error("글 주소(slug)는 영문 소문자·숫자·하이픈만 됩니다.");
+  const f = path.join(repo(), "content", "articles", `${slug}.md`);
+  if (!fs.existsSync(f)) throw new Error(`없는 글입니다: ${slug}`);
+  return f;
+}
+
+function frontmatter(md) {
+  const m = md.match(/^---\n([\s\S]*?)\n---/);
+  const meta = {};
+  if (m) for (const line of m[1].split("\n")) { const i = line.indexOf(":"); if (i > 0) meta[line.slice(0, i).trim()] = line.slice(i + 1).trim(); }
+  return meta;
+}
+
+function touchUpdated(md) {
+  const today = new Date().toLocaleDateString("sv-SE", { timeZone: "Asia/Seoul" });
+  const end = md.indexOf("\n---", 4);
+  let head = md.slice(0, end);
+  const body = md.slice(end);
+  head = /^updated:/m.test(head) ? head.replace(/^updated:.*$/m, `updated: ${today}`) : head.replace(/^(date:.*)$/m, `$1\nupdated: ${today}`);
+  return head + body;
+}
+
+function guide() {
+  try { return fs.readFileSync(path.join(repo(), "tools", "editor-guide.md"), "utf8"); }
+  catch { return "디자인 허브 편집 기준 파일(tools/editor-guide.md)을 찾지 못했습니다."; }
+}
+
+function runPublish(message) {
+  return new Promise((resolve, reject) => {
+    const p = spawn("python3", ["tools/publish.py", message], { cwd: repo() });
+    let out = "";
+    p.stdout.on("data", (d) => (out += d));
+    p.stderr.on("data", (d) => (out += d));
+    const timer = setTimeout(() => { p.kill(); reject(new Error("5분이 지나도 끝나지 않았습니다.")); }, 300000);
+    p.on("close", (code) => { clearTimeout(timer); code === 0 ? resolve(out.trim()) : reject(new Error(out.trim().slice(-1500))); });
+  });
 }
 
 // ---------- 도구 ----------
@@ -268,6 +320,68 @@ const TOOLS = {
     },
   },
 
+  editor_guide: {
+    description: "디자인 허브 편집 기준(말투·출처·검토 방법·SNS 규칙)을 읽습니다. 글을 검토하거나 SNS 글을 다듬기 전에 먼저 읽으세요.",
+    schema: { type: "object", properties: {} },
+    run: async () => guide(),
+  },
+
+  article_list: {
+    description: "발행된 읽을거리 글 목록(주소 slug, 제목, 날짜)을 최신순으로 봅니다.",
+    schema: { type: "object", properties: {} },
+    run: async () => {
+      const dir = path.join(repo(), "content", "articles");
+      return fs.readdirSync(dir).filter((f) => f.endsWith(".md")).map((f) => {
+        const m = frontmatter(fs.readFileSync(path.join(dir, f), "utf8"));
+        return { slug: m.slug || f.replace(/\.md$/, ""), title: m.title, date: m.date, updated: m.updated || "" };
+      }).sort((a, b) => String(b.date).localeCompare(String(a.date)));
+    },
+  },
+
+  article_read: {
+    description: "읽을거리 글 한 편의 원문(마크다운)을 읽습니다.",
+    schema: { type: "object", properties: { slug: { type: "string", description: "글 주소, 예: ai-draft-client-pixel-pusher" } }, required: ["slug"] },
+    run: async ({ slug }) => fs.readFileSync(articlePath(slug), "utf8"),
+  },
+
+  article_edit: {
+    description: "읽을거리 글 본문을 고칩니다(이 맥의 파일만, 사이트 반영은 site_publish). before 를 after 로 바꾸거나(after 가 빈칸이면 삭제), anchor 문장이 있는 문단 뒤에 after 를 새 문단으로 넣습니다. before·anchor 는 원문을 글자 그대로 인용해야 합니다. 사용자가 고르거나 동의한 제안만 적용하세요.",
+    schema: {
+      type: "object",
+      properties: {
+        slug: { type: "string" },
+        before: { type: "string", description: "바꾸거나 지울 원문 문장 (그대로 인용)" },
+        anchor: { type: "string", description: "새 문단을 넣을 자리 바로 앞 문장 (그대로 인용)" },
+        after: { type: "string", description: "바뀔 문장 또는 새 문단" },
+      },
+      required: ["slug"],
+    },
+    run: async ({ slug, before = "", anchor = "", after = "" }) => {
+      const f = articlePath(slug);
+      let md = fs.readFileSync(f, "utf8");
+      if (before) {
+        if (!md.includes(before)) throw new Error("본문에서 before 문장을 찾지 못했습니다. article_read 로 원문을 다시 확인해 주세요.");
+        md = md.replace(before, () => after);   // after 안의 $ 기호를 그대로 두려고 함수로 넘깁니다
+      } else if (anchor && after) {
+        const i = md.indexOf(anchor);
+        if (i < 0) throw new Error("본문에서 anchor 문장을 찾지 못했습니다.");
+        let end = md.indexOf("\n\n", i);
+        if (end < 0) end = md.length;
+        md = md.slice(0, end) + "\n\n" + after.trim() + md.slice(end);
+      } else {
+        throw new Error("before 또는 anchor+after 가 필요합니다.");
+      }
+      fs.writeFileSync(f, touchUpdated(md));
+      return { ok: true, note: "이 맥의 글을 고쳤습니다. 다 고친 뒤 site_publish 로 사이트에 반영하세요. 영어판(content/articles-en)은 바뀌지 않습니다." };
+    },
+  },
+
+  site_publish: {
+    description: "고친 글을 사이트에 반영합니다(빌드 → GitHub 에 올리기, 1~2분 뒤 designrefs.com 에 보임). 사용자가 확인한 뒤에만 쓰세요.",
+    schema: { type: "object", properties: { message: { type: "string", description: "무엇을 고쳤는지 한 줄" } } },
+    run: async ({ message = "글 고침" }) => runPublish(message),
+  },
+
   refresh_tokens: {
     description: "인스타그램·스레드 장기 토큰(60일)을 새로 연장하고 Claude 설정 파일에 자동으로 저장합니다. 한 달에 한 번쯤 실행하면 만료되지 않습니다. 발급 후 24시간이 지나야 연장됩니다.",
     schema: { type: "object", properties: {} },
@@ -297,6 +411,28 @@ const TOOLS = {
   },
 };
 
+// ---------- 프롬프트 (Claude 데스크톱의 + 메뉴에서 고르는 작업) ----------
+
+const PROMPTS = {
+  review_article: {
+    description: "발행된 읽을거리 글을 편집장 기준으로 검토하고, 고를 수 있는 수정 제안을 받습니다 (구독으로, 추가 요금 없음)",
+    arguments: [{ name: "slug", description: "글 주소 (비우면 최신 글)", required: false }],
+    text: ({ slug }) => `designhub 도구로 읽을거리 글을 검토해 줘.
+
+1. editor_guide 로 편집 기준을 먼저 읽어.
+2. ${slug ? `article_read 로 '${slug}' 글을 읽어.` : "article_list 로 최신 글을 찾고 article_read 로 읽어."}
+3. 웹 검색으로 발행일 이후 바뀐 소식이 있는지 확인해.
+4. 제안을 번호 붙여 보여 줘. 각 제안마다 종류·중요도, 이유와 근거 링크, 바꿀 원문(그대로 인용) → 바뀔 문장.
+5. 마지막에 이 글을 소개하는 스레드 글 초안 하나.
+6. 내가 번호를 고르면 그것만 article_edit 로 적용하고, 다 끝나면 site_publish 해도 되는지 물어봐.`,
+  },
+  polish_post: {
+    description: "인스타 캡션이나 스레드 글을 편집 기준에 맞게 다듬습니다 (구독으로, 추가 요금 없음)",
+    arguments: [{ name: "text", description: "다듬을 글", required: true }],
+    text: ({ text = "" }) => `editor_guide 로 편집 기준을 읽고, 아래 글을 기준에 맞게 다듬어 줘. 고친 점을 짧게 적고 다듬은 전체 글을 보여 줘. [ ] 자리는 지어내지 말고 남겨 둬.\n\n${text}`,
+  },
+};
+
 // ---------- MCP (stdio, JSON-RPC) ----------
 
 const send = (msg) => process.stdout.write(JSON.stringify({ jsonrpc: "2.0", ...msg }) + "\n");
@@ -308,11 +444,19 @@ async function handle(req) {
     if (method === "initialize") {
       return send({ id, result: {
         protocolVersion: params.protocolVersion || "2025-06-18",
-        capabilities: { tools: {} },
-        serverInfo: { name: "designhub-social", version: "1.2.0" },
+        capabilities: { tools: {}, prompts: {} },
+        serverInfo: { name: "designhub-social", version: "1.3.0" },
       } });
     }
     if (method === "ping") return send({ id, result: {} });
+    if (method === "prompts/list") {
+      return send({ id, result: { prompts: Object.entries(PROMPTS).map(([name, p]) => ({ name, description: p.description, arguments: p.arguments })) } });
+    }
+    if (method === "prompts/get") {
+      const p = PROMPTS[params.name];
+      if (!p) return send({ id, error: { code: -32602, message: `없는 프롬프트: ${params.name}` } });
+      return send({ id, result: { description: p.description, messages: [{ role: "user", content: { type: "text", text: p.text(params.arguments || {}) } }] } });
+    }
     if (method === "tools/list") {
       return send({ id, result: { tools: Object.entries(TOOLS).map(([name, t]) => ({ name, description: t.description, inputSchema: t.schema })) } });
     }

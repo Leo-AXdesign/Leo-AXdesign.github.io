@@ -6,7 +6,8 @@
 #   1. 이 맥에서 사이트 저장소 폴더를 찾습니다 (tools/admin.py 가 있는 폴더)
 #   2. GitHub 의 최신 내용을 받아 옵니다
 #   3. 필요한 것을 설치합니다: Pillow(이미지), Anthropic SDK(AI 편집장), ffmpeg(릴스 영상, Homebrew 가 있을 때)
-#   4. 바탕화면에 '디자인허브 스튜디오.command' 아이콘을 만듭니다
+#   4. Claude 데스크톱의 designhub 서버를 최신으로 받고 저장소 위치를 알려 줍니다 (무료 검토용)
+#      바탕화면에 '디자인허브 스튜디오.command' 아이콘을 만듭니다
 #   5. 스튜디오를 엽니다
 set -e
 say() { printf "\n\033[1m%s\033[0m\n" "$1"; }
@@ -49,6 +50,27 @@ elif command -v brew >/dev/null; then
 else
   echo "ffmpeg: Homebrew 가 없어 건너뜁니다. 이미 만들어 둔 릴스 발행에는 필요 없고, 새 릴스를 만들 때만 필요합니다."
 fi
+
+say "Claude 데스크톱 연결 갱신 중…"
+mkdir -p "$HOME/.designhub"
+curl -fsSL https://designrefs.com/mcp/designhub-social.mjs -o "$HOME/.designhub/designhub-social.mjs" && echo "designhub MCP 서버: 최신으로 받음"
+REPO="$REPO" python3 - <<'PY'
+import json, os, pathlib
+p = pathlib.Path.home() / "Library/Application Support/Claude/claude_desktop_config.json"
+try:
+    c = json.loads(p.read_text())
+except (OSError, ValueError):
+    print("Claude 데스크톱 설정이 아직 없어 건너뜁니다.")
+    raise SystemExit
+for s in (c.get("mcpServers") or {}).values():
+    if any("designhub-social" in str(a) for a in s.get("args", [])):
+        s.setdefault("env", {})["DESIGNHUB_REPO"] = os.environ["REPO"]
+        p.write_text(json.dumps(c, ensure_ascii=False, indent=2))
+        print("Claude 데스크톱에 저장소 위치를 알려 줬습니다 (무료 검토 도구용). Claude 를 Cmd+Q 로 껐다 켜 주세요.")
+        break
+else:
+    print("Claude 데스크톱에 designhub 서버가 없어 건너뜁니다.")
+PY
 
 say "4/5 바탕화면 아이콘 만드는 중…"
 LAUNCHER="$HOME/Desktop/디자인허브 스튜디오.command"

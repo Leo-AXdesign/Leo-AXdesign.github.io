@@ -154,16 +154,26 @@
 
 <main class="wrap" id="v-coach" hidden>
   <section class="col">
+    <div class="reco">
+      <div class="reco__label">무료로 하기 · Claude 구독 안에서</div>
+      <div class="reco__note">Claude 데스크톱 앱 입력창의 <b>+</b> → <b>designhub</b> → <b>review_article</b> 을 고르고 글 주소를 넣으면,
+        같은 기준으로 검토하고 고른 제안만 고쳐서 사이트에 반영까지 해 줍니다. 추가 요금이 없어요.</div>
+      <button class="btn" id="copyp">이 글 검토 문장 복사</button>
+    </div>
     <div class="reco" style="background:#f5f5f5;color:var(--ink)">
-      <div class="reco__label" style="color:var(--muted)">AI 편집장 · <span id="cmodel"></span></div>
+      <div class="reco__label" style="color:var(--muted)">여기서 바로 하기 · API 요금이 들어요</div>
       <div class="reco__note" style="color:var(--body)">발행된 글을 Claude 가 다시 읽고, 발행 뒤 바뀐 소식을 웹에서 찾아<br />고칠 점과 더할 점을 제안합니다. 마음에 드는 제안만 [적용]하세요.</div>
       <div id="ckey" style="margin-top:14px"></div>
     </div>
     <div>
       <p class="h">검토할 글</p>
       <div class="list" id="clist"></div>
-      <div class="row" style="margin-top:12px"><button class="btn btn--dark" id="crun" disabled>검토 받기</button>
-        <span style="font-size:13px;color:var(--muted)">1~3분 · 한 번에 보통 수십~수백 원</span></div>
+      <div class="row" style="margin-top:12px;flex-wrap:wrap">
+        <select class="inp" id="cmode" style="width:auto"></select>
+        <label class="check"><input type="checkbox" id="cweb" checked /> 최신 소식 웹 검색 (최대 3회)</label>
+      </div>
+      <div class="row" style="margin-top:10px"><button class="btn btn--dark" id="crun" disabled>검토 받기</button>
+        <span style="font-size:13px;color:var(--muted)" id="ccost"></span></div>
     </div>
   </section>
   <section class="panel" id="cview"><div class="empty">왼쪽에서 글을 고르고 <b>검토 받기</b>를 누르세요.</div></section>
@@ -269,11 +279,11 @@ function showPreview() {
     `<h2 class="pv-title">${esc(m.title)}</h2><div class="pv-meta">${kindName}${m.images ? ` · ${m.images.length}장` : ""}${m.seconds ? ` · ${m.seconds}초` : ""}` +
     `${m.published ? " · <b>이미 올린 적 있음</b>" : ""}</div>${media}` +
     (isIG ? `<label class="f">인스타 캡션</label><textarea id="cap">${esc(m.caption)}</textarea><div class="count" id="capc"></div>` +
-            `<button class="btn" data-polish="caption">AI로 다듬기</button><div id="ai-caption"></div>` +
+            `<button class="btn" data-polish="caption">AI로 다듬기 (약 1원)</button><div id="ai-caption"></div>` +
             `<div class="also"><label class="check"><input type="checkbox" id="also" /> 스레드에도 함께 알리기 (링크 미리보기 포함)</label>` +
             `<textarea id="thtext" hidden>${esc(thDefault)}</textarea><div class="count" id="thc" hidden></div></div>`
           : `<label class="f">스레드 글</label><textarea id="thtext">${esc(m.text)}</textarea><div class="count" id="thc"></div>` +
-            `<button class="btn" data-polish="thread">AI로 다듬기</button><div id="ai-thread"></div>` +
+            `<button class="btn" data-polish="thread">AI로 다듬기 (약 1원)</button><div id="ai-thread"></div>` +
             `<label class="f">함께 붙일 링크 (선택)</label><input class="inp" id="link" value="${esc(m.link || "")}" placeholder="https://designrefs.com/..." />`) +
     `<div class="warn" id="warn"></div>` +
     `<div style="margin-top:20px"><button class="btn btn--dark btn--big" id="pub">발행</button></div>` +
@@ -360,7 +370,15 @@ let cslug = null, creview = null, capplied = 0;
 
 async function coachLoad() {
   const st = await api("coach_state");
-  $("#cmodel").textContent = st.model;
+  const sel = $("#cmode");
+  if (!sel.options.length) {
+    sel.innerHTML = Object.entries(st.modes).map(([k, l]) => `<option value="${k}" ${k === st.default.article ? "selected" : ""}>${esc(l)}</option>`).join("");
+    const cost = () => {
+      const base = { haiku: 5, sonnet: 100, opus: 200 }[sel.value], web = $("#cweb").checked ? 40 : 0;
+      $("#ccost").textContent = `1~3분 · 약 ${base + web}원`;
+    };
+    sel.onchange = cost; $("#cweb").onchange = cost; cost();
+  }
   const k = $("#ckey");
   if (!st.sdk) {
     k.innerHTML = `<div class="warn">먼저 설치가 필요해요. 터미널에서: <code>python3 -m pip install --user anthropic</code></div>`;
@@ -379,13 +397,20 @@ async function coachLoad() {
   $("#crun").disabled = !(cslug && st.sdk && st.key);
 }
 
+$("#copyp").onclick = async () => {
+  const slug = cslug || (S.articles[0] || {}).slug || "";
+  const text = `designhub 의 review_article 순서대로 '${slug}' 글을 검토해 줘. editor_guide 기준으로, 제안은 번호를 붙여 보여 주고 내가 고른 것만 article_edit 로 적용해 줘.`;
+  try { await navigator.clipboard.writeText(text); alert("복사했습니다. Claude 데스크톱에 붙여 넣으세요.\n\n" + text); }
+  catch { prompt("아래 문장을 복사해 Claude 데스크톱에 붙여 넣으세요.", text); }
+};
+
 $("#crun").onclick = async () => {
   const title = S.articles.find((a) => a.slug === cslug).title;
   capplied = 0;
   $("#cview").innerHTML = `<h2 class="pv-title">${esc(title)}</h2><div class="empty"><span class="spin"></span>AI 편집장이 글을 읽고, 발행 뒤 바뀐 소식을 찾는 중이에요… (1~3분)</div>`;
   $("#crun").disabled = true;
   try {
-    const { job } = await api("coach_article", { slug: cslug });
+    const { job } = await api("coach_article", { slug: cslug, mode: $("#cmode").value, web: $("#cweb").checked ? 3 : 0 });
     creview = (await waitJob(job)).data;
     renderReview(title);
   } catch (e) {
