@@ -73,7 +73,11 @@ def client():
     except ImportError:
         raise CoachError("AI 편집장을 쓰려면 먼저 설치가 필요합니다. 터미널에서: python3 -m pip install --user anthropic")
     key = saved_key()
-    # 화면에서 넣은 키가 있으면 그걸, 없으면 환경 변수나 `ant auth login` 프로필을 씁니다
+    if not key and not (os.environ.get("ANTHROPIC_API_KEY") or os.environ.get("ANTHROPIC_AUTH_TOKEN")):
+        raise CoachError("API 키가 없어서 여기서는 바로 할 수 없어요. "
+                         "'데스크톱에 보낼 문장 복사'를 눌러 Claude 데스크톱에 붙여 넣으면 무료로 할 수 있습니다. "
+                         "(여기서 바로 하려면 AI 편집장 탭에 API 키를 넣어 주세요.)")
+    # 화면에서 넣은 키가 있으면 그걸, 없으면 환경 변수를 씁니다
     return anthropic.Anthropic(api_key=key) if key else anthropic.Anthropic()
 
 
@@ -236,4 +240,47 @@ def review_post(kind, text, mode=None):
     limit = 500 if kind == "thread" else 2200
     if len(data.get("revised", "")) > limit:
         data["points"] = data.get("points", []) + [f"주의: 다듬은 글이 {limit}자를 넘습니다. 조금 줄여 주세요."]
+    return data
+
+
+# ---------- 원하는 대로 고치기 (사용자가 편집점을 직접 요청) ----------
+
+EDIT_FORMAT = """사용자의 요청대로만 고친다. 요청하지 않은 곳은 건드리지 않는다.
+마지막에 아래 형식의 JSON 을 ```json 블록 하나로만 낸다. before 는 바꿀 원문(글자 그대로), anchor 는 새 문단을 넣을 자리 바로 앞 문장(글자 그대로).
+{"summary": "무엇을 어떻게 고쳤는지 한두 문장",
+ "edits": [{"title": "짧은 제목", "before": "", "anchor": "", "after": ""}]}"""
+
+
+def edit_article(slug, request, mode=None):
+    """읽을거리 글을 사용자가 요청한 대로 고칠 수정안을 받습니다. [적용]은 apply() 로."""
+    if not (request or "").strip():
+        raise CoachError("어떻게 고칠지 적어 주세요.")
+    mode = mode or DEFAULT["article"]
+    _, md = read_article(slug)
+    system = "너는 디자인 허브의 편집자다. 사용자가 원하는 편집을 글에 정확히 반영한다.\n\n" + guide() + "\n\n" + EDIT_FORMAT
+    user = f"<request>\n{request}\n</request>\n\n<article slug=\"{slug}\">\n{md}\n</article>"
+    text, _, _ = call(system, user, mode=mode, effort="medium")
+    data = parse_json(text)
+    sugs = []
+    for i, e in enumerate(data.get("edits", [])):
+        e.update(id=i, type="요청", priority="", reason="", sources=[])
+        e["applicable"] = bool((e.get("before") and e["before"] in md) or (e.get("anchor") and e["anchor"] in md and e.get("after")))
+        sugs.append(e)
+    return {"summary": data.get("summary", ""), "suggestions": sugs, "searched": []}
+
+
+def edit_post(kind, text, request, mode=None):
+    """캡션·스레드 글을 사용자가 요청한 대로 고친 수정본을 받습니다."""
+    if not text.strip() or not (request or "").strip():
+        raise CoachError("고칠 글과 요청을 모두 적어 주세요.")
+    mode = mode or DEFAULT["post"]
+    name = {"thread": "스레드 글", "caption": "인스타 캡션"}.get(kind, "글")
+    system = ("너는 디자인 허브의 SNS 편집자다. 사용자가 원하는 편집을 정확히 반영하고, 요청하지 않은 곳은 그대로 둔다.\n\n"
+              + guide() + "\n\n마지막에 ```json 블록 하나로만 답한다:\n"
+              '{"summary": "무엇을 고쳤는지 한 문장", "points": ["고친 점"], "revised": "고친 전체 글"}')
+    out, _, _ = call(system, f"<request>\n{request}\n</request>\n\n<{name}>\n{text}\n</{name}>", mode=mode, effort="low")
+    data = parse_json(out)
+    limit = 500 if kind == "thread" else 2200
+    if len(data.get("revised", "")) > limit:
+        data["points"] = data.get("points", []) + [f"주의: 고친 글이 {limit}자를 넘습니다."]
     return data
