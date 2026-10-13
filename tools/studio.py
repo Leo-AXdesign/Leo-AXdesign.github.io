@@ -517,7 +517,8 @@ def background(fn):
 
 def coach_state(_=None):
     sdk, key = coach.ready()
-    return {"ok": True, "sdk": sdk, "key": key, "model": coach.MODEL}
+    return {"ok": True, "sdk": sdk, "key": key, "modes": {k: v["label"] for k, v in coach.MODES.items()},
+            "default": coach.DEFAULT}
 
 
 def coach_key(p):
@@ -534,8 +535,8 @@ def coach_forget(_=None):
 
 
 def coach_article(p):
-    slug = p.get("slug", "")
-    return background(lambda job: (job["steps"].append("글을 읽고, 발행 뒤 바뀐 소식을 찾는 중… (1~3분)"), coach.review_article(slug))[1])
+    slug, mode, web = p.get("slug", ""), p.get("mode"), int(p.get("web", 3))
+    return background(lambda job: coach.review_article(slug, mode=mode, web=max(0, min(web, 5))))
 
 
 def coach_apply(p):
@@ -544,7 +545,7 @@ def coach_apply(p):
 
 
 def coach_post(p):
-    return background(lambda job: coach.review_post(p.get("kind", "thread"), p.get("text", "")))
+    return background(lambda job: coach.review_post(p.get("kind", "thread"), p.get("text", ""), mode=p.get("mode")))
 
 
 def site_publish(p):
