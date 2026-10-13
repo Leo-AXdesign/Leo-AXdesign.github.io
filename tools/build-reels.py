@@ -156,6 +156,17 @@ def capture(url, out, max_h=4500):
                 page.add_style_tag(content=HIDE_BANNERS)
             except Exception:
                 pass
+            # 할인·뉴스레터 같은 팝업도 닫습니다: Esc, 그리고 화면에 보이는 '닫기' 버튼
+            page.wait_for_timeout(1500)
+            for _ in range(2):
+                try:
+                    page.keyboard.press("Escape")
+                    btn = page.locator('[aria-label*="close" i]:visible, [aria-label*="닫기"]:visible, '
+                                       'button[class*="close" i]:visible').first
+                    btn.click(timeout=800)
+                except Exception:
+                    pass
+                page.wait_for_timeout(400)
             for y in range(0, 2400, 300):   # 늦게 뜨는 이미지를 불러오려고 한 번 훑습니다
                 page.evaluate(f"window.scrollTo(0, {y})")
                 page.wait_for_timeout(120)
