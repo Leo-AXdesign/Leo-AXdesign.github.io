@@ -434,7 +434,8 @@ def job_status(p):
     job = JOBS.get(p.get("job"))
     if not job:
         raise Oops("작업을 찾을 수 없습니다.")
-    return {"ok": True, **{k: job.get(k) for k in ("done", "ok", "steps", "links", "message", "data")},
+    # ok 는 '이 확인 요청이 잘 됐는지', success 는 '작업 결과' (진행 중이면 None)
+    return {"ok": True, "success": job.get("ok"), **{k: job.get(k) for k in ("done", "steps", "links", "message", "data")},
             "log": hide("\n".join(job["log"]))[-4000:]}
 
 
@@ -548,6 +549,14 @@ def coach_post(p):
     return background(lambda job: coach.review_post(p.get("kind", "thread"), p.get("text", ""), mode=p.get("mode")))
 
 
+def coach_edit_article(p):
+    return background(lambda job: coach.edit_article(p.get("slug", ""), p.get("request", ""), mode=p.get("mode")))
+
+
+def coach_edit_post(p):
+    return background(lambda job: coach.edit_post(p.get("kind", "thread"), p.get("text", ""), p.get("request", ""), mode=p.get("mode")))
+
+
 def site_publish(p):
     """고친 글을 사이트에 반영 (관리자의 '사이트에 올리기'와 같은 과정)"""
     spec = importlib.util.spec_from_file_location("admin", TOOLS / "admin.py")
@@ -566,7 +575,8 @@ def site_publish(p):
 
 API = {"state": state, "make": make, "publish": publish, "job": job_status, "tour": tour, "save_draft": save_draft,
        "coach_state": coach_state, "coach_key": coach_key, "coach_forget": coach_forget, "coach_article": coach_article,
-       "coach_apply": coach_apply, "coach_post": coach_post, "site_publish": site_publish}
+       "coach_apply": coach_apply, "coach_post": coach_post, "site_publish": site_publish,
+       "coach_edit_article": coach_edit_article, "coach_edit_post": coach_edit_post}
 
 
 # =========================================================

@@ -108,6 +108,8 @@
   .src { margin-top: 8px; font-size: 12px; } .src a { color: var(--muted); margin-right: 10px; }
   .ai { margin-top: 10px; padding: 14px 16px; border-radius: 14px; background: #f3f3ff; font-size: 14px; line-height: 1.6; }
   .ai ul { margin: 6px 0 10px; padding-left: 18px; }
+  .ask { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+  .ask .inp { flex: 1 1 260px; }
   .spin { display: inline-block; width: 14px; height: 14px; border: 2px solid #ccc; border-top-color: var(--ink); border-radius: 50%; animation: s .8s linear infinite; vertical-align: -2px; margin-right: 6px; }
   @keyframes s { to { transform: rotate(360deg); } }
 </style>
@@ -174,6 +176,12 @@
       </div>
       <div class="row" style="margin-top:10px"><button class="btn btn--dark" id="crun" disabled>검토 받기</button>
         <span style="font-size:13px;color:var(--muted)" id="ccost"></span></div>
+    </div>
+    <div>
+      <p class="h">원하는 대로 고치기</p>
+      <textarea id="creq" style="min-height:110px" placeholder="예) '그래서 지금은' 2번 팁을 더 구체적으로, 첫 문단은 두 문장으로 줄여 줘"></textarea>
+      <div class="row" style="margin-top:10px;flex-wrap:wrap"><button class="btn btn--dark" id="cedit" disabled>수정본 받기</button>
+        <button class="btn" id="ccopyedit">데스크톱에 보낼 문장 복사 (무료)</button></div>
     </div>
   </section>
   <section class="panel" id="cview"><div class="empty">왼쪽에서 글을 고르고 <b>검토 받기</b>를 누르세요.</div></section>
@@ -279,11 +287,11 @@ function showPreview() {
     `<h2 class="pv-title">${esc(m.title)}</h2><div class="pv-meta">${kindName}${m.images ? ` · ${m.images.length}장` : ""}${m.seconds ? ` · ${m.seconds}초` : ""}` +
     `${m.published ? " · <b>이미 올린 적 있음</b>" : ""}</div>${media}` +
     (isIG ? `<label class="f">인스타 캡션</label><textarea id="cap">${esc(m.caption)}</textarea><div class="count" id="capc"></div>` +
-            `<button class="btn" data-polish="caption">AI로 다듬기 (약 1원)</button><div id="ai-caption"></div>` +
+            `<div class="ask"><input class="inp" id="req-caption" placeholder="수정 요청: 예) 첫 줄을 질문으로, 해시태그는 3개만" /><button class="btn btn--dark" data-edit="caption">수정본 받기</button><button class="btn" data-copy="caption">데스크톱에 보낼 문장 복사 (무료)</button></div><div id="ai-caption"></div>` +
             `<div class="also"><label class="check"><input type="checkbox" id="also" /> 스레드에도 함께 알리기 (링크 미리보기 포함)</label>` +
             `<textarea id="thtext" hidden>${esc(thDefault)}</textarea><div class="count" id="thc" hidden></div></div>`
           : `<label class="f">스레드 글</label><textarea id="thtext">${esc(m.text)}</textarea><div class="count" id="thc"></div>` +
-            `<button class="btn" data-polish="thread">AI로 다듬기 (약 1원)</button><div id="ai-thread"></div>` +
+            `<div class="ask"><input class="inp" id="req-thread" placeholder="수정 요청: 예) 둘째 문단을 한 문장으로 줄이고 끝을 질문으로" /><button class="btn btn--dark" data-edit="thread">수정본 받기</button><button class="btn" data-copy="thread">데스크톱에 보낼 문장 복사 (무료)</button></div><div id="ai-thread"></div>` +
             `<label class="f">함께 붙일 링크 (선택)</label><input class="inp" id="link" value="${esc(m.link || "")}" placeholder="https://designrefs.com/..." />`) +
     `<div class="warn" id="warn"></div>` +
     `<div style="margin-top:20px"><button class="btn btn--dark btn--big" id="pub">발행</button></div>` +
@@ -297,7 +305,12 @@ function showPreview() {
     ? "[ ] 로 비워 둔 자리가 있어요. 실제 경험으로 바꾸거나 지워야 발행할 수 있습니다." : ""; };
   $("#thtext").addEventListener("input", warn); warn();
   $("#pub").onclick = doPublish;
-  document.querySelectorAll("[data-polish]").forEach((btn) => btn.onclick = () => polish(btn.dataset.polish, btn));
+  document.querySelectorAll("[data-edit]").forEach((btn) => btn.onclick = () => editPost(btn.dataset.edit, btn));
+  document.querySelectorAll("[data-copy]").forEach((btn) => btn.onclick = () => {
+    const kind = btn.dataset.copy, ta = kind === "caption" ? $("#cap") : $("#thtext"), req = $("#req-" + kind).value.trim();
+    if (!req) { alert("어떻게 고칠지 먼저 적어 주세요."); return; }
+    copyText(`designhub 의 edit_post 순서대로 아래 ${kind === "caption" ? "인스타 캡션" : "스레드 글"}을 고쳐 줘.\n\n요청: ${req}\n\n글:\n${ta.value}`);
+  });
 }
 
 async function waitJob(job, onStep) {
@@ -305,16 +318,22 @@ async function waitJob(job, onStep) {
     await new Promise((r) => setTimeout(r, 2000));
     const j = await api("job", { job });
     if (onStep) onStep(j);
-    if (j.done) { if (!j.ok) throw new Error(j.message); return j; }
+    if (j.done) { if (!j.success) throw new Error(j.message || "오류가 났습니다."); return j; }
   }
 }
 
-async function polish(kind, btn) {
-  const box = $("#ai-" + kind), ta = kind === "caption" ? $("#cap") : $("#thtext");
+async function copyText(text) {
+  try { await navigator.clipboard.writeText(text); alert("복사했습니다. Claude 데스크톱에 붙여 넣으면 무료로 고쳐 줍니다.\n\n" + text.slice(0, 300)); }
+  catch { prompt("아래 문장을 복사해 Claude 데스크톱에 붙여 넣으세요.", text); }
+}
+
+async function editPost(kind, btn) {
+  const box = $("#ai-" + kind), ta = kind === "caption" ? $("#cap") : $("#thtext"), req = $("#req-" + kind).value.trim();
+  if (!req) { alert("어떻게 고칠지 먼저 적어 주세요."); return; }
   btn.disabled = true;
-  box.innerHTML = `<div class="ai"><span class="spin"></span>AI가 다듬는 중… (20~40초)</div>`;
+  box.innerHTML = `<div class="ai"><span class="spin"></span>요청대로 고치는 중… (20~40초)</div>`;
   try {
-    const { job } = await api("coach_post", { kind, text: ta.value });
+    const { job } = await api("coach_edit_post", { kind, text: ta.value, request: req });
     const d = (await waitJob(job)).data;
     box.innerHTML = `<div class="ai"><b>${esc(d.summary || "")}</b><ul>${(d.points || []).map((x) => `<li>${esc(x)}</li>`).join("")}</ul>` +
       `<textarea id="rev-${kind}">${esc(d.revised || "")}</textarea><div class="row" style="margin-top:8px">` +
@@ -344,9 +363,9 @@ async function doPublish() {
       $("#steps").innerHTML = j.steps.map((s) => `<li>${esc(s)}</li>`).join("") + (j.done ? "" : `<li><span class="spin"></span>진행 중…</li>`);
       if (j.done) {
         const links = Object.entries(j.links || {}).map(([k, v]) => v ? `<a href="${esc(v)}" target="_blank">${k === "instagram" ? "인스타그램에서 보기" : "스레드에서 보기"} ↗</a>` : "").join("\n");
-        $("#res").innerHTML = `<div class="result ${j.ok ? "ok" : "bad"}">${esc(j.message)}${links ? "\n" + links : ""}</div>` +
+        $("#res").innerHTML = `<div class="result ${j.success ? "ok" : "bad"}">${esc(j.message)}${links ? "\n" + links : ""}</div>` +
           (j.log ? `<details class="log"><summary>기록 보기</summary><pre>${esc(j.log)}</pre></details>` : "");
-        if (!j.ok) $("#pub").disabled = false;
+        if (!j.success) $("#pub").disabled = false;
         load();
         break;
       }
@@ -395,6 +414,7 @@ async function coachLoad() {
     `<div class="li__t">${esc(a.title)}</div><div class="li__s">${esc(a.date)}</div></button>`).join("");
   $("#clist").querySelectorAll(".li").forEach((b) => b.onclick = () => { cslug = b.dataset.slug; coachLoad(); });
   $("#crun").disabled = !(cslug && st.sdk && st.key);
+  $("#cedit").disabled = !(cslug && st.sdk && st.key);
 }
 
 $("#copyp").onclick = async () => {
@@ -402,6 +422,28 @@ $("#copyp").onclick = async () => {
   const text = `designhub 의 review_article 순서대로 '${slug}' 글을 검토해 줘. editor_guide 기준으로, 제안은 번호를 붙여 보여 주고 내가 고른 것만 article_edit 로 적용해 줘.`;
   try { await navigator.clipboard.writeText(text); alert("복사했습니다. Claude 데스크톱에 붙여 넣으세요.\n\n" + text); }
   catch { prompt("아래 문장을 복사해 Claude 데스크톱에 붙여 넣으세요.", text); }
+};
+
+$("#ccopyedit").onclick = () => {
+  const req = $("#creq").value.trim();
+  if (!cslug || !req) { alert("글을 고르고, 어떻게 고칠지 적어 주세요."); return; }
+  copyText(`designhub 의 edit_article 순서대로 '${cslug}' 글을 고쳐 줘.\n\n요청: ${req}`);
+};
+
+$("#cedit").onclick = async () => {
+  const req = $("#creq").value.trim(), title = S.articles.find((a) => a.slug === cslug).title;
+  if (!req) { alert("어떻게 고칠지 적어 주세요."); return; }
+  capplied = 0;
+  $("#cview").innerHTML = `<h2 class="pv-title">${esc(title)}</h2><div class="empty"><span class="spin"></span>요청대로 고칠 곳을 찾는 중… (30초~1분)</div>`;
+  $("#cedit").disabled = true;
+  try {
+    const { job } = await api("coach_edit_article", { slug: cslug, request: req, mode: $("#cmode").value });
+    creview = (await waitJob(job)).data;
+    renderReview(title);
+  } catch (e) {
+    $("#cview").innerHTML = `<div class="result bad">${esc(e.message)}</div>`;
+  }
+  $("#cedit").disabled = false;
 };
 
 $("#crun").onclick = async () => {

@@ -426,6 +426,29 @@ const PROMPTS = {
 5. 마지막에 이 글을 소개하는 스레드 글 초안 하나.
 6. 내가 번호를 고르면 그것만 article_edit 로 적용하고, 다 끝나면 site_publish 해도 되는지 물어봐.`,
   },
+  edit_article: {
+    description: "읽을거리 글을 내가 원하는 대로 고칩니다. 요청을 적으면 수정안을 보여 주고, 확인하면 적용·반영까지 (구독으로, 추가 요금 없음)",
+    arguments: [{ name: "slug", description: "글 주소", required: true }, { name: "request", description: "어떻게 고칠지", required: true }],
+    text: ({ slug = "", request = "" }) => `designhub 도구로 읽을거리 글을 내 요청대로 고쳐 줘.
+
+글: ${slug}
+요청: ${request}
+
+1. editor_guide 로 편집 기준을 읽고, article_read 로 글을 읽어.
+2. 요청한 곳만 고치고 나머지는 건드리지 마. 말투는 글과 같게.
+3. 고칠 곳마다 "원문(그대로 인용) → 바뀔 문장"을 번호 붙여 먼저 보여 줘.
+4. 내가 괜찮다고 하면 article_edit 로 적용하고, site_publish 해도 되는지 물어봐.`,
+  },
+  edit_post: {
+    description: "인스타 캡션이나 스레드 글을 내가 원하는 대로 고친 수정본을 받습니다 (구독으로, 추가 요금 없음)",
+    arguments: [{ name: "text", description: "고칠 글", required: true }, { name: "request", description: "어떻게 고칠지", required: true }],
+    text: ({ text = "", request = "" }) => `editor_guide 로 편집 기준을 읽고, 아래 글을 내 요청대로만 고쳐 줘. 요청하지 않은 곳은 그대로 두고, [ ] 자리는 지어내지 말고 남겨 둬. 무엇을 고쳤는지 짧게 적고, 고친 전체 글을 복사하기 쉽게 보여 줘.
+
+요청: ${request}
+
+글:
+${text}`,
+  },
   polish_post: {
     description: "인스타 캡션이나 스레드 글을 편집 기준에 맞게 다듬습니다 (구독으로, 추가 요금 없음)",
     arguments: [{ name: "text", description: "다듬을 글", required: true }],
