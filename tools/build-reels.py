@@ -14,7 +14,7 @@
 - 영상 규격: H.264, 30fps, yuv420p, 무음 AAC 트랙(인스타가 소리 트랙을 요구하는 경우가 있어서).
   배경음악은 인스타 앱에서 넣는 게 저작권상 안전합니다. API 로는 음악을 붙일 수 없습니다.
 """
-import html, importlib.util, json, pathlib, subprocess, sys, tempfile
+import html, importlib.util, json, pathlib, re, subprocess, sys, tempfile
 
 from PIL import Image
 
@@ -115,8 +115,17 @@ def outro_frame(title, url):
 
 MOBILE_UA = ("Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 "
              "(KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1")
-CONSENT = ["Accept all", "Accept All", "Accept", "Allow all", "I agree", "Agree", "Got it", "OK",
-           "모두 허용", "모두 동의", "동의", "확인"]
+# 쿠키 동의 버튼 글자 (대소문자 무시)
+CONSENT = re.compile(r"^\s*(accept( all)?( cookies)?|allow( all)?( cookies)?|i agree|agree|got it|ok|okay|"
+                     r"모두 허용|모두 동의|동의(합니다)?|확인)\s*$", re.I)
+# 버튼을 못 눌렀을 때를 위해, 흔한 쿠키 배너는 화면에서 숨깁니다
+HIDE_BANNERS = """
+#onetrust-consent-sdk, #onetrust-banner-sdk, #CybotCookiebotDialog, .cc-window, .cc-banner, #usercentrics-root,
+.osano-cm-window, #truste-consent-track, .fc-consent-root, #didomi-host, .qc-cmp2-container,
+[id*="cookie-banner" i], [class*="cookie-banner" i], [id*="cookie-consent" i], [class*="cookie-consent" i],
+[id*="cookieconsent" i], [class*="cookieconsent" i], [aria-label*="cookie" i][role="dialog"],
+[aria-label*="cookie" i][role="region"] { display: none !important; }
+"""
 
 
 def capture(url, out, max_h=4500):
@@ -139,12 +148,14 @@ def capture(url, out, max_h=4500):
                 page.wait_for_load_state("networkidle", timeout=8000)
             except Exception:
                 pass
-            for label in CONSENT:
-                try:
-                    page.get_by_role("button", name=label, exact=True).first.click(timeout=600)
-                    break
-                except Exception:
-                    continue
+            try:
+                page.get_by_role("button", name=CONSENT).first.click(timeout=1500)
+            except Exception:
+                pass
+            try:
+                page.add_style_tag(content=HIDE_BANNERS)
+            except Exception:
+                pass
             for y in range(0, 2400, 300):   # 늦게 뜨는 이미지를 불러오려고 한 번 훑습니다
                 page.evaluate(f"window.scrollTo(0, {y})")
                 page.wait_for_timeout(120)
