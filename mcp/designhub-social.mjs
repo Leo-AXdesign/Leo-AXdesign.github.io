@@ -2,7 +2,7 @@
 /**
  * 디자인 허브 SNS MCP 서버 (인스타그램 · 스레드)
  *
- * Claude 데스크톱에서 인스타그램과 스레드에 글을 올리고 계정 정보를 봅니다.
+ * Claude 데스크톱에서 인스타그램(사진·캐러셀·릴스·스토리)과 스레드에 글을 올리고 계정 정보를 봅니다.
  * - 인스타그램: "Instagram 로그인이 포함된 API" 토큰(IGAA…)을 씁니다. graph.instagram.com
  * - 스레드:     Threads API 토큰을 씁니다. graph.threads.net
  * - 외부 패키지 없이 Node.js 18 이상만 있으면 됩니다.
@@ -64,14 +64,14 @@ async function thUser() {
 }
 
 // 컨테이너(올릴 준비가 된 미디어)가 다 만들어질 때까지 기다립니다
-async function waitIg(id) {
-  for (let i = 0; i < 30; i++) {
+async function waitIg(id, tries = 30) {
+  for (let i = 0; i < tries; i++) {
     const { status_code, status } = await ig("GET", `/${id}`, { fields: "status_code,status" });
     if (status_code === "FINISHED") return;
     if (status_code === "ERROR" || status_code === "EXPIRED") throw new Error(`인스타그램이 미디어를 처리하지 못했습니다: ${status || status_code}`);
     await sleep(2000);
   }
-  throw new Error("인스타그램 미디어 처리가 1분 넘게 끝나지 않았습니다.");
+  throw new Error(`인스타그램 미디어 처리가 ${Math.round(tries * 2 / 60)}분 넘게 끝나지 않았습니다. 잠시 뒤 ig_recent_media 로 올라갔는지 확인하세요.`);
 }
 async function waitTh(id) {
   for (let i = 0; i < 30; i++) {
@@ -165,6 +165,65 @@ const TOOLS = {
     },
   },
 
+  reel_list: {
+    description: "디자인 허브가 미리 만들어 둔 릴스 영상 목록(영상·커버 주소, 길이, 캡션 초안)을 봅니다. 릴스를 올릴 때 먼저 이걸로 주소와 캡션을 가져오세요.",
+    schema: { type: "object", properties: { id: { type: "string", description: "선택: 릴스 id (예: fonts-pick-tour)" } } },
+    run: async ({ id }) => {
+      const res = await fetch("https://designrefs.com/social/reels/index.json", { cache: "no-store" });
+      if (!res.ok) throw new Error(`릴스 목록을 불러오지 못했습니다 (${res.status})`);
+      const { reels } = await res.json();
+      if (id) {
+        const r = reels.find((x) => x.id === id);
+        if (!r) throw new Error(`없는 릴스입니다: ${id}. 있는 것: ${reels.map((x) => x.id).join(", ")}`);
+        return r;
+      }
+      return reels.map(({ id, title, seconds }) => ({ id, title, seconds }));
+    },
+  },
+
+  ig_publish_reel: {
+    description: "인스타그램에 릴스(세로 영상)를 공개 게시합니다. 영상은 공개 https 주소의 MP4(H.264)여야 합니다. 배경음악은 API 로 넣을 수 없습니다. 처리에 몇 분 걸릴 수 있습니다. 되돌릴 수 없는 공개 게시이니, 사용자가 내용을 확인한 뒤에만 쓰세요.",
+    schema: {
+      type: "object",
+      properties: {
+        video_url: { type: "string", description: "공개 https MP4 주소" },
+        caption: { type: "string", description: "캡션" },
+        cover_url: { type: "string", description: "선택: 커버 이미지 주소 (JPEG)" },
+        share_to_feed: { type: "boolean", description: "피드에도 보이게 할지 (기본 true)" },
+      },
+      required: ["video_url"],
+    },
+    run: async ({ video_url, caption = "", cover_url, share_to_feed = true }) => {
+      const uid = await igUser();
+      const params = { media_type: "REELS", video_url, caption, share_to_feed: String(share_to_feed) };
+      if (cover_url) params.cover_url = cover_url;
+      const { id } = await ig("POST", `/${uid}/media`, params);
+      await waitIg(id, 150);
+      const post = await ig("POST", `/${uid}/media_publish`, { creation_id: id });
+      return ig("GET", `/${post.id}`, { fields: "id,permalink,timestamp" });
+    },
+  },
+
+  ig_publish_story: {
+    description: "인스타그램 스토리에 사진 또는 영상 한 개를 올립니다(24시간 노출). 공개 https 주소여야 합니다. 사용자가 확인한 뒤에만 쓰세요.",
+    schema: {
+      type: "object",
+      properties: {
+        image_url: { type: "string", description: "사진 주소 (JPEG). image_url 과 video_url 중 하나" },
+        video_url: { type: "string", description: "영상 주소 (MP4)" },
+      },
+    },
+    run: async ({ image_url, video_url }) => {
+      if (!image_url === !video_url) throw new Error("image_url 과 video_url 중 하나만 주세요.");
+      const uid = await igUser();
+      const params = image_url ? { media_type: "STORIES", image_url } : { media_type: "STORIES", video_url };
+      const { id } = await ig("POST", `/${uid}/media`, params);
+      await waitIg(id, video_url ? 150 : 30);
+      const post = await ig("POST", `/${uid}/media_publish`, { creation_id: id });
+      return { id: post.id, note: "스토리는 24시간 동안 보입니다." };
+    },
+  },
+
   ig_publish_limit: {
     description: "인스타그램 24시간 게시 한도와 지금까지 쓴 양을 봅니다.",
     schema: { type: "object", properties: {} },
@@ -250,7 +309,7 @@ async function handle(req) {
       return send({ id, result: {
         protocolVersion: params.protocolVersion || "2025-06-18",
         capabilities: { tools: {} },
-        serverInfo: { name: "designhub-social", version: "1.1.0" },
+        serverInfo: { name: "designhub-social", version: "1.2.0" },
       } });
     }
     if (method === "ping") return send({ id, result: {} });

@@ -1,6 +1,21 @@
 {
   "sets": [
     {
+      "id": "ai-ui-tools",
+      "title": "프롬프트로 화면 시안 뽑는 AI 툴 5",
+      "count": 7,
+      "images": [
+        "https://designrefs.com/social/cards/ai-ui-tools/01.jpg",
+        "https://designrefs.com/social/cards/ai-ui-tools/02.jpg",
+        "https://designrefs.com/social/cards/ai-ui-tools/03.jpg",
+        "https://designrefs.com/social/cards/ai-ui-tools/04.jpg",
+        "https://designrefs.com/social/cards/ai-ui-tools/05.jpg",
+        "https://designrefs.com/social/cards/ai-ui-tools/06.jpg",
+        "https://designrefs.com/social/cards/ai-ui-tools/07.jpg"
+      ],
+      "caption": "프롬프트로 화면 시안 뽑는 AI 툴 5\n\n1. Google Stitch — 말로 설명한 화면을 피그마로 가져가고 싶을 때\n2. Figma Make — 피그마 안에서 눌러 볼 수 있는 시안이 필요할 때\n3. Relume — 사이트맵과 와이어프레임부터 잡을 때\n4. v0 — 개발자에게 넘길 컴포넌트 코드까지 보고 싶을 때\n5. Uizard — 손 스케치를 화면 초안으로 바꿀 때\n\n📌 저장해 두고 필요할 때 꺼내 보세요\n전체 목록은 프로필 링크(designrefs.com)에 있어요.\n\n#디자인레퍼런스 #디자이너 #AI디자인 #UIUX #AI툴"
+    },
+    {
       "id": "article-ai-draft-client-pixel-pusher",
       "title": "클라이언트가 AI 시안을 보내며 \"이것만 다듬어 주세요\" 할 때",
       "count": 6,
@@ -14,6 +29,52 @@
       ],
       "caption": "클라이언트가 AI 시안을 보내며 \"이것만 다듬어 주세요\" 할 때\n\n클라이언트와 상사가 챗GPT, 클로드로 만든 시안을 건네며 마무리만 부탁하는 일이 늘고 있다. 값은 깎이고 일은 그대로인 이 상황에서, 무엇이 남아 있는지 그림으로 정리하고 견적과 대화에 쓸 수 있는 순서를 담았다.\n\n그래서 지금은\n1. 견적서에 줄을 나누자\n2. 받은 시안의 출처를 물어 두자\n3. 내가 바꾼 것을 기록하자\n\n📌 저장해 두고 필요할 때 꺼내 보세요\n전문과 출처는 프로필 링크(designrefs.com)에 있어요.\n\n#디자인레퍼런스 #디자이너 #AI디자인 #디자인인사이트 #UXUI",
       "article": "https://designrefs.com/articles/ai-draft-client-pixel-pusher/"
+    },
+    {
+      "id": "article-design-md-for-ai",
+      "title": "AI에게 우리 디자인 규칙을 건네는 파일 한 장, DESIGN.md",
+      "count": 6,
+      "images": [
+        "https://designrefs.com/social/cards/article-design-md-for-ai/01.jpg",
+        "https://designrefs.com/social/cards/article-design-md-for-ai/02.jpg",
+        "https://designrefs.com/social/cards/article-design-md-for-ai/03.jpg",
+        "https://designrefs.com/social/cards/article-design-md-for-ai/04.jpg",
+        "https://designrefs.com/social/cards/article-design-md-for-ai/05.jpg",
+        "https://designrefs.com/social/cards/article-design-md-for-ai/06.jpg"
+      ],
+      "caption": "AI에게 우리 디자인 규칙을 건네는 파일 한 장, DESIGN.md\n\nAI가 시안을 만들고 코드를 짜는 일이 늘수록, 규칙을 어디에 적어 두느냐가 중요해진다. 구글이 공개한 DESIGN.md 형식으로 이 사이트의 규칙을 직접 옮겨 적고 검사기를 돌려 봤다. 걸린 것까지 그대로 옮긴다.\n\n그래서 지금은\n1. 색 다섯 개 이내\n2. 글자 크기 세 단계\n3. 하지 말 것 세 줄\n\n📌 저장해 두고 필요할 때 꺼내 보세요\n전문과 출처는 프로필 링크(designrefs.com)에 있어요.\n\n#디자인레퍼런스 #디자이너 #AI디자인 #디자인인사이트 #UXUI",
+      "article": "https://designrefs.com/articles/design-md-for-ai/"
+    },
+    {
+      "id": "article-image-ai-edit-not-reroll",
+      "title": "다시 뽑지 말고 고쳐 쓴다, 이미지 AI가 '편집' 쪽으로 간 한 주",
+      "count": 7,
+      "images": [
+        "https://designrefs.com/social/cards/article-image-ai-edit-not-reroll/01.jpg",
+        "https://designrefs.com/social/cards/article-image-ai-edit-not-reroll/02.jpg",
+        "https://designrefs.com/social/cards/article-image-ai-edit-not-reroll/03.jpg",
+        "https://designrefs.com/social/cards/article-image-ai-edit-not-reroll/04.jpg",
+        "https://designrefs.com/social/cards/article-image-ai-edit-not-reroll/05.jpg",
+        "https://designrefs.com/social/cards/article-image-ai-edit-not-reroll/06.jpg",
+        "https://designrefs.com/social/cards/article-image-ai-edit-not-reroll/07.jpg"
+      ],
+      "caption": "다시 뽑지 말고 고쳐 쓴다, 이미지 AI가 '편집' 쪽으로 간 한 주\n\n9월 30일 Ideogram 4.5, 10월 2일 FLUX 3 Image. 이번 주 나온 두 이미지 모델은 더 예쁜 그림보다 '한 군데만 고치기'를 앞세웠다. 상자로 먼저 배치하는 방식과 크기별 가격까지 그림과 숫자로 정리했다.\n\n그래서 지금은\n1. 원본과 3~5번 고친 결과를 한 파일에 레이어로 겹친다.\n2. 위 레이어의 혼합 모드를 차이(Difference)로 바꾼다.\n3. 화면이 거의 까맣다면 정말 그대로인 것이다.\n\n📌 저장해 두고 필요할 때 꺼내 보세요\n전문과 출처는 프로필 링크(designrefs.com)에 있어요.\n\n#디자인레퍼런스 #디자이너 #AI디자인 #디자인인사이트 #UXUI",
+      "article": "https://designrefs.com/articles/image-ai-edit-not-reroll/"
+    },
+    {
+      "id": "colors-pick",
+      "title": "컬러 막힐 때 열어 볼 사이트 5",
+      "count": 7,
+      "images": [
+        "https://designrefs.com/social/cards/colors-pick/01.jpg",
+        "https://designrefs.com/social/cards/colors-pick/02.jpg",
+        "https://designrefs.com/social/cards/colors-pick/03.jpg",
+        "https://designrefs.com/social/cards/colors-pick/04.jpg",
+        "https://designrefs.com/social/cards/colors-pick/05.jpg",
+        "https://designrefs.com/social/cards/colors-pick/06.jpg",
+        "https://designrefs.com/social/cards/colors-pick/07.jpg"
+      ],
+      "caption": "컬러 막힐 때 열어 볼 사이트 5\n\n1. Coolors — 일단 팔레트를 빠르게 여러 개 뽑아 볼 때\n2. Realtime Colors — 고른 색을 실제 웹 화면에 입혀 보고 싶을 때\n3. UI Colors — 브랜드 색 하나로 50~950 단계를 만들 때\n4. WebAIM Contrast Checker — 글자색과 배경색 대비가 충분한지 확인할 때\n5. Color Leap — 시대 분위기가 나는 색 조합이 필요할 때\n\n📌 저장해 두고 필요할 때 꺼내 보세요\n전체 목록은 프로필 링크(designrefs.com)에 있어요.\n\n#디자인레퍼런스 #디자이너 #컬러팔레트 #배색 #UI디자인"
     },
     {
       "id": "fonts-hangul",
@@ -44,6 +105,21 @@
         "https://designrefs.com/social/cards/fonts-pick/07.jpg"
       ],
       "caption": "폰트 고를 때 북마크해 둘 사이트 5\n\n1. WhatTheFont — 레퍼런스 이미지 속 폰트가 궁금할 때\n2. Fonts In Use — 이 폰트가 실제로 어디에 쓰였는지 보고 싶을 때\n3. Typewolf — 비싼 폰트의 무료 대체재, 어울리는 조합을 찾을 때\n4. Wordmark — 내 컴퓨터 폰트로 문구를 한 번에 비교할 때\n5. Type Scale — 제목·본문 크기 체계를 숫자로 정할 때\n\n📌 저장해 두고 필요할 때 꺼내 보세요\n전체 목록은 프로필 링크(designrefs.com)에 있어요.\n\n#디자인레퍼런스 #디자이너 #폰트추천 #타이포그래피 #그래픽디자인"
+    },
+    {
+      "id": "mockups-pick",
+      "title": "포트폴리오 목업, 이 다섯 곳이면 충분해요",
+      "count": 7,
+      "images": [
+        "https://designrefs.com/social/cards/mockups-pick/01.jpg",
+        "https://designrefs.com/social/cards/mockups-pick/02.jpg",
+        "https://designrefs.com/social/cards/mockups-pick/03.jpg",
+        "https://designrefs.com/social/cards/mockups-pick/04.jpg",
+        "https://designrefs.com/social/cards/mockups-pick/05.jpg",
+        "https://designrefs.com/social/cards/mockups-pick/06.jpg",
+        "https://designrefs.com/social/cards/mockups-pick/07.jpg"
+      ],
+      "caption": "포트폴리오 목업, 이 다섯 곳이면 충분해요\n\n1. Shots — 스크린샷 한 장을 바로 목업으로 만들 때\n2. Mockuuups Studio — 여러 장면에 한 번에 입혀 보고 싶을 때\n3. Rotato — 기기가 돌아가는 목업 영상이 필요할 때\n4. Previewed — 앱스토어용 소개 이미지를 만들 때\n5. Mockups-Design — 포토샵으로 직접 다듬을 무료 PSD가 필요할 때\n\n📌 저장해 두고 필요할 때 꺼내 보세요\n전체 목록은 프로필 링크(designrefs.com)에 있어요.\n\n#디자인레퍼런스 #디자이너 #목업 #포트폴리오 #UXUI"
     },
     {
       "id": "terms-typo-basic",

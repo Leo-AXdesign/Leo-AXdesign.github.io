@@ -6,9 +6,9 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
-  # 주간 채용 공고(jobs-weekly.yml)가 main 에 올린 커밋은 push 이벤트를 다시 일으키지 않아서, 끝나면 여기서 배포합니다
+  # 주간 채용 공고(jobs-weekly.yml)·릴스(reels.yml)가 main 에 올린 커밋은 push 이벤트를 다시 일으키지 않아서, 끝나면 여기서 배포합니다
   workflow_run:
-    workflows: ["Weekly design jobs"]
+    workflows: ["Weekly design jobs", "Build reels"]
     types: [completed]
   workflow_dispatch:
 
