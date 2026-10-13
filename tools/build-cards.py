@@ -32,6 +32,7 @@ import html, json, pathlib, re, sys, tempfile
 
 from PIL import Image
 
+import phonefigs
 import sitedata as D
 from snap import shoot
 
@@ -198,13 +199,13 @@ body { font-family: "Pretendard Variable", Pretendard, "Apple SD Gothic Neo", sa
 .lead .progress { margin-top: auto; }
 
 /* 그림: 위에 한 줄 요지, 아래 그림을 크게 */
-.card.figure { padding: 64px 48px 64px; }
-.figure .top { padding: 0 40px; }
+.card.figure:not(.native) { padding: 64px 48px 64px; }
+.figure:not(.native) .top { padding: 0 40px; }
 .figure .cap { margin: 40px 40px 0; font-size: 50px; line-height: 1.32; font-weight: 800; letter-spacing: -0.03em; text-wrap: balance; }
 .figure .cap.long { font-size: 44px; }
 .figure .fig { flex: 1; min-height: 0; margin-top: 28px; display: flex; align-items: center; justify-content: center; }
 .figure .fig img { width: 100%; height: 100%; object-fit: contain; }
-.figure .progress { margin: 40px 40px 0; }
+.figure:not(.native) .progress { margin: 40px 40px 0; }
 
 /* 정리 */
 .tip .title { margin-top: 88px; font-size: 92px; font-weight: 800; letter-spacing: -0.045em; }
@@ -324,6 +325,9 @@ def render(card, i, total, n, kicker=""):
                f'<div class="msg">{msg}<div class="tags">{tags}</div></div>')
     elif k == "lead":
         mid = f'<div class="pill">{e(card["label"])}</div><div class="text">{e(card["text"])}</div>'
+    elif k == "figure" and phonefigs.card_body(card["src"]):
+        k = "figure native"   # 휴대폰용으로 다시 그린 그림 (phonefigs.py)
+        mid = phonefigs.card_body(card["src"])
     elif k == "figure":
         src = ROOT / "articles" / "img" / f'{card["src"]}-m.svg'
         if not src.exists():
@@ -352,7 +356,7 @@ def render(card, i, total, n, kicker=""):
     return ('<!doctype html><html lang="ko"><head><meta charset="utf-8">'
             '<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/'
             'dist/web/variable/pretendardvariable-dynamic-subset.min.css">'
-            f'<style>{CSS}</style></head><body><div class="card {k}">{top}{mid}{bar}</div></body></html>')
+            f'<style>{CSS}{phonefigs.CSS}</style></head><body><div class="card {k}">{top}{mid}{bar}</div></body></html>')
 
 
 def caption(set_id, spec):
