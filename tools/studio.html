@@ -10,6 +10,7 @@
   /* 사이트·관리자와 같은 흑백 톤 */
   :root { --ink: #111; --body: #444; --muted: #6b6b6b; --line: #e5e5e5; --soft: #f5f5f5; --ok: #1a7f37; --bad: #c62828; }
   * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
   html, body { margin: 0; background: #fff; color: var(--ink); }
   body { font-family: "Pretendard Variable", Pretendard, -apple-system, sans-serif; font-size: 15px; -webkit-font-smoothing: antialiased; }
   button, input, textarea, select { font: inherit; color: inherit; }
@@ -89,6 +90,24 @@
   .hist div { display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--line); }
   .hist time { color: var(--muted); flex: none; width: 110px; }
   .hist a { color: var(--ink); }
+  .tabs { display: flex; gap: 4px; margin-left: 12px; }
+  .tab { border: 0; background: none; padding: 8px 14px; border-radius: 999px; font-weight: 700; color: var(--muted); cursor: pointer; }
+  .tab.on { background: var(--ink); color: #fff; }
+  .sug { border: 1px solid var(--line); border-radius: 16px; padding: 18px; margin-top: 14px; }
+  .sug.done { opacity: .55; }
+  .sug__h { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  .sug__h b { font-size: 17px; }
+  .tag { font-size: 12px; font-weight: 800; padding: 3px 9px; border-radius: 999px; background: var(--soft); color: var(--body); }
+  .tag.hi { background: var(--ink); color: #fff; }
+  .sug p { margin: 10px 0 0; line-height: 1.6; color: var(--body); }
+  .diff { margin-top: 12px; display: grid; gap: 8px; font-size: 14px; line-height: 1.6; }
+  .diff div { padding: 10px 12px; border-radius: 10px; white-space: pre-wrap; }
+  .diff .del { background: #fdecec; text-decoration: line-through; color: #8a2a2a; }
+  .diff .add { background: #e9f5ec; color: #14532d; }
+  .diff .at { background: var(--soft); color: var(--muted); }
+  .src { margin-top: 8px; font-size: 12px; } .src a { color: var(--muted); margin-right: 10px; }
+  .ai { margin-top: 10px; padding: 14px 16px; border-radius: 14px; background: #f3f3ff; font-size: 14px; line-height: 1.6; }
+  .ai ul { margin: 6px 0 10px; padding-left: 18px; }
   .spin { display: inline-block; width: 14px; height: 14px; border: 2px solid #ccc; border-top-color: var(--ink); border-radius: 50%; animation: s .8s linear infinite; vertical-align: -2px; margin-right: 6px; }
   @keyframes s { to { transform: rotate(360deg); } }
 </style>
@@ -96,10 +115,11 @@
 <body>
 <header class="bar"><div class="bar__in">
   <div class="logo">d<span>.</span><small>스튜디오</small></div>
+  <nav class="tabs"><button class="tab on" data-view="sns">SNS 발행</button><button class="tab" data-view="coach">AI 편집장</button></nav>
   <div class="chips" id="chips"></div>
 </div></header>
 
-<main class="wrap">
+<main class="wrap" id="v-sns">
   <section class="col">
     <div id="reco"></div>
 
@@ -130,6 +150,23 @@
   </section>
 
   <section class="panel" id="preview"><div class="empty">왼쪽에서 고르고 <b>만들기</b>를 누르면<br />여기에 미리보기와 캡션이 나옵니다.</div></section>
+</main>
+
+<main class="wrap" id="v-coach" hidden>
+  <section class="col">
+    <div class="reco" style="background:#f5f5f5;color:var(--ink)">
+      <div class="reco__label" style="color:var(--muted)">AI 편집장 · <span id="cmodel"></span></div>
+      <div class="reco__note" style="color:var(--body)">발행된 글을 Claude 가 다시 읽고, 발행 뒤 바뀐 소식을 웹에서 찾아<br />고칠 점과 더할 점을 제안합니다. 마음에 드는 제안만 [적용]하세요.</div>
+      <div id="ckey" style="margin-top:14px"></div>
+    </div>
+    <div>
+      <p class="h">검토할 글</p>
+      <div class="list" id="clist"></div>
+      <div class="row" style="margin-top:12px"><button class="btn btn--dark" id="crun" disabled>검토 받기</button>
+        <span style="font-size:13px;color:var(--muted)">1~3분 · 한 번에 보통 수십~수백 원</span></div>
+    </div>
+  </section>
+  <section class="panel" id="cview"><div class="empty">왼쪽에서 글을 고르고 <b>검토 받기</b>를 누르세요.</div></section>
 </main>
 
 <script>
@@ -232,9 +269,11 @@ function showPreview() {
     `<h2 class="pv-title">${esc(m.title)}</h2><div class="pv-meta">${kindName}${m.images ? ` · ${m.images.length}장` : ""}${m.seconds ? ` · ${m.seconds}초` : ""}` +
     `${m.published ? " · <b>이미 올린 적 있음</b>" : ""}</div>${media}` +
     (isIG ? `<label class="f">인스타 캡션</label><textarea id="cap">${esc(m.caption)}</textarea><div class="count" id="capc"></div>` +
+            `<button class="btn" data-polish="caption">AI로 다듬기</button><div id="ai-caption"></div>` +
             `<div class="also"><label class="check"><input type="checkbox" id="also" /> 스레드에도 함께 알리기 (링크 미리보기 포함)</label>` +
             `<textarea id="thtext" hidden>${esc(thDefault)}</textarea><div class="count" id="thc" hidden></div></div>`
           : `<label class="f">스레드 글</label><textarea id="thtext">${esc(m.text)}</textarea><div class="count" id="thc"></div>` +
+            `<button class="btn" data-polish="thread">AI로 다듬기</button><div id="ai-thread"></div>` +
             `<label class="f">함께 붙일 링크 (선택)</label><input class="inp" id="link" value="${esc(m.link || "")}" placeholder="https://designrefs.com/..." />`) +
     `<div class="warn" id="warn"></div>` +
     `<div style="margin-top:20px"><button class="btn btn--dark btn--big" id="pub">발행</button></div>` +
@@ -248,6 +287,34 @@ function showPreview() {
     ? "[ ] 로 비워 둔 자리가 있어요. 실제 경험으로 바꾸거나 지워야 발행할 수 있습니다." : ""; };
   $("#thtext").addEventListener("input", warn); warn();
   $("#pub").onclick = doPublish;
+  document.querySelectorAll("[data-polish]").forEach((btn) => btn.onclick = () => polish(btn.dataset.polish, btn));
+}
+
+async function waitJob(job, onStep) {
+  for (;;) {
+    await new Promise((r) => setTimeout(r, 2000));
+    const j = await api("job", { job });
+    if (onStep) onStep(j);
+    if (j.done) { if (!j.ok) throw new Error(j.message); return j; }
+  }
+}
+
+async function polish(kind, btn) {
+  const box = $("#ai-" + kind), ta = kind === "caption" ? $("#cap") : $("#thtext");
+  btn.disabled = true;
+  box.innerHTML = `<div class="ai"><span class="spin"></span>AI가 다듬는 중… (20~40초)</div>`;
+  try {
+    const { job } = await api("coach_post", { kind, text: ta.value });
+    const d = (await waitJob(job)).data;
+    box.innerHTML = `<div class="ai"><b>${esc(d.summary || "")}</b><ul>${(d.points || []).map((x) => `<li>${esc(x)}</li>`).join("")}</ul>` +
+      `<textarea id="rev-${kind}">${esc(d.revised || "")}</textarea><div class="row" style="margin-top:8px">` +
+      `<button class="btn btn--dark" id="use-${kind}">이걸로 바꾸기</button><button class="btn" id="drop-${kind}">닫기</button></div></div>`;
+    $("#use-" + kind).onclick = () => { ta.value = $("#rev-" + kind).value; ta.dispatchEvent(new Event("input")); box.innerHTML = ""; };
+    $("#drop-" + kind).onclick = () => { box.innerHTML = ""; };
+  } catch (e) {
+    box.innerHTML = `<div class="result bad">${esc(e.message)}</div>`;
+  }
+  btn.disabled = false;
 }
 
 async function doPublish() {
@@ -278,6 +345,96 @@ async function doPublish() {
     $("#res").innerHTML = `<div class="result bad">${esc(e.message)}</div>`;
     $("#pub").disabled = false;
   }
+}
+
+// ---------- 탭 ----------
+document.querySelectorAll(".tab").forEach((t) => t.onclick = () => {
+  document.querySelectorAll(".tab").forEach((x) => x.classList.toggle("on", x === t));
+  $("#v-sns").hidden = t.dataset.view !== "sns";
+  $("#v-coach").hidden = t.dataset.view !== "coach";
+  if (t.dataset.view === "coach") coachLoad();
+});
+
+// ---------- AI 편집장 ----------
+let cslug = null, creview = null, capplied = 0;
+
+async function coachLoad() {
+  const st = await api("coach_state");
+  $("#cmodel").textContent = st.model;
+  const k = $("#ckey");
+  if (!st.sdk) {
+    k.innerHTML = `<div class="warn">먼저 설치가 필요해요. 터미널에서: <code>python3 -m pip install --user anthropic</code></div>`;
+  } else if (!st.key) {
+    k.innerHTML = `<div style="font-size:13px;color:var(--body);margin-bottom:8px">Anthropic API 키를 넣어 주세요 (console.anthropic.com → API Keys). 이 맥에만 저장됩니다.</div>` +
+      `<div class="row"><input class="inp" id="kin" type="password" placeholder="sk-ant-..." /><button class="btn btn--dark" id="ksave">저장</button></div>`;
+    $("#ksave").onclick = async () => { try { await api("coach_key", { key: $("#kin").value }); coachLoad(); } catch (e) { alert(e.message); } };
+  } else {
+    k.innerHTML = `<span class="chip on">API 키 ${st.key === "saved" ? "저장됨" : "환경 변수 사용"}</span>` +
+      (st.key === "saved" ? ` <button class="btn btn--sm" id="kdel" style="padding:5px 10px;font-size:12px">키 지우기</button>` : "");
+    if ($("#kdel")) $("#kdel").onclick = async () => { if (confirm("저장한 키를 지울까요?")) { await api("coach_forget"); coachLoad(); } };
+  }
+  $("#clist").innerHTML = S.articles.map((a) => `<button class="li ${a.slug === cslug ? "on" : ""}" data-slug="${esc(a.slug)}">` +
+    `<div class="li__t">${esc(a.title)}</div><div class="li__s">${esc(a.date)}</div></button>`).join("");
+  $("#clist").querySelectorAll(".li").forEach((b) => b.onclick = () => { cslug = b.dataset.slug; coachLoad(); });
+  $("#crun").disabled = !(cslug && st.sdk && st.key);
+}
+
+$("#crun").onclick = async () => {
+  const title = S.articles.find((a) => a.slug === cslug).title;
+  capplied = 0;
+  $("#cview").innerHTML = `<h2 class="pv-title">${esc(title)}</h2><div class="empty"><span class="spin"></span>AI 편집장이 글을 읽고, 발행 뒤 바뀐 소식을 찾는 중이에요… (1~3분)</div>`;
+  $("#crun").disabled = true;
+  try {
+    const { job } = await api("coach_article", { slug: cslug });
+    creview = (await waitJob(job)).data;
+    renderReview(title);
+  } catch (e) {
+    $("#cview").innerHTML = `<div class="result bad">${esc(e.message)}</div>`;
+  }
+  $("#crun").disabled = false;
+};
+
+function renderReview(title) {
+  const d = creview;
+  const sugs = (d.suggestions || []).map((x) => {
+    const diff = x.before ? `<div class="diff"><div class="del">${esc(x.before)}</div>${x.after ? `<div class="add">${esc(x.after)}</div>` : ""}</div>`
+               : x.anchor ? `<div class="diff"><div class="at">… ${esc(x.anchor)}</div><div class="add">${esc(x.after)}</div></div>`
+               : x.after ? `<div class="diff"><div class="add">${esc(x.after)}</div></div>` : "";
+    const src = (x.sources || []).map((u) => `<a href="${esc(u)}" target="_blank">${esc(u.replace(/^https?:\/\//, "").slice(0, 40))} ↗</a>`).join("");
+    return `<div class="sug" id="sug-${x.id}"><div class="sug__h"><span class="tag ${x.priority === "높음" ? "hi" : ""}">${esc(x.type)} · ${esc(x.priority || "")}</span><b>${esc(x.title)}</b></div>` +
+      `<p>${esc(x.reason)}</p>${diff}${src ? `<div class="src">${src}</div>` : ""}` +
+      `<div class="row" style="margin-top:12px">${x.applicable ? `<button class="btn btn--dark" data-apply="${x.id}">적용</button>` : `<span style="font-size:13px;color:var(--muted)">본문을 직접 고치는 제안이 아니에요</span>`}</div></div>`;
+  }).join("");
+  const sns = d.sns && d.sns.thread ? `<div class="sug"><div class="sug__h"><span class="tag">SNS</span><b>이 글로 스레드 쓰기</b></div><p style="white-space:pre-wrap">${esc(d.sns.thread)}</p>` +
+    (d.sns.hook ? `<p>인스타 첫 줄 후보: <b>${esc(d.sns.hook)}</b></p>` : "") + `<div class="row" style="margin-top:12px"><button class="btn" id="tothread">스레드 발행 화면으로</button></div></div>` : "";
+  $("#cview").innerHTML = `<h2 class="pv-title">${esc(title)}</h2><div class="pv-meta">AI 편집장 검토 · 제안 ${(d.suggestions || []).length}개 · 웹에서 확인한 자료 ${(d.searched || []).length}건</div>` +
+    `<div class="ai" style="background:var(--soft)">${esc(d.summary || "")}</div>${sugs}${sns}` +
+    `<div style="margin-top:20px"><button class="btn btn--dark btn--big" id="cpub" disabled>고친 내용을 사이트에 반영</button></div><div id="cres"></div>`;
+  document.querySelectorAll("[data-apply]").forEach((b) => b.onclick = async () => {
+    const x = d.suggestions[+b.dataset.apply];
+    try {
+      await api("coach_apply", { slug: cslug, suggestion: x });
+      $("#sug-" + x.id).classList.add("done"); b.outerHTML = `<span class="chip on">적용함</span>`;
+      capplied++; $("#cpub").disabled = false;
+    } catch (e) { alert(e.message); }
+  });
+  if ($("#tothread")) $("#tothread").onclick = () => {
+    document.querySelector('.tab[data-view="sns"]').click();
+    pick("thread", "article:" + cslug);
+    made = { type: "thread", id: "article:" + cslug, title, text: d.sns.thread, link: S.articles.find((a) => a.slug === cslug).url, published: false };
+    showPreview();
+  };
+  $("#cpub").onclick = async () => {
+    if (!confirm(`적용한 ${capplied}개를 사이트에 반영할까요? (빌드 후 GitHub 에 올립니다)`)) return;
+    $("#cpub").disabled = true;
+    $("#cres").innerHTML = `<div class="ai"><span class="spin"></span>빌드하고 올리는 중… (1분쯤)</div>`;
+    try {
+      const j = await waitJob((await api("site_publish", { slug: cslug })).job);
+      $("#cres").innerHTML = `<div class="result ok">${esc(j.message || "반영했습니다.")}</div>`;
+    } catch (e) {
+      $("#cres").innerHTML = `<div class="result bad">${esc(e.message)}</div>`; $("#cpub").disabled = false;
+    }
+  };
 }
 
 load().catch((e) => { $("#preview").innerHTML = `<div class="result bad">${esc(e.message)}</div>`; });

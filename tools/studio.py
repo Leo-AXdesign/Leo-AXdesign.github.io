@@ -20,6 +20,10 @@
 - Claude 데스크톱 설정(designhub MCP 서버)에 넣어 둔 인스타그램·스레드 토큰을 그대로 읽어 씁니다.
   화면이나 기록에는 토큰을 보여 주지 않고, 메타 서버 말고는 어디에도 보내지 않습니다.
 
+AI 편집장
+- 'AI 편집장' 탭에서 발행된 글을 Claude(coach.py)에게 검토받고, 제안을 [적용]한 뒤 '사이트에 반영'을 누릅니다.
+- 캡션·스레드 글 옆의 'AI로 다듬기'로 발행 전에 글을 다듬습니다.
+
 안전장치는 관리자(admin.py)와 같습니다: 127.0.0.1 에서만 열리고, 실행할 때마다 새 열쇠를 만듭니다.
 """
 import datetime, http.server, importlib.util, json, mimetypes, pathlib, secrets, shutil
@@ -409,7 +413,7 @@ def publish(p):
     if p.get("type") not in ("carousel", "reel", "thread"):
         raise Oops("무엇을 발행할지 모르겠어요.")
     jid = secrets.token_hex(6)
-    job = JOBS[jid] = {"done": False, "ok": None, "steps": [], "log": [], "links": {}, "message": ""}
+    job = JOBS[jid] = {"done": False, "ok": None, "steps": [], "log": [], "links": {}, "message": "", "data": None}
 
     def work():
         try:
@@ -430,7 +434,7 @@ def job_status(p):
     job = JOBS.get(p.get("job"))
     if not job:
         raise Oops("작업을 찾을 수 없습니다.")
-    return {"ok": True, **{k: job[k] for k in ("done", "ok", "steps", "links", "message")},
+    return {"ok": True, **{k: job.get(k) for k in ("done", "ok", "steps", "links", "message", "data")},
             "log": hide("\n".join(job["log"]))[-4000:]}
 
 
@@ -485,7 +489,83 @@ def state(_=None):
             "recommend": recommend(sources)}
 
 
-API = {"state": state, "make": make, "publish": publish, "job": job_status, "tour": tour, "save_draft": save_draft}
+# =========================================================
+# AI 편집장 (coach.py) — 발행된 글 검토, SNS 글 다듬기
+# =========================================================
+sys.path.insert(0, str(TOOLS))
+import coach  # noqa: E402
+
+
+def background(fn):
+    """오래 걸리는 일을 뒤에서 돌리고, 화면은 job 으로 진행을 확인합니다."""
+    jid = secrets.token_hex(6)
+    job = JOBS[jid] = {"done": False, "ok": None, "steps": [], "log": [], "links": {}, "message": "", "data": None}
+
+    def work():
+        try:
+            job["data"] = fn(job)
+            job["ok"] = True
+        except (Oops, coach.CoachError, SystemExit) as err:
+            job["ok"], job["message"] = False, hide(str(err))
+        except Exception as err:
+            job["ok"], job["message"] = False, hide(f"오류가 났습니다: {err}")
+        job["done"] = True
+
+    threading.Thread(target=work, daemon=True).start()
+    return {"ok": True, "job": jid}
+
+
+def coach_state(_=None):
+    sdk, key = coach.ready()
+    return {"ok": True, "sdk": sdk, "key": key, "model": coach.MODEL}
+
+
+def coach_key(p):
+    key = (p.get("key") or "").strip()
+    if not key.startswith("sk-ant-"):
+        raise Oops("Anthropic API 키는 sk-ant- 로 시작합니다. console.anthropic.com 의 API Keys 에서 만들 수 있어요.")
+    coach.save_key(key)
+    return {"ok": True}
+
+
+def coach_forget(_=None):
+    coach.forget_key()
+    return {"ok": True}
+
+
+def coach_article(p):
+    slug = p.get("slug", "")
+    return background(lambda job: (job["steps"].append("글을 읽고, 발행 뒤 바뀐 소식을 찾는 중… (1~3분)"), coach.review_article(slug))[1])
+
+
+def coach_apply(p):
+    with LOCK:
+        return coach.apply(p.get("slug", ""), p.get("suggestion") or {})
+
+
+def coach_post(p):
+    return background(lambda job: coach.review_post(p.get("kind", "thread"), p.get("text", "")))
+
+
+def site_publish(p):
+    """고친 글을 사이트에 반영 (관리자의 '사이트에 올리기'와 같은 과정)"""
+    spec = importlib.util.spec_from_file_location("admin", TOOLS / "admin.py")
+    admin = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(admin)
+
+    def work(job):
+        job["steps"].append("빌드하고 GitHub 에 올리는 중… (1분쯤)")
+        with LOCK:
+            r = admin.publish({"message": f"AI 편집장 제안 반영: {p.get('slug', '')}"})
+        job["message"] = r.get("message", "")
+        job["log"].append(r.get("log", ""))
+        return r
+    return background(work)
+
+
+API = {"state": state, "make": make, "publish": publish, "job": job_status, "tour": tour, "save_draft": save_draft,
+       "coach_state": coach_state, "coach_key": coach_key, "coach_forget": coach_forget, "coach_article": coach_article,
+       "coach_apply": coach_apply, "coach_post": coach_post, "site_publish": site_publish}
 
 
 # =========================================================
@@ -539,7 +619,7 @@ class Handler(http.server.BaseHTTPRequestHandler):
             else:
                 result = fn(payload)
             self._send(200, json.dumps(result, ensure_ascii=False))
-        except (Oops, SystemExit) as err:
+        except (Oops, coach.CoachError, SystemExit) as err:
             self._send(400, json.dumps({"ok": False, "message": hide(str(err))}, ensure_ascii=False))
         except Exception as err:
             self._send(500, json.dumps({"ok": False, "message": hide(f"오류가 났습니다: {err}")}, ensure_ascii=False))

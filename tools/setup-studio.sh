@@ -5,7 +5,7 @@
 # 하는 일
 #   1. 이 맥에서 사이트 저장소 폴더를 찾습니다 (tools/admin.py 가 있는 폴더)
 #   2. GitHub 의 최신 내용을 받아 옵니다
-#   3. 필요한 것을 설치합니다: Pillow(이미지), ffmpeg(릴스 영상, Homebrew 가 있을 때)
+#   3. 필요한 것을 설치합니다: Pillow(이미지), Anthropic SDK(AI 편집장), ffmpeg(릴스 영상, Homebrew 가 있을 때)
 #   4. 바탕화면에 '디자인허브 스튜디오.command' 아이콘을 만듭니다
 #   5. 스튜디오를 엽니다
 set -e
@@ -35,6 +35,11 @@ if python3 -c "import PIL" 2>/dev/null; then
   echo "Pillow: 이미 있음"
 else
   python3 -m pip install --user -q pillow && echo "Pillow: 설치함"
+fi
+if python3 -c "import anthropic" 2>/dev/null; then
+  python3 -m pip install --user -q --upgrade anthropic && echo "Anthropic SDK(AI 편집장): 최신으로 맞춤"
+else
+  python3 -m pip install --user -q anthropic && echo "Anthropic SDK(AI 편집장): 설치함"
 fi
 if command -v ffmpeg >/dev/null; then
   echo "ffmpeg: 이미 있음"
