@@ -38,7 +38,7 @@ if "--port" in sys.argv:
 TOKEN = secrets.token_urlsafe(24)
 CONF_DIR = pathlib.Path.home() / ".config" / "designhub"
 HISTORY = CONF_DIR / "studio-history.json"
-DRAFTS = CONF_DIR / "threads-drafts.json"          # 고친 스레드 초안 (처음엔 tools/threads_drafts.json 을 복사)
+DRAFTS = CONF_DIR / "threads-drafts.json"          # 내가 고친 스레드 초안만 (id → 글)
 CLAUDE_CONF = pathlib.Path.home() / "Library" / "Application Support" / "Claude" / "claude_desktop_config.json"
 CARDS = ROOT / "social" / "cards"
 REELS = ROOT / "social" / "reels"
@@ -96,19 +96,22 @@ def published_keys():
 
 
 def drafts():
-    if not DRAFTS.exists():
-        seed = read_json(TOOLS / "threads_drafts.json", [])
-        CONF_DIR.mkdir(parents=True, exist_ok=True)
-        DRAFTS.write_text(json.dumps(seed, ensure_ascii=False, indent=2), encoding="utf-8")
-    return read_json(DRAFTS, [])
+    """스레드 초안: 저장소의 최신 초안(tools/threads_drafts.json) 위에, 내가 고친 글만 덮어씁니다.
+    그래서 초안을 새로 고쳐 올리면 맥에서도 바로 새 초안이 보입니다."""
+    seed = read_json(TOOLS / "threads_drafts.json", [])
+    mine = read_json(DRAFTS, {})
+    if not isinstance(mine, dict):   # 예전 형식(초안 전체를 복사해 두던 것)은 버리고 새로 시작
+        mine = {}
+    return [dict(d, text=mine.get(d["id"], d["text"])) for d in seed]
 
 
 def save_draft(p):
-    ds = drafts()
-    for d in ds:
-        if d["id"] == p["id"]:
-            d["text"] = p["text"]
-    DRAFTS.write_text(json.dumps(ds, ensure_ascii=False, indent=2), encoding="utf-8")
+    mine = read_json(DRAFTS, {})
+    if not isinstance(mine, dict):
+        mine = {}
+    mine[p["id"]] = p["text"]
+    CONF_DIR.mkdir(parents=True, exist_ok=True)
+    DRAFTS.write_text(json.dumps(mine, ensure_ascii=False, indent=2), encoding="utf-8")
     return {"ok": True}
 
 
