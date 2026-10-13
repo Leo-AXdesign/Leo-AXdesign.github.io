@@ -242,6 +242,11 @@ def host(url):
     return re.sub(r"^https?://(www\.)?", "", url).split("/")[0]
 
 
+def addr(url):
+    """댓글에 적을 주소: https:// 와 www. 를 뺀 짧은 꼴"""
+    return re.sub(r"^https?://(www\.)?", "", url).rstrip("/")
+
+
 def find_site(name):
     s = next((x for x in D.sites if x["name"] == name), None)
     if not s:
@@ -298,7 +303,18 @@ def article_set(slug):
                   "sub": "출처와 표는 본문에 함께 정리해 뒀어요"})
     return {"title": meta["title"], "kicker": "읽을거리 · AI 디자인", "cards": cards[:10],
             "tags": ["디자인레퍼런스", "디자이너", "AI디자인", "디자인인사이트", "UXUI"],
-            "lead": meta["desc"], "url": f"{SITE}articles/{slug}/"}
+            "lead": meta["desc"], "url": f"{SITE}articles/{slug}/", "sources": article_sources(body)}
+
+
+def article_sources(body):
+    """본문의 '※ 출처:' 줄에서 [이름](주소) 를 순서대로, 겹치지 않게 모읍니다."""
+    out, seen = [], set()
+    for line in re.findall(r"^※ 출처:(.*)$", body, re.M):
+        for name, url in re.findall(r"\[([^\]]+)\]\((https?://[^)\s]+)\)", line):
+            if url not in seen:
+                seen.add(url)
+                out.append((name, url))
+    return out
 
 
 # ---------- 그리기 ----------
@@ -387,6 +403,27 @@ def caption(set_id, spec):
     return "\n".join(lines)
 
 
+def comment(set_id, spec):
+    """인스타 첫 댓글 초안: 캡션에선 링크를 누를 수 없어서, 주소와 출처를 댓글로 따로 정리합니다."""
+    if set_id.startswith("article-"):
+        lines = ["📎 이 글의 출처"]
+        lines += [f"· {name} — {host(url)}" for name, url in spec.get("sources", [])[:8]]
+        if len(lines) == 1:
+            lines = []
+        return "\n".join(lines + ([""] if lines else []) + ["전문은 여기서 읽을 수 있어요", spec["url"].replace("https://", "")])
+    lines, n = ["🔗 소개한 곳 주소"], 0
+    for c in spec["cards"]:
+        if c["kind"] == "site":
+            n += 1
+            st = find_site(c["name"])
+            lines.append(f"{n}. {st['name']} — {addr(st['url'])}")
+    outro = next((c for c in spec["cards"] if c["kind"] == "outro"), {})
+    if n == 0:   # 용어 묶음
+        lines = ["📚 용어마다 쉬운 설명과 예시를 더 적어 뒀어요"]
+    lines += ["", "전체 목록 → " + outro.get("url", "designrefs.com")]
+    return "\n".join(lines)
+
+
 def build(set_id, spec):
     cards = spec["cards"]
     out = OUT / set_id
@@ -408,7 +445,7 @@ def build(set_id, spec):
     print(f"{set_id}: {len(cards)}장 → {out.relative_to(ROOT)}")
     return {"id": set_id, "title": spec["title"], "count": len(cards),
             "images": [f"{SITE}social/cards/{set_id}/{i:02d}.jpg" for i in range(1, len(cards) + 1)],
-            "caption": cap, **({"article": spec["url"]} if "url" in spec else {})}
+            "caption": cap, "comment": comment(set_id, spec), **({"article": spec["url"]} if "url" in spec else {})}
 
 
 def write_index(built):

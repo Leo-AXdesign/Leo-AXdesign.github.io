@@ -98,6 +98,30 @@ async function waitIg(id, tries = 30) {
   }
   throw new Error(`인스타그램 미디어 처리가 ${Math.round(tries * 2 / 60)}분 넘게 끝나지 않았습니다. 잠시 뒤 ig_recent_media 로 올라갔는지 확인하세요.`);
 }
+// 게시 마무리: 발행 → 링크 확인 → (있으면) 첫 댓글로 정보 달기
+async function igFinish(uid, creationId, first_comment) {
+  const post = await ig("POST", `/${uid}/media_publish`, { creation_id: creationId });
+  const out = await ig("GET", `/${post.id}`, { fields: "id,permalink,timestamp" });
+  if (first_comment && first_comment.trim()) {
+    try {
+      out.first_comment = await igComment(post.id, first_comment.trim());
+    } catch (e) {
+      out.first_comment_error = e.message + " (게시물은 올라갔습니다. ig_comment 로 다시 달 수 있어요.)";
+    }
+  }
+  return out;
+}
+async function igComment(mediaId, message) {
+  if ([...message].length > 2200) throw new Error("댓글은 2,200자까지입니다.");
+  try {
+    return await ig("POST", `/${mediaId}/comments`, { message });
+  } catch (e) {
+    if (/permission|\(#10\)|오류 10:|오류 200:|오류 3:/i.test(e.message))
+      throw new Error(e.message + " — 댓글을 달려면 인스타 토큰에 instagram_business_manage_comments 권한이 있어야 합니다.");
+    throw e;
+  }
+}
+
 async function waitTh(acc, id) {
   for (let i = 0; i < 30; i++) {
     const { status, error_message } = await th(acc, "GET", `/${id}`, { fields: "status,error_message" });
@@ -225,15 +249,15 @@ const TOOLS = {
       properties: {
         image_url: { type: "string", description: "공개 https 이미지 주소 (JPEG 권장)" },
         caption: { type: "string", description: "캡션 (해시태그 포함 가능, 최대 2,200자)" },
+        first_comment: { type: "string", description: "선택: 올린 뒤 첫 댓글로 달 정보 (사이트 주소, 출처, 덧붙일 설명 등)" },
       },
       required: ["image_url"],
     },
-    run: async ({ image_url, caption = "" }) => {
+    run: async ({ image_url, caption = "", first_comment }) => {
       const uid = await igUser();
       const { id } = await ig("POST", `/${uid}/media`, { image_url, caption });
       await waitIg(id);
-      const post = await ig("POST", `/${uid}/media_publish`, { creation_id: id });
-      return ig("GET", `/${post.id}`, { fields: "id,permalink,timestamp" });
+      return igFinish(uid, id, first_comment);
     },
   },
 
@@ -244,10 +268,11 @@ const TOOLS = {
       properties: {
         image_urls: { type: "array", items: { type: "string" }, description: "공개 https 이미지 주소 2~10개, 순서대로" },
         caption: { type: "string", description: "캡션" },
+        first_comment: { type: "string", description: "선택: 올린 뒤 첫 댓글로 달 정보 (사이트 주소, 출처, 덧붙일 설명 등)" },
       },
       required: ["image_urls"],
     },
-    run: async ({ image_urls, caption = "" }) => {
+    run: async ({ image_urls, caption = "", first_comment }) => {
       if (!Array.isArray(image_urls) || image_urls.length < 2 || image_urls.length > 10)
         throw new Error("캐러셀은 이미지가 2~10장이어야 합니다.");
       const uid = await igUser();
@@ -259,8 +284,7 @@ const TOOLS = {
       }
       const { id } = await ig("POST", `/${uid}/media`, { media_type: "CAROUSEL", children: children.join(","), caption });
       await waitIg(id);
-      const post = await ig("POST", `/${uid}/media_publish`, { creation_id: id });
-      return ig("GET", `/${post.id}`, { fields: "id,permalink,timestamp" });
+      return igFinish(uid, id, first_comment);
     },
   },
 
@@ -289,17 +313,17 @@ const TOOLS = {
         caption: { type: "string", description: "캡션" },
         cover_url: { type: "string", description: "선택: 커버 이미지 주소 (JPEG)" },
         share_to_feed: { type: "boolean", description: "피드에도 보이게 할지 (기본 true)" },
+        first_comment: { type: "string", description: "선택: 올린 뒤 첫 댓글로 달 정보 (사이트 주소, 출처, 덧붙일 설명 등)" },
       },
       required: ["video_url"],
     },
-    run: async ({ video_url, caption = "", cover_url, share_to_feed = true }) => {
+    run: async ({ video_url, caption = "", cover_url, share_to_feed = true, first_comment }) => {
       const uid = await igUser();
       const params = { media_type: "REELS", video_url, caption, share_to_feed: String(share_to_feed) };
       if (cover_url) params.cover_url = cover_url;
       const { id } = await ig("POST", `/${uid}/media`, params);
       await waitIg(id, 150);
-      const post = await ig("POST", `/${uid}/media_publish`, { creation_id: id });
-      return ig("GET", `/${post.id}`, { fields: "id,permalink,timestamp" });
+      return igFinish(uid, id, first_comment);
     },
   },
 
@@ -321,6 +345,35 @@ const TOOLS = {
       const post = await ig("POST", `/${uid}/media_publish`, { creation_id: id });
       return { id: post.id, note: "스토리는 24시간 동안 보입니다." };
     },
+  },
+
+  ig_comment: {
+    description: "내 인스타그램 게시물에 댓글을 답니다 (사이트 주소, 출처, 덧붙일 정보 등). media_id 는 ig_recent_media 의 id. 공개 댓글이니 사용자가 내용을 확인한 뒤에만 쓰세요.",
+    schema: {
+      type: "object",
+      properties: {
+        media_id: { type: "string", description: "게시물 id" },
+        message: { type: "string", description: "댓글 내용 (최대 2,200자)" },
+      },
+      required: ["media_id", "message"],
+    },
+    run: async ({ media_id, message }) => igComment(media_id, message),
+  },
+
+  ig_comments: {
+    description: "내 인스타그램 게시물에 달린 댓글을 봅니다 (답할 댓글을 고를 때).",
+    schema: { type: "object", properties: { media_id: { type: "string", description: "게시물 id" } }, required: ["media_id"] },
+    run: async ({ media_id }) => ig("GET", `/${media_id}/comments`, { fields: "id,text,username,timestamp,replies{id,text,username}" }),
+  },
+
+  ig_reply: {
+    description: "인스타그램 댓글에 답글을 답니다. comment_id 는 ig_comments 의 id. 사용자가 확인한 뒤에만 쓰세요.",
+    schema: {
+      type: "object",
+      properties: { comment_id: { type: "string", description: "답할 댓글 id" }, message: { type: "string", description: "답글 내용" } },
+      required: ["comment_id", "message"],
+    },
+    run: async ({ comment_id, message }) => ig("POST", `/${comment_id}/replies`, { message }),
   },
 
   ig_publish_limit: {
@@ -612,7 +665,7 @@ async function handle(req) {
       return send({ id, result: {
         protocolVersion: params.protocolVersion || "2025-06-18",
         capabilities: { tools: {}, prompts: {} },
-        serverInfo: { name: "designhub-social", version: "1.4.0" },
+        serverInfo: { name: "designhub-social", version: "1.5.0" },
       } });
     }
     if (method === "ping") return send({ id, result: {} });
