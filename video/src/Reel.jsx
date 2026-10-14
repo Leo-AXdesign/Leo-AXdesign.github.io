@@ -166,6 +166,46 @@ const Shot = ({ s, dark }) => {
   );
 };
 
+// 사이트 투어 (데스크톱): 데스크톱 화면이 영상 전체를 채우고 위→아래로 스크롤, 위엔 주소창, 아래엔 이름·한 줄
+const Web = ({ s }) => {
+  const frame = useCurrentFrame();
+  const { durationInFrames } = useVideoConfig();
+  const enter = useSpring(0, { damping: 20, stiffness: 120 });
+  const text = useSpring(6, { damping: 16, stiffness: 140 });
+  const BAR = 96, TOP = 210;                       // 주소창 높이, 주소창이 놓이는 위치
+  const viewH = 1920 - TOP - BAR;
+  const dist = Math.max(0, Math.min((s.shot_h || 3000) - viewH, 2600));
+  const t = interpolate(frame, [BEAT * 1.5, durationInFrames - BEAT], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const ease = t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+  const zoom = interpolate(enter, [0, 1], [1.08, 1]);
+  return (
+    <AbsoluteFill style={{ background: C.ink }}>
+      {/* 사이트 화면 */}
+      <div style={{ position: "absolute", top: TOP + BAR, left: 0, width: 1080, height: viewH, overflow: "hidden", background: C.white,
+        transform: `scale(${zoom})`, transformOrigin: "50% 0%", opacity: enter }}>
+        <Img src={staticFile(s.shot)} style={{ width: 1080, display: "block", transform: `translateY(${-dist * ease}px)` }} />
+      </div>
+      {/* 브라우저 주소창 */}
+      <div style={{ position: "absolute", top: TOP, left: 0, right: 0, height: BAR, background: "#202020", display: "flex",
+        alignItems: "center", gap: 22, padding: "0 34px", opacity: enter }}>
+        {["#FF5F57", "#FEBC2E", "#28C840"].map((c) => <span key={c} style={{ width: 22, height: 22, borderRadius: 99, background: c }} />)}
+        <div style={{ flex: 1, height: 56, borderRadius: 14, background: "#353535", color: "#E8E8E8", fontSize: 30, fontWeight: 600,
+          display: "flex", alignItems: "center", padding: "0 26px", gap: 14 }}>
+          <span style={{ width: 16, height: 16, borderRadius: 4, border: "3px solid #9A9A9A", flex: "none" }} />{s.host}
+        </div>
+      </div>
+      {/* 아래 설명 띠 */}
+      <div style={{ position: "absolute", left: 0, right: 0, bottom: 0, height: 760,
+        background: "linear-gradient(to bottom, rgba(17,17,17,0) 0%, rgba(17,17,17,0.82) 42%, rgba(17,17,17,0.96) 100%)" }} />
+      <div style={{ position: "absolute", left: 72, right: 72, bottom: 230, opacity: text, transform: `translateY(${(1 - text) * 40}px)` }}>
+        <div style={{ fontSize: 34, fontWeight: 800, color: "#B5B5B5" }}>{String(s.n).padStart(2, "0")} / {String(s.total).padStart(2, "0")}</div>
+        <div style={{ marginTop: 10, fontSize: s.name.length > 16 ? 76 : 96, fontWeight: 850, letterSpacing: "-0.045em", color: C.white, lineHeight: 1.05 }}>{s.name}</div>
+        <Words text={s.text} delay={10} style={{ marginTop: 18, fontSize: 44, fontWeight: 600, color: "#D6D6D6", lineHeight: 1.35 }} />
+      </div>
+    </AbsoluteFill>
+  );
+};
+
 const Lead = ({ s }) => (
   <Enter>
     <AbsoluteFill style={{ padding: "0 96px", justifyContent: "center" }}>
@@ -237,13 +277,13 @@ const Outro = ({ s }) => {
   );
 };
 
-const SCENES = { hook: Hook, site: Site, term: Site, shot: Shot, lead: Lead, figure: Figure, tip: Tip, outro: Outro };
+const SCENES = { hook: Hook, site: Site, term: Site, shot: Shot, web: Web, lead: Lead, figure: Figure, tip: Tip, outro: Outro };
 
 // ---------- 전체 ----------
 const Chrome = ({ scenes, starts, kicker }) => {
   const frame = useCurrentFrame();
   const i = Math.max(0, starts.findLastIndex((st) => frame >= st));
-  const dark = ["site", "term", "shot"].includes(scenes[i].type) ? scenes[i].n % 2 === 0 : scenes[i].type === "tip";
+  const dark = scenes[i].type === "web" || (["site", "term", "shot"].includes(scenes[i].type) ? scenes[i].n % 2 === 0 : scenes[i].type === "tip");
   const fg = dark ? C.white : C.ink;
   return (
     <AbsoluteFill style={{ pointerEvents: "none" }}>
