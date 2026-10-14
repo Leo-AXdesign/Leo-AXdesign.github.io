@@ -4,3 +4,6 @@ node_modules/
 *.log
 __pycache__/
 *.pyc
+
+# 모션 릴스 작업 파일
+video/public/r/

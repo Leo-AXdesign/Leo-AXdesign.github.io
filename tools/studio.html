@@ -86,6 +86,10 @@
   details.log { margin-top: 10px; font-size: 12px; color: var(--muted); }
   details.log pre { white-space: pre-wrap; max-height: 200px; overflow: auto; background: var(--soft); padding: 10px; border-radius: 10px; }
 
+  .pbar { width: 260px; height: 8px; border-radius: 9px; background: var(--line); overflow: hidden; margin: 14px auto 8px; }
+  .pbar div { height: 100%; background: var(--ink); transition: width .4s; }
+  .pbar .indet { width: 35% !important; animation: indet 1.2s ease-in-out infinite; }
+  @keyframes indet { from { transform: translateX(-100%); } to { transform: translateX(290%); } }
   .hist { font-size: 13px; }
   .hist div { display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--line); }
   .hist time { color: var(--muted); flex: none; width: 110px; }
@@ -255,7 +259,7 @@ function options() {
     return S.refs.map((r) => ({ src: r.id, t: r.title, s: r.kicker, done: isDone("carousel:" + r.id) }));
   }
   if (type === "reel") return S.reels.map((r) => ({ src: r.id, t: r.title,
-    s: (r.id.endsWith("-tour") ? "사이트 투어" : "카드 넘김") + (r.seconds ? ` · ${r.seconds}초` : " · 새로 만들기"), done: isDone("reel:" + r.id) }));
+    s: (r.id.endsWith("-motion") ? "모션 + 음악 (1분 안팎)" : r.id.endsWith("-tour") ? "사이트 투어" : "카드 넘김") + (r.seconds ? ` · ${r.seconds}초` : " · 새로 만들기"), done: isDone("reel:" + r.id) }));
   if (sub === "article") return S.articles.map((a) => ({ src: "article:" + a.slug, t: a.title, s: a.date + " · 제목과 요약 + 링크", done: isDone("thread:article:" + a.slug) }));
   if (sub === "custom") return [{ src: "custom", t: "빈 글에서 시작", s: "직접 쓰기" }];
   const mine = sub === "mine";
@@ -276,7 +280,7 @@ function renderList() {
     `<div class="li__t">${esc(o.t)} ${o.done ? '<span class="badge">올림</span>' : ""}</div><div class="li__s">${esc(o.s)}</div></button>`).join("");
   $("#list").querySelectorAll(".li").forEach((b) => b.onclick = () => { source = b.dataset.src; renderList(); });
   $("#make").disabled = !source;
-  $("#tour").hidden = !(type === "reel" && source && !source.endsWith("-tour"));
+  $("#tour").hidden = !(type === "reel" && source && source.endsWith("-cards"));
 }
 
 function pick(t, src) {
@@ -293,9 +297,19 @@ $("#tour").onclick = async () => {
 };
 
 async function doMake() {
-  $("#preview").innerHTML = `<div class="empty"><span class="spin"></span>만드는 중… 캐러셀은 30초, 릴스는 1분쯤 걸려요.</div>`;
+  const t0 = Date.now();
+  const draw = (j) => {
+    const sec = Math.round((Date.now() - t0) / 1000), el = sec >= 60 ? `${Math.floor(sec / 60)}분 ${sec % 60}초` : `${sec}초`;
+    const pct = j && j.progress != null ? j.progress : null;
+    $("#preview").innerHTML = `<div class="empty"><span class="spin"></span>${esc((j && j.stage) || "만드는 중…")}` +
+      `<div class="pbar"><div style="width:${pct ?? 0}%" class="${pct == null ? "indet" : ""}"></div></div>` +
+      `<div style="font-size:13px;color:var(--muted)">${pct != null ? pct + "% · " : ""}${el} 지남</div></div>`;
+  };
+  draw(null);
   try {
-    made = await api("make", { type, source, rebuild: $("#rebuild").checked });
+    const { job } = await api("make_start", { type, source, rebuild: $("#rebuild").checked });
+    const j = await waitJob(job, draw);
+    made = j.data;
     showPreview();
   } catch (e) {
     $("#preview").innerHTML = `<div class="result bad">${esc(e.message)}</div>`;

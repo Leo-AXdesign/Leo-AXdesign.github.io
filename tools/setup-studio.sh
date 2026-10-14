@@ -5,7 +5,7 @@
 # 하는 일
 #   1. 이 맥에서 사이트 저장소 폴더를 찾습니다 (tools/admin.py 가 있는 폴더)
 #   2. GitHub 의 최신 내용을 받아 옵니다
-#   3. 필요한 것을 설치합니다: Pillow(이미지), Anthropic SDK(AI 편집장), ffmpeg(릴스 영상, Homebrew 가 있을 때)
+#   3. 필요한 것을 설치합니다: Pillow(이미지), Anthropic SDK(AI 편집장), ffmpeg(릴스 영상, Homebrew 가 있을 때), 영상 엔진(모션 릴스)
 #   4. Claude 데스크톱의 designhub 서버를 최신으로 받고 저장소 위치를 알려 줍니다 (무료 검토용)
 #      바탕화면에 '디자인허브 스튜디오.command' 아이콘을 만듭니다
 #   5. 스튜디오를 엽니다
@@ -49,6 +49,12 @@ elif command -v brew >/dev/null; then
   brew install -q ffmpeg && echo "ffmpeg: 설치함"
 else
   echo "ffmpeg: Homebrew 가 없어 건너뜁니다. 이미 만들어 둔 릴스 발행에는 필요 없고, 새 릴스를 만들 때만 필요합니다."
+fi
+if command -v npm >/dev/null; then
+  echo "모션 릴스 영상 엔진(Remotion) 설치 중 (처음 한 번은 1~2분)…"
+  npm ci --prefix video --no-audit --no-fund --loglevel=error && echo "영상 엔진: 준비됨"
+else
+  echo "영상 엔진: Node.js 가 없어 건너뜁니다. 모션 릴스를 만들 때만 필요합니다."
 fi
 
 say "Claude 데스크톱 연결 갱신 중…"
