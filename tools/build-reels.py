@@ -4,6 +4,7 @@
 
   python3 tools/build-reels.py cards:fonts-pick    # 카드뉴스를 넘겨 보는 영상 (어디서나)
   python3 tools/build-reels.py tour:fonts-pick     # 사이트 화면을 스크롤하는 투어 영상 (인터넷 필요)
+  python3 tools/build-reels.py motion:fonts-pick   # 글자가 움직이는 모션 릴스 + 박자 맞춘 배경음악 (Remotion)
 
 - cards: social/cards/<묶음>/*.jpg 를 한 장씩 천천히 확대하며 넘깁니다. 먼저 build-cards.py 로 카드를 만드세요.
 - tour:  build-cards.py 의 레퍼런스 묶음(사이트 카드가 있는 것)에서 사이트를 골라
@@ -11,6 +12,9 @@
          바깥 사이트에 접속해야 해서 GitHub Actions(Build reels)에서 돌립니다.
 - 결과: social/reels/<묶음>-<cards|tour>.mp4 + 같은 이름의 .jpg(커버) + social/reels/index.json
   → https://designrefs.com/social/reels/<이름>.mp4 (인스타 릴스 API 는 공개 주소의 영상만 받습니다)
+- motion: video/ 의 Remotion 으로 장면마다 글자·숫자가 움직이는 영상을 만들고, 장면 전환 박자에 맞춘
+          배경음악(코드로 직접 만든 소리, 저작권 걱정 없음)을 넣습니다. Node.js 와 `npm ci --prefix video` 가 필요합니다.
+          내 음원을 쓰려면 --music=video/music/파일.mp3 (저작권이 확인된 음원만).
 - 영상 규격: H.264, 30fps, yuv420p, 무음 AAC 트랙(인스타가 소리 트랙을 요구하는 경우가 있어서).
   배경음악은 인스타 앱에서 넣는 게 저작권상 안전합니다. API 로는 음악을 붙일 수 없습니다.
 """
@@ -309,6 +313,86 @@ def finish(name, clips, durs, cover_png, info):
             "caption": info.get("caption", "")}
 
 
+# ---------- 모션 릴스 (Remotion) ----------
+
+def motion_props(set_id):
+    """카드 묶음 설명(build-cards.py)을 모션 릴스 장면 목록으로 바꿉니다."""
+    if set_id.startswith("article-"):
+        spec = BC.article_set(set_id.removeprefix("article-"))
+    else:
+        spec = BC.SETS.get(set_id)
+        if not spec:
+            raise SystemExit(f"없는 묶음입니다: {set_id}")
+    cards = spec["cards"]
+    items = [c for c in cards if c["kind"] in ("site", "term")]
+    scenes, n = [], 0
+    for i, c in enumerate(cards, 1):
+        k = c["kind"]
+        if k == "cover":
+            scenes.append({"type": "hook", "title": c["title"],
+                           "sub": f"{len(items)}곳 끝까지 보고 저장해 두세요" if items else "끝까지 보고 저장해 두세요"})
+        elif k == "site":
+            n += 1
+            st = BC.find_site(c["name"])
+            scenes.append({"type": "site", "n": n, "total": len(items), "name": st["name"], "host": BC.host(st["url"]),
+                           "text": c.get("when") or st["desc"], "tags": BC.site_tags(st["name"])[:3]})
+        elif k == "term":
+            n += 1
+            t = BC.find_term(c["name"])
+            scenes.append({"type": "term", "n": n, "total": len(items), "label": "용어", "name": t["term"],
+                           "text": BC.first_sentence(t["desc"], 80)})
+        elif k == "lead":
+            scenes.append({"type": "lead", "label": c.get("label", ""), "text": c["text"]})
+        elif k == "figure":
+            img = CARDS / set_id / f"{i:02d}.jpg"
+            if img.exists():
+                scenes.append({"type": "figure", "image": str(img.relative_to(ROOT))})
+        elif k == "tip":
+            pts = [x[0] if isinstance(x, (list, tuple)) else x for x in c.get("points", [])][:3]
+            scenes.append({"type": "tip", "title": c.get("title", "그래서 지금은"), "points": pts})
+        elif k == "outro":
+            scenes.append({"type": "outro", "title": c["title"], "url": c.get("url", "designrefs.com")})
+    if not scenes or scenes[0]["type"] != "hook":
+        scenes.insert(0, {"type": "hook", "title": spec["title"], "sub": "끝까지 보고 저장해 두세요"})
+    return spec, {"kicker": spec.get("kicker", ""), "scenes": scenes}
+
+
+def reel_motion(set_id, music="auto"):
+    import shutil
+    node = shutil.which("node")
+    if not node:
+        raise SystemExit("모션 릴스에는 Node.js 가 필요합니다. (Claude 데스크톱 연결에 쓰는 것과 같은 것)")
+    if not (ROOT / "video" / "node_modules" / "remotion").exists():
+        raise SystemExit("영상 엔진이 설치되지 않았습니다. 터미널에서: npm ci --prefix video")
+    spec, props = motion_props(set_id)
+    props["music"] = music
+    OUT.mkdir(parents=True, exist_ok=True)
+    name = f"{set_id}-motion"
+    mp4, jpg = OUT / f"{name}.mp4", OUT / f"{name}.jpg"
+    with tempfile.TemporaryDirectory() as tmp:
+        pf = pathlib.Path(tmp) / "props.json"
+        pf.write_text(json.dumps(props, ensure_ascii=False), encoding="utf-8")
+        proc = subprocess.Popen([node, str(ROOT / "video" / "render.mjs"), str(pf), str(mp4), str(jpg)],
+                                cwd=ROOT, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, bufsize=1)
+        seconds, tail = 0.0, []
+        for line in proc.stdout:
+            line = line.rstrip()
+            if line.startswith("PROGRESS ") or line.startswith("DONE "):
+                print(line, flush=True)
+                if line.startswith("DONE "):
+                    seconds = float(line.split()[1])
+            elif line:
+                tail.append(line)
+        if proc.wait() != 0 or not mp4.exists():
+            raise SystemExit("모션 릴스를 만들지 못했습니다.\n" + "\n".join(tail[-30:]))
+    print(f"{name}: {seconds:.1f}초, {mp4.stat().st_size / 1e6:.1f}MB → social/reels/{mp4.name}")
+    meta = json.loads((CARDS / "index.json").read_text(encoding="utf-8")) if (CARDS / "index.json").exists() else {"sets": []}
+    info = next((x for x in meta["sets"] if x["id"] == set_id), None)
+    return {"id": name, "title": spec["title"], "seconds": round(seconds, 1),
+            "video": f"{SITE}social/reels/{name}.mp4", "cover": f"{SITE}social/reels/{name}.jpg",
+            "caption": info["caption"] if info else BC.caption(set_id, spec)}
+
+
 def write_index(built):
     path = OUT / "index.json"
     reels = {r["id"]: r for r in (json.loads(path.read_text(encoding="utf-8"))["reels"] if path.exists() else [])}
@@ -322,12 +406,15 @@ if __name__ == "__main__":
     if len(sys.argv) < 2:
         raise SystemExit(__doc__)
     built = []
-    for t in sys.argv[1:]:
+    music = next((a.split("=", 1)[1] for a in sys.argv[1:] if a.startswith("--music=")), "auto")
+    for t in [a for a in sys.argv[1:] if not a.startswith("--")]:
         kind, _, sid = t.partition(":")
         if kind == "cards":
             built.append(reel_cards(sid))
         elif kind == "tour":
             built.append(reel_tour(sid))
+        elif kind == "motion":
+            built.append(reel_motion(sid, None if music == "none" else music))
         else:
-            raise SystemExit(f"cards:<묶음> 또는 tour:<묶음> 으로 적어 주세요: {t}")
+            raise SystemExit(f"cards:<묶음>, tour:<묶음>, motion:<묶음> 중 하나로 적어 주세요: {t}")
     write_index(built)

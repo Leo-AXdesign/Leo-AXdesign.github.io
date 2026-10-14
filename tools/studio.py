@@ -206,6 +206,28 @@ def need_tools(reel=False):
                    + "\n".join(f"· {name}: {cmd}" for name, cmd in missing))
 
 
+def need_motion():
+    if not shutil.which("node"):
+        raise Oops("모션 릴스에는 Node.js 가 필요합니다. 설치 한 줄(setup-studio.sh)을 다시 실행해 주세요.")
+    if not (ROOT / "video" / "node_modules" / "remotion").exists():
+        raise Oops("영상 엔진이 아직 설치되지 않았습니다. 터미널에서 아래를 한 번 실행해 주세요.\n\n"
+                   f"cd \"{ROOT}\" && npm ci --prefix video")
+
+
+def run_progress(cmd, log, job):
+    """오래 걸리는 명령을 돌리며 'PROGRESS <퍼센트> <단계>' 줄을 화면 진행 막대로 넘깁니다."""
+    log.append("$ " + " ".join(str(c) for c in cmd))
+    proc = subprocess.Popen(cmd, cwd=ROOT, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, bufsize=1)
+    for line in proc.stdout:
+        line = line.rstrip()
+        if line.startswith("PROGRESS ") and job is not None:
+            _, pct, *stage = line.split(" ")
+            job["progress"], job["stage"] = int(pct), " ".join(stage)
+        elif line:
+            log.append(line)
+    return proc.wait()
+
+
 def card_set_id(source):
     return f"article-{source.split(':', 1)[1]}" if source.startswith("article:") else source
 
@@ -238,13 +260,18 @@ def local(url):
     return "/" + url.removeprefix(SITE) + f"?v={int(time.time())}"
 
 
-def make(p):
+def make(p, job=None):
     kind, source = p.get("type"), p.get("source", "")
-    log = []
+    log = job["log"] if job is not None else []
+
+    def stage(msg):
+        if job is not None:
+            job["stage"] = msg
     if kind == "carousel":
         need_tools()
         sid = card_set_id(source)
         if p.get("rebuild") or not (CARDS / sid / "01.jpg").exists():
+            stage("카드 이미지를 만드는 중 (30초쯤)")
             if run([sys.executable, str(TOOLS / "build-cards.py"), source], log) != 0:
                 raise Oops("캐러셀을 만들지 못했습니다.\n" + "\n".join(log))
         info = set_info(sid)
@@ -255,7 +282,20 @@ def make(p):
                 "published": f"carousel:{sid}" in published_keys(), "log": "\n".join(log)}
     if kind == "reel":
         rid = source
-        if rid.endswith("-tour"):
+        if rid.endswith("-motion"):
+            need_motion()
+            sid = rid.removesuffix("-motion")
+            if sid.startswith("article-") and not (CARDS / sid / "01.jpg").exists():
+                need_tools()
+                stage("그림 카드 먼저 만드는 중")
+                if run([sys.executable, str(TOOLS / "build-cards.py"), "article:" + sid.removeprefix("article-")], log) != 0:
+                    raise Oops("카드를 먼저 만들지 못했습니다.\n" + "\n".join(log[-6:]))
+            if p.get("rebuild") or not (REELS / f"{rid}.mp4").exists():
+                stage("모션 릴스 만드는 중")
+                if run_progress([sys.executable, str(TOOLS / "build-reels.py"), f"motion:{sid}"], log, job) != 0:
+                    raise Oops("모션 릴스를 만들지 못했습니다.\n" + "\n".join(log[-12:]))
+            info = reel_info(rid)
+        elif rid.endswith("-tour"):
             info = reel_info(rid)
             if not info:
                 raise Oops("사이트 투어 릴스는 GitHub Actions 에서 만듭니다. 아래 '투어 만들기'를 눌러 주세요.")
@@ -267,6 +307,7 @@ def make(p):
                         if sid.startswith("article-") else sid], log) != 0:
                     raise Oops("카드를 먼저 만들지 못했습니다.\n" + "\n".join(log))
             if p.get("rebuild") or not (REELS / f"{sid}-cards.mp4").exists():
+                stage("카드 넘김 영상을 만드는 중 (몇 분 걸릴 수 있어요)")
                 if run([sys.executable, str(TOOLS / "build-reels.py"), f"cards:{sid}"], log) != 0:
                     raise Oops("릴스를 만들지 못했습니다.\n" + "\n".join(log))
             rid = f"{sid}-cards"
@@ -275,7 +316,7 @@ def make(p):
             raise Oops("만든 릴스를 찾지 못했습니다.\n" + "\n".join(log))
         return {"ok": True, "type": kind, "id": rid, "title": info["title"], "caption": info["caption"],
                 "video": local(info["video"]), "cover": local(info["cover"]), "seconds": info["seconds"],
-                "comment": info_comment(rid.removesuffix("-cards").removesuffix("-tour")),
+                "comment": info_comment(rid.removesuffix("-cards").removesuffix("-tour").removesuffix("-motion")),
                 "link": SITE, "published": f"reel:{rid}" in published_keys(), "log": "\n".join(log)}
     if kind == "thread":
         if source.startswith("article:"):
@@ -519,12 +560,20 @@ def publish(p):
     return {"ok": True, "job": jid}
 
 
+def make_start(p):
+    """만들기를 뒤에서 돌리고, 화면은 job 으로 진행 막대와 걸린 시간을 봅니다."""
+    def work(job):
+        with LOCK:
+            return make(p, job)
+    return background(work)
+
+
 def job_status(p):
     job = JOBS.get(p.get("job"))
     if not job:
         raise Oops("작업을 찾을 수 없습니다.")
     # ok 는 '이 확인 요청이 잘 됐는지', success 는 '작업 결과' (진행 중이면 None)
-    return {"ok": True, "success": job.get("ok"), **{k: job.get(k) for k in ("done", "steps", "links", "message", "data")},
+    return {"ok": True, "success": job.get("ok"), **{k: job.get(k) for k in ("done", "steps", "links", "message", "data", "progress", "stage")},
             "log": hide("\n".join(job["log"]))[-4000:]}
 
 
@@ -572,6 +621,10 @@ def state(_=None):
     for s in read_json(CARDS / "index.json", {"sets": []})["sets"]:
         if f"{s['id']}-cards" not in have:
             reel_opts.append({"id": f"{s['id']}-cards", "title": s["title"], "seconds": None, "new": True})
+        if f"{s['id']}-motion" not in have:
+            reel_opts.append({"id": f"{s['id']}-motion", "title": s["title"], "seconds": None, "new": True})
+    # 모션 릴스(음악 포함)를 맨 위에
+    reel_opts.sort(key=lambda r: not r["id"].endswith("-motion"))
     sources = {"articles": articles(), "refs": refs, "reels": reel_opts, "drafts": drafts()}
     ig, th = tokens()
     return {"ok": True, **sources, "history": history()[:30], "published": sorted(published_keys()),
@@ -686,7 +739,7 @@ def comment(p):
         return {"ok": True, "message": f"스레드에 댓글 {len(split_posts(text))}개를 달았어요.", "link": item["links"].get("threads", "")}
 
 
-API = {"state": state, "comment": comment, "make": make, "publish": publish, "job": job_status, "tour": tour, "save_draft": save_draft,
+API = {"state": state, "comment": comment, "make_start": make_start, "make": make, "publish": publish, "job": job_status, "tour": tour, "save_draft": save_draft,
        "coach_state": coach_state, "coach_key": coach_key, "coach_forget": coach_forget, "coach_article": coach_article,
        "coach_apply": coach_apply, "coach_post": coach_post, "site_publish": site_publish,
        "coach_edit_article": coach_edit_article, "coach_edit_post": coach_edit_post}
