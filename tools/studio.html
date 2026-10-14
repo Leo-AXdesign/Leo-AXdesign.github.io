@@ -333,6 +333,9 @@ function showPreview() {
   $("#preview").innerHTML =
     `<h2 class="pv-title">${esc(m.title)}</h2><div class="pv-meta">${kindName}${m.images ? ` · ${m.images.length}장` : ""}${m.seconds ? ` · ${m.seconds}초` : ""}` +
     `${m.published ? " · <b>이미 올린 적 있음</b>" : ""}</div>${media}` +
+    (isIG ? `<div class="row" style="margin-top:12px;flex-wrap:wrap;gap:8px"><button class="btn" id="save">내 맥에 저장 (다운로드 폴더)</button>` +
+            (m.video ? `<a class="btn" style="text-decoration:none;color:inherit" href="${esc(m.video)}" download="${esc(m.id)}.mp4">영상만 받기</a>` : "") +
+            `<span id="savemsg" style="font-size:13px;color:var(--muted)"></span></div>` : "") +
     (isIG ? `<label class="f">인스타 캡션</label><textarea id="cap">${esc(m.caption)}</textarea><div class="count" id="capc"></div>` +
             `<div class="ask"><input class="inp" id="req-caption" placeholder="수정 요청: 예) 첫 줄을 질문으로, 해시태그는 3개만" /><button class="btn btn--dark" data-edit="caption">수정본 받기</button><button class="btn" data-copy="caption">데스크톱에 보낼 문장 복사 (무료)</button></div><div id="ai-caption"></div>` +
             `<label class="f">첫 댓글 <span style="font-weight:400;color:var(--muted)">— 캡션의 링크는 눌리지 않아서 주소·출처를 댓글로 따로 달아요. 비우면 달지 않아요</span></label>` +
@@ -366,6 +369,13 @@ function showPreview() {
     ? "[ ] 로 비워 둔 자리가 있어요. 실제 경험으로 바꾸거나 지워야 발행할 수 있습니다." : ""; };
   $("#thtext").addEventListener("input", warn); warn();
   $("#pub").onclick = doPublish;
+  if ($("#save")) $("#save").onclick = async () => {
+    $("#savemsg").textContent = "저장하는 중…";
+    try {
+      const r = await api("export", { type: m.type, id: m.id, caption: $("#cap").value, comment: $("#cmt") ? $("#cmt").value : "" });
+      $("#savemsg").textContent = r.message;
+    } catch (e) { $("#savemsg").textContent = e.message; }
+  };
   document.querySelectorAll("[data-edit]").forEach((btn) => btn.onclick = () => editPost(btn.dataset.edit, btn));
   document.querySelectorAll("[data-copy]").forEach((btn) => btn.onclick = () => {
     const kind = btn.dataset.copy, ta = kind === "caption" ? $("#cap") : $("#thtext"), req = $("#req-" + kind).value.trim();

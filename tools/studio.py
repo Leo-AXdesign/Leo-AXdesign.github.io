@@ -611,6 +611,35 @@ def publish(p):
     return {"ok": True, "job": jid}
 
 
+def export(p):
+    """만든 것을 다운로드 폴더(~/Downloads/디자인허브/<이름>/)에 모아 두고 Finder 로 엽니다.
+    영상·커버 또는 카드 이미지 전부 + 지금 화면의 캡션·첫 댓글을 글 파일로."""
+    kind, rid = p.get("type"), p.get("id", "")
+    if kind == "carousel":
+        info = set_info(rid)
+        files = sorted((CARDS / rid).glob("*.jpg")) if info else []
+    elif kind == "reel":
+        info = reel_info(rid)
+        files = [REELS / f"{rid}.mp4", REELS / f"{rid}.jpg"] if info else []
+    else:
+        raise Oops("캐러셀과 릴스만 저장할 수 있어요.")
+    files = [f for f in files if f.exists()]
+    if not files:
+        raise Oops("저장할 파일을 찾지 못했어요. 먼저 만들기를 눌러 주세요.")
+    dest = pathlib.Path.home() / "Downloads" / "디자인허브" / rid
+    dest.mkdir(parents=True, exist_ok=True)
+    for f in files:
+        shutil.copy2(f, dest / f.name)
+    text = p.get("caption", "").strip()
+    if p.get("comment", "").strip():
+        text += "\n\n---- 첫 댓글 ----\n" + p["comment"].strip()
+    if text:
+        (dest / "캡션.txt").write_text(text + "\n", encoding="utf-8")
+    if sys.platform == "darwin":
+        subprocess.Popen(["open", str(dest)])
+    return {"ok": True, "message": f"저장했어요: {dest} (파일 {len(files)}개{' + 캡션' if text else ''})", "path": str(dest)}
+
+
 def make_start(p):
     """만들기를 뒤에서 돌리고, 화면은 job 으로 진행 막대와 걸린 시간을 봅니다."""
     def work(job):
@@ -790,7 +819,7 @@ def comment(p):
         return {"ok": True, "message": f"스레드에 댓글 {len(split_posts(text))}개를 달았어요.", "link": item["links"].get("threads", "")}
 
 
-API = {"state": state, "comment": comment, "make_start": make_start, "make": make, "publish": publish, "job": job_status, "tour": tour, "save_draft": save_draft,
+API = {"state": state, "comment": comment, "make_start": make_start, "export": export, "make": make, "publish": publish, "job": job_status, "tour": tour, "save_draft": save_draft,
        "coach_state": coach_state, "coach_key": coach_key, "coach_forget": coach_forget, "coach_article": coach_article,
        "coach_apply": coach_apply, "coach_post": coach_post, "site_publish": site_publish,
        "coach_edit_article": coach_edit_article, "coach_edit_post": coach_edit_post}
