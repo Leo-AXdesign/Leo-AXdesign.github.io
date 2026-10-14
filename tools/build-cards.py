@@ -74,7 +74,7 @@ SETS = {
             {"kind": "site", "name": "WhatTheFont", "when": "레퍼런스 이미지 속 폰트가 궁금할 때", "tour": "card"},
             {"kind": "site", "name": "Fonts In Use", "when": "이 폰트가 실제로 어디에 쓰였는지 보고 싶을 때"},
             {"kind": "site", "name": "Typewolf", "when": "비싼 폰트의 무료 대체재, 어울리는 조합을 찾을 때"},
-            {"kind": "site", "name": "Wordmark", "when": "내 컴퓨터 폰트로 문구를 한 번에 비교할 때"},
+            {"kind": "site", "name": "Wordmark", "when": "내 컴퓨터 폰트로 문구를 한 번에 비교할 때", "tour": "card"},
             {"kind": "site", "name": "Type Scale", "when": "제목·본문 크기 체계를 숫자로 정할 때"},
             {"kind": "outro", "title": "폰트 사이트 23곳,\n한 페이지에 모아 뒀어요", "url": "designrefs.com/font",
              "sub": "저장해 두면 필요할 때 바로 꺼내 볼 수 있어요"},
@@ -120,7 +120,7 @@ SETS = {
         "cards": [
             {"kind": "cover", "title": "프롬프트로\n화면 시안 뽑는\nAI 툴 5", "sub": "어디까지 되는지, 언제 쓰면 좋은지"},
             {"kind": "site", "name": "Google Stitch", "when": "말로 설명한 화면을 피그마로 가져가고 싶을 때"},
-            {"kind": "site", "name": "Figma Make", "when": "피그마 안에서 눌러 볼 수 있는 시안이 필요할 때"},
+            {"kind": "site", "name": "Figma Make", "when": "피그마 안에서 눌러 볼 수 있는 시안이 필요할 때", "tour": "card"},
             {"kind": "site", "name": "Relume", "when": "사이트맵과 와이어프레임부터 잡을 때"},
             {"kind": "site", "name": "v0", "when": "개발자에게 넘길 컴포넌트 코드까지 보고 싶을 때"},
             {"kind": "site", "name": "Uizard", "when": "손 스케치를 화면 초안으로 바꿀 때"},
