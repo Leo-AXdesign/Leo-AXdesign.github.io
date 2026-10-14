@@ -406,7 +406,7 @@ mark { background: none; color: inherit; text-decoration: underline; text-underl
 .section--sub { margin-top: 8px; }
 .subgroup + .subgroup { margin-top: 6px; }
 .grid-view .subgroup .list { padding-top: 12px; }
-.section__head--sub { padding: 28px 0 10px; border-bottom: 1px solid var(--line-strong); }
+.section__head--sub { padding: 28px 0 10px; border-bottom: 0; }   /* 소분류 제목은 구분선 없이 */
 .section__title--sub { font-size: 15px; font-weight: 700; letter-spacing: -0.01em; margin: 0; }
 .grow {
   display: grid;
@@ -461,6 +461,7 @@ mark { background: none; color: inherit; text-decoration: underline; text-underl
 .page__cta a { font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }
 
 .psub { font-size: 15px; font-weight: 700; letter-spacing: -0.02em; margin: 44px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--line-strong); }
+.psub--plain { border-bottom: 0; padding-bottom: 4px; }   /* 카테고리 페이지 소분류 제목: 구분선 없이 */
 .psub span { font-size: 12px; font-weight: 500; color: var(--ink-3); margin-left: 4px; }
 
 .plist { list-style: none; margin: 0; padding: 0; }

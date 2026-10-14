@@ -99,7 +99,7 @@ for c in cats:
         body = []
         for sb in subs:
             part = [s for s in items if s.get("sub") == sb]
-            body.append(f'      <h2 class="psub">{e(sb)} <span>{len(part)}</span></h2>')
+            body.append(f'      <h2 class="psub psub--plain">{e(sb)} <span>{len(part)}</span></h2>')
             body.append(site_list(part))
         body_html = "\n".join(body)
     else:
@@ -138,7 +138,7 @@ for g in groups:
     part = [t for t in terms if t.get("group") == g["id"]]
     if not part:
         continue
-    gb.append(f'      <h2 class="psub">{e(g["label"])} <span>{len(part)}</span></h2>')
+    gb.append(f'      <h2 class="psub psub--plain">{e(g["label"])} <span>{len(part)}</span></h2>')
     gb.append('      <ul class="plist">')
     for t in part:
         gb.append('        <li class="plist__item">'
