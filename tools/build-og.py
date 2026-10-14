@@ -58,11 +58,50 @@ LANGS = {
 }
 
 
+# 사이트 대표 이미지 (og-image.png). 사이트 수가 바뀌면 다시 찍습니다.
+HOME = """<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+  html, body {{ margin: 0; width: 1200px; height: 630px; overflow: hidden; background: #F4F4F4; }}
+  body {{ font-family: "Pretendard Variable", Pretendard, "Apple SD Gothic Neo", sans-serif; color: #111;
+         -webkit-font-smoothing: antialiased; }}
+  .card {{ box-sizing: border-box; width: 1200px; height: 630px; padding: 146px 88px 0; position: relative; }}
+  .dot {{ color: #A3A3A3; }}
+  .logo {{ font-size: 56px; font-weight: 800; letter-spacing: -0.04em; line-height: 1; }}
+  .name {{ margin-top: 44px; font-size: 104px; font-weight: 800; letter-spacing: -0.05em; line-height: 1; }}
+  .desc {{ margin-top: 34px; font-size: 26px; color: #6B6B6B; letter-spacing: -0.01em; }}
+  .chips {{ margin-top: 36px; display: flex; gap: 10px; }}
+  .chips span {{ font-size: 19px; padding: 11px 20px; border: 1px solid #DDD; border-radius: 999px; background: #fff; }}
+</style></head><body><div class="card">
+  <div class="logo">d<span class="dot">.</span></div>
+  <div class="name">DESIGN HUB<span class="dot">.</span></div>
+  <div class="desc">디자이너를 위한 레퍼런스 사이트 {count}개 · 스타일 사전 · 2026 트렌드 · 용어 사전</div>
+  <div class="chips"><span>UI/UX</span><span>그래픽 · 브랜딩</span><span>컬러</span><span>타이포</span><span>에셋</span><span>개발</span><span>외주</span><span>채용</span><span>AI</span></div>
+</div></body></html>"""
+
+
+def home_card(tmp, redo):
+    import sitedata as D
+    count = len(D.sites)
+    stamp = OUT / ".home-count"
+    png = ROOT / "og-image.png"
+    if png.exists() and not redo and stamp.exists() and stamp.read_text().strip() == str(count):
+        return None
+    page = pathlib.Path(tmp) / "home.html"
+    page.write_text(HOME.format(count=count), encoding="utf-8")
+    shoot(page, png)
+    stamp.write_text(f"{count}\n")
+    return f"og-image.png (사이트 {count}개)"
+
+
 def main():
     redo = "--all" in sys.argv
     OUT.mkdir(exist_ok=True)
     made = []
     with tempfile.TemporaryDirectory() as tmp:
+        home = home_card(tmp, redo)
+        if home:
+            made.append(home)
         for lang, L in LANGS.items():
             L["out"].mkdir(exist_ok=True)
             for x in A.load(lang):
