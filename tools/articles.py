@@ -27,6 +27,7 @@ build-articles.py 와 build-seo.py 가 같이 씁니다.
     ※ 출처나 주석     작은 회색 글씨 한 줄
     ![그림 설명](https://designrefs.com/articles/img/파일.svg)   한 줄을 통째로 써야 그림이 됩니다.
                                                               설명은 그림 아래 캡션으로 나옵니다.
+    ![영상 설명](https://www.youtube.com/watch?v=영상ID)   주소가 유튜브면 그 자리에 영상이 들어갑니다.
 """
 import re, html, pathlib
 
@@ -84,6 +85,20 @@ def _svg_size(src):
         raise SystemExit(f"그림 파일이 없습니다: {f}")
     vb = re.search(r'viewBox="0 0 ([\d.]+) ([\d.]+)"', f.read_text(encoding="utf-8"))
     return f' width="{round(float(vb.group(1)))}" height="{round(float(vb.group(2)))}"' if vb else ""
+
+
+YT_RE = re.compile(r"^https?://(?:www\.)?(?:youtube\.com/watch\?v=|youtu\.be/)([\w-]{11})")
+
+
+def video(caption, vid):
+    """유튜브 영상 한 편. 쿠키를 남기지 않는 youtube-nocookie 주소로, 화면에 가까워질 때 불러옵니다."""
+    title = e(re.sub(r"[*`]", "", caption))
+    return ('    <figure class="art__fig art__video">\n'
+            f'      <div class="art__frame"><iframe src="https://www.youtube-nocookie.com/embed/{vid}" title="{title}" '
+            'loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" '
+            'referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>\n'
+            f'      <figcaption>{inline(caption)}</figcaption>\n'
+            '    </figure>')
 
 
 def figure(caption, src):
@@ -153,7 +168,8 @@ def to_html(md):
         img = re.match(r"^!\[([^\]]*)\]\(([^)\s]+)\)$", line.strip())
         if img:
             flush()
-            out.append(figure(img.group(1), img.group(2)))
+            yt = YT_RE.match(img.group(2))
+            out.append(video(img.group(1), yt.group(1)) if yt else figure(img.group(1), img.group(2)))
         elif line.startswith("## "):
             flush()
             h2 += 1

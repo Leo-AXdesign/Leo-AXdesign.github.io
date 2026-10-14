@@ -589,6 +589,8 @@ body.drawer-open { overflow: hidden; }
 .art__fig picture { display: block; }
 .art__fig img { display: block; width: 100%; height: auto; border-radius: 14px; }
 .art__fig figcaption { margin-top: 12px; font-size: 13px; line-height: 1.6; color: var(--ink-3); text-align: center; }
+.art__frame { position: relative; aspect-ratio: 16 / 9; border-radius: 14px; overflow: hidden; background: #000; }
+.art__frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 :root[data-theme="dark"] .art__fig img { filter: invert(1) hue-rotate(180deg); }
 
 /* 글 속 표와 출처 */

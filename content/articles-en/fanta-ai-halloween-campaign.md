@@ -17,6 +17,8 @@ Fanta wants to own Halloween, the way Coca-Cola calls Christmas to mind. So unli
 
 The AI studio GRAiL produced it. A cinematic trailer came out on August 24, and the campaign then expanded to 50 markets. Fanta's account: writers, technologists, creators and artists worked together, and AI was used in the research and production phases. A human-led effort, in other words.
 
+![The Haunted Universe trailer released August 24, from Fanta's official YouTube channel.](https://www.youtube.com/watch?v=3dJdrj8AvOM)
+
 Ibrahim Khan, Fanta's global VP of marketing, said: "Some people think you press a few buttons and Fanta Universe pops up — it's taken us a year and a half."
 
 ## Comments and numbers went opposite ways
@@ -30,6 +32,8 @@ The survey numbers tell another story.
 ![Same brand, mixed numbers. The Halloween products beat the norm, but wariness of AI marketing runs high.](https://designrefs.com/articles/img/fanta-ai-numbers-en.svg)
 
 When consumer research firm Zappi tested Fanta's limited Halloween products, 85% said they felt distinct, against a 71% norm, and 62% said they seemed better, against 47%. Zappi's read is that people who watched the ad itself mostly liked it and weren't very concerned with the technology behind it.
+
+!["Halloween Reveal", the 60-second ad Zappi analyzed, from Fanta's official YouTube channel.](https://www.youtube.com/watch?v=3JZebAoypto)
 
 Meanwhile, in a separate July survey, 74% of Gen Z said they react negatively to AI-made marketing, and 72% said they'd taken some action against a brand because of it.
 
