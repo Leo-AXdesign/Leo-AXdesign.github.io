@@ -280,7 +280,7 @@ function renderList() {
     `<div class="li__t">${esc(o.t)} ${o.done ? '<span class="badge">올림</span>' : ""}</div><div class="li__s">${esc(o.s)}</div></button>`).join("");
   $("#list").querySelectorAll(".li").forEach((b) => b.onclick = () => { source = b.dataset.src; renderList(); });
   $("#make").disabled = !source;
-  $("#tour").hidden = !(type === "reel" && source && source.endsWith("-cards"));
+  $("#tour").hidden = !(type === "reel" && source && !source.endsWith("-tour") && !source.startsWith("article-"));
 }
 
 function pick(t, src) {
@@ -292,7 +292,7 @@ function pick(t, src) {
 document.querySelectorAll("#seg button").forEach((b) => b.onclick = () => pick(b.dataset.type));
 
 $("#tour").onclick = async () => {
-  const sid = source.replace(/-cards$/, "");
+  const sid = source.replace(/-(cards|motion)$/, "");
   try { alert((await api("tour", { source: sid })).message); } catch (e) { alert(e.message); }
 };
 

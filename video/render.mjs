@@ -30,11 +30,14 @@ fs.rmSync(path.join(PUB, "r"), { recursive: true, force: true });
 fs.mkdirSync(path.join(PUB, "r"), { recursive: true });
 
 // 그림 복사
+// 그림·사이트 화면 복사 (저장소 기준 경로 또는 절대 경로)
 props.scenes.forEach((s, i) => {
-  if (s.image) {
-    const dst = `r/${i}-${path.basename(s.image)}`;
-    fs.copyFileSync(path.join(ROOT, s.image), path.join(PUB, dst));
-    s.image = dst;
+  for (const key of ["image", "shot"]) {
+    if (!s[key]) continue;
+    const src = path.isAbsolute(s[key]) ? s[key] : path.join(ROOT, s[key]);
+    const dst = `r/${i}-${key}${path.extname(src)}`;
+    fs.copyFileSync(src, path.join(PUB, dst));
+    s[key] = dst;
   }
 });
 

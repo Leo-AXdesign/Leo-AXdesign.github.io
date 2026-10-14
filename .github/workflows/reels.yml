@@ -2,14 +2,15 @@
 # 만든 영상은 social/reels/ 에 올라가고, 끝나면 deploy.yml 이 사이트에 배포합니다.
 #   → https://designrefs.com/social/reels/<이름>.mp4
 # 돌리는 법: GitHub 저장소 → Actions → Build reels → Run workflow
-#   targets 예: "tour:fonts-pick cards:fonts-pick"  (여러 개는 띄어쓰기로)
+#   targets 예: "tour:fonts-pick motion:colors-pick"  (여러 개는 띄어쓰기로)
+#   tour 는 영상 엔진(video/)으로 폰 화면 속 사이트 스크롤 + 배경음악 영상을 만듭니다.
 name: Build reels
 
 on:
   workflow_dispatch:
     inputs:
       targets:
-        description: "만들 릴스 (예: tour:fonts-pick cards:colors-pick)"
+        description: "만들 릴스 (예: tour:fonts-pick motion:colors-pick)"
         required: true
         default: "tour:fonts-pick"
 
@@ -37,6 +38,8 @@ jobs:
           sudo apt-get install -y -qq ffmpeg fonts-noto-cjk
           pip install -q pillow playwright
           python3 -m playwright install --with-deps chromium
+      - name: Install video engine (Remotion)
+        run: npm ci --prefix video --no-audit --no-fund --loglevel=error
       - name: Build reels
         env:
           TARGETS: ${{ inputs.targets }}
