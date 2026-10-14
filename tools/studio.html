@@ -282,7 +282,7 @@ function options() {
   }
   if (type === "reel") return S.reels.map((r) => ({ src: r.id, t: r.title,
     s: (r.id.endsWith("-motion") ? "모션 + 음악 (1분 안팎)" : r.id.endsWith("-tour") ? "사이트 투어" : "카드 넘김") + (r.seconds ? ` · ${r.seconds}초` : " · 새로 만들기"), done: isDone("reel:" + r.id) }));
-  if (sub === "article") return S.articles.map((a) => ({ src: "article:" + a.slug, t: a.title, s: a.date + " · 제목과 요약 + 링크", done: isDone("thread:article:" + a.slug) }));
+  if (sub === "article") return S.articles.map((a) => ({ src: "article:" + a.slug, t: a.title, s: a.date + (S.drafts.some((d) => d.id === "art-" + a.slug) ? " · 다듬은 풀어쓰기 있음" : " · 첫 글 + 댓글로 풀어쓰기 + 원문 링크"), done: isDone("thread:article:" + a.slug) }));
   if (sub === "custom") return [{ src: "custom", t: "빈 글에서 시작", s: "직접 쓰기" }];
   const mine = sub === "mine";
   return S.drafts.filter((d) => Boolean(d.account) === mine).map((d) => ({ src: "draft:" + d.id, t: d.label,
@@ -293,7 +293,7 @@ function options() {
 function renderList() {
   document.querySelectorAll("#seg button").forEach((b) => b.classList.toggle("on", b.dataset.type === type));
   const tabs = type === "carousel" ? [["ref", "레퍼런스·용어"], ["article", "읽을거리"]]
-             : type === "thread" ? [["draft", "디자인 허브 초안"], ["mine", "내 계정 초안"], ["article", "읽을거리 소개"], ["custom", "직접 쓰기"]] : [];
+             : type === "thread" ? [["draft", "디자인 허브 초안"], ["mine", "내 계정 초안"], ["article", "읽을거리 풀어쓰기"], ["custom", "직접 쓰기"]] : [];
   if (tabs.length && !tabs.some(([k]) => k === sub)) sub = tabs[0][0];
   $("#subtabs").innerHTML = tabs.map(([k, l]) => `<button data-sub="${k}" class="${k === sub ? "on" : ""}">${l}</button>`).join("");
   $("#subtabs").querySelectorAll("button").forEach((b) => b.onclick = () => { sub = b.dataset.sub; source = null; renderList(); });

@@ -628,6 +628,18 @@ const PROMPTS = {
 글:
 ${text}`,
   },
+  article_to_thread: {
+    description: "읽을거리 글 한 편을 스레드 글투로 풀어서, 첫 글 + 댓글 묶음으로 쓰고 마지막에 원문 링크를 붙여 올립니다 (구독으로, 추가 요금 없음)",
+    arguments: [{ name: "slug", description: "글 주소 (비우면 최신 글)", required: false }],
+    text: ({ slug }) => `designhub 도구로 읽을거리 글을 스레드 묶음으로 풀어 쓰자.
+
+1. editor_guide 로 기준을 읽어. 특히 '읽을거리 → 스레드 풀어쓰기'.
+2. ${slug ? `article_read 로 '${slug}' 글을 읽어.` : "article_list 로 최신 글을 찾고 article_read 로 읽어."}
+3. 첫 글 1개 + 댓글 3~4개 + 마지막 원문 안내를 번호 붙여 보여 줘. 각 500자 이내, 담담한 평서체.
+   글에 있는 사실·숫자만 쓰고 새 사실은 더하지 마.
+4. 내가 고칠 곳을 말하면 그 부분만 고쳐.
+5. 내가 "올려"라고 하면 threads_publish_chain 으로 디자인 허브 계정에 올리고, link_attachment 에 원문 주소(https://designrefs.com/articles/<slug>/)를 넣어. 첫 글 링크를 알려 줘.`,
+  },
   write_chain: {
     description: "내 스레드 계정에 올릴 '후킹 첫 글 + 댓글로 이어지는 글' 묶음을 같이 씁니다. 확인하면 첫 글을 올리고 댓글로 차례로 이어 답니다 (구독으로, 추가 요금 없음)",
     arguments: [
@@ -665,7 +677,7 @@ async function handle(req) {
       return send({ id, result: {
         protocolVersion: params.protocolVersion || "2025-06-18",
         capabilities: { tools: {}, prompts: {} },
-        serverInfo: { name: "designhub-social", version: "1.5.0" },
+        serverInfo: { name: "designhub-social", version: "1.6.0" },
       } });
     }
     if (method === "ping") return send({ id, result: {} });

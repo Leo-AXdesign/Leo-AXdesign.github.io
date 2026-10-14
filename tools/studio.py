@@ -27,7 +27,7 @@ AI 편집장
 안전장치는 관리자(admin.py)와 같습니다: 127.0.0.1 에서만 열리고, 실행할 때마다 새 열쇠를 만듭니다.
 """
 import datetime, http.server, importlib.util, json, mimetypes, pathlib, secrets, shutil
-import subprocess, sys, threading, time, urllib.error, urllib.parse, urllib.request, webbrowser
+import re, subprocess, sys, threading, time, urllib.error, urllib.parse, urllib.request, webbrowser
 
 TOOLS = pathlib.Path(__file__).resolve().parent
 ROOT = TOOLS.parent
@@ -260,6 +260,48 @@ def local(url):
     return "/" + url.removeprefix(SITE) + f"?v={int(time.time())}"
 
 
+def _plain(md):
+    md = re.sub(r"!\[[^\]]*\]\([^)]*\)", "", md)                 # 그림
+    md = re.sub(r"\[([^\]]+)\]\([^)]*\)", r"\1", md)               # 링크 → 글자
+    return re.sub(r"\*\*|__|`", "", md).strip()
+
+
+def _cut(text, limit):
+    """문장 단위로 limit 자 안에서 자릅니다."""
+    out = ""
+    for sent in re.split(r"(?<=[.!?다])\s+", text):
+        if len(out) + len(sent) + 1 > limit:
+            break
+        out = (out + " " + sent).strip()
+    return out or text[:limit]
+
+
+def article_chain(a):
+    """읽을거리 한 편 → 스레드 묶음 초안 (첫 글 + 소제목마다 댓글 + 실천 팁 + 원문 안내).
+    글의 문장을 그대로 따와 담담한 말투가 유지됩니다. 다듬기는 '수정 요청'이나 Claude 데스크톱으로."""
+    path = ROOT / "content" / "articles" / f"{a['slug']}.md"
+    body = path.read_text(encoding="utf-8").split("---", 2)[2] if path.exists() else ""
+    parts = re.split(r"^## (.+)$", body, flags=re.M)
+    intro, sections = parts[0], list(zip(parts[1::2], parts[2::2]))
+    first_para = next((_plain(x) for x in intro.split("\n\n") if x.strip() and not x.startswith("**먼저")), a["desc"])
+    posts = [f"{_cut(first_para, 260)}\n\n{_cut(a['desc'], 200)}\n\n댓글에 이어서 정리했다."]
+    n, tips = 0, []
+    for head, text in sections:
+        if head.strip().startswith("그래서 지금은"):
+            tips = [_plain(m) for m in re.findall(r"^\d+\.\s+\*\*(.+?)\*\*", text, re.M)] or \
+                   [_cut(_plain(m), 60) for m in re.findall(r"^\d+\.\s+(.+)$", text, re.M)]
+            continue
+        paras = [_plain(x) for x in text.split("\n\n") if x.strip() and not x.lstrip().startswith(("|", "※", "!", "<"))]
+        if not paras or n >= 3:
+            continue
+        n += 1
+        posts.append(f"{n}/ {head.strip()}\n\n{_cut(' '.join(paras[:2]), 330)}")
+    if tips:
+        posts.append("그래서 지금은\n\n" + "\n".join(f"· {t.rstrip('.')}" for t in tips[:3]))
+    posts.append("숫자와 그림, 출처는 원문에 정리해 뒀다.")
+    return "\n---\n".join(posts)
+
+
 def make(p, job=None):
     kind, source = p.get("type"), p.get("source", "")
     log = job["log"] if job is not None else []
@@ -323,7 +365,9 @@ def make(p, job=None):
             a = next((x for x in articles() if x["slug"] == source.split(":", 1)[1]), None)
             if not a:
                 raise Oops("없는 글입니다.")
-            text = f"{a['title']}\n\n{a['desc']}"
+            slug = a["slug"]
+            hand = next((d for d in drafts() if d["id"] == f"art-{slug}"), None)   # 손으로 다듬은 풀어쓰기가 있으면 그것
+            text = hand["text"] if hand else article_chain(a)
             return {"ok": True, "type": kind, "id": source, "title": a["title"], "text": text, "link": a["url"],
                     "published": f"thread:{source}" in published_keys()}
         if source.startswith("draft:"):
