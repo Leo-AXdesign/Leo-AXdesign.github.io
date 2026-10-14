@@ -291,12 +291,9 @@ function pick(t, src) {
 }
 document.querySelectorAll("#seg button").forEach((b) => b.onclick = () => pick(b.dataset.type));
 
-$("#tour").onclick = async () => {
-  const sid = source.replace(/-(cards|motion)$/, "");
-  try { alert((await api("tour", { source: sid })).message); } catch (e) { alert(e.message); }
-};
+$("#tour").onclick = () => doMake("tour", { source: source.replace(/-(cards|motion)$/, "") });
 
-async function doMake() {
+async function doMake(endpoint = "make_start", body = null) {
   const t0 = Date.now();
   const draw = (j) => {
     const sec = Math.round((Date.now() - t0) / 1000), el = sec >= 60 ? `${Math.floor(sec / 60)}분 ${sec % 60}초` : `${sec}초`;
@@ -307,15 +304,19 @@ async function doMake() {
   };
   draw(null);
   try {
-    const { job } = await api("make_start", { type, source, rebuild: $("#rebuild").checked });
-    const j = await waitJob(job, draw);
+    $("#make").disabled = $("#tour").disabled = true;   // 두 번 눌러 같은 작업이 겹치지 않게
+    const r = await api(endpoint, body || { type, source, rebuild: $("#rebuild").checked });
+    if (!r.job) { $("#preview").innerHTML = `<div class="result">${esc(r.message || "")}</div>`; return; }
+    const j = await waitJob(r.job, draw);
     made = j.data;
     showPreview();
   } catch (e) {
     $("#preview").innerHTML = `<div class="result bad">${esc(e.message)}</div>`;
+  } finally {
+    renderList();   // 버튼 다시 켜기 (목록 상태에 맞게)
   }
 }
-$("#make").onclick = doMake;
+$("#make").onclick = () => doMake();
 
 function counter(el, max, out) {
   const f = () => { out.textContent = `${el.value.length} / ${max}`; out.classList.toggle("over", el.value.length > max); };

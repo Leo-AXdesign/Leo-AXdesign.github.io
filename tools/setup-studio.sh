@@ -50,6 +50,13 @@ elif command -v brew >/dev/null; then
 else
   echo "ffmpeg: Homebrew 가 없어 건너뜁니다. 이미 만들어 둔 릴스 발행에는 필요 없고, 새 릴스를 만들 때만 필요합니다."
 fi
+if ! command -v gh >/dev/null && command -v brew >/dev/null; then
+  echo "GitHub 도구(gh) 설치 중 (투어 릴스용)…"
+  brew install -q gh && echo "gh: 설치함"
+fi
+if command -v gh >/dev/null && ! gh auth status >/dev/null 2>&1; then
+  echo "투어 릴스를 스튜디오에서 바로 만들려면, 이 설치가 끝난 뒤 터미널에서 한 번: gh auth login"
+fi
 if command -v npm >/dev/null; then
   echo "모션 릴스 영상 엔진(Remotion) 설치 중 (처음 한 번은 1~2분)…"
   npm ci --prefix video --no-audit --no-fund --loglevel=error && echo "영상 엔진: 준비됨"

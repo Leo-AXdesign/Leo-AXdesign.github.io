@@ -337,17 +337,68 @@ def make(p, job=None):
     raise Oops("무엇을 만들지 골라 주세요.")
 
 
+TOUR_JOB = {}   # 지금 돌고 있는 투어 (같은 묶음을 두 번 돌리지 않게)
+
+
+def gh_json(args):
+    r = subprocess.run(["gh", *args], cwd=ROOT, capture_output=True, text=True, timeout=60)
+    if r.returncode:
+        raise Oops("GitHub 에 물어보지 못했습니다: " + (r.stderr or r.stdout)[-400:])
+    return json.loads(r.stdout or "null")
+
+
 def tour(p):
-    """사이트 투어 릴스는 바깥 사이트 화면을 찍어야 해서 GitHub Actions 에서 만듭니다."""
+    """사이트 투어 릴스는 바깥 사이트 화면을 찍어야 해서 GitHub Actions 에서 만듭니다.
+    gh 가 있으면 요청 → 끝날 때까지 지켜보며 진행 막대를 보여 주고 → 받아 와서 미리보기까지 엽니다."""
     sid = p.get("source", "")
     url = "https://github.com/Leo-AXdesign/Leo-AXdesign.github.io/actions/workflows/reels.yml"
-    if shutil.which("gh"):
-        log = []
-        if run(["gh", "workflow", "run", "reels.yml", "-f", f"targets=tour:{sid}"], log) == 0:
-            return {"ok": True, "message": f"GitHub Actions 에서 '{sid}' 투어 릴스를 만들기 시작했습니다. "
-                                            "5분쯤 뒤 스튜디오를 새로 고치면 목록에 나옵니다 (폰 화면 속 사이트 스크롤 + 배경음악)."}
-    webbrowser.open(url)
-    return {"ok": True, "message": f"GitHub Actions 화면을 열었습니다. 'Run workflow' 를 누르고 targets 에 tour:{sid} 를 넣어 주세요."}
+    if not shutil.which("gh"):
+        webbrowser.open(url)
+        return {"ok": True, "message": f"GitHub Actions 화면을 열었습니다. 'Run workflow' 를 누르고 targets 에 tour:{sid} 를 넣어 주세요.\n"
+                                        "(gh 를 설치하면 스튜디오에서 바로 만들고 진행 상황도 볼 수 있어요: brew install gh && gh auth login)"}
+    running = TOUR_JOB.get(sid)
+    if running and not JOBS.get(running, {}).get("done", True):
+        return {"ok": True, "job": running}   # 이미 만드는 중이면 그 작업을 이어서 봅니다
+
+    def work(job):
+        log = job["log"]
+        job["stage"] = "GitHub Actions 에 요청하는 중"
+        before = gh_json(["run", "list", "--workflow", "reels.yml", "--limit", "1", "--json", "databaseId"])
+        last = before[0]["databaseId"] if before else 0
+        if run(["gh", "workflow", "run", "reels.yml", "-f", f"targets=tour:{sid}"], log) != 0:
+            raise Oops("GitHub Actions 에 요청하지 못했습니다. 터미널에서 gh auth login 을 한 번 해 주세요.\n" + "\n".join(log[-4:]))
+        rid, t0 = None, time.time()
+        while time.time() - t0 < 25 * 60:
+            time.sleep(8)
+            runs = gh_json(["run", "list", "--workflow", "reels.yml", "--limit", "3", "--json", "databaseId,status,conclusion"])
+            mine = [r for r in runs if r["databaseId"] > last]
+            if not mine:
+                job["stage"] = "GitHub Actions 가 받아 주길 기다리는 중"
+                continue
+            r = mine[-1]
+            rid = r["databaseId"]
+            mins = (time.time() - t0) / 60
+            job["progress"] = min(95, int(mins / 3.5 * 100))   # 한 묶음 보통 3분 안팎
+            if r["status"] != "completed":
+                job["stage"] = ("GitHub 에서 사이트 화면 찍고 영상 만드는 중" if r["status"] == "in_progress" else "GitHub 차례 기다리는 중")
+                continue
+            if r["conclusion"] != "success":
+                out = subprocess.run(["gh", "run", "view", str(rid), "--log-failed"], cwd=ROOT, capture_output=True, text=True).stdout
+                raise Oops("GitHub 에서 투어를 만들지 못했습니다.\n" + out[-1500:])
+            break
+        else:
+            raise Oops("25분이 지나도 끝나지 않았습니다. GitHub Actions 화면에서 확인해 주세요.\n" + url)
+        job["stage"], job["progress"] = "만든 영상을 받아 오는 중", 97
+        time.sleep(3)
+        run(["git", "pull", "-q", "--rebase", "--autostash", "origin", "main"], log)
+        if not reel_info(f"{sid}-tour"):
+            raise Oops("영상은 만들어졌는데 목록에서 찾지 못했습니다. 스튜디오를 새로 고쳐 주세요.")
+        job["progress"] = 100
+        return make({"type": "reel", "source": f"{sid}-tour"}, job)
+
+    res = background(work)
+    TOUR_JOB[sid] = res["job"]
+    return res
 
 
 # =========================================================
