@@ -412,6 +412,7 @@ const SITES_EN = {
   "https://goodux.appcues.com": [null, "Well-made UX examples: onboarding, empty states and more."],
   "https://ui8.net": [null, "A marketplace for premium UI kits, icons and 3D assets."],
   "https://www.ripplix.com": [null, "7,000+ UI animations and micro-interactions from real apps and sites, searchable by element, industry and product."],
+  "https://nook.ai.kr": [null, "Korean and international websites sorted by industry (beauty, fashion, IT) and purpose (shop, landing page), with color and country filters plus bookmarks and team folders."],
   "https://mindsparklemag.com": [null, "A curation magazine for branding and web design."],
   "https://gurafiku.tumblr.com": [null, "An archive of Japanese graphic design."],
   "https://colors.muz.li": [null, "Palette generation with previews on real UI and illustrations."],

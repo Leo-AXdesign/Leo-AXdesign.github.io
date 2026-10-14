@@ -423,6 +423,7 @@ const SITES = [
   { name: 'Really Good UX', url: 'https://goodux.appcues.com', desc: '온보딩·엠프티 스테이트 등 잘 만든 UX 사례 모음.', cat: 'uiux', tags: ['무료'] },
   { name: 'UI8', url: 'https://ui8.net', desc: '프리미엄 UI 킷·아이콘·3D 에셋 마켓.', cat: 'uiux', tags: ['유료'] },
   { name: 'Ripplix', url: 'https://www.ripplix.com', desc: '실제 앱·웹에서 모은 UI 애니메이션과 마이크로 인터랙션 7,000여 개. 요소·업종·서비스별로 찾아볼 수 있습니다.', cat: 'uiux', tags: ['무료', '유료'] },
+  { name: 'Nook', url: 'https://nook.ai.kr', desc: '국내·해외 웹사이트를 화장품·패션·IT 같은 업종과 쇼핑몰·랜딩 같은 목적별로 모은 레퍼런스. 색상·국가 필터와 북마크·팀 폴더가 있습니다.', cat: 'uiux', tags: ['한국', '무료'] },
 
   { name: 'Mindsparkle Mag', url: 'https://mindsparklemag.com', desc: '브랜딩·웹 디자인 큐레이션 매거진.', cat: 'graphic', tags: ['무료'] },
   { name: 'Gurafiku', url: 'https://gurafiku.tumblr.com', desc: '일본 그래픽 디자인 아카이브.', cat: 'graphic', tags: ['무료'] },
