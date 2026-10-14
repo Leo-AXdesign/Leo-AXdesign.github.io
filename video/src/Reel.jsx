@@ -132,6 +132,40 @@ const Site = ({ s, dark }) => {
   );
 };
 
+// 사이트 투어: 위에는 이름·주소·한 줄, 아래 폰 화면 안에서 실제 사이트가 위→아래로 스크롤됩니다
+const FRAME_W = 820, FRAME_H = 1040, BORDER = 12;
+const Shot = ({ s, dark }) => {
+  const frame = useCurrentFrame();
+  const { durationInFrames } = useVideoConfig();
+  const head = useSpring(0, { damping: 16, stiffness: 140 });
+  const phone = useSpring(4, { damping: 18, stiffness: 110 });
+  const inner = FRAME_W - BORDER * 2;
+  const imgH = (s.shot_h || 3000) * inner / 1080;
+  const dist = Math.max(0, Math.min(imgH - (FRAME_H - BORDER * 2), 2200));
+  // 잠깐 멈췄다가 천천히 내려가고, 끝에서 잠깐 멈춥니다
+  const t = interpolate(frame, [BEAT, durationInFrames - BEAT * 1.5], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const ease = t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+  const fg = dark ? C.white : C.ink, sub = dark ? "#B5B5B5" : C.mute;
+  return (
+    <Enter dark={dark}>
+      <div style={{ position: "absolute", top: 230, left: 80, right: 80, opacity: head, transform: `translateY(${(1 - head) * 30}px)` }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
+          <span style={{ fontSize: 34, fontWeight: 800, color: C.dot }}>{String(s.n).padStart(2, "0")} / {String(s.total).padStart(2, "0")}</span>
+          <span style={{ fontSize: 30, fontWeight: 600, padding: "8px 22px", borderRadius: 999,
+            background: dark ? C.white : C.ink, color: dark ? C.ink : C.white }}>{s.host}</span>
+        </div>
+        <div style={{ marginTop: 14, fontSize: s.name.length > 16 ? 72 : 92, fontWeight: 850, letterSpacing: "-0.045em", color: fg, lineHeight: 1.05 }}>{s.name}</div>
+        <Words text={s.text} delay={8} style={{ marginTop: 16, fontSize: 40, fontWeight: 600, color: sub, lineHeight: 1.35 }} />
+      </div>
+      <div style={{ position: "absolute", left: (1080 - FRAME_W) / 2, top: 640, width: FRAME_W, height: FRAME_H,
+        borderRadius: 64, border: `${BORDER}px solid ${dark ? "#2A2A2A" : C.ink}`, overflow: "hidden", background: C.white,
+        boxShadow: "0 40px 90px rgba(0,0,0,0.18)", transform: `translateY(${(1 - phone) * 500}px)` }}>
+        <Img src={staticFile(s.shot)} style={{ width: inner, display: "block", transform: `translateY(${-dist * ease}px)` }} />
+      </div>
+    </Enter>
+  );
+};
+
 const Lead = ({ s }) => (
   <Enter>
     <AbsoluteFill style={{ padding: "0 96px", justifyContent: "center" }}>
@@ -203,13 +237,13 @@ const Outro = ({ s }) => {
   );
 };
 
-const SCENES = { hook: Hook, site: Site, term: Site, lead: Lead, figure: Figure, tip: Tip, outro: Outro };
+const SCENES = { hook: Hook, site: Site, term: Site, shot: Shot, lead: Lead, figure: Figure, tip: Tip, outro: Outro };
 
 // ---------- 전체 ----------
 const Chrome = ({ scenes, starts, kicker }) => {
   const frame = useCurrentFrame();
   const i = Math.max(0, starts.findLastIndex((st) => frame >= st));
-  const dark = (scenes[i].type === "site" || scenes[i].type === "term") ? scenes[i].n % 2 === 0 : scenes[i].type === "tip";
+  const dark = ["site", "term", "shot"].includes(scenes[i].type) ? scenes[i].n % 2 === 0 : scenes[i].type === "tip";
   const fg = dark ? C.white : C.ink;
   return (
     <AbsoluteFill style={{ pointerEvents: "none" }}>
@@ -243,7 +277,7 @@ export const Reel = ({ scenes, kicker, music }) => {
     <AbsoluteFill style={{ fontFamily: FONT, background: C.bg }}>
       {scenes.map((s, k) => {
         const Scene = SCENES[s.type] || Lead;
-        const dark = (s.type === "site" || s.type === "term") && s.n % 2 === 0;
+        const dark = (s.type === "site" || s.type === "term" || s.type === "shot") && s.n % 2 === 0;
         return (
           <Sequence key={k} from={starts[k]} durationInFrames={sceneFrames(s)}>
             <Scene s={s} dark={dark} />

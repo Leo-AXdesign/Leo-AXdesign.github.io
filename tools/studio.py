@@ -345,7 +345,7 @@ def tour(p):
         log = []
         if run(["gh", "workflow", "run", "reels.yml", "-f", f"targets=tour:{sid}"], log) == 0:
             return {"ok": True, "message": f"GitHub Actions 에서 '{sid}' 투어 릴스를 만들기 시작했습니다. "
-                                            "10분쯤 뒤 '새로 고침'을 누르면 목록에 나옵니다."}
+                                            "5분쯤 뒤 스튜디오를 새로 고치면 목록에 나옵니다 (폰 화면 속 사이트 스크롤 + 배경음악)."}
     webbrowser.open(url)
     return {"ok": True, "message": f"GitHub Actions 화면을 열었습니다. 'Run workflow' 를 누르고 targets 에 tour:{sid} 를 넣어 주세요."}
 

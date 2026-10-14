@@ -357,22 +357,24 @@ def motion_props(set_id):
     return spec, {"kicker": spec.get("kicker", ""), "scenes": scenes}
 
 
-def reel_motion(set_id, music="auto"):
+def motion_ready():
     import shutil
-    node = shutil.which("node")
-    if not node:
+    return bool(shutil.which("node")) and (ROOT / "video" / "node_modules" / "remotion").exists()
+
+
+def render_motion(name, props, title, caption):
+    """props 로 video/render.mjs 를 돌려 social/reels/<name>.mp4 와 커버 .jpg 를 만듭니다."""
+    import shutil
+    if not shutil.which("node"):
         raise SystemExit("모션 릴스에는 Node.js 가 필요합니다. (Claude 데스크톱 연결에 쓰는 것과 같은 것)")
-    if not (ROOT / "video" / "node_modules" / "remotion").exists():
+    if not motion_ready():
         raise SystemExit("영상 엔진이 설치되지 않았습니다. 터미널에서: npm ci --prefix video")
-    spec, props = motion_props(set_id)
-    props["music"] = music
     OUT.mkdir(parents=True, exist_ok=True)
-    name = f"{set_id}-motion"
     mp4, jpg = OUT / f"{name}.mp4", OUT / f"{name}.jpg"
     with tempfile.TemporaryDirectory() as tmp:
         pf = pathlib.Path(tmp) / "props.json"
         pf.write_text(json.dumps(props, ensure_ascii=False), encoding="utf-8")
-        proc = subprocess.Popen([node, str(ROOT / "video" / "render.mjs"), str(pf), str(mp4), str(jpg)],
+        proc = subprocess.Popen([shutil.which("node"), str(ROOT / "video" / "render.mjs"), str(pf), str(mp4), str(jpg)],
                                 cwd=ROOT, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, bufsize=1)
         seconds, tail = 0.0, []
         for line in proc.stdout:
@@ -386,11 +388,51 @@ def reel_motion(set_id, music="auto"):
         if proc.wait() != 0 or not mp4.exists():
             raise SystemExit("모션 릴스를 만들지 못했습니다.\n" + "\n".join(tail[-30:]))
     print(f"{name}: {seconds:.1f}초, {mp4.stat().st_size / 1e6:.1f}MB → social/reels/{mp4.name}")
+    return {"id": name, "title": title, "seconds": round(seconds, 1),
+            "video": f"{SITE}social/reels/{name}.mp4", "cover": f"{SITE}social/reels/{name}.jpg", "caption": caption}
+
+
+def set_caption(set_id, spec):
     meta = json.loads((CARDS / "index.json").read_text(encoding="utf-8")) if (CARDS / "index.json").exists() else {"sets": []}
     info = next((x for x in meta["sets"] if x["id"] == set_id), None)
-    return {"id": name, "title": spec["title"], "seconds": round(seconds, 1),
-            "video": f"{SITE}social/reels/{name}.mp4", "cover": f"{SITE}social/reels/{name}.jpg",
-            "caption": info["caption"] if info else BC.caption(set_id, spec)}
+    return info["caption"] if info else BC.caption(set_id, spec)
+
+
+def reel_motion(set_id, music="auto"):
+    spec, props = motion_props(set_id)
+    props["music"] = music
+    return render_motion(f"{set_id}-motion", props, spec["title"], set_caption(set_id, spec))
+
+
+def reel_tour_motion(set_id, music="auto"):
+    """사이트 투어 (모션): 사이트마다 실제 모바일 화면을 찍어 폰 화면 안에서 스크롤합니다. 바깥 사이트 접속 필요."""
+    spec = BC.SETS.get(set_id)
+    if not spec:
+        raise SystemExit(f"레퍼런스 묶음이 아닙니다: {set_id} (있는 것: {', '.join(BC.SETS)})")
+    sites = [c for c in spec["cards"] if c["kind"] == "site"]
+    if not sites:
+        raise SystemExit(f"사이트 카드가 없는 묶음입니다: {set_id}")
+    cover = next((c for c in spec["cards"] if c["kind"] == "cover"), {"title": spec["title"]})
+    outro = next((c for c in spec["cards"] if c["kind"] == "outro"), {"title": "레퍼런스 394곳", "url": "designrefs.com"})
+    scenes = [{"type": "hook", "title": cover["title"], "sub": f"사이트 {len(sites)}곳, 실제 화면으로 바로 보기"}]
+    with tempfile.TemporaryDirectory() as tmp:
+        for i, c in enumerate(sites, 1):
+            st = BC.find_site(c["name"])
+            base = {"n": i, "total": len(sites), "name": st["name"], "host": BC.host(st["url"]),
+                    "text": c.get("when") or st["desc"], "tags": BC.site_tags(st["name"])[:3]}
+            shot = pathlib.Path(tmp) / f"s{i}.png"
+            try:
+                if c.get("tour") == "card":   # 팝업 등으로 화면이 지저분한 사이트는 글자 장면으로
+                    raise RuntimeError("SETS 에서 카드로 보여 주도록 지정함")
+                capture(st["url"], shot)
+                scenes.append({"type": "shot", "shot": str(shot), "shot_h": Image.open(shot).height, **base})
+                print(f"  {i}. {st['name']} 찍음", flush=True)
+            except (Exception, SystemExit) as ex:
+                scenes.append({"type": "site", **base})
+                print(f"  {i}. {st['name']} 화면을 못 찍어 글자 장면으로 대신함 ({str(ex)[:120]})", flush=True)
+        scenes.append({"type": "outro", "title": outro["title"], "url": outro.get("url", "designrefs.com")})
+        props = {"kicker": spec.get("kicker", ""), "scenes": scenes, "music": music}
+        return render_motion(f"{set_id}-tour", props, spec["title"], set_caption(set_id, spec))
 
 
 def write_index(built):
@@ -412,7 +454,8 @@ if __name__ == "__main__":
         if kind == "cards":
             built.append(reel_cards(sid))
         elif kind == "tour":
-            built.append(reel_tour(sid))
+            # 영상 엔진이 있으면 모션 투어(음악 포함), 없으면 예전 방식(ffmpeg)
+            built.append(reel_tour_motion(sid, None if music == "none" else music) if motion_ready() else reel_tour(sid))
         elif kind == "motion":
             built.append(reel_motion(sid, None if music == "none" else music))
         else:
