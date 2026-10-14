@@ -369,19 +369,16 @@ mark { background: none; color: inherit; text-decoration: underline; text-underl
 
 
 /* 스타일 사전: 대표 이미지 */
-.srow--style { grid-template-columns: 132px minmax(170px, 210px) 1fr auto; }
+.srow--style, .srow--trend { grid-template-columns: 132px minmax(170px, 210px) 1fr auto; }
 .srow__thumbwrap { display: block; width: 132px; }
 .srow__thumb {
   display: block;
-  width: 132px; height: 88px;
-  object-fit: cover;
+  width: 132px; height: 99px;
+  object-fit: contain;
   border-radius: 6px;
   background: var(--surface);
   box-shadow: 0 0 0 1px var(--line);
-  filter: grayscale(1);
-  transition: filter 0.2s;
 }
-.srow:hover .srow__thumb { filter: none; }
 .srow__thumbwrap.is-text {
   position: relative;
   height: 88px;
@@ -772,10 +769,10 @@ body.drawer-open { overflow: hidden; }
 
   /* 인사이트 목록(스타일 사전 · 트렌드 · 용어 사전) */
   .srow { grid-template-columns: 1fr; gap: 6px; padding: 16px 0; }
-  .srow--style { grid-template-columns: 96px 1fr; }
-  .srow--style .srow__thumbwrap, .srow--style .srow__thumb { width: 96px; height: 64px; }
+  .srow--style, .srow--trend { grid-template-columns: 96px 1fr; }
+  .srow--style .srow__thumbwrap, .srow--style .srow__thumb, .srow--trend .srow__thumbwrap, .srow--trend .srow__thumb { width: 96px; height: 72px; }
   .srow--style .srow__thumbwrap.is-text::after { left: 8px; right: 8px; bottom: 6px; font-size: 10px; }
-  .srow--style .srow__body, .srow--style .srow__links { grid-column: 1 / -1; }
+  .srow--style .srow__body, .srow--style .srow__links, .srow--trend .srow__body, .srow--trend .srow__links { grid-column: 1 / -1; }
   .srow__era { padding-top: 0; }
   .srow__links { padding-top: 4px; }
   .grow { grid-template-columns: 1fr; gap: 4px; }
@@ -809,4 +806,14 @@ body.drawer-open { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .row, .row__arrow, .row__star { transition: none; }
+}
+
+/* Original illustrations on crawlable style/trend pages. */
+.insight-note { margin: 14px 0 0; color: var(--ink-2); font-size: 12px; line-height: 1.65; }
+.plist__item--illustrated { display: grid; grid-template-columns: 132px minmax(0, 1fr); gap: 20px; }
+.plist__image { display: block; width: 132px; height: 99px; object-fit: contain; border-radius: 6px; }
+.plist__item--illustrated .plist__host { display: block; margin: 4px 0; }
+@media (max-width: 600px) {
+  .plist__item--illustrated { grid-template-columns: 96px minmax(0, 1fr); gap: 12px; }
+  .plist__image { width: 96px; height: 72px; }
 }

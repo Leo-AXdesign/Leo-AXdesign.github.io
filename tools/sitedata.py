@@ -46,8 +46,8 @@ def ai_subs():
 
 cats = fields(block("CATEGORIES"), ["id", "label", "desc"])
 sites = fields(block("SITES"), ["name", "url", "desc", "cat", "sub"])
-styles = fields(block("STYLES"), ["name", "en", "era", "desc", "traits", "people"])
-trends = fields(block("TRENDS"), ["name", "area", "desc"])
+styles = fields(block("STYLES"), ["name", "en", "era", "desc", "traits", "people", "img", "imgTitle"])
+trends = fields(block("TRENDS"), ["name", "area", "desc", "img", "imgTitle", "link", "kind"])
 terms = fields(block("GLOSSARY"), ["term", "en", "group", "desc"])
 gloss_groups = fields(block("GLOSSARY_GROUPS"), ["id", "label"])
 

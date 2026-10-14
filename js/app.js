@@ -62,14 +62,14 @@
     all:       { id: 'all', label: 'All' },
     bookmarks: { id: 'bookmarks', label: 'Bookmarks', desc: 'Bookmarks saved in this browser' },
     styles:    { id: 'styles', label: 'Style Guide', desc: 'Major graphic design styles and movements. Click a name to open Pinterest references.' },
-    trends:    { id: 'trends', label: '2026 Trends', desc: 'Keywords that keep coming up in trend reports and design communities' },
+    trends:    { id: 'trends', label: '2026 Trends', desc: '2026 reports and continuing design directions · Reviewed Oct 14' },
     glossary:  { id: 'glossary', label: 'Glossary', desc: 'Everyday terms in design, print and UI/UX work, with the Korean term used in Korean studios' },
     articles:  { id: 'articles', label: 'Articles', desc: 'Notes from designing, translated from Korean' },
   } : {
     all:       { id: 'all', label: '전체' },
     bookmarks: { id: 'bookmarks', label: '즐겨찾기', desc: '이 브라우저에 저장된 즐겨찾기' },
     styles:    { id: 'styles', label: '스타일 사전', desc: '유명 그래픽 디자인 양식과 흐름. 이름을 누르면 핀터레스트 레퍼런스가 열립니다.' },
-    trends:    { id: 'trends', label: '2026 트렌드', desc: '트렌드 리포트와 커뮤니티에서 반복 언급되는 키워드 정리' },
+    trends:    { id: 'trends', label: '2026 트렌드', desc: '2026 공식 리포트와 지속 흐름 · 10월 14일 확인' },
     glossary:  { id: 'glossary', label: '용어 사전', desc: '디자인 · 편집/인쇄 · UI/UX 구축 시 자주 쓰는 용어' },
     articles:  { id: 'articles', label: '읽을거리', desc: '디자인하면서 생각한 것들' },
   };
@@ -340,14 +340,14 @@
   }
 
   function styleThumb(x) {
-    const en = escapeHtml(x.en);
+    const en = escapeHtml(x.en || x.name);
     if (!x.img) {
       return `<a class="srow__thumbwrap is-text" href="${pinUrl(x.q)}" target="_blank" rel="noopener noreferrer" tabindex="-1" data-en="${en}"></a>`;
     }
     // 이미지 로드 실패 시: img 를 제거하고 래퍼에 is-text 를 붙여 CSS 로 텍스트 타일 표시
     return `
       <a class="srow__thumbwrap" href="${pinUrl(x.q)}" target="_blank" rel="noopener noreferrer" tabindex="-1" data-en="${en}" title="${escapeHtml(x.imgTitle || x.en)}">
-        <img class="srow__thumb" src="${escapeHtml(x.img)}" alt="${T(en + ' 대표 이미지', en + ' example')}" loading="lazy"
+        <img class="srow__thumb" src="${escapeHtml(x.img)}" alt="${T(en + ' — 직접 제작한 스타일 예시', en + ' — original illustrative study')}" loading="lazy" width="640" height="480"
              onerror="this.parentNode.classList.add('is-text'); this.remove();" />
       </a>`;
   }
@@ -373,13 +373,13 @@
       </div>`;
   }
 
-  function renderTrendRow(x, i) {
+  function renderTrendRow(x) {
     return `
       <div class="srow srow--trend">
-        <span class="srow__era">${String(i + 1).padStart(2, '0')}</span>
+        ${styleThumb(x)}
         <span class="srow__main">
           <a class="srow__name" href="${pinUrl(x.q)}" target="_blank" rel="noopener noreferrer">${highlight(x.name, state.query)}</a>
-          <span class="srow__en">${escapeHtml(x.area)}</span>
+          <span class="srow__en">${escapeHtml(x.area)} · ${x.kind === 'report' ? T('공식 리포트·발표', 'Report / announcement') : T('지속 흐름', 'Continuing direction')}</span>
         </span>
         <span class="srow__body"><p class="srow__desc">${highlight(x.desc, state.query)}</p></span>
         <span class="srow__links">
@@ -453,8 +453,13 @@
       </a>`;
   }
 
+  function renderIllustrationNote() {
+    return `<p class="insight-note">${T('썸네일은 특징을 설명하기 위해 직접 제작한 예시입니다. 실제 작품이나 제품 화면이 아닙니다.', 'Thumbnails are original illustrations of visual characteristics, not historical artworks or product screenshots.')}</p>`;
+  }
+
   function renderTrendSources() {
-    return `
+    return `${renderIllustrationNote()}
+      <p class="insight-note">${T('연간 리포트의 전망과 계속 쓰이는 표현을 함께 정리했습니다. 인기 순위가 아니며, 적용 조언은 디자인 허브의 편집 의견입니다.', 'Annual forecasts sit alongside continuing design approaches. This is not a popularity ranking; application advice is our editorial interpretation.')}</p>
       <div class="sources">
         <span class="sources__label">${T('참고 리포트', 'Sources')}</span>
         ${TREND_SOURCES.map(t => `<a class="sources__link" href="${escapeHtml(t.url)}" target="_blank" rel="noopener noreferrer" title="${escapeHtml(t.desc)}">${escapeHtml(t.name)} ↗</a>`).join('')}
@@ -504,7 +509,7 @@
       const list = visibleStyles();
       shown = list.length;
       html = list.length
-        ? renderInsightSection(PSEUDO.styles, list.map(renderStyleRow).join(''), list.length) + renderRelatedPosts('styles')
+        ? renderInsightSection(PSEUDO.styles, list.map(renderStyleRow).join(''), list.length, renderIllustrationNote()) + renderRelatedPosts('styles')
         : renderEmpty(NO_RESULTS, T(`"${state.query}"에 해당하는 스타일이 없습니다.`, `No styles match "${state.query}".`));
     } else if (state.cat === 'trends') {
       const list = visibleTrends();

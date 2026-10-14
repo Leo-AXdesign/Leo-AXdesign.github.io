@@ -106,30 +106,39 @@ for c in cats:
         body_html = site_list(items)
     pages.append((slug, title, intro, body_html, len(items), [s["name"] for s in items], c["label"]))
 
-# 스타일 사전
+# Styles and trends share the same original illustrations as the app.
+ILLUSTRATION_NOTE = '<p class="insight-note">썸네일은 특징을 설명하기 위해 직접 제작한 예시입니다. 실제 작품이나 제품 화면이 아닙니다.</p>'
+def study_image(item):
+    return (f'<img class="plist__image" src="{e(item["img"])}" '
+            f'alt="{e(item["name"])} — 직접 제작한 예시" width="640" height="480" loading="lazy" />')
 sb = ['      <ul class="plist">']
 for s in styles:
-    sb.append('        <li class="plist__item">'
+    sb.append('<li class="plist__item plist__item--illustrated">' + study_image(s) + '<div>'
               f'<span class="plist__name">{e(s["name"])}</span>'
               f'<span class="plist__host">{e(s.get("en",""))} · {e(s.get("era",""))}</span>'
               f'<p class="plist__desc">{e(s.get("desc",""))}</p>'
               f'<p class="plist__meta">{e(s.get("traits",""))}'
-              + (f' · {e(s["people"])}' if s.get("people") else "") + "</p></li>")
-sb.append("      </ul>")
+              + (f' · {e(s["people"])}' if s.get("people") else "") + "</p></div></li>")
+sb.extend(["</ul>", ILLUSTRATION_NOTE])
 pages.append(("styles", f"디자인 스타일 사전 {len(styles)}가지",
               "아르누보부터 바우하우스, 스위스 스타일, Y2K, 글래스모피즘까지 유명 그래픽 디자인 양식을 연대순으로 정리했습니다.",
               "\n".join(sb), len(styles), [s["name"] for s in styles], "스타일 사전"))
 
-# 트렌드
 tb = ['      <ul class="plist">']
 for i, t in enumerate(trends, 1):
-    tb.append('        <li class="plist__item">'
-              f'<span class="plist__name">{i:02d}. {e(t["name"])}</span>'
-              f'<span class="plist__host">{e(t.get("area",""))}</span>'
-              f'<p class="plist__desc">{e(t.get("desc",""))}</p></li>')
-tb.append("      </ul>")
+    kind = "공식 리포트·발표" if t.get("kind") == "report" else "지속 흐름"
+    source = (f'<p class="plist__meta"><a href="{e(t["link"])}" target="_blank" rel="noopener noreferrer">공식 출처 ↗</a></p>' if t.get("link") else "")
+    tb.append('<li class="plist__item plist__item--illustrated">' + study_image(t) + '<div>'
+              f'<span class="plist__name">{e(t["name"])}</span>'
+              f'<span class="plist__host">{e(t.get("area",""))} · {kind}</span>'
+              f'<p class="plist__desc">{e(t.get("desc",""))}</p>{source}</div></li>')
+tb.extend(["</ul>", ILLUSTRATION_NOTE,
+           '<p class="insight-note">2026-10-14 확인. 연간 리포트의 전망과 계속 쓰이는 표현을 함께 정리했습니다. 인기 순위가 아니며, 적용 조언은 디자인 허브의 편집 의견입니다.</p>'])
+trend_sources = D.fields(D.block("TREND_SOURCES"), ["name", "url"])
+tb.append('<div class="sources"><span class="sources__label">참고 리포트</span>' + ''.join(
+    f'<a class="sources__link" href="{e(t["url"])}" target="_blank" rel="noopener noreferrer">{e(t["name"])} ↗</a>' for t in trend_sources) + '</div>')
 pages.append(("trends", f"2026 디자인 트렌드 {len(trends)}가지",
-              "리퀴드 글래스, 팬톤 올해의 컬러, 벤토 그리드 등 2026년 디자인 트렌드 키워드를 정리했습니다.",
+              "Adobe·Canva의 2026 공식 리포트와 지속되는 디자인 흐름. 초현실적 유머, 로컬 문화, 시네마틱 연출부터 UI·타이포·컬러까지 직접 그린 예시로 살펴봅니다.",
               "\n".join(tb), len(trends), [t["name"] for t in trends], "2026 트렌드"))
 
 # 용어 사전
@@ -274,7 +283,7 @@ for slug, title, intro, body in PROSE_PAGES:
 SHORT_DESC = {PAGE_META[c["id"]][0]: c.get("desc", "") for c in cats if c["id"] in PAGE_META}
 SHORT_DESC.update({
     "styles": "유명 그래픽 디자인 양식과 흐름",
-    "trends": "트렌드 리포트와 커뮤니티에서 반복 언급되는 키워드 정리",
+    "trends": "2026 공식 리포트와 지속 흐름 · 10월 14일 확인",
     "glossary": "디자인 · 편집/인쇄 · UI/UX 구축 시 자주 쓰는 용어",
     "talk": "디자인 이야기를 편하게 나누는 공간",
 })
