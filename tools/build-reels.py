@@ -132,6 +132,10 @@ HIDE_BANNERS = """
 """
 
 
+BOT_WALL = ("just a moment", "verify you are human", "checking your browser", "보안 확인 수행", "사람인지 확인",
+            "attention required", "access denied", "are you a robot", "captcha")
+
+
 def capture(url, out, max_h=4500):
     """사이트를 모바일 화면(폭 432, 2.5배 → 1080px)으로 위에서부터 길게 찍습니다.
     Playwright 가 있으면 페이지가 뜰 때까지 기다리고, 쿠키 동의 창을 닫고, 아래까지 한 번 내려
@@ -176,6 +180,10 @@ def capture(url, out, max_h=4500):
                 page.wait_for_timeout(120)
             page.evaluate("window.scrollTo(0, 0)")
             page.wait_for_timeout(1200)
+            # 봇 확인(Cloudflare 등) 화면이면 찍지 않고 글자 장면으로 대신하게 합니다
+            text = (page.title() + " " + page.inner_text("body", timeout=3000)[:2000]).lower()
+            if any(k in text for k in BOT_WALL):
+                raise RuntimeError("봇 확인 화면이 떠서 찍지 않음")
             page.screenshot(path=str(out), full_page=True, timeout=30000)
         finally:
             browser.close()
