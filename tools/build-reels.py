@@ -136,7 +136,7 @@ BOT_WALL = ("just a moment", "verify you are human", "checking your browser", "�
             "attention required", "access denied", "are you a robot", "captcha")
 
 
-def capture(url, out, max_h=4500):
+def capture(url, out, max_h=4500, desktop=False):
     """사이트를 모바일 화면(폭 432, 2.5배 → 1080px)으로 위에서부터 길게 찍습니다.
     Playwright 가 있으면 페이지가 뜰 때까지 기다리고, 쿠키 동의 창을 닫고, 아래까지 한 번 내려
     늦게 뜨는 이미지까지 불러온 뒤 찍습니다. 없으면 크롬 스크린샷으로 찍습니다."""
@@ -146,10 +146,14 @@ def capture(url, out, max_h=4500):
         shoot(url, out, size=(432, 1500), timeout=60, scale=2.5)
         return
     with sync_playwright() as p:
-        browser = p.chromium.launch()
+        import os
+        browser = p.chromium.launch(executable_path=os.environ.get("PW_CHROMIUM") or None)
         try:
-            ctx = browser.new_context(viewport={"width": 432, "height": 900}, device_scale_factor=2.5,
-                                      is_mobile=True, has_touch=True, locale="ko-KR", user_agent=MOBILE_UA)
+            if desktop:   # 컴퓨터 화면 (폭 1280, 2배로 찍어 1080 폭으로 줄입니다 → 글자가 또렷)
+                ctx = browser.new_context(viewport={"width": 1280, "height": 800}, device_scale_factor=2, locale="ko-KR")
+            else:
+                ctx = browser.new_context(viewport={"width": 432, "height": 900}, device_scale_factor=2.5,
+                                          is_mobile=True, has_touch=True, locale="ko-KR", user_agent=MOBILE_UA)
             page = ctx.new_page()
             page.goto(url, wait_until="domcontentloaded", timeout=30000)
             try:
@@ -188,6 +192,9 @@ def capture(url, out, max_h=4500):
         finally:
             browser.close()
     im = Image.open(out)
+    if desktop and im.width != 1080:
+        im = im.convert("RGB").resize((1080, round(im.height * 1080 / im.width)), Image.LANCZOS)
+        im.save(out)
     if im.height > max_h:
         im.crop((0, 0, im.width, max_h)).save(out)
 
@@ -413,7 +420,7 @@ def reel_motion(set_id, music="auto"):
 
 
 def reel_tour_motion(set_id, music="auto"):
-    """사이트 투어 (모션): 사이트마다 실제 모바일 화면을 찍어 폰 화면 안에서 스크롤합니다. 바깥 사이트 접속 필요."""
+    """사이트 투어 (모션): 사이트마다 실제 컴퓨터 화면을 찍어 영상 전체를 채워 스크롤합니다. 바깥 사이트 접속 필요."""
     spec = BC.SETS.get(set_id)
     if not spec:
         raise SystemExit(f"레퍼런스 묶음이 아닙니다: {set_id} (있는 것: {', '.join(BC.SETS)})")
@@ -432,8 +439,8 @@ def reel_tour_motion(set_id, music="auto"):
             try:
                 if c.get("tour") == "card":   # 팝업 등으로 화면이 지저분한 사이트는 글자 장면으로
                     raise RuntimeError("SETS 에서 카드로 보여 주도록 지정함")
-                capture(st["url"], shot)
-                scenes.append({"type": "shot", "shot": str(shot), "shot_h": Image.open(shot).height, **base})
+                capture(st["url"], shot, desktop=True)
+                scenes.append({"type": "web", "shot": str(shot), "shot_h": Image.open(shot).height, **base})
                 print(f"  {i}. {st['name']} 찍음", flush=True)
             except (Exception, SystemExit) as ex:
                 scenes.append({"type": "site", **base})

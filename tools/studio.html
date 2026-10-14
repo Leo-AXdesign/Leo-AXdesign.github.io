@@ -90,6 +90,20 @@
   .pbar div { height: 100%; background: var(--ink); transition: width .4s; }
   .pbar .indet { width: 35% !important; animation: indet 1.2s ease-in-out infinite; }
   @keyframes indet { from { transform: translateX(-100%); } to { transform: translateX(290%); } }
+  .libgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 18px; margin-top: 20px; }
+  .lcard { border: 1px solid var(--line); border-radius: 16px; overflow: hidden; background: #fff; display: flex; flex-direction: column; }
+  .lthumb { aspect-ratio: 4 / 5; background: var(--soft); display: block; width: 100%; object-fit: cover; border: 0; cursor: pointer; }
+  .lthumb.v { aspect-ratio: 9 / 16; }
+  .lplay { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 56px; height: 56px; border-radius: 99px;
+           background: rgba(17,17,17,.75); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 20px; pointer-events: none; }
+  .ltext { aspect-ratio: 4 / 5; padding: 16px; font-size: 13px; line-height: 1.6; color: var(--body); white-space: pre-wrap; overflow: hidden;
+           background: var(--soft); -webkit-mask-image: linear-gradient(#000 75%, transparent); }
+  .lbody { padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+  .lbody b { font-size: 14px; line-height: 1.4; }
+  .lmeta { font-size: 12px; color: var(--muted); }
+  .lmeta a { color: var(--ink); }
+  .lbtns { display: flex; gap: 6px; flex-wrap: wrap; margin-top: auto; padding-top: 8px; }
+  .lbtns .btn { padding: 7px 11px; font-size: 12px; }
   .hist { font-size: 13px; }
   .hist div { display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--line); }
   .hist time { color: var(--muted); flex: none; width: 110px; }
@@ -125,7 +139,7 @@
 <body>
 <header class="bar"><div class="bar__in">
   <div class="logo">d<span>.</span><small>스튜디오</small></div>
-  <nav class="tabs"><button class="tab on" data-view="sns">SNS 발행</button><button class="tab" data-view="coach">AI 편집장</button></nav>
+  <nav class="tabs"><button class="tab on" data-view="sns">SNS 발행</button><button class="tab" data-view="lib">보관함</button><button class="tab" data-view="coach">AI 편집장</button></nav>
   <div class="chips" id="chips"></div>
 </div></header>
 
@@ -160,6 +174,14 @@
   </section>
 
   <section class="panel" id="preview"><div class="empty">왼쪽에서 고르고 <b>만들기</b>를 누르면<br />여기에 미리보기와 캡션이 나옵니다.</div></section>
+</main>
+
+<main id="v-lib" hidden style="max-width:1240px;margin:0 auto;padding:28px 24px 80px">
+  <div class="row" style="justify-content:space-between;flex-wrap:wrap;gap:12px">
+    <div class="subtabs" id="libtabs" style="margin:0"></div>
+    <span style="font-size:13px;color:var(--muted)" id="libcount"></span>
+  </div>
+  <div class="libgrid" id="libgrid"><div class="empty">불러오는 중…</div></div>
 </main>
 
 <main class="wrap" id="v-coach" hidden>
@@ -460,8 +482,72 @@ document.querySelectorAll(".tab").forEach((t) => t.onclick = () => {
   document.querySelectorAll(".tab").forEach((x) => x.classList.toggle("on", x === t));
   $("#v-sns").hidden = t.dataset.view !== "sns";
   $("#v-coach").hidden = t.dataset.view !== "coach";
+  $("#v-lib").hidden = t.dataset.view !== "lib";
+  if (t.dataset.view === "lib") libLoad();
   if (t.dataset.view === "coach") coachLoad();
 });
+
+// ---------- 보관함 ----------
+let LIB = [], libFilter = "all";
+const LIBTABS = [["all", "전체"], ["pub", "발행한 것"], ["reel", "릴스"], ["carousel", "캐러셀"], ["thread", "스레드"]];
+
+async function libLoad() {
+  try { LIB = (await api("library")).items; } catch (e) { $("#libgrid").innerHTML = `<div class="result bad">${esc(e.message)}</div>`; return; }
+  libRender();
+}
+
+function libRender() {
+  $("#libtabs").innerHTML = LIBTABS.map(([k, l]) => `<button data-k="${k}" class="${k === libFilter ? "on" : ""}">${l}</button>`).join("");
+  $("#libtabs").querySelectorAll("button").forEach((b) => b.onclick = () => { libFilter = b.dataset.k; libRender(); });
+  const list = LIB.filter((it) => libFilter === "all" || (libFilter === "pub" ? it.pubs.length : it.type === libFilter));
+  $("#libcount").textContent = `${list.length}개`;
+  if (!list.length) { $("#libgrid").innerHTML = `<div class="empty" style="grid-column:1/-1">아직 없어요.</div>`; return; }
+  $("#libgrid").innerHTML = list.map((it, i) => {
+    const media = it.type === "thread" ? `<div class="ltext">${esc(it.text || "(글 내용은 이번 업데이트 뒤 발행분부터 저장돼요)")}</div>`
+      : it.video ? `<div style="position:relative"><img class="lthumb v" data-play="${i}" src="${esc(it.thumb)}" alt="" loading="lazy" />` +
+                   `<span class="lplay">▶</span></div>`
+      : `<img class="lthumb" src="${esc(it.thumb)}" alt="" loading="lazy" />`;
+    const pubs = it.pubs.map((p) => `${esc(p.at.replace("T", " "))} ` + Object.entries(p.links || {}).map(([k, v]) => v
+      ? `<a href="${esc(v)}" target="_blank">${k === "instagram" ? "인스타" : "스레드"} ↗</a>` : "").join(" ")).join("<br>");
+    const canComment = it.pubs.some((p) => Object.keys(p.ids || {}).length);
+    return `<div class="lcard">${media}<div class="lbody"><b>${esc(it.title)}</b>` +
+      `<div class="lmeta">${esc(it.sub)}${it.pubs.length ? "" : " · 아직 안 올림"}</div>` + (pubs ? `<div class="lmeta">${pubs}</div>` : "") +
+      `<div class="lbtns"><button class="btn btn--dark" data-act="open" data-i="${i}">열어서 편집</button>` +
+      (it.type !== "thread" ? `<button class="btn" data-act="save" data-i="${i}">내려받기</button>` : `<button class="btn" data-act="copy" data-i="${i}">글 복사</button>`) +
+      (canComment ? `<button class="btn" data-act="comment" data-i="${i}">댓글 달기</button>` : "") +
+      `</div><div class="lmeta" id="lmsg-${i}"></div></div></div>`;
+  }).join("");
+  $("#libgrid").querySelectorAll("[data-play]").forEach((img) => img.onclick = () => {
+    const it = list[+img.dataset.play];
+    img.parentElement.innerHTML = `<video class="lthumb v" src="${esc(it.video)}" autoplay controls playsinline></video>`;
+  });
+  $("#libgrid").querySelectorAll("[data-act]").forEach((b) => b.onclick = () => libAct(b.dataset.act, list[+b.dataset.i], +b.dataset.i));
+}
+
+async function libAct(act, it, i) {
+  const msg = $("#lmsg-" + i);
+  if (act === "open") {
+    document.querySelector('.tab[data-view="sns"]').click();
+    if (it.type === "thread" && !/^(draft|article):/.test(it.source)) {
+      type = "thread"; sub = "custom"; source = "custom"; renderList();
+      made = { type: "thread", id: "custom:" + Date.now(), title: it.title, text: it.text || "", link: "", published: false };
+      showPreview();
+    } else { pick(it.type, it.source); doMake(); }
+    window.scrollTo(0, 0);
+  } else if (act === "save") {
+    msg.textContent = "저장하는 중…";
+    try { msg.textContent = (await api("export", { type: it.type, id: it.id })).message; } catch (e) { msg.textContent = e.message; }
+  } else if (act === "copy") {
+    copyText(it.text || "");
+  } else if (act === "comment") {
+    const p = it.pubs.find((x) => Object.keys(x.ids || {}).length);
+    const plat = (p.ids || {}).instagram ? "instagram" : "threads";
+    const text = prompt(`${plat === "instagram" ? "인스타그램" : "스레드"} 게시물에 달 댓글 (스레드는 '---' 로 나누면 차례로 이어 달아요)`);
+    if (!text || !text.trim()) return;
+    msg.textContent = "다는 중…";
+    try { msg.textContent = (await api("comment", { index: p.index, platform: plat, text })).message; } catch (e) { msg.textContent = e.message; }
+  }
+}
 
 // ---------- AI 편집장 ----------
 let cslug = null, creview = null, capplied = 0;

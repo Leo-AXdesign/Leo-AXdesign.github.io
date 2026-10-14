@@ -586,7 +586,8 @@ def do_publish(job, p):
         if p.get("draft"):
             save_draft({"id": p["draft"], "text": text})
     add_history({"type": kind, "id": rid, "title": p.get("title", rid) + (f" (@{p['account']})" if p.get("account") and p["account"] != "designhub" else ""), "at": datetime.datetime.now().isoformat(timespec="minutes"),
-                 "links": links, "ids": ids, "account": p.get("account") or "designhub"})
+                 "links": links, "ids": ids, "account": p.get("account") or "designhub",
+                 "text": (p.get("text") if kind == "thread" else p.get("caption", "")) or ""})
     job["links"] = links
 
 
@@ -630,7 +631,9 @@ def export(p):
     dest.mkdir(parents=True, exist_ok=True)
     for f in files:
         shutil.copy2(f, dest / f.name)
-    text = p.get("caption", "").strip()
+    text = (p.get("caption") if "caption" in p else (info or {}).get("caption", "")).strip()
+    if "comment" not in p and kind in ("carousel", "reel"):
+        p["comment"] = info_comment(rid.removesuffix("-cards").removesuffix("-tour").removesuffix("-motion"))
     if p.get("comment", "").strip():
         text += "\n\n---- 첫 댓글 ----\n" + p["comment"].strip()
     if text:
@@ -638,6 +641,41 @@ def export(p):
     if sys.platform == "darwin":
         subprocess.Popen(["open", str(dest)])
     return {"ok": True, "message": f"저장했어요: {dest} (파일 {len(files)}개{' + 캡션' if text else ''})", "path": str(dest)}
+
+
+def library(_=None):
+    """보관함: 만든 릴스·캐러셀 전부 + 발행 기록(스레드 포함). 최근 것부터."""
+    hist = history()
+    by_key = {}
+    for i, h in enumerate(hist):
+        by_key.setdefault(f"{h['type']}:{h['id']}", []).append(dict(h, index=i))
+    items = []
+    for r in read_json(REELS / "index.json", {"reels": []})["reels"]:
+        if not (REELS / f"{r['id']}.mp4").exists():
+            continue
+        kind = "모션 + 음악" if r["id"].endswith("-motion") else "사이트 투어" if r["id"].endswith("-tour") else "카드 넘김"
+        pubs = by_key.get(f"reel:{r['id']}", [])
+        items.append({"type": "reel", "id": r["id"], "source": r["id"], "title": r["title"], "sub": f"릴스 · {kind} · {r['seconds']}초",
+                      "thumb": local(r["cover"]), "video": local(r["video"]), "pubs": pubs,
+                      "made": (REELS / f"{r['id']}.mp4").stat().st_mtime})
+    for c in read_json(CARDS / "index.json", {"sets": []})["sets"]:
+        if not (CARDS / c["id"] / "01.jpg").exists():
+            continue
+        src = "article:" + c["id"].removeprefix("article-") if c["id"].startswith("article-") else c["id"]
+        items.append({"type": "carousel", "id": c["id"], "source": src, "title": c["title"], "sub": f"캐러셀 · {c['count']}장",
+                      "thumb": local(c["images"][0]), "pubs": by_key.get(f"carousel:{c['id']}", []),
+                      "made": (CARDS / c["id"] / "01.jpg").stat().st_mtime})
+    for i, h in enumerate(hist):
+        if h["type"] == "thread":
+            items.append({"type": "thread", "id": h["id"], "source": h["id"], "title": h["title"], "sub": "스레드",
+                          "text": h.get("text", ""), "pubs": [dict(h, index=i)], "made": 0})
+    def when(it):
+        return max([p["at"] for p in it["pubs"]] or [datetime.datetime.fromtimestamp(it["made"]).isoformat(timespec="minutes")
+                                                     if it["made"] else ""])
+    for it in items:
+        it["when"] = when(it)
+    items.sort(key=lambda it: it["when"], reverse=True)
+    return {"ok": True, "items": items}
 
 
 def make_start(p):
@@ -819,7 +857,7 @@ def comment(p):
         return {"ok": True, "message": f"스레드에 댓글 {len(split_posts(text))}개를 달았어요.", "link": item["links"].get("threads", "")}
 
 
-API = {"state": state, "comment": comment, "make_start": make_start, "export": export, "make": make, "publish": publish, "job": job_status, "tour": tour, "save_draft": save_draft,
+API = {"state": state, "comment": comment, "make_start": make_start, "export": export, "library": library, "make": make, "publish": publish, "job": job_status, "tour": tour, "save_draft": save_draft,
        "coach_state": coach_state, "coach_key": coach_key, "coach_forget": coach_forget, "coach_article": coach_article,
        "coach_apply": coach_apply, "coach_post": coach_post, "site_publish": site_publish,
        "coach_edit_article": coach_edit_article, "coach_edit_post": coach_edit_post}
