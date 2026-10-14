@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 1264" role="img" aria-labelledby="t d">
+  <title id="t">Design Arena, 투표 한 번은 이렇게 돈다</title>
+  <desc id="d">Design Arena는 같은 요청을 모델 네 개에 보내고, 이름을 가린 채 둘씩 다섯 번 고르게 한다. 1·2판에서 짝지어 고르고, 3판은 이긴 둘끼리 겨뤄 1위를, 4판은 진 둘끼리 겨뤄 4위를 정한다. 5판에서 남은 둘의 2위와 3위가 정해진다.</desc>
+  <rect width="600" height="1264" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="32" y="66" font-size="34" font-weight="800" fill="#111111" text-anchor="start">Design Arena, 투표 한 번은 이렇게 돈다</text>
+    <text x="32" y="99" font-size="21" font-weight="400" fill="#6B6B6B" text-anchor="start">같은 요청을 받은 모델 넷</text>
+    <text x="32" y="132" font-size="21" font-weight="400" fill="#6B6B6B" text-anchor="start">다섯 판을 고르면 1~4위가 정해진다</text>
+    <rect x="32" y="172" width="536" height="162" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <circle cx="60" cy="202" r="15" fill="#111111"/><text x="60" y="208.12" font-size="17" font-weight="800" fill="#FFFFFF" text-anchor="middle">1</text>
+    <text x="86" y="210" font-size="24" font-weight="800" fill="#111111" text-anchor="start">익명으로 넷</text>
+    <text x="58" y="248" font-size="19" font-weight="400" fill="#444444" text-anchor="start">같은 요청, 이름은 가림</text>
+    <rect x="58" y="268" width="50" height="50" rx="9" fill="#FFFFFF" stroke="#111111" stroke-width="2"/><text x="83.0" y="300.2" font-size="20" font-weight="800" fill="#111111" text-anchor="middle">A</text>
+    <rect x="118" y="268" width="50" height="50" rx="9" fill="#FFFFFF" stroke="#111111" stroke-width="2"/><text x="143.0" y="300.2" font-size="20" font-weight="800" fill="#111111" text-anchor="middle">B</text>
+    <rect x="178" y="268" width="50" height="50" rx="9" fill="#FFFFFF" stroke="#111111" stroke-width="2"/><text x="203.0" y="300.2" font-size="20" font-weight="800" fill="#111111" text-anchor="middle">C</text>
+    <rect x="238" y="268" width="50" height="50" rx="9" fill="#FFFFFF" stroke="#111111" stroke-width="2"/><text x="263.0" y="300.2" font-size="20" font-weight="800" fill="#111111" text-anchor="middle">D</text>
+    <path d="M300.0 340v22m-7 -8l7 8l7 -8" fill="none" stroke="#111111" stroke-width="2"/>
+    <rect x="32" y="368" width="536" height="228" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <circle cx="60" cy="398" r="15" fill="#111111"/><text x="60" y="404.12" font-size="17" font-weight="800" fill="#FFFFFF" text-anchor="middle">2</text>
+    <text x="86" y="406" font-size="24" font-weight="800" fill="#111111" text-anchor="start">1 · 2판</text>
+    <text x="58" y="444" font-size="19" font-weight="400" fill="#444444" text-anchor="start">둘씩 짝지어 고르기</text>
+    <rect x="58" y="464" width="50" height="50" rx="9" fill="#111111" stroke="#111111" stroke-width="2"/><text x="83.0" y="496.2" font-size="20" font-weight="800" fill="#FFFFFF" text-anchor="middle">A</text>
+    <text x="125.0" y="495.0" font-size="19" font-weight="400" fill="#6B6B6B" text-anchor="middle">vs</text>
+    <rect x="142" y="464" width="50" height="50" rx="9" fill="#FFFFFF" stroke="#111111" stroke-width="2"/><text x="167.0" y="496.2" font-size="20" font-weight="800" fill="#111111" text-anchor="middle">B</text>
+    <rect x="58" y="530" width="50" height="50" rx="9" fill="#FFFFFF" stroke="#111111" stroke-width="2"/><text x="83.0" y="562.2" font-size="20" font-weight="800" fill="#111111" text-anchor="middle">C</text>
+    <text x="125.0" y="561.0" font-size="19" font-weight="400" fill="#6B6B6B" text-anchor="middle">vs</text>
+    <rect x="142" y="530" width="50" height="50" rx="9" fill="#111111" stroke="#111111" stroke-width="2"/><text x="167.0" y="562.2" font-size="20" font-weight="800" fill="#FFFFFF" text-anchor="middle">D</text>
+    <path d="M300.0 602v22m-7 -8l7 8l7 -8" fill="none" stroke="#111111" stroke-width="2"/>
+    <rect x="32" y="630" width="536" height="228" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <circle cx="60" cy="660" r="15" fill="#111111"/><text x="60" y="666.12" font-size="17" font-weight="800" fill="#FFFFFF" text-anchor="middle">3</text>
+    <text x="86" y="668" font-size="24" font-weight="800" fill="#111111" text-anchor="start">3 · 4판</text>
+    <text x="58" y="706" font-size="19" font-weight="400" fill="#444444" text-anchor="start">이긴 둘끼리, 진 둘끼리</text>
+    <rect x="58" y="726" width="50" height="50" rx="9" fill="#111111" stroke="#111111" stroke-width="2"/><text x="83.0" y="758.2" font-size="20" font-weight="800" fill="#FFFFFF" text-anchor="middle">A</text>
+    <text x="125.0" y="757.0" font-size="19" font-weight="400" fill="#6B6B6B" text-anchor="middle">vs</text>
+    <rect x="142" y="726" width="50" height="50" rx="9" fill="#FFFFFF" stroke="#111111" stroke-width="2"/><text x="167.0" y="758.2" font-size="20" font-weight="800" fill="#111111" text-anchor="middle">D</text>
+    <text x="206" y="757.84" font-size="19" font-weight="700" fill="#111111" text-anchor="start">→ 1위</text>
+    <rect x="58" y="792" width="50" height="50" rx="9" fill="#FFFFFF" stroke="#111111" stroke-width="2"/><text x="83.0" y="824.2" font-size="20" font-weight="800" fill="#111111" text-anchor="middle">B</text>
+    <text x="125.0" y="823.0" font-size="19" font-weight="400" fill="#6B6B6B" text-anchor="middle">vs</text>
+    <rect x="142" y="792" width="50" height="50" rx="9" fill="#111111" stroke="#111111" stroke-width="2"/><text x="167.0" y="824.2" font-size="20" font-weight="800" fill="#FFFFFF" text-anchor="middle">C</text>
+    <text x="206" y="823.84" font-size="19" font-weight="700" fill="#111111" text-anchor="start">→ 4위</text>
+    <path d="M300.0 864v22m-7 -8l7 8l7 -8" fill="none" stroke="#111111" stroke-width="2"/>
+    <rect x="32" y="892" width="536" height="162" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <circle cx="60" cy="922" r="15" fill="#111111"/><text x="60" y="928.12" font-size="17" font-weight="800" fill="#FFFFFF" text-anchor="middle">4</text>
+    <text x="86" y="930" font-size="24" font-weight="800" fill="#111111" text-anchor="start">5판</text>
+    <text x="58" y="968" font-size="19" font-weight="400" fill="#444444" text-anchor="start">남은 둘의 자리 정하기</text>
+    <rect x="58" y="988" width="50" height="50" rx="9" fill="#111111" stroke="#111111" stroke-width="2"/><text x="83.0" y="1020.2" font-size="20" font-weight="800" fill="#FFFFFF" text-anchor="middle">D</text>
+    <text x="125.0" y="1019.0" font-size="19" font-weight="400" fill="#6B6B6B" text-anchor="middle">vs</text>
+    <rect x="142" y="988" width="50" height="50" rx="9" fill="#FFFFFF" stroke="#111111" stroke-width="2"/><text x="167.0" y="1020.2" font-size="20" font-weight="800" fill="#111111" text-anchor="middle">B</text>
+    <text x="206" y="1019.84" font-size="19" font-weight="700" fill="#111111" text-anchor="start">→ 2위 · 3위</text>
+    <text x="32" y="1121.64" font-size="24" font-weight="800" fill="#111111" text-anchor="start">결과</text>
+    <rect x="128" y="1088" width="50" height="50" rx="9" fill="#111111" stroke="#111111" stroke-width="2"/><text x="153.0" y="1120.2" font-size="20" font-weight="800" fill="#FFFFFF" text-anchor="middle">A</text>
+    <text x="186" y="1119.84" font-size="19" font-weight="700" fill="#6B6B6B" text-anchor="start">1</text>
+    <rect x="218" y="1088" width="50" height="50" rx="9" fill="#FFFFFF" stroke="#111111" stroke-width="2"/><text x="243.0" y="1120.2" font-size="20" font-weight="800" fill="#111111" text-anchor="middle">D</text>
+    <text x="276" y="1119.84" font-size="19" font-weight="700" fill="#6B6B6B" text-anchor="start">2</text>
+    <rect x="308" y="1088" width="50" height="50" rx="9" fill="#FFFFFF" stroke="#111111" stroke-width="2"/><text x="333.0" y="1120.2" font-size="20" font-weight="800" fill="#111111" text-anchor="middle">B</text>
+    <text x="366" y="1119.84" font-size="19" font-weight="700" fill="#6B6B6B" text-anchor="start">3</text>
+    <rect x="398" y="1088" width="50" height="50" rx="9" fill="#FFFFFF" stroke="#111111" stroke-width="2"/><text x="423.0" y="1120.2" font-size="20" font-weight="800" fill="#111111" text-anchor="middle">C</text>
+    <text x="456" y="1119.84" font-size="19" font-weight="700" fill="#6B6B6B" text-anchor="start">4</text>
+    <text x="32" y="1172" font-size="19" font-weight="400" fill="#444444" text-anchor="start">모델 이름은 투표가 끝난 뒤에 공개</text>
+    <line x1="32" y1="1204" x2="568" y2="1204" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="32" y="1232" font-size="17" font-weight="400" fill="#6B6B6B" text-anchor="start">출처: designarena.ai 소개 페이지. 승패는 설명을 위한 예시.</text>
+  </g>
+</svg>

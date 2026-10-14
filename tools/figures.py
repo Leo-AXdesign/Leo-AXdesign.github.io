@@ -1780,6 +1780,124 @@ def aisteps(lang, wide):
     return wrap(W, round(y + pad), t["title"], t["desc"], out)
 
 
+# =========================================================
+# 18. Design Arena 투표 한 번이 순위가 되는 과정 (2026-10-14 'Muse Wonder' 글)
+# =========================================================
+BRACKET = {
+    "ko": {
+        "title": "Design Arena, 투표 한 번은 이렇게 돈다",
+        "sub": "같은 요청을 받은 모델 넷 · 다섯 판을 고르면 1~4위가 정해진다",
+        "steps": [("익명으로 넷", "같은 요청, 이름은 가림"),
+                  ("1 · 2판", "둘씩 짝지어 고르기"),
+                  ("3 · 4판", "이긴 둘끼리, 진 둘끼리"),
+                  ("5판", "남은 둘의 자리 정하기")],
+        "rank": ["1위", "4위", "2위", "3위"],
+        "final": "결과",
+        "reveal": "모델 이름은 투표가 끝난 뒤에 공개",
+        "source": "출처: designarena.ai 소개 페이지. 승패는 설명을 위한 예시.",
+        "desc": "Design Arena는 같은 요청을 모델 네 개에 보내고, 이름을 가린 채 둘씩 다섯 번 고르게 한다. 1·2판에서 짝지어 고르고, 3판은 이긴 둘끼리 겨뤄 1위를, 4판은 진 둘끼리 겨뤄 4위를 정한다. 5판에서 남은 둘의 2위와 3위가 정해진다.",
+    },
+    "en": {
+        "title": "How one Design Arena vote works",
+        "sub": "Four models, one prompt · five picks settle 1st to 4th",
+        "steps": [("Four, unnamed", "Same prompt, names hidden"),
+                  ("Picks 1 · 2", "Choose within each pair"),
+                  ("Picks 3 · 4", "Winners meet, losers meet"),
+                  ("Pick 5", "Settle the middle two")],
+        "rank": ["1st", "4th", "2nd", "3rd"],
+        "final": "Result",
+        "reveal": "Model names are revealed after voting",
+        "source": "Source: designarena.ai About page. Winners shown are an example.",
+        "desc": "Design Arena sends the same prompt to four models and asks a voter to pick between two hidden designs five times. Picks 1 and 2 pair them up; pick 3 has the two winners meet to decide 1st, pick 4 has the two losers meet to decide 4th, and pick 5 settles 2nd and 3rd.",
+    },
+}
+
+
+def chip(x, y, label, win, size=44, fs=20):
+    fill, color = (INK, BG) if win else (BG, INK)
+    return (f'<rect x="{x}" y="{y}" width="{size}" height="{size}" rx="9" fill="{fill}" stroke="{INK}" stroke-width="2"/>'
+            + text(x + size / 2, y + size / 2 + fs * 0.36, label, fs, color, 800, "middle"))
+
+
+def bracket(lang, wide):
+    t = BRACKET[lang]
+    if wide:
+        W, pad, ts, ss, hs, fs, cs = 1200, 40, 30, 19, 21, 16, 42
+    else:
+        W, pad, ts, ss, hs, fs, cs = 600, 32, 34, 21, 24, 19, 50
+    out, y = [], pad + ts
+    out.append(text(pad, y, t["title"], ts if wide or lang == "ko" else ts - 4, weight=800))
+    for line in ([t["sub"]] if wide else t["sub"].split(" · ")):
+        y += ss + 12
+        out.append(text(pad, y, line, ss, MUTED))
+    y += 40
+    # 예시 승패: 1판 A>B, 2판 D>C, 3판 A>D, 4판 B>C, 5판 D>B
+    pairs = [None,
+             [("A", "B", 0, None), ("C", "D", 1, None)],
+             [("A", "D", 0, t["rank"][0]), ("B", "C", 1, t["rank"][1])],
+             [("D", "B", 0, t["rank"][2] + " · " + t["rank"][3])]]
+    vs_w = 34 if not wide else 30
+
+    def content(i, x, top):
+        g = []
+        if i == 0:
+            for k, l in enumerate("ABCD"):
+                g.append(chip(x + k * (cs + 10), top, l, False, cs))
+            return g
+        for k, (a, b, win, note) in enumerate(pairs[i]):
+            ry = top + k * (cs + 16)
+            g.append(chip(x, ry, a, win == 0, cs))
+            g.append(text(x + cs + vs_w / 2, ry + cs / 2 + 6, "vs", fs, MUTED, 400, "middle"))
+            g.append(chip(x + cs + vs_w, ry, b, win == 1, cs))
+            if note:
+                g.append(text(x + cs * 2 + vs_w + 14, ry + cs / 2 + fs * 0.36, "→ " + note, fs, INK, 700))
+        return g
+
+    n = len(t["steps"])
+    if wide:
+        gap, bh = 40, 236
+        bw = (W - pad * 2 - gap * (n - 1)) / n
+        for i, (head, body) in enumerate(t["steps"]):
+            bx = pad + i * (bw + gap)
+            out.append(f'<rect x="{bx}" y="{y}" width="{bw}" height="{bh}" rx="14" fill="{BG}" stroke="{INK}" stroke-width="1.5"/>')
+            out.append(badge(bx + 26, y + 30, str(i + 1)))
+            out.append(text(bx + 50, y + 37, head, hs, INK, 800))
+            out.append(text(bx + 22, y + 72, body, fs, BODY))
+            out += content(i, bx + 22, y + 98)
+            if i < n - 1:
+                ax = bx + bw + 6
+                out.append(f'<path d="M{ax} {y + bh / 2}h{gap - 14}m-8 -7l8 7l-8 7" fill="none" stroke="{INK}" stroke-width="2"/>')
+        y += bh + 34
+    else:
+        for i, (head, body) in enumerate(t["steps"]):
+            rows = 1 if i in (0, 3) else 2
+            bh = 112 + rows * cs + (rows - 1) * 16
+            out.append(f'<rect x="{pad}" y="{y}" width="{W - pad * 2}" height="{bh}" rx="14" fill="{BG}" stroke="{INK}" stroke-width="1.5"/>')
+            out.append(badge(pad + 28, y + 30, str(i + 1)))
+            out.append(text(pad + 54, y + 38, head, hs, INK, 800))
+            out.append(text(pad + 26, y + 76, body, fs, BODY))
+            out += content(i, pad + 26, y + 96)
+            y += bh
+            if i < n - 1:
+                out.append(f'<path d="M{W / 2} {y + 6}v22m-7 -8l7 8l7 -8" fill="none" stroke="{INK}" stroke-width="2"/>')
+                y += 34
+        y += 34
+    # 결과 줄
+    out.append(text(pad, y + cs / 2 + hs * 0.36, t["final"], hs, INK, 800))
+    rx = pad + (110 if wide else 96)
+    for k, l in enumerate("ADBC"):
+        cx = rx + k * (cs + (70 if wide else 40))
+        out.append(chip(cx, y, l, k == 0, cs))
+        out.append(text(cx + cs + 8, y + cs / 2 + fs * 0.36, str(k + 1), fs, MUTED, 700))
+    y += cs + 34
+    out.append(text(pad, y, t["reveal"], fs, BODY))
+    y += 46
+    out.append(f'<line x1="{pad}" y1="{y - 14}" x2="{W - pad}" y2="{y - 14}" stroke="{RULE}" stroke-width="1"/>')
+    y += 14
+    out.append(text(pad, y, t["source"], (ss - 3) if wide else (ss - 4), MUTED))
+    return wrap(W, round(y + pad), t["title"], t["desc"], out)
+
+
 FIGS = {"openai-app-platforms": timeline, "chatgpt-plugin-extensions": scheme,
         "shopify-canvas-compare": canvas_compare, "design-md-anatomy": designmd,
         "image-edit-drift": drift, "flux3-bbox-layout": bbox, "instructmesh-flow": meshflow,
@@ -1787,6 +1905,7 @@ FIGS = {"openai-app-platforms": timeline, "chatgpt-plugin-extensions": scheme,
         "week-1001-1006": week, "artcraft-suite": artcraft,
         "fanta-who-did-what": fanta, "macos27-ai-switch": macsw, "ai-search-brand": aisearch,
         "ai-draft-iceberg": iceberg, "ai-draft-steps": aisteps,
+        "arena-bracket": bracket,
         "intelligent-ui-answer": iui, "ui-rules-owner": rules}
 
 if __name__ == "__main__":

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 615" role="img" aria-labelledby="t d">
+  <title id="t">Ranked No. 1, first in only 42%</title>
+  <desc id="d">Across 2,086 Design Arena tournaments, Muse Wonder placed first 42% of the time, second 25%, third 19% and fourth 14%. Win rates by arena: 3D 69%, UI Component 66%, Game Dev 64%, Website 62%, ranking 6th, 1st, 5th and 1st.</desc>
+  <rect width="1200" height="615" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="40" y="70" font-size="30" font-weight="800" fill="#111111" letter-spacing="-0.5">Ranked No. 1, first in only 42%</text>
+    <text x="40" y="101" font-size="19" fill="#6B6B6B">Muse Wonder (max) · 2,086 Design Arena tournaments · as of Oct 14, 2026</text>
+    <text x="40.0" y="165" font-size="24" font-weight="700" fill="#111111">Placement in tournaments</text>
+    <text x="40.0" y="193" font-size="18" fill="#6B6B6B">where it finished among four</text>
+    <text x="40.0" y="237" font-size="18" fill="#444444">1st</text>
+    <path d="M40.0 247H467.0A7 7 0 0 1 474.0 254V270A7 7 0 0 1 467.0 277H40.0Z" fill="#111111"/>
+    <text x="486.0" y="269.92" font-size="22" font-weight="700" fill="#111111">42%</text>
+    <text x="40.0" y="315" font-size="18" fill="#444444">2nd</text>
+    <path d="M40.0 325H291.3333333333333A7 7 0 0 1 298.3333333333333 332V348A7 7 0 0 1 291.3333333333333 355H40.0Z" fill="#111111"/>
+    <text x="310.3333333333333" y="347.92" font-size="22" font-weight="700" fill="#111111">25%</text>
+    <text x="40.0" y="393" font-size="18" fill="#444444">3rd</text>
+    <path d="M40.0 403H229.33333333333334A7 7 0 0 1 236.33333333333334 410V426A7 7 0 0 1 229.33333333333334 433H40.0Z" fill="#111111"/>
+    <text x="248.33333333333334" y="425.92" font-size="22" font-weight="700" fill="#111111">19%</text>
+    <text x="40.0" y="471" font-size="18" fill="#444444">4th</text>
+    <path d="M40.0 481H177.66666666666666A7 7 0 0 1 184.66666666666666 488V504A7 7 0 0 1 177.66666666666666 511H40.0Z" fill="#111111"/>
+    <text x="196.66666666666666" y="503.92" font-size="22" font-weight="700" fill="#111111">14%</text>
+    <line x1="40.0" y1="219" x2="40.0" y2="531" stroke="#D9D9D9" stroke-width="1.6"/>
+    <text x="630.0" y="165" font-size="24" font-weight="700" fill="#111111">Win rate by arena</text>
+    <text x="630.0" y="193" font-size="18" fill="#6B6B6B">rank in that arena in brackets</text>
+    <text x="630.0" y="237" font-size="18" fill="#444444">3D (6th)</text>
+    <path d="M630.0 247H1057.0A7 7 0 0 1 1064.0 254V270A7 7 0 0 1 1057.0 277H630.0Z" fill="#111111"/>
+    <text x="1076.0" y="269.92" font-size="22" font-weight="700" fill="#111111">69%</text>
+    <text x="630.0" y="315" font-size="18" fill="#444444">UI Component (1st)</text>
+    <path d="M630.0 325H1038.1304347826087A7 7 0 0 1 1045.1304347826087 332V348A7 7 0 0 1 1038.1304347826087 355H630.0Z" fill="#111111"/>
+    <text x="1057.1304347826087" y="347.92" font-size="22" font-weight="700" fill="#111111">66%</text>
+    <text x="630.0" y="393" font-size="18" fill="#444444">Game Dev (5th)</text>
+    <path d="M630.0 403H1025.5507246376812A7 7 0 0 1 1032.5507246376812 410V426A7 7 0 0 1 1025.5507246376812 433H630.0Z" fill="#111111"/>
+    <text x="1044.5507246376812" y="425.92" font-size="22" font-weight="700" fill="#111111">64%</text>
+    <text x="630.0" y="471" font-size="18" fill="#444444">Website (1st)</text>
+    <path d="M630.0 481H1012.9710144927536A7 7 0 0 1 1019.9710144927536 488V504A7 7 0 0 1 1012.9710144927536 511H630.0Z" fill="#111111"/>
+    <text x="1031.9710144927535" y="503.92" font-size="22" font-weight="700" fill="#111111">62%</text>
+    <line x1="630.0" y1="219" x2="630.0" y2="531" stroke="#D9D9D9" stroke-width="1.6"/>
+    <line x1="40" y1="553" x2="1160" y2="553" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="40" y="579" font-size="16" fill="#6B6B6B">Source: designarena.ai, Muse Wonder page. Scores and ranks shift daily as votes come in.</text>
+  </g>
+</svg>

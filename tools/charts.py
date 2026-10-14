@@ -330,6 +330,31 @@ CHARTS = {
              "rows": [("React negatively", 74, "74%"), ("Took action", 72, "72%")]},
         ],
     },
+    # ---- 2026-10-14 'Muse Wonder 디자인 투표' 글 ----
+    "muse-wonder-arena": {
+        "title": "1위 모델도 열에 여섯은 1등이 아니다",
+        "sub": "Muse Wonder (max) · Design Arena 토너먼트 2,086번 · 2026. 10. 14 기준",
+        "source": ["출처: designarena.ai Muse Wonder 페이지.", "점수와 순위는 투표가 쌓이면서 매일 바뀐다."],
+        "desc": "Design Arena 토너먼트 2,086번에서 Muse Wonder가 받은 등수는 1등 42%, 2등 25%, 3등 19%, 4등 14%. 부문별 승률은 3D 69%, UI 컴포넌트 66%, 게임 64%, 웹사이트 62%이고, 순위는 각각 6위, 1위, 5위, 1위.",
+        "panels": [
+            {"title": "토너먼트에서 받은 등수", "hint": "네 모델 중 몇 등이었나",
+             "rows": [("1등", 42, "42%"), ("2등", 25, "25%"), ("3등", 19, "19%"), ("4등", 14, "14%")]},
+            {"title": "부문별 승률", "hint": "괄호 안은 그 부문 순위",
+             "rows": [("3D (6위)", 69, "69%"), ("UI 컴포넌트 (1위)", 66, "66%"), ("게임 (5위)", 64, "64%"), ("웹사이트 (1위)", 62, "62%")]},
+        ],
+    },
+    "muse-wonder-arena-en": {
+        "title": "Ranked No. 1, first in only 42%",
+        "sub": "Muse Wonder (max) · 2,086 Design Arena tournaments · as of Oct 14, 2026",
+        "source": ["Source: designarena.ai, Muse Wonder page.", "Scores and ranks shift daily as votes come in."],
+        "desc": "Across 2,086 Design Arena tournaments, Muse Wonder placed first 42% of the time, second 25%, third 19% and fourth 14%. Win rates by arena: 3D 69%, UI Component 66%, Game Dev 64%, Website 62%, ranking 6th, 1st, 5th and 1st.",
+        "panels": [
+            {"title": "Placement in tournaments", "hint": "where it finished among four",
+             "rows": [("1st", 42, "42%"), ("2nd", 25, "25%"), ("3rd", 19, "19%"), ("4th", 14, "14%")]},
+            {"title": "Win rate by arena", "hint": "rank in that arena in brackets",
+             "rows": [("3D (6th)", 69, "69%"), ("UI Component (1st)", 66, "66%"), ("Game Dev (5th)", 64, "64%"), ("Website (1st)", 62, "62%")]},
+        ],
+    },
 }
 
 

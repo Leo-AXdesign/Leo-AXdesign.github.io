@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 1291" role="img" aria-labelledby="t d">
+  <title id="t">Ranked No. 1, first in only 42%</title>
+  <desc id="d">Across 2,086 Design Arena tournaments, Muse Wonder placed first 42% of the time, second 25%, third 19% and fourth 14%. Win rates by arena: 3D 69%, UI Component 66%, Game Dev 64%, Website 62%, ranking 6th, 1st, 5th and 1st.</desc>
+  <rect width="600" height="1291" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="32" y="68" font-size="36" font-weight="800" fill="#111111" letter-spacing="-0.5">Ranked No. 1, first in only 42%</text>
+    <text x="32" y="102" font-size="22" fill="#6B6B6B">Muse Wonder (max)</text>
+    <text x="32" y="136" font-size="22" fill="#6B6B6B">2,086 Design Arena tournaments</text>
+    <text x="32" y="170" font-size="22" fill="#6B6B6B">as of Oct 14, 2026</text>
+    <text x="32" y="240" font-size="30" font-weight="700" fill="#111111">Placement in tournaments</text>
+    <text x="32" y="272" font-size="22" fill="#6B6B6B">where it finished among four</text>
+    <text x="32" y="325" font-size="23" fill="#444444">1st</text>
+    <path d="M32 337H441.0A7 7 0 0 1 448.0 344V366A7 7 0 0 1 441.0 373H32Z" fill="#111111"/>
+    <text x="462.0" y="365.08" font-size="28" font-weight="700" fill="#111111">42%</text>
+    <text x="32" y="419" font-size="23" fill="#444444">2nd</text>
+    <path d="M32 431H272.6190476190476A7 7 0 0 1 279.6190476190476 438V460A7 7 0 0 1 272.6190476190476 467H32Z" fill="#111111"/>
+    <text x="293.6190476190476" y="459.08" font-size="28" font-weight="700" fill="#111111">25%</text>
+    <text x="32" y="513" font-size="23" fill="#444444">3rd</text>
+    <path d="M32 525H213.1904761904762A7 7 0 0 1 220.1904761904762 532V554A7 7 0 0 1 213.1904761904762 561H32Z" fill="#111111"/>
+    <text x="234.1904761904762" y="553.08" font-size="28" font-weight="700" fill="#111111">19%</text>
+    <text x="32" y="607" font-size="23" fill="#444444">4th</text>
+    <path d="M32 619H163.66666666666666A7 7 0 0 1 170.66666666666666 626V648A7 7 0 0 1 163.66666666666666 655H32Z" fill="#111111"/>
+    <text x="184.66666666666666" y="647.08" font-size="28" font-weight="700" fill="#111111">14%</text>
+    <line x1="32" y1="302" x2="32" y2="678" stroke="#D9D9D9" stroke-width="1.8"/>
+    <text x="32" y="752" font-size="30" font-weight="700" fill="#111111">Win rate by arena</text>
+    <text x="32" y="784" font-size="22" fill="#6B6B6B">rank in that arena in brackets</text>
+    <text x="32" y="837" font-size="23" fill="#444444">3D (6th)</text>
+    <path d="M32 849H441.0A7 7 0 0 1 448.0 856V878A7 7 0 0 1 441.0 885H32Z" fill="#111111"/>
+    <text x="462.0" y="877.08" font-size="28" font-weight="700" fill="#111111">69%</text>
+    <text x="32" y="931" font-size="23" fill="#444444">UI Component (1st)</text>
+    <path d="M32 943H422.9130434782609A7 7 0 0 1 429.9130434782609 950V972A7 7 0 0 1 422.9130434782609 979H32Z" fill="#111111"/>
+    <text x="443.9130434782609" y="971.08" font-size="28" font-weight="700" fill="#111111">66%</text>
+    <text x="32" y="1025" font-size="23" fill="#444444">Game Dev (5th)</text>
+    <path d="M32 1037H410.8550724637681A7 7 0 0 1 417.8550724637681 1044V1066A7 7 0 0 1 410.8550724637681 1073H32Z" fill="#111111"/>
+    <text x="431.8550724637681" y="1065.08" font-size="28" font-weight="700" fill="#111111">64%</text>
+    <text x="32" y="1119" font-size="23" fill="#444444">Website (1st)</text>
+    <path d="M32 1131H398.7971014492754A7 7 0 0 1 405.7971014492754 1138V1160A7 7 0 0 1 398.7971014492754 1167H32Z" fill="#111111"/>
+    <text x="419.7971014492754" y="1159.08" font-size="28" font-weight="700" fill="#111111">62%</text>
+    <line x1="32" y1="814" x2="32" y2="1190" stroke="#D9D9D9" stroke-width="1.8"/>
+    <line x1="32" y1="1208" x2="568" y2="1208" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="32" y="1234" font-size="19" fill="#6B6B6B">Source: designarena.ai, Muse Wonder page.</text>
+    <text x="32" y="1263" font-size="19" fill="#6B6B6B">Scores and ranks shift daily as votes come in.</text>
+  </g>
+</svg>

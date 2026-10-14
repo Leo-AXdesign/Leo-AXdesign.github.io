@@ -3,6 +3,14 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
+    <loc>https://designrefs.com/articles/muse-wonder-design-arena/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://designrefs.com/articles/muse-wonder-design-arena/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://designrefs.com/en/articles/muse-wonder-design-arena/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://designrefs.com/articles/muse-wonder-design-arena/"/>
+    <image:image><image:loc>https://designrefs.com/og/muse-wonder-design-arena.png</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://designrefs.com/articles/ai-draft-client-pixel-pusher/</loc>
     <lastmod>2026-10-13</lastmod>
     <xhtml:link rel="alternate" hreflang="ko" href="https://designrefs.com/articles/ai-draft-client-pixel-pusher/"/>
@@ -185,6 +193,14 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://designrefs.com/en/articles/ai-image-commercial-use/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://designrefs.com/articles/ai-image-commercial-use/"/>
     <image:image><image:loc>https://designrefs.com/og/ai-image-commercial-use.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://designrefs.com/en/articles/muse-wonder-design-arena/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://designrefs.com/articles/muse-wonder-design-arena/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://designrefs.com/en/articles/muse-wonder-design-arena/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://designrefs.com/articles/muse-wonder-design-arena/"/>
+    <image:image><image:loc>https://designrefs.com/og/en/muse-wonder-design-arena.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://designrefs.com/en/articles/ai-draft-client-pixel-pusher/</loc>

@@ -6,7 +6,70 @@
     <atom:link href="https://designrefs.com/en/rss.xml" rel="self" type="application/rss+xml" />
     <description>Notes from a designer in Korea: working with AI, putting style into words, collecting references and design communities. Translated from Korean.</description>
     <language>en</language>
-    <lastBuildDate>Tue, 13 Oct 2026 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 14 Oct 2026 09:00:00 +0900</lastBuildDate>
+    <item>
+      <title>Meta&#x27;s first frontier model tops a design vote. How to read that ranking</title>
+      <link>https://designrefs.com/en/articles/muse-wonder-design-arena/</link>
+      <guid isPermaLink="true">https://designrefs.com/en/articles/muse-wonder-design-arena/</guid>
+      <pubDate>Wed, 14 Oct 2026 09:00:00 +0900</pubDate>
+      <category>AI Design</category>
+      <description>Muse Wonder, released by Meta on October 12, now ranks first for websites and UI on Design Arena, where people pick AI designs by eye. How the voting works, and what a No. 1 does and doesn&#x27;t tell you, with diagrams and numbers.</description>
+      <content:encoded><![CDATA[    <p class="ptext">On October 12, Meta released Muse Wonder and Muse Wonder Full, its first frontier-class models since it reorganized its AI teams. The announcement was all about memory: a model that keeps track of what matters to you over days and weeks, and sticks with hard tasks until they&#x27;re done.</p>
+    <p class="ptext">There wasn&#x27;t a word about design. But the model showed up on Design Arena the same day, and two days later it ranks first in both the Website and UI Component arenas.</p>
+    <p class="ptext">Design Arena is where people look at designs made by AI and pick the better one, building a ranking from those votes. When a new model is called &quot;No. 1 at design&quot;, this is usually where that comes from. So this time I looked first at how that ranking is made, rather than at the model itself.</p>
+    <p class="ptext"><strong>First, a disclaimer.</strong> I&#x27;m building this site with Claude Code, and Anthropic&#x27;s models sit on the same leaderboard. Scores shift every day as votes come in, so every number below is as of October 14.</p>
+    <h2 class="psub" id="s1">From one vote to a ranking</h2>
+    <p class="ptext">Design Arena&#x27;s About page explains the method in some detail. Someone types a request, like &quot;make a landing page for a cafe&quot;, and four randomly chosen models get the same prompt at the same time. The voter sees two results side by side, without knowing which model made which, and picks one.</p>
+    <figure class="art__fig">
+      <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/arena-bracket-en-m.svg" width="600" height="1264" /><img src="https://designrefs.com/articles/img/arena-bracket-en.svg" alt="Design Arena compares the work of four models on the same prompt five times, with names hidden, to settle 1st through 4th. The winners shown are an example." width="1200" height="587" loading="lazy" decoding="async" /></picture>
+      <figcaption>Design Arena compares the work of four models on the same prompt five times, with names hidden, to settle 1st through 4th. The winners shown are an example.</figcaption>
+    </figure>
+    <p class="ptext">There are five picks in all. The first two are within pairs. In the third, the two winners meet; in the fourth, the two losers. The fifth settles the middle two places. After five picks you have a full 1st-to-4th order, and only then are the model names revealed.</p>
+    <p class="ptext">These one-of-two choices are combined statistically into a score, using math similar to chess ratings. The page says every vote counts the same, with no filtering or editorial adjustment.</p>
+    <h2 class="psub" id="s2">Unpacking &quot;No. 1&quot;</h2>
+    <p class="ptext">As of today, Muse Wonder has been in 2,086 tournaments. Here&#x27;s where it finished.</p>
+    <figure class="art__fig">
+      <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/muse-wonder-arena-en-m.svg" width="600" height="1291" /><img src="https://designrefs.com/articles/img/muse-wonder-arena-en.svg" alt="Across 2,086 Design Arena tournaments, Muse Wonder finished first 42% of the time, second 25%, third 19% and fourth 14%. Win rates by arena: 3D 69%, UI Component 66%, Game Dev 64%, Website 62%." width="1200" height="615" loading="lazy" decoding="async" /></picture>
+      <figcaption>Across 2,086 Design Arena tournaments, Muse Wonder finished first 42% of the time, second 25%, third 19% and fourth 14%. Win rates by arena: 3D 69%, UI Component 66%, Game Dev 64%, Website 62%.</figcaption>
+    </figure>
+    <p class="ptext">It came first a little over four times in ten. In the other six, voters preferred another model&#x27;s work. A No. 1 model doesn&#x27;t produce the best result every time. The top of the board is also tightly packed: on another tracker, the top ten models in the Website arena sit within about 50 points of each other.</p>
+    <p class="ptext">The second chart has a twist. Its highest win rate is in 3D (69%), yet it ranks only 6th there. Its lowest is Website (62%), where it ranks first. Five models in the 3D arena win more often than it does; in the Website arena, none do yet. A rank depends as much on who else is in the arena as on how good the model is.</p>
+    <p class="ptext">The numbers haven&#x27;t settled, either. In the first two days, its Website score moved between 1355 and 1363, and at one point it was listed second.</p>
+    <h2 class="psub" id="s3">What the vote can&#x27;t measure</h2>
+    <p class="ptext">Design Arena calls itself &quot;a subjective framework&quot; for evaluating AI design. Since it says so openly, it&#x27;s worth reading the results with those limits in mind.</p>
+    <p class="ptext">The prompts vary. They aren&#x27;t set by the company; voters type their own. One person asks for a portfolio site, another for a game screen. There&#x27;s no screening of who votes or on what device. One review pointed out that the format can reward whatever looks most striking in a few seconds.</p>
+    <p class="ptext">Most of what designers weigh in real work sits outside the vote.</p>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th>What a vote shows</th><th>What a vote doesn&#x27;t show</th></tr></thead>
+      <tbody>
+        <tr><td>First impression</td><td>Whether it follows your brand rules</td></tr>
+        <tr><td>The result of a single prompt</td><td>Whether it holds up over two or three revisions</td></tr>
+        <tr><td>How finished one screen looks</td><td>Accessibility, like type size and contrast</td></tr>
+        <tr><td>Relative ranking between models</td><td>Whether it hands off to your files and tools</td></tr>
+      </tbody>
+    </table></div>
+    <p class="art__note">The voting method is from <a href="https://www.designarena.ai/about" target="_blank" rel="noopener">Design Arena&#x27;s About page</a>; the critique is from a <a href="https://www.toolcenter.ai/en/articles/design-arena-review-2026" target="_blank" rel="noopener">ToolCenter review</a>.</p>
+    <p class="ptext">So the fair reading of this ranking is &quot;the model whose first attempt caught people&#x27;s eye most often&quot;. That&#x27;s not nothing. First impressions matter, and these are thousands of human choices. It just doesn&#x27;t mean it&#x27;s the right model for your work.</p>
+    <h2 class="psub" id="s4">Can designers use it?</h2>
+    <p class="ptext">For now, the direct routes are on the developer side.</p>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th></th><th>Where</th><th>Price</th></tr></thead>
+      <tbody>
+        <tr><td>Muse Wonder</td><td>Meta Model API, Muse Code</td><td>$4 input, $20 output per million tokens</td></tr>
+        <tr><td>Muse Wonder Full</td><td>Higher Muse Code subscription plans</td><td>No public per-token rate</td></tr>
+        <tr><td>Muse app</td><td>Rolling out, subscribers first</td><td>Depends on plan</td></tr>
+      </tbody>
+    </table></div>
+    <p class="art__note">Sources: <a href="https://about.fb.com/news/2026/10/introducing-muse-wonder-models/" target="_blank" rel="noopener">Meta</a>, <a href="https://techcrunch.com/2026/10/12/meta-releases-its-first-frontier-model-muse-wonder/" target="_blank" rel="noopener">TechCrunch</a>, <a href="https://app.therundown.ai/guides/muse-wonder-guide" target="_blank" rel="noopener">The Rundown</a>. Availability varies by region and plan.</p>
+    <p class="ptext">The Muse app is closer to designers. On September 29, Meta connected its Muse agent to Canva. It can pull the fonts, colors and brand assets from your Canva account to make flyers, invitations and social images, and the results stay editable in Canva. Meta says nothing publishes or sends without the user&#x27;s approval. But Muse itself is only available in the US and Canada for now, and Meta hasn&#x27;t said which model powers the Canva features.</p>
+    <p class="ptext">The direction is clear, though. The model that just topped a design vote will soon run inside Muse, and Muse already has a hand in Canva. It&#x27;s the same current as <a href="https://designrefs.com/en/articles/openai-devday-2026-designers/">Canva, Figma and Adobe moving into ChatGPT</a>: design tools move into chat windows, and the companies behind those chat windows have started selling their models&#x27; design sense.</p>
+    <h2 class="psub" id="s5">Turning the leaderboard into your own judgment</h2>
+    <p class="ptext"><strong>Vote once yourself.</strong> Put in a request like the work you actually get, whether &quot;an order page for a neighborhood bakery&quot; or &quot;an app settings screen&quot;. After five picks, when the names appear, you&#x27;ll see which model your eye leans toward. That tells you more than reading the leaderboard.</p>
+    <p class="ptext"><strong>Look at the arena that matches your work.</strong> Besides Website and UI Component, the site ranks Logo, Graphic Design, Slides and SVG separately. First in Website doesn&#x27;t guarantee anything for logos, as Muse Wonder&#x27;s 3D rank shows.</p>
+    <p class="ptext"><strong>Make the final call with your own rules.</strong> The parts the vote can&#x27;t measure, you have to test. Give a model one template you use often and one page of brand rules, have it build the same screen, then ask for two or three revisions. It&#x27;s the same method from the <a href="https://designrefs.com/en/articles/claude-sonnet-5-5-design/">Sonnet 5.5 article</a>. If your rules are already written down, attach your <a href="https://designrefs.com/en/articles/design-md-for-ai/">DESIGN.md</a> as is.</p>
+    <p class="ptext">AI design rankings will keep flipping. This week it&#x27;s Meta; next month another name may be on top. AI tools by use case are under <a href="https://designrefs.com/en/#ai">AI tools</a>.</p>
+    <p class="art__note">Sources: <a href="https://about.fb.com/news/2026/10/introducing-muse-wonder-models/" target="_blank" rel="noopener">Meta</a> (Oct 12), <a href="https://techcrunch.com/2026/10/12/meta-releases-its-first-frontier-model-muse-wonder/" target="_blank" rel="noopener">TechCrunch</a>, <a href="https://www.designarena.ai/models/muse-wonder-1.0" target="_blank" rel="noopener">Design Arena: Muse Wonder</a> · <a href="https://www.designarena.ai/about" target="_blank" rel="noopener">About</a> (checked Oct 14), <a href="https://benchlm.ai/benchmarks/designarenawebsite" target="_blank" rel="noopener">BenchLM Design Arena Website</a> (Oct 13), <a href="https://www.toolcenter.ai/en/articles/design-arena-review-2026" target="_blank" rel="noopener">ToolCenter</a>, <a href="https://www.canva.com/newsroom/news/canva-meta-muse/" target="_blank" rel="noopener">Canva Newsroom</a>, <a href="https://www.unite.ai/meta-adds-small-business-skills-and-app-connectors-to-muse-ai-agent/" target="_blank" rel="noopener">Unite.AI</a>.</p>]]></content:encoded>
+    </item>
     <item>
       <title>When a client sends an AI draft and says &quot;just polish this&quot;</title>
       <link>https://designrefs.com/en/articles/ai-draft-client-pixel-pusher/</link>

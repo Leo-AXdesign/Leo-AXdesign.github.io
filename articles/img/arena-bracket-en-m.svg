@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 1264" role="img" aria-labelledby="t d">
+  <title id="t">How one Design Arena vote works</title>
+  <desc id="d">Design Arena sends the same prompt to four models and asks a voter to pick between two hidden designs five times. Picks 1 and 2 pair them up; pick 3 has the two winners meet to decide 1st, pick 4 has the two losers meet to decide 4th, and pick 5 settles 2nd and 3rd.</desc>
+  <rect width="600" height="1264" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="32" y="66" font-size="30" font-weight="800" fill="#111111" text-anchor="start">How one Design Arena vote works</text>
+    <text x="32" y="99" font-size="21" font-weight="400" fill="#6B6B6B" text-anchor="start">Four models, one prompt</text>
+    <text x="32" y="132" font-size="21" font-weight="400" fill="#6B6B6B" text-anchor="start">five picks settle 1st to 4th</text>
+    <rect x="32" y="172" width="536" height="162" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <circle cx="60" cy="202" r="15" fill="#111111"/><text x="60" y="208.12" font-size="17" font-weight="800" fill="#FFFFFF" text-anchor="middle">1</text>
+    <text x="86" y="210" font-size="24" font-weight="800" fill="#111111" text-anchor="start">Four, unnamed</text>
+    <text x="58" y="248" font-size="19" font-weight="400" fill="#444444" text-anchor="start">Same prompt, names hidden</text>
+    <rect x="58" y="268" width="50" height="50" rx="9" fill="#FFFFFF" stroke="#111111" stroke-width="2"/><text x="83.0" y="300.2" font-size="20" font-weight="800" fill="#111111" text-anchor="middle">A</text>
+    <rect x="118" y="268" width="50" height="50" rx="9" fill="#FFFFFF" stroke="#111111" stroke-width="2"/><text x="143.0" y="300.2" font-size="20" font-weight="800" fill="#111111" text-anchor="middle">B</text>
+    <rect x="178" y="268" width="50" height="50" rx="9" fill="#FFFFFF" stroke="#111111" stroke-width="2"/><text x="203.0" y="300.2" font-size="20" font-weight="800" fill="#111111" text-anchor="middle">C</text>
+    <rect x="238" y="268" width="50" height="50" rx="9" fill="#FFFFFF" stroke="#111111" stroke-width="2"/><text x="263.0" y="300.2" font-size="20" font-weight="800" fill="#111111" text-anchor="middle">D</text>
+    <path d="M300.0 340v22m-7 -8l7 8l7 -8" fill="none" stroke="#111111" stroke-width="2"/>
+    <rect x="32" y="368" width="536" height="228" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <circle cx="60" cy="398" r="15" fill="#111111"/><text x="60" y="404.12" font-size="17" font-weight="800" fill="#FFFFFF" text-anchor="middle">2</text>
+    <text x="86" y="406" font-size="24" font-weight="800" fill="#111111" text-anchor="start">Picks 1 · 2</text>
+    <text x="58" y="444" font-size="19" font-weight="400" fill="#444444" text-anchor="start">Choose within each pair</text>
+    <rect x="58" y="464" width="50" height="50" rx="9" fill="#111111" stroke="#111111" stroke-width="2"/><text x="83.0" y="496.2" font-size="20" font-weight="800" fill="#FFFFFF" text-anchor="middle">A</text>
+    <text x="125.0" y="495.0" font-size="19" font-weight="400" fill="#6B6B6B" text-anchor="middle">vs</text>
+    <rect x="142" y="464" width="50" height="50" rx="9" fill="#FFFFFF" stroke="#111111" stroke-width="2"/><text x="167.0" y="496.2" font-size="20" font-weight="800" fill="#111111" text-anchor="middle">B</text>
+    <rect x="58" y="530" width="50" height="50" rx="9" fill="#FFFFFF" stroke="#111111" stroke-width="2"/><text x="83.0" y="562.2" font-size="20" font-weight="800" fill="#111111" text-anchor="middle">C</text>
+    <text x="125.0" y="561.0" font-size="19" font-weight="400" fill="#6B6B6B" text-anchor="middle">vs</text>
+    <rect x="142" y="530" width="50" height="50" rx="9" fill="#111111" stroke="#111111" stroke-width="2"/><text x="167.0" y="562.2" font-size="20" font-weight="800" fill="#FFFFFF" text-anchor="middle">D</text>
+    <path d="M300.0 602v22m-7 -8l7 8l7 -8" fill="none" stroke="#111111" stroke-width="2"/>
+    <rect x="32" y="630" width="536" height="228" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <circle cx="60" cy="660" r="15" fill="#111111"/><text x="60" y="666.12" font-size="17" font-weight="800" fill="#FFFFFF" text-anchor="middle">3</text>
+    <text x="86" y="668" font-size="24" font-weight="800" fill="#111111" text-anchor="start">Picks 3 · 4</text>
+    <text x="58" y="706" font-size="19" font-weight="400" fill="#444444" text-anchor="start">Winners meet, losers meet</text>
+    <rect x="58" y="726" width="50" height="50" rx="9" fill="#111111" stroke="#111111" stroke-width="2"/><text x="83.0" y="758.2" font-size="20" font-weight="800" fill="#FFFFFF" text-anchor="middle">A</text>
+    <text x="125.0" y="757.0" font-size="19" font-weight="400" fill="#6B6B6B" text-anchor="middle">vs</text>
+    <rect x="142" y="726" width="50" height="50" rx="9" fill="#FFFFFF" stroke="#111111" stroke-width="2"/><text x="167.0" y="758.2" font-size="20" font-weight="800" fill="#111111" text-anchor="middle">D</text>
+    <text x="206" y="757.84" font-size="19" font-weight="700" fill="#111111" text-anchor="start">→ 1st</text>
+    <rect x="58" y="792" width="50" height="50" rx="9" fill="#FFFFFF" stroke="#111111" stroke-width="2"/><text x="83.0" y="824.2" font-size="20" font-weight="800" fill="#111111" text-anchor="middle">B</text>
+    <text x="125.0" y="823.0" font-size="19" font-weight="400" fill="#6B6B6B" text-anchor="middle">vs</text>
+    <rect x="142" y="792" width="50" height="50" rx="9" fill="#111111" stroke="#111111" stroke-width="2"/><text x="167.0" y="824.2" font-size="20" font-weight="800" fill="#FFFFFF" text-anchor="middle">C</text>
+    <text x="206" y="823.84" font-size="19" font-weight="700" fill="#111111" text-anchor="start">→ 4th</text>
+    <path d="M300.0 864v22m-7 -8l7 8l7 -8" fill="none" stroke="#111111" stroke-width="2"/>
+    <rect x="32" y="892" width="536" height="162" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <circle cx="60" cy="922" r="15" fill="#111111"/><text x="60" y="928.12" font-size="17" font-weight="800" fill="#FFFFFF" text-anchor="middle">4</text>
+    <text x="86" y="930" font-size="24" font-weight="800" fill="#111111" text-anchor="start">Pick 5</text>
+    <text x="58" y="968" font-size="19" font-weight="400" fill="#444444" text-anchor="start">Settle the middle two</text>
+    <rect x="58" y="988" width="50" height="50" rx="9" fill="#111111" stroke="#111111" stroke-width="2"/><text x="83.0" y="1020.2" font-size="20" font-weight="800" fill="#FFFFFF" text-anchor="middle">D</text>
+    <text x="125.0" y="1019.0" font-size="19" font-weight="400" fill="#6B6B6B" text-anchor="middle">vs</text>
+    <rect x="142" y="988" width="50" height="50" rx="9" fill="#FFFFFF" stroke="#111111" stroke-width="2"/><text x="167.0" y="1020.2" font-size="20" font-weight="800" fill="#111111" text-anchor="middle">B</text>
+    <text x="206" y="1019.84" font-size="19" font-weight="700" fill="#111111" text-anchor="start">→ 2nd · 3rd</text>
+    <text x="32" y="1121.64" font-size="24" font-weight="800" fill="#111111" text-anchor="start">Result</text>
+    <rect x="128" y="1088" width="50" height="50" rx="9" fill="#111111" stroke="#111111" stroke-width="2"/><text x="153.0" y="1120.2" font-size="20" font-weight="800" fill="#FFFFFF" text-anchor="middle">A</text>
+    <text x="186" y="1119.84" font-size="19" font-weight="700" fill="#6B6B6B" text-anchor="start">1</text>
+    <rect x="218" y="1088" width="50" height="50" rx="9" fill="#FFFFFF" stroke="#111111" stroke-width="2"/><text x="243.0" y="1120.2" font-size="20" font-weight="800" fill="#111111" text-anchor="middle">D</text>
+    <text x="276" y="1119.84" font-size="19" font-weight="700" fill="#6B6B6B" text-anchor="start">2</text>
+    <rect x="308" y="1088" width="50" height="50" rx="9" fill="#FFFFFF" stroke="#111111" stroke-width="2"/><text x="333.0" y="1120.2" font-size="20" font-weight="800" fill="#111111" text-anchor="middle">B</text>
+    <text x="366" y="1119.84" font-size="19" font-weight="700" fill="#6B6B6B" text-anchor="start">3</text>
+    <rect x="398" y="1088" width="50" height="50" rx="9" fill="#FFFFFF" stroke="#111111" stroke-width="2"/><text x="423.0" y="1120.2" font-size="20" font-weight="800" fill="#111111" text-anchor="middle">C</text>
+    <text x="456" y="1119.84" font-size="19" font-weight="700" fill="#6B6B6B" text-anchor="start">4</text>
+    <text x="32" y="1172" font-size="19" font-weight="400" fill="#444444" text-anchor="start">Model names are revealed after voting</text>
+    <line x1="32" y1="1204" x2="568" y2="1204" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="32" y="1232" font-size="17" font-weight="400" fill="#6B6B6B" text-anchor="start">Source: designarena.ai About page. Winners shown are an example.</text>
+  </g>
+</svg>
