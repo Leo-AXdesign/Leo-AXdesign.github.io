@@ -87,13 +87,17 @@ def read_sites():
 
 
 def read_meta():
-    """카테고리, AI 소분류"""
+    """카테고리, 분야별 소분류 {분야 id: [소분류, ...]}.
+    AI 는 AI_SUBS 순서, 그 밖의 분야는 SITES 에 처음 나오는 순서 (메인 화면과 같은 규칙)"""
     src = DATA.read_text(encoding="utf-8")
     i = src.index("const CATEGORIES = [")
     cats = [{"id": field(ln, "id"), "label": field(ln, "label")}
             for ln in src[i:src.index("\n];", i)].split("\n") if "{ id:" in ln]
-    subs = re.findall(r"'([^']+)'", re.search(r"const AI_SUBS = \[(.*?)\]", src, re.S).group(1))
-    return cats, subs
+    subs = {"ai": re.findall(r"'([^']+)'", re.search(r"const AI_SUBS = \[(.*?)\]", src, re.S).group(1))}
+    for x in read_sites():
+        if x.get("sub") and x["sub"] not in subs.setdefault(x["cat"], []):
+            subs[x["cat"]].append(x["sub"])
+    return cats, {k: v for k, v in subs.items() if v}
 
 
 def site_line(s):
@@ -138,9 +142,9 @@ def save_site(p):
         raise Oops("주소는 https:// 로 시작하는 전체 주소로 적어 주세요.")
     if s["cat"] not in {c["id"] for c in cats}:
         raise Oops("분야를 골라 주세요.")
-    if s["cat"] == "ai" and s["sub"] not in subs:
-        raise Oops("AI 분야는 소분류도 골라 주세요.")
-    if s["cat"] != "ai":
+    if s["cat"] in subs and s["sub"] not in subs[s["cat"]]:
+        raise Oops("이 분야는 소분류도 골라 주세요.")
+    if s["cat"] not in subs:
         s["sub"] = ""
     sites = read_sites()
     if any(x["url"] == s["url"] for x in sites) and s["url"] != old:
@@ -157,14 +161,15 @@ def save_site(p):
     placed = False
     if old:
         idx = next(k for k, ln in enumerate(block) if ln.lstrip().startswith("{ name:") and field(ln, "url") == old)
-        if field(block[idx], "cat") == s["cat"]:
-            block[idx], placed = new, True      # 같은 분야면 제자리에서 고칩니다
+        if field(block[idx], "cat") == s["cat"] and (field(block[idx], "sub") or "") == s["sub"]:
+            block[idx], placed = new, True      # 같은 분야·소분류면 제자리에서 고칩니다
         else:
             del block[idx]                      # 분야가 바뀌면 새 분야 쪽으로 옮깁니다
     if not placed:
-        # 같은 분야의 마지막 사이트 바로 아래에 넣습니다. 처음 쓰는 분야면 배열 맨 끝에.
-        last = max((k for k, ln in enumerate(block)
-                    if ln.lstrip().startswith("{ name:") and field(ln, "cat") == s["cat"]), default=len(block) - 1)
+        # 같은 분야(소분류가 있으면 같은 소분류)의 마지막 사이트 바로 아래에 넣습니다. 처음 쓰는 분야면 배열 맨 끝에.
+        rows = [k for k, ln in enumerate(block) if ln.lstrip().startswith("{ name:") and field(ln, "cat") == s["cat"]]
+        same = [k for k in rows if (field(block[k], "sub") or "") == s["sub"]]
+        last = max(same or rows, default=len(block) - 1)
         block.insert(last + 1, new)
     DATA.write_text(src[:a] + "\n".join(block) + src[b:], encoding="utf-8")
     # 한국어 이름이 아닌데 영문 이름을 따로 적을 필요는 없습니다

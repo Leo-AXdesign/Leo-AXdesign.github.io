@@ -1,53 +1,64 @@
 # 디자인 허브 (Design Hub) 전체 내용
 
-> 출처: https://designrefs.com/ · 사이트 395개, 스타일 34가지, 트렌드 15가지, 용어 155개
+> 출처: https://designrefs.com/ · 사이트 397개, 스타일 34가지, 트렌드 15가지, 용어 155개
 
 ## UI/UX 레퍼런스
 
 앱·웹 화면, 유저 플로우, 랜딩페이지 인스피레이션.
 
+### 앱 화면 · 플로우
+
+- [유아이볼 (UIBowl)](https://uibowl.io): 국내 앱·웹 화면을 로그인·결제·마이페이지 같은 UI 패턴과 업종별로 모은 레퍼런스. MAU 필터와 피그마 내보내기를 지원합니다.
 - [Mobbin](https://mobbin.com): 실제 서비스 앱·웹 화면과 플로우를 통째로 모아둔 UI 아카이브. 화면 단위 검색이 강력합니다.
 - [Refero](https://refero.design): 실제 프로덕트의 UI 패턴을 컴포넌트·페이지 유형별로 검색할 수 있는 레퍼런스 툴.
-- [Dribbble](https://dribbble.com): 전 세계 디자이너들의 샷(Shot) 쇼케이스. 비주얼 트렌드 파악에 좋습니다.
-- [Behance](https://www.behance.net): 어도비의 포트폴리오 플랫폼. 프로젝트 단위의 긴 호흡 작업물을 볼 수 있습니다.
-- [Awwwards](https://www.awwwards.com): 세계적인 웹 디자인 어워드. 인터랙션이 뛰어난 사이트를 매일 선정합니다.
-- [지디웹 (GDWEB)](https://www.gdweb.co.kr): 국내 웹·앱 디자인 어워드. 한국 기업 사이트 레퍼런스를 찾을 때 유용합니다.
-- [디비컷 (DBCUT)](https://www.dbcut.com): 국내 웹디자인 레퍼런스 모음. 업종별·스타일별로 한국 사이트를 살펴볼 수 있습니다.
-- [Land-book](https://land-book.com): 랜딩페이지 갤러리. 산업·스타일·컬러별 필터가 잘 되어 있습니다.
-- [Lapa Ninja](https://www.lapa.ninja): 랜딩페이지 인스피레이션 모음. 무료 UI 킷·북도 함께 제공합니다.
-- [Recent (구 Godly)](https://recent.design): 감각적인 웹사이트만 엄선한 큐레이션. Godly에서 이름을 바꿨습니다.
-- [Siteinspire](https://www.siteinspire.com): 깔끔하고 세련된 웹사이트 쇼케이스. 스타일·타입·주제별 필터 제공.
-- [Httpster](https://httpster.net): 트렌디하고 실험적인 웹사이트를 모아둔 갤러리.
-- [Minimal Gallery](https://minimal.gallery): 미니멀한 웹사이트만 모아둔 갤러리.
-- [Dark Mode Design](https://www.darkmodedesign.com): 다크 모드 웹사이트 레퍼런스만 모아둔 사이트.
-- [SaaS Landing Page](https://saaslandingpage.com): SaaS 랜딩페이지 예시를 섹션·유형별로 정리한 사이트.
-- [Nicelydone](https://nicelydone.club): SaaS 프로덕트의 UI 패턴·플로우를 모아둔 레퍼런스.
 - [Page Flows](https://pageflows.com): 온보딩, 결제 등 유저 플로우를 영상으로 기록해 둔 사이트.
+- [UX Archive](https://uxarchive.com): 모바일 앱 유저 플로우를 단계별 스크린샷으로 정리.
 - [Pttrns](https://www.pttrns.com): 모바일 앱 UI 패턴 레퍼런스의 고전.
 - [ScreensDesign](https://screensdesign.com): 앱스토어 스크린샷과 실제 앱 UI 플로우를 모아둔 사이트.
+- [Nicelydone](https://nicelydone.club): SaaS 프로덕트의 UI 패턴·플로우를 모아둔 레퍼런스.
+- [Really Good UX](https://goodux.appcues.com): 온보딩·엠프티 스테이트 등 잘 만든 UX 사례 모음.
 - [Collect UI](https://collectui.com): Dribbble 샷을 UI 요소(로그인, 404, 대시보드 등)별로 분류한 갤러리.
-- [Design Spells](https://www.designspells.com): 사용자를 미소 짓게 하는 UI 디테일·인터랙션 모음.
-- [Footer.design](https://www.footer.design): 웹사이트 푸터 디자인만 모아둔 레퍼런스.
-- [Navbar Gallery](https://www.navbar.gallery): 내비게이션 바 디자인 레퍼런스 모음.
+
+### 웹 · 랜딩
+
+- [Nook](https://nook.ai.kr): 국내·해외 웹사이트를 화장품·패션·IT 같은 업종과 쇼핑몰·랜딩 같은 목적별로 모은 레퍼런스. 색상·국가 필터와 북마크·팀 폴더가 있습니다.
+- [Land-book](https://land-book.com): 랜딩페이지 갤러리. 산업·스타일·컬러별 필터가 잘 되어 있습니다.
+- [Lapa Ninja](https://www.lapa.ninja): 랜딩페이지 인스피레이션 모음. 무료 UI 킷·북도 함께 제공합니다.
+- [SaaS Landing Page](https://saaslandingpage.com): SaaS 랜딩페이지 예시를 섹션·유형별로 정리한 사이트.
+- [Supahero](https://supahero.io): 웹사이트 첫 화면(히어로 섹션)만 골라 모은 갤러리. 랜딩페이지의 첫인상을 잡을 때 좋습니다.
+- [One Page Love](https://onepagelove.com): 원페이지 웹사이트 갤러리와 템플릿.
+- [Landingfolio](https://www.landingfolio.com): 랜딩페이지·컴포넌트 인스피레이션. 섹션별 검색.
+- [Minimal Gallery](https://minimal.gallery): 미니멀한 웹사이트만 모아둔 갤러리.
+- [Dark Mode Design](https://www.darkmodedesign.com): 다크 모드 웹사이트 레퍼런스만 모아둔 사이트.
+- [Httpster](https://httpster.net): 트렌디하고 실험적인 웹사이트를 모아둔 갤러리.
 - [Curated Design](https://www.curated.design): 트렌디한 웹 디자인 큐레이션. 타입·스타일별 필터 제공.
 - [Muzli](https://muz.li): 디자인 인스피레이션 피드. 크롬 확장 프로그램으로 새 탭에서 바로 볼 수 있습니다.
-- [UI Patterns](https://ui-patterns.com): UI 패턴을 문제·해결 관점에서 정리한 패턴 라이브러리.
-- [Laws of UX](https://lawsofux.com): 힉의 법칙, 피츠의 법칙 등 UX 심리학 법칙을 카드로 정리.
-- [Growth.design](https://growth.design): 유명 서비스의 UX를 만화 형식으로 분석한 케이스 스터디.
-- [Checklist Design](https://www.checklist.design): 페이지·컴포넌트별 디자인 체크리스트.
-- [Nielsen Norman Group](https://www.nngroup.com): UX 리서치의 권위 있는 기관. 휴리스틱, 리서치 아티클이 풍부합니다.
-- [Toools.design](https://www.toools.design): 디자인 리소스·툴 1,500개 이상을 모아둔 디렉터리.
-- [Landingfolio](https://www.landingfolio.com): 랜딩페이지·컴포넌트 인스피레이션. 섹션별 검색.
-- [Supahero](https://supahero.io): 웹사이트 첫 화면(히어로 섹션)만 골라 모은 갤러리. 랜딩페이지의 첫인상을 잡을 때 좋습니다.
+
+### 어워드 · 큐레이션
+
+- [지디웹 (GDWEB)](https://www.gdweb.co.kr): 국내 웹·앱 디자인 어워드. 한국 기업 사이트 레퍼런스를 찾을 때 유용합니다.
+- [디비컷 (DBCUT)](https://www.dbcut.com): 국내 웹디자인 레퍼런스 모음. 업종별·스타일별로 한국 사이트를 살펴볼 수 있습니다.
+- [Awwwards](https://www.awwwards.com): 세계적인 웹 디자인 어워드. 인터랙션이 뛰어난 사이트를 매일 선정합니다.
 - [CSS Design Awards](https://www.cssdesignawards.com): Awwwards와 함께 대표적인 웹 디자인 어워드.
 - [FWA](https://thefwa.com): 2000년부터 이어진 인터랙티브 웹 어워드.
-- [One Page Love](https://onepagelove.com): 원페이지 웹사이트 갤러리와 템플릿.
-- [Bento Grids](https://bentogrids.com): 벤토 그리드 레이아웃 레퍼런스 모음.
-- [UX Archive](https://uxarchive.com): 모바일 앱 유저 플로우를 단계별 스크린샷으로 정리.
-- [Really Good UX](https://goodux.appcues.com): 온보딩·엠프티 스테이트 등 잘 만든 UX 사례 모음.
-- [UI8](https://ui8.net): 프리미엄 UI 킷·아이콘·3D 에셋 마켓.
+- [Recent (구 Godly)](https://recent.design): 감각적인 웹사이트만 엄선한 큐레이션. Godly에서 이름을 바꿨습니다.
+- [Siteinspire](https://www.siteinspire.com): 깔끔하고 세련된 웹사이트 쇼케이스. 스타일·타입·주제별 필터 제공.
+
+### 디테일 · 인터랙션
+
+- [Footer.design](https://www.footer.design): 웹사이트 푸터 디자인만 모아둔 레퍼런스.
+- [Navbar Gallery](https://www.navbar.gallery): 내비게이션 바 디자인 레퍼런스 모음.
+- [Design Spells](https://www.designspells.com): 사용자를 미소 짓게 하는 UI 디테일·인터랙션 모음.
 - [Ripplix](https://www.ripplix.com): 실제 앱·웹에서 모은 UI 애니메이션과 마이크로 인터랙션 7,000여 개. 요소·업종·서비스별로 찾아볼 수 있습니다.
-- [Nook](https://nook.ai.kr): 국내·해외 웹사이트를 화장품·패션·IT 같은 업종과 쇼핑몰·랜딩 같은 목적별로 모은 레퍼런스. 색상·국가 필터와 북마크·팀 폴더가 있습니다.
+- [Bento Grids](https://bentogrids.com): 벤토 그리드 레이아웃 레퍼런스 모음.
+
+### UX 이론
+
+- [Laws of UX](https://lawsofux.com): 힉의 법칙, 피츠의 법칙 등 UX 심리학 법칙을 카드로 정리.
+- [Nielsen Norman Group](https://www.nngroup.com): UX 리서치의 권위 있는 기관. 휴리스틱, 리서치 아티클이 풍부합니다.
+- [Growth.design](https://growth.design): 유명 서비스의 UX를 만화 형식으로 분석한 케이스 스터디.
+- [UI Patterns](https://ui-patterns.com): UI 패턴을 문제·해결 관점에서 정리한 패턴 라이브러리.
+- [Checklist Design](https://www.checklist.design): 페이지·컴포넌트별 디자인 체크리스트.
 
 ## 그래픽 / 브랜딩
 
@@ -55,6 +66,8 @@
 
 - [Pinterest](https://kr.pinterest.com): 이미지 기반 인스피레이션 보드. 무드보드 만들 때 필수.
 - [노트폴리오](https://notefolio.net): 국내 최대 디자이너 포트폴리오 플랫폼. 그래픽·브랜딩·일러스트 레퍼런스.
+- [Dribbble](https://dribbble.com): 전 세계 디자이너들의 샷(Shot) 쇼케이스. 비주얼 트렌드 파악에 좋습니다.
+- [Behance](https://www.behance.net): 어도비의 포트폴리오 플랫폼. 프로젝트 단위의 긴 호흡 작업물을 볼 수 있습니다.
 - [Are.na](https://www.are.na): 광고 없는 리서치·큐레이션 도구. 디자이너들의 채널을 탐색할 수 있습니다.
 - [Savee](https://savee.com): 비주얼 인스피레이션 수집 툴. 감각적인 이미지 피드.
 - [Cosmos](https://www.cosmos.so): 알고리즘 없는 큐레이션 기반 디자인 무드보드 플랫폼.
@@ -72,6 +85,7 @@
 - [Abduzeedo](https://abduzeedo.com): 그래픽·브랜딩·일러스트 인스피레이션 블로그.
 - [Visuelle](https://visuelle.co.uk): 편집·브랜딩 디자인 위주의 큐레이션 블로그.
 - [Book Cover Archive](https://bookcoverarchive.com): 북 커버 디자인 아카이브.
+- [Motionographer](https://motionographer.com): 모션 그래픽·애니메이션 작업과 스튜디오를 소개하는 매거진.
 - [Mindsparkle Mag](https://mindsparklemag.com): 브랜딩·웹 디자인 큐레이션 매거진.
 - [Gurafiku](https://gurafiku.tumblr.com): 일본 그래픽 디자인 아카이브.
 
@@ -166,6 +180,7 @@
 - [Iconoir](https://iconoir.com): 1,600개 이상의 오픈소스 선 아이콘.
 - [Pixabay](https://pixabay.com): 무료 사진·일러스트·벡터·영상·음악.
 - [Creative Market](https://creativemarket.com): 폰트·그래픽·템플릿·목업을 개별 구매하는 마켓.
+- [UI8](https://ui8.net): 프리미엄 UI 킷·아이콘·3D 에셋 마켓.
 - [Envato Elements](https://elements.envato.com): 구독 하나로 템플릿·폰트·영상·음악을 무제한 사용.
 - [Craftwork](https://craftwork.design): 일러스트·UI 킷·3D 에셋 번들.
 
@@ -192,45 +207,6 @@
 - [Unblast](https://unblast.com): 무료 목업·폰트·아이콘을 모아 둔 리소스 사이트.
 - [Pixelbuddha](https://pixelbuddha.net): 목업·폰트·그래픽 리소스를 무료와 멤버십으로 제공.
 - [Pixeden](https://www.pixeden.com): 목업·템플릿·아이콘 리소스. 무료 자료와 멤버십(Pixeden Club).
-
-## 디자인 개발
-
-디자인 시스템, 플랫폼 가이드라인, 인터랙션 구현.
-
-- [Material Design 3](https://m3.material.io): 구글 머티리얼 디자인 가이드라인과 컴포넌트.
-- [Apple HIG](https://developer.apple.com/design/human-interface-guidelines/): iOS·macOS 등 애플 플랫폼 휴먼 인터페이스 가이드라인.
-- [KRDS 디지털정부서비스 UI/UX](https://www.krds.go.kr): 한국 디지털 정부서비스 UI/UX 가이드라인. 공공 프로젝트 필수 참고.
-- [LINE Design System](https://designsystem.line.me): 라인의 공개 디자인 시스템.
-- [Atlassian Design System](https://atlassian.design): 문서화가 잘 된 디자인 시스템의 교과서.
-- [Shopify Polaris](https://shopify.dev/docs/api/polaris): 쇼피파이 디자인 시스템. 콘텐츠 가이드가 특히 좋습니다.
-- [IBM Carbon](https://carbondesignsystem.com): IBM의 오픈소스 디자인 시스템.
-- [Ant Design](https://ant.design): 엔터프라이즈 UI 디자인 언어와 React 컴포넌트.
-- [Design Systems Repo](https://designsystemsrepo.com): 공개된 디자인 시스템 모음.
-- [Component Gallery](https://component.gallery): 여러 디자인 시스템의 동일 컴포넌트를 비교해 볼 수 있는 갤러리.
-- [shadcn/ui](https://ui.shadcn.com): 복사해서 쓰는 React 컴포넌트. 최근 웹 UI의 기본값처럼 쓰입니다.
-- [Tailwind CSS](https://tailwindcss.com): 유틸리티 클래스 기반 CSS 프레임워크.
-- [Radix UI](https://www.radix-ui.com): 접근성이 보장된 헤드리스 UI 컴포넌트.
-- [Storybook](https://storybook.js.org): UI 컴포넌트를 독립적으로 개발·문서화하는 툴.
-- [Zeroheight](https://zeroheight.com): 디자인 시스템 문서화 플랫폼.
-- [Supernova](https://www.supernova.io): 디자인 토큰 관리와 코드 동기화.
-- [Zeplin](https://zeplin.io): 디자인-개발 핸드오프 툴.
-- [Codrops](https://tympanus.net/codrops/): 고급 웹 인터랙션·애니메이션 데모와 튜토리얼.
-- [CodePen](https://codepen.io): 프론트엔드 코드 스니펫 공유 플레이그라운드.
-- [GSAP](https://gsap.com): 웹 애니메이션 라이브러리의 표준.
-- [Motion](https://motion.dev): React·JS용 모던 애니메이션 라이브러리(구 Framer Motion).
-- [Shaders](https://shaders.com): 웹용 셰이더 효과를 에디터로 디자인하고 컴포넌트로 바로 가져다 쓰는 플랫폼. 제작은 무료, 실서비스 적용은 유료.
-- [Three.js](https://threejs.org): 웹 3D 라이브러리. 예제 갤러리가 인스피레이션이 됩니다.
-- [Easings.net](https://easings.net): 이징 함수 치트시트.
-- [cubic-bezier.com](https://cubic-bezier.com): CSS 베지어 이징 커브 시각 편집기.
-- [Animista](https://animista.net): CSS 애니메이션을 눌러보며 골라 코드 복사.
-- [MDN Web Docs](https://developer.mozilla.org/ko/): HTML·CSS·JS 공식 레퍼런스 문서.
-- [CSS-Tricks](https://css-tricks.com): CSS 기법 아티클과 가이드.
-- [Can I Use](https://caniuse.com): 브라우저별 CSS·JS 기능 지원 여부 확인.
-- [WCAG 2.2 Quick Reference](https://www.w3.org/WAI/WCAG22/quickref/): 웹 접근성 지침 빠른 참조.
-- [Responsively](https://responsively.app): 여러 기기 화면을 동시에 보며 반응형을 확인하는 브라우저.
-- [Bootstrap](https://getbootstrap.com): 가장 오래 쓰인 CSS 프레임워크. 반응형 그리드와 컴포넌트.
-- [Frontend Mentor](https://www.frontendmentor.io): 디자인 시안을 코드로 구현하며 배우는 실습 플랫폼.
-- [Uiverse](https://uiverse.io): 커뮤니티가 만든 오픈소스 CSS 버튼·로더·카드 모음.
 
 ## 디자인 툴
 
@@ -261,53 +237,11 @@
 - [remove.bg](https://www.remove.bg): 이미지 배경을 자동으로 제거.
 - [Screen Studio](https://screen.studio): 자동 줌·모션이 들어간 세련된 화면 녹화(맥).
 - [CleanShot X](https://cleanshot.com): 맥용 스크린샷·녹화 툴.
+- [Toools.design](https://www.toools.design): 디자인 리소스·툴 1,500개 이상을 모아둔 디렉터리.
 - [Sketch](https://www.sketch.com): 맥 전용 UI 디자인 툴. Figma 이전의 표준.
 - [Penpot](https://penpot.app): 오픈소스 디자인·프로토타이핑 툴. Figma의 무료 대안.
 - [Jitter](https://jitter.video): 브라우저에서 쓰는 간편한 모션·애니메이션 디자인 툴. Figma 연동.
 - [Loom](https://www.loom.com): 화면 녹화로 디자인 설명 영상을 빠르게 공유.
-
-## 외주 / 프리랜서
-
-외주 매칭 플랫폼, 계약서·대가 기준.
-
-- [크몽](https://kmong.com): 국내 최대 프리랜서 마켓. 디자인 카테고리가 가장 활발합니다.
-- [숨고](https://soomgo.com): 견적 요청 기반 전문가 매칭 플랫폼.
-- [위시켓](https://www.wishket.com): IT·디자인 프로젝트 아웃소싱 플랫폼. 규모 있는 프로젝트가 많습니다.
-- [프리모아](https://www.freemoa.net): 프리랜서 프로젝트 매칭 플랫폼.
-- [라우드소싱](https://www.loud.kr): 로고·네이밍·패키지 디자인 콘테스트 플랫폼.
-- [이랜서](https://www.elancer.co.kr): IT 프리랜서 매칭. 상주 프로젝트가 많습니다.
-- [원티드 긱스](https://www.wanted.co.kr/gigs): 원티드의 프리랜서·긱 프로젝트 매칭.
-- [디자인DB (한국디자인진흥원)](https://www.designdb.com): 디자인 표준 대가 기준, 표준계약서 등 외주 시 참고할 공식 자료.
-- [Upwork](https://www.upwork.com): 글로벌 프리랜서 플랫폼. 해외 클라이언트와 작업.
-- [Fiverr](https://www.fiverr.com): 서비스 단위로 판매하는 글로벌 프리랜서 마켓.
-- [Toptal](https://www.toptal.com): 상위 프리랜서만 선별하는 프리미엄 매칭.
-- [99designs](https://99designs.com): 디자인 콘테스트·1:1 프로젝트 플랫폼.
-- [Contra](https://contra.com): 수수료 없는 독립 프리랜서 플랫폼. 포트폴리오 기능 포함.
-
-## 채용공고
-
-디자이너 채용, 기업 정보, 커리어.
-
-- [원티드](https://www.wanted.co.kr): IT·스타트업 채용의 중심. 프로덕트 디자이너 공고가 많습니다.
-- [사람인](https://www.saramin.co.kr): 국내 대표 채용 사이트.
-- [잡코리아](https://www.jobkorea.co.kr): 국내 대표 채용 사이트.
-- [로켓펀치](https://www.rocketpunch.com): 스타트업 채용·비즈니스 네트워크.
-- [디자이너잡](https://www.designerjob.co.kr): 디자이너 전문 채용 사이트.
-- [직행](https://zighang.com): 여러 채용 사이트와 기업 채용 페이지의 공고를 한곳에 모아 보여 줍니다. 디자인 직군만 따로 볼 수 있습니다.
-- [랠릿](https://www.rallit.com): 인크루트의 IT·디자인 직군 채용 플랫폼.
-- [리멤버](https://www.rememberapp.co.kr): 명함 앱 기반 경력직 채용 제안.
-- [잡플래닛](https://www.jobplanet.co.kr): 기업 리뷰·연봉 정보. 지원 전 회사 분위기 확인.
-- [캐치](https://www.catch.co.kr): 기업 정보·채용 공고·취업 준비 정보.
-- [블라인드](https://www.teamblind.com/kr): 익명 직장인 커뮤니티. 회사 내부 이야기 참고.
-- [인디드](https://kr.indeed.com): 글로벌 채용 검색 엔진의 한국판.
-- [LinkedIn Jobs](https://www.linkedin.com/jobs/): 글로벌·외국계 기업 채용.
-- [Dribbble Jobs](https://dribbble.com/jobs): 해외 디자인 채용 보드.
-- [Behance Jobs](https://www.behance.net/joblist): 비핸스 채용 공고.
-- [Working Not Working](https://workingnotworking.com): 크리에이티브 전문 인재·채용 플랫폼.
-- [UX Jobs Board](https://uxjobsboard.com): UX 직군 전문 채용 보드.
-- [Remote OK](https://remoteok.com): 원격 근무 채용 모음. 디자인 카테고리 제공.
-- [Glassdoor](https://www.glassdoor.com): 글로벌 기업 리뷰·연봉·채용 정보.
-- [Wellfound](https://wellfound.com): 스타트업 채용 플랫폼(구 AngelList Talent).
 
 ## AI
 
@@ -399,6 +333,56 @@
 - [NotebookLM](https://notebooklm.google.com): 자료를 올리면 요약·질문·팟캐스트로 정리해 주는 구글 AI.
 - [Hugging Face](https://huggingface.co): 오픈소스 AI 모델·데모 허브.
 
+## 디자인 개발
+
+디자인 시스템, 플랫폼 가이드라인, 인터랙션 구현.
+
+### 디자인 시스템
+
+- [KRDS 디지털정부서비스 UI/UX](https://www.krds.go.kr): 한국 디지털 정부서비스 UI/UX 가이드라인. 공공 프로젝트 필수 참고.
+- [Material Design 3](https://m3.material.io): 구글 머티리얼 디자인 가이드라인과 컴포넌트.
+- [Apple HIG](https://developer.apple.com/design/human-interface-guidelines/): iOS·macOS 등 애플 플랫폼 휴먼 인터페이스 가이드라인.
+- [LINE Design System](https://designsystem.line.me): 라인의 공개 디자인 시스템.
+- [Atlassian Design System](https://atlassian.design): 문서화가 잘 된 디자인 시스템의 교과서.
+- [Shopify Polaris](https://shopify.dev/docs/api/polaris): 쇼피파이 디자인 시스템. 콘텐츠 가이드가 특히 좋습니다.
+- [IBM Carbon](https://carbondesignsystem.com): IBM의 오픈소스 디자인 시스템.
+- [Ant Design](https://ant.design): 엔터프라이즈 UI 디자인 언어와 React 컴포넌트.
+- [Design Systems Repo](https://designsystemsrepo.com): 공개된 디자인 시스템 모음.
+- [Component Gallery](https://component.gallery): 여러 디자인 시스템의 동일 컴포넌트를 비교해 볼 수 있는 갤러리.
+- [Zeroheight](https://zeroheight.com): 디자인 시스템 문서화 플랫폼.
+- [Supernova](https://www.supernova.io): 디자인 토큰 관리와 코드 동기화.
+- [Zeplin](https://zeplin.io): 디자인-개발 핸드오프 툴.
+
+### 컴포넌트 · 프레임워크
+
+- [shadcn/ui](https://ui.shadcn.com): 복사해서 쓰는 React 컴포넌트. 최근 웹 UI의 기본값처럼 쓰입니다.
+- [Tailwind CSS](https://tailwindcss.com): 유틸리티 클래스 기반 CSS 프레임워크.
+- [Radix UI](https://www.radix-ui.com): 접근성이 보장된 헤드리스 UI 컴포넌트.
+- [Storybook](https://storybook.js.org): UI 컴포넌트를 독립적으로 개발·문서화하는 툴.
+- [Bootstrap](https://getbootstrap.com): 가장 오래 쓰인 CSS 프레임워크. 반응형 그리드와 컴포넌트.
+- [Uiverse](https://uiverse.io): 커뮤니티가 만든 오픈소스 CSS 버튼·로더·카드 모음.
+
+### 애니메이션 · 인터랙션
+
+- [Codrops](https://tympanus.net/codrops/): 고급 웹 인터랙션·애니메이션 데모와 튜토리얼.
+- [CodePen](https://codepen.io): 프론트엔드 코드 스니펫 공유 플레이그라운드.
+- [GSAP](https://gsap.com): 웹 애니메이션 라이브러리의 표준.
+- [Motion](https://motion.dev): React·JS용 모던 애니메이션 라이브러리(구 Framer Motion).
+- [Shaders](https://shaders.com): 웹용 셰이더 효과를 에디터로 디자인하고 컴포넌트로 바로 가져다 쓰는 플랫폼. 제작은 무료, 실서비스 적용은 유료.
+- [Three.js](https://threejs.org): 웹 3D 라이브러리. 예제 갤러리가 인스피레이션이 됩니다.
+- [Easings.net](https://easings.net): 이징 함수 치트시트.
+- [cubic-bezier.com](https://cubic-bezier.com): CSS 베지어 이징 커브 시각 편집기.
+- [Animista](https://animista.net): CSS 애니메이션을 눌러보며 골라 코드 복사.
+
+### 문서 · 접근성 · 실습
+
+- [MDN Web Docs](https://developer.mozilla.org/ko/): HTML·CSS·JS 공식 레퍼런스 문서.
+- [CSS-Tricks](https://css-tricks.com): CSS 기법 아티클과 가이드.
+- [Can I Use](https://caniuse.com): 브라우저별 CSS·JS 기능 지원 여부 확인.
+- [WCAG 2.2 Quick Reference](https://www.w3.org/WAI/WCAG22/quickref/): 웹 접근성 지침 빠른 참조.
+- [Responsively](https://responsively.app): 여러 기기 화면을 동시에 보며 반응형을 확인하는 브라우저.
+- [Frontend Mentor](https://www.frontendmentor.io): 디자인 시안을 코드로 구현하며 배우는 실습 플랫폼.
+
 ## 커뮤니티 / 매거진
 
 아티클, 뉴스레터, 강의, 디자이너 커뮤니티.
@@ -484,6 +468,49 @@
 - [디자인정글 (Instagram)](https://www.instagram.com/designjungle/): 디자인 뉴스와 전시 소식.
 - [Design Matters (Debbie Millman)](https://www.designmattersmedia.com): 가장 오래된 디자인 팟캐스트. 디자이너·작가 인터뷰.
 - [Design Details](https://designdetails.fm): 프로덕트 디자이너 두 명의 실무 이야기 팟캐스트.
+
+## 외주 / 프리랜서
+
+외주 매칭 플랫폼, 계약서·대가 기준.
+
+- [크몽](https://kmong.com): 국내 최대 프리랜서 마켓. 디자인 카테고리가 가장 활발합니다.
+- [숨고](https://soomgo.com): 견적 요청 기반 전문가 매칭 플랫폼.
+- [위시켓](https://www.wishket.com): IT·디자인 프로젝트 아웃소싱 플랫폼. 규모 있는 프로젝트가 많습니다.
+- [프리모아](https://www.freemoa.net): 프리랜서 프로젝트 매칭 플랫폼.
+- [라우드소싱](https://www.loud.kr): 로고·네이밍·패키지 디자인 콘테스트 플랫폼.
+- [이랜서](https://www.elancer.co.kr): IT 프리랜서 매칭. 상주 프로젝트가 많습니다.
+- [원티드 긱스](https://www.wanted.co.kr/gigs): 원티드의 프리랜서·긱 프로젝트 매칭.
+- [디자인DB (한국디자인진흥원)](https://www.designdb.com): 디자인 표준 대가 기준, 표준계약서 등 외주 시 참고할 공식 자료.
+- [Upwork](https://www.upwork.com): 글로벌 프리랜서 플랫폼. 해외 클라이언트와 작업.
+- [Fiverr](https://www.fiverr.com): 서비스 단위로 판매하는 글로벌 프리랜서 마켓.
+- [Toptal](https://www.toptal.com): 상위 프리랜서만 선별하는 프리미엄 매칭.
+- [99designs](https://99designs.com): 디자인 콘테스트·1:1 프로젝트 플랫폼.
+- [Contra](https://contra.com): 수수료 없는 독립 프리랜서 플랫폼. 포트폴리오 기능 포함.
+
+## 채용공고
+
+디자이너 채용, 기업 정보, 커리어.
+
+- [원티드](https://www.wanted.co.kr): IT·스타트업 채용의 중심. 프로덕트 디자이너 공고가 많습니다.
+- [사람인](https://www.saramin.co.kr): 국내 대표 채용 사이트.
+- [잡코리아](https://www.jobkorea.co.kr): 국내 대표 채용 사이트.
+- [로켓펀치](https://www.rocketpunch.com): 스타트업 채용·비즈니스 네트워크.
+- [디자이너잡](https://www.designerjob.co.kr): 디자이너 전문 채용 사이트.
+- [직행](https://zighang.com): 여러 채용 사이트와 기업 채용 페이지의 공고를 한곳에 모아 보여 줍니다. 디자인 직군만 따로 볼 수 있습니다.
+- [랠릿](https://www.rallit.com): 인크루트의 IT·디자인 직군 채용 플랫폼.
+- [리멤버](https://www.rememberapp.co.kr): 명함 앱 기반 경력직 채용 제안.
+- [잡플래닛](https://www.jobplanet.co.kr): 기업 리뷰·연봉 정보. 지원 전 회사 분위기 확인.
+- [캐치](https://www.catch.co.kr): 기업 정보·채용 공고·취업 준비 정보.
+- [블라인드](https://www.teamblind.com/kr): 익명 직장인 커뮤니티. 회사 내부 이야기 참고.
+- [인디드](https://kr.indeed.com): 글로벌 채용 검색 엔진의 한국판.
+- [LinkedIn Jobs](https://www.linkedin.com/jobs/): 글로벌·외국계 기업 채용.
+- [Dribbble Jobs](https://dribbble.com/jobs): 해외 디자인 채용 보드.
+- [Behance Jobs](https://www.behance.net/joblist): 비핸스 채용 공고.
+- [Working Not Working](https://workingnotworking.com): 크리에이티브 전문 인재·채용 플랫폼.
+- [UX Jobs Board](https://uxjobsboard.com): UX 직군 전문 채용 보드.
+- [Remote OK](https://remoteok.com): 원격 근무 채용 모음. 디자인 카테고리 제공.
+- [Glassdoor](https://www.glassdoor.com): 글로벌 기업 리뷰·연봉·채용 정보.
+- [Wellfound](https://wellfound.com): 스타트업 채용 플랫폼(구 AngelList Talent).
 
 ## 디자인 스타일 사전
 

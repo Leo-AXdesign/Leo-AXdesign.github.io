@@ -170,7 +170,7 @@
         </div>
         <div class="grid2">
           <div class="f"><label for="s-cat">분야</label><select class="sel" id="s-cat" required></select></div>
-          <div class="f" id="s-sub-wrap" hidden><label for="s-sub">AI 소분류</label><select class="sel" id="s-sub"></select></div>
+          <div class="f" id="s-sub-wrap" hidden><label for="s-sub">소분류</label><select class="sel" id="s-sub"></select></div>
         </div>
         <div class="f"><span class="lab">태그</span><div class="checks" id="s-tags"></div>
           <span class="hint">한국 서비스면 '한국', 요금에 따라 '무료'나 '유료'. 크리에이터 분야는 유튜브·인스타그램·팟캐스트 중에서.</span></div>
@@ -370,7 +370,6 @@
       S.cats.map(c => `<option value="${c.id}">${esc(c.label)} (${counts[c.id] || 0})</option>`).join('');
     cs.value = keep;
     $('#s-cat').innerHTML = '<option value="">분야 고르기</option>' + S.cats.map(c => `<option value="${c.id}">${esc(c.label)}</option>`).join('');
-    $('#s-sub').innerHTML = S.subs.map(x => `<option>${esc(x)}</option>`).join('');
     $('#s-tags').innerHTML = S.tags.map(t => `<label class="chk"><input type="checkbox" value="${esc(t)}" />${esc(t)}</label>`).join('');
     listSites();
     if (curSite) fillSite(S.sites.find(s => s.url === curSite)); else fillSite(null);
@@ -397,7 +396,14 @@
     if (dirty && !confirm('저장하지 않은 내용이 있습니다. 새로 시작할까요?')) return;
     curSite = null; fillSite(null); listSites(); $('#s-name').focus();
   });
-  $('#s-cat').addEventListener('change', () => { $('#s-sub-wrap').hidden = $('#s-cat').value !== 'ai'; });
+  // 소분류가 있는 분야(AI, UI/UX, 디자인 개발 등)를 고르면 그 분야의 소분류 목록을 보여 줍니다
+  function syncSub(val) {
+    const list = S.subs[$('#s-cat').value] || [];
+    $('#s-sub-wrap').hidden = !list.length;
+    $('#s-sub').innerHTML = list.map(x => `<option>${esc(x)}</option>`).join('');
+    if (list.length) $('#s-sub').value = list.includes(val) ? val : list[0];
+  }
+  $('#s-cat').addEventListener('change', () => syncSub($('#s-sub').value));
 
   function fillSite(s) {
     $('#site-title').textContent = s ? s.name : '새 사이트';
@@ -406,8 +412,7 @@
     $('#s-name').value = s ? s.name : '';
     $('#s-url').value = s ? s.url : '';
     $('#s-cat').value = s ? s.cat : ($('#site-cat').value || '');
-    $('#s-sub-wrap').hidden = $('#s-cat').value !== 'ai';
-    $('#s-sub').value = s && s.sub ? s.sub : S.subs[0];
+    syncSub(s && s.sub);
     $('#s-desc').value = s ? s.desc : '';
     $('#s-name-en').value = s ? s.name_en : '';
     $('#s-desc-en').value = s ? s.desc_en : '';
@@ -430,7 +435,7 @@
     try {
       const r = await api('site', {
         orig_url: curSite, name: $('#s-name').value, url: $('#s-url').value, cat: $('#s-cat').value,
-        sub: $('#s-cat').value === 'ai' ? $('#s-sub').value : '', desc: $('#s-desc').value,
+        sub: $('#s-sub-wrap').hidden ? '' : $('#s-sub').value, desc: $('#s-desc').value,
         tags: [...document.querySelectorAll('#s-tags input:checked')].map(i => i.value),
         name_en: $('#s-name-en').value, desc_en: $('#s-desc-en').value,
       });
