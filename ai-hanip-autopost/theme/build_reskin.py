@@ -10,6 +10,9 @@ base = (HERE / "backup-contempo-20261015.xml").read_text(encoding="utf-8")
 css = (HERE / "reskin.css").read_text(encoding="utf-8")
 js = (HERE / "reskin.js").read_text(encoding="utf-8")
 assert "]]>" not in css and "]]>" not in js
+# Blogger 스킨 파서는 CSS 주석 속 꺾쇠(< >)를 태그로 읽어 테마 전체를 깨뜨리므로 괄호로 바꿔 둠
+import re
+css = re.sub(r"/\*.*?\*/", lambda m: m.group(0).replace("<", "(").replace(">", ")"), css, flags=re.S)
 
 head = """<link crossorigin='anonymous' href='https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css' rel='stylesheet'/>
 <script>//<![CDATA[

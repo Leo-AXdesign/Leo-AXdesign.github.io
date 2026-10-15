@@ -109,3 +109,5 @@ designrefs.com 과 같은 흑백 미니멀 스타일. 기존 Contempo 테마의 
 - `theme/reskin.css` — 스타일 (다크 모드 포함) / `theme/reskin.js` — 다크 모드 버튼, 홈 머리말, 프롬프트 복사 버튼
 - `theme/backup-contempo-20261015.xml` — 적용 전 원래 테마 (되돌릴 때 이걸 붙여넣기)
 - 수정 후 적용: `python theme/build_reskin.py` → `theme/ai-hanip-reskin.xml` 을 Blogger → 테마 → ▼ → HTML 편집에 통째로 붙여넣고 **미리보기(눈 아이콘)로 확인한 뒤** 저장
+  - 미리보기가 빈 화면이면 먼저 미리보기의 새로고침 버튼을 눌러 보세요(가끔 일시적). 계속 비면 CSS 주석에 `<` `>`가 들어간 게 원인입니다(빌드 스크립트가 자동으로 치환).
+  - 편집기가 붙여넣기를 무시하면: XML 을 공개 저장소(raw.githubusercontent.com)에 올린 뒤 편집기 페이지 콘솔에서 `fetch` 로 받아 CodeMirror `setValue` 하는 방법이 확실합니다.
