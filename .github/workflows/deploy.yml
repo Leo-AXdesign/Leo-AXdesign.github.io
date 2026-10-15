@@ -30,6 +30,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/configure-pages@v5
+      # 블로그 자동 포스팅 도구(AI 한입)는 저장소에만 두고 사이트로는 내보내지 않습니다
+      - name: Exclude non-site folders
+        run: rm -rf ai-hanip-autopost
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
         with:
