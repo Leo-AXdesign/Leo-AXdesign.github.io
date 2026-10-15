@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 863" role="img" aria-labelledby="t d">
+  <title id="t">부분 수정을 말로 시킬 때</title>
+  <desc id="d">나노 바나나 2.1은 고칠 곳을 말로 고르는 편집이 좋아졌지만, 모델 카드는 왼쪽과 오른쪽 같은 위치를 헷갈릴 때가 있다고 밝혔다. 그래서 왼쪽 위 글자, 오른쪽 사람처럼 위치로 말하기보다 SALE이라는 글자, 모자 쓴 사람처럼 대상을 짚어 말하는 편이 낫다.</desc>
+  <rect width="600" height="863" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="32" y="66" font-size="34" font-weight="800" fill="#111111" text-anchor="start">부분 수정을 말로 시킬 때</text>
+    <text x="32" y="99" font-size="21" font-weight="400" fill="#6B6B6B" text-anchor="start">모델 카드가 밝힌 약점: 왼쪽·오른쪽 같은 위치를 헷갈림</text>
+    <rect x="32" y="139" width="536" height="230" rx="10" fill="#F2F2F2" stroke="#111111" stroke-width="1.5"/>
+    <text x="50" y="183" font-size="32" font-weight="900" fill="#111111" text-anchor="start">SALE</text>
+    <text x="50" y="211" font-size="15" font-weight="600" fill="#444444" text-anchor="start">가을 신상</text>
+    <circle cx="235.68" cy="277" r="17" fill="#D9D9D9"/>
+    <path d="M205.68 355q0 -48 30 -48q30 0 30 48z" fill="#D9D9D9"/>
+    <circle cx="417.91999999999996" cy="277" r="17" fill="#D9D9D9"/>
+    <path d="M387.91999999999996 355q0 -48 30 -48q30 0 30 48z" fill="#D9D9D9"/>
+    <path d="M393.91999999999996 267h48M403.91999999999996 267v-16h28v16" fill="#111111" stroke="#111111" stroke-width="5" stroke-linejoin="round"/>
+    <text x="32" y="415" font-size="24" font-weight="800" fill="#111111" text-anchor="start">위치로 말하면</text>
+    <rect x="32" y="437" width="536" height="46" rx="23.0" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <text x="52" y="467.2" font-size="20" font-weight="600" fill="#111111" text-anchor="start">왼쪽 위 글자를 바꿔 줘</text>
+    <rect x="32" y="495" width="536" height="46" rx="23.0" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <text x="52" y="525.2" font-size="20" font-weight="600" fill="#111111" text-anchor="start">오른쪽 사람을 지워 줘</text>
+    <text x="32" y="573" font-size="19" font-weight="400" fill="#6B6B6B" text-anchor="start">✕ 엉뚱한 곳이 바뀔 수 있음</text>
+    <text x="32" y="613" font-size="24" font-weight="800" fill="#111111" text-anchor="start">대상으로 말하면</text>
+    <rect x="32" y="635" width="536" height="46" rx="23.0" fill="#111111" stroke="#111111" stroke-width="1.5"/>
+    <text x="52" y="665.2" font-size="20" font-weight="600" fill="#FFFFFF" text-anchor="start">‘SALE’을 ‘50% OFF’로 바꿔 줘</text>
+    <rect x="32" y="693" width="536" height="46" rx="23.0" fill="#111111" stroke="#111111" stroke-width="1.5"/>
+    <text x="52" y="723.2" font-size="20" font-weight="600" fill="#FFFFFF" text-anchor="start">모자 쓴 사람을 지워 줘</text>
+    <text x="32" y="771" font-size="19" font-weight="700" fill="#111111" text-anchor="start">✓ 고칠 대상이 하나로 정해짐</text>
+    <line x1="32" y1="803" x2="568" y2="803" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="32" y="831" font-size="17" font-weight="400" fill="#6B6B6B" text-anchor="start">출처: 나노 바나나 2.1 모델 카드의 한계 항목. 문장은 설명을 위한 예시.</text>
+  </g>
+</svg>

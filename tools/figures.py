@@ -1898,6 +1898,99 @@ def bracket(lang, wide):
     return wrap(W, round(y + pad), t["title"], t["desc"], out)
 
 
+# =========================================================
+# 19. 말로 하는 부분 수정: 위치보다 대상 (2026-10-15 '나노 바나나 2.1' 글)
+# =========================================================
+MASKWORDS = {
+    "ko": {
+        "title": "부분 수정을 말로 시킬 때",
+        "sub": "모델 카드가 밝힌 약점: 왼쪽·오른쪽 같은 위치를 헷갈림",
+        "poster": ["SALE", "가을 신상"],
+        "bad_head": "위치로 말하면",
+        "bad": ["왼쪽 위 글자를 바꿔 줘", "오른쪽 사람을 지워 줘"],
+        "good_head": "대상으로 말하면",
+        "good": ["‘SALE’을 ‘50% OFF’로 바꿔 줘", "모자 쓴 사람을 지워 줘"],
+        "note": "엉뚱한 곳이 바뀔 수 있음",
+        "note2": "고칠 대상이 하나로 정해짐",
+        "source": "출처: 나노 바나나 2.1 모델 카드의 한계 항목. 문장은 설명을 위한 예시.",
+        "desc": "나노 바나나 2.1은 고칠 곳을 말로 고르는 편집이 좋아졌지만, 모델 카드는 왼쪽과 오른쪽 같은 위치를 헷갈릴 때가 있다고 밝혔다. 그래서 왼쪽 위 글자, 오른쪽 사람처럼 위치로 말하기보다 SALE이라는 글자, 모자 쓴 사람처럼 대상을 짚어 말하는 편이 낫다.",
+    },
+    "en": {
+        "title": "Asking for a partial edit in words",
+        "sub": "A weakness the model card admits: mixing up left and right",
+        "poster": ["SALE", "Fall arrivals"],
+        "bad_head": "By position",
+        "bad": ["Change the text at top left", "Remove the person on the right"],
+        "good_head": "By object",
+        "good": ["Change ‘SALE’ to ‘50% OFF’", "Remove the person in the hat"],
+        "note": "The wrong spot may change",
+        "note2": "Only one thing fits the description",
+        "source": "Source: limitations in the Nano Banana 2.1 model card. Prompts are examples.",
+        "desc": "Nano Banana 2.1 is better at editing a region you describe in words, but its model card says it sometimes confuses positions like left and right. So instead of 'the text at top left' or 'the person on the right', name the object: the word SALE, the person in the hat.",
+    },
+}
+
+
+def maskwords(lang, wide):
+    t = MASKWORDS[lang]
+    if wide:
+        W, pad, ts, ss, hs, fs = 1200, 40, 30, 19, 21, 18
+    else:
+        W, pad, ts, ss, hs, fs = 600, 32, 34, 21, 24, 20
+    out, y = [], pad + ts
+    out.append(text(pad, y, t["title"], ts, weight=800))
+    y += ss + 12
+    out.append(text(pad, y, t["sub"], ss, MUTED))
+    y += 40
+
+    def poster(x, y0, w, h):
+        g = [f'<rect x="{x}" y="{y0}" width="{w}" height="{h}" rx="10" fill="{SOFT}" stroke="{INK}" stroke-width="1.5"/>']
+        g.append(text(x + 18, y0 + 44, t["poster"][0], 32, INK, 900))
+        g.append(text(x + 18, y0 + 72, t["poster"][1], 15, BODY, 600))
+        # 사람 둘: 왼쪽은 맨머리, 오른쪽은 모자
+        for k, hat in ((0, False), (1, True)):
+            cx = x + w * (0.38 + 0.34 * k); base = y0 + h - 14
+            g.append(f'<circle cx="{cx}" cy="{base - 78}" r="17" fill="{RULE}"/>')
+            g.append(f'<path d="M{cx - 30} {base}q0 -48 30 -48q30 0 30 48z" fill="{RULE}"/>')
+            if hat:
+                g.append(f'<path d="M{cx - 24} {base - 88}h48M{cx - 14} {base - 88}v-16h28v16" fill="{INK}" stroke="{INK}" stroke-width="5" stroke-linejoin="round"/>')
+        return g
+
+    def column(x, w, head, lines, note, good, y0):
+        g = [text(x, y0, head, hs, INK, 800)]
+        yy = y0 + 22
+        for ln in lines:
+            bh = fs + 26
+            g.append(f'<rect x="{x}" y="{yy}" width="{w}" height="{bh}" rx="{bh / 2}" fill="{INK if good else BG}" stroke="{INK}" stroke-width="1.5"/>')
+            g.append(text(x + 20, yy + bh / 2 + fs * 0.36, ln, fs, BG if good else INK, 600))
+            yy += bh + 12
+        g.append(text(x, yy + fs, ("✓ " if good else "✕ ") + note, fs - 1, INK if good else MUTED, 700 if good else 400))
+        return g, yy + fs + 10
+
+    if wide:
+        pw, ph = 300, 240
+        out += poster(pad, y, pw, ph)
+        cw = (W - pad * 2 - pw - 40 - 30) / 2
+        x1 = pad + pw + 40
+        g1, b1 = column(x1, cw, t["bad_head"], t["bad"], t["note"], False, y + 24)
+        g2, b2 = column(x1 + cw + 30, cw, t["good_head"], t["good"], t["note2"], True, y + 24)
+        out += g1 + g2
+        y = max(y + ph, b1, b2) + 40
+    else:
+        pw, ph = W - pad * 2, 230
+        out += poster(pad, y, pw, ph)
+        y += ph + 46
+        g1, y = column(pad, W - pad * 2, t["bad_head"], t["bad"], t["note"], False, y)
+        y += 30
+        g2, y = column(pad, W - pad * 2, t["good_head"], t["good"], t["note2"], True, y)
+        out += g1 + g2
+        y += 36
+    out.append(f'<line x1="{pad}" y1="{y - 14}" x2="{W - pad}" y2="{y - 14}" stroke="{RULE}" stroke-width="1"/>')
+    y += 14
+    out.append(text(pad, y, t["source"], (ss - 3) if wide else (ss - 4), MUTED))
+    return wrap(W, round(y + pad), t["title"], t["desc"], out)
+
+
 FIGS = {"openai-app-platforms": timeline, "chatgpt-plugin-extensions": scheme,
         "shopify-canvas-compare": canvas_compare, "design-md-anatomy": designmd,
         "image-edit-drift": drift, "flux3-bbox-layout": bbox, "instructmesh-flow": meshflow,
@@ -1905,7 +1998,7 @@ FIGS = {"openai-app-platforms": timeline, "chatgpt-plugin-extensions": scheme,
         "week-1001-1006": week, "artcraft-suite": artcraft,
         "fanta-who-did-what": fanta, "macos27-ai-switch": macsw, "ai-search-brand": aisearch,
         "ai-draft-iceberg": iceberg, "ai-draft-steps": aisteps,
-        "arena-bracket": bracket,
+        "arena-bracket": bracket, "mask-by-words": maskwords,
         "intelligent-ui-answer": iui, "ui-rules-owner": rules}
 
 if __name__ == "__main__":

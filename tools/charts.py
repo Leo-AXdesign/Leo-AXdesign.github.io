@@ -355,6 +355,35 @@ CHARTS = {
              "rows": [("3D (6th)", 69, "69%"), ("UI Component (1st)", 66, "66%"), ("Game Dev (5th)", 64, "64%"), ("Website (1st)", 62, "62%")]},
         ],
     },
+    # ---- 2026-10-15 '나노 바나나 2.1' 글 ----
+    "nano-banana-21-price": {
+        "title": "1K·2K는 절반, 4K는 4분의 1만 내렸다",
+        "sub": "이미지 한 장 값(달러) · Gemini API 표준 요금 · 2026. 10. 15 기준",
+        "source": ["출처: Google Gemini API 요금표.", "발표 직후 보도의 4K 0.0756달러는 지금 요금표와 다르다."],
+        "desc": "이미지 한 장 값. 1K는 나노 바나나 2가 0.067달러, 2.1이 0.0336달러. 2K는 0.101달러에서 0.0504달러. 4K는 0.151달러에서 0.113달러.",
+        "panels": [
+            {"title": "1K", "hint": "낮을수록 좋음",
+             "rows": [("나노 바나나 2", 0.067, "$0.067"), ("나노 바나나 2.1", 0.0336, "$0.034")]},
+            {"title": "2K", "hint": "낮을수록 좋음",
+             "rows": [("나노 바나나 2", 0.101, "$0.101"), ("나노 바나나 2.1", 0.0504, "$0.050")]},
+            {"title": "4K", "hint": "낮을수록 좋음",
+             "rows": [("나노 바나나 2", 0.151, "$0.151"), ("나노 바나나 2.1", 0.113, "$0.113")]},
+        ],
+    },
+    "nano-banana-21-price-en": {
+        "title": "Half price at 1K and 2K, a quarter off at 4K",
+        "sub": "Price per image (USD) · Gemini API standard tier · as of Oct 15, 2026",
+        "source": ["Source: Google Gemini API pricing page.", "Launch-day reports of $0.0756 for 4K no longer match the page."],
+        "desc": "Price per image. 1K: Nano Banana 2 $0.067, 2.1 $0.0336. 2K: $0.101 to $0.0504. 4K: $0.151 to $0.113.",
+        "panels": [
+            {"title": "1K", "hint": "lower is better",
+             "rows": [("Nano Banana 2", 0.067, "$0.067"), ("Nano Banana 2.1", 0.0336, "$0.034")]},
+            {"title": "2K", "hint": "lower is better",
+             "rows": [("Nano Banana 2", 0.101, "$0.101"), ("Nano Banana 2.1", 0.0504, "$0.050")]},
+            {"title": "4K", "hint": "lower is better",
+             "rows": [("Nano Banana 2", 0.151, "$0.151"), ("Nano Banana 2.1", 0.113, "$0.113")]},
+        ],
+    },
 }
 
 

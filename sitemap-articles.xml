@@ -3,6 +3,14 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
+    <loc>https://designrefs.com/articles/nano-banana-2-1-designers/</loc>
+    <lastmod>2026-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://designrefs.com/articles/nano-banana-2-1-designers/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://designrefs.com/en/articles/nano-banana-2-1-designers/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://designrefs.com/articles/nano-banana-2-1-designers/"/>
+    <image:image><image:loc>https://designrefs.com/og/nano-banana-2-1-designers.png</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://designrefs.com/articles/muse-wonder-design-arena/</loc>
     <lastmod>2026-10-14</lastmod>
     <xhtml:link rel="alternate" hreflang="ko" href="https://designrefs.com/articles/muse-wonder-design-arena/"/>
@@ -193,6 +201,14 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://designrefs.com/en/articles/ai-image-commercial-use/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://designrefs.com/articles/ai-image-commercial-use/"/>
     <image:image><image:loc>https://designrefs.com/og/ai-image-commercial-use.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://designrefs.com/en/articles/nano-banana-2-1-designers/</loc>
+    <lastmod>2026-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://designrefs.com/articles/nano-banana-2-1-designers/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://designrefs.com/en/articles/nano-banana-2-1-designers/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://designrefs.com/articles/nano-banana-2-1-designers/"/>
+    <image:image><image:loc>https://designrefs.com/og/en/nano-banana-2-1-designers.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://designrefs.com/en/articles/muse-wonder-design-arena/</loc>

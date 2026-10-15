@@ -1,6 +1,7 @@
 // 이 파일은 tools/build-articles.py 가 만듭니다. 직접 고치지 마세요.
 // 글은 content/articles/*.md 에서 고칩니다.
 const ARTICLES = [
+  { slug: "nano-banana-2-1-designers", title: "나노 바나나 2.1, 값은 절반이 됐다는데 디자이너가 확인할 것", desc: "구글의 이미지 모델 나노 바나나 2.1이 나왔다. 1K와 2K는 값이 절반이 됐지만 4K는 그렇지 않고, 글자는 좋아졌지만 모델 카드에 약점도 적혀 있다. 요금표와 모델 카드를 직접 확인해 그림과 숫자로 정리했다.", date: "2026-10-15", tag: "AI 디자인", min: 4, views: ["ai", "tool", "graphic"] },
   { slug: "muse-wonder-design-arena", title: "메타의 첫 최상위 모델이 디자인 투표 1위, 이 순위를 어떻게 읽을까", desc: "메타가 10월 12일 내놓은 Muse Wonder가 사람들이 눈으로 골라 매기는 Design Arena에서 웹사이트와 UI 부문 1위에 올랐다. 투표가 어떻게 돌아가는지, 1위가 말해 주는 것과 말해 주지 않는 것을 그림과 숫자로 정리했다.", date: "2026-10-14", tag: "AI 디자인", min: 5, views: ["ai", "uiux", "dev"] },
   { slug: "ai-draft-client-pixel-pusher", title: "클라이언트가 AI 시안을 보내며 \"이것만 다듬어 주세요\" 할 때", desc: "클라이언트와 상사가 챗GPT, 클로드로 만든 시안을 건네며 마무리만 부탁하는 일이 늘고 있다. 값은 깎이고 일은 그대로인 이 상황에서, 무엇이 남아 있는지 그림으로 정리하고 견적과 대화에 쓸 수 있는 순서를 담았다.", date: "2026-10-13", tag: "AI 디자인", min: 4, views: ["ai", "graphic"] },
   { slug: "ai-search-brand-visibility", title: "검색 결과 대신 AI의 답이 첫 화면이 될 때, 브랜드는 어떻게 보이나", desc: "히드로 공항이 어도비와 손잡고 AI 답변 속에 자기 브랜드가 어떻게 언급되는지 재기 시작했다. 여행자 넷 중 하나가 AI로 정보를 찾는다는 지금, 브랜드를 다루는 디자이너가 챙길 것을 그림과 표로 정리했다.", date: "2026-10-12", tag: "AI 디자인", min: 3, views: ["ai", "graphic"] },

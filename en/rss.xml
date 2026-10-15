@@ -6,7 +6,66 @@
     <atom:link href="https://designrefs.com/en/rss.xml" rel="self" type="application/rss+xml" />
     <description>Notes from a designer in Korea: working with AI, putting style into words, collecting references and design communities. Translated from Korean.</description>
     <language>en</language>
-    <lastBuildDate>Wed, 14 Oct 2026 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 15 Oct 2026 09:00:00 +0900</lastBuildDate>
+    <item>
+      <title>Nano Banana 2.1 is &quot;half price&quot;. What designers should check</title>
+      <link>https://designrefs.com/en/articles/nano-banana-2-1-designers/</link>
+      <guid isPermaLink="true">https://designrefs.com/en/articles/nano-banana-2-1-designers/</guid>
+      <pubDate>Thu, 15 Oct 2026 09:00:00 +0900</pubDate>
+      <category>AI Design</category>
+      <description>Google&#x27;s image model Nano Banana 2.1 is out. 1K and 2K images cost half as much, but 4K doesn&#x27;t, and text got better while the model card lists weak spots. Checked against Google&#x27;s pricing page and model card, with charts and numbers.</description>
+      <content:encoded><![CDATA[    <p class="ptext">Google&#x27;s image model Nano Banana has become a familiar name in Korea too. On October 6 it moved up to version 2.1.</p>
+    <p class="ptext">Most launch headlines said the same thing: &quot;4K at half price.&quot; But when I opened Google&#x27;s pricing page today, only 1K and 2K were half price. 4K came down by a quarter. And the &quot;old model shuts down October 29&quot; line in several articles doesn&#x27;t appear anywhere in Google&#x27;s own docs.</p>
+    <p class="ptext">So this piece follows the documents rather than the buzz. I went through Google&#x27;s pricing page, model card and deprecation table one by one and kept only what designers need.</p>
+    <p class="ptext"><strong>First, a disclaimer.</strong> I&#x27;m building this site with Claude Code. Every performance number below was measured by Google itself, and no one has published tests of Korean text yet.</p>
+    <h2 class="psub" id="s1">What changed</h2>
+    <p class="ptext">Nano Banana 2.1 is an image generation and editing model built on Gemini 3.6 Flash. It&#x27;s rolling out to the Gemini app, AI Mode in Search, AI Studio, the video tool Flow, the UI design tool Stitch and Google Ads.</p>
+    <p class="ptext">Google highlighted three things: visual design, editing a region you describe in words, and consistency, so the same people and objects hold across several images. You can give it up to 14 reference images, and it tracks up to four characters and ten objects among them. Aspect ratios now stretch to long strips like 8:1, which is handy for web banners and wide signage drafts.</p>
+    <p class="ptext">The smallest size, 0.5K, is gone. You now choose 1K, 2K or 4K.</p>
+    <h2 class="psub" id="s2">Price: half at 1K and 2K, less off at 4K</h2>
+    <figure class="art__fig">
+      <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/nano-banana-21-price-en-m.svg" width="600" height="1239" /><img src="https://designrefs.com/articles/img/nano-banana-21-price-en.svg" alt="Price per image. 1K went from $0.067 to $0.034 and 2K from $0.101 to $0.050, both half. 4K went from $0.151 to $0.113, a 25% cut." width="1200" height="459" loading="lazy" decoding="async" /></picture>
+      <figcaption>Price per image. 1K went from $0.067 to $0.034 and 2K from $0.101 to $0.050, both half. 4K went from $0.151 to $0.113, a 25% cut.</figcaption>
+    </figure>
+    <p class="ptext">The 4K price that spread at launch was $0.0756. The pricing page now says $0.113, because a 4K image uses more tokens than it did with the previous model. If you plan to generate a lot at 4K, redo the budget.</p>
+    <p class="ptext">The number to notice is 2K. A 2K image on the new model ($0.050) costs less than a 1K image on the old one ($0.067). The model card explains why that matters.</p>
+    <h2 class="psub" id="s3">Google&#x27;s numbers, and the weak spots it admits</h2>
+    <p class="ptext">The model card reports scores from people comparing results and picking the better one. Higher means it was picked more often.</p>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th>Evaluation</th><th>Nano Banana 2.1</th><th>Nano Banana 2</th><th>Nano Banana Pro</th></tr></thead>
+      <tbody>
+        <tr><td>Overall preference</td><td><strong>1050</strong></td><td>990</td><td>935</td></tr>
+        <tr><td>Infographic design</td><td><strong>1048</strong></td><td>961</td><td>912</td></tr>
+        <tr><td>Infographic factuality</td><td><strong>0.521</strong></td><td>0.179</td><td>0.265</td></tr>
+        <tr><td>General editing</td><td><strong>1026</strong></td><td>938</td><td>939</td></tr>
+        <tr><td>Multi-character consistency</td><td><strong>1106</strong></td><td>978</td><td>1011</td></tr>
+      </tbody>
+    </table></div>
+    <p class="art__note">Source: <a href="https://deepmind.google/models/model-cards/nano-banana-2-1/" target="_blank" rel="noopener">Nano Banana 2.1 model card</a> (October 2026). All evaluations are Google&#x27;s own.</p>
+    <p class="ptext">The biggest jump is infographic factuality, from 0.179 to 0.521. It gets numbers and names in charts wrong much less often. It&#x27;s still far from perfect, though, so always double-check any image with figures in it.</p>
+    <p class="ptext">The same model card lists weak spots. At 1K, small text often comes out blurry, and long paragraphs or page-length text are still hard. It sometimes confuses positions like left and right. It says text works &quot;across several languages&quot; but doesn&#x27;t mention Korean.</p>
+    <p class="ptext">Which brings us back to 2K. For posters or product detail images with text, generate at 2K instead of 1K. It costs less than the old model&#x27;s 1K and avoids blurry small text.</p>
+    <h2 class="psub" id="s4">Editing in words: how to ask</h2>
+    <p class="ptext">Choosing what to change by describing it, instead of painting a mask, is the area that improved most. Put it next to the left/right weakness, though, and how you ask starts to matter.</p>
+    <figure class="art__fig">
+      <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/mask-by-words-en-m.svg" width="600" height="863" /><img src="https://designrefs.com/articles/img/mask-by-words-en.svg" alt="When asking Nano Banana 2.1 for a partial edit, name the object (the word SALE, the person in the hat) rather than a position (top left, on the right). Prompts are examples." width="1200" height="475" loading="lazy" decoding="async" /></picture>
+      <figcaption>When asking Nano Banana 2.1 for a partial edit, name the object (the word SALE, the person in the hat) rather than a position (top left, on the right). Prompts are examples.</figcaption>
+    </figure>
+    <p class="ptext">&quot;The word &#x27;SALE&#x27;&quot; rather than &quot;the text at top left&quot;; &quot;the person in the hat&quot; rather than &quot;the person on the right&quot;. If only one thing on screen fits the description, the model is less likely to touch the wrong spot. I covered this shift from rerolling to fixing one spot in <a href="https://designrefs.com/en/articles/image-ai-edit-not-reroll/">last week&#x27;s image AI piece</a>.</p>
+    <h2 class="psub" id="s5">Every image carries a mark</h2>
+    <p class="ptext">Images made with Nano Banana carry SynthID, an invisible watermark. According to reports, 2.1 also attaches Content Credentials (C2PA), which record what tool made the image. Google has a short video on how to check.</p>
+    <figure class="art__fig art__video">
+      <div class="art__frame"><iframe src="https://www.youtube-nocookie.com/embed/Sm7OTow3mcY" title="How to tell whether an image was made with AI, from Google&#x27;s official YouTube channel." loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+      <figcaption>How to tell whether an image was made with AI, from Google&#x27;s official YouTube channel.</figcaption>
+    </figure>
+    <p class="ptext">This matters for client work. If you deliver images made with Nano Banana, the client can later confirm they were AI-generated. Assume it can&#x27;t be hidden and say up front where you used AI. Whether you can use the images commercially is covered in <a href="https://designrefs.com/en/articles/ai-image-commercial-use/">my piece on AI image commercial use</a>.</p>
+    <h2 class="psub" id="s6">What to try this week</h2>
+    <p class="ptext"><strong>Generate one Korean-language poster at 2K.</strong> Use real copy, with a title, subtitle and small print. No one has shown with numbers how well it handles Korean yet, so your own copy is the fastest test.</p>
+    <p class="ptext"><strong>If you use it through the API or automations, check the model name.</strong> Google recommends 2.1 as the replacement for the previous model (Nano Banana 2), but hasn&#x27;t set a shutdown date. If you&#x27;ve seen &quot;shuts down October 29&quot;, check Google&#x27;s <a href="https://ai.google.dev/gemini-api/docs/deprecations" target="_blank" rel="noopener">deprecation table</a> yourself. Neither model has a free API tier.</p>
+    <p class="ptext"><strong>Use 4K only when you need it.</strong> Unless it&#x27;s a large print image, pick drafts at 2K and render only the final one at 4K.</p>
+    <p class="ptext">AI image tools by use case are under <a href="https://designrefs.com/en/#ai">AI tools</a>.</p>
+    <p class="art__note">Sources: <a href="https://deepmind.google/models/model-cards/nano-banana-2-1/" target="_blank" rel="noopener">Nano Banana 2.1 model card</a>, <a href="https://ai.google.dev/gemini-api/docs/pricing" target="_blank" rel="noopener">Gemini API pricing</a> · <a href="https://ai.google.dev/gemini-api/docs/deprecations" target="_blank" rel="noopener">deprecations</a> (checked Oct 15), <a href="https://www.neowin.net/news/google-launches-nano-banana-21-with-better-editing-and-subject-consistency/" target="_blank" rel="noopener">Neowin</a>, <a href="https://www.androidheadlines.com/2026/10/google-launches-nano-banana-2-1-ai-images-price.html" target="_blank" rel="noopener">Android Headlines</a>, <a href="https://apidog.com/blog/nano-banana-2-1/" target="_blank" rel="noopener">Apidog</a>, <a href="https://www.youtube.com/watch?v=Sm7OTow3mcY" target="_blank" rel="noopener">Google on YouTube</a>.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Meta&#x27;s first frontier model tops a design vote. How to read that ranking</title>
       <link>https://designrefs.com/en/articles/muse-wonder-design-arena/</link>

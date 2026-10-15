@@ -6,7 +6,66 @@
     <atom:link href="https://designrefs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>디자인하면서 생각한 것들을 적습니다. AI와 같이 일하는 법, 스타일을 말로 옮기는 법, 레퍼런스와 커뮤니티 이야기.</description>
     <language>ko</language>
-    <lastBuildDate>Wed, 14 Oct 2026 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 15 Oct 2026 09:00:00 +0900</lastBuildDate>
+    <item>
+      <title>나노 바나나 2.1, 값은 절반이 됐다는데 디자이너가 확인할 것</title>
+      <link>https://designrefs.com/articles/nano-banana-2-1-designers/</link>
+      <guid isPermaLink="true">https://designrefs.com/articles/nano-banana-2-1-designers/</guid>
+      <pubDate>Thu, 15 Oct 2026 09:00:00 +0900</pubDate>
+      <category>AI 디자인</category>
+      <description>구글의 이미지 모델 나노 바나나 2.1이 나왔다. 1K와 2K는 값이 절반이 됐지만 4K는 그렇지 않고, 글자는 좋아졌지만 모델 카드에 약점도 적혀 있다. 요금표와 모델 카드를 직접 확인해 그림과 숫자로 정리했다.</description>
+      <content:encoded><![CDATA[    <p class="ptext">구글의 이미지 모델 &#x27;나노 바나나&#x27;는 국내에서도 꽤 익숙한 이름이 됐다. 그 나노 바나나가 10월 6일 2.1로 올라갔다.</p>
+    <p class="ptext">발표 직후 기사 제목은 대부분 비슷했다. &quot;절반 값에 4K.&quot; 그런데 오늘 구글 요금표를 직접 열어 보니, 절반이 된 건 1K와 2K뿐이었다. 4K는 4분의 1만 내렸다. 기사마다 나온 &#x27;10월 29일 이전 모델 종료&#x27;도 구글 공식 문서에서는 찾을 수 없었다.</p>
+    <p class="ptext">그래서 이번 글은 소문보다 문서를 따라갔다. 구글 요금표, 모델 카드, 사용 중단 일정표를 하나씩 확인해서 디자이너에게 필요한 것만 추렸다.</p>
+    <p class="ptext"><strong>먼저 밝혀 둘 것.</strong> 나는 이 사이트를 클로드 코드로 만들고 있다. 아래 성능 숫자는 모두 구글이 직접 잰 것이고, 한글 글자를 따로 시험한 결과는 아직 어디에도 없다.</p>
+    <h2 class="psub" id="s1">무엇이 달라졌나</h2>
+    <p class="ptext">나노 바나나 2.1은 제미나이 3.6 플래시를 바탕으로 만든 이미지 생성·편집 모델이다. 제미나이 앱과 검색의 AI 모드, AI 스튜디오, 영상 도구 Flow, UI 디자인 도구 Stitch, 구글 광고까지 차례로 들어가고 있다.</p>
+    <p class="ptext">구글이 내세운 건 세 가지다. 시각 디자인, 고칠 곳을 말로 고르는 편집, 그리고 여러 장을 만들어도 같은 인물과 물건이 유지되는 일관성이다. 참고 이미지는 한 번에 14장까지 넣을 수 있고, 그 안에서 인물 넷과 물건 열 개까지 따라간다. 화면 비율은 8:1처럼 아주 긴 띠 모양까지 된다. 웹 배너나 현수막 시안을 뽑을 때 쓸 만한 변화다.</p>
+    <p class="ptext">대신 가장 작은 크기였던 0.5K는 빠졌다. 이제 1K, 2K, 4K 셋 중에 고른다.</p>
+    <h2 class="psub" id="s2">값: 1K·2K는 절반, 4K는 덜 내렸다</h2>
+    <figure class="art__fig">
+      <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/nano-banana-21-price-m.svg" width="600" height="1239" /><img src="https://designrefs.com/articles/img/nano-banana-21-price.svg" alt="이미지 한 장 값. 1K는 0.067달러에서 0.034달러로, 2K는 0.101달러에서 0.050달러로 절반이 됐고, 4K는 0.151달러에서 0.113달러로 25% 내렸다." width="1200" height="459" loading="lazy" decoding="async" /></picture>
+      <figcaption>이미지 한 장 값. 1K는 0.067달러에서 0.034달러로, 2K는 0.101달러에서 0.050달러로 절반이 됐고, 4K는 0.151달러에서 0.113달러로 25% 내렸다.</figcaption>
+    </figure>
+    <p class="ptext">발표 때 퍼진 4K 가격은 0.0756달러였다. 지금 요금표에는 0.113달러로 올라 있다. 4K 한 장에 쓰는 토큰 수가 이전 모델보다 늘어난 탓이다. 4K로 많이 뽑을 계획이라면 예산을 다시 계산해 두는 게 좋다.</p>
+    <p class="ptext">눈여겨볼 건 2K다. 새 모델의 2K 한 장 값(0.050달러)이 이전 모델의 1K 한 장 값(0.067달러)보다 싸다. 이게 중요한 이유는 아래 모델 카드에 있다.</p>
+    <h2 class="psub" id="s3">구글이 잰 숫자, 그리고 스스로 밝힌 약점</h2>
+    <p class="ptext">모델 카드에는 사람들이 결과를 비교해 고른 점수가 실려 있다. 점수가 높을수록 더 자주 골랐다는 뜻이다.</p>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th>평가</th><th>나노 바나나 2.1</th><th>나노 바나나 2</th><th>나노 바나나 Pro</th></tr></thead>
+      <tbody>
+        <tr><td>전체 선호도</td><td><strong>1050</strong></td><td>990</td><td>935</td></tr>
+        <tr><td>인포그래픽 디자인</td><td><strong>1048</strong></td><td>961</td><td>912</td></tr>
+        <tr><td>인포그래픽 사실 정확도</td><td><strong>0.521</strong></td><td>0.179</td><td>0.265</td></tr>
+        <tr><td>일반 편집</td><td><strong>1026</strong></td><td>938</td><td>939</td></tr>
+        <tr><td>여러 인물 일관성</td><td><strong>1106</strong></td><td>978</td><td>1011</td></tr>
+      </tbody>
+    </table></div>
+    <p class="art__note">출처: <a href="https://deepmind.google/models/model-cards/nano-banana-2-1/" target="_blank" rel="noopener">나노 바나나 2.1 모델 카드</a> (2026년 10월). 모두 구글이 직접 한 평가다.</p>
+    <p class="ptext">인포그래픽 사실 정확도가 0.179에서 0.521로 뛴 게 가장 크다. 도표 속 숫자나 이름을 틀리게 그리는 일이 꽤 줄었다는 얘기다. 그래도 완벽과는 거리가 있는 점수다. 숫자가 들어간 그림은 반드시 한 번 더 확인하자.</p>
+    <p class="ptext">같은 모델 카드에 약점도 적혀 있다. 1K에서는 작은 글자가 흐릿하게 나올 때가 많고, 긴 문단이나 한 페이지짜리 글은 아직 약하다. 왼쪽과 오른쪽 같은 위치를 헷갈릴 때도 있다고 했다. 글자는 &quot;여러 언어로&quot; 쓸 수 있다고만 했고, 한글을 따로 언급하지는 않았다.</p>
+    <p class="ptext">그래서 앞의 2K 이야기로 돌아간다. 글자가 들어가는 포스터나 상세 이미지라면 1K 대신 2K로 뽑자. 이전 모델 1K보다 싸고, 작은 글자가 흐려지는 문제를 피할 수 있다.</p>
+    <h2 class="psub" id="s4">말로 고치는 편집, 이렇게 시키자</h2>
+    <p class="ptext">고칠 곳을 붓으로 칠하지 않고 말로 고르는 편집은 이번에 가장 좋아진 부분이다. 그런데 위치를 헷갈린다는 약점과 함께 놓고 보면, 시키는 방법이 중요해진다.</p>
+    <figure class="art__fig">
+      <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/mask-by-words-m.svg" width="600" height="863" /><img src="https://designrefs.com/articles/img/mask-by-words.svg" alt="나노 바나나 2.1에게 부분 수정을 시킬 때는 왼쪽 위, 오른쪽처럼 위치로 말하기보다 SALE이라는 글자, 모자 쓴 사람처럼 대상을 짚어 말하는 편이 낫다. 문장은 설명을 위한 예시다." width="1200" height="475" loading="lazy" decoding="async" /></picture>
+      <figcaption>나노 바나나 2.1에게 부분 수정을 시킬 때는 왼쪽 위, 오른쪽처럼 위치로 말하기보다 SALE이라는 글자, 모자 쓴 사람처럼 대상을 짚어 말하는 편이 낫다. 문장은 설명을 위한 예시다.</figcaption>
+    </figure>
+    <p class="ptext">&quot;왼쪽 위 글자&quot;보다 &quot;&#x27;SALE&#x27;이라는 글자&quot;, &quot;오른쪽 사람&quot;보다 &quot;모자 쓴 사람&quot;. 화면에 그 설명에 맞는 게 하나뿐이면 모델이 엉뚱한 곳을 건드릴 일이 줄어든다. 다시 뽑지 않고 한 군데만 고쳐 쓰는 흐름은 <a href="https://designrefs.com/articles/image-ai-edit-not-reroll/">지난주 이미지 AI 글</a>에서도 다뤘다.</p>
+    <h2 class="psub" id="s5">모든 그림에 표시가 남는다</h2>
+    <p class="ptext">나노 바나나로 만든 그림에는 눈에 보이지 않는 워터마크 SynthID가 들어간다. 보도에 따르면 2.1은 여기에 더해, 어떤 도구로 만들었는지 적어 두는 콘텐츠 자격 증명(C2PA)도 붙인다. 구글이 확인 방법을 짧은 영상으로 올려 두었다.</p>
+    <figure class="art__fig art__video">
+      <div class="art__frame"><iframe src="https://www.youtube-nocookie.com/embed/Sm7OTow3mcY" title="AI로 만든 이미지인지 확인하는 방법. 구글 공식 유튜브 채널 영상이다." loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+      <figcaption>AI로 만든 이미지인지 확인하는 방법. 구글 공식 유튜브 채널 영상이다.</figcaption>
+    </figure>
+    <p class="ptext">클라이언트 일에서는 이게 중요하다. 나노 바나나로 만든 이미지를 납품하면, 받은 쪽이 나중에 AI로 만들었다는 걸 확인할 수 있다. 숨길 수 없다고 생각하고, 처음부터 어디에 AI를 썼는지 알려 두는 편이 낫다. 상업적으로 써도 되는지는 <a href="https://designrefs.com/articles/ai-image-commercial-use/">AI 이미지 상업적 이용 글</a>에 정리해 두었다.</p>
+    <h2 class="psub" id="s6">이번 주에 해 볼 것</h2>
+    <p class="ptext"><strong>한글 포스터 한 장을 2K로 뽑아 보자.</strong> 실제로 쓰는 문구로 제목, 부제, 작은 안내 문구까지 넣어서 시험하는 거다. 한글을 얼마나 잘 쓰는지는 아직 아무도 숫자로 보여 주지 않았다. 내 문구로 직접 보는 게 가장 빠르다.</p>
+    <p class="ptext"><strong>API나 자동화로 쓰고 있다면 모델 이름을 확인하자.</strong> 구글은 이전 모델(나노 바나나 2)을 대신할 모델로 2.1을 권하고 있다. 다만 종료 날짜는 아직 정하지 않았다. &#x27;10월 29일 종료&#x27;라는 글을 봤다면, 구글 <a href="https://ai.google.dev/gemini-api/docs/deprecations" target="_blank" rel="noopener">사용 중단 일정표</a>에서 직접 확인하자. API에는 두 모델 모두 무료 사용량이 없다.</p>
+    <p class="ptext"><strong>4K는 꼭 필요할 때만 쓰자.</strong> 인쇄용 큰 이미지가 아니라면 2K로 시안을 고르고, 마지막 한 장만 4K로 뽑는 게 값에 맞다.</p>
+    <p class="ptext">쓰임새별 이미지 AI 도구는 <a href="https://designrefs.com/ai/">AI 디자인 툴</a>에 모아 두었다.</p>
+    <p class="art__note">출처: <a href="https://deepmind.google/models/model-cards/nano-banana-2-1/" target="_blank" rel="noopener">나노 바나나 2.1 모델 카드</a>, <a href="https://ai.google.dev/gemini-api/docs/pricing" target="_blank" rel="noopener">Gemini API 요금표</a> · <a href="https://ai.google.dev/gemini-api/docs/deprecations" target="_blank" rel="noopener">사용 중단 일정표</a> (10월 15일 확인), <a href="https://www.neowin.net/news/google-launches-nano-banana-21-with-better-editing-and-subject-consistency/" target="_blank" rel="noopener">Neowin</a>, <a href="https://www.androidheadlines.com/2026/10/google-launches-nano-banana-2-1-ai-images-price.html" target="_blank" rel="noopener">Android Headlines</a>, <a href="https://apidog.com/blog/nano-banana-2-1/" target="_blank" rel="noopener">Apidog</a>, <a href="https://www.youtube.com/watch?v=Sm7OTow3mcY" target="_blank" rel="noopener">Google 유튜브</a>.</p>]]></content:encoded>
+    </item>
     <item>
       <title>메타의 첫 최상위 모델이 디자인 투표 1위, 이 순위를 어떻게 읽을까</title>
       <link>https://designrefs.com/articles/muse-wonder-design-arena/</link>
