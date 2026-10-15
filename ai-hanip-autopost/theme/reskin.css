@@ -114,28 +114,39 @@ body:not(.item-view) .post-bottom { display: none !important; }
 }
 
 /* ---------- 글 화면 ---------- */
-.item-view .post-outer-container { max-width: 720px; margin: 0 auto !important; padding-top: 32px !important; }
+/* 글 화면: 읽기 편한 본문 - 한 줄 약 38자, 행간 1.75, 문단 간격을 줄 간격보다 넓게 */
+.item-view .post-outer-container { max-width: 640px; margin: 0 auto !important; padding-top: 40px !important; }
 .item-view .post-title, .item-view h3.post-title.entry-title {
-  margin: 0 !important; font-size: 34px !important; font-weight: 800 !important; letter-spacing: -0.045em !important;
-  line-height: 1.25 !important; color: var(--ink) !important; word-break: keep-all;
+  margin: 0 !important; font-family: var(--font) !important; font-size: 32px !important; font-weight: 800 !important;
+  letter-spacing: -0.035em !important; line-height: 1.32 !important; color: var(--ink) !important; word-break: keep-all;
 }
-.item-view .post-header { margin: 16px 0 0 !important; padding-bottom: 26px; border-bottom: 1px solid var(--line-strong); }
+.item-view .post-header { margin: 14px 0 0 !important; padding-bottom: 28px; border-bottom: 1px solid var(--line); }
 .item-view .post-share-buttons-top, .item-view .post-header .post-share-buttons { display: none !important; }
 
-.post-body { font-size: 16.5px !important; line-height: 1.95 !important; color: var(--ink-body) !important; word-break: keep-all; overflow-wrap: anywhere; }
-.post-body p { margin: 24px 0 0; }
-.post-body h2 { margin: 64px 0 0 !important; font-size: 21px !important; font-weight: 800 !important; letter-spacing: -0.035em; line-height: 1.4; color: var(--ink) !important; }
-.post-body h3 { margin: 36px 0 0 !important; font-size: 17px !important; font-weight: 700 !important; color: var(--ink) !important; }
-.post-body b, .post-body strong { font-weight: 700; color: var(--ink); }
+.post-body {
+  font-size: 17px !important; line-height: 1.75 !important; letter-spacing: -0.01em !important;
+  color: var(--ink-body) !important; word-break: keep-all; overflow-wrap: break-word;
+}
+.item-view .post-body { margin-top: 32px !important; }
+.post-body p { margin: 0 0 1.3em !important; }
+.post-body h2 {
+  margin: 2.6em 0 0.75em !important; font-size: 22px !important; font-weight: 700 !important;
+  letter-spacing: -0.03em !important; line-height: 1.4 !important; color: var(--ink) !important;
+}
+.post-body h3 { margin: 2em 0 0.6em !important; font-size: 18px !important; font-weight: 700 !important; letter-spacing: -0.02em; line-height: 1.45; color: var(--ink) !important; }
+.post-body h2 + p, .post-body h3 + p { margin-top: 0 !important; }
+.post-body b, .post-body strong { font-weight: 600; color: var(--ink); }
 .post-body a, .post-body a * { font-size: inherit !important; }
-.post-body a { color: var(--ink) !important; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
-.post-body ul, .post-body ol { margin: 18px 0 0; padding-left: 22px; }
-.post-body li { margin-bottom: 10px; line-height: 1.85; }
+.post-body a { color: var(--ink) !important; font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; text-decoration-color: var(--ink-4); }
+.post-body a:hover { text-decoration-color: var(--ink); }
+.post-body ul, .post-body ol { margin: 0 0 1.3em !important; padding-left: 1.3em; }
+.post-body li { margin: 0 0 0.5em; line-height: 1.7; padding-left: 0.15em; }
 .post-body li::marker { color: var(--ink-3); }
 .post-body blockquote {
-  position: relative; margin: 28px 0 0 !important; padding: 20px 22px !important;
-  background: var(--field) !important; border: 0 !important; border-radius: 14px;
-  font-size: 15.5px; line-height: 1.85; color: var(--ink) !important; font-style: normal !important;
+  position: relative; margin: 1.6em 0 1.8em !important; padding: 18px 76px 18px 20px !important;
+  background: var(--field) !important; border: 0 !important; border-radius: 12px;
+  font-size: 16px !important; line-height: 1.7 !important; font-weight: 400 !important; letter-spacing: -0.01em;
+  color: var(--ink) !important; font-style: normal !important;
 }
 .post-body blockquote::before {
   content: "프롬프트"; display: block; margin-bottom: 6px;
@@ -147,13 +158,13 @@ body:not(.item-view) .post-bottom { display: none !important; }
   font-size: 12px; font-weight: 600;
 }
 .copy-btn:hover { border-color: var(--ink); }
-.post-body .separator, .post-body .ah-fig { margin: 40px 0 0 !important; text-align: center; }
+.post-body .separator, .post-body .ah-fig { margin: 2.2em 0 0 !important; text-align: center; }
 .post-body img, .post-body video {
   display: block; width: 100% !important; max-width: 100% !important; height: auto !important;
   border-radius: 14px !important; border: 1px solid var(--line) !important; margin: 0 auto !important;
 }
 .post-body .separator + p[style], .post-body .ah-cap {
-  margin: 12px 0 0 !important; font-size: 13px !important; line-height: 1.6; color: var(--ink-3) !important; text-align: center;
+  margin: 10px 0 2.2em !important; font-size: 13px !important; line-height: 1.55; letter-spacing: 0; color: var(--ink-3) !important; text-align: center;
 }
 .item-view .post-footer { margin-top: 56px !important; padding-top: 20px; border-top: 1px solid var(--line); color: var(--ink-3); }
 .item-view .post-labels a, .post-footer .byline a[rel="tag"] {
@@ -170,11 +181,11 @@ body:not(.item-view) .post-bottom { display: none !important; }
 .comments, .comments .comment-content, .comments .user a { color: var(--ink-body) !important; }
 
 /* ---------- 하단 ---------- */
-.footer, footer.footer { margin-top: 96px !important; padding: 28px 0 40px !important; border-top: 1px solid var(--line); background: var(--bg) !important; }
-.footer .widget, .footer .PageList ul { margin: 0 !important; padding: 0 !important; }
-.footer .PageList ul { display: flex; flex-wrap: wrap; gap: 6px 14px; list-style: none; }
-.footer a, .footer .Attribution, .footer .Attribution a { color: var(--ink-2) !important; font-size: 12.5px !important; }
-.footer a:hover { color: var(--ink) !important; text-decoration: underline; text-underline-offset: 3px; }
+footer.footer { margin-top: 96px !important; padding: 28px 0 40px !important; border-top: 1px solid var(--line); background: var(--bg) !important; }
+footer.footer .widget, footer.footer .PageList ul { margin: 0 !important; padding: 0 !important; }
+footer.footer .PageList ul { display: flex; flex-wrap: wrap; gap: 6px 14px; list-style: none; }
+footer.footer a, footer.footer .Attribution, footer.footer .Attribution a { color: var(--ink-2) !important; font-size: 12.5px !important; }
+footer.footer a:hover { color: var(--ink) !important; text-decoration: underline; text-underline-offset: 3px; }
 
 /* 사이드바(햄버거 메뉴) */
 .sidebar-container { background: var(--bg) !important; color: var(--ink) !important; }
@@ -186,8 +197,10 @@ body:not(.item-view) .post-bottom { display: none !important; }
   .ah-hero h1 { font-size: 32px; }
   body:not(.item-view) .post { grid-template-columns: 1fr 88px; column-gap: 14px; }
   .snippet-thumbnail, .snippet-thumbnail a, .snippet-thumbnail-img { width: 88px !important; height: 60px !important; }
-  .item-view .post-title { font-size: 26px !important; }
-  .post-body { font-size: 16px !important; }
+  .item-view .post-title { font-size: 23px !important; line-height: 1.38 !important; letter-spacing: -0.03em !important; }
+  .post-body { font-size: 16.5px !important; line-height: 1.72 !important; }
+  .post-body h2 { font-size: 20px !important; margin-top: 2.3em !important; }
+  .post-body blockquote { padding-right: 20px !important; padding-top: 44px !important; }
 }
 
 /* ---------- 마무리 손질 ---------- */
@@ -208,4 +221,122 @@ body:not(.item-view) .post-bottom { display: none !important; }
 .PopularPosts .item-thumbnail img { border-radius: 8px; border: 1px solid var(--line); }
 .PopularPosts .popular-posts-snippet, .PopularPosts .snippet-item { font-size: 13px !important; color: var(--ink-2) !important; }
 .Attribution { margin-top: 8px !important; opacity: .7; }
-.PageList a, .footer .PageList li a, .footer .widget a { color: var(--ink-2) !important; }
+.PageList a, footer.footer .PageList li a, footer.footer .widget a { color: var(--ink-2) !important; }
+
+
+/* =========================================================
+   레이아웃 정리: 한 줄 폭(680px)으로 통일, 사이드바 제거, 라벨 안내 바·공유 버튼·댓글·인기 글·하단 손질
+   ========================================================= */
+
+/* 넓은 화면에서 예전 테마가 왼쪽 사이드바(그림자)를 펼치며 본문을 밀어내던 것 제거 */
+.sidebar-container, aside.sidebar-container { display: none !important; }
+.page_body { margin-left: 0 !important; }
+body.sidebar-visible { overflow-y: auto !important; }
+
+/* 상단·본문·목록·하단 모두 같은 폭 */
+.page_body .centered { max-width: 744px !important; padding: 0 32px !important; }  /* 680px 본문 + 양옆 32px */
+.item-view .post-outer-container { max-width: none; padding-top: 40px !important; }
+.item-view .PopularPosts, .PopularPosts { max-width: none !important; }
+
+/* 목록 줄: 좁아진 폭에 맞춰 썸네일 축소 */
+body:not(.item-view) .post { grid-template-columns: 1fr 120px; column-gap: 20px; }
+.snippet-thumbnail, .snippet-thumbnail a, .snippet-thumbnail-img { width: 120px !important; height: 76px !important; }
+
+/* 라벨·검색 결과 위의 주황색 안내 바 숨김 (제목 줄이 같은 내용을 보여줌) */
+.status-msg-wrap, .status-msg-border, .status-msg-bg, .status-msg-body { display: none !important; }
+
+/* '글 더보기' 버튼: 주황 글씨를 검정으로 */
+.blog-pager a, .blog-pager a *, .blog-pager .flat-button, .blog-pager .blog-pager-older-link, .blog-pager .blog-pager-newer-link {
+  color: var(--ink) !important; text-decoration: none !important;
+}
+.blog-pager a:hover { border-color: var(--ink) !important; background: var(--hover); }
+
+/* 글 아래: 공유 아이콘 줄 제거, 라벨 알약만 남김 */
+.item-view .post-share-buttons-bottom, .item-view .post-footer .post-share-buttons, .item-view .post-footer .sharing { display: none !important; }
+.item-view .post-footer { float: none !important; width: 100% !important; margin: 48px 0 0 !important; padding: 20px 0 0 !important; border-top: 1px solid var(--line) !important; }
+.item-view .post-footer-line { display: block; }
+.item-view .post-footer-line-1, .item-view .post-footer-line-3 { display: none !important; }
+.item-view .post-labels { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 !important; }
+.item-view .post-labels a { margin: 0 !important; height: 30px; padding: 0 12px; font-size: 13px; }
+.item-view .byline-label { display: none !important; }
+
+/* 댓글: 떠 있던 줄·여백을 정리해 하나의 구역으로 */
+.comments, section.comments { max-width: none; margin: 48px 0 0 !important; padding: 24px 0 0 !important; border-top: 1px solid var(--line); }
+.comments h3.title, .comments h4 { display: block !important; width: auto !important; height: auto !important; margin: 0 0 12px !important; font-size: 15px !important; font-weight: 800 !important; color: var(--ink) !important; overflow: visible !important; }
+.comments .footer, .comments div.footer { margin: 0 !important; padding: 0 !important; border: 0 !important; width: 100% !important; }
+.comments .comment-form { margin: 0 !important; }
+.comments iframe { margin: 8px 0 0 !important; border-radius: 10px; }
+
+/* 인기 글: 제목 + 날짜만, 촘촘한 줄 목록 */
+.PopularPosts h3.title { font-size: 15px !important; font-weight: 800 !important; margin: 0 !important; padding-bottom: 12px !important; border-bottom: 1px solid var(--line-strong) !important; color: var(--ink) !important; }
+.PopularPosts .widget-content { padding: 0 !important; }
+.PopularPosts .post, .PopularPosts article { display: block !important; padding: 14px 0 !important; margin: 0 !important; border-bottom: 1px solid var(--line) !important; }
+.PopularPosts .post-title, .PopularPosts .item-title { margin: 0 !important; font-size: 15px !important; font-weight: 600 !important; letter-spacing: -0.015em !important; line-height: 1.45 !important; }
+.PopularPosts .post-title a:hover, .PopularPosts .item-title a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.PopularPosts .post-header { margin: 4px 0 0 !important; }
+.PopularPosts .post-header, .PopularPosts .published, .PopularPosts time, .PopularPosts .post-timestamp { font-size: 12px !important; color: var(--ink-3) !important; font-style: normal !important; }
+.PopularPosts .item-content, .PopularPosts .item-thumbnail, .PopularPosts .popular-posts-snippet, .PopularPosts .snippet-container, .PopularPosts .jump-link { display: none !important; }
+.item-view .PopularPosts { margin: 56px 0 0 !important; }
+
+/* 하단: 페이지 링크 왼쪽, Powered by Blogger 오른쪽, 한 줄 */
+footer.footer, footer.footer.section, footer.footer .section { display: flex !important; justify-content: space-between; align-items: center; gap: 12px 24px; flex-wrap: wrap; }
+footer.footer .widget { margin: 0 !important; }
+footer.footer .Attribution { margin: 0 !important; opacity: .6; }
+footer.footer .Attribution .widget-content { display: flex; align-items: center; gap: 6px; text-align: right !important; }
+footer.footer .Attribution svg, footer.footer .Attribution img { width: 14px; height: 14px; }
+footer.footer .PageList .widget-content { margin: 0 !important; }
+
+/* 글 본문 폭에 맞춘 미세 조정 */
+.item-view .post-title, .item-view h3.post-title.entry-title { font-size: 30px !important; }
+
+@media (max-width: 720px) {
+  .page_body .centered { padding: 0 18px !important; }
+  body:not(.item-view) .post { grid-template-columns: 1fr 88px; column-gap: 14px; }
+  .snippet-thumbnail, .snippet-thumbnail a, .snippet-thumbnail-img { width: 88px !important; height: 60px !important; }
+  .item-view .post-title, .item-view h3.post-title.entry-title { font-size: 23px !important; }
+  footer.footer { flex-direction: column; align-items: flex-start; }
+}
+
+/* 선택자 보강 (예전 테마 규칙이 더 구체적이어서 덮이지 않던 것들) */
+.post-filter-message, .centered-bottom .post-filter-message { display: none !important; }
+.centered-bottom .blog-pager a.flat-button, .centered-bottom .blog-pager a.blog-pager-older-link, .centered-bottom .blog-pager a.blog-pager-newer-link,
+.centered-bottom #blog-pager a, .centered-bottom .blog-pager a.flat-button:hover { color: var(--ink) !important; }
+.centered-bottom .PopularPosts h3.post-title, .centered-bottom .PopularPosts .post .post-title { font-size: 15px !important; line-height: 1.45 !important; margin: 0 !important; }
+.centered-bottom .PopularPosts .post-title a { display: inline; font-size: 15px !important; line-height: 1.45 !important; }
+.centered-bottom .PopularPosts .post .post-header { margin: 3px 0 0 !important; padding: 0 !important; height: auto !important; line-height: 1.4 !important; }
+.centered-bottom .PopularPosts .post { padding: 13px 0 !important; border-bottom: 1px solid var(--line) !important; }
+.item-view .PopularPosts { margin-top: 48px !important; }
+
+/* 댓글 제목: 예전 테마가 숨겨 두던 것을 되살림 */
+.comments, section.comments { border-top: 1px solid var(--line) !important; }
+.comments h3.title, .comments h3 {
+  font-size: 15px !important; line-height: 1.4 !important; color: var(--ink) !important; text-indent: 0 !important;
+  position: static !important; clip: auto !important; opacity: 1 !important;
+  width: auto !important; height: auto !important; overflow: visible !important; margin: 0 0 12px !important;
+}
+.comments .comment-form h4 { font-size: 13px !important; color: var(--ink-2) !important; margin: 0 0 6px !important; font-weight: 500 !important; }
+
+/* 인기 글 두 번째 줄부터 예전 테마가 넣던 점선 윗줄 제거 */
+.centered-bottom .PopularPosts .post + .post, .PopularPosts .post + .post { border-top: 0 !important; }
+
+/* 예전 글 본문 끝의 '다음 글' 링크: h3.post-title 로 들어 있어 글 제목 스타일을 받던 것을 작은 링크 카드로 */
+.post-body h3.post-title, .post-body .post-title, .post-body h3[class*="post-title"] {
+  float: none !important; max-width: 100% !important; width: auto !important;
+  margin: 1.6em 0 0 !important; padding: 14px 16px !important; border: 1px solid var(--line) !important; border-radius: 12px !important;
+  font-family: var(--font) !important; font-size: 15px !important; font-weight: 600 !important; line-height: 1.5 !important; letter-spacing: -0.015em !important;
+  background: var(--bg) !important; color: var(--ink) !important;
+}
+.post-body h3.post-title a::before, .post-body .post-title a::before { content: "관련 글"; display: block; margin-bottom: 4px; font-size: 11.5px; font-weight: 700; letter-spacing: .04em; color: var(--ink-3); }
+.post-body h3.post-title a, .post-body .post-title a { font: inherit !important; color: var(--ink) !important; text-decoration: none !important; background: transparent !important; }
+.post-body h3.post-title a:hover, .post-body .post-title a:hover { text-decoration: underline !important; text-underline-offset: 3px; }
+.post-body h3.post-title a span, .post-body .post-title a span { font-size: inherit !important; }
+/* 끝의 '※ 이 글은 … 기준이에요' 안내 — 작은 보조 문장으로 */
+.post-body p span[style*="x-small"] { font-size: 13px !important; color: var(--ink-3) !important; }
+.post-body p span[style*="x-small"] b { font-weight: 500 !important; color: inherit !important; }
+
+/* 본문 속 링크 카드가 글 제목 규칙(.post-title.entry-title, 30px)에 밀리지 않게 */
+.item-view .post-body h3.post-title, .item-view .post-body h3.post-title.entry-title, .item-view .post-body .post-title.entry-title {
+  font-size: 15px !important; font-weight: 600 !important; line-height: 1.5 !important; letter-spacing: -0.015em !important; margin: 1.6em 0 0 !important;
+}
+/* 라벨이 없는 글은 빈 라벨 칸(윗줄만 남던 곳)을 숨김 */
+.item-view .post-footer:not(:has(.post-labels a)) { display: none !important; }
