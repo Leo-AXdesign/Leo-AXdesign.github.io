@@ -423,6 +423,7 @@ const SITES_EN = {
   "https://www.ripplix.com": [null, "7,000+ UI animations and micro-interactions from real apps and sites, searchable by element, industry and product."],
   "https://nook.ai.kr": [null, "Korean and international websites sorted by industry (beauty, fashion, IT) and purpose (shop, landing page), with color and country filters plus bookmarks and team folders."],
   "https://uibowl.io": ["UIBowl", "Korean app and web screens sorted by UI pattern (login, checkout, my page) and industry. Filters by MAU and exports to Figma."],
+  "https://wwit.design": [null, "Korean mobile app screens collected by industry, screen pattern and component. Browse onboarding, login, checkout and more, app by app."],
   "https://motionographer.com": [null, "A magazine featuring motion graphics and animation work and the studios behind it."],
   "https://mindsparklemag.com": [null, "A curation magazine for branding and web design."],
   "https://gurafiku.tumblr.com": [null, "An archive of Japanese graphic design."],

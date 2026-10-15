@@ -31,6 +31,7 @@ const CATEGORIES = [
 const SITES = [
   /* ---------------- UI/UX 레퍼런스 ---------------- */
   { name: '유아이볼 (UIBowl)', url: 'https://uibowl.io', desc: '국내 앱·웹 화면을 로그인·결제·마이페이지 같은 UI 패턴과 업종별로 모은 레퍼런스. MAU 필터와 피그마 내보내기를 지원합니다.', cat: 'uiux', tags: ['한국', '무료', '유료'], sub: '앱 화면 · 플로우' },
+  { name: 'What Was IT', url: 'https://wwit.design', desc: '국내 모바일 앱의 화면을 업종별·화면 패턴별·컴포넌트별로 모은 한국어 UI/UX 레퍼런스. 온보딩, 로그인, 결제 같은 화면을 앱마다 볼 수 있습니다.', cat: 'uiux', tags: ['한국', '무료'], sub: '앱 화면 · 플로우' },
   { name: 'Mobbin', url: 'https://mobbin.com', desc: '실제 서비스 앱·웹 화면과 플로우를 통째로 모아둔 UI 아카이브. 화면 단위 검색이 강력합니다.', cat: 'uiux', tags: ['유료'], sub: '앱 화면 · 플로우' },
   { name: 'Refero', url: 'https://refero.design', desc: '실제 프로덕트의 UI 패턴을 컴포넌트·페이지 유형별로 검색할 수 있는 레퍼런스 툴.', cat: 'uiux', tags: ['유료'], sub: '앱 화면 · 플로우' },
   { name: 'Page Flows', url: 'https://pageflows.com', desc: '온보딩, 결제 등 유저 플로우를 영상으로 기록해 둔 사이트.', cat: 'uiux', tags: ['유료'], sub: '앱 화면 · 플로우' },

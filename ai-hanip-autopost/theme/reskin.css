@@ -1,0 +1,211 @@
+/* =========================================================
+   AI 한입 리스킨 — 기존 Contempo 테마 구조(위젯·광고·페이지 목록)는 그대로 두고
+   designrefs.com 처럼 Black & White 미니멀로 덮어쓰기
+   ========================================================= */
+:root {
+  --bg: #FFFFFF; --field: #F3F3F4; --ink: #111111; --ink-body: #2C2C2C;
+  --ink-2: #6B6B6B; --ink-3: #767676; --ink-4: #A3A3A3;
+  --line: #E2E2E2; --line-strong: #111111; --hover: rgba(0,0,0,.03);
+  --font: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", Roboto, "Noto Sans KR", sans-serif;
+}
+:root[data-theme="dark"] {
+  --bg: #0F0F0F; --field: #1B1B1B; --ink: #F5F5F5; --ink-body: #DEDEDE;
+  --ink-2: #9A9A9A; --ink-3: #868686; --ink-4: #5E5E5E;
+  --line: #262626; --line-strong: #F5F5F5; --hover: rgba(255,255,255,.04);
+}
+
+/* ---------- 바탕 ---------- */
+html, body, .page, .page_body { background: var(--bg) !important; }
+body { font-family: var(--font) !important; color: var(--ink) !important; -webkit-font-smoothing: antialiased; letter-spacing: -0.005em; }
+body * { font-family: var(--font); }
+::selection { background: var(--ink); color: var(--bg); }
+.bg-photo-overlay, .bg-photo-container, .bg-photo { display: none !important; }
+.page_body .centered { max-width: 1080px !important; padding: 0 32px !important; }
+.centered-bottom { padding: 0 !important; max-width: none !important; }
+
+/* ---------- 상단: 로고 + 검색 ---------- */
+.centered-top-placeholder { display: none !important; }
+.centered-top-container, .centered-top-container.is-sticky {
+  position: sticky !important; top: 0; z-index: 50;
+  background: var(--bg) !important; box-shadow: none !important; padding: 0 !important; height: auto !important;
+}
+.centered-top { display: flex !important; align-items: center; gap: 16px; height: 60px; padding: 0 !important; max-width: none !important; }
+.centered-top .hamburger-menu, .centered-top .return_link { color: var(--ink) !important; fill: var(--ink) !important; }
+.centered-top svg, .centered-top .svg-icon-24 { fill: var(--ink) !important; color: var(--ink) !important; }
+.centered-top .blog-name, .centered-top .blog-name.container { order: -1; margin: 0 !important; padding: 0 !important; }
+.Header h1, .Header h1 a, .header-widget h1, .header-widget h1 a, .blog-name h1, .blog-name a {
+  font-size: 24px !important; font-weight: 800 !important; letter-spacing: -0.05em !important; line-height: 1 !important;
+  color: var(--ink) !important; text-shadow: none !important; margin: 0 !important; text-align: left !important;
+}
+.Header h1 a::after, .Header h1:not(:has(a))::after { content: "."; color: var(--ink-4); }
+.Header p, .header-widget p, .Header .description, .centered-top nav { display: none !important; }
+.Header h1, .Header h1 a { display: inline-flex !important; align-items: baseline; }
+.search { margin-left: auto !important; }
+.BlogSearch .search-input, .search-input input, .BlogSearch input {
+  background: var(--field) !important; color: var(--ink) !important; border: 1px solid transparent !important;
+  border-radius: 999px !important; height: 38px; padding: 0 16px !important; box-shadow: none !important;
+}
+.search-expand, .search-action { color: var(--ink) !important; fill: var(--ink) !important; }
+.theme-btn {
+  width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; flex-shrink: 0;
+  border: 1px solid var(--line); background: var(--bg); color: var(--ink); cursor: pointer; transition: border-color .15s;
+}
+.theme-btn:hover { border-color: var(--ink); }
+.theme-btn svg { width: 16px; height: 16px; }
+
+.centered-top .return_link, .centered-top .hamburger-menu, .centered-top .clearboth { display: none !important; }
+.centered-top .blog-name { order: 1; margin-right: auto !important; }
+.centered-top .search { order: 2; position: static !important; margin: 0 !important; }
+.theme-btn { order: 3; }
+
+/* 예전 테마의 갈색 세로줄 제거 */
+.post-title, .post-body h2, .post-body h3, .widget h3.title {
+  border-left: 0 !important; padding-left: 0 !important; background: none !important; box-shadow: none !important;
+}
+
+/* ---------- 홈 머리말 ---------- */
+.ah-hero { padding: 40px 0 8px; }
+.ah-hero h1 { margin: 0; font-size: 44px; font-weight: 800; letter-spacing: -0.05em; line-height: 1.05; color: var(--ink); }
+.ah-hero h1 span { color: var(--ink-4); }
+.ah-hero p { margin: 12px 0 0; font-size: 15px; color: var(--ink-2); }
+.item-view .ah-hero { display: none; }
+
+/* ---------- 카드 → 목록 ---------- */
+.post-outer-container, .FeaturedPost, .widget.FeaturedPost, .Blog .post-outer-container, .post-outer {
+  background: transparent !important; box-shadow: none !important; border-radius: 0 !important;
+  margin: 0 !important; padding: 0 !important;
+}
+.main .widget { margin: 0 !important; }
+.FeaturedPost h3.title, .widget.FeaturedPost > h3, .Blog > h3.title { display: none !important; }
+.section__label {
+  margin: 40px 0 0; padding-bottom: 12px; border-bottom: 1px solid var(--line-strong);
+  font-size: 18px; font-weight: 800; letter-spacing: -0.03em; color: var(--ink);
+}
+body:not(.item-view) .post-outer-container, body:not(.item-view) .FeaturedPost .post {
+  display: block; padding: 22px 0 !important; border-bottom: 1px solid var(--line) !important;
+}
+body:not(.item-view) .post { display: grid !important; grid-template-columns: 1fr 132px; column-gap: 24px; align-items: start; }
+body:not(.item-view) .post > script, body:not(.item-view) .post > a[name] { display: none !important; }
+body:not(.item-view) .post .post-body { display: contents !important; }
+body:not(.item-view) .post .post-header { grid-column: 1; grid-row: 1; }
+body:not(.item-view) .post .post-title { grid-column: 1; grid-row: 2; }
+body:not(.item-view) .post .snippet-container, body:not(.item-view) .post .post-snippet { grid-column: 1; grid-row: 3; }
+body:not(.item-view) .post .snippet-thumbnail { grid-column: 2; grid-row: 1 / span 3; margin: 0 !important; }
+body:not(.item-view) .post-title, body:not(.item-view) .post-title a {
+  margin: 0 !important; font-size: 17px !important; font-weight: 700 !important; letter-spacing: -0.025em !important;
+  line-height: 1.35 !important; color: var(--ink) !important;
+}
+body:not(.item-view) .post-title a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.post-header, .post-header .byline, .post-timestamp, .post-timestamp a, .published {
+  font-size: 12px !important; color: var(--ink-3) !important; margin: 0 0 6px !important;
+}
+.snippet-container, .snippet-item, .post-snippet { font-size: 13.5px !important; line-height: 1.65 !important; color: var(--ink-2) !important; margin-top: 6px !important; max-height: 3.3em; overflow: hidden; }
+.snippet-fade { display: none !important; }
+.snippet-thumbnail, .snippet-thumbnail a, .snippet-thumbnail-img {
+  width: 132px !important; height: 82px !important; float: none !important; border-radius: 10px !important;
+  border: 1px solid var(--line); background-size: cover !important; background-position: center !important; overflow: hidden;
+}
+body:not(.item-view) .jump-link, body:not(.item-view) .post-footer, body:not(.item-view) .post-share-buttons,
+body:not(.item-view) .post-bottom { display: none !important; }
+.blog-pager { margin: 28px 0 0 !important; text-align: center; }
+.blog-pager a, .blog-pager .flat-button {
+  display: inline-flex; align-items: center; height: 36px; padding: 0 16px !important; border: 1px solid var(--line) !important;
+  border-radius: 999px !important; color: var(--ink) !important; font-size: 13px !important; font-weight: 600 !important; text-transform: none !important;
+}
+
+/* ---------- 글 화면 ---------- */
+.item-view .post-outer-container { max-width: 720px; margin: 0 auto !important; padding-top: 32px !important; }
+.item-view .post-title, .item-view h3.post-title.entry-title {
+  margin: 0 !important; font-size: 34px !important; font-weight: 800 !important; letter-spacing: -0.045em !important;
+  line-height: 1.25 !important; color: var(--ink) !important; word-break: keep-all;
+}
+.item-view .post-header { margin: 16px 0 0 !important; padding-bottom: 26px; border-bottom: 1px solid var(--line-strong); }
+.item-view .post-share-buttons-top, .item-view .post-header .post-share-buttons { display: none !important; }
+
+.post-body { font-size: 16.5px !important; line-height: 1.95 !important; color: var(--ink-body) !important; word-break: keep-all; overflow-wrap: anywhere; }
+.post-body p { margin: 24px 0 0; }
+.post-body h2 { margin: 64px 0 0 !important; font-size: 21px !important; font-weight: 800 !important; letter-spacing: -0.035em; line-height: 1.4; color: var(--ink) !important; }
+.post-body h3 { margin: 36px 0 0 !important; font-size: 17px !important; font-weight: 700 !important; color: var(--ink) !important; }
+.post-body b, .post-body strong { font-weight: 700; color: var(--ink); }
+.post-body a, .post-body a * { font-size: inherit !important; }
+.post-body a { color: var(--ink) !important; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.post-body ul, .post-body ol { margin: 18px 0 0; padding-left: 22px; }
+.post-body li { margin-bottom: 10px; line-height: 1.85; }
+.post-body li::marker { color: var(--ink-3); }
+.post-body blockquote {
+  position: relative; margin: 28px 0 0 !important; padding: 20px 22px !important;
+  background: var(--field) !important; border: 0 !important; border-radius: 14px;
+  font-size: 15.5px; line-height: 1.85; color: var(--ink) !important; font-style: normal !important;
+}
+.post-body blockquote::before {
+  content: "프롬프트"; display: block; margin-bottom: 6px;
+  font-size: 11.5px; font-weight: 700; letter-spacing: .04em; color: var(--ink-3);
+}
+.copy-btn {
+  position: absolute; top: 14px; right: 14px; height: 28px; padding: 0 12px; cursor: pointer;
+  border: 1px solid var(--line); border-radius: 999px; background: var(--bg); color: var(--ink);
+  font-size: 12px; font-weight: 600;
+}
+.copy-btn:hover { border-color: var(--ink); }
+.post-body .separator, .post-body .ah-fig { margin: 40px 0 0 !important; text-align: center; }
+.post-body img, .post-body video {
+  display: block; width: 100% !important; max-width: 100% !important; height: auto !important;
+  border-radius: 14px !important; border: 1px solid var(--line) !important; margin: 0 auto !important;
+}
+.post-body .separator + p[style], .post-body .ah-cap {
+  margin: 12px 0 0 !important; font-size: 13px !important; line-height: 1.6; color: var(--ink-3) !important; text-align: center;
+}
+.item-view .post-footer { margin-top: 56px !important; padding-top: 20px; border-top: 1px solid var(--line); color: var(--ink-3); }
+.item-view .post-labels a, .post-footer .byline a[rel="tag"] {
+  display: inline-flex; align-items: center; height: 30px; padding: 0 12px; margin: 0 6px 6px 0;
+  border: 1px solid var(--line); border-radius: 999px; color: var(--ink) !important; font-size: 13px; text-decoration: none;
+}
+.item-view .jump-link { display: none !important; }
+
+/* 인기 글 등 위젯 제목 */
+.widget > h3.title, .widget h3.title { font-size: 15px !important; font-weight: 800 !important; color: var(--ink) !important; letter-spacing: -0.02em; }
+.PopularPosts .post-title a, .PopularPosts .post-title { color: var(--ink) !important; font-size: 15px !important; }
+
+/* 댓글 */
+.comments, .comments .comment-content, .comments .user a { color: var(--ink-body) !important; }
+
+/* ---------- 하단 ---------- */
+.footer, footer.footer { margin-top: 96px !important; padding: 28px 0 40px !important; border-top: 1px solid var(--line); background: var(--bg) !important; }
+.footer .widget, .footer .PageList ul { margin: 0 !important; padding: 0 !important; }
+.footer .PageList ul { display: flex; flex-wrap: wrap; gap: 6px 14px; list-style: none; }
+.footer a, .footer .Attribution, .footer .Attribution a { color: var(--ink-2) !important; font-size: 12.5px !important; }
+.footer a:hover { color: var(--ink) !important; text-decoration: underline; text-underline-offset: 3px; }
+
+/* 사이드바(햄버거 메뉴) */
+.sidebar-container { background: var(--bg) !important; color: var(--ink) !important; }
+
+/* ---------- 모바일 ---------- */
+@media (max-width: 720px) {
+  .page_body .centered { padding: 0 18px !important; }
+  .Header h1, .Header h1 a { font-size: 21px !important; }
+  .ah-hero h1 { font-size: 32px; }
+  body:not(.item-view) .post { grid-template-columns: 1fr 88px; column-gap: 14px; }
+  .snippet-thumbnail, .snippet-thumbnail a, .snippet-thumbnail-img { width: 88px !important; height: 60px !important; }
+  .item-view .post-title { font-size: 26px !important; }
+  .post-body { font-size: 16px !important; }
+}
+
+/* ---------- 마무리 손질 ---------- */
+.centered-top .blog-name, .centered-top .search { position: static !important; transform: none !important; }
+.centered-top .blog-name { flex: 1 1 auto; }
+.post-body blockquote, .post-body blockquote * { text-align: left !important; }
+.post-labels a, .item-view .post-labels a, .post-footer .byline a[rel="tag"] { background: transparent !important; }
+.item-view .post-footer, .item-view .post-footer-line { border-top: 0; }
+.item-view .post-footer { border-top: 1px solid var(--line) !important; }
+.PopularPosts, .widget.PopularPosts, .PopularPosts .widget-content {
+  background: transparent !important; box-shadow: none !important; padding: 0 !important; border-radius: 0 !important;
+}
+.item-view .PopularPosts { max-width: 720px; margin: 64px auto 0 !important; }
+.PopularPosts > h3.title { padding-bottom: 12px !important; border-bottom: 1px solid var(--line-strong) !important; margin: 0 !important; }
+.PopularPosts .post, .PopularPosts article { padding: 18px 0 !important; border-bottom: 1px solid var(--line) !important; margin: 0 !important; }
+.PopularPosts .post-header, .PopularPosts .item-content, .PopularPosts hr { border: 0 !important; }
+.PopularPosts .published, .PopularPosts time { font-style: normal !important; }
+.PopularPosts .item-thumbnail img { border-radius: 8px; border: 1px solid var(--line); }
+.PopularPosts .popular-posts-snippet, .PopularPosts .snippet-item { font-size: 13px !important; color: var(--ink-2) !important; }
+.Attribution { margin-top: 8px !important; opacity: .7; }
+.PageList a, .footer .PageList li a, .footer .widget a { color: var(--ink-2) !important; }
