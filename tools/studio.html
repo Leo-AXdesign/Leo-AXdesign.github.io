@@ -134,12 +134,15 @@
   .ask .inp { flex: 1 1 260px; }
   .spin { display: inline-block; width: 14px; height: 14px; border: 2px solid #ccc; border-top-color: var(--ink); border-radius: 50%; animation: s .8s linear infinite; vertical-align: -2px; margin-right: 6px; }
   @keyframes s { to { transform: rotate(360deg); } }
+  .office-link { font-size: 13px; color: var(--ink); text-decoration: none; border: 1px solid var(--line, #ddd); border-radius: 999px; padding: 6px 12px; white-space: nowrap; }
+  .office-link:hover { background: #f4f4f4; }
 </style>
 </head>
 <body>
 <header class="bar"><div class="bar__in">
   <div class="logo">d<span>.</span><small>스튜디오</small></div>
   <nav class="tabs"><button class="tab on" data-view="sns">SNS 발행</button><button class="tab" data-view="lib">보관함</button><button class="tab" data-view="coach">AI 편집장</button></nav>
+  <a class="office-link" href="http://127.0.0.1:8740/" target="ai-office" rel="noopener">AI 사무실</a>
   <div class="chips" id="chips"></div>
 </div></header>
 
