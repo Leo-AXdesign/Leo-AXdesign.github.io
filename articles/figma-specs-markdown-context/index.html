@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>피그마 Specs, 마크다운 한 장으로 팀과 AI에게 맥락을 건네는 방법 | 디자인 허브</title>
+  <meta name="description" content="피그마가 캔버스 위에 마크다운 문서를 놓는 기능 Specs를 유료 플랜에 오픈 베타로 냈다. 무엇이 되고 무엇이 아직 확인되지 않았는지, 앞서 다룬 DESIGN.md와는 어떻게 다른지 피그마 공식 글과 릴리스 노트로 확인해 정리했다." />
+  <link rel="canonical" href="https://designrefs.com/articles/figma-specs-markdown-context/" />
+  <link rel="alternate" hreflang="ko" href="https://designrefs.com/articles/figma-specs-markdown-context/" />
+  <link rel="alternate" hreflang="en" href="https://designrefs.com/en/articles/figma-specs-markdown-context/" />
+  <link rel="alternate" hreflang="x-default" href="https://designrefs.com/articles/figma-specs-markdown-context/" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="디자인 허브" />
+  <meta property="og:locale" content="ko_KR" />
+  <meta property="og:title" content="피그마 Specs, 마크다운 한 장으로 팀과 AI에게 맥락을 건네는 방법 | 디자인 허브" />
+  <meta property="og:description" content="피그마가 캔버스 위에 마크다운 문서를 놓는 기능 Specs를 유료 플랜에 오픈 베타로 냈다. 무엇이 되고 무엇이 아직 확인되지 않았는지, 앞서 다룬 DESIGN.md와는 어떻게 다른지 피그마 공식 글과 릴리스 노트로 확인해 정리했다." />
+  <meta property="og:url" content="https://designrefs.com/articles/figma-specs-markdown-context/" />
+  <meta property="og:image" content="https://designrefs.com/og/figma-specs-markdown-context.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="alternate" type="application/rss+xml" title="디자인 허브 읽을거리" href="https://designrefs.com/rss.xml" />
+  <link rel="icon" href="https://designrefs.com/favicon.ico" sizes="32x32" />
+  <link rel="icon" type="image/svg+xml" href="https://designrefs.com/favicon.svg" />
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+  <link rel="stylesheet" href="https://designrefs.com/css/style.css" />
+  <!-- 구글 애드센스 -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5831827822584395" crossorigin="anonymous"></script>
+
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q7QVVHSLQ6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Q7QVVHSLQ6');
+  </script>
+  <script>
+    // 메인에서 고른 테마를 그대로 따릅니다.
+    try {
+      var t = localStorage.getItem('designhub:theme') || 'light';
+      if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+    } catch (e) {}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://designrefs.com/articles/figma-specs-markdown-context/#post",
+      "url": "https://designrefs.com/articles/figma-specs-markdown-context/",
+      "mainEntityOfPage": "https://designrefs.com/articles/figma-specs-markdown-context/",
+      "headline": "피그마 Specs, 마크다운 한 장으로 팀과 AI에게 맥락을 건네는 방법",
+      "description": "피그마가 캔버스 위에 마크다운 문서를 놓는 기능 Specs를 유료 플랜에 오픈 베타로 냈다. 무엇이 되고 무엇이 아직 확인되지 않았는지, 앞서 다룬 DESIGN.md와는 어떻게 다른지 피그마 공식 글과 릴리스 노트로 확인해 정리했다.",
+      "articleSection": "AI 디자인",
+      "datePublished": "2026-10-16",
+      "dateModified": "2026-10-16",
+      "inLanguage": "ko",
+      "wordCount": 2701,
+      "timeRequired": "PT5M",
+      "image": "https://designrefs.com/og/figma-specs-markdown-context.png",
+      "author": {
+        "@type": "Organization",
+        "name": "디자인 허브",
+        "url": "https://designrefs.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "디자인 허브",
+        "url": "https://designrefs.com/"
+      },
+      "isPartOf": {
+        "@type": "Blog",
+        "@id": "https://designrefs.com/articles/#blog",
+        "name": "디자인 허브 읽을거리"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "디자인 허브",
+          "item": "https://designrefs.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "읽을거리",
+          "item": "https://designrefs.com/articles/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "피그마 Specs, 마크다운 한 장으로 팀과 AI에게 맥락을 건네는 방법",
+          "item": "https://designrefs.com/articles/figma-specs-markdown-context/"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <meta property="article:published_time" content="2026-10-16T09:00:00+09:00" />
+  <meta property="article:modified_time" content="2026-10-16T09:00:00+09:00" />
+  <meta property="article:section" content="AI 디자인" />
+  <meta property="article:tag" content="AI 디자인" />
+  <meta property="article:tag" content="AI 디자인 툴" />
+  <meta property="article:tag" content="디자인 툴" />
+  <meta property="article:tag" content="UI/UX 레퍼런스" />
+</head>
+<body class="page">
+  <header class="top">
+    <div class="wrap top__inner">
+      <a class="logo" href="https://designrefs.com/">d<span>.</span></a>
+
+      <!-- 검색어를 넣고 엔터를 치면 메인 화면에서 검색 결과가 열립니다 (?q=) -->
+      <form class="search" action="https://designrefs.com/" method="get" role="search">
+        <svg class="search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+        <input id="search" class="search__input" type="search" name="q" placeholder="사이트 검색" autocomplete="off" />
+        <kbd class="search__kbd">/</kbd>
+      </form>
+
+      <div class="top__actions">
+        <a class="top__lang" href="https://designrefs.com/en/articles/figma-specs-markdown-context/" hreflang="en" lang="en" title="English">EN</a>
+        <button id="theme-toggle" class="top__btn" type="button" aria-label="테마 전환" title="라이트 / 다크 전환">
+          <span class="dot"></span>
+        </button>
+        <button id="menu-open" class="top__btn top__btn--menu" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="drawer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 모바일 전체 메뉴 -->
+  <div class="drawer" id="drawer" hidden>
+    <div class="drawer__backdrop" id="drawer-backdrop"></div>
+    <aside class="drawer__panel" role="dialog" aria-modal="true" aria-label="전체 메뉴">
+      <header class="drawer__head">
+        <span class="drawer__title">전체 메뉴</span>
+        <button id="menu-close" class="drawer__close" type="button" aria-label="메뉴 닫기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      </header>
+      <div class="drawer__body">
+        <nav class="nav" aria-label="메뉴"><a class="nav__item" href="https://designrefs.com/"><span class="nav__label">전체</span><span class="nav__count">398</span></a><a class="nav__item" href="https://designrefs.com/#bookmarks"><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="m12 2.5 2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8Z"/></svg><span class="nav__label">즐겨찾기</span><span class="nav__count" data-bm-count>0</span></a><hr class="nav__sep" /><a class="nav__item" href="https://designrefs.com/#uiux"><span class="nav__label">UI/UX 레퍼런스</span><span class="nav__count">40</span></a><a class="nav__item" href="https://designrefs.com/#graphic"><span class="nav__label">그래픽 / 브랜딩</span><span class="nav__count">24</span></a><a class="nav__item" href="https://designrefs.com/#color"><span class="nav__label">컬러 가이드</span><span class="nav__count">24</span></a><a class="nav__item" href="https://designrefs.com/#typo"><span class="nav__label">타이포 / 폰트</span><span class="nav__count">23</span></a><a class="nav__item" href="https://designrefs.com/#asset"><span class="nav__label">아이콘 / 에셋</span><span class="nav__count">33</span></a><a class="nav__item" href="https://designrefs.com/#mockup"><span class="nav__label">목업</span><span class="nav__count">19</span></a><a class="nav__item" href="https://designrefs.com/#tool"><span class="nav__label">디자인 툴</span><span class="nav__count">30</span></a><a class="nav__item" href="https://designrefs.com/#ai"><span class="nav__label">AI</span><span class="nav__count">62</span></a><a class="nav__item" href="https://designrefs.com/#dev"><span class="nav__label">디자인 개발</span><span class="nav__count">34</span></a><a class="nav__item" href="https://designrefs.com/#community"><span class="nav__label">커뮤니티 / 매거진</span><span class="nav__count">29</span></a><a class="nav__item" href="https://designrefs.com/#creator"><span class="nav__label">크리에이터 / 채널</span><span class="nav__count">47</span></a><a class="nav__item" href="https://designrefs.com/#freelance"><span class="nav__label">외주 / 프리랜서</span><span class="nav__count">13</span></a><a class="nav__item" href="https://designrefs.com/#job"><span class="nav__label">채용공고</span><span class="nav__count">20</span></a><hr class="nav__sep" /><a class="nav__item is-active" href="https://designrefs.com/#articles"><span class="nav__label">읽을거리</span><span class="nav__count">26</span></a><a class="nav__item" href="https://designrefs.com/#styles"><span class="nav__label">스타일 사전</span><span class="nav__count">34</span></a><a class="nav__item" href="https://designrefs.com/#trends"><span class="nav__label">2026 트렌드</span><span class="nav__count">20</span></a><a class="nav__item" href="https://designrefs.com/#glossary"><span class="nav__label">용어 사전</span><span class="nav__count">155</span></a><hr class="nav__sep" /><a class="nav__item" href="https://designrefs.com/talk/"><span class="nav__label">디자인 잡담</span></a></nav>
+        <div class="drawer__section">
+          <p class="nav__group">태그 필터</p>
+          <div class="pills pills--tags"><a class="pill is-active" href="https://designrefs.com/">전체</a><a class="pill" href="https://designrefs.com/?tag=%ED%95%9C%EA%B5%AD">한국</a><a class="pill" href="https://designrefs.com/?tag=%EB%AC%B4%EB%A3%8C">무료</a><a class="pill" href="https://designrefs.com/?tag=%EC%9C%A0%EB%A3%8C">유료</a><a class="pill" href="https://designrefs.com/?tag=AI">AI</a></div>
+        </div>
+        <div class="drawer__section">
+          <p class="nav__group">보기</p>
+          <div class="drawer__row">
+            <button class="drawer__opt" id="drawer-theme" type="button">테마 전환</button>
+            <button class="drawer__opt" data-view="list" type="button">목록</button>
+            <button class="drawer__opt" data-view="grid" type="button">격자</button>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <div class="wrap layout">
+    <aside class="sidebar">
+      <nav class="nav" aria-label="메뉴"><a class="nav__item" href="https://designrefs.com/"><span class="nav__label">전체</span><span class="nav__count">398</span></a><a class="nav__item" href="https://designrefs.com/#bookmarks"><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="m12 2.5 2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8Z"/></svg><span class="nav__label">즐겨찾기</span><span class="nav__count" data-bm-count>0</span></a><hr class="nav__sep" /><a class="nav__item" href="https://designrefs.com/#uiux"><span class="nav__label">UI/UX 레퍼런스</span><span class="nav__count">40</span></a><a class="nav__item" href="https://designrefs.com/#graphic"><span class="nav__label">그래픽 / 브랜딩</span><span class="nav__count">24</span></a><a class="nav__item" href="https://designrefs.com/#color"><span class="nav__label">컬러 가이드</span><span class="nav__count">24</span></a><a class="nav__item" href="https://designrefs.com/#typo"><span class="nav__label">타이포 / 폰트</span><span class="nav__count">23</span></a><a class="nav__item" href="https://designrefs.com/#asset"><span class="nav__label">아이콘 / 에셋</span><span class="nav__count">33</span></a><a class="nav__item" href="https://designrefs.com/#mockup"><span class="nav__label">목업</span><span class="nav__count">19</span></a><a class="nav__item" href="https://designrefs.com/#tool"><span class="nav__label">디자인 툴</span><span class="nav__count">30</span></a><a class="nav__item" href="https://designrefs.com/#ai"><span class="nav__label">AI</span><span class="nav__count">62</span></a><a class="nav__item" href="https://designrefs.com/#dev"><span class="nav__label">디자인 개발</span><span class="nav__count">34</span></a><a class="nav__item" href="https://designrefs.com/#community"><span class="nav__label">커뮤니티 / 매거진</span><span class="nav__count">29</span></a><a class="nav__item" href="https://designrefs.com/#creator"><span class="nav__label">크리에이터 / 채널</span><span class="nav__count">47</span></a><a class="nav__item" href="https://designrefs.com/#freelance"><span class="nav__label">외주 / 프리랜서</span><span class="nav__count">13</span></a><a class="nav__item" href="https://designrefs.com/#job"><span class="nav__label">채용공고</span><span class="nav__count">20</span></a><hr class="nav__sep" /><a class="nav__item is-active" href="https://designrefs.com/#articles"><span class="nav__label">읽을거리</span><span class="nav__count">26</span></a><a class="nav__item" href="https://designrefs.com/#styles"><span class="nav__label">스타일 사전</span><span class="nav__count">34</span></a><a class="nav__item" href="https://designrefs.com/#trends"><span class="nav__label">2026 트렌드</span><span class="nav__count">20</span></a><a class="nav__item" href="https://designrefs.com/#glossary"><span class="nav__label">용어 사전</span><span class="nav__count">155</span></a><hr class="nav__sep" /><a class="nav__item" href="https://designrefs.com/talk/"><span class="nav__label">디자인 잡담</span></a></nav>
+    </aside>
+    <main class="main page__main page__main--art">
+    <article class="art">
+      <p class="art__kicker"><a href="https://designrefs.com/articles/">읽을거리</a> · AI 디자인</p>
+      <h1 class="page__title">피그마 Specs, 마크다운 한 장으로 팀과 AI에게 맥락을 건네는 방법</h1>
+      <p class="page__intro">피그마가 캔버스 위에 마크다운 문서를 놓는 기능 Specs를 유료 플랜에 오픈 베타로 냈다. 무엇이 되고 무엇이 아직 확인되지 않았는지, 앞서 다룬 DESIGN.md와는 어떻게 다른지 피그마 공식 글과 릴리스 노트로 확인해 정리했다.</p>
+      <p class="art__meta"><time datetime="2026-10-16">2026년 10월 16일</time> · 읽는 데 약 5분<span data-views hidden></span></p>
+      <nav class="art__toc" aria-label="이 글의 차례"><p class="art__toc-t">이 글의 차례</p><ol><li><a href="#s1">Specs는 무엇인가</a></li><li><a href="#s2">왜 하필 마크다운인가</a></li><li><a href="#s3">에이전트가 스펙을 읽고, 댓글도 단다</a></li><li><a href="#s4">같이 나온 것들</a></li><li><a href="#s5">아직 확인되지 않은 것</a></li><li><a href="#s6">그래서 지금은</a></li></ol></nav>
+    <p class="ptext">피그마가 캔버스 위에 마크다운 문서를 올려 두는 기능 &#x27;Specs&#x27;를 냈다. 인도에서 열린 첫 Config 행사에서 나온 소식이고, 피그마 공식 글의 날짜는 10월 15일이다.</p>
+    <p class="ptext">디자인 파일을 열면 프레임은 있는데 &quot;왜 이렇게 했는지&quot;는 어디에도 없을 때가 많다. 결정은 메신저에, 요구 사항은 문서에, 시안은 피그마에 흩어져 있다. 이제는 여기에 AI 에이전트까지 읽어야 한다. 피그마는 이 흩어진 맥락을 캔버스 위 한 곳에 모으겠다고 했다.</p>
+    <p class="ptext">그래서 이번 글은 발표 문구보다 피그마 공식 블로그 글과 릴리스 노트를 따라갔다. 무엇이 되는지, 누가 쓸 수 있는지, 아직 확인되지 않은 것은 무엇인지를 나눠서 적는다.</p>
+    <p class="ptext"><strong>먼저 밝혀 둘 것.</strong> 나는 이 기능을 직접 써 보지 못했다. 아래 내용은 모두 피그마가 공개한 글과 노트, 그리고 기사에 적힌 것이다. 요금제별 세부 제한이나 마크다운 문법의 지원 범위는 공개된 글에서 찾지 못했다.</p>
+    <h2 class="psub" id="s1">Specs는 무엇인가</h2>
+    <p class="ptext">피그마는 Specs를 캔버스 위에 놓이는 &#x27;맥락을 담는 컨테이너&#x27;로 소개한다. 원문 표현으로는 &quot;a multiplayer container that allows context to fully express itself&quot;다. 여럿이 함께 편집하는 문서이고, 마크다운으로 쓴다.</p>
+    <p class="ptext">특징은 문서 안에 디자인이 들어간다는 점이다. 스펙 안에 FigJam 파일, 프레임, 캔버스의 노드를 직접 끼워 넣을 수 있다. 글과 시안이 나란히 놓이니, 설명 문서를 따로 열어 보는 수고가 줄어든다. 독립된 파일로 둘 수도 있고, 캔버스 안에 같이 둘 수도 있다.</p>
+    <p class="ptext">만드는 방법은 두 가지다.</p>
+    <ul class="ptext-list">
+      <li>이미 있는 <code>.md</code> 파일을 캔버스에 끌어다 놓으면 스펙이 된다.</li>
+      <li>피그마나 FigJam에서 키보드 <code>D</code>를 누르거나 툴바의 Specs 아이콘을 누르면 새 스펙이 열린다.</li>
+    </ul>
+    <p class="ptext">스펙을 복제해서 팀원이 각자 버전을 동시에 써 보고, 나중에 방향을 맞추는 것도 된다고 한다.</p>
+    <h2 class="psub" id="s2">왜 하필 마크다운인가</h2>
+    <p class="ptext">마크다운은 사람도 읽기 쉽고, AI도 잘 읽는 형식이다. 지난 2일 글에서 다룬 <a href="https://designrefs.com/articles/design-md-for-ai/">DESIGN.md</a>도 같은 이유로 마크다운을 쓴다. 색과 글자 크기 같은 값은 위쪽에 정확히 적고, 그 값을 왜 어떻게 쓰는지는 아래쪽에 글로 적는 파일이었다.</p>
+    <p class="ptext">Specs는 그 생각이 피그마 안으로 들어온 모습에 가깝다. 다만 같은 것은 아니다. DESIGN.md는 구글 랩스가 공개한 파일 형식이고, Specs는 피그마 캔버스 안의 문서다. 하나는 규칙을 담은 파일, 다른 하나는 작업 맥락을 담는 자리라고 나눠 보면 된다. 둘 중 하나를 고를 문제가 아니라, 규칙은 규칙대로 쓰고 작업의 배경은 스펙에 쓰는 식으로 나눠 쓸 수 있다. 이 부분은 내 해석이다.</p>
+    <p class="ptext">나도 이 사이트를 만들며 회색 글자의 명도 대비를 검사기로 확인하고 고친 적이 있다. 기준을 숫자로 적어 두면 눈으로 놓친 곳을 도구가 짚어 준다. 맥락을 문서로 남기는 일도 비슷한 쓸모가 있다.</p>
+    <h2 class="psub" id="s3">에이전트가 스펙을 읽고, 댓글도 단다</h2>
+    <p class="ptext">피그마 글에 따르면 피그마 에이전트는 스펙의 댓글을 읽고 답글을 달 수 있다. 사람과 일하듯 에이전트에게도 댓글로 일을 시킬 수 있다는 뜻이다. 에이전트와의 여러 대화는 각각 별도 스레드로 나뉘어 병렬로 진행된다.</p>
+    <p class="ptext">연결된 도구도 소개됐다.</p>
+    <ul class="ptext-list">
+      <li>GitHub 커넥터: 코드베이스를 참고해 기술 스펙 초안을 쓰게 할 수 있다.</li>
+      <li>Hex 커넥터: 제품 사용 데이터를 분석하고 결과를 스펙에 댓글로 남기게 할 수 있다.</li>
+    </ul>
+    <p class="ptext">코딩 에이전트와의 연결은 MCP로 한다. 스펙 링크를 복사해 코딩 에이전트의 프롬프트에 붙이면, 마크다운과 프레임 참조, 다이어그램, 코드 레이어, Code Connect 스니펫이 함께 넘어간다고 한다. 개발자에게 &quot;피그마 링크랑 이 문서 보세요&quot;라고 따로 말하던 일을 링크 하나로 줄이겠다는 얘기다.</p>
+    <p class="ptext">피그마 공식 글에는 사례도 있다. Intuit의 Mark Harvey는 아이콘 세트의 파일 이름, 분류, 태그, 설명을 스펙으로 정리했다. 피그마 리서처는 브레인스토밍 결과와 아직 풀리지 않은 질문을 스펙에 모아 둔다. 디자이너에게 가까운 쓰임은 이쪽이다.</p>
+    <h2 class="psub" id="s4">같이 나온 것들</h2>
+    <p class="ptext">10월 15일 릴리스 노트와 TechCrunch 기사를 합쳐 상태를 표로 정리했다.</p>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th>기능</th><th>상태</th><th>제공 범위</th></tr></thead>
+      <tbody>
+        <tr><td>Specs</td><td>오픈 베타</td><td>유료 플랜</td></tr>
+        <tr><td>가이드라인</td><td>출시(단계 명시 없음)</td><td>요금제 명시 없음</td></tr>
+        <tr><td>통합 디자인 시스템(디자인 라이브러리 + 코드 라이브러리 + 가이드라인)</td><td>프리뷰</td><td>명시 없음</td></tr>
+        <tr><td>코드 레이어</td><td>공개 베타(6월 비공개 베타에서 전환)</td><td>명시 없음</td></tr>
+        <tr><td>피그마 에이전트</td><td>10월 6일 정식 출시</td><td>AI 크레딧 사용</td></tr>
+      </tbody>
+    </table></div>
+    <p class="art__note">출처: <a href="https://www.figma.com/release-notes/" target="_blank" rel="noopener">Figma 릴리스 노트</a> (10월 16일 확인), <a href="https://techcrunch.com/2026/10/14/figma-announces-new-features-to-define-how-agents-work-on-its-platform/" target="_blank" rel="noopener">TechCrunch</a></p>
+    <p class="ptext">눈여겨볼 것은 가이드라인이다. 릴리스 노트에 따르면 게시된 디자인 라이브러리에 규칙, 모범 사례, 하지 말아야 할 것을 마크다운 파일로 붙여 둘 수 있고, 라이브러리를 켜고 프롬프트를 쓸 때마다 에이전트가 이 파일을 읽는다. 앞서 <a href="https://designrefs.com/articles/chatgpt-intelligent-ui-figma-agent/">AI가 화면을 직접 그리기 시작한 주</a>에 던진 질문, 곧 디자인 규칙을 누가 쥐고 있느냐에 대한 피그마의 답이 이쪽이다. 규칙을 사람이 글로 적어 두면 에이전트가 따른다는 구조다.</p>
+    <p class="ptext">피그마는 AI의 결과가 매번 다르다는 점도 의식하고 있다. TechCrunch는 이번 발표가 AI 결과를 더 예측할 수 있게 하려는 도구라고 전했다. 다만 얼마나 예측 가능해지는지는 숫자로 공개된 것이 없다.</p>
+    <p class="ptext">에이전트는 10월 6일부터 AI 크레딧을 쓴다. 맥락을 많이 붙이고 여러 번 시킬수록 크레딧이 들 수 있으니, 팀에서 쓴다면 이 부분을 확인해 두자. 커스텀 스킬은 Starter 플랜에서도 쓸 수 있다고 릴리스 노트에 적혀 있다.</p>
+    <h2 class="psub" id="s5">아직 확인되지 않은 것</h2>
+    <ul class="ptext-list">
+      <li>Specs의 가격과 베타 종료 일정. 공식 글에는 유료 플랜 오픈 베타라는 말만 있다.</li>
+      <li>파일 크기나 스펙 개수 같은 제한.</li>
+      <li>마크다운 문법의 지원 범위. 표나 체크리스트가 어디까지 되는지는 직접 열어 봐야 한다.</li>
+      <li>한국어 문서에서의 동작. 한글로 쓴 스펙을 에이전트가 얼마나 잘 따르는지는 따로 공개된 시험이 없다.</li>
+      <li>통합 디자인 시스템과 가이드라인이 어느 요금제에서 되는지.</li>
+    </ul>
+    <h2 class="psub" id="s6">그래서 지금은</h2>
+    <p class="ptext"><strong>기존 문서 하나를 스펙으로 끌어다 놓아 보자.</strong> 프로젝트 소개나 회의 정리처럼 이미 있는 <code>.md</code> 파일 하나면 된다. 새로 쓰기 전에, 있는 글이 캔버스 위에서 어떻게 보이는지부터 확인하는 게 가장 빠르다. 유료 플랜이 아니라면 아직 쓸 수 없으니 베타가 열릴 때를 기다리자.</p>
+    <p class="ptext"><strong>&quot;왜 이렇게 했는지&quot;를 세 줄만 적어 두자.</strong> 시안 옆에 결정 이유, 버린 안, 아직 모르는 것을 적는다. 에이전트가 읽든 사람이 읽든 이 세 줄이 가장 쓸모 있다. 아직 풀리지 않은 질문을 따로 적는 습관은 피그마 리서처의 사례에서 가져왔다.</p>
+    <p class="ptext"><strong>규칙은 규칙대로, 맥락은 맥락대로 나눠 쓰자.</strong> 색과 글자 같은 규칙은 <a href="https://designrefs.com/articles/design-md-for-ai/">DESIGN.md</a>나 가이드라인에, 이번 작업의 배경은 스펙에 쓰면 섞이지 않는다. 에이전트에게 시킬 때도 어느 글을 읽혀야 하는지가 분명해진다.</p>
+    <p class="ptext">쓰임별 AI 디자인 도구는 <a href="https://designrefs.com/ai/">AI 디자인 툴</a>에 모아 두었다.</p>
+    <p class="art__note">출처: <a href="https://www.figma.com/blog/introducing-figma-specs/" target="_blank" rel="noopener">Introducing Specs: Markdown as a medium (Figma 블로그)</a>, <a href="https://www.figma.com/release-notes/" target="_blank" rel="noopener">Figma 릴리스 노트</a> (10월 16일 확인), <a href="https://techcrunch.com/2026/10/14/figma-announces-new-features-to-define-how-agents-work-on-its-platform/" target="_blank" rel="noopener">TechCrunch</a>.</p>
+      <div class="share">
+        <button class="share__btn" type="button" data-share>공유하기</button>
+        <button class="share__btn" type="button" data-copy>링크 복사</button>
+        <span class="share__msg" role="status"></span>
+      </div>
+    </article>
+    <script src="https://designrefs.com/js/views.js" defer></script>
+
+    <nav class="page__nav">
+      <h2 class="psub">이어서 볼 목록</h2>
+      <div class="page__navlinks"><a href="https://designrefs.com/#ai">AI 디자인 툴</a><a href="https://designrefs.com/#tool">디자인 툴</a><a href="https://designrefs.com/#uiux">UI/UX 레퍼런스</a></div>
+    </nav>
+
+    <section class="section">
+      <header class="section__head">
+        <h2 class="section__title">함께 읽으면 좋은 글</h2>
+      </header>
+      <div class="list list--insight">
+        <a class="arow" href="https://designrefs.com/articles/nano-banana-2-1-designers/" data-tag="AI 디자인">
+          <span class="arow__date">2026. 10. 15</span>
+          <span class="arow__main">
+            <span class="arow__title">나노 바나나 2.1, 값은 절반이 됐다는데 디자이너가 확인할 것</span>
+            <p class="arow__desc">구글의 이미지 모델 나노 바나나 2.1이 나왔다. 1K와 2K는 값이 절반이 됐지만 4K는 그렇지 않고, 글자는 좋아졌지만 모델 카드에 약점도 적혀 있다. 요금표와 모델 카드를 직접 확인해 그림과 숫자로 정리했다.</p>
+          </span>
+          <span class="arow__tag">AI 디자인 · 4분</span>
+        </a>
+        <a class="arow" href="https://designrefs.com/articles/muse-wonder-design-arena/" data-tag="AI 디자인">
+          <span class="arow__date">2026. 10. 14</span>
+          <span class="arow__main">
+            <span class="arow__title">메타의 첫 최상위 모델이 디자인 투표 1위, 이 순위를 어떻게 읽을까</span>
+            <p class="arow__desc">메타가 10월 12일 내놓은 Muse Wonder가 사람들이 눈으로 골라 매기는 Design Arena에서 웹사이트와 UI 부문 1위에 올랐다. 투표가 어떻게 돌아가는지, 1위가 말해 주는 것과 말해 주지 않는 것을 그림과 숫자로 정리했다.</p>
+          </span>
+          <span class="arow__tag">AI 디자인 · 5분</span>
+        </a>
+        <a class="arow" href="https://designrefs.com/articles/macos-27-ai-off-switch/" data-tag="AI 디자인">
+          <span class="arow__date">2026. 10. 11</span>
+          <span class="arow__main">
+            <span class="arow__title">맥에서 AI를 한 번에 끄는 스위치가 사라졌다, &#x27;끄는 버튼&#x27;도 디자인이다</span>
+            <p class="arow__desc">macOS 27에서 애플 인텔리전스를 통째로 끄던 스위치가 없어졌다. 사용자들은 외부 도구까지 만들어 AI를 지우고 있다. 무엇이 바뀌었는지, 디자이너의 맥에서는 무엇을 확인할지, AI 기능을 설계하는 사람에게 남는 질문을 정리했다.</p>
+          </span>
+          <span class="arow__tag">AI 디자인 · 3분</span>
+        </a>
+      </div>
+      <nav class="art__pn"><a class="art__pn-a is-prev" href="https://designrefs.com/articles/nano-banana-2-1-designers/" rel="prev"><span class="art__pn-l">← 이전 글</span><span class="art__pn-t">나노 바나나 2.1, 값은 절반이 됐다는데 디자이너가 확인할 것</span></a><span></span></nav>
+      <p class="art__all"><a href="https://designrefs.com/articles/">읽을거리 전체 보기 (26편) →</a></p>
+    </section>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <div class="wrap">
+      <nav class="footer__nav"><div class="footer__navgroup"><a href="https://designrefs.com/ui-ux/">UI/UX 레퍼런스</a><a href="https://designrefs.com/graphic/">그래픽 / 브랜딩</a><a href="https://designrefs.com/color/">컬러 가이드</a><a href="https://designrefs.com/font/">타이포 / 폰트</a><a href="https://designrefs.com/assets/">아이콘 / 에셋</a><a href="https://designrefs.com/mockups/">목업</a><a href="https://designrefs.com/tools/">디자인 툴</a><a href="https://designrefs.com/ai/">AI</a><a href="https://designrefs.com/dev/">디자인 개발</a><a href="https://designrefs.com/community/">커뮤니티 / 매거진</a><a href="https://designrefs.com/creators/">크리에이터 / 채널</a><a href="https://designrefs.com/freelance/">외주 / 프리랜서</a><a href="https://designrefs.com/jobs/">채용공고</a></div><div class="footer__navgroup"><a href="https://designrefs.com/articles/">읽을거리</a><a href="https://designrefs.com/styles/">스타일 사전</a><a href="https://designrefs.com/trends/">2026 트렌드</a><a href="https://designrefs.com/glossary/">용어 사전</a></div></nav>
+    </div>
+    <div class="wrap footer__inner">
+      <span>Copyright 2026. Design Hub. all rights reserved.</span>
+      <a href="https://designrefs.com/about/">소개</a>
+      <a href="https://designrefs.com/articles/">읽을거리</a>
+      <a href="https://designrefs.com/talk/">디자인 잡담</a>
+      <a href="https://designrefs.com/privacy/">개인정보처리방침</a>
+      <a href="mailto:nisov0924@gmail.com">CONTACT : nisov0924@gmail.com</a>
+      <a href="#" id="footer-top">맨 위로 ↑</a>
+    </div>
+  </footer>
+
+  <button id="to-top" class="to-top" type="button" aria-label="맨 위로"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg></button>
+  <script src="https://designrefs.com/js/page.js" defer></script>
+</body>
+</html>

@@ -6,7 +6,71 @@
     <atom:link href="https://designrefs.com/en/rss.xml" rel="self" type="application/rss+xml" />
     <description>Notes from a designer in Korea: working with AI, putting style into words, collecting references and design communities. Translated from Korean.</description>
     <language>en</language>
-    <lastBuildDate>Thu, 15 Oct 2026 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 16 Oct 2026 09:00:00 +0900</lastBuildDate>
+    <item>
+      <title>Figma Specs: one markdown page that hands context to your team and to AI</title>
+      <link>https://designrefs.com/en/articles/figma-specs-markdown-context/</link>
+      <guid isPermaLink="true">https://designrefs.com/en/articles/figma-specs-markdown-context/</guid>
+      <pubDate>Fri, 16 Oct 2026 09:00:00 +0900</pubDate>
+      <category>AI Design</category>
+      <description>Figma has put markdown documents on the canvas with Specs, now in open beta on paid plans. Checked against Figma&#x27;s own post and release notes: what works, what isn&#x27;t confirmed, and how it differs from DESIGN.md.</description>
+      <content:encoded><![CDATA[    <p class="ptext">Figma has added a feature called Specs: markdown documents that live on the canvas. It was announced at Figma&#x27;s first Config event in India, and Figma&#x27;s own post is dated October 15.</p>
+    <p class="ptext">Open a design file and you can see the frames, but rarely why they look that way. Decisions sit in chat, requirements in a doc, mockups in Figma. Now AI agents have to read all of it too. Figma says it wants to gather that scattered context in one place on the canvas.</p>
+    <p class="ptext">So this piece follows Figma&#x27;s blog post and release notes rather than the launch buzz. I separate what works, who can use it, and what hasn&#x27;t been confirmed.</p>
+    <p class="ptext"><strong>First, a disclaimer.</strong> I haven&#x27;t used this feature myself. Everything below comes from what Figma published and what news reports say. I couldn&#x27;t find per-plan limits or the exact range of supported markdown syntax in anything public.</p>
+    <h2 class="psub" id="s1">What Specs is</h2>
+    <p class="ptext">Figma describes Specs as a container for context that sits on the canvas. In its words, &quot;a multiplayer container that allows context to fully express itself.&quot; Several people edit it together, and you write it in markdown.</p>
+    <p class="ptext">The notable part is that designs can sit inside the document. You can embed FigJam files, frames and canvas nodes directly in a spec, so text and visuals sit side by side and you don&#x27;t open a separate doc. A spec can be a standalone file or sit alongside your work on the canvas.</p>
+    <p class="ptext">There are two ways to make one.</p>
+    <ul class="ptext-list">
+      <li>Drag any existing <code>.md</code> file onto the canvas and it becomes a spec.</li>
+      <li>In Figma or FigJam, press <code>D</code> or click the Specs icon in the toolbar to start a new one.</li>
+    </ul>
+    <p class="ptext">You can also duplicate a spec so teammates each work on their own version at the same time, then align on a direction later.</p>
+    <h2 class="psub" id="s2">Why markdown</h2>
+    <p class="ptext">Markdown is easy for people to read and easy for AI to read. <a href="https://designrefs.com/articles/design-md-for-ai/">DESIGN.md</a>, which we covered on October 2, uses it for the same reason: exact values like colors and type sizes go at the top, and prose below explains why and how to use them.</p>
+    <p class="ptext">Specs feels like the same idea moving inside Figma, but they aren&#x27;t the same thing. DESIGN.md is a file format published by Google Labs; Specs is a document on the Figma canvas. One holds rules, the other holds the context of a piece of work. You don&#x27;t have to pick one. That split is my own reading.</p>
+    <p class="ptext">While building this site I checked the contrast of gray text with a checker and fixed it. When the standard is written as a number, a tool points out what the eye missed. Context documents are useful in a similar way.</p>
+    <h2 class="psub" id="s3">Agents read the spec, and comment on it</h2>
+    <p class="ptext">According to Figma&#x27;s post, the Figma agent can read comments on a spec and reply to them, so you can work with an agent the way you would with a teammate. Separate conversations with agents run as separate threads, in parallel.</p>
+    <p class="ptext">Two connectors were mentioned.</p>
+    <ul class="ptext-list">
+      <li>GitHub connector: the agent can reference a codebase and draft a technical spec.</li>
+      <li>Hex connector: the agent can analyze product usage data and leave the results as comments on the spec.</li>
+    </ul>
+    <p class="ptext">Coding agents connect through MCP. Paste a spec link into a coding agent&#x27;s prompt, and the markdown, frame references, diagrams, code layers and Code Connect snippets come along with it. The goal is to replace &quot;look at this Figma link and this doc&quot; with a single link.</p>
+    <p class="ptext">Figma&#x27;s post includes examples too. Mark Harvey at Intuit documented an icon set&#x27;s file names, categories, tags and descriptions in a spec. A Figma researcher collects brainstorm results and open questions in one. The second is closest to how designers might use it.</p>
+    <h2 class="psub" id="s4">What shipped alongside</h2>
+    <p class="ptext">Here is the status of each item, from the October 15 release notes and TechCrunch.</p>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th>Feature</th><th>Status</th><th>Availability</th></tr></thead>
+      <tbody>
+        <tr><td>Specs</td><td>Open beta</td><td>Paid plans</td></tr>
+        <tr><td>Guidelines</td><td>Released (stage not stated)</td><td>Plan not stated</td></tr>
+        <tr><td>Centralized design systems (design library + code library + guidelines)</td><td>Preview</td><td>Not stated</td></tr>
+        <tr><td>Code layers</td><td>Public beta (moved from June&#x27;s private beta)</td><td>Not stated</td></tr>
+        <tr><td>Figma agent</td><td>Generally available October 6</td><td>Uses AI credits</td></tr>
+      </tbody>
+    </table></div>
+    <p class="art__note">Source: <a href="https://www.figma.com/release-notes/" target="_blank" rel="noopener">Figma release notes</a> (checked October 16), <a href="https://techcrunch.com/2026/10/14/figma-announces-new-features-to-define-how-agents-work-on-its-platform/" target="_blank" rel="noopener">TechCrunch</a></p>
+    <p class="ptext">Guidelines deserve attention. Per the release notes, you can attach rules, best practices and anti-patterns to a published design library as markdown files, and the agent reads them every time someone prompts with the library enabled. Our earlier piece on <a href="https://designrefs.com/articles/chatgpt-intelligent-ui-figma-agent/">the week AI started drawing screens</a> asked who holds the design rules. This is Figma&#x27;s answer: people write the rules down, and the agent follows them.</p>
+    <p class="ptext">Figma is also aware that AI output varies from run to run. TechCrunch reported that the announcements include tools meant to make results more predictable. No numbers on how much more predictable have been published.</p>
+    <p class="ptext">The agent has used AI credits since October 6. The more context you attach and the more often you prompt, the more credits it may use, so check this if your team plans to use it. The release notes say custom skills are available even on the Starter plan.</p>
+    <h2 class="psub" id="s5">What isn&#x27;t confirmed</h2>
+    <ul class="ptext-list">
+      <li>Specs pricing and when the beta ends. Figma only says open beta on paid plans.</li>
+      <li>Limits such as file size or number of specs.</li>
+      <li>Range of supported markdown syntax. You&#x27;ll have to open it to see how far tables and checklists go.</li>
+      <li>Behavior with Korean documents. No published test shows how well the agent follows a spec written in Korean.</li>
+      <li>Which plans get guidelines and centralized design systems.</li>
+    </ul>
+    <h2 class="psub" id="s6">So for now</h2>
+    <p class="ptext"><strong>Drag one existing document onto the canvas as a spec.</strong> A project brief or meeting notes in <code>.md</code> is enough. Before writing anything new, see how what you already have looks on the canvas. If you aren&#x27;t on a paid plan, you&#x27;ll have to wait for access.</p>
+    <p class="ptext"><strong>Write three lines on why you did it this way.</strong> Next to a mockup, note the decision, the options you dropped, and what you still don&#x27;t know. These three lines are useful whether a person or an agent reads them. Keeping open questions in their own place comes from the Figma researcher&#x27;s example.</p>
+    <p class="ptext"><strong>Keep rules and context separate.</strong> Put colors and type in <a href="https://designrefs.com/articles/design-md-for-ai/">DESIGN.md</a> or guidelines, and the background of this piece of work in the spec. They won&#x27;t blur together, and it&#x27;s clear which text an agent should read.</p>
+    <p class="ptext">AI design tools by use are collected on <a href="https://designrefs.com/ai/">AI Design Tools</a>.</p>
+    <p class="art__note">Sources: <a href="https://www.figma.com/blog/introducing-figma-specs/" target="_blank" rel="noopener">Introducing Specs: Markdown as a medium (Figma blog)</a>, <a href="https://www.figma.com/release-notes/" target="_blank" rel="noopener">Figma release notes</a> (checked October 16), <a href="https://techcrunch.com/2026/10/14/figma-announces-new-features-to-define-how-agents-work-on-its-platform/" target="_blank" rel="noopener">TechCrunch</a>.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Nano Banana 2.1 is &quot;half price&quot;. What designers should check</title>
       <link>https://designrefs.com/en/articles/nano-banana-2-1-designers/</link>
