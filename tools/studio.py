@@ -20,6 +20,11 @@
 - Claude 데스크톱 설정(designhub MCP 서버)에 넣어 둔 인스타그램·스레드 토큰을 그대로 읽어 씁니다.
   화면이나 기록에는 토큰을 보여 주지 않고, 메타 서버 말고는 어디에도 보내지 않습니다.
 
+AI 사무실 (~/ai-office, 현황판 http://127.0.0.1:8740)
+- 사무실 결재함에서 기다리는 스레드 초안이 '스레드 초안' 목록에 'AI 사무실 ·' 로 같이 보입니다.
+  여기서 다듬어 올리면 사무실 결재함에서는 '게시됨'으로 빠집니다 (python -m office mark-published).
+- 사무실이 올린 글은 같은 기록 파일(studio-history.json)에 id 'office:…' 로 남아 보관함·최근 발행에 함께 보입니다.
+
 AI 편집장
 - 'AI 편집장' 탭에서 발행된 글을 Claude(coach.py)에게 검토받고, 제안을 [적용]한 뒤 '사이트에 반영'을 누릅니다.
 - 캡션·스레드 글 옆의 'AI로 다듬기'로 발행 전에 글을 다듬습니다.
@@ -45,6 +50,8 @@ CARDS = ROOT / "social" / "cards"
 REELS = ROOT / "social" / "reels"
 IG = "https://graph.instagram.com/v23.0"
 TH = "https://graph.threads.net/v1.0"
+OFFICE = pathlib.Path.home() / "ai-office"                        # AI 사무실 (없으면 연결 기능만 꺼짐)
+OFFICE_URL = "http://127.0.0.1:8740/"
 LOCK = threading.Lock()
 JOBS = {}
 
@@ -96,10 +103,43 @@ def published_keys():
     return {f'{h["type"]}:{h["id"]}' for h in history()}
 
 
+def office_drafts():
+    """AI 사무실 결재함에서 기다리는 스레드 초안 → 이 화면의 초안 모양으로 (id: office-<결재 id>)."""
+    out = []
+    known = {"designhub", *th_accounts_names()}
+    for f in sorted((OFFICE / "approvals" / "pending").glob("*.json"), reverse=True):
+        it = read_json(f, {})
+        p = it.get("payload") or {}
+        acc = it.get("account") or ""
+        if it.get("kind") not in ("threads_chain", "threads_post") or it.get("status") not in ("waiting", "approved_no_account") or acc not in known:
+            continue
+        posts = p.get("posts") or [p.get("text", "")]
+        topic = (it.get("note") or "").split(" — ")[0].strip() or posts[0][:30]
+        out.append({"id": f"office-{it['id']}", "office": it["id"], "label": f"AI 사무실 · {it.get('staff_name', '')} · {topic}",
+                    "text": "\n---\n".join(posts), "link": p.get("link", ""), "account": "" if acc == "designhub" else acc,
+                    "verdict": (it.get("review") or {}).get("verdict", "")})
+    return out
+
+
+def th_accounts_names():
+    return [a for a in read_json(ACCOUNTS, {}) if a]
+
+
+def office_mark(item_id, link):
+    """스튜디오에서 올린 사무실 초안 → 사무실 결재함에서 '게시됨'으로."""
+    py = OFFICE / ".venv" / "bin" / "python"
+    if not py.exists():
+        return "AI 사무실을 찾지 못해 결재함 표시는 건너뜀"
+    r = subprocess.run([str(py), "-W", "ignore", "-m", "office", "mark-published", item_id, "--by=studio", f"--link={link}"],
+                       cwd=OFFICE, capture_output=True, text=True, timeout=60)
+    return "AI 사무실 결재함에서 뺐습니다" if r.returncode == 0 else f"AI 사무실 결재함 표시 실패: {(r.stdout + r.stderr)[-200:]}"
+
+
 def drafts():
     """스레드 초안: 저장소의 최신 초안(tools/threads_drafts.json) 위에, 내가 고친 글만 덮어씁니다.
-    그래서 초안을 새로 고쳐 올리면 맥에서도 바로 새 초안이 보입니다."""
-    seed = read_json(TOOLS / "threads_drafts.json", [])
+    그래서 초안을 새로 고쳐 올리면 맥에서도 바로 새 초안이 보입니다.
+    AI 사무실 결재함의 스레드 초안도 맨 앞에 붙입니다."""
+    seed = office_drafts() + read_json(TOOLS / "threads_drafts.json", [])
     mine = read_json(DRAFTS, {})
     if not isinstance(mine, dict):   # 예전 형식(초안 전체를 복사해 두던 것)은 버리고 새로 시작
         mine = {}
@@ -629,6 +669,8 @@ def do_publish(job, p):
         step("스레드 게시 완료")
         if p.get("draft"):
             save_draft({"id": p["draft"], "text": text})
+            if p["draft"].startswith("office-"):
+                step(office_mark(p["draft"].removeprefix("office-"), links.get("threads", "")))
     add_history({"type": kind, "id": rid, "title": p.get("title", rid) + (f" (@{p['account']})" if p.get("account") and p["account"] != "designhub" else ""), "at": datetime.datetime.now().isoformat(timespec="minutes"),
                  "links": links, "ids": ids, "account": p.get("account") or "designhub",
                  "text": (p.get("text") if kind == "thread" else p.get("caption", "")) or ""})
@@ -709,6 +751,11 @@ def library(_=None):
         items.append({"type": "carousel", "id": c["id"], "source": src, "title": c["title"], "sub": f"캐러셀 · {c['count']}장",
                       "thumb": local(c["images"][0]), "pubs": by_key.get(f"carousel:{c['id']}", []),
                       "made": (CARDS / c["id"] / "01.jpg").stat().st_mtime})
+    for i, h in enumerate(hist):   # AI 사무실이 올린 캐러셀(이 저장소 밖의 이미지)
+        if h["type"] in ("carousel", "reel") and str(h["id"]).startswith("office:"):
+            items.append({"type": h["type"], "id": h["id"], "source": "", "title": h.get("title", ""),
+                          "sub": f"{'캐러셀' if h['type'] == 'carousel' else '릴스'} · AI 사무실", "thumb": h.get("thumb", ""),
+                          "pubs": [dict(h, index=i)], "made": 0})
     for i, h in enumerate(hist):
         if h["type"] == "thread":
             items.append({"type": "thread", "id": h["id"], "source": h["id"], "title": h["title"], "sub": "스레드",
@@ -792,6 +839,7 @@ def state(_=None):
     return {"ok": True, **sources, "history": history()[:30], "published": sorted(published_keys()),
             "tokens": {"instagram": bool(ig), "threads": bool(th)}, "accounts": th_accounts(),
             "tools": {"ffmpeg": bool(shutil.which("ffmpeg")), "gh": bool(shutil.which("gh"))},
+            "office": {"url": OFFICE_URL, "here": OFFICE.exists()},
             "recommend": recommend(sources)}
 
 
