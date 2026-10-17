@@ -1,6 +1,7 @@
 // 이 파일은 tools/build-articles.py 가 만듭니다. 직접 고치지 마세요.
 // 글은 content/articles/*.md 에서 고칩니다.
 const ARTICLES = [
+  { slug: "protopie-mcp-prototype-ai", title: "프로토타입을 말로 만들고 코드로 넘긴다, 프로토파이 MCP에서 디자이너가 확인할 것", desc: "프로토파이가 MCP 지원을 공식으로 알렸다. Studio MCP는 열어 둔 프로토타입을 AI가 읽고 고치고, Code MCP는 완성본을 코딩 에이전트에게 넘긴다. 프로토파이 공식 글과 문서로 무엇이 되고 무엇이 확인되지 않았는지 정리했다.", date: "2026-10-17", tag: "AI 디자인", min: 5, views: ["ai", "tool", "uiux"] },
   { slug: "figma-specs-markdown-context", title: "피그마 Specs, 마크다운 한 장으로 팀과 AI에게 맥락을 건네는 방법", desc: "피그마가 캔버스 위에 마크다운 문서를 놓는 기능 Specs를 유료 플랜에 오픈 베타로 냈다. 무엇이 되고 무엇이 아직 확인되지 않았는지, 앞서 다룬 DESIGN.md와는 어떻게 다른지 피그마 공식 글과 릴리스 노트로 확인해 정리했다.", date: "2026-10-16", tag: "AI 디자인", min: 5, views: ["ai", "tool", "uiux"] },
   { slug: "nano-banana-2-1-designers", title: "나노 바나나 2.1, 값은 절반이 됐다는데 디자이너가 확인할 것", desc: "구글의 이미지 모델 나노 바나나 2.1이 나왔다. 1K와 2K는 값이 절반이 됐지만 4K는 그렇지 않고, 글자는 좋아졌지만 모델 카드에 약점도 적혀 있다. 요금표와 모델 카드를 직접 확인해 그림과 숫자로 정리했다.", date: "2026-10-15", tag: "AI 디자인", min: 4, views: ["ai", "tool", "graphic"] },
   { slug: "muse-wonder-design-arena", title: "메타의 첫 최상위 모델이 디자인 투표 1위, 이 순위를 어떻게 읽을까", desc: "메타가 10월 12일 내놓은 Muse Wonder가 사람들이 눈으로 골라 매기는 Design Arena에서 웹사이트와 UI 부문 1위에 올랐다. 투표가 어떻게 돌아가는지, 1위가 말해 주는 것과 말해 주지 않는 것을 그림과 숫자로 정리했다.", date: "2026-10-14", tag: "AI 디자인", min: 5, views: ["ai", "uiux", "dev"] },

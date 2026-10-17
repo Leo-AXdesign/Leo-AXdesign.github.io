@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Build prototypes by prompt, hand them off as code: what to check in ProtoPie MCP | Design Hub</title>
+  <meta name="description" content="ProtoPie has announced official MCP support. Studio MCP lets an AI read and edit the prototype you have open; Code MCP hands finished prototypes to coding agents. Checked against ProtoPie&#x27;s own post and docs: what works and what isn&#x27;t confirmed." />
+  <link rel="canonical" href="https://designrefs.com/en/articles/protopie-mcp-prototype-ai/" />
+  <link rel="alternate" hreflang="ko" href="https://designrefs.com/articles/protopie-mcp-prototype-ai/" />
+  <link rel="alternate" hreflang="en" href="https://designrefs.com/en/articles/protopie-mcp-prototype-ai/" />
+  <link rel="alternate" hreflang="x-default" href="https://designrefs.com/articles/protopie-mcp-prototype-ai/" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Design Hub" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="Build prototypes by prompt, hand them off as code: what to check in ProtoPie MCP | Design Hub" />
+  <meta property="og:description" content="ProtoPie has announced official MCP support. Studio MCP lets an AI read and edit the prototype you have open; Code MCP hands finished prototypes to coding agents. Checked against ProtoPie&#x27;s own post and docs: what works and what isn&#x27;t confirmed." />
+  <meta property="og:url" content="https://designrefs.com/en/articles/protopie-mcp-prototype-ai/" />
+  <meta property="og:image" content="https://designrefs.com/og/en/protopie-mcp-prototype-ai.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="alternate" type="application/rss+xml" title="Design Hub Articles" href="https://designrefs.com/en/rss.xml" />
+  <link rel="icon" href="https://designrefs.com/favicon.ico" sizes="32x32" />
+  <link rel="icon" type="image/svg+xml" href="https://designrefs.com/favicon.svg" />
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+  <link rel="stylesheet" href="https://designrefs.com/css/style.css" />
+  <!-- 구글 애드센스 -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5831827822584395" crossorigin="anonymous"></script>
+
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q7QVVHSLQ6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Q7QVVHSLQ6');
+  </script>
+  <script>
+    // 메인에서 고른 테마를 그대로 따릅니다.
+    try {
+      var t = localStorage.getItem('designhub:theme') || 'light';
+      if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+    } catch (e) {}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://designrefs.com/en/articles/protopie-mcp-prototype-ai/#post",
+      "url": "https://designrefs.com/en/articles/protopie-mcp-prototype-ai/",
+      "mainEntityOfPage": "https://designrefs.com/en/articles/protopie-mcp-prototype-ai/",
+      "headline": "Build prototypes by prompt, hand them off as code: what to check in ProtoPie MCP",
+      "description": "ProtoPie has announced official MCP support. Studio MCP lets an AI read and edit the prototype you have open; Code MCP hands finished prototypes to coding agents. Checked against ProtoPie's own post and docs: what works and what isn't confirmed.",
+      "articleSection": "AI Design",
+      "datePublished": "2026-10-17",
+      "dateModified": "2026-10-17",
+      "inLanguage": "en",
+      "wordCount": 1174,
+      "timeRequired": "PT5M",
+      "image": "https://designrefs.com/og/en/protopie-mcp-prototype-ai.png",
+      "author": {
+        "@type": "Organization",
+        "name": "Design Hub",
+        "url": "https://designrefs.com/en/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Design Hub",
+        "url": "https://designrefs.com/en/"
+      },
+      "isPartOf": {
+        "@type": "Blog",
+        "@id": "https://designrefs.com/en/articles/#blog",
+        "name": "Design Hub Articles"
+      },
+      "translationOfWork": {
+        "@id": "https://designrefs.com/articles/protopie-mcp-prototype-ai/#post"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Design Hub",
+          "item": "https://designrefs.com/en/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Articles",
+          "item": "https://designrefs.com/en/articles/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Build prototypes by prompt, hand them off as code: what to check in ProtoPie MCP",
+          "item": "https://designrefs.com/en/articles/protopie-mcp-prototype-ai/"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <meta property="article:published_time" content="2026-10-17T09:00:00+09:00" />
+  <meta property="article:modified_time" content="2026-10-17T09:00:00+09:00" />
+  <meta property="article:section" content="AI Design" />
+  <meta property="article:tag" content="AI Design" />
+  <meta property="article:tag" content="AI tools" />
+  <meta property="article:tag" content="Design Tools" />
+  <meta property="article:tag" content="UI/UX" />
+</head>
+<body class="page">
+  <header class="top">
+    <div class="wrap top__inner">
+      <a class="logo" href="https://designrefs.com/en/">d<span>.</span></a>
+
+      <!-- 검색어를 넣고 엔터를 치면 메인 화면에서 검색 결과가 열립니다 (?q=) -->
+      <form class="search" action="https://designrefs.com/en/" method="get" role="search">
+        <svg class="search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+        <input id="search" class="search__input" type="search" name="q" placeholder="Search sites" autocomplete="off" />
+        <kbd class="search__kbd">/</kbd>
+      </form>
+
+      <div class="top__actions">
+        <a class="top__lang" href="https://designrefs.com/articles/protopie-mcp-prototype-ai/" hreflang="ko" lang="ko" title="한국어">KO</a>
+        <button id="theme-toggle" class="top__btn" type="button" aria-label="Theme" title="Light / Dark">
+          <span class="dot"></span>
+        </button>
+        <button id="menu-open" class="top__btn top__btn--menu" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 모바일 전체 메뉴 -->
+  <div class="drawer" id="drawer" hidden>
+    <div class="drawer__backdrop" id="drawer-backdrop"></div>
+    <aside class="drawer__panel" role="dialog" aria-modal="true" aria-label="Menu">
+      <header class="drawer__head">
+        <span class="drawer__title">Menu</span>
+        <button id="menu-close" class="drawer__close" type="button" aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      </header>
+      <div class="drawer__body">
+        <nav class="nav" aria-label="Menu"><a class="nav__item" href="https://designrefs.com/en/"><span class="nav__label">All</span><span class="nav__count">398</span></a><a class="nav__item" href="https://designrefs.com/en/#bookmarks"><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="m12 2.5 2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8Z"/></svg><span class="nav__label">Bookmarks</span><span class="nav__count" data-bm-count>0</span></a><hr class="nav__sep" /><a class="nav__item" href="https://designrefs.com/en/#uiux"><span class="nav__label">UI/UX</span><span class="nav__count">40</span></a><a class="nav__item" href="https://designrefs.com/en/#graphic"><span class="nav__label">Graphic &amp; Branding</span><span class="nav__count">24</span></a><a class="nav__item" href="https://designrefs.com/en/#color"><span class="nav__label">Color</span><span class="nav__count">24</span></a><a class="nav__item" href="https://designrefs.com/en/#typo"><span class="nav__label">Type &amp; Fonts</span><span class="nav__count">23</span></a><a class="nav__item" href="https://designrefs.com/en/#asset"><span class="nav__label">Icons &amp; Assets</span><span class="nav__count">33</span></a><a class="nav__item" href="https://designrefs.com/en/#mockup"><span class="nav__label">Mockups</span><span class="nav__count">19</span></a><a class="nav__item" href="https://designrefs.com/en/#tool"><span class="nav__label">Design Tools</span><span class="nav__count">30</span></a><a class="nav__item" href="https://designrefs.com/en/#ai"><span class="nav__label">AI</span><span class="nav__count">62</span></a><a class="nav__item" href="https://designrefs.com/en/#dev"><span class="nav__label">Design &amp; Code</span><span class="nav__count">34</span></a><a class="nav__item" href="https://designrefs.com/en/#community"><span class="nav__label">Community &amp; Media</span><span class="nav__count">29</span></a><a class="nav__item" href="https://designrefs.com/en/#creator"><span class="nav__label">Creators</span><span class="nav__count">47</span></a><a class="nav__item" href="https://designrefs.com/en/#freelance"><span class="nav__label">Freelance</span><span class="nav__count">13</span></a><a class="nav__item" href="https://designrefs.com/en/#job"><span class="nav__label">Jobs</span><span class="nav__count">20</span></a><hr class="nav__sep" /><a class="nav__item is-active" href="https://designrefs.com/en/#articles"><span class="nav__label">Articles</span><span class="nav__count">27</span></a><a class="nav__item" href="https://designrefs.com/en/#styles"><span class="nav__label">Style Guide</span><span class="nav__count">34</span></a><a class="nav__item" href="https://designrefs.com/en/#trends"><span class="nav__label">2026 Trends</span><span class="nav__count">20</span></a><a class="nav__item" href="https://designrefs.com/en/#glossary"><span class="nav__label">Glossary</span><span class="nav__count">155</span></a><hr class="nav__sep" /><a class="nav__item" href="https://designrefs.com/en/talk/"><span class="nav__label">Design Talk</span></a></nav>
+        <div class="drawer__section">
+          <p class="nav__group">Filter</p>
+          <div class="pills pills--tags"><a class="pill is-active" href="https://designrefs.com/en/">All</a><a class="pill" href="https://designrefs.com/en/?tag=%ED%95%9C%EA%B5%AD">Korean</a><a class="pill" href="https://designrefs.com/en/?tag=%EB%AC%B4%EB%A3%8C">Free</a><a class="pill" href="https://designrefs.com/en/?tag=%EC%9C%A0%EB%A3%8C">Paid</a><a class="pill" href="https://designrefs.com/en/?tag=AI">AI</a></div>
+        </div>
+        <div class="drawer__section">
+          <p class="nav__group">View</p>
+          <div class="drawer__row">
+            <button class="drawer__opt" id="drawer-theme" type="button">Theme</button>
+            <button class="drawer__opt" data-view="list" type="button">List</button>
+            <button class="drawer__opt" data-view="grid" type="button">Grid</button>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <div class="wrap layout">
+    <aside class="sidebar">
+      <nav class="nav" aria-label="Menu"><a class="nav__item" href="https://designrefs.com/en/"><span class="nav__label">All</span><span class="nav__count">398</span></a><a class="nav__item" href="https://designrefs.com/en/#bookmarks"><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="m12 2.5 2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8Z"/></svg><span class="nav__label">Bookmarks</span><span class="nav__count" data-bm-count>0</span></a><hr class="nav__sep" /><a class="nav__item" href="https://designrefs.com/en/#uiux"><span class="nav__label">UI/UX</span><span class="nav__count">40</span></a><a class="nav__item" href="https://designrefs.com/en/#graphic"><span class="nav__label">Graphic &amp; Branding</span><span class="nav__count">24</span></a><a class="nav__item" href="https://designrefs.com/en/#color"><span class="nav__label">Color</span><span class="nav__count">24</span></a><a class="nav__item" href="https://designrefs.com/en/#typo"><span class="nav__label">Type &amp; Fonts</span><span class="nav__count">23</span></a><a class="nav__item" href="https://designrefs.com/en/#asset"><span class="nav__label">Icons &amp; Assets</span><span class="nav__count">33</span></a><a class="nav__item" href="https://designrefs.com/en/#mockup"><span class="nav__label">Mockups</span><span class="nav__count">19</span></a><a class="nav__item" href="https://designrefs.com/en/#tool"><span class="nav__label">Design Tools</span><span class="nav__count">30</span></a><a class="nav__item" href="https://designrefs.com/en/#ai"><span class="nav__label">AI</span><span class="nav__count">62</span></a><a class="nav__item" href="https://designrefs.com/en/#dev"><span class="nav__label">Design &amp; Code</span><span class="nav__count">34</span></a><a class="nav__item" href="https://designrefs.com/en/#community"><span class="nav__label">Community &amp; Media</span><span class="nav__count">29</span></a><a class="nav__item" href="https://designrefs.com/en/#creator"><span class="nav__label">Creators</span><span class="nav__count">47</span></a><a class="nav__item" href="https://designrefs.com/en/#freelance"><span class="nav__label">Freelance</span><span class="nav__count">13</span></a><a class="nav__item" href="https://designrefs.com/en/#job"><span class="nav__label">Jobs</span><span class="nav__count">20</span></a><hr class="nav__sep" /><a class="nav__item is-active" href="https://designrefs.com/en/#articles"><span class="nav__label">Articles</span><span class="nav__count">27</span></a><a class="nav__item" href="https://designrefs.com/en/#styles"><span class="nav__label">Style Guide</span><span class="nav__count">34</span></a><a class="nav__item" href="https://designrefs.com/en/#trends"><span class="nav__label">2026 Trends</span><span class="nav__count">20</span></a><a class="nav__item" href="https://designrefs.com/en/#glossary"><span class="nav__label">Glossary</span><span class="nav__count">155</span></a><hr class="nav__sep" /><a class="nav__item" href="https://designrefs.com/en/talk/"><span class="nav__label">Design Talk</span></a></nav>
+    </aside>
+    <main class="main page__main page__main--art">
+    <article class="art">
+      <p class="art__kicker"><a href="https://designrefs.com/en/articles/">Articles</a> · AI Design</p>
+      <h1 class="page__title">Build prototypes by prompt, hand them off as code: what to check in ProtoPie MCP</h1>
+      <p class="page__intro">ProtoPie has announced official MCP support. Studio MCP lets an AI read and edit the prototype you have open; Code MCP hands finished prototypes to coding agents. Checked against ProtoPie&#x27;s own post and docs: what works and what isn&#x27;t confirmed.</p>
+      <p class="art__meta"><time datetime="2026-10-17">October 17, 2026</time> · 5 min read<span data-views hidden></span></p>
+      <p class="art__note">Translated from the Korean original. <a href="https://designrefs.com/articles/protopie-mcp-prototype-ai/" hreflang="ko" lang="ko">Read in Korean</a></p>
+      <nav class="art__toc" aria-label="In this article"><p class="art__toc-t">In this article</p><ol><li><a href="#s1">What MCP does here</a></li><li><a href="#s2">Studio MCP: ask in words, fix by hand</a></li><li><a href="#s3">Code MCP: handing a prototype to implementation</a></li><li><a href="#s4">Which AI connects</a></li><li><a href="#s5">Plans: what is confirmed and what isn&#x27;t</a></li><li><a href="#s6">What isn&#x27;t confirmed yet</a></li><li><a href="#s7">So for now</a></li></ol></nav>
+    <p class="ptext">ProtoPie has announced official support for MCP. The byline on ProtoPie&#x27;s blog post says October 7, while the page metadata says October 15. The two dates disagree, so I couldn&#x27;t confirm the exact publication date.</p>
+    <p class="ptext">Anyone who has built interaction prototypes knows the scene. To make a card expand when a button is tapped, you attach a trigger, pick a response and wire up a variable. It isn&#x27;t hard, but it takes many small steps. Then you hand the finished prototype to a developer and the question comes back: how do we build this behavior? ProtoPie has put AI into both of those stretches.</p>
+    <p class="ptext">This piece follows ProtoPie&#x27;s blog posts and docs, and separates what works from what hasn&#x27;t been confirmed.</p>
+    <p class="ptext"><strong>First, a disclaimer.</strong> I haven&#x27;t used this feature myself. Everything below comes from what ProtoPie published. Pricing, usage limits and the exact scope per plan were either missing or inconsistent across the public pages.</p>
+    <h2 class="psub" id="s1">What MCP does here</h2>
+    <p class="ptext">MCP is a convention that lets AI tools call features in other programs. In ProtoPie&#x27;s docs there are two servers, and they share the same ProtoPie account.</p>
+    <ul class="ptext-list">
+      <li><strong>Studio MCP</strong>: connects an AI to ProtoPie Studio so it can read and change the prototype you have open. It runs locally inside Studio, while the AI runs in the MCP client you connect.</li>
+      <li><strong>Code MCP</strong>: lets AI coding agents take a finished prototype and rebuild it in code. It runs on your machine through <code>npx</code> and is read-only.</li>
+    </ul>
+    <p class="ptext">In short, one is for making and the other is for handing off.</p>
+    <h2 class="psub" id="s2">Studio MCP: ask in words, fix by hand</h2>
+    <p class="ptext">The docs list five uses for Studio MCP.</p>
+    <ul class="ptext-list">
+      <li>The AI reads and edits the open prototype. It can also capture the canvas.</li>
+      <li>It authors layers, layouts and interactions by prompt. The example given is adding a Tap trigger to a button.</li>
+      <li>It uses your own component libraries, building screens from the assets and components you already have in ProtoPie.</li>
+      <li>It validates prototypes, checking whether behavior matches expectations and flagging interaction or flow issues.</li>
+      <li>It targets specific elements by ID: layers, scenes, variables, components, triggers and responses. You copy an ID and paste it into your prompt, as in Change the interaction for [element ID].</li>
+    </ul>
+    <p class="ptext">Two things stand out. First, the AI pulls real instances from your component library instead of inventing parts. Second, you point at things by ID. It reads as a way to cut down the case where you say that button and the wrong layer changes. That reading is mine, and no public test shows how accurate it is.</p>
+    <p class="ptext">ProtoPie says every generated interaction stays fully editable inside Studio. You continue by hand instead of rebuilding from scratch.</p>
+    <h2 class="psub" id="s3">Code MCP: handing a prototype to implementation</h2>
+    <p class="ptext">Code MCP sits on the developer side. ProtoPie says it helps AI coding agents understand finished prototypes and generate implementation output from them. The post names seven officially supported frameworks.</p>
+    <ul class="ptext-list">
+      <li>React, React Native, Qt/QML, Flutter, SwiftUI, Compose and ArkTS</li>
+    </ul>
+    <p class="ptext">Dev View, introduced alongside it, lets you share a whole prototype, a single scene, a component or one layer. Instead of telling a developer to look at the entire screen, you can narrow the context to one component.</p>
+    <p class="ptext">The <a href="https://designrefs.com/articles/figma-specs-markdown-context/">Figma Specs</a> we covered passes context to coding agents through a single link too. The direction is the same, but what gets passed differs. Specs carries written context and mockups; ProtoPie carries a prototype with motion. Transitions and reactions that are hard to put into words can be shown as they are. That is my interpretation as well.</p>
+    <h2 class="psub" id="s4">Which AI connects</h2>
+    <p class="ptext">ProtoPie does not ship its own model. It follows a Bring Your Own Model approach. The post bylined July 20 names MCP-compatible clients such as Claude Code, Codex, Cursor, VS Code and Antigravity, and says support will keep expanding. The Studio MCP docs also name Claude Desktop.</p>
+    <p class="ptext">There are a few conditions.</p>
+    <ul class="ptext-list">
+      <li>ProtoPie Studio 10.3.0 or later, the version that ships the MCP server.</li>
+      <li>The AI client and ProtoPie Studio must run on the same computer.</li>
+      <li>A Pro or Enterprise plan.</li>
+    </ul>
+    <p class="ptext">The July post also says model quality matters. Models comparable to Claude Sonnet work well for simpler tasks, while Opus-class models generally produce stronger results for complex interactions and implementation. There are no numbers or test results behind this; it is ProtoPie&#x27;s guidance.</p>
+    <p class="ptext">A tool being connected may not be the same as getting the result you wanted. After connecting, you still decide what to ask and check what comes back. ProtoPie also assumes a flow where people fix what the AI makes.</p>
+    <h2 class="psub" id="s5">Plans: what is confirmed and what isn&#x27;t</h2>
+    <p class="ptext">ProtoPie&#x27;s public pages describe the plans slightly differently. A table helps.</p>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th>Page</th><th>What it says</th></tr></thead>
+      <tbody>
+        <tr><td>Post bylined July 20</td><td>In beta; Pro and Enterprise users get it at no additional cost</td></tr>
+        <tr><td>October official-support post</td><td>Studio MCP under MCP Core (Pro plan); Studio MCP, Code MCP and Dev View under MCP Enterprise (Enterprise plan)</td></tr>
+        <tr><td>Studio MCP docs</td><td>Pro or Enterprise plan, listed as MCP Core</td></tr>
+      </tbody>
+    </table></div>
+    <p class="art__note">Sources: <a href="https://www.protopie.io/blog/protopie-mcp-official" target="_blank" rel="noopener">ProtoPie blog: official MCP support</a>, <a href="https://www.protopie.io/blog/blog-protopie-mcp-from-design-to-code-faster" target="_blank" rel="noopener">ProtoPie blog: from design to code</a>, <a href="https://www.protopie.io/learn/docs/mcp-studio-mcp-introduction" target="_blank" rel="noopener">ProtoPie docs: Studio MCP</a></p>
+    <p class="ptext">Whether Code MCP is available on the Pro plan reads differently depending on the page. The October post ties it to Enterprise, while the July post says Pro and Enterprise users pay nothing extra during the beta. It does not clearly say whether Code MCP falls inside that beta. Which one holds today is something to check on ProtoPie&#x27;s pricing page. The official-support post lists no prices.</p>
+    <h2 class="psub" id="s6">What isn&#x27;t confirmed yet</h2>
+    <ul class="ptext-list">
+      <li>Pricing and any AI usage limits. The official-support post has none.</li>
+      <li>Whether the Pro plan can use Code MCP.</li>
+      <li>Accuracy with Korean-language prompts. No public test exists.</li>
+      <li>How much you have to fix in an AI-made interaction in real work.</li>
+      <li>The quality of code for each of the seven frameworks.</li>
+      <li>The exact publication date of the official post, since dates on the page disagree.</li>
+    </ul>
+    <h2 class="psub" id="s7">So for now</h2>
+    <p class="ptext"><strong>Test it on one small interaction.</strong> A button that opens a modal is enough. If you have a Pro plan and Studio 10.3.0 or later, write down how long the same interaction takes by hand versus by prompt, and how many times you fixed it. That tells you whether it suits your team.</p>
+    <p class="ptext"><strong>Tidy your component names and library first.</strong> Studio MCP pulls components from your library. Messy names confuse people and AI alike. Since you copy element IDs into prompts, keeping layer names readable helps.</p>
+    <p class="ptext"><strong>Decide what you hand to developers.</strong> Whole screen or a single component? Practice narrowing it with Dev View. Rules can live in <a href="https://designrefs.com/articles/design-md-for-ai/">DESIGN.md</a> or guidelines, and motion in the prototype, so each has its role.</p>
+    <p class="ptext">AI design tools by use case are collected in <a href="https://designrefs.com/ai/">AI design tools</a>.</p>
+    <p class="art__note">Sources: <a href="https://www.protopie.io/blog/protopie-mcp-official" target="_blank" rel="noopener">ProtoPie blog: official MCP support</a>, <a href="https://www.protopie.io/blog/blog-protopie-mcp-from-design-to-code-faster" target="_blank" rel="noopener">ProtoPie blog: from design to code</a>, <a href="https://www.protopie.io/learn/docs/mcp-getting-started" target="_blank" rel="noopener">ProtoPie docs: getting started</a>, <a href="https://www.protopie.io/learn/docs/mcp-studio-mcp-introduction" target="_blank" rel="noopener">ProtoPie docs: Studio MCP</a>.</p>
+      <div class="share">
+        <button class="share__btn" type="button" data-share>Share</button>
+        <button class="share__btn" type="button" data-copy>Copy link</button>
+        <span class="share__msg" role="status"></span>
+      </div>
+    </article>
+    <script src="https://designrefs.com/js/views.js" defer></script>
+
+    <nav class="page__nav">
+      <h2 class="psub">Keep exploring</h2>
+      <div class="page__navlinks"><a href="https://designrefs.com/en/#ai">AI tools</a><a href="https://designrefs.com/en/#tool">Design Tools</a><a href="https://designrefs.com/en/#uiux">UI/UX</a></div>
+    </nav>
+
+    <section class="section">
+      <header class="section__head">
+        <h2 class="section__title">Read next</h2>
+      </header>
+      <div class="list list--insight">
+        <a class="arow" href="https://designrefs.com/en/articles/figma-specs-markdown-context/" data-tag="AI Design">
+          <span class="arow__date">2026. 10. 16</span>
+          <span class="arow__main">
+            <span class="arow__title">Figma Specs: one markdown page that hands context to your team and to AI</span>
+            <p class="arow__desc">Figma has put markdown documents on the canvas with Specs, now in open beta on paid plans. Checked against Figma&#x27;s own post and release notes: what works, what isn&#x27;t confirmed, and how it differs from DESIGN.md.</p>
+          </span>
+          <span class="arow__tag">AI Design · 5 min</span>
+        </a>
+        <a class="arow" href="https://designrefs.com/en/articles/nano-banana-2-1-designers/" data-tag="AI Design">
+          <span class="arow__date">2026. 10. 15</span>
+          <span class="arow__main">
+            <span class="arow__title">Nano Banana 2.1 is &quot;half price&quot;. What designers should check</span>
+            <p class="arow__desc">Google&#x27;s image model Nano Banana 2.1 is out. 1K and 2K images cost half as much, but 4K doesn&#x27;t, and text got better while the model card lists weak spots. Checked against Google&#x27;s pricing page and model card, with charts and numbers.</p>
+          </span>
+          <span class="arow__tag">AI Design · 4 min</span>
+        </a>
+        <a class="arow" href="https://designrefs.com/en/articles/muse-wonder-design-arena/" data-tag="AI Design">
+          <span class="arow__date">2026. 10. 14</span>
+          <span class="arow__main">
+            <span class="arow__title">Meta&#x27;s first frontier model tops a design vote. How to read that ranking</span>
+            <p class="arow__desc">Muse Wonder, released by Meta on October 12, now ranks first for websites and UI on Design Arena, where people pick AI designs by eye. How the voting works, and what a No. 1 does and doesn&#x27;t tell you, with diagrams and numbers.</p>
+          </span>
+          <span class="arow__tag">AI Design · 5 min</span>
+        </a>
+      </div>
+      <nav class="art__pn"><a class="art__pn-a is-prev" href="https://designrefs.com/en/articles/figma-specs-markdown-context/" rel="prev"><span class="art__pn-l">← Previous</span><span class="art__pn-t">Figma Specs: one markdown page that hands context to your team and to AI</span></a><span></span></nav>
+      <p class="art__all"><a href="https://designrefs.com/en/articles/">All articles (27) →</a></p>
+    </section>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <div class="wrap">
+      <nav class="footer__nav"><div class="footer__navgroup"><a href="https://designrefs.com/en/#uiux">UI/UX</a><a href="https://designrefs.com/en/#graphic">Graphic &amp; Branding</a><a href="https://designrefs.com/en/#color">Color</a><a href="https://designrefs.com/en/#typo">Type &amp; Fonts</a><a href="https://designrefs.com/en/#asset">Icons &amp; Assets</a><a href="https://designrefs.com/en/#mockup">Mockups</a><a href="https://designrefs.com/en/#tool">Design Tools</a><a href="https://designrefs.com/en/#ai">AI</a><a href="https://designrefs.com/en/#dev">Design &amp; Code</a><a href="https://designrefs.com/en/#community">Community &amp; Media</a><a href="https://designrefs.com/en/#creator">Creators</a><a href="https://designrefs.com/en/#freelance">Freelance</a><a href="https://designrefs.com/en/#job">Jobs</a></div><div class="footer__navgroup"><a href="https://designrefs.com/en/articles/">Articles</a><a href="https://designrefs.com/en/#styles">Style Guide</a><a href="https://designrefs.com/en/#trends">2026 Trends</a><a href="https://designrefs.com/en/#glossary">Glossary</a></div></nav>
+    </div>
+    <div class="wrap footer__inner">
+      <span>Copyright 2026. Design Hub. all rights reserved.</span>
+      <a href="https://designrefs.com/en/articles/">Articles</a>
+      <a href="https://designrefs.com/en/talk/">Design Talk</a>
+      <a href="https://designrefs.com/" hreflang="ko" lang="ko">한국어</a>
+      <a href="https://designrefs.com/privacy/">Privacy (Korean)</a>
+      <a href="mailto:nisov0924@gmail.com">CONTACT : nisov0924@gmail.com</a>
+      <a href="#" id="footer-top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <button id="to-top" class="to-top" type="button" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg></button>
+  <script src="https://designrefs.com/js/page.js" defer></script>
+</body>
+</html>

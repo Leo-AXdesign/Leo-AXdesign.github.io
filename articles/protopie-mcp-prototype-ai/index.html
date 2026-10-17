@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>프로토타입을 말로 만들고 코드로 넘긴다, 프로토파이 MCP에서 디자이너가 확인할 것 | 디자인 허브</title>
+  <meta name="description" content="프로토파이가 MCP 지원을 공식으로 알렸다. Studio MCP는 열어 둔 프로토타입을 AI가 읽고 고치고, Code MCP는 완성본을 코딩 에이전트에게 넘긴다. 프로토파이 공식 글과 문서로 무엇이 되고 무엇이 확인되지 않았는지 정리했다." />
+  <link rel="canonical" href="https://designrefs.com/articles/protopie-mcp-prototype-ai/" />
+  <link rel="alternate" hreflang="ko" href="https://designrefs.com/articles/protopie-mcp-prototype-ai/" />
+  <link rel="alternate" hreflang="en" href="https://designrefs.com/en/articles/protopie-mcp-prototype-ai/" />
+  <link rel="alternate" hreflang="x-default" href="https://designrefs.com/articles/protopie-mcp-prototype-ai/" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="디자인 허브" />
+  <meta property="og:locale" content="ko_KR" />
+  <meta property="og:title" content="프로토타입을 말로 만들고 코드로 넘긴다, 프로토파이 MCP에서 디자이너가 확인할 것 | 디자인 허브" />
+  <meta property="og:description" content="프로토파이가 MCP 지원을 공식으로 알렸다. Studio MCP는 열어 둔 프로토타입을 AI가 읽고 고치고, Code MCP는 완성본을 코딩 에이전트에게 넘긴다. 프로토파이 공식 글과 문서로 무엇이 되고 무엇이 확인되지 않았는지 정리했다." />
+  <meta property="og:url" content="https://designrefs.com/articles/protopie-mcp-prototype-ai/" />
+  <meta property="og:image" content="https://designrefs.com/og/protopie-mcp-prototype-ai.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="alternate" type="application/rss+xml" title="디자인 허브 읽을거리" href="https://designrefs.com/rss.xml" />
+  <link rel="icon" href="https://designrefs.com/favicon.ico" sizes="32x32" />
+  <link rel="icon" type="image/svg+xml" href="https://designrefs.com/favicon.svg" />
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+  <link rel="stylesheet" href="https://designrefs.com/css/style.css" />
+  <!-- 구글 애드센스 -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5831827822584395" crossorigin="anonymous"></script>
+
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q7QVVHSLQ6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Q7QVVHSLQ6');
+  </script>
+  <script>
+    // 메인에서 고른 테마를 그대로 따릅니다.
+    try {
+      var t = localStorage.getItem('designhub:theme') || 'light';
+      if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+    } catch (e) {}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://designrefs.com/articles/protopie-mcp-prototype-ai/#post",
+      "url": "https://designrefs.com/articles/protopie-mcp-prototype-ai/",
+      "mainEntityOfPage": "https://designrefs.com/articles/protopie-mcp-prototype-ai/",
+      "headline": "프로토타입을 말로 만들고 코드로 넘긴다, 프로토파이 MCP에서 디자이너가 확인할 것",
+      "description": "프로토파이가 MCP 지원을 공식으로 알렸다. Studio MCP는 열어 둔 프로토타입을 AI가 읽고 고치고, Code MCP는 완성본을 코딩 에이전트에게 넘긴다. 프로토파이 공식 글과 문서로 무엇이 되고 무엇이 확인되지 않았는지 정리했다.",
+      "articleSection": "AI 디자인",
+      "datePublished": "2026-10-17",
+      "dateModified": "2026-10-17",
+      "inLanguage": "ko",
+      "wordCount": 3078,
+      "timeRequired": "PT5M",
+      "image": "https://designrefs.com/og/protopie-mcp-prototype-ai.png",
+      "author": {
+        "@type": "Organization",
+        "name": "디자인 허브",
+        "url": "https://designrefs.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "디자인 허브",
+        "url": "https://designrefs.com/"
+      },
+      "isPartOf": {
+        "@type": "Blog",
+        "@id": "https://designrefs.com/articles/#blog",
+        "name": "디자인 허브 읽을거리"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "디자인 허브",
+          "item": "https://designrefs.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "읽을거리",
+          "item": "https://designrefs.com/articles/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "프로토타입을 말로 만들고 코드로 넘긴다, 프로토파이 MCP에서 디자이너가 확인할 것",
+          "item": "https://designrefs.com/articles/protopie-mcp-prototype-ai/"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <meta property="article:published_time" content="2026-10-17T09:00:00+09:00" />
+  <meta property="article:modified_time" content="2026-10-17T09:00:00+09:00" />
+  <meta property="article:section" content="AI 디자인" />
+  <meta property="article:tag" content="AI 디자인" />
+  <meta property="article:tag" content="AI 디자인 툴" />
+  <meta property="article:tag" content="디자인 툴" />
+  <meta property="article:tag" content="UI/UX 레퍼런스" />
+</head>
+<body class="page">
+  <header class="top">
+    <div class="wrap top__inner">
+      <a class="logo" href="https://designrefs.com/">d<span>.</span></a>
+
+      <!-- 검색어를 넣고 엔터를 치면 메인 화면에서 검색 결과가 열립니다 (?q=) -->
+      <form class="search" action="https://designrefs.com/" method="get" role="search">
+        <svg class="search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+        <input id="search" class="search__input" type="search" name="q" placeholder="사이트 검색" autocomplete="off" />
+        <kbd class="search__kbd">/</kbd>
+      </form>
+
+      <div class="top__actions">
+        <a class="top__lang" href="https://designrefs.com/en/articles/protopie-mcp-prototype-ai/" hreflang="en" lang="en" title="English">EN</a>
+        <button id="theme-toggle" class="top__btn" type="button" aria-label="테마 전환" title="라이트 / 다크 전환">
+          <span class="dot"></span>
+        </button>
+        <button id="menu-open" class="top__btn top__btn--menu" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="drawer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 모바일 전체 메뉴 -->
+  <div class="drawer" id="drawer" hidden>
+    <div class="drawer__backdrop" id="drawer-backdrop"></div>
+    <aside class="drawer__panel" role="dialog" aria-modal="true" aria-label="전체 메뉴">
+      <header class="drawer__head">
+        <span class="drawer__title">전체 메뉴</span>
+        <button id="menu-close" class="drawer__close" type="button" aria-label="메뉴 닫기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      </header>
+      <div class="drawer__body">
+        <nav class="nav" aria-label="메뉴"><a class="nav__item" href="https://designrefs.com/"><span class="nav__label">전체</span><span class="nav__count">398</span></a><a class="nav__item" href="https://designrefs.com/#bookmarks"><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="m12 2.5 2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8Z"/></svg><span class="nav__label">즐겨찾기</span><span class="nav__count" data-bm-count>0</span></a><hr class="nav__sep" /><a class="nav__item" href="https://designrefs.com/#uiux"><span class="nav__label">UI/UX 레퍼런스</span><span class="nav__count">40</span></a><a class="nav__item" href="https://designrefs.com/#graphic"><span class="nav__label">그래픽 / 브랜딩</span><span class="nav__count">24</span></a><a class="nav__item" href="https://designrefs.com/#color"><span class="nav__label">컬러 가이드</span><span class="nav__count">24</span></a><a class="nav__item" href="https://designrefs.com/#typo"><span class="nav__label">타이포 / 폰트</span><span class="nav__count">23</span></a><a class="nav__item" href="https://designrefs.com/#asset"><span class="nav__label">아이콘 / 에셋</span><span class="nav__count">33</span></a><a class="nav__item" href="https://designrefs.com/#mockup"><span class="nav__label">목업</span><span class="nav__count">19</span></a><a class="nav__item" href="https://designrefs.com/#tool"><span class="nav__label">디자인 툴</span><span class="nav__count">30</span></a><a class="nav__item" href="https://designrefs.com/#ai"><span class="nav__label">AI</span><span class="nav__count">62</span></a><a class="nav__item" href="https://designrefs.com/#dev"><span class="nav__label">디자인 개발</span><span class="nav__count">34</span></a><a class="nav__item" href="https://designrefs.com/#community"><span class="nav__label">커뮤니티 / 매거진</span><span class="nav__count">29</span></a><a class="nav__item" href="https://designrefs.com/#creator"><span class="nav__label">크리에이터 / 채널</span><span class="nav__count">47</span></a><a class="nav__item" href="https://designrefs.com/#freelance"><span class="nav__label">외주 / 프리랜서</span><span class="nav__count">13</span></a><a class="nav__item" href="https://designrefs.com/#job"><span class="nav__label">채용공고</span><span class="nav__count">20</span></a><hr class="nav__sep" /><a class="nav__item is-active" href="https://designrefs.com/#articles"><span class="nav__label">읽을거리</span><span class="nav__count">27</span></a><a class="nav__item" href="https://designrefs.com/#styles"><span class="nav__label">스타일 사전</span><span class="nav__count">34</span></a><a class="nav__item" href="https://designrefs.com/#trends"><span class="nav__label">2026 트렌드</span><span class="nav__count">20</span></a><a class="nav__item" href="https://designrefs.com/#glossary"><span class="nav__label">용어 사전</span><span class="nav__count">155</span></a><hr class="nav__sep" /><a class="nav__item" href="https://designrefs.com/talk/"><span class="nav__label">디자인 잡담</span></a></nav>
+        <div class="drawer__section">
+          <p class="nav__group">태그 필터</p>
+          <div class="pills pills--tags"><a class="pill is-active" href="https://designrefs.com/">전체</a><a class="pill" href="https://designrefs.com/?tag=%ED%95%9C%EA%B5%AD">한국</a><a class="pill" href="https://designrefs.com/?tag=%EB%AC%B4%EB%A3%8C">무료</a><a class="pill" href="https://designrefs.com/?tag=%EC%9C%A0%EB%A3%8C">유료</a><a class="pill" href="https://designrefs.com/?tag=AI">AI</a></div>
+        </div>
+        <div class="drawer__section">
+          <p class="nav__group">보기</p>
+          <div class="drawer__row">
+            <button class="drawer__opt" id="drawer-theme" type="button">테마 전환</button>
+            <button class="drawer__opt" data-view="list" type="button">목록</button>
+            <button class="drawer__opt" data-view="grid" type="button">격자</button>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <div class="wrap layout">
+    <aside class="sidebar">
+      <nav class="nav" aria-label="메뉴"><a class="nav__item" href="https://designrefs.com/"><span class="nav__label">전체</span><span class="nav__count">398</span></a><a class="nav__item" href="https://designrefs.com/#bookmarks"><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="m12 2.5 2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8Z"/></svg><span class="nav__label">즐겨찾기</span><span class="nav__count" data-bm-count>0</span></a><hr class="nav__sep" /><a class="nav__item" href="https://designrefs.com/#uiux"><span class="nav__label">UI/UX 레퍼런스</span><span class="nav__count">40</span></a><a class="nav__item" href="https://designrefs.com/#graphic"><span class="nav__label">그래픽 / 브랜딩</span><span class="nav__count">24</span></a><a class="nav__item" href="https://designrefs.com/#color"><span class="nav__label">컬러 가이드</span><span class="nav__count">24</span></a><a class="nav__item" href="https://designrefs.com/#typo"><span class="nav__label">타이포 / 폰트</span><span class="nav__count">23</span></a><a class="nav__item" href="https://designrefs.com/#asset"><span class="nav__label">아이콘 / 에셋</span><span class="nav__count">33</span></a><a class="nav__item" href="https://designrefs.com/#mockup"><span class="nav__label">목업</span><span class="nav__count">19</span></a><a class="nav__item" href="https://designrefs.com/#tool"><span class="nav__label">디자인 툴</span><span class="nav__count">30</span></a><a class="nav__item" href="https://designrefs.com/#ai"><span class="nav__label">AI</span><span class="nav__count">62</span></a><a class="nav__item" href="https://designrefs.com/#dev"><span class="nav__label">디자인 개발</span><span class="nav__count">34</span></a><a class="nav__item" href="https://designrefs.com/#community"><span class="nav__label">커뮤니티 / 매거진</span><span class="nav__count">29</span></a><a class="nav__item" href="https://designrefs.com/#creator"><span class="nav__label">크리에이터 / 채널</span><span class="nav__count">47</span></a><a class="nav__item" href="https://designrefs.com/#freelance"><span class="nav__label">외주 / 프리랜서</span><span class="nav__count">13</span></a><a class="nav__item" href="https://designrefs.com/#job"><span class="nav__label">채용공고</span><span class="nav__count">20</span></a><hr class="nav__sep" /><a class="nav__item is-active" href="https://designrefs.com/#articles"><span class="nav__label">읽을거리</span><span class="nav__count">27</span></a><a class="nav__item" href="https://designrefs.com/#styles"><span class="nav__label">스타일 사전</span><span class="nav__count">34</span></a><a class="nav__item" href="https://designrefs.com/#trends"><span class="nav__label">2026 트렌드</span><span class="nav__count">20</span></a><a class="nav__item" href="https://designrefs.com/#glossary"><span class="nav__label">용어 사전</span><span class="nav__count">155</span></a><hr class="nav__sep" /><a class="nav__item" href="https://designrefs.com/talk/"><span class="nav__label">디자인 잡담</span></a></nav>
+    </aside>
+    <main class="main page__main page__main--art">
+    <article class="art">
+      <p class="art__kicker"><a href="https://designrefs.com/articles/">읽을거리</a> · AI 디자인</p>
+      <h1 class="page__title">프로토타입을 말로 만들고 코드로 넘긴다, 프로토파이 MCP에서 디자이너가 확인할 것</h1>
+      <p class="page__intro">프로토파이가 MCP 지원을 공식으로 알렸다. Studio MCP는 열어 둔 프로토타입을 AI가 읽고 고치고, Code MCP는 완성본을 코딩 에이전트에게 넘긴다. 프로토파이 공식 글과 문서로 무엇이 되고 무엇이 확인되지 않았는지 정리했다.</p>
+      <p class="art__meta"><time datetime="2026-10-17">2026년 10월 17일</time> · 읽는 데 약 5분<span data-views hidden></span></p>
+      <nav class="art__toc" aria-label="이 글의 차례"><p class="art__toc-t">이 글의 차례</p><ol><li><a href="#s1">MCP가 여기서 하는 일</a></li><li><a href="#s2">Studio MCP: 말로 시키고, 손으로 고친다</a></li><li><a href="#s3">Code MCP: 프로토타입을 구현으로 넘긴다</a></li><li><a href="#s4">어떤 AI와 이어지나</a></li><li><a href="#s5">요금제, 무엇이 확인되고 무엇이 아닌가</a></li><li><a href="#s6">아직 확인되지 않은 것</a></li><li><a href="#s7">그래서 지금은</a></li></ol></nav>
+    <p class="ptext">프로토파이(ProtoPie)가 MCP 지원을 공식으로 알렸다. 프로토파이 블로그의 공식 지원 글 상단에는 날짜가 10월 7일로 적혀 있고, 페이지 정보에는 10월 15일로 되어 있다. 두 날짜가 달라 정확한 게시일은 확인하지 못했다.</p>
+    <p class="ptext">인터랙션 프로토타입을 만들어 본 사람이라면 아는 장면이 있다. 버튼을 누르면 카드가 펼쳐지는 동작 하나를 위해 트리거를 붙이고, 응답을 고르고, 변수를 연결한다. 어렵지는 않은데 손이 많이 간다. 그렇게 완성한 프로토타입을 개발자에게 넘기면 &quot;이 동작은 어떻게 구현하나요&quot;라는 질문이 돌아온다. 프로토파이는 이 두 구간에 AI를 끼워 넣었다.</p>
+    <p class="ptext">이번 글은 프로토파이의 공식 블로그 글과 문서를 따라가며, 무엇이 되는지와 아직 확인되지 않은 것을 나눠 적는다.</p>
+    <p class="ptext"><strong>먼저 밝혀 둘 것.</strong> 나는 이 기능을 직접 써 보지 못했다. 아래 내용은 프로토파이가 공개한 글과 문서에 적힌 것이다. 가격, 사용 횟수 제한, 정확한 요금제별 범위는 공개된 글끼리 다르거나 적혀 있지 않았다.</p>
+    <h2 class="psub" id="s1">MCP가 여기서 하는 일</h2>
+    <p class="ptext">MCP는 AI 도구가 다른 프로그램의 기능을 불러 쓰도록 이어 주는 약속이다. 프로토파이의 문서 표현으로는 두 개의 서버가 있고, 둘은 같은 프로토파이 계정을 쓴다.</p>
+    <ul class="ptext-list">
+      <li><strong>Studio MCP</strong>: 프로토파이 스튜디오에 AI를 연결해, 열어 둔 프로토타입을 읽고 고치게 한다. 스튜디오 안에서 로컬로 돌아가고, AI는 연결한 MCP 클라이언트 쪽에서 돌아간다.</li>
+      <li><strong>Code MCP</strong>: 완성한 프로토타입을 AI 코딩 에이전트가 읽고 코드로 다시 만들게 한다. 내 컴퓨터에서 <code>npx</code>로 실행하고, 읽기 전용이다.</li>
+    </ul>
+    <p class="ptext">정리하면 앞의 것은 만드는 쪽, 뒤의 것은 넘기는 쪽이다.</p>
+    <h2 class="psub" id="s2">Studio MCP: 말로 시키고, 손으로 고친다</h2>
+    <p class="ptext">프로토파이 문서에 적힌 Studio MCP의 쓰임은 다섯 가지다.</p>
+    <ul class="ptext-list">
+      <li>열어 둔 프로토타입을 AI가 읽고 편집한다. 캔버스 화면을 캡처하게 할 수도 있다.</li>
+      <li>프롬프트로 레이어, 레이아웃, 인터랙션을 만든다. 예로 든 것은 버튼에 탭 트리거를 붙이는 일이다.</li>
+      <li>내 컴포넌트 라이브러리를 쓴다. 프로토파이에 이미 올려 둔 에셋과 컴포넌트로 화면을 짓는다.</li>
+      <li>프로토타입을 검증한다. 동작이 기대와 맞는지, 인터랙션이나 흐름에 문제가 없는지 살핀다.</li>
+      <li>요소의 ID로 정확히 짚는다. 레이어, 씬, 변수, 컴포넌트, 트리거, 응답의 ID를 복사해 프롬프트에 넣으면 된다. 공식 글의 예시는 &quot;[요소 ID]의 인터랙션을 바꿔 줘&quot; 꼴이다.</li>
+    </ul>
+    <p class="ptext">눈에 띄는 것은 두 가지다. 하나는 AI가 아무 부품이나 만들어 내는 게 아니라 내가 쓰는 컴포넌트 라이브러리에서 실제 인스턴스를 꺼내 쓴다는 점이다. 다른 하나는 ID로 대상을 지정한다는 점이다. &quot;그 버튼&quot;이라고 말했다가 엉뚱한 레이어가 바뀌는 일을 줄이려는 장치로 읽힌다. 이 해석은 내 것이고, 실제로 얼마나 정확한지는 공개된 시험이 없다.</p>
+    <p class="ptext">프로토파이는 생성된 인터랙션이 스튜디오 안에서 계속 편집 가능하다고 적었다. AI가 만든 것을 처음부터 다시 만들 필요 없이 손으로 이어 고칠 수 있다는 뜻이다.</p>
+    <h2 class="psub" id="s3">Code MCP: 프로토타입을 구현으로 넘긴다</h2>
+    <p class="ptext">Code MCP는 개발 쪽에 가깝다. 프로토파이 글은 이 기능이 &quot;완성된 프로토타입을 AI 코딩 에이전트가 이해하고 구현 결과물을 만들도록 돕는다&quot;고 설명한다. 공식 글에서 정식 지원한다고 밝힌 프레임워크는 일곱 가지다.</p>
+    <ul class="ptext-list">
+      <li>React, React Native, Qt/QML, Flutter, SwiftUI, Compose, ArkTS</li>
+    </ul>
+    <p class="ptext">함께 소개된 Dev View는 프로토타입 전체, 씬 하나, 컴포넌트 하나, 레이어 하나를 골라 공유하는 기능이다. 개발자에게 &quot;이 화면 전체를 보세요&quot;가 아니라 &quot;이 컴포넌트만 보세요&quot;라고 범위를 좁혀 건넬 수 있다.</p>
+    <p class="ptext">앞서 다룬 <a href="https://designrefs.com/articles/figma-specs-markdown-context/">피그마 Specs</a>도 링크 하나로 맥락을 코딩 에이전트에게 넘기는 구조였다. 같은 방향이지만 넘기는 내용이 다르다. Specs는 글과 시안으로 된 맥락이고, 프로토파이는 움직임이 담긴 프로토타입이다. 말로 설명하기 어려운 전환과 반응을 그대로 보여 줄 수 있다는 점이 프로토타입 쪽의 장점일 수 있다. 이것도 내 해석이다.</p>
+    <h2 class="psub" id="s4">어떤 AI와 이어지나</h2>
+    <p class="ptext">프로토파이는 자체 모델을 주지 않고 쓰던 AI를 가져오는 방식(Bring Your Own Model)을 택했다. 7월 20일자로 표기된 소개 글은 Claude Code, Codex, Cursor, VS Code, Antigravity 같은 MCP 호환 클라이언트를 예로 들었고, 지원은 계속 늘어난다고 했다. Studio MCP 문서에는 Claude 데스크톱도 이름이 올라 있다.</p>
+    <p class="ptext">조건도 몇 가지 있다.</p>
+    <ul class="ptext-list">
+      <li>ProtoPie Studio 10.3.0 이상. MCP 서버가 이 버전부터 들어 있다.</li>
+      <li>AI 클라이언트와 프로토파이 스튜디오가 같은 컴퓨터에서 돌아야 한다.</li>
+      <li>프로 또는 엔터프라이즈 요금제.</li>
+    </ul>
+    <p class="ptext">모델에 따라 결과 차이가 난다는 말도 7월 소개 글에 있다. 소넷급 모델은 단순한 작업에 잘 맞고, 오퍼스급 모델은 복잡한 인터랙션과 구현 작업에서 대체로 더 나은 결과를 낸다고 한다. 숫자나 시험 결과 없이 프로토파이가 밝힌 경험적 안내다.</p>
+    <p class="ptext">도구가 연결되는 것과 원하는 결과가 나오는 것은 별개일 수 있다. 연결된 뒤에는 무엇을 시킬지 정하고 결과를 확인하는 일이 남는다. 프로토파이도 AI가 만든 것을 사람이 고치는 흐름을 전제로 한다.</p>
+    <h2 class="psub" id="s5">요금제, 무엇이 확인되고 무엇이 아닌가</h2>
+    <p class="ptext">프로토파이의 공개 글들은 요금제를 서로 조금 다르게 적고 있다. 표로 나눴다.</p>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th>글</th><th>적힌 내용</th></tr></thead>
+      <tbody>
+        <tr><td>7월 20일자로 표기된 소개 글</td><td>베타이며 프로와 엔터프라이즈 사용자는 추가 비용 없이 쓸 수 있다</td></tr>
+        <tr><td>10월 공식 지원 글</td><td>MCP Core(프로 요금제)에 Studio MCP, MCP Enterprise(엔터프라이즈 요금제)에 Studio MCP·Code MCP·Dev View</td></tr>
+        <tr><td>Studio MCP 문서</td><td>프로 또는 엔터프라이즈 요금제, &#x27;MCP Core&#x27;로 제공</td></tr>
+      </tbody>
+    </table></div>
+    <p class="art__note">출처: <a href="https://www.protopie.io/blog/protopie-mcp-official" target="_blank" rel="noopener">ProtoPie 블로그: MCP 공식 지원</a>, <a href="https://www.protopie.io/blog/blog-protopie-mcp-from-design-to-code-faster" target="_blank" rel="noopener">ProtoPie 블로그: 디자인에서 코드까지</a>, <a href="https://www.protopie.io/learn/docs/mcp-studio-mcp-introduction" target="_blank" rel="noopener">ProtoPie 문서: Studio MCP</a></p>
+    <p class="ptext">표에서 보듯 Code MCP를 프로 요금제에서 쓸 수 있는지는 글마다 다르게 읽힌다. 10월 글만 보면 엔터프라이즈 쪽에 묶여 있고, 7월 글은 베타 기간에 프로와 엔터프라이즈 사용자는 추가 비용이 없다고 했다. 다만 이 베타 범위에 Code MCP가 들어가는지는 글에 분명히 적혀 있지 않았다. 어느 쪽이 지금 기준인지는 공식 요금제 페이지에서 직접 확인하는 수밖에 없다. 공식 지원 글에는 가격도 적혀 있지 않았다.</p>
+    <h2 class="psub" id="s6">아직 확인되지 않은 것</h2>
+    <ul class="ptext-list">
+      <li>가격과 AI 사용량에 따른 제한. 공식 지원 글에는 없다.</li>
+      <li>프로 요금제에서 Code MCP를 쓸 수 있는지.</li>
+      <li>한국어 프롬프트로 시켰을 때의 정확도. 따로 공개된 시험이 없다.</li>
+      <li>실제 작업에서 AI가 만든 인터랙션을 얼마나 고쳐야 하는지.</li>
+      <li>일곱 개 프레임워크 각각에서 나오는 코드의 품질.</li>
+      <li>공식 글의 정확한 게시일. 페이지 안에서 날짜가 서로 다르다.</li>
+    </ul>
+    <h2 class="psub" id="s7">그래서 지금은</h2>
+    <p class="ptext"><strong>작은 인터랙션 하나로 시험해 보자.</strong> 버튼을 누르면 모달이 열리는 정도의 동작이면 된다. 프로 요금제와 스튜디오 10.3.0 이상이 있다면, 같은 동작을 손으로 만든 것과 말로 시킨 것의 소요 시간과 고친 횟수를 적어 두면 우리 팀에 맞는지 가늠할 수 있다.</p>
+    <p class="ptext"><strong>컴포넌트 이름과 라이브러리부터 정리하자.</strong> Studio MCP는 내 라이브러리의 컴포넌트를 꺼내 쓴다. 이름이 뒤죽박죽이면 사람도 AI도 헷갈린다. 요소 ID를 복사해 프롬프트에 넣는 방식이라면, 레이어 이름을 알아볼 수 있게 두는 습관이 도움이 된다.</p>
+    <p class="ptext"><strong>개발자에게 넘길 범위를 정해 두자.</strong> 화면 전체인지, 컴포넌트 하나인지 정하고 Dev View로 좁혀 건네는 연습이 필요하다. 규칙은 <a href="https://designrefs.com/articles/design-md-for-ai/">DESIGN.md</a>나 가이드라인에, 움직임은 프로토타입에 두면 역할이 나뉜다.</p>
+    <p class="ptext">쓰임별 AI 디자인 도구는 <a href="https://designrefs.com/ai/">AI 디자인 툴</a>에 모아 두었다.</p>
+    <p class="art__note">출처: <a href="https://www.protopie.io/blog/protopie-mcp-official" target="_blank" rel="noopener">ProtoPie 블로그: MCP 공식 지원</a>, <a href="https://www.protopie.io/blog/blog-protopie-mcp-from-design-to-code-faster" target="_blank" rel="noopener">ProtoPie 블로그: 디자인에서 코드까지</a>, <a href="https://www.protopie.io/learn/docs/mcp-getting-started" target="_blank" rel="noopener">ProtoPie 문서: 시작하기</a>, <a href="https://www.protopie.io/learn/docs/mcp-studio-mcp-introduction" target="_blank" rel="noopener">ProtoPie 문서: Studio MCP</a>.</p>
+      <div class="share">
+        <button class="share__btn" type="button" data-share>공유하기</button>
+        <button class="share__btn" type="button" data-copy>링크 복사</button>
+        <span class="share__msg" role="status"></span>
+      </div>
+    </article>
+    <script src="https://designrefs.com/js/views.js" defer></script>
+
+    <nav class="page__nav">
+      <h2 class="psub">이어서 볼 목록</h2>
+      <div class="page__navlinks"><a href="https://designrefs.com/#ai">AI 디자인 툴</a><a href="https://designrefs.com/#tool">디자인 툴</a><a href="https://designrefs.com/#uiux">UI/UX 레퍼런스</a></div>
+    </nav>
+
+    <section class="section">
+      <header class="section__head">
+        <h2 class="section__title">함께 읽으면 좋은 글</h2>
+      </header>
+      <div class="list list--insight">
+        <a class="arow" href="https://designrefs.com/articles/figma-specs-markdown-context/" data-tag="AI 디자인">
+          <span class="arow__date">2026. 10. 16</span>
+          <span class="arow__main">
+            <span class="arow__title">피그마 Specs, 마크다운 한 장으로 팀과 AI에게 맥락을 건네는 방법</span>
+            <p class="arow__desc">피그마가 캔버스 위에 마크다운 문서를 놓는 기능 Specs를 유료 플랜에 오픈 베타로 냈다. 무엇이 되고 무엇이 아직 확인되지 않았는지, 앞서 다룬 DESIGN.md와는 어떻게 다른지 피그마 공식 글과 릴리스 노트로 확인해 정리했다.</p>
+          </span>
+          <span class="arow__tag">AI 디자인 · 5분</span>
+        </a>
+        <a class="arow" href="https://designrefs.com/articles/nano-banana-2-1-designers/" data-tag="AI 디자인">
+          <span class="arow__date">2026. 10. 15</span>
+          <span class="arow__main">
+            <span class="arow__title">나노 바나나 2.1, 값은 절반이 됐다는데 디자이너가 확인할 것</span>
+            <p class="arow__desc">구글의 이미지 모델 나노 바나나 2.1이 나왔다. 1K와 2K는 값이 절반이 됐지만 4K는 그렇지 않고, 글자는 좋아졌지만 모델 카드에 약점도 적혀 있다. 요금표와 모델 카드를 직접 확인해 그림과 숫자로 정리했다.</p>
+          </span>
+          <span class="arow__tag">AI 디자인 · 4분</span>
+        </a>
+        <a class="arow" href="https://designrefs.com/articles/muse-wonder-design-arena/" data-tag="AI 디자인">
+          <span class="arow__date">2026. 10. 14</span>
+          <span class="arow__main">
+            <span class="arow__title">메타의 첫 최상위 모델이 디자인 투표 1위, 이 순위를 어떻게 읽을까</span>
+            <p class="arow__desc">메타가 10월 12일 내놓은 Muse Wonder가 사람들이 눈으로 골라 매기는 Design Arena에서 웹사이트와 UI 부문 1위에 올랐다. 투표가 어떻게 돌아가는지, 1위가 말해 주는 것과 말해 주지 않는 것을 그림과 숫자로 정리했다.</p>
+          </span>
+          <span class="arow__tag">AI 디자인 · 5분</span>
+        </a>
+      </div>
+      <nav class="art__pn"><a class="art__pn-a is-prev" href="https://designrefs.com/articles/figma-specs-markdown-context/" rel="prev"><span class="art__pn-l">← 이전 글</span><span class="art__pn-t">피그마 Specs, 마크다운 한 장으로 팀과 AI에게 맥락을 건네는 방법</span></a><span></span></nav>
+      <p class="art__all"><a href="https://designrefs.com/articles/">읽을거리 전체 보기 (27편) →</a></p>
+    </section>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <div class="wrap">
+      <nav class="footer__nav"><div class="footer__navgroup"><a href="https://designrefs.com/ui-ux/">UI/UX 레퍼런스</a><a href="https://designrefs.com/graphic/">그래픽 / 브랜딩</a><a href="https://designrefs.com/color/">컬러 가이드</a><a href="https://designrefs.com/font/">타이포 / 폰트</a><a href="https://designrefs.com/assets/">아이콘 / 에셋</a><a href="https://designrefs.com/mockups/">목업</a><a href="https://designrefs.com/tools/">디자인 툴</a><a href="https://designrefs.com/ai/">AI</a><a href="https://designrefs.com/dev/">디자인 개발</a><a href="https://designrefs.com/community/">커뮤니티 / 매거진</a><a href="https://designrefs.com/creators/">크리에이터 / 채널</a><a href="https://designrefs.com/freelance/">외주 / 프리랜서</a><a href="https://designrefs.com/jobs/">채용공고</a></div><div class="footer__navgroup"><a href="https://designrefs.com/articles/">읽을거리</a><a href="https://designrefs.com/styles/">스타일 사전</a><a href="https://designrefs.com/trends/">2026 트렌드</a><a href="https://designrefs.com/glossary/">용어 사전</a></div></nav>
+    </div>
+    <div class="wrap footer__inner">
+      <span>Copyright 2026. Design Hub. all rights reserved.</span>
+      <a href="https://designrefs.com/about/">소개</a>
+      <a href="https://designrefs.com/articles/">읽을거리</a>
+      <a href="https://designrefs.com/talk/">디자인 잡담</a>
+      <a href="https://designrefs.com/privacy/">개인정보처리방침</a>
+      <a href="mailto:nisov0924@gmail.com">CONTACT : nisov0924@gmail.com</a>
+      <a href="#" id="footer-top">맨 위로 ↑</a>
+    </div>
+  </footer>
+
+  <button id="to-top" class="to-top" type="button" aria-label="맨 위로"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg></button>
+  <script src="https://designrefs.com/js/page.js" defer></script>
+</body>
+</html>

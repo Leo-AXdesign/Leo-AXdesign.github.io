@@ -6,7 +6,81 @@
     <atom:link href="https://designrefs.com/en/rss.xml" rel="self" type="application/rss+xml" />
     <description>Notes from a designer in Korea: working with AI, putting style into words, collecting references and design communities. Translated from Korean.</description>
     <language>en</language>
-    <lastBuildDate>Fri, 16 Oct 2026 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 17 Oct 2026 09:00:00 +0900</lastBuildDate>
+    <item>
+      <title>Build prototypes by prompt, hand them off as code: what to check in ProtoPie MCP</title>
+      <link>https://designrefs.com/en/articles/protopie-mcp-prototype-ai/</link>
+      <guid isPermaLink="true">https://designrefs.com/en/articles/protopie-mcp-prototype-ai/</guid>
+      <pubDate>Sat, 17 Oct 2026 09:00:00 +0900</pubDate>
+      <category>AI Design</category>
+      <description>ProtoPie has announced official MCP support. Studio MCP lets an AI read and edit the prototype you have open; Code MCP hands finished prototypes to coding agents. Checked against ProtoPie&#x27;s own post and docs: what works and what isn&#x27;t confirmed.</description>
+      <content:encoded><![CDATA[    <p class="ptext">ProtoPie has announced official support for MCP. The byline on ProtoPie&#x27;s blog post says October 7, while the page metadata says October 15. The two dates disagree, so I couldn&#x27;t confirm the exact publication date.</p>
+    <p class="ptext">Anyone who has built interaction prototypes knows the scene. To make a card expand when a button is tapped, you attach a trigger, pick a response and wire up a variable. It isn&#x27;t hard, but it takes many small steps. Then you hand the finished prototype to a developer and the question comes back: how do we build this behavior? ProtoPie has put AI into both of those stretches.</p>
+    <p class="ptext">This piece follows ProtoPie&#x27;s blog posts and docs, and separates what works from what hasn&#x27;t been confirmed.</p>
+    <p class="ptext"><strong>First, a disclaimer.</strong> I haven&#x27;t used this feature myself. Everything below comes from what ProtoPie published. Pricing, usage limits and the exact scope per plan were either missing or inconsistent across the public pages.</p>
+    <h2 class="psub" id="s1">What MCP does here</h2>
+    <p class="ptext">MCP is a convention that lets AI tools call features in other programs. In ProtoPie&#x27;s docs there are two servers, and they share the same ProtoPie account.</p>
+    <ul class="ptext-list">
+      <li><strong>Studio MCP</strong>: connects an AI to ProtoPie Studio so it can read and change the prototype you have open. It runs locally inside Studio, while the AI runs in the MCP client you connect.</li>
+      <li><strong>Code MCP</strong>: lets AI coding agents take a finished prototype and rebuild it in code. It runs on your machine through <code>npx</code> and is read-only.</li>
+    </ul>
+    <p class="ptext">In short, one is for making and the other is for handing off.</p>
+    <h2 class="psub" id="s2">Studio MCP: ask in words, fix by hand</h2>
+    <p class="ptext">The docs list five uses for Studio MCP.</p>
+    <ul class="ptext-list">
+      <li>The AI reads and edits the open prototype. It can also capture the canvas.</li>
+      <li>It authors layers, layouts and interactions by prompt. The example given is adding a Tap trigger to a button.</li>
+      <li>It uses your own component libraries, building screens from the assets and components you already have in ProtoPie.</li>
+      <li>It validates prototypes, checking whether behavior matches expectations and flagging interaction or flow issues.</li>
+      <li>It targets specific elements by ID: layers, scenes, variables, components, triggers and responses. You copy an ID and paste it into your prompt, as in Change the interaction for [element ID].</li>
+    </ul>
+    <p class="ptext">Two things stand out. First, the AI pulls real instances from your component library instead of inventing parts. Second, you point at things by ID. It reads as a way to cut down the case where you say that button and the wrong layer changes. That reading is mine, and no public test shows how accurate it is.</p>
+    <p class="ptext">ProtoPie says every generated interaction stays fully editable inside Studio. You continue by hand instead of rebuilding from scratch.</p>
+    <h2 class="psub" id="s3">Code MCP: handing a prototype to implementation</h2>
+    <p class="ptext">Code MCP sits on the developer side. ProtoPie says it helps AI coding agents understand finished prototypes and generate implementation output from them. The post names seven officially supported frameworks.</p>
+    <ul class="ptext-list">
+      <li>React, React Native, Qt/QML, Flutter, SwiftUI, Compose and ArkTS</li>
+    </ul>
+    <p class="ptext">Dev View, introduced alongside it, lets you share a whole prototype, a single scene, a component or one layer. Instead of telling a developer to look at the entire screen, you can narrow the context to one component.</p>
+    <p class="ptext">The <a href="https://designrefs.com/articles/figma-specs-markdown-context/">Figma Specs</a> we covered passes context to coding agents through a single link too. The direction is the same, but what gets passed differs. Specs carries written context and mockups; ProtoPie carries a prototype with motion. Transitions and reactions that are hard to put into words can be shown as they are. That is my interpretation as well.</p>
+    <h2 class="psub" id="s4">Which AI connects</h2>
+    <p class="ptext">ProtoPie does not ship its own model. It follows a Bring Your Own Model approach. The post bylined July 20 names MCP-compatible clients such as Claude Code, Codex, Cursor, VS Code and Antigravity, and says support will keep expanding. The Studio MCP docs also name Claude Desktop.</p>
+    <p class="ptext">There are a few conditions.</p>
+    <ul class="ptext-list">
+      <li>ProtoPie Studio 10.3.0 or later, the version that ships the MCP server.</li>
+      <li>The AI client and ProtoPie Studio must run on the same computer.</li>
+      <li>A Pro or Enterprise plan.</li>
+    </ul>
+    <p class="ptext">The July post also says model quality matters. Models comparable to Claude Sonnet work well for simpler tasks, while Opus-class models generally produce stronger results for complex interactions and implementation. There are no numbers or test results behind this; it is ProtoPie&#x27;s guidance.</p>
+    <p class="ptext">A tool being connected may not be the same as getting the result you wanted. After connecting, you still decide what to ask and check what comes back. ProtoPie also assumes a flow where people fix what the AI makes.</p>
+    <h2 class="psub" id="s5">Plans: what is confirmed and what isn&#x27;t</h2>
+    <p class="ptext">ProtoPie&#x27;s public pages describe the plans slightly differently. A table helps.</p>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th>Page</th><th>What it says</th></tr></thead>
+      <tbody>
+        <tr><td>Post bylined July 20</td><td>In beta; Pro and Enterprise users get it at no additional cost</td></tr>
+        <tr><td>October official-support post</td><td>Studio MCP under MCP Core (Pro plan); Studio MCP, Code MCP and Dev View under MCP Enterprise (Enterprise plan)</td></tr>
+        <tr><td>Studio MCP docs</td><td>Pro or Enterprise plan, listed as MCP Core</td></tr>
+      </tbody>
+    </table></div>
+    <p class="art__note">Sources: <a href="https://www.protopie.io/blog/protopie-mcp-official" target="_blank" rel="noopener">ProtoPie blog: official MCP support</a>, <a href="https://www.protopie.io/blog/blog-protopie-mcp-from-design-to-code-faster" target="_blank" rel="noopener">ProtoPie blog: from design to code</a>, <a href="https://www.protopie.io/learn/docs/mcp-studio-mcp-introduction" target="_blank" rel="noopener">ProtoPie docs: Studio MCP</a></p>
+    <p class="ptext">Whether Code MCP is available on the Pro plan reads differently depending on the page. The October post ties it to Enterprise, while the July post says Pro and Enterprise users pay nothing extra during the beta. It does not clearly say whether Code MCP falls inside that beta. Which one holds today is something to check on ProtoPie&#x27;s pricing page. The official-support post lists no prices.</p>
+    <h2 class="psub" id="s6">What isn&#x27;t confirmed yet</h2>
+    <ul class="ptext-list">
+      <li>Pricing and any AI usage limits. The official-support post has none.</li>
+      <li>Whether the Pro plan can use Code MCP.</li>
+      <li>Accuracy with Korean-language prompts. No public test exists.</li>
+      <li>How much you have to fix in an AI-made interaction in real work.</li>
+      <li>The quality of code for each of the seven frameworks.</li>
+      <li>The exact publication date of the official post, since dates on the page disagree.</li>
+    </ul>
+    <h2 class="psub" id="s7">So for now</h2>
+    <p class="ptext"><strong>Test it on one small interaction.</strong> A button that opens a modal is enough. If you have a Pro plan and Studio 10.3.0 or later, write down how long the same interaction takes by hand versus by prompt, and how many times you fixed it. That tells you whether it suits your team.</p>
+    <p class="ptext"><strong>Tidy your component names and library first.</strong> Studio MCP pulls components from your library. Messy names confuse people and AI alike. Since you copy element IDs into prompts, keeping layer names readable helps.</p>
+    <p class="ptext"><strong>Decide what you hand to developers.</strong> Whole screen or a single component? Practice narrowing it with Dev View. Rules can live in <a href="https://designrefs.com/articles/design-md-for-ai/">DESIGN.md</a> or guidelines, and motion in the prototype, so each has its role.</p>
+    <p class="ptext">AI design tools by use case are collected in <a href="https://designrefs.com/ai/">AI design tools</a>.</p>
+    <p class="art__note">Sources: <a href="https://www.protopie.io/blog/protopie-mcp-official" target="_blank" rel="noopener">ProtoPie blog: official MCP support</a>, <a href="https://www.protopie.io/blog/blog-protopie-mcp-from-design-to-code-faster" target="_blank" rel="noopener">ProtoPie blog: from design to code</a>, <a href="https://www.protopie.io/learn/docs/mcp-getting-started" target="_blank" rel="noopener">ProtoPie docs: getting started</a>, <a href="https://www.protopie.io/learn/docs/mcp-studio-mcp-introduction" target="_blank" rel="noopener">ProtoPie docs: Studio MCP</a>.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Figma Specs: one markdown page that hands context to your team and to AI</title>
       <link>https://designrefs.com/en/articles/figma-specs-markdown-context/</link>

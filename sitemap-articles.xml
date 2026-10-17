@@ -3,6 +3,14 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
+    <loc>https://designrefs.com/articles/protopie-mcp-prototype-ai/</loc>
+    <lastmod>2026-10-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://designrefs.com/articles/protopie-mcp-prototype-ai/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://designrefs.com/en/articles/protopie-mcp-prototype-ai/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://designrefs.com/articles/protopie-mcp-prototype-ai/"/>
+    <image:image><image:loc>https://designrefs.com/og/protopie-mcp-prototype-ai.png</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://designrefs.com/articles/figma-specs-markdown-context/</loc>
     <lastmod>2026-10-16</lastmod>
     <xhtml:link rel="alternate" hreflang="ko" href="https://designrefs.com/articles/figma-specs-markdown-context/"/>
@@ -209,6 +217,14 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://designrefs.com/en/articles/ai-image-commercial-use/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://designrefs.com/articles/ai-image-commercial-use/"/>
     <image:image><image:loc>https://designrefs.com/og/ai-image-commercial-use.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://designrefs.com/en/articles/protopie-mcp-prototype-ai/</loc>
+    <lastmod>2026-10-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://designrefs.com/articles/protopie-mcp-prototype-ai/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://designrefs.com/en/articles/protopie-mcp-prototype-ai/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://designrefs.com/articles/protopie-mcp-prototype-ai/"/>
+    <image:image><image:loc>https://designrefs.com/og/en/protopie-mcp-prototype-ai.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://designrefs.com/en/articles/figma-specs-markdown-context/</loc>
