@@ -1,6 +1,19 @@
 {
   "sets": [
     {
+      "id": "article-figma-specs-markdown-context",
+      "title": "피그마 Specs, 마크다운 한 장으로 팀과 AI에게 맥락을 건네는 방법",
+      "count": 3,
+      "images": [
+        "https://designrefs.com/social/cards/article-figma-specs-markdown-context/01.jpg",
+        "https://designrefs.com/social/cards/article-figma-specs-markdown-context/02.jpg",
+        "https://designrefs.com/social/cards/article-figma-specs-markdown-context/03.jpg"
+      ],
+      "caption": "피그마 Specs, 마크다운 한 장으로 팀과 AI에게 맥락을 건네는 방법\n\n피그마가 캔버스 위에 마크다운 문서를 놓는 기능 Specs를 유료 플랜에 오픈 베타로 냈다. 무엇이 되고 무엇이 아직 확인되지 않았는지, 앞서 다룬 DESIGN.md와는 어떻게 다른지 피그마 공식 글과 릴리스 노트로 확인해 정리했다.\n\n📌 저장해 두고 필요할 때 꺼내 보세요\n전문과 출처는 프로필 링크(designrefs.com)에 있어요.\n\n#디자인레퍼런스 #디자이너 #AI디자인 #디자인인사이트 #UXUI",
+      "comment": "📎 이 글의 출처\n· Figma 릴리스 노트 — figma.com\n· TechCrunch — techcrunch.com\n· Introducing Specs: Markdown as a medium (Figma 블로그) — figma.com\n\n전문은 여기서 읽을 수 있어요\ndesignrefs.com/articles/figma-specs-markdown-context/",
+      "article": "https://designrefs.com/articles/figma-specs-markdown-context/"
+    },
+    {
       "id": "ai-ui-tools",
       "title": "프롬프트로 화면 시안 뽑는 AI 툴 5",
       "count": 7,
