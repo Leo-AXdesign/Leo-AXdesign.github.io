@@ -6,7 +6,73 @@
     <atom:link href="https://designrefs.com/en/rss.xml" rel="self" type="application/rss+xml" />
     <description>Notes from a designer in Korea: working with AI, putting style into words, collecting references and design communities. Translated from Korean.</description>
     <language>en</language>
-    <lastBuildDate>Sat, 17 Oct 2026 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 18 Oct 2026 09:00:00 +0900</lastBuildDate>
+    <item>
+      <title>The Figma agent used to be free to try. Now it draws AI credits: what designers should check</title>
+      <link>https://designrefs.com/en/articles/figma-agent-ai-credits-ga/</link>
+      <guid isPermaLink="true">https://designrefs.com/en/articles/figma-agent-ai-credits-ga/</guid>
+      <pubDate>Sun, 18 Oct 2026 09:00:00 +0900</pubDate>
+      <category>AI Design</category>
+      <description>Figma&#x27;s design agent has left beta and now consumes AI credits. Checked against Figma&#x27;s FAQ and pricing page: what is confirmed, what is missing, and how to stretch a month&#x27;s allowance.</description>
+      <content:encoded><![CDATA[    <p class="ptext">If you tried Figma&#x27;s agent during the beta, you probably never worried about the cost of a prompt. That period is over. According to Figma&#x27;s official AI credits FAQ, the agent in Figma Design and the Weave tools became generally available on October 6, 2026, and have consumed AI credits since.</p>
+    <p class="ptext">If you don&#x27;t know what a prompt costs or how large the monthly allowance is, you hit a wall at the end of the month. This piece follows Figma&#x27;s FAQ, its pricing page and a community forum reply, and separates what is confirmed from what is missing.</p>
+    <h2 class="psub" id="s1">What changed</h2>
+    <p class="ptext">From the &#x27;Agent and Weave tools&#x27; section of Figma&#x27;s FAQ:</p>
+    <ul class="ptext-list">
+      <li>The agent in Figma Design and the Weave tools became generally available on October 6, 2026, and now consume AI credits.</li>
+      <li>They share one budget with other generally available AI tools such as Figma Make.</li>
+      <li>Weave tools have a fixed credit cost per tool. Agent usage varies with prompt complexity, the actions taken and the context you provide.</li>
+      <li>Usage during the beta did not consume AI credits.</li>
+      <li>Organization and Enterprise admins can download a CSV of beta usage. It contains only beta-period data.</li>
+    </ul>
+    <p class="ptext">The line to notice is the shared budget. In a month when you generate a lot with Make or image tools, there is less left for the agent. The FAQ says that if other AI tools have used up the budget, the agent may show 0 credits left.</p>
+    <h2 class="psub" id="s2">How big is a month&#x27;s allowance</h2>
+    <p class="ptext">Here are the monthly credits listed on Figma&#x27;s pricing page. Every seat gets a monthly allotment of AI credits.</p>
+    <figure class="art__fig">
+      <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/figma-ai-credits-by-plan-en-m.svg" width="600" height="745" /><img src="https://designrefs.com/articles/img/figma-ai-credits-by-plan-en.svg" alt="Monthly AI credits per Figma plan" width="1200" height="615" loading="lazy" decoding="async" /></picture>
+      <figcaption>Monthly AI credits per Figma plan</figcaption>
+    </figure>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th>Plan</th><th>Monthly credits, Full seat</th><th>Monthly credits, Dev and Collab seats</th></tr></thead>
+      <tbody>
+        <tr><td>Starter (free)</td><td>500 (150 per day, up to 500 per month)</td><td>500</td></tr>
+        <tr><td>Professional</td><td>3,000</td><td>500</td></tr>
+        <tr><td>Organization</td><td>3,500</td><td>500</td></tr>
+        <tr><td>Enterprise</td><td>4,250</td><td>500</td></tr>
+      </tbody>
+    </table></div>
+    <p class="art__note">Source: <a href="https://www.figma.com/pricing/" target="_blank" rel="noopener">Figma pricing page</a></p>
+    <p class="ptext">On the same page, seat prices on Professional are $16 a month for Full, $12 for Dev and $3 for Collab. The page doesn&#x27;t say whether the Professional prices are for monthly or annual billing. Organization is $55 for a Full seat on annual billing and Enterprise is $90. Prices can change, so check the page before you buy.</p>
+    <p class="ptext">The pricing page says &quot;Number of credits used varies by request.&quot; There is no per-feature price list. According to the FAQ, credits reset monthly and the remaining amount shows in the AI Balance menu.</p>
+    <h2 class="psub" id="s3">What one run costs: a single clue</h2>
+    <p class="ptext">There is no official unit price, but there is one clue. On August 12, a post in Figma&#x27;s community forum quoted a tooltip on the beta agent: &quot;After beta, it will use 196 credits.&quot; A reply in the community described that number as a &#x27;predictive receipt&#x27;, a preview of what a similar prompt would cost after the beta. The same reply said prompts run during the beta won&#x27;t be charged, now or later.</p>
+    <p class="ptext">Some rough arithmetic follows. It is mine, and it rests on one prompt from one user.</p>
+    <ul class="ptext-list">
+      <li>Professional Full seat: 3,000 ÷ 196 ≈ 15 runs</li>
+      <li>Starter: 500 ÷ 196 ≈ 2 runs</li>
+    </ul>
+    <p class="ptext">Smaller prompts would allow more and larger ones fewer. Read it as a sense of scale, not an exact count. If you hand over whole screens every day, a month&#x27;s allowance could shrink quickly. The forum answer is community guidance rather than an official policy page, and when it was written on August 12 no GA date had been set. The only reliable way to know today&#x27;s cost is to run a prompt and check AI Balance.</p>
+    <h2 class="psub" id="s4">When you run short</h2>
+    <p class="ptext">Teams that use AI often can buy more credits through a subscription or pay-as-you-go billing. The pricing page says purchased credits are shared by the whole team. The FAQ says that from August 25 the add-ons give more credits at the same price: 2x on Professional and 1.6x on Organization and Enterprise. It applies automatically, invoices may show adjustment lines but the net cost stays the same, and the monthly spending limit is unchanged.</p>
+    <h2 class="psub" id="s5">What isn&#x27;t confirmed</h2>
+    <ul class="ptext-list">
+      <li>The average credits for one agent prompt. There is no official price list.</li>
+      <li>Which plans can use the agent. The pricing page doesn&#x27;t say.</li>
+      <li>Whether seat credits pool across a team or unused credits carry over. The pricing page doesn&#x27;t state it.</li>
+      <li>The credit ratio against other AI features such as Make and image tools.</li>
+      <li>The situation for the agent in FigJam and Slides. The FAQ section I checked mentions only the Figma Design agent and Weave tools.</li>
+    </ul>
+    <h2 class="psub" id="s6">Read it with the earlier pieces</h2>
+    <p class="ptext"><a href="https://designrefs.com/articles/figma-specs-markdown-context/">Figma Specs</a> was about handing context to a team and AI in one markdown page. This change adds a price to handing that context to an AI. The FAQ says credit use varies with the context you provide. Keeping your rules short might improve results and also reduce usage. That is my guess, and no public test backs it up. The rules memo is covered in the <a href="https://designrefs.com/articles/design-md-for-ai/">DESIGN.md</a> piece.</p>
+    <h2 class="psub" id="s7">So for now</h2>
+    <p class="ptext"><strong>Open AI Balance first.</strong> Note today&#x27;s remaining credits, run one small prompt, and see how much dropped. That gives you a unit price for your own work. With no official price list, this is the most accurate method.</p>
+    <p class="ptext"><strong>Split prompts into small ones.</strong> Asking for one card or one header at a time, instead of a whole screen, limits how much you spend on a result you don&#x27;t like. This leans on the FAQ&#x27;s note that usage varies with complexity and context.</p>
+    <p class="ptext"><strong>If you&#x27;re on a team, ask your admin.</strong> Purchased credits are shared, and Organization and Enterprise admins can download beta usage as a CSV. Seeing how much you used in the beta gives a rough idea of scale after GA.</p>
+    <p class="ptext">AI design tools by use are collected in <a href="https://designrefs.com/ai/">AI design tools</a>.</p>
+    <h2 class="psub" id="s8">In short</h2>
+    <p class="ptext">The agent started drawing credits at general availability, and there is no official price list for one run. The most reliable way is to measure your own work with AI Balance. The arithmetic here rests on a single forum number. I haven&#x27;t used the agent under credit billing.</p>
+    <p class="art__note">Sources: <a href="https://help.figma.com/hc/en-us/articles/42614902212887" target="_blank" rel="noopener">Figma Help: AI credits FAQ</a>, <a href="https://www.figma.com/pricing/" target="_blank" rel="noopener">Figma pricing page</a>, <a href="https://forum.figma.com/ask-the-community-7/figma-agent-beta-pricing-56929" target="_blank" rel="noopener">Figma Community Forum: figma agent beta pricing</a>.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Build prototypes by prompt, hand them off as code: what to check in ProtoPie MCP</title>
       <link>https://designrefs.com/en/articles/protopie-mcp-prototype-ai/</link>

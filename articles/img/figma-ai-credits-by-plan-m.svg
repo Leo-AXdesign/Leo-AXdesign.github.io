@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 745" role="img" aria-labelledby="t d">
+  <title id="t">피그마 요금제별 월 AI 크레딧</title>
+  <desc id="d">풀 좌석 월 AI 크레딧은 스타터 500, 프로페셔널 3,000, 조직 3,500, 엔터프라이즈 4,250이다.</desc>
+  <rect width="600" height="745" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="32" y="68" font-size="36" font-weight="800" fill="#111111" letter-spacing="-0.5">피그마 요금제별 월 AI 크레딧</text>
+    <text x="32" y="102" font-size="22" fill="#6B6B6B">풀 좌석 기준</text>
+    <text x="32" y="136" font-size="22" fill="#6B6B6B">스타터는 월 최대치</text>
+    <text x="32" y="206" font-size="30" font-weight="700" fill="#111111">풀 좌석 월 AI 크레딧</text>
+    <text x="32" y="238" font-size="22" fill="#6B6B6B">높을수록 많음</text>
+    <text x="32" y="291" font-size="23" fill="#444444">스타터</text>
+    <path d="M32 303H73.94117647058823A7 7 0 0 1 80.94117647058823 310V332A7 7 0 0 1 73.94117647058823 339H32Z" fill="#111111"/>
+    <text x="94.94117647058823" y="331.08" font-size="28" font-weight="700" fill="#111111">500</text>
+    <text x="32" y="385" font-size="23" fill="#444444">프로페셔널</text>
+    <path d="M32 397H318.6470588235294A7 7 0 0 1 325.6470588235294 404V426A7 7 0 0 1 318.6470588235294 433H32Z" fill="#111111"/>
+    <text x="339.6470588235294" y="425.08" font-size="28" font-weight="700" fill="#111111">3,000</text>
+    <text x="32" y="479" font-size="23" fill="#444444">조직</text>
+    <path d="M32 491H367.5882352941176A7 7 0 0 1 374.5882352941176 498V520A7 7 0 0 1 367.5882352941176 527H32Z" fill="#111111"/>
+    <text x="388.5882352941176" y="519.08" font-size="28" font-weight="700" fill="#111111">3,500</text>
+    <text x="32" y="573" font-size="23" fill="#444444">엔터프라이즈</text>
+    <path d="M32 585H441.0A7 7 0 0 1 448.0 592V614A7 7 0 0 1 441.0 621H32Z" fill="#111111"/>
+    <text x="462.0" y="613.08" font-size="28" font-weight="700" fill="#111111">4,250</text>
+    <line x1="32" y1="268" x2="32" y2="644" stroke="#D9D9D9" stroke-width="1.8"/>
+    <line x1="32" y1="662" x2="568" y2="662" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="32" y="688" font-size="19" fill="#6B6B6B">출처: Figma 요금 페이지 (2026-10-18 확인).</text>
+    <text x="32" y="717" font-size="19" fill="#6B6B6B">Dev·Collab 좌석은 모든 요금제에서 월 500.</text>
+  </g>
+</svg>
