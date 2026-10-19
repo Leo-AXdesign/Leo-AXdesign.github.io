@@ -6,7 +6,95 @@
     <atom:link href="https://designrefs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>디자인하면서 생각한 것들을 적습니다. AI와 같이 일하는 법, 스타일을 말로 옮기는 법, 레퍼런스와 커뮤니티 이야기.</description>
     <language>ko</language>
-    <lastBuildDate>Sun, 18 Oct 2026 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 19 Oct 2026 09:00:00 +0900</lastBuildDate>
+    <item>
+      <title>AI가 만든 화면이 다 똑같이 보일 때, 러버블은 &#x27;디자인 방향 3안&#x27;을 빼고 디자인 시스템을 앞세웠다</title>
+      <link>https://designrefs.com/articles/lovable-design-system-same-look/</link>
+      <guid isPermaLink="true">https://designrefs.com/articles/lovable-design-system-same-look/</guid>
+      <pubDate>Mon, 19 Oct 2026 09:00:00 +0900</pubDate>
+      <category>AI 디자인</category>
+      <description>러버블이 첫 빌드 전의 디자인 방향 세 가지 선택 단계를 없앴고, 디자인 시스템은 모든 유료 플랜에서 쓸 수 있다. 공식 변경 기록과 문서로 무엇이 확인되고 무엇이 비어 있는지, 내 규칙을 한 번 정해 두는 법을 정리했다.</description>
+      <content:encoded><![CDATA[    <p class="ptext">러버블이나 커서로 화면을 몇 개 만들다 보면 이상하게 다 비슷해 보인다. 둥근 카드, 비슷한 보라색, 비슷한 여백. 프롬프트를 바꿔 다시 시켜도 결이 같다. 그래서 &quot;디자인 감이 없어서 그런가&quot; 하고 넘기기 쉽다.</p>
+    <p class="ptext">러버블의 공식 변경 기록(changelog)에는 이 문제와 관련된 항목이 최근 몇 주 사이에 몇 개 올라왔다. 하나는 첫 빌드 전에 보여 주던 &#x27;디자인 방향 3안&#x27; 단계를 없앴다는 것이고, 다른 하나는 디자인 시스템이 모든 유료 플랜으로 열렸다는 것이다. 이 글은 러버블 변경 기록과 공식 문서를 직접 열어 확인한 내용만 옮기고, 확인되지 않은 부분은 따로 적는다.</p>
+    <h2 class="psub" id="s1">먼저 밝혀 둘 것</h2>
+    <ul class="ptext-list">
+      <li>러버블을 이 글을 쓰기 위해 직접 돌려 보지는 않았다. 아래 내용은 공식 변경 기록과 문서에 적힌 것이다.</li>
+      <li>변경 기록 페이지는 길어서, 이번에 읽은 범위는 앞부분(2026년 8월~10월 항목)이다.</li>
+      <li>&#x27;디자인 시스템을 쓰면 화면이 덜 비슷해진다&#x27;는 것을 보여 주는 공개 비교 자료는 찾지 못했다. 그 부분은 내 해석이다.</li>
+      <li>검색 요약에 나온 플랜 설명이 공식 변경 기록·문서와 달랐다. 뒤에서 따로 적는다.</li>
+    </ul>
+    <h2 class="psub" id="s2">무엇이 바뀌었나</h2>
+    <p class="ptext">공식 변경 기록에서 이번 글과 관련된 항목을 모으면 이렇다.</p>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th>날짜</th><th>항목</th><th>내용</th></tr></thead>
+      <tbody>
+        <tr><td>2026-08-19</td><td>디자인 시스템</td><td>모든 유료 플랜에서 사용 가능. 연결하면 모든 빌드가 컴포넌트, 토큰, 디자인 규칙을 물려받는다</td></tr>
+        <tr><td>2026-09-21</td><td>그룹별 기본 디자인 시스템</td><td>Business·Enterprise 플랜의 관리자가 그룹마다 기본값을 정할 수 있다</td></tr>
+        <tr><td>2026-10-08</td><td>첫 빌드 전 디자인 방향 제거</td><td>시각적으로 열려 있는 프롬프트에서 보여 주던 3가지 방향이 사라졌다</td></tr>
+        <tr><td>2026-10-12</td><td>파일 탭 이미지 편집</td><td>이미지 위에 직접 표시해 고칠 수 있고, 결과는 새 파일로 저장된다</td></tr>
+      </tbody>
+    </table></div>
+    <p class="art__note">출처: <a href="https://docs.lovable.dev/changelog" target="_blank" rel="noopener">Lovable 변경 기록</a></p>
+    <h3 class="art__h3">디자인 방향 3안이 사라졌다</h3>
+    <p class="ptext">변경 기록 문장을 옮기면 &quot;The three design directions Lovable showed before building a visually open-ended prompt have been removed.&quot;이다. 말하자면 &quot;예쁘게 만들어 줘&quot;처럼 모양을 정하지 않은 프롬프트를 던지면, 예전에는 첫 빌드 전에 방향 세 가지를 보여 줬다. 이제는 그 단계 없이 입력한 설명을 바탕으로 바로 모양을 만든다.</p>
+    <p class="ptext">다만 색, 글자, 레이아웃을 프롬프트에서 정하지 않았다면 이 세 가지는 여전히 물어본다고 변경 기록이 밝혔다. 예전 대화는 그때 고른 방향을 그대로 유지하지만 미리보기는 보이지 않는다.</p>
+    <p class="ptext">왜 뺐는지 이유는 변경 기록에 적혀 있지 않다. 그래서 &quot;방향 선택이 소용없어서 뺐다&quot;고 읽으면 안 된다. 확인되는 것은 &#x27;단계가 없어졌다&#x27;는 사실까지다.</p>
+    <h3 class="art__h3">디자인 시스템은 유료 전 플랜으로</h3>
+    <p class="ptext">8월 19일 항목은 &quot;Create a design system and attach it to your projects so every build inherits your components, tokens, and design rules.&quot;라고 적었다. 풀어 쓰면, 버튼·카드 같은 부품과 색·글자 크기 규칙을 한 번 만들어 프로젝트에 붙이면 이후 빌드가 그 규칙을 물려받는다는 뜻이다.</p>
+    <p class="ptext">기존 npm 패키지를 디자인 시스템으로 감싸는 방식은 Enterprise 플랜 전용이라고 같은 항목이 밝혔다. 문서 페이지에도 같은 구분이 있다. React 컴포넌트 라이브러리 기반 시스템은 모든 유료 플랜, npm 래퍼 방식은 Enterprise 전용이다.</p>
+    <h2 class="psub" id="s3">디자인 시스템은 어떻게 생겼나</h2>
+    <p class="ptext">러버블 공식 문서는 디자인 시스템을 &quot;컴포넌트 라이브러리, 스타일 가이드, 설치 방법을 한 번 정의해 워크스페이스의 여러 프로젝트에서 재사용하는 기능&quot;으로 설명한다. 디자인 시스템 자체가 전용 러버블 프로젝트다.</p>
+    <p class="ptext">문서가 말하는 구성은 세 가지다.</p>
+    <ol class="ptext-list">
+      <li>컴포넌트. React 컴포넌트 라이브러리</li>
+      <li>스키마와 가이드라인. 토큰, 컴포넌트 카탈로그, 제약 조건을 담은 기계가 읽는 스키마와 렌더링된 문서. 러버블이 코드를 만들 때마다 이를 참조한다</li>
+      <li>설치 정보. 설정 방법과 필요한 구성</li>
+    </ol>
+    <p class="ptext">릴리스하면 프로젝트의 <code>.lovable</code> 폴더에 <code>design-system.json</code>, <code>rules/components.md</code>, <code>rules/design-tokens.md</code>, <code>rules/library-guidelines.md</code>가 만들어진다. <code>system.md</code>는 직접 쓰는 파일이고 릴리스 때 덮어쓰지 않는다. 문서는 설계 철학이나 사용 규칙을 여기에 적으라고 안내한다.</p>
+    <p class="ptext">이 구조는 앞서 다룬 <a href="https://designrefs.com/articles/design-md-for-ai/">DESIGN.md</a>와 닮았다. AI에게 주는 디자인 규칙 메모를 파일로 두고, AI가 만들 때마다 읽게 한다는 점이 같다. 러버블은 그것을 서비스 안의 기능으로 묶어 놓은 셈이다.</p>
+    <h3 class="art__h3">만드는 순서</h3>
+    <p class="ptext">문서에 적힌 순서를 줄이면 이렇다.</p>
+    <ol class="ptext-list">
+      <li>프롬프트 박스의 + 메뉴에서 Design → Use a design system → Create design system을 고른다. 이름은 나중에 연결할 때 쓰이니 알아보기 쉽게 짓는다.</li>
+      <li>채팅으로 구성한다. 이미 있는 라이브러리를 npm 패키지명이나 공개 Git 저장소 주소로 가져오거나, 목표·기술 스택·원하는 부품·참고 문서(PDF, 마크다운, 스크린샷)를 순서대로 알려 주고 새로 만든다.</li>
+      <li>Release version을 누른다. 스키마 생성, 문서 렌더링, 버전 증가, 커밋이 이뤄지고 프로젝트에 연결할 수 있게 된다.</li>
+      <li>새 프로젝트는 + → Design → Use a design system에서 고른다. 기존 프로젝트는 Project settings → General의 Design system 섹션에서 Attach design system을 누른다.</li>
+    </ol>
+    <p class="ptext">연결하면 부품이 <code>src/design-system/&lt;슬러그&gt;/</code>로 복사되고, 규칙 파일이 <code>.lovable/rules/libraries/&lt;슬러그&gt;/</code>에 들어간다. 새 버전이 나오면 채팅에 &quot;Update available&quot;이 뜨고, 받아들이면 기존 디자인 시스템 파일이 교체된다. 프로젝트 자체 코드는 바뀌지 않는다고 문서가 적었다.</p>
+    <h2 class="psub" id="s4">쓰기 전에 알아 둘 한계</h2>
+    <p class="ptext">문서가 직접 밝힌 제한 중 디자이너가 알아 둘 것만 추렸다.</p>
+    <ul class="ptext-list">
+      <li>프로젝트 하나에 디자인 시스템 하나만 연결된다. 바꾸려면 먼저 떼어 내야 한다.</li>
+      <li>릴리스하지 않은 초안은 새 프로젝트의 바탕으로 쓸 수 없다.</li>
+      <li>기존 프로젝트를 디자인 시스템으로 바꿀 수 없다. 새로 만들어야 한다.</li>
+      <li>연결된 프로젝트의 <code>.lovable</code> 폴더와 복사된 부품은 직접 고치지 않는 것이 좋다. 업데이트하면 고친 부분이 덮어써진다. 영구적인 변경은 디자인 시스템 프로젝트에서 한다.</li>
+      <li>연결을 끊으면 업데이트와 규칙 적용이 멈추고, 복사된 파일은 일반 코드로 남는다.</li>
+      <li>공식 지원은 React뿐이다. Vue, Angular, Svelte는 보장되지 않는다.</li>
+      <li>올린 자료를 읽는 방식은 &quot;best-effort&quot;, 곧 최선을 다하는 수준이다. 첫 결과를 직접 검토하라고 문서가 안내한다.</li>
+    </ul>
+    <p class="ptext">플랜 설명이 어긋나는 부분도 있다. 검색에서 나온 문서 요약에는 &quot;Enterprise 플랜에서 쓸 수 있다&quot;는 표현이 보였지만, 변경 기록(8월 19일)과 문서의 플랜 항목은 React 기반이 모든 유료 플랜이라고 적었다. 결제 전에는 러버블의 요금 안내에서 현재 조건을 확인하자.</p>
+    <h2 class="psub" id="s5">같은 시기의 다른 변화</h2>
+    <p class="ptext">10월 12일 항목은 프로젝트의 Files 탭에서 이미지 위를 직접 그려 표시하거나, 댓글을 핀으로 꽂거나, 지우거나, 배경을 제거할 수 있다고 적었다. 결과는 새 파일로 저장된다. 이미지를 통째로 다시 뽑지 않고 고치는 쪽으로 간다는 점에서, 앞서 다룬 <a href="https://designrefs.com/articles/image-ai-edit-not-reroll/">다시 뽑지 말고 고쳐 쓴다</a>와 같은 흐름이다.</p>
+    <p class="ptext">이 외에 러버블이 5월에 낸 &#x27;Aesthetics&#x27; 업데이트가 있다. 러버블의 <a href="https://x.com/Lovable/status/2053874566460752191" target="_blank" rel="noopener">X 게시물</a>은 타이포그래피, 레이아웃, 색 선호를 요청하고, 짓기 전에 디자인 콘셉트를 미리 볼 수 있으며, 더 대담한 랜딩 페이지·앱·블로그를 만들 수 있다고 소개했다. 날짜(5월 11일)는 2차 매체인 Create With의 보도에서 확인했고, 러버블 쪽 상세 문서는 찾지 못했다. 이 기능과 이번에 사라진 &#x27;방향 3안&#x27; 단계가 어떻게 이어지는지는 공개된 자료로 확인되지 않았다.</p>
+    <h2 class="psub" id="s6">아직 확인되지 않은 것</h2>
+    <ul class="ptext-list">
+      <li>방향 3안 단계를 없앤 이유. 변경 기록에 설명이 없다.</li>
+      <li>디자인 시스템을 붙인 빌드와 안 붙인 빌드의 결과 차이를 보여 주는 공개 비교.</li>
+      <li>디자인 시스템의 크레딧 비용. 문서는 설정 확인 단계가 0크레딧이라고만 밝히고, 업데이트 같은 다른 작업의 비용은 적지 않았다.</li>
+      <li>변경 기록 뒷부분(이번에 읽지 못한 범위)에 있을 수 있는 관련 항목.</li>
+    </ul>
+    <h2 class="psub" id="s7">디자이너에게 이것이 의미하는 것</h2>
+    <p class="ptext">바이브 코더에게는 단순한 소식이다. 모양을 매번 프롬프트로 설득하지 말고, 한 번 정해 둔 규칙을 붙이라는 방향이다. 디자이너에게는 조금 다른 일이다. 버튼·카드 같은 부품과 색·글자 규칙을 AI가 읽을 수 있는 형태로 정리하는 일이 새 업무가 될 수 있다. 이것은 내 추측이다.</p>
+    <p class="ptext"><a href="https://designrefs.com/articles/figma-specs-markdown-context/">피그마 Specs</a>가 시안의 맥락을 마크다운 한 장으로 건네는 구조였다면, 러버블의 디자인 시스템은 코딩 도구 쪽에서 같은 문제를 푸는 방식으로 보인다. 도구는 달라도 &#x27;규칙을 글과 파일로 남겨 둔다&#x27;는 일은 같다.</p>
+    <h2 class="psub" id="s8">그래서 지금은</h2>
+    <p class="ptext"><strong>내 규칙부터 열 줄로 적자.</strong> 주 색 하나, 보조 색 하나, 글꼴 둘, 모서리 둥글기, 여백 단위를 먼저 정한다. 러버블을 쓰지 않아도 커서나 클로드 코드에 줄 규칙 메모로 그대로 쓸 수 있다. 작성법은 <a href="https://designrefs.com/articles/design-md-for-ai/">DESIGN.md</a> 글에 적어 두었다.</p>
+    <p class="ptext"><strong>첫 프롬프트에서 모양을 비워 두지 말자.</strong> 변경 기록에 따르면 색, 글자, 레이아웃을 정하지 않으면 러버블이 되묻는다. 처음부터 &quot;주 색은 이것, 글꼴은 이것&quot;이라고 적어 두면 되묻는 과정을 건너뛸 수 있다.</p>
+    <p class="ptext"><strong>고친 곳은 규칙 쪽에 반영하자.</strong> 문서가 안내하듯 연결된 프로젝트의 복사된 부품을 직접 고치면 업데이트 때 덮어써진다. 마음에 드는 변경은 디자인 시스템 프로젝트에 넣어야 남는다.</p>
+    <p class="ptext">쓰임별 AI 디자인 도구는 <a href="https://designrefs.com/ai/">AI 디자인 툴</a>에 모아 두었다.</p>
+    <h2 class="psub" id="s9">정리하면</h2>
+    <p class="ptext">러버블은 열려 있는 프롬프트에서 방향을 고르게 하던 단계를 없앴고, 부품과 규칙을 한 번 정해 모든 빌드에 물려주는 디자인 시스템을 모든 유료 플랜의 기능으로 내놓았다. 그것이 화면이 덜 비슷해지게 만드는지는 아직 확인된 바 없다. 확실한 것은 모양을 정하는 일이 프롬프트 한 줄에서 규칙 파일로 옮겨 가고 있다는 점이다.</p>
+    <p class="art__note">출처: <a href="https://docs.lovable.dev/changelog" target="_blank" rel="noopener">Lovable 변경 기록</a>, <a href="https://docs.lovable.dev/features/design-systems" target="_blank" rel="noopener">Lovable 문서: Design systems</a>, <a href="https://x.com/Lovable/status/2053874566460752191" target="_blank" rel="noopener">Lovable X 게시물</a>, <a href="https://www.createwith.com/tool/lovable/updates/lovable-launches-aesthetics-to-give-users-more-control-over-design-output" target="_blank" rel="noopener">Create With: Lovable Aesthetics</a>.</p>]]></content:encoded>
+    </item>
     <item>
       <title>공짜로 시키던 피그마 에이전트가 크레딧을 쓰기 시작했다, 디자이너가 확인할 것</title>
       <link>https://designrefs.com/articles/figma-agent-ai-credits-ga/</link>

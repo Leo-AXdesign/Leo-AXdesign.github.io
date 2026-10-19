@@ -3,6 +3,14 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
+    <loc>https://designrefs.com/articles/lovable-design-system-same-look/</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://designrefs.com/articles/lovable-design-system-same-look/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://designrefs.com/en/articles/lovable-design-system-same-look/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://designrefs.com/articles/lovable-design-system-same-look/"/>
+    <image:image><image:loc>https://designrefs.com/og/lovable-design-system-same-look.png</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://designrefs.com/articles/figma-agent-ai-credits-ga/</loc>
     <lastmod>2026-10-18</lastmod>
     <xhtml:link rel="alternate" hreflang="ko" href="https://designrefs.com/articles/figma-agent-ai-credits-ga/"/>
@@ -225,6 +233,14 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://designrefs.com/en/articles/ai-image-commercial-use/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://designrefs.com/articles/ai-image-commercial-use/"/>
     <image:image><image:loc>https://designrefs.com/og/ai-image-commercial-use.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://designrefs.com/en/articles/lovable-design-system-same-look/</loc>
+    <lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://designrefs.com/articles/lovable-design-system-same-look/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://designrefs.com/en/articles/lovable-design-system-same-look/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://designrefs.com/articles/lovable-design-system-same-look/"/>
+    <image:image><image:loc>https://designrefs.com/og/en/lovable-design-system-same-look.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://designrefs.com/en/articles/figma-agent-ai-credits-ga/</loc>

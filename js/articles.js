@@ -1,6 +1,7 @@
 // 이 파일은 tools/build-articles.py 가 만듭니다. 직접 고치지 마세요.
 // 글은 content/articles/*.md 에서 고칩니다.
 const ARTICLES = [
+  { slug: "lovable-design-system-same-look", title: "AI가 만든 화면이 다 똑같이 보일 때, 러버블은 '디자인 방향 3안'을 빼고 디자인 시스템을 앞세웠다", desc: "러버블이 첫 빌드 전의 디자인 방향 세 가지 선택 단계를 없앴고, 디자인 시스템은 모든 유료 플랜에서 쓸 수 있다. 공식 변경 기록과 문서로 무엇이 확인되고 무엇이 비어 있는지, 내 규칙을 한 번 정해 두는 법을 정리했다.", date: "2026-10-19", tag: "AI 디자인", min: 7, views: ["ai", "tool", "uiux"] },
   { slug: "figma-agent-ai-credits-ga", title: "공짜로 시키던 피그마 에이전트가 크레딧을 쓰기 시작했다, 디자이너가 확인할 것", desc: "피그마 디자인 에이전트가 베타를 끝내고 AI 크레딧을 소모하기 시작했다. 공식 FAQ와 요금 페이지로 무엇이 확인되고 무엇이 비어 있는지, 한 달 몫을 어떻게 아껴 쓸지 정리했다.", date: "2026-10-18", tag: "AI 디자인", min: 4, views: ["ai", "tool", "uiux"] },
   { slug: "protopie-mcp-prototype-ai", title: "프로토타입을 말로 만들고 코드로 넘긴다, 프로토파이 MCP에서 디자이너가 확인할 것", desc: "프로토파이가 MCP 지원을 공식으로 알렸다. Studio MCP는 열어 둔 프로토타입을 AI가 읽고 고치고, Code MCP는 완성본을 코딩 에이전트에게 넘긴다. 프로토파이 공식 글과 문서로 무엇이 되고 무엇이 확인되지 않았는지 정리했다.", date: "2026-10-17", tag: "AI 디자인", min: 5, views: ["ai", "tool", "uiux"] },
   { slug: "figma-specs-markdown-context", title: "피그마 Specs, 마크다운 한 장으로 팀과 AI에게 맥락을 건네는 방법", desc: "피그마가 캔버스 위에 마크다운 문서를 놓는 기능 Specs를 유료 플랜에 오픈 베타로 냈다. 무엇이 되고 무엇이 아직 확인되지 않았는지, 앞서 다룬 DESIGN.md와는 어떻게 다른지 피그마 공식 글과 릴리스 노트로 확인해 정리했다.", date: "2026-10-16", tag: "AI 디자인", min: 5, views: ["ai", "tool", "uiux"] },
