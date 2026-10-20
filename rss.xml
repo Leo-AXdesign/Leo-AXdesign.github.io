@@ -6,7 +6,106 @@
     <atom:link href="https://designrefs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>디자인하면서 생각한 것들을 적습니다. AI와 같이 일하는 법, 스타일을 말로 옮기는 법, 레퍼런스와 커뮤니티 이야기.</description>
     <language>ko</language>
-    <lastBuildDate>Mon, 19 Oct 2026 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 20 Oct 2026 09:00:00 +0900</lastBuildDate>
+    <item>
+      <title>시안을 눌러 보면 안 눌릴 때, 피그마 &#x27;코드 레이어&#x27;로 확인할 것 (유료 플랜 11월 4일까지 무료)</title>
+      <link>https://designrefs.com/articles/figma-code-layers-open-beta/</link>
+      <guid isPermaLink="true">https://designrefs.com/articles/figma-code-layers-open-beta/</guid>
+      <pubDate>Tue, 20 Oct 2026 09:00:00 +0900</pubDate>
+      <category>AI 디자인</category>
+      <description>피그마가 10월 15일 코드 레이어를 오픈 베타로 열었다. 디자인 프레임, 깃허브 저장소, 웹사이트 캡처, 프롬프트로 눌러 볼 수 있는 프로토타입을 캔버스 위에 만든다. 공식 릴리스 노트·도움말·블로그로 확인된 것과 비어 있는 것을 정리했다.</description>
+      <content:encoded><![CDATA[    <p class="ptext">클라이언트에게 시안을 보냈더니 답이 왔다. &quot;이 버튼 누르면 어떻게 되나요?&quot; 정지된 화면에는 답이 없다. 프로토타입 연결선을 이어 붙이다 하루가 가기도 한다. 진짜 눌리는 화면이 필요한 순간이다.</p>
+    <p class="ptext">피그마는 10월 15일 Config India 2026에서 &#x27;코드 레이어(Code layers)&#x27;를 오픈 베타로 열었다. 캔버스 위에 실제 코드로 돌아가는 프로토타입을 올리는 기능이다. 이 글은 피그마 릴리스 노트, 도움말 문서, 공식 블로그를 직접 열어 확인한 내용만 옮긴다. 확인되지 않은 부분은 따로 적었다.</p>
+    <h2 class="psub" id="s1">먼저 밝혀 둘 것</h2>
+    <ul class="ptext-list">
+      <li>코드 레이어를 이 글을 쓰려고 직접 돌려 보지는 않았다. 아래는 공식 문서에 적힌 내용이다.</li>
+      <li>단계적으로 열리는 기능이라 내 계정에 아직 안 보일 수 있다. 도움말 문서도 &quot;gradually rolling out&quot;이라고 적었다.</li>
+      <li>지원하는 프레임워크, 사용량 한도, 크레딧 단가는 문서에서 찾지 못했다.</li>
+      <li>플랜 표기가 문서마다 조금 다르다. 뒤에서 따로 적는다.</li>
+      <li>코드 레이어로 만든 화면이 실제 제품 코드로 바로 쓸 만한지는 확인된 자료가 없다. 그 부분은 판단하지 않는다.</li>
+    </ul>
+    <h2 class="psub" id="s2">코드 레이어가 뭔가</h2>
+    <p class="ptext">도움말 문서는 코드 레이어를 &quot;캔버스 위에 있는, 실행 중인 코드로 뒷받침되는 인터랙티브 프로토타입&quot;으로 설명한다. 디자인과 코드가 한 파일에 같이 있어서 변형안을 나란히 놓고 비교할 수 있고, 바꾼 내용을 코드 레이어로 되돌려 보낼 수도 있다.</p>
+    <p class="ptext">말하자면 그림으로 그린 버튼이 아니라 진짜 눌리는 버튼이 캔버스에 놓이는 셈이다. 레이어를 고르고 재생(Play)을 누르면 돌아가고, 여러 개를 동시에 돌릴 수 있다. 피그마 앱으로 모바일 미리보기도 된다.</p>
+    <h2 class="psub" id="s3">만드는 길은 다섯 가지</h2>
+    <p class="ptext">문서에 적힌 방법을 줄이면 이렇다.</p>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th>방법</th><th>순서</th></tr></thead>
+      <tbody>
+        <tr><td>처음부터</td><td>코드 도구(단축키 B)를 고르고 캔버스에 드래그한 뒤 피그마 에이전트에게 프롬프트로 시킨다</td></tr>
+        <tr><td>내 시안에서</td><td>디자인 프레임을 고르고 오른쪽 사이드바의 Build selection을 누른다. 프레임 여러 개도 된다</td></tr>
+        <tr><td>깃허브 저장소에서</td><td>연결한 저장소를 복제해 기존 프런트엔드 코드 위에서 시작한다</td></tr>
+        <tr><td>내 컴퓨터 폴더에서</td><td>코드 파일이 든 폴더를 올린다</td></tr>
+        <tr><td>웹사이트에서</td><td>피그마 크롬 확장 프로그램의 Capture code로 가져와 디자인 파일에 붙인다</td></tr>
+      </tbody>
+    </table></div>
+    <p class="art__note">출처: <a href="https://help.figma.com/hc/en-us/articles/44193259600535-Code-layers-in-Figma-Design" target="_blank" rel="noopener">Figma 도움말: Code layers in Figma Design</a></p>
+    <p class="ptext">피그마와 코딩 도구를 잇는 방법도 하나 더 있다. 클로드 코드 같은 코딩 에이전트에게 &quot;이 프로젝트를 이 피그마 파일에 코드 레이어로 가져와 줘&quot;라고 시키면 된다. 문서가 예로 든 프롬프트는 &quot;Import this project as a code layer in &lt;Figma file URL&gt;.&quot;이다. 이 방식으로 만들려면 Full 좌석이 필요하다고 문서가 밝혔다.</p>
+    <h3 class="art__h3">가져오기는 느릴 수 있다</h3>
+    <p class="ptext">문서는 MCP로 프로젝트를 가져오면 10분 이상 걸릴 수 있고, 프로젝트에 따라 코드 레이어에서 돌아가도록 고쳐야 할 수도 있다고 적었다. 복잡한 코드베이스를 더 잘 지원하는 것은 앞으로의 계획이라고 블로그가 말한다. 첫 시도는 작은 화면 하나로 해 보는 편이 안전하다.</p>
+    <h2 class="psub" id="s4">고치는 법: 말로, 클릭으로</h2>
+    <p class="ptext">만든 뒤 고치는 방법도 문서에 있다.</p>
+    <ol class="ptext-list">
+      <li>피그마 에이전트에게 말로 시킨다.</li>
+      <li>코드 편집기를 열어 코드를 보고 댓글을 달고 디자인을 고친다.</li>
+      <li>포인트 앤 에디트 도구로 미리보기에서 요소를 직접 골라 속성을 바꾼다. 채팅에서 Apply를 누르면 반영된다.</li>
+      <li>Reload code layer를 눌러 변경이 보이게 한다.</li>
+    </ol>
+    <p class="ptext">디자이너에게 3번이 눈에 띈다. 코드를 몰라도 화면에서 요소를 짚어 고칠 수 있는 길이다. 다만 이것이 얼마나 정확하게 고쳐 주는지는 공개된 비교가 없다.</p>
+    <h2 class="psub" id="s5">캔버스로 되돌리고, 깃허브로 내보내기</h2>
+    <p class="ptext">코드 레이어는 한 방향으로만 흐르지 않는다고 문서가 밝혔다.</p>
+    <ul class="ptext-list">
+      <li>현재 상태, 고른 요소, 또는 흐름을 녹화해 여러 프레임으로 뽑아 디자인으로 되돌릴 수 있다.</li>
+      <li>뽑아낸 디자인에서 고친 것을 다시 코드 레이어로 보낼 수 있다.</li>
+      <li>깃허브를 쓰면 피그마가 복제본을 보관한다. 브랜치를 따고 풀 리퀘스트(변경 합치기 요청)를 만들어 원래 저장소에 합칠 수 있다.</li>
+    </ul>
+    <p class="ptext">그러니 흐름은 &quot;시안 → 눌러 보는 화면 → 다시 시안 → 개발 저장소&quot;로 돌 수 있다. 개발자에게 넘길 때 &quot;이렇게 동작해야 해요&quot;를 글과 그림이 아니라 돌아가는 화면으로 건넨다는 점이 이전과 다르다.</p>
+    <h2 class="psub" id="s6">누가 쓸 수 있고, 값은 어떻게 되나</h2>
+    <ul class="ptext-list">
+      <li>도움말 문서: Education(K-12), Starter, Professional, Organization, Enterprise 플랜에서 쓸 수 있고, 디자인 파일 편집 권한이 필요하다.</li>
+      <li>릴리스 노트와 블로그: 오픈 베타이며 전 플랜에서 열린다고 적었다.</li>
+      <li>무료 기간: 릴리스 노트는 &quot;유료 플랜에서 11월 4일까지 코드 레이어 만들기·수정이 무료&quot;라고 적었다. 도움말 문서는 같은 기간이 지나면 코드 레이어 작업이 모두 크레딧을 쓴다고 밝혔다.</li>
+      <li>같은 요청에 딸린 다른 에이전트 작업은 계속 크레딧을 쓴다.</li>
+      <li>크레딧 소모량은 작업 복잡도에 따라 다르다고만 적혀 있고, 숫자는 없다.</li>
+      <li>깃허브나 MCP(피그마와 AI를 잇는 연결)로 가져오기는 크레딧을 쓰지 않는다. 그 뒤에 Make 에이전트에게 하는 프롬프트는 쓴다.</li>
+    </ul>
+    <p class="ptext">에이전트 크레딧 이야기는 <a href="https://designrefs.com/articles/figma-agent-ai-credits-ga/">공짜로 시키던 피그마 에이전트가 크레딧을 쓰기 시작했다</a>에서 다뤘다. 같은 지갑을 쓰는 셈이라, 무료 기간이 끝난 뒤 얼마나 나갈지는 지금 숫자로 알 수 없다.</p>
+    <p class="ptext">플랜 표기 차이도 있다. 블로그는 &quot;전 플랜&quot;이라 했고, 릴리스 노트의 무료 조건은 &quot;유료 플랜&quot;이다. 무료 플랜 계정에서 어디까지 되는지는 문서만으로 가려지지 않는다. 결제 전에는 피그마 요금 안내에서 현재 조건을 확인하자.</p>
+    <p class="ptext">관리 쪽 한계도 있다. 코드 레이어를 끄는 선택은 Enterprise 플랜만 할 수 있고, 관리자가 끄려면 AI 기능 전체를 끄는 방법뿐이라고 문서가 적었다. 팀에서 도입을 논의한다면 알아 둘 부분이다.</p>
+    <h2 class="psub" id="s7">같은 날 나온 발표와의 관계</h2>
+    <p class="ptext">10월 15일 릴리스 노트에는 코드 레이어 말고도 여러 항목이 있었다.</p>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th>항목</th><th>상태</th><th>내용</th></tr></thead>
+      <tbody>
+        <tr><td>가이드라인(Guidelines)</td><td>오픈 베타</td><td>발행한 라이브러리에 가이드라인을 붙이면 에이전트가 우리 패턴을 따른다</td></tr>
+        <tr><td>코드 소스(Code sources)</td><td>비공개 베타</td><td>깃허브 저장소나 npm 패키지를 가져와 실제 디자인 시스템 코드를 반영한다</td></tr>
+        <tr><td>통합 디자인 시스템</td><td>미리보기</td><td>디자인 라이브러리, 코드 라이브러리, 가이드라인을 한곳에서 묶어 관리한다</td></tr>
+        <tr><td>페이로드(Payload)</td><td>전 플랜</td><td>Make가 CMS, 데이터베이스, 인증, 관리자 화면이 있는 백엔드를 만든다</td></tr>
+        <tr><td>피그마 MCP</td><td>제공 중</td><td>성능 개선, 지원 제품 확대, 파트너 20곳 추가</td></tr>
+      </tbody>
+    </table></div>
+    <p class="art__note">출처: <a href="https://www.figma.com/release-notes/" target="_blank" rel="noopener">Figma 릴리스 노트</a>, <a href="https://www.figma.com/blog/build-by-design/" target="_blank" rel="noopener">Figma 블로그: Config India 2026</a></p>
+    <p class="ptext">블로그에 따르면 가이드라인과 코드 소스는 모든 유료 플랜에서 쓸 수 있게 된다. 이 둘이 눈여겨볼 대목이다. 코드 레이어가 &quot;눌러 보는 화면&quot;을 만든다면, 가이드라인은 그 화면이 우리 규칙에서 벗어나지 않게 하는 쪽이기 때문이다. 이 흐름은 <a href="https://designrefs.com/articles/design-md-for-ai/">AI에게 우리 디자인 규칙을 건네는 파일 한 장, DESIGN.md</a>와 <a href="https://designrefs.com/articles/figma-specs-markdown-context/">피그마 Specs</a>에서 다룬 방향과 이어진다.</p>
+    <h2 class="psub" id="s8">아직 확인되지 않은 것</h2>
+    <ul class="ptext-list">
+      <li>코드 레이어가 지원하는 프레임워크와 언어. 도움말에 이름이 없다.</li>
+      <li>무료 기간이 끝난 뒤 작업별 크레딧 소모량.</li>
+      <li>레이어가 만든 코드의 품질. 그대로 제품에 쓸 수 있는지에 대한 공개 평가는 찾지 못했다.</li>
+      <li>무료 플랜에서의 정확한 이용 범위. 문서마다 표현이 다르다.</li>
+      <li>가져오기가 실패하는 프로젝트의 구체적 조건. 문서는 &quot;일부 프로젝트는 고쳐야 한다&quot;고만 적었다.</li>
+    </ul>
+    <h2 class="psub" id="s9">디자이너에게 이것이 의미하는 것</h2>
+    <p class="ptext">프로토타입을 만드는 일은 지금까지 &quot;연결선을 잇는 일&quot;이었다. 코드 레이어는 그 자리에 &quot;돌아가는 화면에 말로 지시하는 일&quot;을 놓는다. 시안을 넘기기 전에 눌러 보게 하면 개발 단계에서 &quot;이게 이렇게 움직이는 거였어요?&quot;가 줄어들지 모른다. 이것은 내 추측이고, 아직 검증된 자료는 없다.</p>
+    <p class="ptext">바이브 코더에게는 반대 방향의 이야기다. 만든 화면을 피그마로 가져와 디자인으로 뽑고, 거기서 간격과 색을 손봐 되돌려 보낼 수 있다. 감이 없어서 막힐 때 디자인 도구 쪽에서 다듬는 길이 생긴 셈이다.</p>
+    <h2 class="psub" id="s10">그래서 지금은</h2>
+    <p class="ptext"><strong>작은 화면 하나로 11월 4일 전에 시험해 보자.</strong> 로그인 화면이나 가격표처럼 작은 프레임을 골라 Build selection을 눌러 본다. 외부 프로젝트를 가져올 때는 10분 넘게 걸릴 수 있으니 큰 프로젝트는 피한다. 무료 기간에 얼마나 되는지 감을 잡아 두면 이후 크레딧 판단이 쉬워진다. 무료는 유료 플랜 기준이다.</p>
+    <p class="ptext"><strong>시안을 넘길 때 &quot;눌러 보는 화면&quot;을 같이 건네 보자.</strong> 정적 시안에 설명을 길게 쓰는 대신 코드 레이어로 돌아가는 모습을 보여 준다. 클라이언트 질문 한 줄(&quot;이 버튼 누르면요?&quot;)에 답이 되는지 확인하는 용도로 시작하면 부담이 적다.</p>
+    <p class="ptext"><strong>우리 규칙을 글로 먼저 적어 두자.</strong> 가이드라인은 발행한 라이브러리에 붙이는 방식이다. 라이브러리가 아직 없다면 주 색, 글꼴, 모서리 둥글기, 여백 단위를 열 줄 안팎으로 적어 두는 것부터 하면 된다. 어느 도구를 쓰든 그대로 쓸 수 있다.</p>
+    <p class="ptext">쓰임별 AI 디자인 도구는 <a href="https://designrefs.com/ai/">AI 디자인 툴</a>에 모아 두었다.</p>
+    <h2 class="psub" id="s11">정리하면</h2>
+    <p class="ptext">피그마는 정지된 시안 옆에 실제 코드로 돌아가는 프로토타입을 둘 수 있게 했고, 11월 4일까지는 유료 플랜에서 만들기·수정이 무료다. 어디까지 믿고 쓸 수 있는지는 아직 공개된 비교가 없다. 확실한 것은 시안을 &quot;그리는 일&quot;에서 &quot;눌러 보게 하는 일&quot;로 한 걸음 옮겨 가고 있다는 점이다.</p>
+    <p class="art__note">출처: <a href="https://www.figma.com/release-notes/" target="_blank" rel="noopener">Figma 릴리스 노트</a>, <a href="https://help.figma.com/hc/en-us/articles/44193259600535-Code-layers-in-Figma-Design" target="_blank" rel="noopener">Figma 도움말: Code layers in Figma Design</a>, <a href="https://www.figma.com/blog/build-by-design/" target="_blank" rel="noopener">Figma 블로그: Config India 2026</a>.</p>]]></content:encoded>
+    </item>
     <item>
       <title>AI가 만든 화면이 다 똑같이 보일 때, 러버블은 &#x27;디자인 방향 3안&#x27;을 빼고 디자인 시스템을 앞세웠다</title>
       <link>https://designrefs.com/articles/lovable-design-system-same-look/</link>
