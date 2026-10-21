@@ -6,7 +6,119 @@
     <atom:link href="https://designrefs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>디자인하면서 생각한 것들을 적습니다. AI와 같이 일하는 법, 스타일을 말로 옮기는 법, 레퍼런스와 커뮤니티 이야기.</description>
     <language>ko</language>
-    <lastBuildDate>Tue, 20 Oct 2026 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 21 Oct 2026 09:00:00 +0900</lastBuildDate>
+    <item>
+      <title>배경만 바꿨는데 로고까지 바뀌었을 때, 크레아 3 편집 모델에서 확인할 것 (2K 한 장 0.06달러)</title>
+      <link>https://designrefs.com/articles/krea-3-edit-keep-logo/</link>
+      <guid isPermaLink="true">https://designrefs.com/articles/krea-3-edit-keep-logo/</guid>
+      <pubDate>Wed, 21 Oct 2026 09:00:00 +0900</pubDate>
+      <category>AI 디자인</category>
+      <description>Krea가 10월 15일 이미지 편집 모델 Krea 3을 공개했다. 제품의 라벨과 로고는 두고 주변 장면만 바꾼다는 모델이다. 공식 블로그·가격 페이지로 확인한 속도, 값, 쓰는 법과 아직 검증되지 않은 부분을 정리했다.</description>
+      <content:encoded><![CDATA[    <p class="ptext">제품 사진의 배경만 따뜻한 나무 선반으로 바꾸면 되는 일이 있다. 그런데 이미지 AI에 맡기면 배경은 그럴듯한데 병 라벨의 글자가 흐물흐물해지고 로고 모양이 달라지는 일이 흔하다. 그러면 결과를 고치는 데 처음부터 새로 찍는 시간이 든다.</p>
+    <p class="ptext">이미지 AI 업체 Krea가 10월 15일 &#x27;Krea 3&#x27;을 공개했다. 만들어 주는 모델이 아니라 이미 있는 이미지를 고치는 편집 모델이다. 공식 소개 글의 첫 번째 약속이 &quot;바꾸라고 하지 않은 것은 그대로 둔다&quot;이다. 이 글은 Krea 공식 블로그와 가격 페이지를 직접 열어 확인한 내용만 옮긴다.</p>
+    <figure class="art__fig">
+      <img src="https://designrefs.com/articles/img/krea-blog-v2.webp" alt="Krea 블로그 &#x27;Introducing Krea 3&#x27; 화면. 출처: krea.ai/blog/introducing-krea-3 (캡처일 2026-10-21)" loading="lazy" decoding="async" />
+      <figcaption>Krea 블로그 &#x27;Introducing Krea 3&#x27; 화면. 출처: krea.ai/blog/introducing-krea-3 (캡처일 2026-10-21)</figcaption>
+    </figure>
+    <h2 class="psub" id="s1">먼저 밝혀 둘 것</h2>
+    <ul class="ptext-list">
+      <li>Krea 3을 이 글을 쓰려고 직접 돌려 보지는 않았다. 아래 속도, 값, 품질은 모두 Krea가 직접 밝힌 내용이다.</li>
+      <li>Krea가 비교한 상대는 나노 바나나 프로와 GPT Image 2다. 제3자가 같은 조건으로 재현한 자료는 내가 연 자료 안에 없었다.</li>
+      <li>소개 글에 나온 장면(소파, 라벨 등)이 내 작업물에서도 그렇게 나올지는 알 수 없다.</li>
+      <li>글자(타이포)가 많은 포장이나 복잡한 로고에서 얼마나 버티는지는 공식 글에 구체 사례가 없다.</li>
+      <li>요금제별 정확한 한도는 가격 페이지의 표기가 엇갈려 확정하지 못했다. 뒤에서 따로 적는다.</li>
+    </ul>
+    <h2 class="psub" id="s2">소개 글이 약속한 것</h2>
+    <p class="ptext">Krea 3의 블로그 글은 편집 동작을 이렇게 설명한다.</p>
+    <ul class="ptext-list">
+      <li>바꾸라고 하지 않은 부분은 보존한다. 제품은 라벨과 로고를 그대로 두고 주변 장면만 바뀐다.</li>
+      <li>한 예시에서는 소파, 의자, 테이블이 바뀌는 동안 러그, 창밖 풍경, 책 읽는 여성은 그대로였다.</li>
+      <li>이미지가 여러 장이어도 사람과 캐릭터가 같은 모습으로 이어진다.</li>
+      <li>편집 한 번에 참조 이미지를 최대 6장까지 쓴다.</li>
+      <li>회화, 벡터 아트, 잉크 드로잉에서도 쓸 수 있다고 한다.</li>
+      <li>스케치, 무드보드, 색 팔레트가 있는 선화를 완성된 이미지로 바꿀 수도 있다.</li>
+    </ul>
+    <p class="ptext">소파 전/후 예시 이미지는 Krea의 것이라 이 글에 옮기지 않았다. 원문 소개 글에서 직접 볼 수 있다.</p>
+    <p class="ptext">말하자면 &quot;다시 뽑기&quot;가 아니라 &quot;그 자리만 수정&quot;에 가깝다. 이미지 AI가 이 방향으로 가는 흐름은 <a href="https://designrefs.com/articles/image-ai-edit-not-reroll/">다시 뽑지 말고 고쳐 쓴다, 이미지 AI가 &#x27;편집&#x27; 쪽으로 간 한 주</a>에서 한 번 다뤘다.</p>
+    <h2 class="psub" id="s3">속도와 값: Krea가 내놓은 숫자</h2>
+    <p class="ptext">소개 글의 수치는 이렇다.</p>
+    <ul class="ptext-list">
+      <li>대부분의 편집이 2K 해상도 기준으로 끝까지 8초 안에 끝난다.</li>
+      <li>가장 빠른 설정에서는 4~5초 정도이고, 실시간은 아직 아니라고 밝혔다.</li>
+      <li>값은 2K 한 장 0.06달러, 1K 한 장 0.03달러다.</li>
+      <li>비교 기준: 2026년 9월 24일~10월 1일 Krea에서 편집 작업을 돌려 대기 시간까지 포함한 중간값을 쟀다. 나노 바나나 프로는 33초, GPT Image 2는 90초였다.</li>
+      <li>한 달 편집 10만 번(참조 이미지 없이, 정가 기준)이면 Krea 3 6,000달러, 나노 바나나 프로 13,500달러, GPT Image 2 22,000달러다.</li>
+    </ul>
+    <figure class="art__fig">
+      <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/krea-3-cost-speed-m.svg" width="600" height="1069" /><img src="https://designrefs.com/articles/img/krea-3-cost-speed.svg" alt="Krea 3 편집 비용과 속도 비교" width="1200" height="537" loading="lazy" decoding="async" /></picture>
+      <figcaption>Krea 3 편집 비용과 속도 비교</figcaption>
+    </figure>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th>모델</th><th>편집 10만 번 비용(정가)</th><th>편집 한 건 중간 시간</th></tr></thead>
+      <tbody>
+        <tr><td>Krea 3</td><td>6,000달러</td><td>대부분 8초 안</td></tr>
+        <tr><td>나노 바나나 프로</td><td>13,500달러</td><td>33초</td></tr>
+        <tr><td>GPT Image 2</td><td>22,000달러</td><td>90초</td></tr>
+      </tbody>
+    </table></div>
+    <p class="art__note">출처: <a href="https://www.krea.ai/blog/introducing-krea-3" target="_blank" rel="noopener">Krea 블로그: Introducing Krea 3</a>. 시간은 Krea가 9월 24일~10월 1일에 측정한 값이다. Krea 3의 &#x27;8초 안&#x27;은 중간값이 아니라 대부분의 편집이 끝나는 상한으로 소개 글에 적혀 있다.</p>
+    <p class="ptext">표의 숫자를 한 장 값으로 나누면 나노 바나나 프로가 0.135달러, GPT Image 2가 0.22달러다. 소개 글에도 같은 값이 적혀 있다. 한 번에 한 장씩 만지는 디자이너에게는 큰 차이가 아닐 수 있다. 쇼핑몰 상품 수백 장의 배경을 바꾸는 일이라면 얘기가 달라진다.</p>
+    <p class="ptext">여기서 주의할 점이 있다. 시간 비교는 Krea 자신의 서비스에서 잰 값이고, 상대 모델은 다른 환경에서 돌아간다. 대기열 상황이 다르면 결과도 달라진다. 숫자는 방향을 알려 주는 정도로만 보자.</p>
+    <h2 class="psub" id="s4">쓰는 법도 공식 글에 있다</h2>
+    <p class="ptext">Krea가 소개 글에 적은 요령은 네 가지다.</p>
+    <ol class="ptext-list">
+      <li>먼저 &quot;그대로 둘 것&quot;을 말한다.</li>
+      <li>바꿀 부분은 사진가처럼 장면, 빛, 카메라로 묘사한다.</li>
+      <li>이미지를 여러 장 올릴 때는 각각 무슨 용도인지 적는다.</li>
+      <li>한 가지만 바꾸고 싶을 때는 &quot;only&quot;를 쓴다.</li>
+    </ol>
+    <p class="ptext">이 요령을 제품 사진 상황에 옮기면 이런 문장이 된다. 아래는 Krea의 요령을 내가 우리말로 옮겨 적은 예시이고, 실제로 돌려 보지는 않았다.</p>
+    <blockquote class="art__quote">병의 라벨과 로고는 그대로 둔다. 배경만 아침 햇빛이 드는 나무 선반으로 바꾼다. 카메라 각도는 그대로.</blockquote>
+    <p class="ptext">바꿀 것보다 지킬 것을 먼저 쓰는 순서가 눈에 띈다. 편집 모델이 &quot;어디를 건드려도 되는지&quot;를 문장에서 읽기 때문일 것이다. 이 해석은 내 추측이다.</p>
+    <h2 class="psub" id="s5">어디서 쓰나</h2>
+    <p class="ptext">소개 글에 따르면 Krea 3은 krea.ai에서 바로 쓸 수 있고(Krea는 사용자 3천만 명이라고 밝혔다), Krea API로도 열려 있다. fal, Hedra, Together AI, Nous Research, OpenRouter, Replicate 같은 외부 서비스에도 올라가 있다. 기업 팀은 Krea에 따로 문의하면 된다.</p>
+    <figure class="art__fig">
+      <img src="https://designrefs.com/articles/img/krea-home.webp" alt="Krea 첫 화면. 출처: krea.ai (캡처일 2026-10-21)" loading="lazy" decoding="async" />
+      <figcaption>Krea 첫 화면. 출처: krea.ai (캡처일 2026-10-21)</figcaption>
+    </figure>
+    <p class="ptext">Krea 가격 페이지에서 확인한 요금제는 이렇다. 월 가격은 연간 결제 기준으로 보이는 값이고, 페이지에 취소선으로 함께 적힌 값(Basic 9달러, Pro 35달러, Max 105달러, Business 200달러)이 월 결제 가격으로 추정된다. 페이지가 이를 명확히 밝히지는 않았다.</p>
+    <figure class="art__fig">
+      <img src="https://designrefs.com/articles/img/krea-pricing.webp" alt="Krea 가격 페이지 요금제 영역. 연간 결제 할인가 기준이며 가격은 바뀔 수 있다. 출처: krea.ai/pricing (캡처일 2026-10-21)" loading="lazy" decoding="async" />
+      <figcaption>Krea 가격 페이지 요금제 영역. 연간 결제 할인가 기준이며 가격은 바뀔 수 있다. 출처: krea.ai/pricing (캡처일 2026-10-21)</figcaption>
+    </figure>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th>요금제</th><th>월 가격(연간 결제로 보이는 값)</th><th>사용량</th></tr></thead>
+      <tbody>
+        <tr><td>Free</td><td>0달러</td><td>하루 100 유닛</td></tr>
+        <tr><td>Basic</td><td>5달러</td><td>월 5,000 유닛</td></tr>
+        <tr><td>Pro</td><td>21달러</td><td>월 20,000 유닛</td></tr>
+        <tr><td>Max</td><td>63달러</td><td>월 60,000 유닛</td></tr>
+        <tr><td>Business</td><td>160달러</td><td>월 80,000 유닛(최대 50석)</td></tr>
+      </tbody>
+    </table></div>
+    <p class="art__note">출처: <a href="https://www.krea.ai/pricing" target="_blank" rel="noopener">Krea 가격 페이지</a>. 가격 페이지의 구조화 데이터에는 Max가 70달러·40,000 유닛으로 적혀 있어 화면 표기와 달랐다. 결제 전에 현재 표기를 직접 확인하자.</p>
+    <p class="ptext">무료 요금제에서 Krea 3을 몇 장 쓸 수 있는지는 페이지 표기가 엇갈렸다. 비교표의 Krea 3 칸에는 하루 약 5장(추정치 표기)이라고 보이고, 별도의 편집 한도 표에는 다른 숫자가 있다. 어느 쪽이 맞는지 가려내지 못했다. 처음에는 무료로 몇 장 돌려 보고 판단하는 편이 안전하다.</p>
+    <h2 class="psub" id="s6">아직 비어 있는 것</h2>
+    <ul class="ptext-list">
+      <li><strong>원본 보존의 한계.</strong> 소개 글은 &quot;그대로 둔다&quot;고 하지만, 글자가 작은 라벨이나 복잡한 패턴에서 어떻게 되는지 수치로 낸 곳은 없다.</li>
+      <li><strong>영역을 지정하는 방식.</strong> 소개 글의 로드맵에는 원을 그리거나 이미지 위에 글을 써서 지시하는 기능이 있다. 아직 만드는 중이라고 적었다. 지금은 문장 설명으로 위치를 말해야 한다.</li>
+      <li><strong>해상도.</strong> 더 높은 해상도를 낮은 비용으로 내는 것도 로드맵이다. 지금 기본은 2K다.</li>
+      <li><strong>저작권과 상업 사용.</strong> 이 모델로 만든 이미지를 일에 써도 되는지는 이 글에서 다루지 않았다. 일반 원칙은 <a href="https://designrefs.com/articles/ai-image-commercial-use/">AI로 만든 이미지, 클라이언트 작업에 써도 될까</a>에 적어 두었다. 서비스 약관은 따로 읽어야 한다.</li>
+      <li><strong>독립 검증.</strong> 내가 연 자료 중에는 제3자가 Krea 3과 다른 모델을 같은 조건으로 비교한 것이 없었다.</li>
+    </ul>
+    <h2 class="psub" id="s7">디자이너에게 이것이 의미하는 것</h2>
+    <p class="ptext">제품 사진, 패키지 목업, 광고 시안처럼 &quot;무엇이 절대 바뀌면 안 되는지&quot;가 분명한 일에서 편집 모델이 쓸모 있다. 반대로 새 이미지를 아이디어 단계에서 많이 뽑는 일에는 큰 의미가 없다.</p>
+    <p class="ptext">한 가지 걱정은 속도다. 8초면 부담 없이 여러 번 돌릴 수 있지만, 그만큼 &quot;그럴듯하게 틀린 결과&quot;를 지나칠 위험도 커진다. 로고와 글자는 매번 원본과 겹쳐 놓고 확인하는 습관이 필요하다. 이것도 내 의견이다.</p>
+    <p class="ptext">바이브 코더에게는 랜딩 페이지에 넣을 제품 이미지, 히어로 배경을 손쉽게 맞추는 길이 된다. 다만 AI로 만든 화면이 다 비슷해 보이는 문제는 이미지로 풀리지 않는다. 폰트와 색을 정해 두는 일이 먼저다.</p>
+    <h2 class="psub" id="s8">그래서 지금은</h2>
+    <p class="ptext"><strong>지킬 것부터 한 줄로 쓰자.</strong> 편집을 시킬 때 &quot;라벨과 로고는 그대로 둔다&quot;를 맨 앞에 두고, 바꿀 것은 &quot;only&quot;로 하나만 적는다. Krea가 소개 글에서 권하는 순서이고, 어느 편집 모델에서나 먼저 시도해 볼 만하다.</p>
+    <p class="ptext"><strong>무료 한도 안에서 내 사진 한 장으로 확인하자.</strong> 소개 글의 예시 말고, 라벨 글자가 가장 작은 내 제품 사진으로 한 번 돌려 본다. 원본과 겹쳐 놓고 글자 가장자리를 확대해 보면 쓸 수 있는지 바로 가려진다.</p>
+    <p class="ptext"><strong>상업 작업이라면 약관부터 읽자.</strong> 속도와 값이 좋아도 클라이언트에게 넘길 이미지라면 사용 조건이 먼저다. 확인한 내용은 작업 파일 옆에 메모해 둔다.</p>
+    <p class="ptext">쓰임별 이미지 생성·편집 도구는 <a href="https://designrefs.com/ai/">AI 디자인 툴</a>에 모아 두었다. Krea도 이미지 생성 목록에 있다.</p>
+    <h2 class="psub" id="s9">제작사가 밝힌 숫자, 내 파일에서는</h2>
+    <p class="ptext">Krea 3은 &quot;바꾸지 말라고 한 것은 그대로 둔다&quot;를 내세운 편집 모델이고, 2K 한 장 0.06달러에 대부분 8초 안에 끝난다고 Krea가 밝혔다. 이 숫자들은 제작사가 직접 낸 것이라, 내 작업물에서의 결과는 직접 돌려 봐야 안다.</p>
+    <p class="art__note">출처: <a href="https://www.krea.ai/blog/introducing-krea-3" target="_blank" rel="noopener">Krea 블로그: Introducing Krea 3</a>, <a href="https://www.krea.ai/blog" target="_blank" rel="noopener">Krea 블로그 목록</a>, <a href="https://www.krea.ai/pricing" target="_blank" rel="noopener">Krea 가격 페이지</a>.</p>]]></content:encoded>
+    </item>
     <item>
       <title>시안을 눌러 보면 안 눌릴 때, 피그마 &#x27;코드 레이어&#x27;로 확인할 것 (유료 플랜 11월 4일까지 무료)</title>
       <link>https://designrefs.com/articles/figma-code-layers-open-beta/</link>

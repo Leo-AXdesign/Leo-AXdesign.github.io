@@ -3,6 +3,14 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
+    <loc>https://designrefs.com/articles/krea-3-edit-keep-logo/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://designrefs.com/articles/krea-3-edit-keep-logo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://designrefs.com/en/articles/krea-3-edit-keep-logo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://designrefs.com/articles/krea-3-edit-keep-logo/"/>
+    <image:image><image:loc>https://designrefs.com/og/krea-3-edit-keep-logo.png</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://designrefs.com/articles/figma-code-layers-open-beta/</loc>
     <lastmod>2026-10-20</lastmod>
     <xhtml:link rel="alternate" hreflang="ko" href="https://designrefs.com/articles/figma-code-layers-open-beta/"/>
@@ -241,6 +249,14 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://designrefs.com/en/articles/ai-image-commercial-use/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://designrefs.com/articles/ai-image-commercial-use/"/>
     <image:image><image:loc>https://designrefs.com/og/ai-image-commercial-use.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://designrefs.com/en/articles/krea-3-edit-keep-logo/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://designrefs.com/articles/krea-3-edit-keep-logo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://designrefs.com/en/articles/krea-3-edit-keep-logo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://designrefs.com/articles/krea-3-edit-keep-logo/"/>
+    <image:image><image:loc>https://designrefs.com/og/en/krea-3-edit-keep-logo.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://designrefs.com/en/articles/figma-code-layers-open-beta/</loc>
