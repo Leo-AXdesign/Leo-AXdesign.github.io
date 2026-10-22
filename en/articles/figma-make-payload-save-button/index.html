@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>When the Save button saves nothing: what to check in Payload, now inside Figma Make | Design Hub</title>
+  <meta name="description" content="On October 15, Figma put the open-source CMS Payload inside Figma Make. Prompting an app now also sets up a database, file storage, user login and an admin panel. Checked against Figma&#x27;s blog and release notes: what it does, hosting in free beta with pricing TBA, and what is still unknown." />
+  <link rel="canonical" href="https://designrefs.com/en/articles/figma-make-payload-save-button/" />
+  <link rel="alternate" hreflang="ko" href="https://designrefs.com/articles/figma-make-payload-save-button/" />
+  <link rel="alternate" hreflang="en" href="https://designrefs.com/en/articles/figma-make-payload-save-button/" />
+  <link rel="alternate" hreflang="x-default" href="https://designrefs.com/articles/figma-make-payload-save-button/" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Design Hub" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="When the Save button saves nothing: what to check in Payload, now inside Figma Make | Design Hub" />
+  <meta property="og:description" content="On October 15, Figma put the open-source CMS Payload inside Figma Make. Prompting an app now also sets up a database, file storage, user login and an admin panel. Checked against Figma&#x27;s blog and release notes: what it does, hosting in free beta with pricing TBA, and what is still unknown." />
+  <meta property="og:url" content="https://designrefs.com/en/articles/figma-make-payload-save-button/" />
+  <meta property="og:image" content="https://designrefs.com/og/en/figma-make-payload-save-button.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="alternate" type="application/rss+xml" title="Design Hub Articles" href="https://designrefs.com/en/rss.xml" />
+  <link rel="icon" href="https://designrefs.com/favicon.ico" sizes="32x32" />
+  <link rel="icon" type="image/svg+xml" href="https://designrefs.com/favicon.svg" />
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+  <link rel="stylesheet" href="https://designrefs.com/css/style.css" />
+  <!-- 구글 애드센스 -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5831827822584395" crossorigin="anonymous"></script>
+
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q7QVVHSLQ6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Q7QVVHSLQ6');
+  </script>
+  <script>
+    // 메인에서 고른 테마를 그대로 따릅니다.
+    try {
+      var t = localStorage.getItem('designhub:theme') || 'light';
+      if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+    } catch (e) {}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://designrefs.com/en/articles/figma-make-payload-save-button/#post",
+      "url": "https://designrefs.com/en/articles/figma-make-payload-save-button/",
+      "mainEntityOfPage": "https://designrefs.com/en/articles/figma-make-payload-save-button/",
+      "headline": "When the Save button saves nothing: what to check in Payload, now inside Figma Make",
+      "description": "On October 15, Figma put the open-source CMS Payload inside Figma Make. Prompting an app now also sets up a database, file storage, user login and an admin panel. Checked against Figma's blog and release notes: what it does, hosting in free beta with pricing TBA, and what is still unknown.",
+      "articleSection": "AI Design",
+      "datePublished": "2026-10-22",
+      "dateModified": "2026-10-22",
+      "inLanguage": "en",
+      "wordCount": 981,
+      "timeRequired": "PT4M",
+      "image": "https://designrefs.com/og/en/figma-make-payload-save-button.png",
+      "author": {
+        "@type": "Organization",
+        "name": "Design Hub",
+        "url": "https://designrefs.com/en/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Design Hub",
+        "url": "https://designrefs.com/en/"
+      },
+      "isPartOf": {
+        "@type": "Blog",
+        "@id": "https://designrefs.com/en/articles/#blog",
+        "name": "Design Hub Articles"
+      },
+      "translationOfWork": {
+        "@id": "https://designrefs.com/articles/figma-make-payload-save-button/#post"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Design Hub",
+          "item": "https://designrefs.com/en/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Articles",
+          "item": "https://designrefs.com/en/articles/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "When the Save button saves nothing: what to check in Payload, now inside Figma Make",
+          "item": "https://designrefs.com/en/articles/figma-make-payload-save-button/"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <meta property="article:published_time" content="2026-10-22T09:00:00+09:00" />
+  <meta property="article:modified_time" content="2026-10-22T09:00:00+09:00" />
+  <meta property="article:section" content="AI Design" />
+  <meta property="article:tag" content="AI Design" />
+  <meta property="article:tag" content="AI tools" />
+  <meta property="article:tag" content="Design Tools" />
+  <meta property="article:tag" content="UI/UX" />
+</head>
+<body class="page">
+  <header class="top">
+    <div class="wrap top__inner">
+      <a class="logo" href="https://designrefs.com/en/">d<span>.</span></a>
+
+      <!-- 검색어를 넣고 엔터를 치면 메인 화면에서 검색 결과가 열립니다 (?q=) -->
+      <form class="search" action="https://designrefs.com/en/" method="get" role="search">
+        <svg class="search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+        <input id="search" class="search__input" type="search" name="q" placeholder="Search sites" autocomplete="off" />
+        <kbd class="search__kbd">/</kbd>
+      </form>
+
+      <div class="top__actions">
+        <a class="top__lang" href="https://designrefs.com/articles/figma-make-payload-save-button/" hreflang="ko" lang="ko" title="한국어">KO</a>
+        <button id="theme-toggle" class="top__btn" type="button" aria-label="Theme" title="Light / Dark">
+          <span class="dot"></span>
+        </button>
+        <button id="menu-open" class="top__btn top__btn--menu" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 모바일 전체 메뉴 -->
+  <div class="drawer" id="drawer" hidden>
+    <div class="drawer__backdrop" id="drawer-backdrop"></div>
+    <aside class="drawer__panel" role="dialog" aria-modal="true" aria-label="Menu">
+      <header class="drawer__head">
+        <span class="drawer__title">Menu</span>
+        <button id="menu-close" class="drawer__close" type="button" aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      </header>
+      <div class="drawer__body">
+        <nav class="nav" aria-label="Menu"><a class="nav__item" href="https://designrefs.com/en/"><span class="nav__label">All</span><span class="nav__count">398</span></a><a class="nav__item" href="https://designrefs.com/en/#bookmarks"><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="m12 2.5 2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8Z"/></svg><span class="nav__label">Bookmarks</span><span class="nav__count" data-bm-count>0</span></a><hr class="nav__sep" /><a class="nav__item" href="https://designrefs.com/en/#uiux"><span class="nav__label">UI/UX</span><span class="nav__count">40</span></a><a class="nav__item" href="https://designrefs.com/en/#graphic"><span class="nav__label">Graphic &amp; Branding</span><span class="nav__count">24</span></a><a class="nav__item" href="https://designrefs.com/en/#color"><span class="nav__label">Color</span><span class="nav__count">24</span></a><a class="nav__item" href="https://designrefs.com/en/#typo"><span class="nav__label">Type &amp; Fonts</span><span class="nav__count">23</span></a><a class="nav__item" href="https://designrefs.com/en/#asset"><span class="nav__label">Icons &amp; Assets</span><span class="nav__count">33</span></a><a class="nav__item" href="https://designrefs.com/en/#mockup"><span class="nav__label">Mockups</span><span class="nav__count">19</span></a><a class="nav__item" href="https://designrefs.com/en/#tool"><span class="nav__label">Design Tools</span><span class="nav__count">30</span></a><a class="nav__item" href="https://designrefs.com/en/#ai"><span class="nav__label">AI</span><span class="nav__count">62</span></a><a class="nav__item" href="https://designrefs.com/en/#dev"><span class="nav__label">Design &amp; Code</span><span class="nav__count">34</span></a><a class="nav__item" href="https://designrefs.com/en/#community"><span class="nav__label">Community &amp; Media</span><span class="nav__count">29</span></a><a class="nav__item" href="https://designrefs.com/en/#creator"><span class="nav__label">Creators</span><span class="nav__count">47</span></a><a class="nav__item" href="https://designrefs.com/en/#freelance"><span class="nav__label">Freelance</span><span class="nav__count">13</span></a><a class="nav__item" href="https://designrefs.com/en/#job"><span class="nav__label">Jobs</span><span class="nav__count">20</span></a><hr class="nav__sep" /><a class="nav__item is-active" href="https://designrefs.com/en/#articles"><span class="nav__label">Articles</span><span class="nav__count">32</span></a><a class="nav__item" href="https://designrefs.com/en/#styles"><span class="nav__label">Style Guide</span><span class="nav__count">34</span></a><a class="nav__item" href="https://designrefs.com/en/#trends"><span class="nav__label">2026 Trends</span><span class="nav__count">20</span></a><a class="nav__item" href="https://designrefs.com/en/#glossary"><span class="nav__label">Glossary</span><span class="nav__count">155</span></a><hr class="nav__sep" /><a class="nav__item" href="https://designrefs.com/en/talk/"><span class="nav__label">Design Talk</span></a></nav>
+        <div class="drawer__section">
+          <p class="nav__group">Filter</p>
+          <div class="pills pills--tags"><a class="pill is-active" href="https://designrefs.com/en/">All</a><a class="pill" href="https://designrefs.com/en/?tag=%ED%95%9C%EA%B5%AD">Korean</a><a class="pill" href="https://designrefs.com/en/?tag=%EB%AC%B4%EB%A3%8C">Free</a><a class="pill" href="https://designrefs.com/en/?tag=%EC%9C%A0%EB%A3%8C">Paid</a><a class="pill" href="https://designrefs.com/en/?tag=AI">AI</a></div>
+        </div>
+        <div class="drawer__section">
+          <p class="nav__group">View</p>
+          <div class="drawer__row">
+            <button class="drawer__opt" id="drawer-theme" type="button">Theme</button>
+            <button class="drawer__opt" data-view="list" type="button">List</button>
+            <button class="drawer__opt" data-view="grid" type="button">Grid</button>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <div class="wrap layout">
+    <aside class="sidebar">
+      <nav class="nav" aria-label="Menu"><a class="nav__item" href="https://designrefs.com/en/"><span class="nav__label">All</span><span class="nav__count">398</span></a><a class="nav__item" href="https://designrefs.com/en/#bookmarks"><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="m12 2.5 2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8Z"/></svg><span class="nav__label">Bookmarks</span><span class="nav__count" data-bm-count>0</span></a><hr class="nav__sep" /><a class="nav__item" href="https://designrefs.com/en/#uiux"><span class="nav__label">UI/UX</span><span class="nav__count">40</span></a><a class="nav__item" href="https://designrefs.com/en/#graphic"><span class="nav__label">Graphic &amp; Branding</span><span class="nav__count">24</span></a><a class="nav__item" href="https://designrefs.com/en/#color"><span class="nav__label">Color</span><span class="nav__count">24</span></a><a class="nav__item" href="https://designrefs.com/en/#typo"><span class="nav__label">Type &amp; Fonts</span><span class="nav__count">23</span></a><a class="nav__item" href="https://designrefs.com/en/#asset"><span class="nav__label">Icons &amp; Assets</span><span class="nav__count">33</span></a><a class="nav__item" href="https://designrefs.com/en/#mockup"><span class="nav__label">Mockups</span><span class="nav__count">19</span></a><a class="nav__item" href="https://designrefs.com/en/#tool"><span class="nav__label">Design Tools</span><span class="nav__count">30</span></a><a class="nav__item" href="https://designrefs.com/en/#ai"><span class="nav__label">AI</span><span class="nav__count">62</span></a><a class="nav__item" href="https://designrefs.com/en/#dev"><span class="nav__label">Design &amp; Code</span><span class="nav__count">34</span></a><a class="nav__item" href="https://designrefs.com/en/#community"><span class="nav__label">Community &amp; Media</span><span class="nav__count">29</span></a><a class="nav__item" href="https://designrefs.com/en/#creator"><span class="nav__label">Creators</span><span class="nav__count">47</span></a><a class="nav__item" href="https://designrefs.com/en/#freelance"><span class="nav__label">Freelance</span><span class="nav__count">13</span></a><a class="nav__item" href="https://designrefs.com/en/#job"><span class="nav__label">Jobs</span><span class="nav__count">20</span></a><hr class="nav__sep" /><a class="nav__item is-active" href="https://designrefs.com/en/#articles"><span class="nav__label">Articles</span><span class="nav__count">32</span></a><a class="nav__item" href="https://designrefs.com/en/#styles"><span class="nav__label">Style Guide</span><span class="nav__count">34</span></a><a class="nav__item" href="https://designrefs.com/en/#trends"><span class="nav__label">2026 Trends</span><span class="nav__count">20</span></a><a class="nav__item" href="https://designrefs.com/en/#glossary"><span class="nav__label">Glossary</span><span class="nav__count">155</span></a><hr class="nav__sep" /><a class="nav__item" href="https://designrefs.com/en/talk/"><span class="nav__label">Design Talk</span></a></nav>
+    </aside>
+    <main class="main page__main page__main--art">
+    <article class="art">
+      <p class="art__kicker"><a href="https://designrefs.com/en/articles/">Articles</a> · AI Design</p>
+      <h1 class="page__title">When the Save button saves nothing: what to check in Payload, now inside Figma Make</h1>
+      <p class="page__intro">On October 15, Figma put the open-source CMS Payload inside Figma Make. Prompting an app now also sets up a database, file storage, user login and an admin panel. Checked against Figma&#x27;s blog and release notes: what it does, hosting in free beta with pricing TBA, and what is still unknown.</p>
+      <p class="art__meta"><time datetime="2026-10-22">October 22, 2026</time> · 4 min read<span data-views hidden></span></p>
+      <p class="art__note">Translated from the Korean original. <a href="https://designrefs.com/articles/figma-make-payload-save-button/" hreflang="ko" lang="ko">Read in Korean</a></p>
+      <nav class="art__toc" aria-label="In this article"><p class="art__toc-t">In this article</p><ol><li><a href="#s1">Before you read</a></li><li><a href="#s2">What the post promises</a></li><li><a href="#s3">Each role gets a different door</a></li><li><a href="#s4">Price and timing: free now, pricing later</a></li><li><a href="#s5">What we can&#x27;t know yet</a></li><li><a href="#s6">What this means for designers</a></li><li><a href="#s7">So for now</a></li></ol></nav>
+    <p class="ptext">The mockup looks right. There is a list of posts, product cards, and a Save button. But press it, refresh, and everything is gone. The screen has nowhere to keep data.</p>
+    <p class="ptext">Filling that gap used to mean connecting a separate backend: the part behind the screen that stores data and handles login. On October 15, Figma announced on its official blog that Payload is now inside Figma Make. This piece repeats only what I verified on that post and Figma&#x27;s release notes.</p>
+    <figure class="art__fig">
+      <img src="https://designrefs.com/articles/img/figma-make-payload-save-button-shot1.webp" alt="Figma blog &#x27;Create, ship, and manage data-backed websites with Payload in Figma&#x27;. Source: figma.com/blog/websites-with-payload-in-figma (captured 2026-10-22)" loading="lazy" decoding="async" />
+      <figcaption>Figma blog &#x27;Create, ship, and manage data-backed websites with Payload in Figma&#x27;. Source: figma.com/blog/websites-with-payload-in-figma (captured 2026-10-22)</figcaption>
+    </figure>
+    <h2 class="psub" id="s1">Before you read</h2>
+    <ul class="ptext-list">
+      <li>I did not run Payload in Figma Make for this piece. Everything below is what Figma&#x27;s blog and release notes say.</li>
+      <li>The help article Figma points to (&quot;Add a backend to a functional prototype or web app&quot;) would not open for me, so I could not check it.</li>
+      <li>The post gives no usage limits, storage caps or rate limits.</li>
+      <li>It also does not say whether Figma-hosted projects can be exported or self-hosted.</li>
+      <li>Access rolls out to all accounts over several weeks, so it may not be visible in yours yet.</li>
+    </ul>
+    <h2 class="psub" id="s2">What the post promises</h2>
+    <p class="ptext">Payload is an open-source headless CMS: a content-management tool kept separate from the screen. It joined Figma and now lives inside Figma Make. The post is by Figma&#x27;s James Mikrut, dated October 15, 2026.</p>
+    <p class="ptext">As described:</p>
+    <ul class="ptext-list">
+      <li>When you prompt an app with content-management features in Figma Make, it sets up a database, file storage, user login and an admin panel.</li>
+      <li>Figma hosts it. The pitch is that design, content and data live in one place.</li>
+      <li>You can upload a CSV and ask the agent to create a collection from it. The post&#x27;s example is adding catalog entries in bulk.</li>
+      <li>API keys can be stored in Make&#x27;s settings. Figma keeps them securely and they are not exposed to visitors once the site is published. Before this, the post says, you had to set up and connect a Supabase project.</li>
+      <li>On a published site, add /admin to the address to reach the admin panel.</li>
+    </ul>
+    <h2 class="psub" id="s3">Each role gets a different door</h2>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th>Role</th><th>What the post says they do</th></tr></thead>
+      <tbody>
+        <tr><td>Designers</td><td>Prompt experiences using real content</td></tr>
+        <tr><td>Marketers</td><td>Create articles, edit copy, tag, swap media, reorder categories, review versions and publish in the admin panel</td></tr>
+        <tr><td>Developers</td><td>Customize the app with Payload&#x27;s open-source framework</td></tr>
+      </tbody>
+    </table></div>
+    <p class="art__note">Source: <a href="https://www.figma.com/blog/websites-with-payload-in-figma/" target="_blank" rel="noopener">Figma blog: Payload in Figma</a>. Summary of Figma&#x27;s own description.</p>
+    <p class="ptext">Each role gets a workspace, and there are granular permissions to control who can change what. The post does not say which permission levels exist.</p>
+    <p class="ptext">What stands out for designers is the first line: start from real content, not lorem ipsum. That reading is mine.</p>
+    <h2 class="psub" id="s4">Price and timing: free now, pricing later</h2>
+    <p class="ptext">From Figma&#x27;s release notes and blog:</p>
+    <ul class="ptext-list">
+      <li>Payload is available on all plans. Access rolls out to all accounts over the coming weeks.</li>
+      <li>Hosting for Payload-backed Figma Make projects is currently in beta and free to use.</li>
+      <li>Figma says it will announce pricing and packaging before it takes effect. No amount or date is given.</li>
+    </ul>
+    <p class="ptext">&quot;Free&quot; comes with &quot;for now.&quot; If the site is for a client, settle in advance who pays when a fee appears. That is my opinion.</p>
+    <p class="ptext">To avoid mixing up news from the same week: the free window for code layers is separate from Payload. We covered the agent starting to use AI credits in <a href="https://designrefs.com/articles/figma-agent-ai-credits-ga/">Figma&#x27;s agent started charging credits</a>.</p>
+    <h2 class="psub" id="s5">What we can&#x27;t know yet</h2>
+    <ul class="ptext-list">
+      <li><strong>Getting data out.</strong> The post does not say whether Figma-hosted projects can be exported or self-hosted. It points to Payload.org for self-hosting or extending, which reads as being about the open-source project, not Figma-hosted apps.</li>
+      <li><strong>Limits.</strong> No storage, request or user caps are listed.</li>
+      <li><strong>Login method.</strong> The post says user login is set up, but I found no detail on the method (email, social sign-in and so on).</li>
+      <li><strong>Real-world quality.</strong> That one prompt yields a usable admin panel is Figma&#x27;s description. Your project is the test.</li>
+      <li><strong>Independent checks.</strong> None of the sources I opened was a third-party test of Payload in Figma.</li>
+    </ul>
+    <h2 class="psub" id="s6">What this means for designers</h2>
+    <p class="ptext">For screens whose content changes, such as a portfolio or a small shop site, the distance between mockup and live site shrinks. Client jobs that need an admin panel for editing copy fall in this range too.</p>
+    <p class="ptext">For vibe coders, it removes the step of shopping for a database and login separately. It does not fix the problem of AI-made screens all looking alike. Choosing fonts and colors still comes first.</p>
+    <p class="ptext">One worry is responsibility. When you only draw screens, a mistake means redrawing. Once login and data are attached, privacy and backups follow. Think first about whose data the site collects. That is also my opinion.</p>
+    <p class="ptext">We covered the related Figma flow in <a href="https://designrefs.com/articles/figma-specs-markdown-context/">Figma Specs: handing context to your team and AI in one Markdown page</a>. Payload adds data on top of that.</p>
+    <h2 class="psub" id="s7">So for now</h2>
+    <p class="ptext"><strong>Start with ten real rows.</strong> Put ten real product names or post titles in a CSV, upload it and have a collection created. It is the method the post shows, and you see at once how real text changes the screen.</p>
+    <p class="ptext"><strong>For client work, write down the hosting terms.</strong> It is free beta now but pricing is unset. Note who pays when a fee appears and how the data would move.</p>
+    <p class="ptext"><strong>Pause before collecting personal data.</strong> If you accept user logins, list what you store, and check limits and export options in the help center before going live.</p>
+    <p class="ptext">AI design tools such as Figma Make are grouped by use in <a href="https://designrefs.com/ai/">AI design tools</a>.</p>
+    <p class="art__note">Sources: <a href="https://www.figma.com/blog/websites-with-payload-in-figma/" target="_blank" rel="noopener">Figma blog: Payload in Figma</a>, <a href="https://releasebot.io/updates/figma" target="_blank" rel="noopener">Figma release notes (Releasebot)</a>.</p>
+      <div class="share">
+        <button class="share__btn" type="button" data-share>Share</button>
+        <button class="share__btn" type="button" data-copy>Copy link</button>
+        <span class="share__msg" role="status"></span>
+      </div>
+    </article>
+    <script src="https://designrefs.com/js/views.js" defer></script>
+
+    <nav class="page__nav">
+      <h2 class="psub">Keep exploring</h2>
+      <div class="page__navlinks"><a href="https://designrefs.com/en/#ai">AI tools</a><a href="https://designrefs.com/en/#tool">Design Tools</a><a href="https://designrefs.com/en/#uiux">UI/UX</a></div>
+    </nav>
+
+    <section class="section">
+      <header class="section__head">
+        <h2 class="section__title">Read next</h2>
+      </header>
+      <div class="list list--insight">
+        <a class="arow" href="https://designrefs.com/en/articles/figma-code-layers-open-beta/" data-tag="AI Design">
+          <span class="arow__date">2026. 10. 20</span>
+          <span class="arow__main">
+            <span class="arow__title">When your mockup doesn&#x27;t click: what to check in Figma&#x27;s code layers (free on paid plans until Nov 4)</span>
+            <p class="arow__desc">Figma opened code layers in open beta on October 15. You can turn design frames, a GitHub repo, a website capture or a prompt into a clickable, code-backed prototype on the canvas. Checked against the release notes, help article and blog: what is confirmed and what is missing.</p>
+          </span>
+          <span class="arow__tag">AI Design · 6 min</span>
+        </a>
+        <a class="arow" href="https://designrefs.com/en/articles/lovable-design-system-same-look/" data-tag="AI Design">
+          <span class="arow__date">2026. 10. 19</span>
+          <span class="arow__main">
+            <span class="arow__title">When every AI-built screen looks the same, Lovable dropped its &#x27;three design directions&#x27; step and put design systems first</span>
+            <p class="arow__desc">Lovable removed the step that showed three design directions before the first build, and design systems are available on all paid plans. Checked against its changelog and docs: what is confirmed, what is missing, and how to set your own rules once.</p>
+          </span>
+          <span class="arow__tag">AI Design · 6 min</span>
+        </a>
+        <a class="arow" href="https://designrefs.com/en/articles/figma-agent-ai-credits-ga/" data-tag="AI Design">
+          <span class="arow__date">2026. 10. 18</span>
+          <span class="arow__main">
+            <span class="arow__title">The Figma agent used to be free to try. Now it draws AI credits: what designers should check</span>
+            <p class="arow__desc">Figma&#x27;s design agent has left beta and now consumes AI credits. Checked against Figma&#x27;s FAQ and pricing page: what is confirmed, what is missing, and how to stretch a month&#x27;s allowance.</p>
+          </span>
+          <span class="arow__tag">AI Design · 5 min</span>
+        </a>
+      </div>
+      <nav class="art__pn"><a class="art__pn-a is-prev" href="https://designrefs.com/en/articles/krea-3-edit-keep-logo/" rel="prev"><span class="art__pn-l">← Previous</span><span class="art__pn-t">When you swapped the background and the logo changed too: what to check in Krea 3 (about $0.06 per 2K edit)</span></a><span></span></nav>
+      <p class="art__all"><a href="https://designrefs.com/en/articles/">All articles (32) →</a></p>
+    </section>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <div class="wrap">
+      <nav class="footer__nav"><div class="footer__navgroup"><a href="https://designrefs.com/en/#uiux">UI/UX</a><a href="https://designrefs.com/en/#graphic">Graphic &amp; Branding</a><a href="https://designrefs.com/en/#color">Color</a><a href="https://designrefs.com/en/#typo">Type &amp; Fonts</a><a href="https://designrefs.com/en/#asset">Icons &amp; Assets</a><a href="https://designrefs.com/en/#mockup">Mockups</a><a href="https://designrefs.com/en/#tool">Design Tools</a><a href="https://designrefs.com/en/#ai">AI</a><a href="https://designrefs.com/en/#dev">Design &amp; Code</a><a href="https://designrefs.com/en/#community">Community &amp; Media</a><a href="https://designrefs.com/en/#creator">Creators</a><a href="https://designrefs.com/en/#freelance">Freelance</a><a href="https://designrefs.com/en/#job">Jobs</a></div><div class="footer__navgroup"><a href="https://designrefs.com/en/articles/">Articles</a><a href="https://designrefs.com/en/#styles">Style Guide</a><a href="https://designrefs.com/en/#trends">2026 Trends</a><a href="https://designrefs.com/en/#glossary">Glossary</a></div></nav>
+    </div>
+    <div class="wrap footer__inner">
+      <span>Copyright 2026. Design Hub. all rights reserved.</span>
+      <a href="https://designrefs.com/en/articles/">Articles</a>
+      <a href="https://designrefs.com/en/talk/">Design Talk</a>
+      <a href="https://designrefs.com/" hreflang="ko" lang="ko">한국어</a>
+      <a href="https://designrefs.com/privacy/">Privacy (Korean)</a>
+      <a href="mailto:nisov0924@gmail.com">CONTACT : nisov0924@gmail.com</a>
+      <a href="#" id="footer-top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <button id="to-top" class="to-top" type="button" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg></button>
+  <script src="https://designrefs.com/js/page.js" defer></script>
+</body>
+</html>

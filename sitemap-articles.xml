@@ -3,6 +3,14 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
+    <loc>https://designrefs.com/articles/figma-make-payload-save-button/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://designrefs.com/articles/figma-make-payload-save-button/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://designrefs.com/en/articles/figma-make-payload-save-button/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://designrefs.com/articles/figma-make-payload-save-button/"/>
+    <image:image><image:loc>https://designrefs.com/og/figma-make-payload-save-button.png</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://designrefs.com/articles/krea-3-edit-keep-logo/</loc>
     <lastmod>2026-10-21</lastmod>
     <xhtml:link rel="alternate" hreflang="ko" href="https://designrefs.com/articles/krea-3-edit-keep-logo/"/>
@@ -249,6 +257,14 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://designrefs.com/en/articles/ai-image-commercial-use/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://designrefs.com/articles/ai-image-commercial-use/"/>
     <image:image><image:loc>https://designrefs.com/og/ai-image-commercial-use.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://designrefs.com/en/articles/figma-make-payload-save-button/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://designrefs.com/articles/figma-make-payload-save-button/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://designrefs.com/en/articles/figma-make-payload-save-button/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://designrefs.com/articles/figma-make-payload-save-button/"/>
+    <image:image><image:loc>https://designrefs.com/og/en/figma-make-payload-save-button.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://designrefs.com/en/articles/krea-3-edit-keep-logo/</loc>

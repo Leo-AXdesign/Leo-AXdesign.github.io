@@ -6,7 +6,79 @@
     <atom:link href="https://designrefs.com/en/rss.xml" rel="self" type="application/rss+xml" />
     <description>Notes from a designer in Korea: working with AI, putting style into words, collecting references and design communities. Translated from Korean.</description>
     <language>en</language>
-    <lastBuildDate>Wed, 21 Oct 2026 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 22 Oct 2026 09:00:00 +0900</lastBuildDate>
+    <item>
+      <title>When the Save button saves nothing: what to check in Payload, now inside Figma Make</title>
+      <link>https://designrefs.com/en/articles/figma-make-payload-save-button/</link>
+      <guid isPermaLink="true">https://designrefs.com/en/articles/figma-make-payload-save-button/</guid>
+      <pubDate>Thu, 22 Oct 2026 09:00:00 +0900</pubDate>
+      <category>AI Design</category>
+      <description>On October 15, Figma put the open-source CMS Payload inside Figma Make. Prompting an app now also sets up a database, file storage, user login and an admin panel. Checked against Figma&#x27;s blog and release notes: what it does, hosting in free beta with pricing TBA, and what is still unknown.</description>
+      <content:encoded><![CDATA[    <p class="ptext">The mockup looks right. There is a list of posts, product cards, and a Save button. But press it, refresh, and everything is gone. The screen has nowhere to keep data.</p>
+    <p class="ptext">Filling that gap used to mean connecting a separate backend: the part behind the screen that stores data and handles login. On October 15, Figma announced on its official blog that Payload is now inside Figma Make. This piece repeats only what I verified on that post and Figma&#x27;s release notes.</p>
+    <figure class="art__fig">
+      <img src="https://designrefs.com/articles/img/figma-make-payload-save-button-shot1.webp" alt="Figma blog &#x27;Create, ship, and manage data-backed websites with Payload in Figma&#x27;. Source: figma.com/blog/websites-with-payload-in-figma (captured 2026-10-22)" loading="lazy" decoding="async" />
+      <figcaption>Figma blog &#x27;Create, ship, and manage data-backed websites with Payload in Figma&#x27;. Source: figma.com/blog/websites-with-payload-in-figma (captured 2026-10-22)</figcaption>
+    </figure>
+    <h2 class="psub" id="s1">Before you read</h2>
+    <ul class="ptext-list">
+      <li>I did not run Payload in Figma Make for this piece. Everything below is what Figma&#x27;s blog and release notes say.</li>
+      <li>The help article Figma points to (&quot;Add a backend to a functional prototype or web app&quot;) would not open for me, so I could not check it.</li>
+      <li>The post gives no usage limits, storage caps or rate limits.</li>
+      <li>It also does not say whether Figma-hosted projects can be exported or self-hosted.</li>
+      <li>Access rolls out to all accounts over several weeks, so it may not be visible in yours yet.</li>
+    </ul>
+    <h2 class="psub" id="s2">What the post promises</h2>
+    <p class="ptext">Payload is an open-source headless CMS: a content-management tool kept separate from the screen. It joined Figma and now lives inside Figma Make. The post is by Figma&#x27;s James Mikrut, dated October 15, 2026.</p>
+    <p class="ptext">As described:</p>
+    <ul class="ptext-list">
+      <li>When you prompt an app with content-management features in Figma Make, it sets up a database, file storage, user login and an admin panel.</li>
+      <li>Figma hosts it. The pitch is that design, content and data live in one place.</li>
+      <li>You can upload a CSV and ask the agent to create a collection from it. The post&#x27;s example is adding catalog entries in bulk.</li>
+      <li>API keys can be stored in Make&#x27;s settings. Figma keeps them securely and they are not exposed to visitors once the site is published. Before this, the post says, you had to set up and connect a Supabase project.</li>
+      <li>On a published site, add /admin to the address to reach the admin panel.</li>
+    </ul>
+    <h2 class="psub" id="s3">Each role gets a different door</h2>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th>Role</th><th>What the post says they do</th></tr></thead>
+      <tbody>
+        <tr><td>Designers</td><td>Prompt experiences using real content</td></tr>
+        <tr><td>Marketers</td><td>Create articles, edit copy, tag, swap media, reorder categories, review versions and publish in the admin panel</td></tr>
+        <tr><td>Developers</td><td>Customize the app with Payload&#x27;s open-source framework</td></tr>
+      </tbody>
+    </table></div>
+    <p class="art__note">Source: <a href="https://www.figma.com/blog/websites-with-payload-in-figma/" target="_blank" rel="noopener">Figma blog: Payload in Figma</a>. Summary of Figma&#x27;s own description.</p>
+    <p class="ptext">Each role gets a workspace, and there are granular permissions to control who can change what. The post does not say which permission levels exist.</p>
+    <p class="ptext">What stands out for designers is the first line: start from real content, not lorem ipsum. That reading is mine.</p>
+    <h2 class="psub" id="s4">Price and timing: free now, pricing later</h2>
+    <p class="ptext">From Figma&#x27;s release notes and blog:</p>
+    <ul class="ptext-list">
+      <li>Payload is available on all plans. Access rolls out to all accounts over the coming weeks.</li>
+      <li>Hosting for Payload-backed Figma Make projects is currently in beta and free to use.</li>
+      <li>Figma says it will announce pricing and packaging before it takes effect. No amount or date is given.</li>
+    </ul>
+    <p class="ptext">&quot;Free&quot; comes with &quot;for now.&quot; If the site is for a client, settle in advance who pays when a fee appears. That is my opinion.</p>
+    <p class="ptext">To avoid mixing up news from the same week: the free window for code layers is separate from Payload. We covered the agent starting to use AI credits in <a href="https://designrefs.com/articles/figma-agent-ai-credits-ga/">Figma&#x27;s agent started charging credits</a>.</p>
+    <h2 class="psub" id="s5">What we can&#x27;t know yet</h2>
+    <ul class="ptext-list">
+      <li><strong>Getting data out.</strong> The post does not say whether Figma-hosted projects can be exported or self-hosted. It points to Payload.org for self-hosting or extending, which reads as being about the open-source project, not Figma-hosted apps.</li>
+      <li><strong>Limits.</strong> No storage, request or user caps are listed.</li>
+      <li><strong>Login method.</strong> The post says user login is set up, but I found no detail on the method (email, social sign-in and so on).</li>
+      <li><strong>Real-world quality.</strong> That one prompt yields a usable admin panel is Figma&#x27;s description. Your project is the test.</li>
+      <li><strong>Independent checks.</strong> None of the sources I opened was a third-party test of Payload in Figma.</li>
+    </ul>
+    <h2 class="psub" id="s6">What this means for designers</h2>
+    <p class="ptext">For screens whose content changes, such as a portfolio or a small shop site, the distance between mockup and live site shrinks. Client jobs that need an admin panel for editing copy fall in this range too.</p>
+    <p class="ptext">For vibe coders, it removes the step of shopping for a database and login separately. It does not fix the problem of AI-made screens all looking alike. Choosing fonts and colors still comes first.</p>
+    <p class="ptext">One worry is responsibility. When you only draw screens, a mistake means redrawing. Once login and data are attached, privacy and backups follow. Think first about whose data the site collects. That is also my opinion.</p>
+    <p class="ptext">We covered the related Figma flow in <a href="https://designrefs.com/articles/figma-specs-markdown-context/">Figma Specs: handing context to your team and AI in one Markdown page</a>. Payload adds data on top of that.</p>
+    <h2 class="psub" id="s7">So for now</h2>
+    <p class="ptext"><strong>Start with ten real rows.</strong> Put ten real product names or post titles in a CSV, upload it and have a collection created. It is the method the post shows, and you see at once how real text changes the screen.</p>
+    <p class="ptext"><strong>For client work, write down the hosting terms.</strong> It is free beta now but pricing is unset. Note who pays when a fee appears and how the data would move.</p>
+    <p class="ptext"><strong>Pause before collecting personal data.</strong> If you accept user logins, list what you store, and check limits and export options in the help center before going live.</p>
+    <p class="ptext">AI design tools such as Figma Make are grouped by use in <a href="https://designrefs.com/ai/">AI design tools</a>.</p>
+    <p class="art__note">Sources: <a href="https://www.figma.com/blog/websites-with-payload-in-figma/" target="_blank" rel="noopener">Figma blog: Payload in Figma</a>, <a href="https://releasebot.io/updates/figma" target="_blank" rel="noopener">Figma release notes (Releasebot)</a>.</p>]]></content:encoded>
+    </item>
     <item>
       <title>When you swapped the background and the logo changed too: what to check in Krea 3 (about $0.06 per 2K edit)</title>
       <link>https://designrefs.com/en/articles/krea-3-edit-keep-logo/</link>
