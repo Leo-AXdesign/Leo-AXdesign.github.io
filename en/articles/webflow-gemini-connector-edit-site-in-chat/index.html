@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>When a three-line copy fix means opening Webflow again: what to check in the Gemini connector | Design Hub</title>
+  <meta name="description" content="On October 15, Webflow became a connected app in the Google Gemini app. Per the release, you can build pages, manage CMS content, audit a site and ask performance questions from chat. Free to install, and currently no Webflow AI credits. What the release and marketplace page say, and what is still unknown." />
+  <link rel="canonical" href="https://designrefs.com/en/articles/webflow-gemini-connector-edit-site-in-chat/" />
+  <link rel="alternate" hreflang="ko" href="https://designrefs.com/articles/webflow-gemini-connector-edit-site-in-chat/" />
+  <link rel="alternate" hreflang="en" href="https://designrefs.com/en/articles/webflow-gemini-connector-edit-site-in-chat/" />
+  <link rel="alternate" hreflang="x-default" href="https://designrefs.com/articles/webflow-gemini-connector-edit-site-in-chat/" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Design Hub" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="When a three-line copy fix means opening Webflow again: what to check in the Gemini connector | Design Hub" />
+  <meta property="og:description" content="On October 15, Webflow became a connected app in the Google Gemini app. Per the release, you can build pages, manage CMS content, audit a site and ask performance questions from chat. Free to install, and currently no Webflow AI credits. What the release and marketplace page say, and what is still unknown." />
+  <meta property="og:url" content="https://designrefs.com/en/articles/webflow-gemini-connector-edit-site-in-chat/" />
+  <meta property="og:image" content="https://designrefs.com/og/en/webflow-gemini-connector-edit-site-in-chat.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="alternate" type="application/rss+xml" title="Design Hub Articles" href="https://designrefs.com/en/rss.xml" />
+  <link rel="icon" href="https://designrefs.com/favicon.ico" sizes="32x32" />
+  <link rel="icon" type="image/svg+xml" href="https://designrefs.com/favicon.svg" />
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+  <link rel="stylesheet" href="https://designrefs.com/css/style.css" />
+  <!-- 구글 애드센스 -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5831827822584395" crossorigin="anonymous"></script>
+
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q7QVVHSLQ6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Q7QVVHSLQ6');
+  </script>
+  <script>
+    // 메인에서 고른 테마를 그대로 따릅니다.
+    try {
+      var t = localStorage.getItem('designhub:theme') || 'light';
+      if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+    } catch (e) {}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://designrefs.com/en/articles/webflow-gemini-connector-edit-site-in-chat/#post",
+      "url": "https://designrefs.com/en/articles/webflow-gemini-connector-edit-site-in-chat/",
+      "mainEntityOfPage": "https://designrefs.com/en/articles/webflow-gemini-connector-edit-site-in-chat/",
+      "headline": "When a three-line copy fix means opening Webflow again: what to check in the Gemini connector",
+      "description": "On October 15, Webflow became a connected app in the Google Gemini app. Per the release, you can build pages, manage CMS content, audit a site and ask performance questions from chat. Free to install, and currently no Webflow AI credits. What the release and marketplace page say, and what is still unknown.",
+      "articleSection": "AI Design",
+      "datePublished": "2026-10-23",
+      "dateModified": "2026-10-23",
+      "inLanguage": "en",
+      "wordCount": 1179,
+      "timeRequired": "PT5M",
+      "image": "https://designrefs.com/og/en/webflow-gemini-connector-edit-site-in-chat.png",
+      "author": {
+        "@type": "Organization",
+        "name": "Design Hub",
+        "url": "https://designrefs.com/en/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Design Hub",
+        "url": "https://designrefs.com/en/"
+      },
+      "isPartOf": {
+        "@type": "Blog",
+        "@id": "https://designrefs.com/en/articles/#blog",
+        "name": "Design Hub Articles"
+      },
+      "translationOfWork": {
+        "@id": "https://designrefs.com/articles/webflow-gemini-connector-edit-site-in-chat/#post"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Design Hub",
+          "item": "https://designrefs.com/en/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Articles",
+          "item": "https://designrefs.com/en/articles/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "When a three-line copy fix means opening Webflow again: what to check in the Gemini connector",
+          "item": "https://designrefs.com/en/articles/webflow-gemini-connector-edit-site-in-chat/"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <meta property="article:published_time" content="2026-10-23T09:00:00+09:00" />
+  <meta property="article:modified_time" content="2026-10-23T09:00:00+09:00" />
+  <meta property="article:section" content="AI Design" />
+  <meta property="article:tag" content="AI Design" />
+  <meta property="article:tag" content="AI tools" />
+  <meta property="article:tag" content="Design Tools" />
+  <meta property="article:tag" content="UI/UX" />
+</head>
+<body class="page">
+  <header class="top">
+    <div class="wrap top__inner">
+      <a class="logo" href="https://designrefs.com/en/">d<span>.</span></a>
+
+      <!-- 검색어를 넣고 엔터를 치면 메인 화면에서 검색 결과가 열립니다 (?q=) -->
+      <form class="search" action="https://designrefs.com/en/" method="get" role="search">
+        <svg class="search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+        <input id="search" class="search__input" type="search" name="q" placeholder="Search sites" autocomplete="off" />
+        <kbd class="search__kbd">/</kbd>
+      </form>
+
+      <div class="top__actions">
+        <a class="top__lang" href="https://designrefs.com/articles/webflow-gemini-connector-edit-site-in-chat/" hreflang="ko" lang="ko" title="한국어">KO</a>
+        <button id="theme-toggle" class="top__btn" type="button" aria-label="Theme" title="Light / Dark">
+          <span class="dot"></span>
+        </button>
+        <button id="menu-open" class="top__btn top__btn--menu" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 모바일 전체 메뉴 -->
+  <div class="drawer" id="drawer" hidden>
+    <div class="drawer__backdrop" id="drawer-backdrop"></div>
+    <aside class="drawer__panel" role="dialog" aria-modal="true" aria-label="Menu">
+      <header class="drawer__head">
+        <span class="drawer__title">Menu</span>
+        <button id="menu-close" class="drawer__close" type="button" aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      </header>
+      <div class="drawer__body">
+        <nav class="nav" aria-label="Menu"><a class="nav__item" href="https://designrefs.com/en/"><span class="nav__label">All</span><span class="nav__count">398</span></a><a class="nav__item" href="https://designrefs.com/en/#bookmarks"><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="m12 2.5 2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8Z"/></svg><span class="nav__label">Bookmarks</span><span class="nav__count" data-bm-count>0</span></a><hr class="nav__sep" /><a class="nav__item" href="https://designrefs.com/en/#uiux"><span class="nav__label">UI/UX</span><span class="nav__count">40</span></a><a class="nav__item" href="https://designrefs.com/en/#graphic"><span class="nav__label">Graphic &amp; Branding</span><span class="nav__count">24</span></a><a class="nav__item" href="https://designrefs.com/en/#color"><span class="nav__label">Color</span><span class="nav__count">24</span></a><a class="nav__item" href="https://designrefs.com/en/#typo"><span class="nav__label">Type &amp; Fonts</span><span class="nav__count">23</span></a><a class="nav__item" href="https://designrefs.com/en/#asset"><span class="nav__label">Icons &amp; Assets</span><span class="nav__count">33</span></a><a class="nav__item" href="https://designrefs.com/en/#mockup"><span class="nav__label">Mockups</span><span class="nav__count">19</span></a><a class="nav__item" href="https://designrefs.com/en/#tool"><span class="nav__label">Design Tools</span><span class="nav__count">30</span></a><a class="nav__item" href="https://designrefs.com/en/#ai"><span class="nav__label">AI</span><span class="nav__count">62</span></a><a class="nav__item" href="https://designrefs.com/en/#dev"><span class="nav__label">Design &amp; Code</span><span class="nav__count">34</span></a><a class="nav__item" href="https://designrefs.com/en/#community"><span class="nav__label">Community &amp; Media</span><span class="nav__count">29</span></a><a class="nav__item" href="https://designrefs.com/en/#creator"><span class="nav__label">Creators</span><span class="nav__count">47</span></a><a class="nav__item" href="https://designrefs.com/en/#freelance"><span class="nav__label">Freelance</span><span class="nav__count">13</span></a><a class="nav__item" href="https://designrefs.com/en/#job"><span class="nav__label">Jobs</span><span class="nav__count">20</span></a><hr class="nav__sep" /><a class="nav__item is-active" href="https://designrefs.com/en/#articles"><span class="nav__label">Articles</span><span class="nav__count">33</span></a><a class="nav__item" href="https://designrefs.com/en/#styles"><span class="nav__label">Style Guide</span><span class="nav__count">34</span></a><a class="nav__item" href="https://designrefs.com/en/#trends"><span class="nav__label">2026 Trends</span><span class="nav__count">20</span></a><a class="nav__item" href="https://designrefs.com/en/#glossary"><span class="nav__label">Glossary</span><span class="nav__count">155</span></a><hr class="nav__sep" /><a class="nav__item" href="https://designrefs.com/en/talk/"><span class="nav__label">Design Talk</span></a></nav>
+        <div class="drawer__section">
+          <p class="nav__group">Filter</p>
+          <div class="pills pills--tags"><a class="pill is-active" href="https://designrefs.com/en/">All</a><a class="pill" href="https://designrefs.com/en/?tag=%ED%95%9C%EA%B5%AD">Korean</a><a class="pill" href="https://designrefs.com/en/?tag=%EB%AC%B4%EB%A3%8C">Free</a><a class="pill" href="https://designrefs.com/en/?tag=%EC%9C%A0%EB%A3%8C">Paid</a><a class="pill" href="https://designrefs.com/en/?tag=AI">AI</a></div>
+        </div>
+        <div class="drawer__section">
+          <p class="nav__group">View</p>
+          <div class="drawer__row">
+            <button class="drawer__opt" id="drawer-theme" type="button">Theme</button>
+            <button class="drawer__opt" data-view="list" type="button">List</button>
+            <button class="drawer__opt" data-view="grid" type="button">Grid</button>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <div class="wrap layout">
+    <aside class="sidebar">
+      <nav class="nav" aria-label="Menu"><a class="nav__item" href="https://designrefs.com/en/"><span class="nav__label">All</span><span class="nav__count">398</span></a><a class="nav__item" href="https://designrefs.com/en/#bookmarks"><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="m12 2.5 2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8Z"/></svg><span class="nav__label">Bookmarks</span><span class="nav__count" data-bm-count>0</span></a><hr class="nav__sep" /><a class="nav__item" href="https://designrefs.com/en/#uiux"><span class="nav__label">UI/UX</span><span class="nav__count">40</span></a><a class="nav__item" href="https://designrefs.com/en/#graphic"><span class="nav__label">Graphic &amp; Branding</span><span class="nav__count">24</span></a><a class="nav__item" href="https://designrefs.com/en/#color"><span class="nav__label">Color</span><span class="nav__count">24</span></a><a class="nav__item" href="https://designrefs.com/en/#typo"><span class="nav__label">Type &amp; Fonts</span><span class="nav__count">23</span></a><a class="nav__item" href="https://designrefs.com/en/#asset"><span class="nav__label">Icons &amp; Assets</span><span class="nav__count">33</span></a><a class="nav__item" href="https://designrefs.com/en/#mockup"><span class="nav__label">Mockups</span><span class="nav__count">19</span></a><a class="nav__item" href="https://designrefs.com/en/#tool"><span class="nav__label">Design Tools</span><span class="nav__count">30</span></a><a class="nav__item" href="https://designrefs.com/en/#ai"><span class="nav__label">AI</span><span class="nav__count">62</span></a><a class="nav__item" href="https://designrefs.com/en/#dev"><span class="nav__label">Design &amp; Code</span><span class="nav__count">34</span></a><a class="nav__item" href="https://designrefs.com/en/#community"><span class="nav__label">Community &amp; Media</span><span class="nav__count">29</span></a><a class="nav__item" href="https://designrefs.com/en/#creator"><span class="nav__label">Creators</span><span class="nav__count">47</span></a><a class="nav__item" href="https://designrefs.com/en/#freelance"><span class="nav__label">Freelance</span><span class="nav__count">13</span></a><a class="nav__item" href="https://designrefs.com/en/#job"><span class="nav__label">Jobs</span><span class="nav__count">20</span></a><hr class="nav__sep" /><a class="nav__item is-active" href="https://designrefs.com/en/#articles"><span class="nav__label">Articles</span><span class="nav__count">33</span></a><a class="nav__item" href="https://designrefs.com/en/#styles"><span class="nav__label">Style Guide</span><span class="nav__count">34</span></a><a class="nav__item" href="https://designrefs.com/en/#trends"><span class="nav__label">2026 Trends</span><span class="nav__count">20</span></a><a class="nav__item" href="https://designrefs.com/en/#glossary"><span class="nav__label">Glossary</span><span class="nav__count">155</span></a><hr class="nav__sep" /><a class="nav__item" href="https://designrefs.com/en/talk/"><span class="nav__label">Design Talk</span></a></nav>
+    </aside>
+    <main class="main page__main page__main--art">
+    <article class="art">
+      <p class="art__kicker"><a href="https://designrefs.com/en/articles/">Articles</a> · AI Design</p>
+      <h1 class="page__title">When a <span class="nb">three-line</span> copy fix means opening Webflow again: what to check in the Gemini connector</h1>
+      <p class="page__intro">On October 15, Webflow became a connected app in the Google Gemini app. Per the release, you can build pages, manage CMS content, audit a site and ask performance questions from chat. Free to install, and currently no Webflow AI credits. What the release and marketplace page say, and what is still unknown.</p>
+      <p class="art__meta"><time datetime="2026-10-23">October 23, 2026</time> · 5 min read<span data-views hidden></span></p>
+      <p class="art__note">Translated from the Korean original. <a href="https://designrefs.com/articles/webflow-gemini-connector-edit-site-in-chat/" hreflang="ko" lang="ko">Read in Korean</a></p>
+      <nav class="art__toc" aria-label="In this article"><p class="art__toc-t">In this article</p><ol><li><a href="#s1">Before you read</a></li><li><a href="#s2">What a connected app is</a></li><li><a href="#s3">The seven things the release lists</a></li><li><a href="#s4">Three things a designer would notice</a></li><li><a href="#s5">Price and conditions</a></li><li><a href="#s6">What is still unknown</a></li><li><a href="#s7">Matching it to the work you already do</a></li><li><a href="#s8">What to do now</a></li></ol></nav>
+    <p class="ptext">The client&#x27;s message is one line: &quot;Change the intro copy in three places and swap one team photo.&quot;</p>
+    <p class="ptext">To do it, you open the Webflow editor, find the collection, open items one by one, edit, and publish again. The edit itself is quick. Opening and closing everything takes longer. Small jobs like this make you want to finish them in an AI chat window.</p>
+    <p class="ptext">On October 15, Webflow announced in a press release that it is now a connected app in the Google Gemini app. This piece repeats only what I verified in that release and on Webflow&#x27;s app marketplace page.</p>
+    <figure class="art__fig">
+      <img src="https://designrefs.com/articles/img/webflow-gemini-connector-edit-site-in-chat-shot1.webp" alt="Webflow marketplace page for the Google Gemini MCP Connector. Source: webflow.com/apps/detail/google-gemini-mcp-connector (captured 2026-10-23)" loading="lazy" decoding="async" />
+      <figcaption>Webflow marketplace page for the Google Gemini MCP Connector. Source: webflow.com/apps/detail/google-gemini-mcp-connector (captured 2026-10-23)</figcaption>
+    </figure>
+    <h2 class="psub" id="s1">Before you read</h2>
+    <ul class="ptext-list">
+      <li>I did not install this connector on my own Webflow account. Everything below is what the release and the marketplace page say.</li>
+      <li>I read the release as republished by CMSWire and TechIntelPro. I could not open the original GlobeNewswire page.</li>
+      <li>Plan-by-plan conditions, supported regions and usage limits were not specified in any source I opened.</li>
+      <li>I found no third-party test of the connector. That pages come out well is Webflow&#x27;s claim.</li>
+      <li>Some roundups describe the news as Webflow &quot;integrating Gemini into its design platform.&quot; The release says Webflow is a connected app inside the Gemini app. This piece follows the release.</li>
+    </ul>
+    <h2 class="psub" id="s2">What a connected app is</h2>
+    <p class="ptext">MCP is a standard that lets an AI app call another tool&#x27;s functions. Think of it as an outlet between the chat window and a service. Webflow already ran an MCP server, and according to the release the capabilities offered through Claude, ChatGPT, Codex and Slack now reach Gemini too.</p>
+    <p class="ptext">Gemini has a connector marketplace open only to approved partners, and Webflow is on it. The marketplace page describes the app as connecting your Webflow account to Gemini so you can edit your site by conversation and ask about site performance. You install it by logging in on that page. The page gives no detailed steps.</p>
+    <h2 class="psub" id="s3">The seven things the release lists</h2>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th>What it does</th><th>How the release describes it</th></tr></thead>
+      <tbody>
+        <tr><td>Performance questions</td><td>Ask Webflow Analyze about traffic, top pages, engagement, goals and change over time</td></tr>
+        <tr><td>Test results</td><td>See in Webflow Optimize which variation won and whether the difference is statistically significant</td></tr>
+        <tr><td>Brand in AI</td><td>AEO Analytics shows how AI systems discover, describe and cite your brand</td></tr>
+        <tr><td>Page building</td><td>Build responsive pages and components on your existing styles and brand system, with scroll, hover, load and click interactions</td></tr>
+        <tr><td>CMS management</td><td>Create, edit, organize, sort and filter collections in a single request, including custom and reference fields</td></tr>
+        <tr><td>App deployment</td><td>Deploy Webflow Cloud apps, check status and diagnose failed deployments</td></tr>
+        <tr><td>Site audits</td><td>Review SEO, accessibility, broken links, performance and content quality</td></tr>
+      </tbody>
+    </table></div>
+    <p class="art__note">Source: <a href="https://www.cmswire.com/the-wire/webflow-and-google-gemini-announce-new-agentic-integration/" target="_blank" rel="noopener">CMSWire: Webflow and Google Gemini announce new agentic integration</a> (press release, 2026-10-15). The table condenses the release&#x27;s items.</p>
+    <p class="ptext">The marketplace page lists similar things in different words: turning a design or description into responsive pages, bulk-creating and editing collection items, adding motion and then fine-tuning it in Webflow&#x27;s visual timeline, and getting a prioritized fix list.</p>
+    <h2 class="psub" id="s4">Three things a designer would notice</h2>
+    <p class="ptext"><strong>First, &quot;on your existing styles.&quot;</strong> The release says pages and components are built on your existing styles and brand system, meaning the color and type rules and the button and card components already set up in the site. How this works on a site without tidy rules is not covered. Passing rules to an AI was the subject of <a href="https://designrefs.com/articles/design-md-for-ai/">DESIGN.md, one file that hands your design rules to AI</a>. This connector seems to assume those rules already live in the site. That is my reading.</p>
+    <p class="ptext"><strong>Second, there is a record.</strong> The release says existing roles and permissions still apply and AI actions are attributed in activity logs. The marketplace page says installing requires site data access and a designer-workflow permission. On a client site, having a record of who changed what is better. I did not see how an AI action looks in the log.</p>
+    <p class="ptext"><strong>Third, analytics questions share the same chat.</strong> Not only building pages: you can also ask which pages got the most views last month, or how AI answers describe your brand. The last item connects to the problem in <a href="https://designrefs.com/articles/ai-search-brand-visibility/">When an AI answer replaces search results</a>. How accurate that analysis is cannot be told from these sources.</p>
+    <h2 class="psub" id="s5">Price and conditions</h2>
+    <ul class="ptext-list">
+      <li>The connected app is free to install.</li>
+      <li>It currently does not consume Webflow AI credits. Read &quot;currently&quot; as a condition. No change was announced.</li>
+      <li>What you can use depends on your existing Webflow plan and permissions. There is no per-plan table.</li>
+      <li>The marketplace page says Webflow reviewed the app&#x27;s quality but does not endorse or certify it.</li>
+    </ul>
+    <p class="ptext">Do not confuse it with this week&#x27;s Figma news. Data storage and an admin panel inside Figma Make were covered in <a href="https://designrefs.com/articles/figma-make-payload-save-button/">When the Save button saves nothing</a>. That one is about building a new site from a prompt. This one is about handling an existing Webflow site from chat.</p>
+    <h2 class="psub" id="s6">What is still unknown</h2>
+    <ul class="ptext-list">
+      <li><strong>Undo.</strong> Whether a chat edit can be reverted in one step, or whether there is a confirmation before publishing, is not stated.</li>
+      <li><strong>Quality.</strong> Whether interactions and responsive pages match a designer&#x27;s work has not been shown.</li>
+      <li><strong>Limits.</strong> Items per conversation and rate limits are not given.</li>
+      <li><strong>Regions and plans.</strong> The release does not describe regional availability.</li>
+      <li><strong>How long it stays credit-free.</strong> Not stated.</li>
+    </ul>
+    <h2 class="psub" id="s7">Matching it to the work you already do</h2>
+    <p class="ptext">Copy tweaks, photo swaps and tidying seven blog entries are the first candidates, since bulk create and edit for collections is on the list. Laying out a brand-new page from scratch can wait until you have seen results.</p>
+    <p class="ptext">For freelancers, one more handover note may be needed. If a client&#x27;s staff will edit the site by chat, you have to decide what permission they get. The release says the existing permission system applies, so checking your current settings is a sensible first step. That is my opinion.</p>
+    <h2 class="psub" id="s8">What to do now</h2>
+    <p class="ptext"><strong>Check your Webflow permissions first.</strong> Installing needs site data and designer-workflow permissions, according to the page. Before connecting a client site, list who holds edit rights and find where the activity log lives.</p>
+    <p class="ptext"><strong>Start on a site where mistakes are cheap.</strong> On a portfolio or test site, try a small request such as &quot;rewrite the intro of these five collection items in the same tone.&quot; If it goes wrong, check how to revert at the same time.</p>
+    <p class="ptext"><strong>Read &quot;free&quot; as &quot;for now.&quot;</strong> Nothing promises that credit-free use continues. Whether to build AI usage into a monthly maintenance fee can wait until pricing is set.</p>
+    <p class="ptext">AI design tools are collected by use on <a href="https://designrefs.com/ai/">AI design tools</a>.</p>
+    <p class="art__note">Sources: <a href="https://www.cmswire.com/the-wire/webflow-and-google-gemini-announce-new-agentic-integration/" target="_blank" rel="noopener">CMSWire: Webflow and Google Gemini announce new agentic integration</a>, <a href="https://techintelpro.com/news/webflow-and-google-gemini-announce-agentic-integration" target="_blank" rel="noopener">TechIntelPro press release copy</a>, <a href="https://webflow.com/apps/detail/google-gemini-mcp-connector" target="_blank" rel="noopener">Webflow app marketplace: Google Gemini MCP Connector</a>, <a href="https://martech.org/the-latest-ai-powered-martech-news-and-releases/" target="_blank" rel="noopener">MarTech news roundup</a>.</p>
+      <div class="share">
+        <button class="share__btn" type="button" data-share>Share</button>
+        <button class="share__btn" type="button" data-copy>Copy link</button>
+        <span class="share__msg" role="status"></span>
+      </div>
+    </article>
+    <script src="https://designrefs.com/js/views.js" defer></script>
+
+    <nav class="page__nav">
+      <h2 class="psub">Keep exploring</h2>
+      <div class="page__navlinks"><a href="https://designrefs.com/en/#ai">AI tools</a><a href="https://designrefs.com/en/#tool">Design Tools</a><a href="https://designrefs.com/en/#uiux">UI/UX</a></div>
+    </nav>
+
+    <section class="section">
+      <header class="section__head">
+        <h2 class="section__title">Read next</h2>
+      </header>
+      <div class="list list--insight">
+        <a class="arow" href="https://designrefs.com/en/articles/figma-make-payload-save-button/" data-tag="AI Design">
+          <span class="arow__date">2026. 10. 22</span>
+          <span class="arow__main">
+            <span class="arow__title">When the Save button saves nothing: what to check in Payload, now inside Figma Make</span>
+            <p class="arow__desc">On October 15, Figma put the open-source CMS Payload inside Figma Make. Prompting an app now also sets up a database, file storage, user login and an admin panel. Checked against Figma&#x27;s blog and release notes: what it does, hosting in free beta with pricing TBA, and what is still unknown.</p>
+          </span>
+          <span class="arow__tag">AI Design · 4 min</span>
+        </a>
+        <a class="arow" href="https://designrefs.com/en/articles/figma-code-layers-open-beta/" data-tag="AI Design">
+          <span class="arow__date">2026. 10. 20</span>
+          <span class="arow__main">
+            <span class="arow__title">When your mockup doesn&#x27;t click: what to check in Figma&#x27;s code layers (free on paid plans until Nov 4)</span>
+            <p class="arow__desc">Figma opened code layers in open beta on October 15. You can turn design frames, a GitHub repo, a website capture or a prompt into a clickable, code-backed prototype on the canvas. Checked against the release notes, help article and blog: what is confirmed and what is missing.</p>
+          </span>
+          <span class="arow__tag">AI Design · 6 min</span>
+        </a>
+        <a class="arow" href="https://designrefs.com/en/articles/lovable-design-system-same-look/" data-tag="AI Design">
+          <span class="arow__date">2026. 10. 19</span>
+          <span class="arow__main">
+            <span class="arow__title">When every AI-built screen looks the same, Lovable dropped its &#x27;three design directions&#x27; step and put design systems first</span>
+            <p class="arow__desc">Lovable removed the step that showed three design directions before the first build, and design systems are available on all paid plans. Checked against its changelog and docs: what is confirmed, what is missing, and how to set your own rules once.</p>
+          </span>
+          <span class="arow__tag">AI Design · 6 min</span>
+        </a>
+      </div>
+      <nav class="art__pn"><a class="art__pn-a is-prev" href="https://designrefs.com/en/articles/figma-make-payload-save-button/" rel="prev"><span class="art__pn-l">← Previous</span><span class="art__pn-t">When the Save button saves nothing: what to check in Payload, now inside Figma Make</span></a><span></span></nav>
+      <p class="art__all"><a href="https://designrefs.com/en/articles/">All articles (33) →</a></p>
+    </section>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <div class="wrap">
+      <nav class="footer__nav"><div class="footer__navgroup"><a href="https://designrefs.com/en/#uiux">UI/UX</a><a href="https://designrefs.com/en/#graphic">Graphic &amp; Branding</a><a href="https://designrefs.com/en/#color">Color</a><a href="https://designrefs.com/en/#typo">Type &amp; Fonts</a><a href="https://designrefs.com/en/#asset">Icons &amp; Assets</a><a href="https://designrefs.com/en/#mockup">Mockups</a><a href="https://designrefs.com/en/#tool">Design Tools</a><a href="https://designrefs.com/en/#ai">AI</a><a href="https://designrefs.com/en/#dev">Design &amp; Code</a><a href="https://designrefs.com/en/#community">Community &amp; Media</a><a href="https://designrefs.com/en/#creator">Creators</a><a href="https://designrefs.com/en/#freelance">Freelance</a><a href="https://designrefs.com/en/#job">Jobs</a></div><div class="footer__navgroup"><a href="https://designrefs.com/en/articles/">Articles</a><a href="https://designrefs.com/en/#styles">Style Guide</a><a href="https://designrefs.com/en/#trends">2026 Trends</a><a href="https://designrefs.com/en/#glossary">Glossary</a></div></nav>
+    </div>
+    <div class="wrap footer__inner">
+      <span>Copyright 2026. Design Hub. all rights reserved.</span>
+      <a href="https://designrefs.com/en/articles/">Articles</a>
+      <a href="https://designrefs.com/en/talk/">Design Talk</a>
+      <a href="https://designrefs.com/" hreflang="ko" lang="ko">한국어</a>
+      <a href="https://designrefs.com/privacy/">Privacy (Korean)</a>
+      <a href="mailto:nisov0924@gmail.com">CONTACT : nisov0924@gmail.com</a>
+      <a href="#" id="footer-top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <button id="to-top" class="to-top" type="button" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg></button>
+  <script src="https://designrefs.com/js/page.js" defer></script>
+</body>
+</html>
