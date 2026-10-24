@@ -817,3 +817,25 @@ body.drawer-open { overflow: hidden; }
   .plist__item--illustrated { grid-template-columns: 96px minmax(0, 1fr); gap: 12px; }
   .plist__image { width: 96px; height: 72px; }
 }
+
+/* ===== 분야 안내 · 업데이트 기록 (애드센스 보강, 2026-10-24) ===== */
+.guide-lead { max-width: 760px; margin-top: 18px; font-size: 15px; color: var(--ink); }
+.pmeta { margin: 10px 0 0; font-size: 12.5px; color: var(--ink-3); }
+.pmeta a { color: var(--ink-2); text-decoration: underline; text-underline-offset: 3px; }
+.guide { margin: 56px 0 0; padding: 32px 0 0; border-top: 1px solid var(--line-strong); max-width: 760px; scroll-margin-top: calc(var(--top-h) + 24px); }
+.guide__title { margin: 0; font-size: 20px; font-weight: 700; letter-spacing: -0.03em; }
+.guide .art__h3 { margin-top: 30px; }
+.guide .ptext { color: var(--ink-2); }
+.ulog { margin-top: 6px; }
+.ulog__day { display: grid; grid-template-columns: 64px 1fr; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.ulog__day time { font-size: 13px; font-weight: 600; color: var(--ink); font-variant-numeric: tabular-nums; padding-top: 1px; }
+.ulog__day ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 7px; }
+.ulog__day li { font-size: 14px; line-height: 1.6; color: var(--ink-2); }
+.ulog__day li a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+.ulog__k { display: inline-block; min-width: 52px; margin-right: 10px; padding: 1px 7px; border: 1px solid var(--line); border-radius: 999px; font-size: 11px; font-weight: 600; color: var(--ink-2); text-align: center; }
+.ulog__k--add, .ulog__k--new { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+@media (max-width: 640px) {
+  .ulog__day { grid-template-columns: 1fr; gap: 6px; }
+}
+.section__guide { margin: 12px 0 0; font-size: 13px; }
+.section__guide a { color: var(--ink); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }

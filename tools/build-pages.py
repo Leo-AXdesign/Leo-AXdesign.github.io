@@ -15,6 +15,10 @@ import sitedata as D
 from nav import menu, footer_links
 from shell import document, section_head, SITE, e
 import articles as A
+import updates as U
+
+HIST = U.history()
+LAST = U.last_changed()
 
 
 def related_articles(slug, n=4):
@@ -69,6 +73,18 @@ def host(u):
 # 만들 페이지 목록: (슬러그, 제목, 설명, 본문 HTML 생성 함수, 항목 수)
 pages = []
 
+def guide_parts(cat_id):
+    """content/guides/<분야 id>.md 를 첫 문단(목록 위에 둠)과 나머지(목록 아래 '안내')로 나눕니다."""
+    f = ROOT / "content" / "guides" / f"{cat_id}.md"
+    if not f.exists():
+        return "", ""
+    md = f.read_text(encoding="utf-8").strip()
+    first, _, rest = md.partition("\n\n")
+    if first.startswith("#"):
+        return "", md
+    return " ".join(first.split("\n")), rest.strip()
+
+
 def site_list(items, show_sub=False):
     out = ['      <ul class="plist">']
     for s in items:
@@ -104,6 +120,15 @@ for c in cats:
         body_html = "\n".join(body)
     else:
         body_html = site_list(items)
+    lead, guide = guide_parts(c["id"])
+    y, m, d = LAST[c["id"]].split("-")
+    meta = (f'      <p class="pmeta">마지막으로 고친 날 {y}. {int(m)}. {int(d)} · '
+            f'<a href="{SITE}updates/">업데이트 기록</a>'
+            + (' · <a href="#guide">이 분야 안내</a>' if guide else "") + '</p>\n')
+    lead_html = f'      <p class="ptext guide-lead">{A.inline(lead)}</p>\n' if lead else ""
+    guide_html = (f'\n      <section class="guide" id="guide">\n        <h2 class="guide__title">{e(c["label"])}, 이렇게 고릅니다</h2>\n'
+                  f'{A.to_html(guide)}\n      </section>') if guide else ""
+    body_html = lead_html + meta + body_html + guide_html
     pages.append((slug, title, intro, body_html, len(items), [s["name"] for s in items], c["label"]))
 
 # Styles and trends share the same original illustrations as the app.
@@ -191,6 +216,7 @@ ABOUT = f"""
       <li>무료인지 유료인지 태그로 먼저 표시. 들어갔다가 결제창 보면 맥이 빠지니까요</li>
       <li>주소는 넣기 전에 한 번씩 열어 보고, 서비스가 없어지면 지웁니다</li>
     </ul>
+    <p class="ptext">언제 무엇을 넣고 뺐는지는 <a href="{SITE}updates/">업데이트 기록</a>에 날짜별로 남겨 둡니다.</p>
 
     <h2 class="psub">제안</h2>
     <p class="ptext">빠진 사이트를 알려주시면 확인하고 넣겠습니다. 링크가 죽었거나 설명이 틀린 것도 알려주세요.
@@ -267,11 +293,43 @@ TALK = f"""
     <script src="{SITE}js/talk.js" defer></script>
 """
 
+# ---------- 업데이트 기록 (tools/updates.py 가 git 기록에서 읽어 옵니다) ----------
+KIND = {"new": "새로", "add": "추가", "move": "이동", "edit": "수정", "del": "삭제", "post": "읽을거리"}
+
+
+def updates_body():
+    days = {d: [(k, e(t)) for k, t, _ in items] for d, items in HIST}
+    for x in A.load():
+        days.setdefault(x["date"], []).append(
+            ("post", f'<a href="{SITE}articles/{x["slug"]}/">{e(x["title"])}</a>'))
+    n_site = sum(1 for _, items in HIST for k, *_ in items if k == "add")
+    out = [f'    <p class="ptext">사이트를 넣고, 옮기고, 고치고, 지운 기록입니다. 사이트 목록 파일이 바뀔 때마다 '
+           f'바로 앞 상태와 비교해서 자동으로 적기 때문에 빠지는 것이 없습니다. 읽을거리를 올린 날도 함께 적었습니다.</p>',
+           f'    <p class="ptext">공개한 뒤로 사이트 {n_site}곳을 새로 넣었고, 읽을거리 {len(A.load())}편을 올렸습니다.</p>']
+    month = None
+    for d in sorted(days, reverse=True):
+        y, m, dd = d.split("-")
+        if (y, m) != month:
+            if month:
+                out.append("    </div>")
+            month = (y, m)
+            out.append(f'    <h2 class="psub psub--plain">{y}년 {int(m)}월</h2>\n    <div class="ulog">')
+        rows = "".join(f'<li><span class="ulog__k ulog__k--{k}">{KIND[k]}</span>{t}</li>' for k, t in days[d])
+        out.append(f'      <div class="ulog__day"><time datetime="{d}">{int(m)}. {int(dd)}</time><ul>{rows}</ul></div>')
+    if month:
+        out.append("    </div>")
+    return "\n".join(out)
+
+
+UPDATES = updates_body()
+
 PROSE_PAGES = [
     ("talk", "디자인 잡담",
      "디자인 이야기를 편하게 나누는 공간입니다.", TALK),
     ("about", "디자인 허브 소개",
      "왜 만들었고 무엇이 들어 있는지, 사이트는 어떤 기준으로 고르는지 적어 뒀습니다.", ABOUT),
+    ("updates", "업데이트 기록",
+     "디자인 허브에 사이트를 넣고, 옮기고, 고친 기록입니다. 날짜별로 자동으로 정리합니다.", UPDATES),
     ("privacy", "개인정보처리방침",
      "디자인 허브의 개인정보 처리방침입니다. 수집 항목, 쿠키 사용, 외부 서비스, 광고에 대해 안내합니다.", PRIVACY),
 ]
@@ -286,6 +344,7 @@ SHORT_DESC.update({
     "trends": "2026 공식 리포트와 지속 흐름 · 10월 14일 확인",
     "glossary": "디자인 · 편집/인쇄 · UI/UX 구축 시 자주 쓰는 용어",
     "talk": "디자인 이야기를 편하게 나누는 공간",
+    "updates": "사이트를 넣고 옮기고 고친 날짜별 기록",
 })
 FOOTER = footer_links()
 # 개수를 브라우저에서 채우는 페이지 (디자인 잡담의 글 수는 서버에서 받아 옵니다)
@@ -419,7 +478,8 @@ def _group(slugs):
 _cat_slugs = [pg[0] for pg in pages if pg[0] not in _prose and pg[0] not in INSIGHT]
 links = ('<div class="footer__navgroup">' + _group(_cat_slugs) + '</div>'
          '<div class="footer__navgroup">'
-         + f'<a href="{SITE}articles/">읽을거리</a>' + _group(INSIGHT) + '</div>')
+         + f'<a href="{SITE}articles/">읽을거리</a>' + _group(INSIGHT)
+         + f'<a href="{SITE}updates/">업데이트 기록</a>' + '</div>')
 pat = re.compile(r"<!-- SEO:PAGELINKS -->.*?<!-- /SEO:PAGELINKS -->", re.S)
 if pat.search(doc):
     doc = pat.sub(f'<!-- SEO:PAGELINKS -->\n      <nav class="footer__nav">{links}</nav>\n      <!-- /SEO:PAGELINKS -->', doc)

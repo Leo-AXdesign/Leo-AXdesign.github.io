@@ -309,6 +309,8 @@
         <p class="section__desc">디자인 시스템, 플랫폼 가이드라인, 인터랙션 구현</p>
       </header>
       <p class="page__intro">디자인 시스템과 플랫폼 가이드라인, 인터랙션 구현에 필요한 자료를 모았습니다.</p>
+      <p class="ptext guide-lead">디자인과 개발이 만나는 자리에서 쓰는 자료를 모았습니다. 디자이너가 코드를 다 알 필요는 없지만, 개발자가 무엇을 기준으로 구현하는지 알면 시안을 넘긴 뒤 오가는 질문이 크게 줄어듭니다.</p>
+      <p class="pmeta">마지막으로 고친 날 2026. 10. 14 · <a href="https://designrefs.com/updates/">업데이트 기록</a> · <a href="#guide">이 분야 안내</a></p>
       <h2 class="psub psub--plain">디자인 시스템 <span>13</span></h2>
       <ul class="plist">
         <li class="plist__item"><a class="plist__name" href="https://www.krds.go.kr" target="_blank" rel="noopener">KRDS 디지털정부서비스 UI/UX</a><span class="plist__host">krds.go.kr</span><p class="plist__desc">한국 디지털 정부서비스 UI/UX 가이드라인. 공공 프로젝트 필수 참고.</p></li>
@@ -355,6 +357,18 @@
         <li class="plist__item"><a class="plist__name" href="https://responsively.app" target="_blank" rel="noopener">Responsively</a><span class="plist__host">responsively.app</span><p class="plist__desc">여러 기기 화면을 동시에 보며 반응형을 확인하는 브라우저.</p></li>
         <li class="plist__item"><a class="plist__name" href="https://www.frontendmentor.io" target="_blank" rel="noopener">Frontend Mentor</a><span class="plist__host">frontendmentor.io</span><p class="plist__desc">디자인 시안을 코드로 구현하며 배우는 실습 플랫폼.</p></li>
       </ul>
+      <section class="guide" id="guide">
+        <h2 class="guide__title">디자인 개발, 이렇게 고릅니다</h2>
+    <h3 class="art__h3">디자인 시스템을 참고할 때</h3>
+    <p class="ptext">새로 디자인 시스템을 만든다면 처음부터 다 만들기보다 잘 만든 시스템을 먼저 읽어 보세요. 공공 프로젝트라면 KRDS를 따라야 하는 경우가 많고, 앱이라면 플랫폼 가이드인 Material Design 3와 Apple HIG가 기준이 됩니다. 문서를 어떻게 쓰는지 배우고 싶다면 Atlassian과 Shopify Polaris가 좋은 교과서입니다.</p>
+    <p class="ptext">버튼이나 탭 같은 컴포넌트 하나를 두고 다른 회사들은 어떻게 했는지 비교하고 싶다면 Component Gallery가 가장 빠릅니다.</p>
+    <h3 class="art__h3">개발자와 같은 말을 쓰고 싶을 때</h3>
+    <p class="ptext">요즘 웹 서비스는 shadcn/ui와 Tailwind CSS로 만드는 경우가 많습니다. 개발 팀이 이걸 쓴다면 시안도 이 컴포넌트 구조에 맞춰 잡는 편이 구현이 빠르고 결과물도 시안과 가까워집니다. 컴포넌트를 어떻게 쪼갤지 고민된다면 Storybook으로 정리된 사례를 찾아보세요.</p>
+    <h3 class="art__h3">움직임을 정할 때</h3>
+    <p class="ptext">&quot;부드럽게 움직이게 해 주세요&quot;라고만 쓰면 사람마다 다르게 해석합니다. Easings.net이나 cubic-bezier.com에서 이징 곡선을 골라 값으로 넘기면 오해가 줄어듭니다. 화려한 인터랙션 아이디어는 Codrops와 CodePen에 많습니다.</p>
+    <h3 class="art__h3">넘기기 전에 확인할 것</h3>
+    <p class="ptext">색 대비와 글자 크기 같은 접근성 기준은 WCAG 2.2 Quick Reference에서, 특정 CSS 기능을 브라우저가 지원하는지는 Can I Use에서 확인할 수 있습니다. 반응형 화면은 Responsively로 여러 기기 크기를 한꺼번에 띄워 보면 빠뜨린 화면을 찾기 쉽습니다.</p>
+      </section>
     </section>
     <section class="section">
       <header class="section__head">
@@ -394,7 +408,7 @@
 
   <footer class="footer">
     <div class="wrap">
-      <nav class="footer__nav"><div class="footer__navgroup"><a href="https://designrefs.com/ui-ux/">UI/UX 레퍼런스</a><a href="https://designrefs.com/graphic/">그래픽 / 브랜딩</a><a href="https://designrefs.com/color/">컬러 가이드</a><a href="https://designrefs.com/font/">타이포 / 폰트</a><a href="https://designrefs.com/assets/">아이콘 / 에셋</a><a href="https://designrefs.com/mockups/">목업</a><a href="https://designrefs.com/tools/">디자인 툴</a><a href="https://designrefs.com/ai/">AI</a><a href="https://designrefs.com/dev/">디자인 개발</a><a href="https://designrefs.com/community/">커뮤니티 / 매거진</a><a href="https://designrefs.com/creators/">크리에이터 / 채널</a><a href="https://designrefs.com/freelance/">외주 / 프리랜서</a><a href="https://designrefs.com/jobs/">채용공고</a></div><div class="footer__navgroup"><a href="https://designrefs.com/articles/">읽을거리</a><a href="https://designrefs.com/styles/">스타일 사전</a><a href="https://designrefs.com/trends/">2026 트렌드</a><a href="https://designrefs.com/glossary/">용어 사전</a></div></nav>
+      <nav class="footer__nav"><div class="footer__navgroup"><a href="https://designrefs.com/ui-ux/">UI/UX 레퍼런스</a><a href="https://designrefs.com/graphic/">그래픽 / 브랜딩</a><a href="https://designrefs.com/color/">컬러 가이드</a><a href="https://designrefs.com/font/">타이포 / 폰트</a><a href="https://designrefs.com/assets/">아이콘 / 에셋</a><a href="https://designrefs.com/mockups/">목업</a><a href="https://designrefs.com/tools/">디자인 툴</a><a href="https://designrefs.com/ai/">AI</a><a href="https://designrefs.com/dev/">디자인 개발</a><a href="https://designrefs.com/community/">커뮤니티 / 매거진</a><a href="https://designrefs.com/creators/">크리에이터 / 채널</a><a href="https://designrefs.com/freelance/">외주 / 프리랜서</a><a href="https://designrefs.com/jobs/">채용공고</a></div><div class="footer__navgroup"><a href="https://designrefs.com/articles/">읽을거리</a><a href="https://designrefs.com/styles/">스타일 사전</a><a href="https://designrefs.com/trends/">2026 트렌드</a><a href="https://designrefs.com/glossary/">용어 사전</a><a href="https://designrefs.com/updates/">업데이트 기록</a></div></nav>
     </div>
     <div class="wrap footer__inner">
       <span>Copyright 2026. Design Hub. all rights reserved.</span>

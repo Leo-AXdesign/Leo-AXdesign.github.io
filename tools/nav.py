@@ -92,7 +92,8 @@ def footer_links(lang="ko"):
     cats = "".join(f'<a href="{SITE}{D.CAT_SLUG[c["id"]]}/">{e(c["label"])}</a>'
                    for c in D.cats if D.CAT_SLUG.get(c["id"]) and n.get(c["id"]))
     ins = (f'<a href="{SITE}articles/">읽을거리</a><a href="{SITE}styles/">스타일 사전</a>'
-           f'<a href="{SITE}trends/">2026 트렌드</a><a href="{SITE}glossary/">용어 사전</a>')
+           f'<a href="{SITE}trends/">2026 트렌드</a><a href="{SITE}glossary/">용어 사전</a>'
+           f'<a href="{SITE}updates/">업데이트 기록</a>')
     return ('    <div class="wrap">\n'
             f'      <nav class="footer__nav"><div class="footer__navgroup">{cats}</div>'
             f'<div class="footer__navgroup">{ins}</div></nav>\n'

@@ -326,8 +326,14 @@
     }).join('');
   }
 
+  // 분야별 정적 페이지 주소. 그 페이지에 '이 분야 안내'와 마지막으로 고친 날이 있습니다 (한국어판만)
+  const CAT_PAGE = { uiux: 'ui-ux', graphic: 'graphic', color: 'color', typo: 'font', asset: 'assets', mockup: 'mockups',
+    dev: 'dev', tool: 'tools', freelance: 'freelance', job: 'jobs', ai: 'ai', community: 'community', creator: 'creators' };
+
   function renderSection(cat, sites, showCat = false) {
     if (!sites.length) return '';
+    const guide = !showCat && LANG !== 'en' && state.cat === cat.id && CAT_PAGE[cat.id]
+      ? `<p class="section__guide"><a href="${CAT_PAGE[cat.id]}/#guide">이 분야는 이렇게 고릅니다 →</a></p>` : '';
     return `
       <section class="section" id="cat-${cat.id}">
         <header class="section__head">
@@ -335,6 +341,7 @@
           <span class="section__count">${sites.length}</span>
           ${cat.desc ? `<p class="section__desc">${escapeHtml(cat.desc)}</p>` : ''}
         </header>
+        ${guide}
         ${renderRows(sites, showCat)}
       </section>`;
   }
