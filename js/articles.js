@@ -1,6 +1,7 @@
 // 이 파일은 tools/build-articles.py 가 만듭니다. 직접 고치지 마세요.
 // 글은 content/articles/*.md 에서 고칩니다.
 const ARTICLES = [
+  { slug: "ideogram-vector-1-editable-svg", title: "AI로 뽑은 로고를 확대하니 뭉개질 때, 아이디오그램 벡터 1.0에서 확인할 것", desc: "Ideogram이 10월 22일 첫 벡터 모델 Vector 1.0을 냈다. 글이나 이미지에서 편집 가능한 SVG를 만든다고 한다. 공식 API 문서와 보도로 확인한 내용, 가격, 레이어와 글자 처리처럼 아직 확인되지 않은 부분을 정리했다.", date: "2026-10-24", tag: "AI 디자인", min: 6, views: ["ai", "tool", "graphic"] },
   { slug: "webflow-gemini-connector-edit-site-in-chat", title: "문구 세 군데 고치려고 웹플로를 열었다 닫았다 할 때, 제미나이에 붙은 Webflow 연결에서 확인할 것", desc: "Webflow가 10월 15일 Google Gemini 앱의 연결 앱이 됐다. 채팅에서 페이지 제작, CMS 정리, 사이트 감사, 성과 질문을 할 수 있다고 한다. 설치는 무료이고 지금은 Webflow AI 크레딧을 쓰지 않는다. 보도자료와 마켓플레이스 페이지로 확인한 내용과 아직 알 수 없는 부분을 정리했다.", date: "2026-10-23", tag: "AI 디자인", min: 5, views: ["ai", "tool", "uiux"] },
   { slug: "figma-make-payload-save-button", title: "화면은 다 됐는데 저장 버튼이 아무것도 저장하지 않을 때, 피그마 메이크에 붙은 Payload에서 확인할 것", desc: "Figma가 10월 15일 오픈소스 CMS Payload를 Figma Make에 넣었다. 프롬프트로 앱을 만들면 데이터베이스, 파일 저장, 사용자 로그인, 관리자 화면이 같이 생긴다. 공식 블로그로 확인한 내용, 호스팅 베타·가격 미정, 아직 밝혀지지 않은 부분을 정리했다.", date: "2026-10-22", tag: "AI 디자인", min: 5, views: ["ai", "tool", "uiux"] },
   { slug: "krea-3-edit-keep-logo", title: "배경만 바꿨는데 로고까지 바뀌었을 때, 크레아 3 편집 모델에서 확인할 것 (2K 한 장 0.06달러)", desc: "Krea가 10월 15일 이미지 편집 모델 Krea 3을 공개했다. 제품의 라벨과 로고는 두고 주변 장면만 바꾼다는 모델이다. 공식 블로그·가격 페이지로 확인한 속도, 값, 쓰는 법과 아직 검증되지 않은 부분을 정리했다.", date: "2026-10-21", tag: "AI 디자인", min: 6, views: ["ai", "tool", "graphic"] },
