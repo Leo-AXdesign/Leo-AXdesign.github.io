@@ -31,8 +31,14 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/configure-pages@v5
       # 블로그 자동 포스팅 도구(AI 한입)는 저장소에만 두고 사이트로는 내보내지 않습니다
+      # 글 원본(마크다운)·빌드 도구·서버 코드·영상 작업 파일도 사이트로 내보내지 않습니다.
+      # 원본이 공개되면 같은 글이 주소 두 개로 열려 중복 콘텐츠가 됩니다.
+      # tools/index.html 은 '디자인 툴' 분야 페이지라 남기고, social/ 은 인스타그램 발행이 주소로 가져가서 남깁니다.
       - name: Exclude non-site folders
-        run: rm -rf ai-hanip-autopost
+        run: |
+          rm -rf ai-hanip-autopost content worker video mcp data .github README.md
+          find tools -mindepth 1 ! -name index.html -exec rm -rf {} +
+          ls tools
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
         with:
