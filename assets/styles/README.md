@@ -1,9 +1,8 @@
-# Original style and trend illustrations
+# Style and trend illustrations
 
-These SVGs and `../trends/*.svg` are original educational studies created for Design Hub. They illustrate visual characteristics rather than reproducing historical artworks or actual product screens. No Wikimedia images are embedded or fetched.
+`*.webp` in this folder and `../trends/` are the thumbnails used on the site (스타일 사전 34, 2026 트렌드 20).
 
-`python3 tools/build-style-art.py` regenerates 28 style studies and 20 trend illustrations. The six earlier SVGs (new-wave, skeuomorphism, minimalism, glassmorphism, acid-graphics and anti-design) are hand-authored assets retained alongside them.
-
-The site preserves the full 4:3 composition. Color is part of the illustration, while navigation and category labels retain the monochrome interface.
-
-Trend descriptions were reviewed on 2026-10-14 against the primary sources linked in `js/data.js`. Report observations and continuing design approaches are distinguished. Application advice is editorial interpretation, not measured market adoption. The Cloud Dancer graphic is illustrative, not a calibrated Pantone color standard.
+- Made on 2026-10-24 with GPT Image 2.5 through Higgsfield, 4:3, saved as 640×480 WebP.
+- Each prompt describes the visual characteristics of the movement or trend only. It asks for no readable text, no logos, no signatures and no reproduction of existing artworks.
+- The site labels them as AI-generated example illustrations, not historical artworks or product screens.
+- The older hand-made `*.svg` studies (`tools/build-style-art.py`) are kept in the folders but no longer referenced by `js/data.js`.

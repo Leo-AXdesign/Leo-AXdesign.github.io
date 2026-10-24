@@ -354,7 +354,7 @@
     // 이미지 로드 실패 시: img 를 제거하고 래퍼에 is-text 를 붙여 CSS 로 텍스트 타일 표시
     return `
       <a class="srow__thumbwrap" href="${pinUrl(x.q)}" target="_blank" rel="noopener noreferrer" tabindex="-1" data-en="${en}" title="${escapeHtml(x.imgTitle || x.en)}">
-        <img class="srow__thumb" src="${escapeHtml(x.img)}" alt="${T(en + ' — 직접 제작한 스타일 예시', en + ' — original illustrative study')}" loading="lazy" width="640" height="480"
+        <img class="srow__thumb" src="${escapeHtml(x.img)}" alt="${T(en + ' — AI로 만든 예시 일러스트', en + ' — AI-generated illustration')}" loading="lazy" width="640" height="480"
              onerror="this.parentNode.classList.add('is-text'); this.remove();" />
       </a>`;
   }
@@ -461,7 +461,7 @@
   }
 
   function renderIllustrationNote() {
-    return `<p class="insight-note">${T('썸네일은 특징을 설명하기 위해 직접 제작한 예시입니다. 실제 작품이나 제품 화면이 아닙니다.', 'Thumbnails are original illustrations of visual characteristics, not historical artworks or product screenshots.')}</p>`;
+    return `<p class="insight-note">${T('썸네일은 각 양식과 흐름의 특징을 설명하기 위해 AI(GPT Image 2.5)로 만든 예시 일러스트입니다. 실제 작품이나 제품 화면이 아닙니다.', 'Thumbnails are AI-generated illustrations (GPT Image 2.5) made to explain visual characteristics, not historical artworks or product screenshots.')}</p>`;
   }
 
   function renderTrendSources() {

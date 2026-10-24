@@ -131,11 +131,11 @@ for c in cats:
     body_html = lead_html + meta + body_html + guide_html
     pages.append((slug, title, intro, body_html, len(items), [s["name"] for s in items], c["label"]))
 
-# Styles and trends share the same original illustrations as the app.
-ILLUSTRATION_NOTE = '<p class="insight-note">썸네일은 특징을 설명하기 위해 직접 제작한 예시입니다. 실제 작품이나 제품 화면이 아닙니다.</p>'
+# 스타일 사전과 트렌드는 메인 화면과 같은 그림을 씁니다 (AI로 만든 예시 일러스트, assets/styles · assets/trends).
+ILLUSTRATION_NOTE = '<p class="insight-note">썸네일은 각 양식과 흐름의 특징을 설명하기 위해 AI(GPT Image 2.5)로 만든 예시 일러스트입니다. 실제 작품이나 제품 화면이 아닙니다.</p>'
 def study_image(item):
     return (f'<img class="plist__image" src="{e(item["img"])}" '
-            f'alt="{e(item["name"])} — 직접 제작한 예시" width="640" height="480" loading="lazy" />')
+            f'alt="{e(item["name"])} — AI로 만든 예시 일러스트" width="640" height="480" loading="lazy" />')
 sb = ['      <ul class="plist">']
 for s in styles:
     sb.append('<li class="plist__item plist__item--illustrated">' + study_image(s) + '<div>'
