@@ -453,7 +453,8 @@ mark { background: none; color: inherit; text-decoration: underline; text-underl
 .page__main { min-width: 0; }
 .page__title { font-size: clamp(28px, 4vw, 44px); font-weight: 800; letter-spacing: -0.04em; line-height: 1.1; margin: 0 0 16px; }
 .page__intro { margin: 14px 0 0; font-size: 13.5px; color: var(--ink-2); line-height: 1.6; }
-.art .page__intro { margin: 0 0 10px; font-size: 16px; line-height: 1.65; }
+.art .page__title { letter-spacing: -0.025em; line-height: 1.32; word-break: keep-all; overflow-wrap: break-word; text-wrap: balance; }  /* 읽을거리 제목: 두 줄일 때 답답하지 않게, 낱말 중간에서 끊기지 않게 */
+.art .page__intro { margin: 0 0 10px; font-size: 16px; line-height: 1.65; word-break: keep-all; }
 .page__cta { margin: 0 0 8px; font-size: 14px; }
 .page__cta a { font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }
 
