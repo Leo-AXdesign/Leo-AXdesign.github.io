@@ -1,6 +1,6 @@
 ---
 slug: ideogram-vector-1-editable-svg
-title: When an AI-made logo turns blurry once you enlarge it: what to check in Ideogram Vector 1.0
+title: Ideogram Vector 1.0: what changes when AI logos come out as SVG
 desc: On October 22, Ideogram released Vector 1.0, its first vector model, which makes editable SVGs from text or from an existing image. What Ideogram's API docs and press coverage say, the reported prices, and what is still unknown about layers and live text.
 tag: AI Design
 ---
@@ -12,13 +12,7 @@ What you have is one PNG. Blow it up to banner size and the edges go soft. The p
 On October 22, Ideogram released Ideogram Vector 1.0, its first vector model. Describe something in text and you get an SVG. Upload an existing picture and it converts it to a vector. This piece reports only what I verified in Ideogram's API documentation and in coverage of the launch.
 
 ![Ideogram developer docs, Generate SVG API page. Source: developer.ideogram.ai/api-reference/vectors/generate-svg (captured 2026-10-24)](https://designrefs.com/articles/img/ideogram-vector-1-editable-svg-shot1.webp)
-## Before you read
-
-- I did not run the model myself. Everything below comes from the developer docs and reporting based on Ideogram's announcement.
-- Ideogram's X post, blog and product page did not open for me (access denied). I only saw the announcement wording through quotes in search results and articles.
-- The two documentation pages I opened list no prices. The price table below comes from two outside articles that cite Ideogram's published rates, and the numbers matched.
-- I found no independent test of the output. "Clean" is, for now, Ideogram's description.
-- Which app plan includes it, and how many credits it costs in the app, was not stated.
+This is based on Ideogram's developer docs and coverage of the launch; I haven't run the model myself. Pricing wasn't in the official docs, so it comes from two outside write-ups that quote them, and the two matched. 'Clean output' is still Ideogram's description; I found no outside tests.
 
 ## Raster and vector in one line
 

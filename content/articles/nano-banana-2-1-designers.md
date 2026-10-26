@@ -1,6 +1,6 @@
 ---
 slug: nano-banana-2-1-designers
-title: 나노 바나나 2.1, 값은 절반이 됐다는데 디자이너가 확인할 것
+title: 나노 바나나 2.1 요금표를 직접 열어 보니, 4K는 반값이 아니었다
 desc: 구글의 이미지 모델 나노 바나나 2.1이 나왔다. 1K와 2K는 값이 절반이 됐지만 4K는 그렇지 않고, 글자는 좋아졌지만 모델 카드에 약점도 적혀 있다. 요금표와 모델 카드를 직접 확인해 그림과 숫자로 정리했다.
 date: 2026-10-15
 order: 1
@@ -13,8 +13,6 @@ related: ai, tools, graphic
 발표 직후 기사 제목은 대부분 비슷했다. "절반 값에 4K." 그런데 오늘 구글 요금표를 직접 열어 보니, 절반이 된 건 1K와 2K뿐이었다. 4K는 4분의 1만 내렸다. 기사마다 나온 '10월 29일 이전 모델 종료'도 구글 공식 문서에서는 찾을 수 없었다.
 
 그래서 이번 글은 소문보다 문서를 따라갔다. 구글 요금표, 모델 카드, 사용 중단 일정표를 하나씩 확인해서 디자이너에게 필요한 것만 추렸다.
-
-**먼저 밝혀 둘 것.** 나는 이 사이트를 클로드 코드로 만들고 있다. 아래 성능 숫자는 모두 구글이 직접 잰 것이고, 한글 글자를 따로 시험한 결과는 아직 어디에도 없다.
 
 ## 무엇이 달라졌나
 
@@ -76,5 +74,7 @@ related: ai, tools, graphic
 **4K는 꼭 필요할 때만 쓰자.** 인쇄용 큰 이미지가 아니라면 2K로 시안을 고르고, 마지막 한 장만 4K로 뽑는 게 값에 맞다.
 
 쓰임새별 이미지 AI 도구는 [AI 디자인 툴](https://designrefs.com/ai/)에 모아 두었다.
+
+※ 성능 숫자는 모두 구글이 직접 잰 것이다. 한글 글자를 따로 시험한 결과는 아직 어디에도 없다.
 
 ※ 출처: [나노 바나나 2.1 모델 카드](https://deepmind.google/models/model-cards/nano-banana-2-1/), [Gemini API 요금표](https://ai.google.dev/gemini-api/docs/pricing) · [사용 중단 일정표](https://ai.google.dev/gemini-api/docs/deprecations) (10월 15일 확인), [Neowin](https://www.neowin.net/news/google-launches-nano-banana-21-with-better-editing-and-subject-consistency/), [Android Headlines](https://www.androidheadlines.com/2026/10/google-launches-nano-banana-2-1-ai-images-price.html), [Apidog](https://apidog.com/blog/nano-banana-2-1/), [Google 유튜브](https://www.youtube.com/watch?v=Sm7OTow3mcY).

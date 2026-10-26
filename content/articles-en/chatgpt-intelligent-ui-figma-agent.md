@@ -11,7 +11,7 @@ On October 6, Figma took its design agent out of beta. The next day, OpenAI brou
 
 One lives in a chat window, the other inside a design tool. Different places, but in both, AI draws the screen itself. Which raises the same question: who sets the rules for that screen?
 
-**First, a disclaimer.** Both features are only days old, so there are almost no hands-on reviews yet. This is based on the companies' announcements and coverage. I'll also note that I'm building this site with Claude Code.
+Both features are only days old, so hands-on reviews are scarce. I've followed the companies' announcements and coverage.
 
 ## Answers arrive as screens
 

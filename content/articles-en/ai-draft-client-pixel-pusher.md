@@ -11,8 +11,6 @@ Plenty of designers are getting emails like this. Attached is a logo, poster or 
 
 On October 12, Fast Company covered this. It interviewed more than a dozen graphic designers, and many described something similar over the past year and a half. Clients send AI drafts and push rates down; at work, bosses hold up AI-made screens and say "build it like this". Some designers who offered opinions were told "ask ChatGPT", and some lost jobs after being told AI could do the work. The piece described designers being turned into "pixel pushers".
 
-**First, a disclaimer.** This article draws on an interview-based report and a few surveys. There's no precise statistic yet on how common this is. The diagrams and steps below are this site's summary, based on what the designers in the report described.
-
 ## The "almost done" illusion
 
 To a client, an AI draft looks close to finished. Plausible colors, plausible composition, plausible lettering. But actually using it leaves quite a lot of work.
@@ -67,5 +65,7 @@ It's the same inside a company. When a boss holds up an AI-made screen, take it 
 3. **Record what you changed.** Save the original AI draft and the final work side by side. It's useful for your portfolio and for the next quote negotiation.
 
 How AI tools are actually used on the job is in [AI design tools in practice](https://designrefs.com/en/articles/ai-design-tools-in-practice/), and AI tools by use are under [AI design tools](https://designrefs.com/en/#ai).
+
+※ There's no solid statistic yet on how common this is. The diagrams and steps here summarize what designers described in the interview-based report and surveys.
 
 ※ Sources: [Fast Company (Oct 12, 2026)](https://www.fastcompany.com/91621558/ai-pilled-bosses-and-clients-turning-designers-into-pixel-pushers), [Fast Company pricing project](https://www.fastcompany.com/91571502/freelance-design-pricing-transparency-project-report), [HBR](https://hbr.org/2024/11/research-how-gen-ai-is-already-impacting-the-labor-market), [Envato](https://elements.envato.com/learn/creative-ai-tools).

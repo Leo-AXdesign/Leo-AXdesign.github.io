@@ -11,7 +11,7 @@ Sonnet is the middle tier of Anthropic's lineup. Not the priciest, smartest mode
 
 It's unusual for a mid-priced model to lead with design. And this tier is closer to designers than you might think. For a tool company selling AI features, cost makes this price range the natural default rather than the most expensive model.
 
-**First, a disclaimer.** I'm building this site with Claude Code. So I've only used company announcements and results from people outside who ran their own tests, and noted who measured what.
+This site is built with Claude Code. So I've only used company announcements and results from people who ran their own tests, and noted who measured each number.
 
 ## Same price, crowded row
 

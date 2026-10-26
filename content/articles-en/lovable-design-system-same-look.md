@@ -1,6 +1,6 @@
 ---
 slug: lovable-design-system-same-look
-title: When every AI-built screen looks the same, Lovable dropped its 'three design directions' step and put design systems first
+title: Why Lovable dropped its 'three design directions' step for design systems
 desc: Lovable removed the step that showed three design directions before the first build, and design systems are available on all paid plans. Checked against its changelog and docs: what is confirmed, what is missing, and how to set your own rules once.
 tag: AI Design
 ---
@@ -9,12 +9,7 @@ If you build screens with Lovable or Cursor, they start to look alike. Rounded c
 
 Lovable's official changelog has had a few entries on this over the past weeks. One removed the 'three design directions' step shown before a first build. Another opened design systems to every paid plan. This piece repeats only what I verified in the changelog and the official docs, and lists separately what remains unconfirmed.
 
-## Before you read
-
-- I did not run Lovable for this piece. Everything below comes from the changelog and the docs.
-- The changelog page is very long. I read the early part, covering entries from August to October 2026.
-- I found no public comparison showing that design systems make output look less alike. That link is my interpretation.
-- A plan description in a search summary differed from the official changelog and docs. More on that below.
+This is based on Lovable's official changelog and docs (August to October entries). There's no public comparison showing that design systems make screens look less alike, so that part is my interpretation. Plan descriptions differed between search summaries and the official docs, which I cover later.
 
 ## What changed
 

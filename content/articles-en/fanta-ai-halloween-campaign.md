@@ -9,8 +9,6 @@ Three weeks before Halloween, one drinks campaign has become a regular topic in 
 
 Fanta wants to own Halloween, the way Coca-Cola calls Christmas to mind. So unlike the past two years of borrowing film characters, this year it created four monsters of its own, including a cyborg Frankenstein and a werewolf DJ. And it made them with an AI studio.
 
-**First, a disclaimer.** The campaign videos are public, but there's little hard data on the reaction. For each number below, I've noted who measured it and how.
-
 ## Who did what
 
 ![What people and AI did on Fanta's Haunted Universe, and the reaction. Based on what Fanta and its studio have said.](https://designrefs.com/articles/img/fanta-who-did-what-en.svg)
@@ -70,5 +68,7 @@ When a client asks "should we do this campaign with AI?", there are now some que
 3. **Watch the first three seconds on their own.** Beyond screening the full cut, review it like a social feed, a few seconds before scrolling past. That's where the comments come from.
 
 Whether AI images can be used in client work is covered in [Can you use AI-generated images in client work?](https://designrefs.com/en/articles/ai-image-commercial-use/), and graphic and branding references are under [Graphic / Branding](https://designrefs.com/en/#graphic).
+
+※ The campaign videos are public, but hard data on the reaction is thin. Each number notes who measured it and how.
 
 ※ Sources: [Creative Bloq](https://www.creativebloq.com/ai/fantas-ai-slop-halloween-advert-is-a-real-horror-show), [eMarketer](https://www.emarketer.com/content/fanta-bets-on-original-ip-own-halloween--ai-concerns-could-way), [Zappi](https://www.zappi.io/web/blog/innovation-spotlight-fantas-haunted-collection), [Adweek](https://www.adweek.com/creativity/fantas-big-bet-to-own-halloween-an-original-cinematic-universe/), [DesignRush](https://news.designrush.com/fanta-haunted-universe-halloween-2026), [Marketing-Interactive](https://www.marketing-interactive.com/can-ai-help-fanta-build-the-next-horror-universe).

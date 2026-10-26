@@ -9,7 +9,7 @@ Over the past week I posted one piece a day on AI and design: a store editor, a 
 
 **Where we used to hand everything to AI and wait for the result, people can now decide for themselves.**
 
-**First, a disclaimer.** This is a roundup of the past week's articles. Details and sources for each story are in the individual pieces. I'll also note that I'm building this site with Claude Code, since Claude appears in the numbers below.
+This is a roundup of a week's worth of articles, so each story's details and sources stay in the original piece. Claude shows up in the numbers below, so for the record: this site is built with Claude Code.
 
 ## Six stories on one page
 

@@ -8,7 +8,7 @@
     <language>en</language>
     <lastBuildDate>Mon, 26 Oct 2026 09:00:00 +0900</lastBuildDate>
     <item>
-      <title>When the poster draft keeps misspelling the date, Canva Craft plans the layout first</title>
+      <title>Canva Craft plans the layout first, so poster text stops breaking</title>
       <link>https://designrefs.com/en/articles/canva-craft-text-layout-image-model/</link>
       <guid isPermaLink="true">https://designrefs.com/en/articles/canva-craft-text-layout-image-model/</guid>
       <pubDate>Mon, 26 Oct 2026 09:00:00 +0900</pubDate>
@@ -17,15 +17,8 @@
       <content:encoded><![CDATA[    <p class="ptext">The client&#x27;s email is one line. &quot;Can you send three poster options today? Make the date and venue big.&quot;</p>
     <p class="ptext">You run the prompt through an image AI and the picture looks right. But the date reads &quot;Oct 2th&quot; instead of &quot;Oct 27&quot;. You regenerate. This time the text is correct, but the title has slid into a corner. For three drafts, the number of generations keeps climbing. (This is an imagined scene.)</p>
     <p class="ptext">On October 22, Canva released Canva Craft, its first image generation model built in-house. It is aimed at posters, social posts and presentations, where text and layout matter more than photographic realism. This is not a hands-on review. It is a read of what press coverage reports, from a designer&#x27;s point of view.</p>
-    <h2 class="psub" id="s1">Before you read</h2>
-    <ul class="ptext-list">
-      <li>I did not run the model. Everything below comes from TechCrunch, Digital Trends and The Letter Two, plus a news roundup page.</li>
-      <li>Canva&#x27;s own announcement page would not open for me (access denied). I know the official wording only as far as the articles quote it.</li>
-      <li>Rankings and performance figures are Canva&#x27;s. None of the coverage I opened says they were independently verified.</li>
-      <li>None of the three articles states a price (API rates or credits).</li>
-      <li>Reports differ on some points. Whether the connector that lets ChatGPT and Gemini call Canva is live yet is described differently, and I note that below.</li>
-    </ul>
-    <h2 class="psub" id="s2">Plan first, then draw</h2>
+    <p class="ptext">I haven&#x27;t run the model myself; this is based on reporting from TechCrunch, Digital Trends and others. The rankings and performance figures are Canva&#x27;s own, and I found nothing that verified them independently. API pricing and credit costs weren&#x27;t in the coverage either.</p>
+    <h2 class="psub" id="s1">Plan first, then draw</h2>
     <p class="ptext">TechCrunch and Digital Trends both describe two stages.</p>
     <div class="art__tablewrap"><table class="art__table">
       <thead><tr><th>Stage</th><th>What it does</th></tr></thead>
@@ -36,10 +29,10 @@
     </table></div>
     <p class="art__note">Sources: <a href="https://techcrunch.com/2026/10/22/canva-releases-its-first-image-generation-model/" target="_blank" rel="noopener">TechCrunch (2026-10-22)</a>, <a href="https://www.digitaltrends.com/computing/canva-craft-ai-image-generation-model-launch/" target="_blank" rel="noopener">Digital Trends</a>. The table condenses the two articles&#x27; descriptions.</p>
     <p class="ptext">It resembles how a designer builds a draft: decide where the title goes and how large the date is, then add color and imagery. The claim is that this order is built into the model. I could not confirm that it actually reduces text errors. A description is not a result.</p>
-    <h2 class="psub" id="s3">Trained on templates, not photos</h2>
+    <h2 class="psub" id="s2">Trained on templates, not photos</h2>
     <p class="ptext">According to the coverage, Craft was trained on human-made templates from Canva&#x27;s library rather than on photographs: posters, social posts, presentations, infographics, menus and type-heavy layouts. The Letter Two says text generation supports 55 languages. No source I opened says whether Korean is among them or how accurate the glyphs are.</p>
     <p class="ptext">Two questions remain. One is quality for non-Latin scripts. The other is compensation for template creators. The Letter Two notes that neither creator compensation nor protection for customers&#x27; commercial use is stated. If you plan to use output in client work, treat both as open until terms appear. Our general guide to commercial use of AI images is <a href="https://designrefs.com/articles/ai-image-commercial-use/">Can you use AI images in client work</a>; it does not confirm that those rules apply to Craft.</p>
-    <h2 class="psub" id="s4">The ranking, as announced</h2>
+    <h2 class="psub" id="s3">The ranking, as announced</h2>
     <p class="ptext">The Letter Two relays Canva&#x27;s announcement as follows.</p>
     <div class="art__tablewrap"><table class="art__table">
       <thead><tr><th>Category</th><th>Rank Canva reports</th></tr></thead>
@@ -52,7 +45,7 @@
     </table></div>
     <p class="art__note">Source: <a href="https://thelettertwo.com/2026/10/23/canva-craft-ai-image-model" target="_blank" rel="noopener">The Letter Two (2026-10-23)</a>. Figures cited by Canva from the DesignArena leaderboard; not independently verified in the article.</p>
     <p class="ptext">Digital Trends reports that Canva describes its research team as the world&#x27;s second most advanced lab for image generation. That is a different claim from the model&#x27;s 4th place, so merging them into &quot;a #2 model&quot; would be wrong. The leaderboard is also built on human votes, and how well those votes reflect poster-making convenience is a separate matter. We covered how to read such rankings in <a href="https://designrefs.com/articles/muse-wonder-design-arena/">Meta&#x27;s first top model is #1 in design voting</a>.</p>
-    <h2 class="psub" id="s5">Where you can use it</h2>
+    <h2 class="psub" id="s4">Where you can use it</h2>
     <p class="ptext">What the reports agree on, and where they split.</p>
     <ul class="ptext-list">
       <li><strong>Agree:</strong> All Canva users can use it in the Dream Lab tab. It is also offered through the Canva API. Digital Trends mentions account and usage limits.</li>
@@ -61,12 +54,12 @@
       <li><strong>Single mention:</strong> TechCrunch says generated images can be turned into layered designs through Canva Magic, and Digital Trends calls this Magic Layers technology. I did not find it in The Letter Two. How the layers are split, and whether text stays editable, is not confirmed.</li>
     </ul>
     <p class="ptext">That last item is the same question we raised for <a href="https://designrefs.com/articles/ideogram-vector-1-editable-svg/">Ideogram Vector 1.0</a>. Whether an image AI hands you one picture or a file you can edit is what matters most in real work.</p>
-    <h2 class="psub" id="s6">What to test first</h2>
+    <h2 class="psub" id="s5">What to test first</h2>
     <p class="ptext"><strong>One text-heavy poster.</strong> Run a poster with a date, venue, price and phone number through the same prompt ten times. Count how many come out with no text errors. Run the same prompt through the model you use now. Without that comparison, &quot;handles text well&quot; is just a feeling.</p>
     <p class="ptext"><strong>Korean headlines.</strong> It is unknown whether Korean is among the 55 languages, so test a Korean headline and small Korean body text separately. Characters with final consonants and small sizes break first.</p>
     <p class="ptext"><strong>Change one thing.</strong> Ask for a single-element edit, such as &quot;keep the logo, change only the background color.&quot; Many models advertise editing, so it is worth checking whether the rest really stays put. It is the same test we used for <a href="https://designrefs.com/articles/krea-3-edit-keep-logo/">Krea 3&#x27;s edit model</a>.</p>
     <p class="ptext"><strong>Open the converted file.</strong> If you can use the layer conversion, open the result and check whether the text is a text box. That one check decides how long delivery takes.</p>
-    <h2 class="psub" id="s7">What we don&#x27;t know yet</h2>
+    <h2 class="psub" id="s6">What we don&#x27;t know yet</h2>
     <ul class="ptext-list">
       <li><strong>Price.</strong> API rates, app credit use and free limits have no confirmed source.</li>
       <li><strong>Independent tests.</strong> Apart from the rankings Canva cites, I found no third-party comparison.</li>
@@ -75,7 +68,7 @@
       <li><strong>Layer conversion in practice.</strong> How well it separates layers, and whether text stays editable, is unknown until someone opens a file.</li>
       <li><strong>Specifications.</strong> Model size and technical documentation were reported as not published.</li>
     </ul>
-    <h2 class="psub" id="s8">So for now</h2>
+    <h2 class="psub" id="s7">So for now</h2>
     <p class="ptext"><strong>Count ten generations.</strong> Run one text-heavy poster ten times with the same prompt and record how many have no text errors. Put it next to your current tool under identical conditions, or there is no reason to switch.</p>
     <p class="ptext"><strong>Read the terms before client work.</strong> Until conditions on commercial use and template training appear, keep practice drafts and deliverables separate. Don&#x27;t make promises that rest on something unconfirmed.</p>
     <p class="ptext"><strong>Fix the layout in words first.</strong> Whether or not a model plans first, writing position and size order into the prompt, such as &quot;title in the top third, date largest under it, venue at the bottom,&quot; may help cut the number of regenerations. That is a method worth trying, not a result I compared.</p>
@@ -83,7 +76,7 @@
     <p class="art__note">Sources: <a href="https://techcrunch.com/2026/10/22/canva-releases-its-first-image-generation-model/" target="_blank" rel="noopener">TechCrunch: Canva releases its first image generation model</a>, <a href="https://www.digitaltrends.com/computing/canva-craft-ai-image-generation-model-launch/" target="_blank" rel="noopener">Digital Trends: Canva enters the AI image generation race with Craft</a>, <a href="https://thelettertwo.com/2026/10/23/canva-craft-ai-image-model" target="_blank" rel="noopener">The Letter Two: Canva Craft Is Canva Research&#x27;s First Image Model</a>, <a href="https://futuretools.io/news" target="_blank" rel="noopener">Future Tools news</a>.</p>]]></content:encoded>
     </item>
     <item>
-      <title>When an AI-made logo turns blurry once you enlarge it: what to check in Ideogram Vector 1.0</title>
+      <title>Ideogram Vector 1.0: what changes when AI logos come out as SVG</title>
       <link>https://designrefs.com/en/articles/ideogram-vector-1-editable-svg/</link>
       <guid isPermaLink="true">https://designrefs.com/en/articles/ideogram-vector-1-editable-svg/</guid>
       <pubDate>Sat, 24 Oct 2026 09:00:00 +0900</pubDate>
@@ -96,18 +89,11 @@
       <img src="https://designrefs.com/articles/img/ideogram-vector-1-editable-svg-shot1.webp" alt="Ideogram developer docs, Generate SVG API page. Source: developer.ideogram.ai/api-reference/vectors/generate-svg (captured 2026-10-24)" loading="lazy" decoding="async" />
       <figcaption>Ideogram developer docs, Generate SVG API page. Source: developer.ideogram.ai/api-reference/vectors/generate-svg (captured 2026-10-24)</figcaption>
     </figure>
-    <h2 class="psub" id="s1">Before you read</h2>
-    <ul class="ptext-list">
-      <li>I did not run the model myself. Everything below comes from the developer docs and reporting based on Ideogram&#x27;s announcement.</li>
-      <li>Ideogram&#x27;s X post, blog and product page did not open for me (access denied). I only saw the announcement wording through quotes in search results and articles.</li>
-      <li>The two documentation pages I opened list no prices. The price table below comes from two outside articles that cite Ideogram&#x27;s published rates, and the numbers matched.</li>
-      <li>I found no independent test of the output. &quot;Clean&quot; is, for now, Ideogram&#x27;s description.</li>
-      <li>Which app plan includes it, and how many credits it costs in the app, was not stated.</li>
-    </ul>
-    <h2 class="psub" id="s2">Raster and vector in one line</h2>
+    <p class="ptext">This is based on Ideogram&#x27;s developer docs and coverage of the launch; I haven&#x27;t run the model myself. Pricing wasn&#x27;t in the official docs, so it comes from two outside write-ups that quote them, and the two matched. &#x27;Clean output&#x27; is still Ideogram&#x27;s description; I found no outside tests.</p>
+    <h2 class="psub" id="s1">Raster and vector in one line</h2>
     <p class="ptext">Raster images are built from pixels, so they blur when enlarged. Vector images are built from points and curves described by math, so lines stay sharp at any size. Logos, icons, signage and merchandise printing often require vector files. Most image AI so far returned raster only, and converting to vector was a separate job.</p>
     <p class="ptext">As relayed in coverage, Ideogram&#x27;s announcement says you can generate clean, editable SVGs with smooth gradients and sharp typography from a text prompt, or turn any image into a detailed, scalable vector. It is live in the Ideogram app and the API.</p>
-    <h2 class="psub" id="s3">What the official docs show</h2>
+    <h2 class="psub" id="s2">What the official docs show</h2>
     <p class="ptext">The API docs describe two separate jobs.</p>
     <div class="art__tablewrap"><table class="art__table">
       <thead><tr><th>Job</th><th>Endpoint</th><th>What you send</th></tr></thead>
@@ -126,7 +112,7 @@
       <li>There is a limit on simultaneous jobs, and exceeding it returns a 429 error. The docs also list other rejection reasons such as a daily limit or a required subscription.</li>
     </ul>
     <p class="ptext">Neither page says anything about layers, text handling or gradient quality. You only learn that by opening the output files.</p>
-    <h2 class="psub" id="s4">The reported prices</h2>
+    <h2 class="psub" id="s3">The reported prices</h2>
     <div class="art__tablewrap"><table class="art__table">
       <thead><tr><th>Job</th><th>Per image, API</th></tr></thead>
       <tbody>
@@ -139,15 +125,15 @@
     </table></div>
     <p class="art__note">Source: <a href="https://creatorstoolbox.com/blog/ideogram-vector-model" target="_blank" rel="noopener">Creators Toolbox: Ideogram Vector</a>, <a href="https://www.orcarouter.ai/blog/ideogram-vector-1-0-svg-file-output" target="_blank" rel="noopener">OrcaRouter: What the SVG File Actually Holds</a>. Both cite Ideogram&#x27;s published rates and give the same numbers. I could not confirm the prices on the official developer docs pages.</p>
     <p class="ptext">Doing the math, ten high-quality outputs cost $2.00. That is not a heavy amount if you are showing a client several options. It is an API price, though. The in-app credit cost is unknown.</p>
-    <h2 class="psub" id="s5">Three things to open first</h2>
+    <h2 class="psub" id="s4">Three things to open first</h2>
     <p class="ptext"><strong>First, are the shapes separated into layers?</strong> According to outside articles, Ideogram says generated SVGs come back with shapes you can move individually. For the image-to-vector side, they say grouping shapes into layers is &quot;not yet available.&quot; The conversion doc I opened shows no such option. If you convert a photo or a PNG logo, expect a flat pile of overlapping paths and plan time to clean it up in Illustrator or Figma.</p>
     <p class="ptext"><strong>Second, does the text stay text?</strong> The announcement stresses &quot;sharp typography.&quot; Whether that type is editable text or outlined shapes is not stated in any source. If you need to fix one typo in a logo&#x27;s name, the difference matters. Outlined letters mean retyping, and the typeface is unknown.</p>
     <p class="ptext"><strong>Third, how many points are there?</strong> SVGs heavy on gradients and detail can contain thousands of paths. An outside article notes files may get large but gives no figure. For web icons, check file size and rendering speed. For print, check stroke widths and overlapping fills.</p>
     <p class="ptext">Coverage repeats that the files open for editing in Illustrator or Figma. That, too, is Ideogram&#x27;s description. Whether the file structure is pleasant to work with is a separate question.</p>
-    <h2 class="psub" id="s6">Next to what already exists</h2>
+    <h2 class="psub" id="s5">Next to what already exists</h2>
     <p class="ptext">This is not the first AI that outputs vectors directly. One search result described Recraft as producing SVG natively. What is new here is less &quot;an AI makes vectors&quot; and more &quot;a well-known image-generation company shipped a dedicated vector model.&quot; I found no comparison showing which is better.</p>
     <p class="ptext">Image generators like Ideogram, along with AI logo and brand-kit tools, are collected with Recraft, Looka and others under image generation on <a href="https://designrefs.com/ai/">AI design tools</a>. Fixing an image instead of rerolling it is covered in <a href="https://designrefs.com/articles/krea-3-edit-keep-logo/">Background changed and the logo changed too: what to check in Krea 3&#x27;s edit model</a>. That one is raster editing; this one is vector output, so they serve different moments.</p>
-    <h2 class="psub" id="s7">What is not known yet</h2>
+    <h2 class="psub" id="s6">What is not known yet</h2>
     <ul class="ptext-list">
       <li><strong>Output quality.</strong> No independent test shows whether it is stronger on logos, icons or posters.</li>
       <li><strong>App pricing.</strong> Whether free accounts can use it, and what it costs in credits, was not confirmed.</li>
@@ -155,7 +141,7 @@
       <li><strong>Editing.</strong> I saw no endpoint for revising a generated SVG by prompt, and outside articles also point you to a design tool for edits.</li>
       <li><strong>What quality levels mean.</strong> The docs do not explain how low, medium and high differ.</li>
     </ul>
-    <h2 class="psub" id="s8">What to do now</h2>
+    <h2 class="psub" id="s7">What to do now</h2>
     <p class="ptext"><strong>Sort raster from vector first.</strong> When a client asks for the original file, find out which format they actually need. Print, signage and merchandise need vector. Web illustrations are often fine as PNG. That saves you from swapping models when the real issue is the format.</p>
     <p class="ptext"><strong>Open about ten files.</strong> Generate one logo, one icon set and one poster with type, then open each in Illustrator or Figma. Note whether layers are separated, whether text is live, and how many points there are. That tells you what to hand to this model and what not to. If you use the API, check the price with <code>dry_run</code> first.</p>
     <p class="ptext"><strong>Reserve time for a human pass before delivery.</strong> A converted SVG may be one lump of overlapping shapes. Put color values, stroke widths and naming cleanup into your estimate, and &quot;AI should make it quick&quot; becomes easier to answer.</p>
@@ -163,7 +149,7 @@
     <p class="art__note">Sources: <a href="https://developer.ideogram.ai/api-reference/vectors/generate-svg.md" target="_blank" rel="noopener">Ideogram developer docs: Generate SVG</a>, <a href="https://developer.ideogram.ai/api-reference/vectors/image-to-svg.md" target="_blank" rel="noopener">Vectorizer</a>, <a href="https://x.com/ideogram_ai/status/2113300317584720259" target="_blank" rel="noopener">Ideogram announcement (X)</a>, <a href="https://runtimewire.com/article/ideogram-vector-1-svg-model-launch" target="_blank" rel="noopener">Runtime Wire: Ideogram launches its first vector model</a>, <a href="https://creatorstoolbox.com/blog/ideogram-vector-model" target="_blank" rel="noopener">Creators Toolbox: Ideogram Vector</a>, <a href="https://www.orcarouter.ai/blog/ideogram-vector-1-0-svg-file-output" target="_blank" rel="noopener">OrcaRouter: What the SVG File Actually Holds</a>, <a href="https://futuretools.io/news" target="_blank" rel="noopener">Future Tools news</a>.</p>]]></content:encoded>
     </item>
     <item>
-      <title>When a three-line copy fix means opening Webflow again: what to check in the Gemini connector</title>
+      <title>Editing a Webflow site from Gemini chat: what the connector does and what&#x27;s still unclear</title>
       <link>https://designrefs.com/en/articles/webflow-gemini-connector-edit-site-in-chat/</link>
       <guid isPermaLink="true">https://designrefs.com/en/articles/webflow-gemini-connector-edit-site-in-chat/</guid>
       <pubDate>Fri, 23 Oct 2026 09:00:00 +0900</pubDate>
@@ -176,18 +162,11 @@
       <img src="https://designrefs.com/articles/img/webflow-gemini-connector-edit-site-in-chat-shot1.webp" alt="Webflow marketplace page for the Google Gemini MCP Connector. Source: webflow.com/apps/detail/google-gemini-mcp-connector (captured 2026-10-23)" loading="lazy" decoding="async" />
       <figcaption>Webflow marketplace page for the Google Gemini MCP Connector. Source: webflow.com/apps/detail/google-gemini-mcp-connector (captured 2026-10-23)</figcaption>
     </figure>
-    <h2 class="psub" id="s1">Before you read</h2>
-    <ul class="ptext-list">
-      <li>I did not install this connector on my own Webflow account. Everything below is what the release and the marketplace page say.</li>
-      <li>I read the release as republished by CMSWire and TechIntelPro. I could not open the original GlobeNewswire page.</li>
-      <li>Plan-by-plan conditions, supported regions and usage limits were not specified in any source I opened.</li>
-      <li>I found no third-party test of the connector. That pages come out well is Webflow&#x27;s claim.</li>
-      <li>Some roundups describe the news as Webflow &quot;integrating Gemini into its design platform.&quot; The release says Webflow is a connected app inside the Gemini app. This piece follows the release.</li>
-    </ul>
-    <h2 class="psub" id="s2">What a connected app is</h2>
+    <p class="ptext">This follows the press release and the marketplace page; I haven&#x27;t installed the connector myself. Per-plan terms, regions and usage limits weren&#x27;t specified anywhere. Some outlets summarized it as Webflow integrating Gemini, but the press release calls it a connected app inside the Gemini app, and this piece follows that wording.</p>
+    <h2 class="psub" id="s1">What a connected app is</h2>
     <p class="ptext">MCP is a standard that lets an AI app call another tool&#x27;s functions. Think of it as an outlet between the chat window and a service. Webflow already ran an MCP server, and according to the release the capabilities offered through Claude, ChatGPT, Codex and Slack now reach Gemini too.</p>
     <p class="ptext">Gemini has a connector marketplace open only to approved partners, and Webflow is on it. The marketplace page describes the app as connecting your Webflow account to Gemini so you can edit your site by conversation and ask about site performance. You install it by logging in on that page. The page gives no detailed steps.</p>
-    <h2 class="psub" id="s3">The seven things the release lists</h2>
+    <h2 class="psub" id="s2">The seven things the release lists</h2>
     <div class="art__tablewrap"><table class="art__table">
       <thead><tr><th>What it does</th><th>How the release describes it</th></tr></thead>
       <tbody>
@@ -202,11 +181,11 @@
     </table></div>
     <p class="art__note">Source: <a href="https://www.cmswire.com/the-wire/webflow-and-google-gemini-announce-new-agentic-integration/" target="_blank" rel="noopener">CMSWire: Webflow and Google Gemini announce new agentic integration</a> (press release, 2026-10-15). The table condenses the release&#x27;s items.</p>
     <p class="ptext">The marketplace page lists similar things in different words: turning a design or description into responsive pages, bulk-creating and editing collection items, adding motion and then fine-tuning it in Webflow&#x27;s visual timeline, and getting a prioritized fix list.</p>
-    <h2 class="psub" id="s4">Three things a designer would notice</h2>
+    <h2 class="psub" id="s3">Three things a designer would notice</h2>
     <p class="ptext"><strong>First, &quot;on your existing styles.&quot;</strong> The release says pages and components are built on your existing styles and brand system, meaning the color and type rules and the button and card components already set up in the site. How this works on a site without tidy rules is not covered. Passing rules to an AI was the subject of <a href="https://designrefs.com/articles/design-md-for-ai/">DESIGN.md, one file that hands your design rules to AI</a>. This connector seems to assume those rules already live in the site. That is my reading.</p>
     <p class="ptext"><strong>Second, there is a record.</strong> The release says existing roles and permissions still apply and AI actions are attributed in activity logs. The marketplace page says installing requires site data access and a designer-workflow permission. On a client site, having a record of who changed what is better. I did not see how an AI action looks in the log.</p>
     <p class="ptext"><strong>Third, analytics questions share the same chat.</strong> Not only building pages: you can also ask which pages got the most views last month, or how AI answers describe your brand. The last item connects to the problem in <a href="https://designrefs.com/articles/ai-search-brand-visibility/">When an AI answer replaces search results</a>. How accurate that analysis is cannot be told from these sources.</p>
-    <h2 class="psub" id="s5">Price and conditions</h2>
+    <h2 class="psub" id="s4">Price and conditions</h2>
     <ul class="ptext-list">
       <li>The connected app is free to install.</li>
       <li>It currently does not consume Webflow AI credits. Read &quot;currently&quot; as a condition. No change was announced.</li>
@@ -214,7 +193,7 @@
       <li>The marketplace page says Webflow reviewed the app&#x27;s quality but does not endorse or certify it.</li>
     </ul>
     <p class="ptext">Do not confuse it with this week&#x27;s Figma news. Data storage and an admin panel inside Figma Make were covered in <a href="https://designrefs.com/articles/figma-make-payload-save-button/">When the Save button saves nothing</a>. That one is about building a new site from a prompt. This one is about handling an existing Webflow site from chat.</p>
-    <h2 class="psub" id="s6">What is still unknown</h2>
+    <h2 class="psub" id="s5">What is still unknown</h2>
     <ul class="ptext-list">
       <li><strong>Undo.</strong> Whether a chat edit can be reverted in one step, or whether there is a confirmation before publishing, is not stated.</li>
       <li><strong>Quality.</strong> Whether interactions and responsive pages match a designer&#x27;s work has not been shown.</li>
@@ -222,10 +201,10 @@
       <li><strong>Regions and plans.</strong> The release does not describe regional availability.</li>
       <li><strong>How long it stays credit-free.</strong> Not stated.</li>
     </ul>
-    <h2 class="psub" id="s7">Matching it to the work you already do</h2>
+    <h2 class="psub" id="s6">Matching it to the work you already do</h2>
     <p class="ptext">Copy tweaks, photo swaps and tidying seven blog entries are the first candidates, since bulk create and edit for collections is on the list. Laying out a brand-new page from scratch can wait until you have seen results.</p>
     <p class="ptext">For freelancers, one more handover note may be needed. If a client&#x27;s staff will edit the site by chat, you have to decide what permission they get. The release says the existing permission system applies, so checking your current settings is a sensible first step. That is my opinion.</p>
-    <h2 class="psub" id="s8">What to do now</h2>
+    <h2 class="psub" id="s7">What to do now</h2>
     <p class="ptext"><strong>Check your Webflow permissions first.</strong> Installing needs site data and designer-workflow permissions, according to the page. Before connecting a client site, list who holds edit rights and find where the activity log lives.</p>
     <p class="ptext"><strong>Start on a site where mistakes are cheap.</strong> On a portfolio or test site, try a small request such as &quot;rewrite the intro of these five collection items in the same tone.&quot; If it goes wrong, check how to revert at the same time.</p>
     <p class="ptext"><strong>Read &quot;free&quot; as &quot;for now.&quot;</strong> Nothing promises that credit-free use continues. Whether to build AI usage into a monthly maintenance fee can wait until pricing is set.</p>
@@ -233,7 +212,7 @@
     <p class="art__note">Sources: <a href="https://www.cmswire.com/the-wire/webflow-and-google-gemini-announce-new-agentic-integration/" target="_blank" rel="noopener">CMSWire: Webflow and Google Gemini announce new agentic integration</a>, <a href="https://techintelpro.com/news/webflow-and-google-gemini-announce-agentic-integration" target="_blank" rel="noopener">TechIntelPro press release copy</a>, <a href="https://webflow.com/apps/detail/google-gemini-mcp-connector" target="_blank" rel="noopener">Webflow app marketplace: Google Gemini MCP Connector</a>, <a href="https://martech.org/the-latest-ai-powered-martech-news-and-releases/" target="_blank" rel="noopener">MarTech news roundup</a>.</p>]]></content:encoded>
     </item>
     <item>
-      <title>When the Save button saves nothing: what to check in Payload, now inside Figma Make</title>
+      <title>Payload lands in Figma Make: your prototype gets a database and logins</title>
       <link>https://designrefs.com/en/articles/figma-make-payload-save-button/</link>
       <guid isPermaLink="true">https://designrefs.com/en/articles/figma-make-payload-save-button/</guid>
       <pubDate>Thu, 22 Oct 2026 09:00:00 +0900</pubDate>
@@ -245,15 +224,8 @@
       <img src="https://designrefs.com/articles/img/figma-make-payload-save-button-shot1.webp" alt="Figma blog &#x27;Create, ship, and manage data-backed websites with Payload in Figma&#x27;. Source: figma.com/blog/websites-with-payload-in-figma (captured 2026-10-22)" loading="lazy" decoding="async" />
       <figcaption>Figma blog &#x27;Create, ship, and manage data-backed websites with Payload in Figma&#x27;. Source: figma.com/blog/websites-with-payload-in-figma (captured 2026-10-22)</figcaption>
     </figure>
-    <h2 class="psub" id="s1">Before you read</h2>
-    <ul class="ptext-list">
-      <li>I did not run Payload in Figma Make for this piece. Everything below is what Figma&#x27;s blog and release notes say.</li>
-      <li>The help article Figma points to (&quot;Add a backend to a functional prototype or web app&quot;) would not open for me, so I could not check it.</li>
-      <li>The post gives no usage limits, storage caps or rate limits.</li>
-      <li>It also does not say whether Figma-hosted projects can be exported or self-hosted.</li>
-      <li>Access rolls out to all accounts over several weeks, so it may not be visible in yours yet.</li>
-    </ul>
-    <h2 class="psub" id="s2">What the post promises</h2>
+    <p class="ptext">This is based on Figma&#x27;s official blog and release notes; I haven&#x27;t run Payload myself. Usage and storage limits, and whether projects can be exported, aren&#x27;t stated. Access takes a few weeks to reach every account, so it may not show up for you yet.</p>
+    <h2 class="psub" id="s1">What the post promises</h2>
     <p class="ptext">Payload is an open-source headless CMS: a content-management tool kept separate from the screen. It joined Figma and now lives inside Figma Make. The post is by Figma&#x27;s James Mikrut, dated October 15, 2026.</p>
     <p class="ptext">As described:</p>
     <ul class="ptext-list">
@@ -263,7 +235,7 @@
       <li>API keys can be stored in Make&#x27;s settings. Figma keeps them securely and they are not exposed to visitors once the site is published. Before this, the post says, you had to set up and connect a Supabase project.</li>
       <li>On a published site, add /admin to the address to reach the admin panel.</li>
     </ul>
-    <h2 class="psub" id="s3">Each role gets a different door</h2>
+    <h2 class="psub" id="s2">Each role gets a different door</h2>
     <div class="art__tablewrap"><table class="art__table">
       <thead><tr><th>Role</th><th>What the post says they do</th></tr></thead>
       <tbody>
@@ -275,7 +247,7 @@
     <p class="art__note">Source: <a href="https://www.figma.com/blog/websites-with-payload-in-figma/" target="_blank" rel="noopener">Figma blog: Payload in Figma</a>. Summary of Figma&#x27;s own description.</p>
     <p class="ptext">Each role gets a workspace, and there are granular permissions to control who can change what. The post does not say which permission levels exist.</p>
     <p class="ptext">What stands out for designers is the first line: start from real content, not lorem ipsum. That reading is mine.</p>
-    <h2 class="psub" id="s4">Price and timing: free now, pricing later</h2>
+    <h2 class="psub" id="s3">Price and timing: free now, pricing later</h2>
     <p class="ptext">From Figma&#x27;s release notes and blog:</p>
     <ul class="ptext-list">
       <li>Payload is available on all plans. Access rolls out to all accounts over the coming weeks.</li>
@@ -284,7 +256,7 @@
     </ul>
     <p class="ptext">&quot;Free&quot; comes with &quot;for now.&quot; If the site is for a client, settle in advance who pays when a fee appears. That is my opinion.</p>
     <p class="ptext">To avoid mixing up news from the same week: the free window for code layers is separate from Payload. We covered the agent starting to use AI credits in <a href="https://designrefs.com/articles/figma-agent-ai-credits-ga/">Figma&#x27;s agent started charging credits</a>.</p>
-    <h2 class="psub" id="s5">What we can&#x27;t know yet</h2>
+    <h2 class="psub" id="s4">What we can&#x27;t know yet</h2>
     <ul class="ptext-list">
       <li><strong>Getting data out.</strong> The post does not say whether Figma-hosted projects can be exported or self-hosted. It points to Payload.org for self-hosting or extending, which reads as being about the open-source project, not Figma-hosted apps.</li>
       <li><strong>Limits.</strong> No storage, request or user caps are listed.</li>
@@ -292,12 +264,12 @@
       <li><strong>Real-world quality.</strong> That one prompt yields a usable admin panel is Figma&#x27;s description. Your project is the test.</li>
       <li><strong>Independent checks.</strong> None of the sources I opened was a third-party test of Payload in Figma.</li>
     </ul>
-    <h2 class="psub" id="s6">What this means for designers</h2>
+    <h2 class="psub" id="s5">What this means for designers</h2>
     <p class="ptext">For screens whose content changes, such as a portfolio or a small shop site, the distance between mockup and live site shrinks. Client jobs that need an admin panel for editing copy fall in this range too.</p>
     <p class="ptext">For vibe coders, it removes the step of shopping for a database and login separately. It does not fix the problem of AI-made screens all looking alike. Choosing fonts and colors still comes first.</p>
     <p class="ptext">One worry is responsibility. When you only draw screens, a mistake means redrawing. Once login and data are attached, privacy and backups follow. Think first about whose data the site collects. That is also my opinion.</p>
     <p class="ptext">We covered the related Figma flow in <a href="https://designrefs.com/articles/figma-specs-markdown-context/">Figma Specs: handing context to your team and AI in one Markdown page</a>. Payload adds data on top of that.</p>
-    <h2 class="psub" id="s7">So for now</h2>
+    <h2 class="psub" id="s6">So for now</h2>
     <p class="ptext"><strong>Start with ten real rows.</strong> Put ten real product names or post titles in a CSV, upload it and have a collection created. It is the method the post shows, and you see at once how real text changes the screen.</p>
     <p class="ptext"><strong>For client work, write down the hosting terms.</strong> It is free beta now but pricing is unset. Note who pays when a fee appears and how the data would move.</p>
     <p class="ptext"><strong>Pause before collecting personal data.</strong> If you accept user logins, list what you store, and check limits and export options in the help center before going live.</p>
@@ -305,7 +277,7 @@
     <p class="art__note">Sources: <a href="https://www.figma.com/blog/websites-with-payload-in-figma/" target="_blank" rel="noopener">Figma blog: Payload in Figma</a>, <a href="https://releasebot.io/updates/figma" target="_blank" rel="noopener">Figma release notes (Releasebot)</a>.</p>]]></content:encoded>
     </item>
     <item>
-      <title>When you swapped the background and the logo changed too: what to check in Krea 3 (about $0.06 per 2K edit)</title>
+      <title>Will Krea 3 keep your logo intact? About $0.06 per 2K edit</title>
       <link>https://designrefs.com/en/articles/krea-3-edit-keep-logo/</link>
       <guid isPermaLink="true">https://designrefs.com/en/articles/krea-3-edit-keep-logo/</guid>
       <pubDate>Wed, 21 Oct 2026 09:00:00 +0900</pubDate>
@@ -317,15 +289,8 @@
       <img src="https://designrefs.com/articles/img/krea-blog-v2.webp" alt="Krea blog &#x27;Introducing Krea 3&#x27;. Source: krea.ai/blog/introducing-krea-3 (captured 2026-10-21)" loading="lazy" decoding="async" />
       <figcaption>Krea blog &#x27;Introducing Krea 3&#x27;. Source: krea.ai/blog/introducing-krea-3 (captured 2026-10-21)</figcaption>
     </figure>
-    <h2 class="psub" id="s1">Before you read</h2>
-    <ul class="ptext-list">
-      <li>I did not run Krea 3 for this piece. Speed, price and quality figures below are all Krea&#x27;s own claims.</li>
-      <li>Krea compared itself with Nano Banana Pro and GPT Image 2. I found no third-party test under the same conditions in the sources I opened.</li>
-      <li>Whether the examples in the post (a sofa, a label) hold up on your own files is unknown.</li>
-      <li>The post gives no specific case for packaging with lots of small type or complex logos.</li>
-      <li>Plan limits are shown inconsistently on the pricing page, so I couldn&#x27;t pin them down. More below.</li>
-    </ul>
-    <h2 class="psub" id="s2">What the launch post promises</h2>
+    <p class="ptext">Speed, price and quality are all Krea&#x27;s own numbers. It compared against Nano Banana Pro and GPT Image 2, and I found no third-party reproduction under the same conditions. How it holds up on text-heavy packaging or complex logos has no examples yet. Plan limits are inconsistent on the pricing page, so I cover them separately later.</p>
+    <h2 class="psub" id="s1">What the launch post promises</h2>
     <p class="ptext">The post describes the editing behavior like this:</p>
     <ul class="ptext-list">
       <li>It preserves what you don&#x27;t ask it to change. Products keep their labels and logos while the scene around them changes.</li>
@@ -337,7 +302,7 @@
     </ul>
     <p class="ptext">The sofa before/after images belong to Krea, so they are not reproduced here. You can see them in the original launch post.</p>
     <p class="ptext">It is closer to fixing one spot than to rolling the dice again. We covered this direction in <a href="https://designrefs.com/articles/image-ai-edit-not-reroll/">Fix it, don&#x27;t reroll: image AI moves toward editing</a>.</p>
-    <h2 class="psub" id="s3">Speed and price: the numbers Krea published</h2>
+    <h2 class="psub" id="s2">Speed and price: the numbers Krea published</h2>
     <ul class="ptext-list">
       <li>Most edits finish end to end in under 8 seconds at native 2K.</li>
       <li>The fastest setup takes about 4 to 5 seconds. Krea says it is not real-time yet.</li>
@@ -360,7 +325,7 @@
     <p class="art__note">Source: <a href="https://www.krea.ai/blog/introducing-krea-3" target="_blank" rel="noopener">Krea blog: Introducing Krea 3</a>. Times were measured by Krea from September 24 to October 1. For Krea 3, &quot;under 8 seconds&quot; is an upper bound for most edits as stated in the post, not a median.</p>
     <p class="ptext">Dividing by 100,000 gives $0.135 per image for Nano Banana Pro and $0.22 for GPT Image 2, the same per-image figures the post lists. For one designer editing a single picture the gap hardly matters. For a few hundred product shots it does.</p>
     <p class="ptext">A caution: the timing comparison was measured on Krea&#x27;s own service, while the other models run elsewhere. With a different queue the results would differ. Treat the numbers as a direction, not a verdict.</p>
-    <h2 class="psub" id="s4">Krea&#x27;s prompting advice</h2>
+    <h2 class="psub" id="s3">Krea&#x27;s prompting advice</h2>
     <p class="ptext">The launch post lists four habits:</p>
     <ol class="ptext-list">
       <li>Start by stating what should stay the same.</li>
@@ -371,7 +336,7 @@
     <p class="ptext">Applied to the product photo above, a prompt might read as follows. This is my paraphrase of Krea&#x27;s advice, and I haven&#x27;t run it.</p>
     <blockquote class="art__quote">Keep the bottle&#x27;s label and logo as they are. Change only the background to a wooden shelf in morning light. Keep the camera angle.</blockquote>
     <p class="ptext">Putting what to protect before what to change stands out. Presumably the model reads from the sentence where it is allowed to touch. That is my guess.</p>
-    <h2 class="psub" id="s5">Where you can use it</h2>
+    <h2 class="psub" id="s4">Where you can use it</h2>
     <p class="ptext">According to the post, Krea 3 is live on krea.ai (Krea says it has 30 million users) and in the Krea API. It is also available through fal, Hedra, Together AI, Nous Research, OpenRouter and Replicate. Enterprise teams can contact Krea.</p>
     <figure class="art__fig">
       <img src="https://designrefs.com/articles/img/krea-home.webp" alt="Krea home page. Source: krea.ai (captured 2026-10-21)" loading="lazy" decoding="async" />
@@ -394,7 +359,7 @@
     </table></div>
     <p class="art__note">Source: <a href="https://www.krea.ai/pricing" target="_blank" rel="noopener">Krea pricing</a>. The page&#x27;s structured data lists Max as $70 and 40,000 units, which differs from the visible text. Check the current page before you pay.</p>
     <p class="ptext">How many Krea 3 images the free plan allows was unclear. The comparison table seems to show about 5 images a day (marked as approximate) in the Krea 3 row, while a separate editing-allowance table shows other numbers. I couldn&#x27;t tell which applies. Try a few free runs before deciding.</p>
-    <h2 class="psub" id="s6">What is still missing</h2>
+    <h2 class="psub" id="s5">What is still missing</h2>
     <ul class="ptext-list">
       <li><strong>How well it preserves originals.</strong> The post says &quot;stays as it was,&quot; but nobody published numbers for tiny label text or intricate patterns.</li>
       <li><strong>Choosing the area.</strong> The post&#x27;s roadmap lists instructions by circling an area or writing on the image. Krea says it is building that. For now you describe the location in words.</li>
@@ -402,21 +367,21 @@
       <li><strong>Copyright and commercial use.</strong> This piece doesn&#x27;t cover whether you may use the output for paid work. See <a href="https://designrefs.com/articles/ai-image-commercial-use/">Can you use AI images in client work?</a> for the general principles, and read the service terms separately.</li>
       <li><strong>Independent verification.</strong> Among the sources I opened, none compared Krea 3 with other models under the same conditions.</li>
     </ul>
-    <h2 class="psub" id="s7">What this means for designers</h2>
+    <h2 class="psub" id="s6">What this means for designers</h2>
     <p class="ptext">Editing models are useful when what must not change is clear: product photos, packaging mockups, ad drafts. They matter less for brainstorming many new images.</p>
     <p class="ptext">One worry is speed. Eight seconds makes it easy to run many times, and that raises the odds of missing a result that is plausible but wrong. Overlay the output on the original and check logos and lettering every time. That is my opinion.</p>
     <p class="ptext">For vibe coders it is an easy way to adjust product images and hero backgrounds for a landing page. But the problem of AI screens all looking alike isn&#x27;t solved by images. Choosing fonts and colors comes first.</p>
-    <h2 class="psub" id="s8">So for now</h2>
+    <h2 class="psub" id="s7">So for now</h2>
     <p class="ptext"><strong>Write what to keep first, in one line.</strong> Put &quot;keep the label and logo as they are&quot; at the front, then name a single change with &quot;only.&quot; It is the order Krea recommends, and worth trying on any editing model.</p>
     <p class="ptext"><strong>Test with one of your own photos inside the free limit.</strong> Skip the launch examples. Use the photo with the smallest label text, run it once, and overlay it on the original. Zoom in on the letter edges and you&#x27;ll know quickly.</p>
     <p class="ptext"><strong>Read the terms before client work.</strong> Good speed and price don&#x27;t settle usage rights. Note what you confirmed next to the project file.</p>
     <p class="ptext">Tools for each use, including image generation and editing, are collected in <a href="https://designrefs.com/ai/">AI design tools</a>. Krea is in the image generation list.</p>
-    <h2 class="psub" id="s9">The maker&#x27;s numbers, your files</h2>
+    <h2 class="psub" id="s8">The maker&#x27;s numbers, your files</h2>
     <p class="ptext">Krea 3 is an editing model that promises to leave untouched what you don&#x27;t ask it to change, and Krea says it finishes most edits in under 8 seconds at $0.06 per 2K image. These figures come from the maker, so how it performs on your own files is something you have to run to find out.</p>
     <p class="art__note">Sources: <a href="https://www.krea.ai/blog/introducing-krea-3" target="_blank" rel="noopener">Krea blog: Introducing Krea 3</a>, <a href="https://www.krea.ai/blog" target="_blank" rel="noopener">Krea blog index</a>, <a href="https://www.krea.ai/pricing" target="_blank" rel="noopener">Krea pricing</a>.</p>]]></content:encoded>
     </item>
     <item>
-      <title>When your mockup doesn&#x27;t click: what to check in Figma&#x27;s code layers (free on paid plans until Nov 4)</title>
+      <title>Figma code layers in open beta: clickable mockups right on the canvas (free until Nov 4)</title>
       <link>https://designrefs.com/en/articles/figma-code-layers-open-beta/</link>
       <guid isPermaLink="true">https://designrefs.com/en/articles/figma-code-layers-open-beta/</guid>
       <pubDate>Tue, 20 Oct 2026 09:00:00 +0900</pubDate>
@@ -424,18 +389,11 @@
       <description>Figma opened code layers in open beta on October 15. You can turn design frames, a GitHub repo, a website capture or a prompt into a clickable, code-backed prototype on the canvas. Checked against the release notes, help article and blog: what is confirmed and what is missing.</description>
       <content:encoded><![CDATA[    <p class="ptext">A client replies to your mockup: &quot;What happens when I press this button?&quot; A static frame has no answer. Wiring up prototype links can eat a whole day. This is the moment you want a screen that actually responds.</p>
     <p class="ptext">On October 15, at Config India 2026, Figma opened code layers in open beta. They put prototypes backed by running code right on the canvas. This piece repeats only what I verified in Figma&#x27;s release notes, help article and blog, and lists separately what remains unconfirmed.</p>
-    <h2 class="psub" id="s1">Before you read</h2>
-    <ul class="ptext-list">
-      <li>I did not run code layers for this piece. Everything below comes from official documentation.</li>
-      <li>The rollout is gradual, so it may not appear in your account yet. The help article says &quot;gradually rolling out.&quot;</li>
-      <li>I found no supported frameworks, usage limits or per-task credit costs in the docs.</li>
-      <li>Plan wording differs between documents. More on that below.</li>
-      <li>I found no public evidence on whether the code a layer produces is good enough for production, so I don&#x27;t judge that.</li>
-    </ul>
-    <h2 class="psub" id="s2">What a code layer is</h2>
+    <p class="ptext">Code layers are rolling out gradually, so they may not show up in your account yet. This follows the official docs; I haven&#x27;t run it myself. Supported frameworks, usage limits and credit costs weren&#x27;t in the docs, and plan wording differs slightly between pages, which I cover later.</p>
+    <h2 class="psub" id="s1">What a code layer is</h2>
     <p class="ptext">The help article describes code layers as interactive prototypes backed by running code that sit on the canvas. Design and code live in one file, so you can compare variations side by side and push changes back to the layer.</p>
     <p class="ptext">In short, a real button sits on the canvas instead of a drawn one. Select a layer and press Play. Several layers can run at once, and you can preview on mobile through the Figma app.</p>
-    <h2 class="psub" id="s3">Five ways to create one</h2>
+    <h2 class="psub" id="s2">Five ways to create one</h2>
     <div class="art__tablewrap"><table class="art__table">
       <thead><tr><th>Method</th><th>How</th></tr></thead>
       <tbody>
@@ -450,7 +408,7 @@
     <p class="ptext">There is one more route. You can ask a coding agent such as Claude Code to import a project into a Figma file. The docs give the example prompt &quot;Import this project as a code layer in &lt;Figma file URL&gt;.&quot; Creating layers this way requires a Full seat.</p>
     <h3 class="art__h3">Imports can be slow</h3>
     <p class="ptext">The article says importing a project through MCP can take 10 minutes or more and some projects may need changes to run in a code layer. The blog says support for more complex codebases is planned. Try a small screen first.</p>
-    <h2 class="psub" id="s4">Editing: by words, by clicking</h2>
+    <h2 class="psub" id="s3">Editing: by words, by clicking</h2>
     <ol class="ptext-list">
       <li>Ask the Figma agent in plain language.</li>
       <li>Open the code editor to view code, add comments and edit designs.</li>
@@ -458,7 +416,7 @@
       <li>Click Reload code layer to see the result.</li>
     </ol>
     <p class="ptext">Step 3 stands out for designers: you can fix elements by pointing at them without reading code. How accurate it is has no public comparison.</p>
-    <h2 class="psub" id="s5">Back to the canvas, out to GitHub</h2>
+    <h2 class="psub" id="s4">Back to the canvas, out to GitHub</h2>
     <p class="ptext">The flow isn&#x27;t one-way, according to the docs.</p>
     <ul class="ptext-list">
       <li>Extract designs from the current state, a selected element, or a recorded flow that produces multiple frames.</li>
@@ -466,7 +424,7 @@
       <li>With GitHub, Figma stores a clone you can branch, then open pull requests to merge into the original repository.</li>
     </ul>
     <p class="ptext">So the loop can run mockup → clickable screen → mockup → dev repo. When you hand off, you can show behavior as a running screen rather than as notes and pictures.</p>
-    <h2 class="psub" id="s6">Who can use it, and what it costs</h2>
+    <h2 class="psub" id="s5">Who can use it, and what it costs</h2>
     <ul class="ptext-list">
       <li>Help article: available on Education (K-12), Starter, Professional, Organization and Enterprise plans, with edit access to Figma Design files.</li>
       <li>Release notes and blog: open beta, available on all plans.</li>
@@ -478,7 +436,7 @@
     <p class="ptext">We covered agent credits in <a href="https://designrefs.com/articles/figma-agent-ai-credits-ga/">Figma&#x27;s agent started using credits</a>. It&#x27;s the same wallet, so what you&#x27;ll pay after the free period can&#x27;t be known from today&#x27;s numbers.</p>
     <p class="ptext">Plan wording differs: the blog says all plans, while the release notes&#x27; free condition says paid plans. What a free-plan account gets can&#x27;t be settled from the docs alone. Check Figma&#x27;s pricing page before paying.</p>
     <p class="ptext">Admin controls are limited too. Only Enterprise plans can opt out, and admins can disable code layers only by turning off AI features altogether. Worth knowing if your team is deciding.</p>
-    <h2 class="psub" id="s7">How it fits with the rest of that day&#x27;s news</h2>
+    <h2 class="psub" id="s6">How it fits with the rest of that day&#x27;s news</h2>
     <p class="ptext">The October 15 release notes held more than code layers.</p>
     <div class="art__tablewrap"><table class="art__table">
       <thead><tr><th>Item</th><th>Status</th><th>What it says</th></tr></thead>
@@ -492,7 +450,7 @@
     </table></div>
     <p class="art__note">Source: <a href="https://www.figma.com/release-notes/" target="_blank" rel="noopener">Figma release notes</a>, <a href="https://www.figma.com/blog/build-by-design/" target="_blank" rel="noopener">Figma blog: Config India 2026</a></p>
     <p class="ptext">The blog says guidelines and code sources will be available on all paid plans. Those two matter here: if code layers make a screen you can click, guidelines keep it from drifting off your rules. That ties to <a href="https://designrefs.com/articles/design-md-for-ai/">DESIGN.md</a> and <a href="https://designrefs.com/articles/figma-specs-markdown-context/">Figma Specs</a>, covered earlier.</p>
-    <h2 class="psub" id="s8">Still unconfirmed</h2>
+    <h2 class="psub" id="s7">Still unconfirmed</h2>
     <ul class="ptext-list">
       <li>Which frameworks and languages code layers support. The help article names none.</li>
       <li>Per-task credit costs after the free period.</li>
@@ -500,20 +458,20 @@
       <li>Exactly what a free-plan account can do. The documents word it differently.</li>
       <li>Which projects fail to import. The docs say only that some need changes.</li>
     </ul>
-    <h2 class="psub" id="s9">What this means for designers</h2>
+    <h2 class="psub" id="s8">What this means for designers</h2>
     <p class="ptext">Making a prototype has meant wiring links. Code layers put &quot;instructing a running screen in words&quot; in that place. If people can click a design before handoff, questions like &quot;is it supposed to move like this?&quot; in development might shrink. That is my guess, with no verified evidence yet.</p>
     <p class="ptext">For vibe coders it runs the other way. You can bring a built screen into Figma, extract it as a design, adjust spacing and color there, and send it back. If you lack design sense, there is now a path to polish in a design tool.</p>
-    <h2 class="psub" id="s10">What to do now</h2>
+    <h2 class="psub" id="s9">What to do now</h2>
     <p class="ptext"><strong>Test one small screen before November 4.</strong> Pick a login screen or a pricing table and click Build selection. When importing an outside project, avoid large ones because imports can take 10 minutes or more. A feel for how it behaves during the free window helps you judge credits later. The free window applies to paid plans.</p>
     <p class="ptext"><strong>Hand off a clickable screen with your next mockup.</strong> Instead of long notes on a static frame, show how it behaves. Start by checking whether it answers the client&#x27;s one-line question: &quot;what happens when I press this?&quot;</p>
     <p class="ptext"><strong>Write your rules down first.</strong> Guidelines attach to published libraries. If you don&#x27;t have one yet, start with a ten-line note: main color, fonts, corner radius, spacing unit. It works in any tool.</p>
     <p class="ptext">AI design tools by use are collected on <a href="https://designrefs.com/ai/">AI design tools</a>.</p>
-    <h2 class="psub" id="s11">Summary</h2>
+    <h2 class="psub" id="s10">Summary</h2>
     <p class="ptext">Figma now lets a running, code-backed prototype sit beside a static mockup, and creating and editing is free on paid plans through November 4. How far you can trust it has no public comparison yet. What is certain is that the work is moving a step from drawing a design to letting people click it.</p>
     <p class="art__note">Sources: <a href="https://www.figma.com/release-notes/" target="_blank" rel="noopener">Figma release notes</a>, <a href="https://help.figma.com/hc/en-us/articles/44193259600535-Code-layers-in-Figma-Design" target="_blank" rel="noopener">Figma Help: Code layers in Figma Design</a>, <a href="https://www.figma.com/blog/build-by-design/" target="_blank" rel="noopener">Figma blog: Config India 2026</a>.</p>]]></content:encoded>
     </item>
     <item>
-      <title>When every AI-built screen looks the same, Lovable dropped its &#x27;three design directions&#x27; step and put design systems first</title>
+      <title>Why Lovable dropped its &#x27;three design directions&#x27; step for design systems</title>
       <link>https://designrefs.com/en/articles/lovable-design-system-same-look/</link>
       <guid isPermaLink="true">https://designrefs.com/en/articles/lovable-design-system-same-look/</guid>
       <pubDate>Mon, 19 Oct 2026 09:00:00 +0900</pubDate>
@@ -521,14 +479,8 @@
       <description>Lovable removed the step that showed three design directions before the first build, and design systems are available on all paid plans. Checked against its changelog and docs: what is confirmed, what is missing, and how to set your own rules once.</description>
       <content:encoded><![CDATA[    <p class="ptext">If you build screens with Lovable or Cursor, they start to look alike. Rounded cards, a familiar purple, similar spacing. Rewording the prompt doesn&#x27;t change the feel much. It&#x27;s easy to blame a lack of design sense and move on.</p>
     <p class="ptext">Lovable&#x27;s official changelog has had a few entries on this over the past weeks. One removed the &#x27;three design directions&#x27; step shown before a first build. Another opened design systems to every paid plan. This piece repeats only what I verified in the changelog and the official docs, and lists separately what remains unconfirmed.</p>
-    <h2 class="psub" id="s1">Before you read</h2>
-    <ul class="ptext-list">
-      <li>I did not run Lovable for this piece. Everything below comes from the changelog and the docs.</li>
-      <li>The changelog page is very long. I read the early part, covering entries from August to October 2026.</li>
-      <li>I found no public comparison showing that design systems make output look less alike. That link is my interpretation.</li>
-      <li>A plan description in a search summary differed from the official changelog and docs. More on that below.</li>
-    </ul>
-    <h2 class="psub" id="s2">What changed</h2>
+    <p class="ptext">This is based on Lovable&#x27;s official changelog and docs (August to October entries). There&#x27;s no public comparison showing that design systems make screens look less alike, so that part is my interpretation. Plan descriptions differed between search summaries and the official docs, which I cover later.</p>
+    <h2 class="psub" id="s1">What changed</h2>
     <p class="ptext">The relevant changelog entries:</p>
     <div class="art__tablewrap"><table class="art__table">
       <thead><tr><th>Date</th><th>Item</th><th>What it says</th></tr></thead>
@@ -547,7 +499,7 @@
     <h3 class="art__h3">Design systems on every paid plan</h3>
     <p class="ptext">The August 19 entry reads: &quot;Create a design system and attach it to your projects so every build inherits your components, tokens, and design rules.&quot; In plain terms, you define parts like buttons and cards plus color and type rules once, and later builds follow them.</p>
     <p class="ptext">Wrapping an existing npm package as a design system is Enterprise only, per the same entry. The docs make the same split: a React component library based system works on all paid plans, the npm wrapper path is Enterprise only.</p>
-    <h2 class="psub" id="s3">What a design system looks like</h2>
+    <h2 class="psub" id="s2">What a design system looks like</h2>
     <p class="ptext">Lovable&#x27;s docs describe it as a way to define your component library, styling guidelines and installation instructions once and reuse them across projects in a workspace. The design system itself is a dedicated Lovable project.</p>
     <p class="ptext">The docs list three parts:</p>
     <ol class="ptext-list">
@@ -566,7 +518,7 @@
       <li>For a new project, pick it under + → Design → Use a design system. For an existing one, use Attach design system in Project settings → General.</li>
     </ol>
     <p class="ptext">Once attached, components are copied to <code>src/design-system/&lt;slug&gt;/</code> and rule files to <code>.lovable/rules/libraries/&lt;slug&gt;/</code>. When a new version appears, chat shows &quot;Update available,&quot; and accepting it replaces the existing design system files. The docs say your project&#x27;s own code is left untouched.</p>
-    <h2 class="psub" id="s4">Limits to know first</h2>
+    <h2 class="psub" id="s3">Limits to know first</h2>
     <p class="ptext">The ones that matter most to designers, from the docs:</p>
     <ul class="ptext-list">
       <li>One design system per project. Remove the current one before switching.</li>
@@ -578,30 +530,30 @@
       <li>Reading uploaded material is best-effort, and the docs tell you to review the first output.</li>
     </ul>
     <p class="ptext">The plan descriptions also differ. A search summary of the docs said design systems are available on Enterprise plans. The changelog (August 19) and the docs&#x27; plan section say the React-based version is available on all paid plans. Check Lovable&#x27;s pricing page before you pay.</p>
-    <h2 class="psub" id="s5">Other changes at the same time</h2>
+    <h2 class="psub" id="s4">Other changes at the same time</h2>
     <p class="ptext">The October 12 entry says you can mark a change directly on an image in the Files tab by drawing over an area, pinning a comment, erasing, or removing the background. The result is saved as a new file. It follows the same direction as <a href="https://designrefs.com/articles/image-ai-edit-not-reroll/">fixing instead of rerolling</a>.</p>
     <p class="ptext">There was also an &#x27;Aesthetics&#x27; update in May. Lovable&#x27;s <a href="https://x.com/Lovable/status/2053874566460752191" target="_blank" rel="noopener">post on X</a> says you can ask for typography, layout and color preferences, preview design concepts before building, and make bolder landing pages, apps and blogs. I got the May 11 date from the secondary outlet Create With and found no detailed Lovable doc. How it connects to the removed &#x27;three directions&#x27; step is not confirmed in public material.</p>
-    <h2 class="psub" id="s6">What is still unconfirmed</h2>
+    <h2 class="psub" id="s5">What is still unconfirmed</h2>
     <ul class="ptext-list">
       <li>Why the three directions step was removed. The changelog gives no explanation.</li>
       <li>Any public side-by-side of builds with and without a design system.</li>
       <li>The credit cost of design systems. The docs say only that the setup verification step costs zero credits, and give no cost for other operations such as updates.</li>
       <li>Related entries in the part of the changelog I did not read.</li>
     </ul>
-    <h2 class="psub" id="s7">What it means for designers</h2>
+    <h2 class="psub" id="s6">What it means for designers</h2>
     <p class="ptext">For vibe coders the message is simple: stop persuading the tool with every prompt and attach a rule set you decided once. For designers it&#x27;s a different job. Writing buttons, cards, colors and type rules in a form AI can read may become a new task. That is my guess.</p>
     <p class="ptext">If <a href="https://designrefs.com/articles/figma-specs-markdown-context/">Figma Specs</a> passes the context of a design as one markdown page, Lovable&#x27;s design system looks like the coding-tool version of the same idea. Different tools, same chore: write your rules down.</p>
-    <h2 class="psub" id="s8">So for now</h2>
+    <h2 class="psub" id="s7">So for now</h2>
     <p class="ptext"><strong>Write your rules in ten lines.</strong> Pick a main color, an accent, two typefaces, a corner radius and a spacing unit. Even without Lovable, it works as a rules memo for Cursor or Claude Code. We wrote up how in the <a href="https://designrefs.com/articles/design-md-for-ai/">DESIGN.md</a> piece.</p>
     <p class="ptext"><strong>Don&#x27;t leave the look open in the first prompt.</strong> Per the changelog, Lovable asks when color, type and layout are unspecified. State them up front, such as &quot;main color this, typeface this,&quot; and you skip the question.</p>
     <p class="ptext"><strong>Put the edits you like back into the rules.</strong> As the docs say, editing copied components in a connected project gets overwritten on update. Only changes made in the design system project last.</p>
     <p class="ptext">AI design tools by use are collected on the <a href="https://designrefs.com/ai/">AI design tools</a> page.</p>
-    <h2 class="psub" id="s9">In short</h2>
+    <h2 class="psub" id="s8">In short</h2>
     <p class="ptext">Lovable removed the step that offered directions on open prompts and made design systems, which hand parts and rules to every build, a feature of all paid plans. Whether that makes screens look less alike is not confirmed. What is clear is that deciding the look is shifting from a line in a prompt to a rules file.</p>
     <p class="art__note">Sources: <a href="https://docs.lovable.dev/changelog" target="_blank" rel="noopener">Lovable changelog</a>, <a href="https://docs.lovable.dev/features/design-systems" target="_blank" rel="noopener">Lovable docs: Design systems</a>, <a href="https://x.com/Lovable/status/2053874566460752191" target="_blank" rel="noopener">Lovable on X</a>, <a href="https://www.createwith.com/tool/lovable/updates/lovable-launches-aesthetics-to-give-users-more-control-over-design-output" target="_blank" rel="noopener">Create With: Lovable Aesthetics</a>.</p>]]></content:encoded>
     </item>
     <item>
-      <title>The Figma agent used to be free to try. Now it draws AI credits: what designers should check</title>
+      <title>The Figma agent now costs credits. How to make a month&#x27;s worth last</title>
       <link>https://designrefs.com/en/articles/figma-agent-ai-credits-ga/</link>
       <guid isPermaLink="true">https://designrefs.com/en/articles/figma-agent-ai-credits-ga/</guid>
       <pubDate>Sun, 18 Oct 2026 09:00:00 +0900</pubDate>
@@ -667,7 +619,7 @@
     <p class="art__note">Sources: <a href="https://help.figma.com/hc/en-us/articles/42614902212887" target="_blank" rel="noopener">Figma Help: AI credits FAQ</a>, <a href="https://www.figma.com/pricing/" target="_blank" rel="noopener">Figma pricing page</a>, <a href="https://forum.figma.com/ask-the-community-7/figma-agent-beta-pricing-56929" target="_blank" rel="noopener">Figma Community Forum: figma agent beta pricing</a>.</p>]]></content:encoded>
     </item>
     <item>
-      <title>Build prototypes by prompt, hand them off as code: what to check in ProtoPie MCP</title>
+      <title>ProtoPie opens up to MCP: AI can read, edit and hand off your prototypes</title>
       <link>https://designrefs.com/en/articles/protopie-mcp-prototype-ai/</link>
       <guid isPermaLink="true">https://designrefs.com/en/articles/protopie-mcp-prototype-ai/</guid>
       <pubDate>Sat, 17 Oct 2026 09:00:00 +0900</pubDate>
@@ -676,7 +628,7 @@
       <content:encoded><![CDATA[    <p class="ptext">ProtoPie has announced official support for MCP. The byline on ProtoPie&#x27;s blog post says October 7, while the page metadata says October 15. The two dates disagree, so I couldn&#x27;t confirm the exact publication date.</p>
     <p class="ptext">Anyone who has built interaction prototypes knows the scene. To make a card expand when a button is tapped, you attach a trigger, pick a response and wire up a variable. It isn&#x27;t hard, but it takes many small steps. Then you hand the finished prototype to a developer and the question comes back: how do we build this behavior? ProtoPie has put AI into both of those stretches.</p>
     <p class="ptext">This piece follows ProtoPie&#x27;s blog posts and docs, and separates what works from what hasn&#x27;t been confirmed.</p>
-    <p class="ptext"><strong>First, a disclaimer.</strong> I haven&#x27;t used this feature myself. Everything below comes from what ProtoPie published. Pricing, usage limits and the exact scope per plan were either missing or inconsistent across the public pages.</p>
+    <p class="ptext">This is based on what ProtoPie published; I haven&#x27;t used the feature myself. Pricing, usage limits and per-plan scope were missing or inconsistent across the public pages.</p>
     <h2 class="psub" id="s1">What MCP does here</h2>
     <p class="ptext">MCP is a convention that lets AI tools call features in other programs. In ProtoPie&#x27;s docs there are two servers, and they share the same ProtoPie account.</p>
     <ul class="ptext-list">
@@ -750,7 +702,7 @@
       <content:encoded><![CDATA[    <p class="ptext">Figma has added a feature called Specs: markdown documents that live on the canvas. It was announced at Figma&#x27;s first Config event in India, and Figma&#x27;s own post is dated October 15.</p>
     <p class="ptext">Open a design file and you can see the frames, but rarely why they look that way. Decisions sit in chat, requirements in a doc, mockups in Figma. Now AI agents have to read all of it too. Figma says it wants to gather that scattered context in one place on the canvas.</p>
     <p class="ptext">So this piece follows Figma&#x27;s blog post and release notes rather than the launch buzz. I separate what works, who can use it, and what hasn&#x27;t been confirmed.</p>
-    <p class="ptext"><strong>First, a disclaimer.</strong> I haven&#x27;t used this feature myself. Everything below comes from what Figma published and what news reports say. I couldn&#x27;t find per-plan limits or the exact range of supported markdown syntax in anything public.</p>
+    <p class="ptext">This is based on what Figma published and on news coverage; I haven&#x27;t used the feature myself. Per-plan limits and the exact range of supported markdown weren&#x27;t in anything public.</p>
     <h2 class="psub" id="s1">What Specs is</h2>
     <p class="ptext">Figma describes Specs as a container for context that sits on the canvas. In its words, &quot;a multiplayer container that allows context to fully express itself.&quot; Several people edit it together, and you write it in markdown.</p>
     <p class="ptext">The notable part is that designs can sit inside the document. You can embed FigJam files, frames and canvas nodes directly in a spec, so text and visuals sit side by side and you don&#x27;t open a separate doc. A spec can be a standalone file or sit alongside your work on the canvas.</p>
@@ -805,7 +757,7 @@
     <p class="art__note">Sources: <a href="https://www.figma.com/blog/introducing-figma-specs/" target="_blank" rel="noopener">Introducing Specs: Markdown as a medium (Figma blog)</a>, <a href="https://www.figma.com/release-notes/" target="_blank" rel="noopener">Figma release notes</a> (checked October 16), <a href="https://techcrunch.com/2026/10/14/figma-announces-new-features-to-define-how-agents-work-on-its-platform/" target="_blank" rel="noopener">TechCrunch</a>.</p>]]></content:encoded>
     </item>
     <item>
-      <title>Nano Banana 2.1 is &quot;half price&quot;. What designers should check</title>
+      <title>We opened Nano Banana 2.1&#x27;s price list: 4K isn&#x27;t half price</title>
       <link>https://designrefs.com/en/articles/nano-banana-2-1-designers/</link>
       <guid isPermaLink="true">https://designrefs.com/en/articles/nano-banana-2-1-designers/</guid>
       <pubDate>Thu, 15 Oct 2026 09:00:00 +0900</pubDate>
@@ -814,7 +766,6 @@
       <content:encoded><![CDATA[    <p class="ptext">Google&#x27;s image model Nano Banana has become a familiar name in Korea too. On October 6 it moved up to version 2.1.</p>
     <p class="ptext">Most launch headlines said the same thing: &quot;4K at half price.&quot; But when I opened Google&#x27;s pricing page today, only 1K and 2K were half price. 4K came down by a quarter. And the &quot;old model shuts down October 29&quot; line in several articles doesn&#x27;t appear anywhere in Google&#x27;s own docs.</p>
     <p class="ptext">So this piece follows the documents rather than the buzz. I went through Google&#x27;s pricing page, model card and deprecation table one by one and kept only what designers need.</p>
-    <p class="ptext"><strong>First, a disclaimer.</strong> I&#x27;m building this site with Claude Code. Every performance number below was measured by Google itself, and no one has published tests of Korean text yet.</p>
     <h2 class="psub" id="s1">What changed</h2>
     <p class="ptext">Nano Banana 2.1 is an image generation and editing model built on Gemini 3.6 Flash. It&#x27;s rolling out to the Gemini app, AI Mode in Search, AI Studio, the video tool Flow, the UI design tool Stitch and Google Ads.</p>
     <p class="ptext">Google highlighted three things: visual design, editing a region you describe in words, and consistency, so the same people and objects hold across several images. You can give it up to 14 reference images, and it tracks up to four characters and ten objects among them. Aspect ratios now stretch to long strips like 8:1, which is handy for web banners and wide signage drafts.</p>
@@ -861,6 +812,7 @@
     <p class="ptext"><strong>If you use it through the API or automations, check the model name.</strong> Google recommends 2.1 as the replacement for the previous model (Nano Banana 2), but hasn&#x27;t set a shutdown date. If you&#x27;ve seen &quot;shuts down October 29&quot;, check Google&#x27;s <a href="https://ai.google.dev/gemini-api/docs/deprecations" target="_blank" rel="noopener">deprecation table</a> yourself. Neither model has a free API tier.</p>
     <p class="ptext"><strong>Use 4K only when you need it.</strong> Unless it&#x27;s a large print image, pick drafts at 2K and render only the final one at 4K.</p>
     <p class="ptext">AI image tools by use case are under <a href="https://designrefs.com/en/#ai">AI tools</a>.</p>
+    <p class="art__note">Every performance number here was measured by Google itself, and no one has published tests of Korean text yet.</p>
     <p class="art__note">Sources: <a href="https://deepmind.google/models/model-cards/nano-banana-2-1/" target="_blank" rel="noopener">Nano Banana 2.1 model card</a>, <a href="https://ai.google.dev/gemini-api/docs/pricing" target="_blank" rel="noopener">Gemini API pricing</a> · <a href="https://ai.google.dev/gemini-api/docs/deprecations" target="_blank" rel="noopener">deprecations</a> (checked Oct 15), <a href="https://www.neowin.net/news/google-launches-nano-banana-21-with-better-editing-and-subject-consistency/" target="_blank" rel="noopener">Neowin</a>, <a href="https://www.androidheadlines.com/2026/10/google-launches-nano-banana-2-1-ai-images-price.html" target="_blank" rel="noopener">Android Headlines</a>, <a href="https://apidog.com/blog/nano-banana-2-1/" target="_blank" rel="noopener">Apidog</a>, <a href="https://www.youtube.com/watch?v=Sm7OTow3mcY" target="_blank" rel="noopener">Google on YouTube</a>.</p>]]></content:encoded>
     </item>
     <item>
@@ -873,7 +825,7 @@
       <content:encoded><![CDATA[    <p class="ptext">On October 12, Meta released Muse Wonder and Muse Wonder Full, its first frontier-class models since it reorganized its AI teams. The announcement was all about memory: a model that keeps track of what matters to you over days and weeks, and sticks with hard tasks until they&#x27;re done.</p>
     <p class="ptext">There wasn&#x27;t a word about design. But the model showed up on Design Arena the same day, and two days later it ranks first in both the Website and UI Component arenas.</p>
     <p class="ptext">Design Arena is where people look at designs made by AI and pick the better one, building a ranking from those votes. When a new model is called &quot;No. 1 at design&quot;, this is usually where that comes from. So this time I looked first at how that ranking is made, rather than at the model itself.</p>
-    <p class="ptext"><strong>First, a disclaimer.</strong> I&#x27;m building this site with Claude Code, and Anthropic&#x27;s models sit on the same leaderboard. Scores shift every day as votes come in, so every number below is as of October 14.</p>
+    <p class="ptext">Two things before the numbers. Scores shift daily as votes come in, so everything below is as of October 14. And Anthropic&#x27;s models sit on the same leaderboard, while this site is built with Claude Code.</p>
     <h2 class="psub" id="s1">From one vote to a ranking</h2>
     <p class="ptext">Design Arena&#x27;s About page explains the method in some detail. Someone types a request, like &quot;make a landing page for a cafe&quot;, and four randomly chosen models get the same prompt at the same time. The voter sees two results side by side, without knowing which model made which, and picks one.</p>
     <figure class="art__fig">
@@ -936,7 +888,6 @@
       <content:encoded><![CDATA[    <p class="ptext">&quot;I roughed this out with AI. Could you just polish it up?&quot;</p>
     <p class="ptext">Plenty of designers are getting emails like this. Attached is a logo, poster or landing page draft made in ChatGPT or Claude. And there&#x27;s usually one more line: &quot;Since it&#x27;s almost done, could you bring the price down a bit?&quot;</p>
     <p class="ptext">On October 12, Fast Company covered this. It interviewed more than a dozen graphic designers, and many described something similar over the past year and a half. Clients send AI drafts and push rates down; at work, bosses hold up AI-made screens and say &quot;build it like this&quot;. Some designers who offered opinions were told &quot;ask ChatGPT&quot;, and some lost jobs after being told AI could do the work. The piece described designers being turned into &quot;pixel pushers&quot;.</p>
-    <p class="ptext"><strong>First, a disclaimer.</strong> This article draws on an interview-based report and a few surveys. There&#x27;s no precise statistic yet on how common this is. The diagrams and steps below are this site&#x27;s summary, based on what the designers in the report described.</p>
     <h2 class="psub" id="s1">The &quot;almost done&quot; illusion</h2>
     <p class="ptext">To a client, an AI draft looks close to finished. Plausible colors, plausible composition, plausible lettering. But actually using it leaves quite a lot of work.</p>
     <figure class="art__fig">
@@ -985,6 +936,7 @@
       <li><strong>Record what you changed.</strong> Save the original AI draft and the final work side by side. It&#x27;s useful for your portfolio and for the next quote negotiation.</li>
     </ol>
     <p class="ptext">How AI tools are actually used on the job is in <a href="https://designrefs.com/en/articles/ai-design-tools-in-practice/">AI design tools in practice</a>, and AI tools by use are under <a href="https://designrefs.com/en/#ai">AI design tools</a>.</p>
+    <p class="art__note">There&#x27;s no solid statistic yet on how common this is. The diagrams and steps here summarize what designers described in the interview-based report and surveys.</p>
     <p class="art__note">Sources: <a href="https://www.fastcompany.com/91621558/ai-pilled-bosses-and-clients-turning-designers-into-pixel-pushers" target="_blank" rel="noopener">Fast Company (Oct 12, 2026)</a>, <a href="https://www.fastcompany.com/91571502/freelance-design-pricing-transparency-project-report" target="_blank" rel="noopener">Fast Company pricing project</a>, <a href="https://hbr.org/2024/11/research-how-gen-ai-is-already-impacting-the-labor-market" target="_blank" rel="noopener">HBR</a>, <a href="https://elements.envato.com/learn/creative-ai-tools" target="_blank" rel="noopener">Envato</a>.</p>]]></content:encoded>
     </item>
     <item>
@@ -996,7 +948,6 @@
       <description>Heathrow Airport teamed up with Adobe to measure how AI answers mention its brand. With one in four travelers reportedly turning to AI first, here&#x27;s what designers working on brands should look at, with a diagram and tables.</description>
       <content:encoded><![CDATA[    <p class="ptext">On October 8, London&#x27;s Heathrow Airport expanded its deal with Adobe. The headline was a new website built on Adobe technology, but another part stood out: Heathrow will measure how AI like ChatGPT, Copilot and Perplexity talks about it, and look for gaps.</p>
     <p class="ptext">Adobe&#x27;s reasoning: one in four consumers now turn to AI first when making travel decisions. Once people ask AI instead of typing into a search box, the &quot;first screen&quot; a brand has to care about changes.</p>
-    <p class="ptext"><strong>First, a disclaimer.</strong> Adobe didn&#x27;t publish how it arrived at the one-in-four figure. Below, I focus on where this trend meets designers&#x27; work. I&#x27;ll also note that this site keeps a guide file for AI, llms.txt, to make it easier for AI to read.</p>
     <h2 class="psub" id="s1">Where AI answers find brands</h2>
     <figure class="art__fig">
       <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/ai-search-brand-en-m.svg" width="600" height="877" /><img src="https://designrefs.com/articles/img/ai-search-brand-en.svg" alt="AI reads site text, image descriptions, reviews and articles, and structured data to build answers. Brands measure how often and how accurately they appear." width="1200" height="511" loading="lazy" decoding="async" /></picture>
@@ -1030,6 +981,7 @@
       <li><strong>Write one brand sentence.</strong> On the first page of the brand guide, write in one sentence who the brand serves and what it does. It&#x27;s the sentence AI is most likely to quote.</li>
     </ol>
     <p class="ptext">How to hand AI your design rules is in <a href="https://designrefs.com/en/articles/design-md-for-ai/">the DESIGN.md article</a>, and branding references are under <a href="https://designrefs.com/en/#graphic">Graphic / Branding</a>.</p>
+    <p class="art__note">Adobe didn&#x27;t publish how it arrived at the one-in-four figure. For what it&#x27;s worth, this site also keeps a guide file for AI readers, llms.txt.</p>
     <p class="art__note">Sources: <a href="https://news.adobe.com/news/2026/10/adobe-and-heathrow-airport-partner" target="_blank" rel="noopener">Adobe and Heathrow</a>, <a href="https://itbrief.co.uk/story/heathrow-extends-adobe-deal-to-boost-ai-travel-search" target="_blank" rel="noopener">IT Brief UK</a>, <a href="https://thenextweb.com/news/heathrow-adobe-agentic-ai-website" target="_blank" rel="noopener">The Next Web</a>, <a href="https://www.cmswire.com/digital-experience/adobe-launches-brand-visibility-tool-for-ai-search/" target="_blank" rel="noopener">CMSWire</a>, <a href="https://www.techradar.com/pro/security/forget-about-seo-adobe-already-has-an-llm-optimizer-to-help-businesses-rank-on-chatgpt-gemini-and-claude" target="_blank" rel="noopener">TechRadar</a>.</p>]]></content:encoded>
     </item>
     <item>
@@ -1041,7 +993,7 @@
       <description>macOS 27 removed the switch that turned off Apple Intelligence entirely. Users are building outside tools to strip AI out. What changed, what to check on a designer&#x27;s Mac, and the question left for anyone designing AI features.</description>
       <content:encoded><![CDATA[    <p class="ptext">A tool spread quietly among Mac users this week. It&#x27;s called RemoveMacAI. It turns off Apple&#x27;s AI features on a Mac and deletes the model files they use. Several people reported getting back more than 12GB of storage.</p>
     <p class="ptext">There&#x27;s a reason a tool like this appeared. In macOS 27, released this fall, the switch that turned off all AI features at once is gone.</p>
-    <p class="ptext"><strong>First, a disclaimer.</strong> I haven&#x27;t run this tool on macOS 27 myself. What follows is based on reporting from Mac-focused outlets. Apple hasn&#x27;t explained why it removed the switch.</p>
+    <p class="ptext">Apple hasn&#x27;t explained why the switch went away. I haven&#x27;t run this tool on macOS 27 either; this follows reporting from Mac-focused outlets.</p>
     <h2 class="psub" id="s1">What changed</h2>
     <figure class="art__fig">
       <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/macos27-ai-switch-en-m.svg" width="600" height="1060" /><img src="https://designrefs.com/articles/img/macos27-ai-switch-en.svg" alt="In macOS 26, one switch turned off every AI feature; in macOS 27, each feature has to be turned off separately. A sketch based on reports." width="1200" height="639" loading="lazy" decoding="async" /></picture>
@@ -1092,7 +1044,6 @@
       <description>Fanta&#x27;s Halloween campaign, made with an AI studio, is getting slammed online. Yet consumer testing came out the other way. Who did what, why reactions split, and what designers working on brands should take from it.</description>
       <content:encoded><![CDATA[    <p class="ptext">Three weeks before Halloween, one drinks campaign has become a regular topic in design media: Coca-Cola&#x27;s Fanta and its &quot;Haunted Universe&quot;.</p>
     <p class="ptext">Fanta wants to own Halloween, the way Coca-Cola calls Christmas to mind. So unlike the past two years of borrowing film characters, this year it created four monsters of its own, including a cyborg Frankenstein and a werewolf DJ. And it made them with an AI studio.</p>
-    <p class="ptext"><strong>First, a disclaimer.</strong> The campaign videos are public, but there&#x27;s little hard data on the reaction. For each number below, I&#x27;ve noted who measured it and how.</p>
     <h2 class="psub" id="s1">Who did what</h2>
     <figure class="art__fig">
       <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/fanta-who-did-what-en-m.svg" width="600" height="883" /><img src="https://designrefs.com/articles/img/fanta-who-did-what-en.svg" alt="What people and AI did on Fanta&#x27;s Haunted Universe, and the reaction. Based on what Fanta and its studio have said." width="1200" height="499" loading="lazy" decoding="async" /></picture>
@@ -1144,6 +1095,7 @@
       <li><strong>Watch the first three seconds on their own.</strong> Beyond screening the full cut, review it like a social feed, a few seconds before scrolling past. That&#x27;s where the comments come from.</li>
     </ol>
     <p class="ptext">Whether AI images can be used in client work is covered in <a href="https://designrefs.com/en/articles/ai-image-commercial-use/">Can you use AI-generated images in client work?</a>, and graphic and branding references are under <a href="https://designrefs.com/en/#graphic">Graphic / Branding</a>.</p>
+    <p class="art__note">The campaign videos are public, but hard data on the reaction is thin. Each number notes who measured it and how.</p>
     <p class="art__note">Sources: <a href="https://www.creativebloq.com/ai/fantas-ai-slop-halloween-advert-is-a-real-horror-show" target="_blank" rel="noopener">Creative Bloq</a>, <a href="https://www.emarketer.com/content/fanta-bets-on-original-ip-own-halloween--ai-concerns-could-way" target="_blank" rel="noopener">eMarketer</a>, <a href="https://www.zappi.io/web/blog/innovation-spotlight-fantas-haunted-collection" target="_blank" rel="noopener">Zappi</a>, <a href="https://www.adweek.com/creativity/fantas-big-bet-to-own-halloween-an-original-cinematic-universe/" target="_blank" rel="noopener">Adweek</a>, <a href="https://news.designrush.com/fanta-haunted-universe-halloween-2026" target="_blank" rel="noopener">DesignRush</a>, <a href="https://www.marketing-interactive.com/can-ai-help-fanta-build-the-next-horror-universe" target="_blank" rel="noopener">Marketing-Interactive</a>.</p>]]></content:encoded>
     </item>
     <item>
@@ -1155,7 +1107,7 @@
       <description>A developer is building seven free, open-source apps with AI to replace Adobe&#x27;s. The Photoshop replacement opens and saves PSDs but is still in early alpha. Here&#x27;s where it stands and what designers should look at.</description>
       <content:encoded><![CDATA[    <p class="ptext">A story made the rounds in design circles this week. A developer released seven free apps meant to stand in for Photoshop, Illustrator, Premiere, Lightroom, After Effects, InDesign and Acrobat. The project is called ArtCraft, and he says he built it with AI.</p>
     <p class="ptext">Headlines everywhere said you can finally cancel Adobe. I took a calm look at whether that&#x27;s true and how far along it is.</p>
-    <p class="ptext"><strong>First, a disclaimer.</strong> These apps were reportedly built with Anthropic&#x27;s Claude Opus 5.5. I&#x27;m building this site with Claude Code from the same company. So I&#x27;ve leaned on what the repositories say and on other outlets&#x27; checks rather than the developer&#x27;s claims. I haven&#x27;t installed the apps myself.</p>
+    <p class="ptext">These apps were reportedly built with Anthropic&#x27;s Claude Opus 5.5, and this site is built with Claude Code from the same company. So I&#x27;ve leaned on what the repositories say and on other outlets&#x27; checks rather than the developer&#x27;s claims. I haven&#x27;t installed the apps myself.</p>
     <h2 class="psub" id="s1">Who, why, and how</h2>
     <p class="ptext">The developer is software engineer Brandon Thomas. He says Adobe&#x27;s cancellation fees were the trigger. On Adobe&#x27;s &quot;annual, paid monthly&quot; plan, canceling before the year is up costs half of the remaining amount. The US Federal Trade Commission sued Adobe over this in 2024, and the case ended in a settlement.</p>
     <p class="ptext">Here&#x27;s how it&#x27;s made.</p>
@@ -1216,7 +1168,7 @@
       <content:encoded><![CDATA[    <p class="ptext">This week brought two announcements in a row about AI drawing screens.</p>
     <p class="ptext">On October 6, Figma took its design agent out of beta. The next day, OpenAI brought GPT-6 to ChatGPT and introduced &quot;Intelligent UI&quot;: instead of answering only in text, ChatGPT can answer with a screen that includes buttons, forms and charts. It opened to paid users first, and reaches free users starting today.</p>
     <p class="ptext">One lives in a chat window, the other inside a design tool. Different places, but in both, AI draws the screen itself. Which raises the same question: who sets the rules for that screen?</p>
-    <p class="ptext"><strong>First, a disclaimer.</strong> Both features are only days old, so there are almost no hands-on reviews yet. This is based on the companies&#x27; announcements and coverage. I&#x27;ll also note that I&#x27;m building this site with Claude Code.</p>
+    <p class="ptext">Both features are only days old, so hands-on reviews are scarce. I&#x27;ve followed the companies&#x27; announcements and coverage.</p>
     <h2 class="psub" id="s1">Answers arrive as screens</h2>
     <p class="ptext">OpenAI&#x27;s description: GPT-6 composes answers from text, visuals and interactive elements, and decides how to lay them out for each question. Comparisons sit side by side, explanations become diagrams you can play with, and simple questions still get plain text.</p>
     <p class="ptext">OpenAI&#x27;s examples: a cooking timeline next to a recipe, road-trip stops on a map, and small tools built on the spot. A savings calculator, a bill splitter, even a game you can play inside the chat.</p>
@@ -1265,7 +1217,7 @@
       <description>Six AI and design stories from September 30 to October 6, on one page. The whole store, the rules, what to edit, the order of shots: what was left to luck is turning into something people decide. With numbers on how much designers use AI.</description>
       <content:encoded><![CDATA[    <p class="ptext">Over the past week I posted one piece a day on AI and design: a store editor, a design rules file, two image models, a 3D printing tool, ChatGPT ads and a video model. On their own they look unrelated. Side by side, one thing stood out.</p>
     <p class="ptext"><strong>Where we used to hand everything to AI and wait for the result, people can now decide for themselves.</strong></p>
-    <p class="ptext"><strong>First, a disclaimer.</strong> This is a roundup of the past week&#x27;s articles. Details and sources for each story are in the individual pieces. I&#x27;ll also note that I&#x27;m building this site with Claude Code, since Claude appears in the numbers below.</p>
+    <p class="ptext">This is a roundup of a week&#x27;s worth of articles, so each story&#x27;s details and sources stay in the original piece. Claude shows up in the numbers below, so for the record: this site is built with Claude Code.</p>
     <h2 class="psub" id="s1">Six stories on one page</h2>
     <figure class="art__fig">
       <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/week-1001-1006-en-m.svg" width="600" height="1394" /><img src="https://designrefs.com/articles/img/week-1001-1006-en.svg" alt="Six stories from last week, and what each one lets people decide." width="1200" height="609" loading="lazy" decoding="async" /></picture>
@@ -1323,7 +1275,6 @@
       <description>Kling 4.0 takes 30 seconds, 10 keyframes and 15 references in one generation. It moves from giving just a first and last frame to laying out the flow of a scene yourself. Here&#x27;s what changes and what isn&#x27;t out yet, in a diagram and a table.</description>
       <content:encoded><![CDATA[    <p class="ptext">Kling, the AI video model from China&#x27;s Kuaishou, published its 4.0 specs. The full release is due sometime in October, and a lighter version, 4.0 Flash, opened to some subscribers on September 28.</p>
     <p class="ptext">The numbers stand out: up to 30 seconds per generation, up to 10 keyframes, up to 15 references. But as a designer, what I kept looking at was the keyframes. It means you can hand AI video a storyboard.</p>
-    <p class="ptext"><strong>First, a disclaimer.</strong> The full release isn&#x27;t out yet, and Flash is limited to top-tier yearly subscribers, so I haven&#x27;t tried it. What follows is based on Kling&#x27;s published specs and write-ups of them.</p>
     <h2 class="psub" id="s1">From two frames to ten</h2>
     <p class="ptext">Until now, there were two ways to direct AI video: describe it in words, or give a first and last frame. Kling 3.0 also took a first and last frame and let the AI fill in between.</p>
     <figure class="art__fig">
@@ -1362,6 +1313,7 @@
       <li><strong>Judge price on the full release.</strong> 4.0 pricing isn&#x27;t out yet. Thirty seconds at 4K uses a lot of credits even on 3.0, so get in the habit of reviewing drafts short and low-res, and rendering only the final long and large.</li>
     </ol>
     <p class="ptext">AI tools for video and motion are collected under <a href="https://designrefs.com/en/#ai">AI design tools</a>.</p>
+    <p class="art__note">The full release isn&#x27;t out, and Flash is limited to top-tier yearly subscribers, so I haven&#x27;t tried it. This is based on Kling&#x27;s published specs and write-ups of them.</p>
     <p class="art__note">Sources: <a href="https://www.atlascloud.ai/blog/tips/kling-4-flash-vs-full" target="_blank" rel="noopener">Atlas Cloud</a>, <a href="https://pandaily.com/kling-ai-kling-4-0-30-second-native-video-multi-reference-control" target="_blank" rel="noopener">Pandaily</a>, <a href="https://morphic.com/resources/models/kling-4" target="_blank" rel="noopener">Morphic</a>, <a href="https://sloptv.co/news/kling-4-0-october-promise-flash-720p-only" target="_blank" rel="noopener">sloptv</a>, <a href="https://www.atlascloud.ai/blog/tips/kling-ai-pricing" target="_blank" rel="noopener">Atlas Cloud pricing</a>.</p>]]></content:encoded>
     </item>
     <item>
@@ -1373,7 +1325,6 @@
       <description>On October 5, OpenAI announced image ads that appear in ChatGPT&#x27;s image generation screen. Here&#x27;s the eight months from text ads to image ads, and what it means for designers, both the new work and the things to watch out for.</description>
       <content:encoded><![CDATA[    <p class="ptext">On October 5, OpenAI announced a new ad format for ChatGPT. While ChatGPT generates an image, an image ad appears beside it.</p>
     <p class="ptext">ChatGPT has 1.2 billion weekly users, and many of them come to make pictures. For OpenAI, the few seconds people spend waiting for an image to render are some of the longest they look at the screen. Now there&#x27;s an ad slot there.</p>
-    <p class="ptext"><strong>First, a disclaimer.</strong> The test starts in late October, so nobody has seen a real ad yet. What follows is based on OpenAI&#x27;s announcement and articles covering it. I&#x27;ll also note that I&#x27;m building this site with Claude Code.</p>
     <h2 class="psub" id="s1">Where it goes, and how</h2>
     <p class="ptext">The ad sits in a separate spot from the image you asked for. OpenAI made three promises. Ads are clearly labeled. They&#x27;re kept apart from your image so the two don&#x27;t blend. And ads don&#x27;t influence ChatGPT&#x27;s answers.</p>
     <figure class="art__fig">
@@ -1413,6 +1364,7 @@
       <li><strong>If you make ad creative.</strong> Try drafting with the constraint of one image placed next to an image request. Even for the same product, a photo that explains and a photo that fits are different.</li>
     </ol>
     <p class="ptext">How AI tools are moving into the design workflow is covered in <a href="https://designrefs.com/en/articles/openai-devday-2026-designers/">what designers should take from DevDay</a>, and whether AI images can be used in your work is in <a href="https://designrefs.com/en/articles/ai-image-commercial-use/">Can you use AI-generated images in client work?</a>.</p>
+    <p class="art__note">The test starts in late October, so nobody has seen a real ad yet. This piece is based on OpenAI&#x27;s announcement and coverage of it.</p>
     <p class="art__note">Sources: <a href="https://techcrunch.com/2026/10/05/openai-launches-visual-ads-that-appear-alongside-image-generation-results/" target="_blank" rel="noopener">TechCrunch</a>, <a href="https://help.openai.com/en/articles/20001047-ads-in-chatgpt" target="_blank" rel="noopener">OpenAI Help</a>, <a href="https://winbuzzer.com/2026/10/05/chatgpt-to-test-visual-ads-during-image-generation-xcxwbn/" target="_blank" rel="noopener">WinBuzzer</a>, <a href="https://www.androidheadlines.com/2026/10/chatgpt-visual-ads-image-generation.html" target="_blank" rel="noopener">Android Headlines</a>, <a href="https://www.cnbc.com/2026/10/05/anthropic-openai-google-meta-execs-testify-nyc-council-ai-hearing.html" target="_blank" rel="noopener">CNBC (weekly users)</a>, <a href="https://www.honeyb.ai/blog/chatgpt-ads-february-2026" target="_blank" rel="noopener">Honeyb (February launch)</a>.</p>]]></content:encoded>
     </item>
     <item>
@@ -1424,7 +1376,7 @@
       <description>MIT researchers released InstructMesh, a tool for fixing AI-generated 3D models before printing. About 80% of generated models had structural flaws, and novices fixed about 90% with the tool. Here&#x27;s how the fixing works and what to check before you print.</description>
       <content:encoded><![CDATA[    <p class="ptext">AI that turns a line of text or a single photo into a 3D model is common now. On screen, the results look convincing. Print them on a 3D printer, though, and it&#x27;s another story. The handle is too thin and snaps, the whistle is sealed inside and makes no sound, and the walls are so thin they collapse mid-print.</p>
     <p class="ptext">On October 1, MIT&#x27;s Computer Science and Artificial Intelligence Laboratory (CSAIL) released a tool aimed at this problem. It&#x27;s called InstructMesh. It lets you pick only the problem areas of an AI-made 3D model, fix them by describing the fix, and then print.</p>
-    <p class="ptext"><strong>First, a disclaimer.</strong> InstructMesh is still a research tool, so I haven&#x27;t used it myself. What follows is based on MIT&#x27;s announcement and the paper, which will be presented at the UIST user interface conference in November.</p>
+    <p class="ptext">InstructMesh is still a research tool, so trying it wasn&#x27;t an option. This draws on MIT&#x27;s announcement and the paper, which will be presented at UIST in November.</p>
     <h2 class="psub" id="s1">Right to look at, wrong to use</h2>
     <p class="ptext">The researchers&#x27; diagnosis fits in one sentence: AI knows what an object should look like, but not how it works.</p>
     <p class="ptext">So first they measured how often that happens. They had the 3D generator TRELLIS recreate popular models from Thingiverse, a 3D printing sharing site.</p>
@@ -1475,7 +1427,6 @@
       <description>Ideogram 4.5 on September 30, FLUX 3 Image on October 2. This week&#x27;s two image models led with &quot;change one spot only&quot; rather than prettier pictures. Here&#x27;s box-first layout and price by size, in diagrams and numbers.</description>
       <content:encoded><![CDATA[    <p class="ptext">Anyone who has made drafts with image AI has probably been here. You ask it to change just the headline, and in the image that comes back the model&#x27;s face is different and the bottle&#x27;s color has shifted slightly. The more times you edit, the further you drift from the original.</p>
     <p class="ptext">This week&#x27;s two image models aim right at that problem: Ideogram 4.5 on September 30, and Black Forest Labs&#x27; FLUX 3 Image, announced October 2. Both put &quot;change only what you pick and leave the rest alone&quot; ahead of &quot;a more stunning picture&quot;.</p>
-    <p class="ptext"><strong>First, a disclaimer.</strong> I haven&#x27;t run either model myself. What follows is based on each company&#x27;s announcement, articles covering them, and reseller price sheets.</p>
     <h2 class="psub" id="s1">Re-rolling vs. editing</h2>
     <p class="ptext">Until now, &quot;editing&quot; in image AI has been closer to redrawing. The model looks at the original, but rebuilds the whole thing every time. So each edit nudges areas you never touched. The industry calls this drift.</p>
     <figure class="art__fig">
@@ -1528,6 +1479,7 @@
     </ol>
     <p class="ptext">Do this once before bringing a new model into your work, and you&#x27;ll know how far you can trust it. Both models can be tried briefly, so test with a revision request you get often.</p>
     <p class="ptext">How to put a mood into words is in <a href="https://designrefs.com/en/articles/describing-design-style/">Putting &quot;make it feel right&quot; into words</a>, and whether you can use AI images for client work is in <a href="https://designrefs.com/en/articles/ai-image-commercial-use/">Can you use AI-generated images in client work?</a>. Image tools are collected under <a href="https://designrefs.com/en/#ai">AI design tools</a>.</p>
+    <p class="art__note">I haven&#x27;t run either model myself. This is based on each company&#x27;s announcement, coverage of it, and reseller price sheets.</p>
     <p class="art__note">Sources: <a href="https://www.orcarouter.ai/blog/ideogram-4-5-launch-precise-edit-model" target="_blank" rel="noopener">Ideogram 4.5 overview (orcarouter)</a>, <a href="https://completeaitraining.com/news/ideogram-45-reduces-pixel-drift-in-multi-turn-edits/" target="_blank" rel="noopener">completeaitraining</a>, <a href="https://the-decoder.com/black-forest-labs-launches-flux-3-image-with-multi-step-editing-that-leaves-the-rest-of-your-picture-alone/" target="_blank" rel="noopener">the-decoder</a>, <a href="https://www.techtimes.com/articles/328502/20261002/black-forest-labs-launches-flux-3-image-json-bounding-boxes-lock-unchanged-pixels-numerically.htm" target="_blank" rel="noopener">Tech Times</a>, <a href="https://openrouter.ai/black-forest-labs/flux-3-image" target="_blank" rel="noopener">OpenRouter FLUX.3 Image</a>, <a href="https://kingy.ai/blog/flux-3-image-specs-benchmarks-comparison/" target="_blank" rel="noopener">kingy.ai</a>.</p>]]></content:encoded>
     </item>
     <item>
@@ -1540,7 +1492,7 @@
       <content:encoded><![CDATA[    <p class="ptext">Two design stories this week pointed in oddly similar directions.</p>
     <p class="ptext"><a href="https://designrefs.com/en/articles/shopify-canvas-sidekick/">Canvas</a>, which Shopify launched yesterday, lays a store&#x27;s design system out right beside its AI assistant. The day before, Figma updated its Motion feature so that motion values such as easing and duration can be saved as &quot;animation styles&quot; and published to libraries. Both come down to keeping rules in one place, so that people and AI can pull from the same rules.</p>
     <p class="ptext">One way of keeping rules in one place keeps coming up lately: a single file called DESIGN.md.</p>
-    <p class="ptext"><strong>First, a disclaimer.</strong> I&#x27;m building this site with Claude Code, and the experiment below was done there too. The checker is Google&#x27;s official tool (version 0.4.0), used as is.</p>
+    <p class="ptext">The experiment below ran inside Claude Code, which I also use to build this site, and the checker is Google&#x27;s official tool (version 0.4.0), used as is.</p>
     <h2 class="psub" id="s1">What is DESIGN.md?</h2>
     <p class="ptext">It&#x27;s a format Google Labs used inside Stitch, its AI design tool. Google opened the format on April 21, so any AI tool can now read it. It&#x27;s licensed under Apache 2.0 and still in alpha.</p>
     <p class="ptext">The structure is simple. One markdown file, two layers.</p>
@@ -1603,7 +1555,6 @@
       <description>Shopify&#x27;s Canvas, launched October 1, puts every page of a store on one surface. You click to edit, or tell Sidekick what you want. Here&#x27;s what changed and what doesn&#x27;t work yet, with diagrams and a table.</description>
       <content:encoded><![CDATA[    <p class="ptext">Shopify launched Canvas on October 1. It&#x27;s a new workbench for designing online stores.</p>
     <p class="ptext">The name already sounds familiar to designers, and so does the thing itself. Every page of the store is laid out on one surface. You pan across it and zoom in on details, much like opening a Figma file. The difference is that what sits on this canvas isn&#x27;t a mockup. It&#x27;s the working store.</p>
-    <p class="ptext"><strong>First, a disclaimer.</strong> Canvas is rolling out to stores over the coming days. I don&#x27;t run a Shopify store, so I haven&#x27;t used it myself. What follows is based on Shopify&#x27;s announcement and changelog, and on articles covering the launch.</p>
     <h2 class="psub" id="s1">From one page at a time to everything at once</h2>
     <p class="ptext">Until now, Shopify stores were edited in the theme editor. You open one page and click through the settings listed on the left, one by one. To check the product page while working on the home page, you had to switch pages.</p>
     <figure class="art__fig">
@@ -1649,6 +1600,7 @@
     <p class="ptext">If you have a Shopify store, duplicating your current theme and opening the copy in Canvas is about right. Leave the original alone, and if your store relies on app blocks or translations, hold off on moving over.</p>
     <p class="ptext">One thing worth trying on the copy: tell Sidekick three of your store&#x27;s usual rules first (say, button shape, heading size and photo ratio), then ask it to build a new page. How many pages it keeps those rules for will tell you how far to trust this workbench.</p>
     <p class="ptext">For store references, see <a href="https://designrefs.com/en/#uiux">UI/UX references</a>. AI tools are collected under <a href="https://designrefs.com/en/#ai">AI design tools</a>.</p>
+    <p class="art__note">Canvas is rolling out to stores over several days. I don&#x27;t run a Shopify store, so I haven&#x27;t used it; this is based on Shopify&#x27;s announcement, changelog and coverage.</p>
     <p class="art__note">Sources: <a href="https://www.shopify.com/news/introducing-canvas" target="_blank" rel="noopener">Shopify, Introducing Canvas</a>, <a href="https://changelog.shopify.com/posts/design-a-fully-bespoke-store-with-canvas" target="_blank" rel="noopener">Shopify changelog</a>, <a href="https://techcrunch.com/2026/10/01/shopify-debuts-canvas-a-way-to-build-online-stores-by-chatting-with-ai/" target="_blank" rel="noopener">TechCrunch</a>, <a href="https://www.unite.ai/shopify-rolls-out-canvas-a-sidekick-powered-store-design-surface/" target="_blank" rel="noopener">Unite.AI</a>, <a href="https://ecommercenews.com.au/story/shopify-launches-canvas-ai-workspace-for-store-design" target="_blank" rel="noopener">ecommercenews</a>.</p>]]></content:encoded>
     </item>
     <item>
@@ -1660,7 +1612,6 @@
       <description>OpenAI&#x27;s DevDay brought more than twenty announcements. Here are only the ones that touch design work, laid out with diagrams and numbers.</description>
       <content:encoded><![CDATA[    <p class="ptext">OpenAI&#x27;s developer event, DevDay, took place in San Francisco on September 29 (in Korea, at 2 a.m. today). There were more than twenty announcements.</p>
     <p class="ptext">The biggest headline was &quot;dots&quot;, agents that keep working in the background even after you close the app. But as a designer, what I kept coming back to was something else. Canva, Figma and Adobe moved inside the ChatGPT window.</p>
-    <p class="ptext"><strong>First, a disclaimer.</strong> This is right after the event, so there are almost no hands-on reviews yet. What follows is based on OpenAI&#x27;s announcements and articles covering the event. I&#x27;ll also note that I&#x27;m building this site with Claude Code.</p>
     <h2 class="psub" id="s1">Three places a plugin can live</h2>
     <p class="ptext">The new thing is &quot;plugin extensions&quot;. Instead of the old approach of just handing you links in the chat, they put the app&#x27;s own screen inside ChatGPT. There are three places it can go.</p>
     <figure class="art__fig">
@@ -1697,6 +1648,7 @@
     <h2 class="psub" id="s5">So, for now</h2>
     <p class="ptext">There isn&#x27;t much to do today. If you use the ChatGPT desktop app, install the Canva, Figma or Adobe plugin you already use and see how useful it is beside the chat.</p>
     <p class="ptext">The bigger thing is the direction. Design tools are moving into ChatGPT, and ChatGPT is moving into design tools. Wherever you start, you&#x27;re heading toward the same files. In between, where the original lives and who does the final check is still a person&#x27;s call. I wrote about that boundary in <a href="https://designrefs.com/en/articles/ai-design-tools-in-practice/">Why thirty AI drafts don&#x27;t make the work any shorter</a>.</p>
+    <p class="art__note">This was written right after the event, so hands-on reviews are scarce. It&#x27;s based on OpenAI&#x27;s announcements and coverage of the event.</p>
     <p class="art__note">Sources: <a href="https://openai.com/index/devday-2026-recap/" target="_blank" rel="noopener">OpenAI DevDay 2026 recap</a>, <a href="https://the-decoder.com/openais-reveals-a-new-chatgpt-that-looks-less-like-a-chatbot-and-more-like-an-operating-system/" target="_blank" rel="noopener">the-decoder</a>, <a href="https://antihype.com.br/c/software/plugin-extensions-chatgpt-apps-na-barra-lateral/" target="_blank" rel="noopener">antihype.com.br</a>, <a href="https://dev.to/axrisi/openai-devday-2026-every-announcement-with-prices-and-availability-1mbh" target="_blank" rel="noopener">DEV Community roundup</a>, <a href="https://thenextweb.com/news/openai-devday-pro-200-usage-cut-pro-500-plan" target="_blank" rel="noopener">The Next Web</a>, <a href="https://www.beri.net/article/gpt-6-1-sol-devday-2026-astra-fifth-price-terminal-bench-score-gap-cost-per-task" target="_blank" rel="noopener">THE DAILY BRIEF</a>.</p>]]></content:encoded>
     </item>
     <item>
@@ -1709,7 +1661,7 @@
       <content:encoded><![CDATA[    <p class="ptext">Anthropic released Claude Sonnet 5.5 on September 28 (US time). In Korea, the news spread this morning.</p>
     <p class="ptext">Sonnet is the middle tier of Anthropic&#x27;s lineup. Not the priciest, smartest model, and not the cheapest, fastest one. Its launches are usually quiet, but this one had a line that stood out: Anthropic wrote that the model has &quot;a sharp eye for design&quot;.</p>
     <p class="ptext">It&#x27;s unusual for a mid-priced model to lead with design. And this tier is closer to designers than you might think. For a tool company selling AI features, cost makes this price range the natural default rather than the most expensive model.</p>
-    <p class="ptext"><strong>First, a disclaimer.</strong> I&#x27;m building this site with Claude Code. So I&#x27;ve only used company announcements and results from people outside who ran their own tests, and noted who measured what.</p>
+    <p class="ptext">This site is built with Claude Code. So I&#x27;ve only used company announcements and results from people who ran their own tests, and noted who measured each number.</p>
     <h2 class="psub" id="s1">Same price, crowded row</h2>
     <p class="ptext">The price is the same as Sonnet 5: $2 input and $10 output per million tokens. What changed is speed and how much it says. Anthropic says it&#x27;s more than 30% faster than the previous model and finishes the same work with fewer tokens, so most tasks cost up to 30% less.</p>
     <figure class="art__fig">
@@ -1756,7 +1708,7 @@
       <content:encoded><![CDATA[    <p class="ptext">On the 28th, the Financial Times reported that corporate AI spending is shifting away from OpenAI and Anthropic toward cheap open models. The numbers make it clearer. In <a href="https://vercel.com/blog/ai-gateway-production-index-september-2026" target="_blank" rel="noopener">Vercel&#x27;s figures</a> from its gateway that routes to many AI models, open models, the ones whose weights you can download, handled 7% of tokens last December. By August this year that was 56%, more than half for the first time.</p>
     <p class="ptext">The interesting part is the money. In the same month, open models took only 14% of the spending. Open models get the volume; closed models still make the money. It means people have started splitting the work: routine jobs go to cheap models, and only the important ones go to expensive models.</p>
     <p class="ptext">The same thing is happening with images. And right there, a problem popped up that designers can easily trip over.</p>
-    <p class="ptext"><strong>First, a disclaimer.</strong> This isn&#x27;t legal advice. License terms differ between model versions and they change. Check the original text on the model page before you actually use anything.</p>
+    <p class="ptext">Since this is about licenses, one thing should be clear: this isn&#x27;t legal advice. Terms differ between model versions and they change, so check the original text on the model page before you use anything.</p>
     <h2 class="psub" id="s1">Transparent backgrounds, straight out</h2>
     <p class="ptext">On September 20, Alibaba released an image model called Qwen-Image-2.1. It has a few features designers will welcome.</p>
     <p class="ptext">The most striking is transparency. It produces PNGs with the background already gone. No separate cut-out step, and you can even pick out and edit just the text on a transparent layer. You can feed it up to ten reference images at once, which makes it handy for group shots, virtual try-ons and room styling drafts. The default output is 2048×2048.</p>
@@ -1798,7 +1750,7 @@
       <description>On September 22, Opus 5.5, GPT-6 Sol and Luna all launched on the same day and the price sheets changed dramatically. What that means, in numbers, for the credits and subscriptions designers pay for.</description>
       <content:encoded><![CDATA[    <p class="ptext">Last Tuesday, September 22, three price sheets changed in a single day. Anthropic released Claude Opus 5.5, and the same day OpenAI unveiled GPT-6 Sol and GPT-6 Luna. All three are cheaper than the previous generation. Quite a bit cheaper.</p>
     <p class="ptext">API prices sound far removed from designers. Not many designers call an API directly. But the credit prices charged by Figma Make, Canva and every image and prototyping tool out there sit on top of these numbers. When the underlying cost goes down, what we pay moves too, eventually. The only question is when, and by how much.</p>
-    <p class="ptext"><strong>First, a disclaimer.</strong> All prices are as of September 27. OpenAI&#x27;s developer event (DevDay) is scheduled for the 29th, so they may change again within days. Also, I&#x27;m building this site with Claude Code, which is why I&#x27;ve only used numbers from company announcements and independent outlets.</p>
+    <p class="ptext">All prices are as of September 27, and OpenAI&#x27;s DevDay on the 29th may change them again within days. Since this site is built with Claude Code, I&#x27;ve only used numbers from company announcements and independent outlets.</p>
     <h2 class="psub" id="s1">The price sheet, one week later</h2>
     <div class="art__tablewrap"><table class="art__table">
       <thead><tr><th>Model</th><th>Input (per 1M tokens)</th><th>Output (per 1M tokens)</th><th>vs. previous generation</th></tr></thead>
@@ -1846,7 +1798,7 @@
       <description>Two frontier models released two days apart. Official specs, third-party evaluations and early reactions from designers, side by side with sources.</description>
       <content:encoded><![CDATA[    <p class="ptext">In the first week of September, two frontier AI models came out two days apart: Anthropic&#x27;s Claude Fable 5.1 on September 1–2, and OpenAI&#x27;s GPT-6 Astra on September 3. Both were announced as the smartest yet, and, as it happens, their price sheets are identical.</p>
     <p class="ptext">Asked which is better, it&#x27;s hard to answer in one line. Lay out the official specs, the independent evaluations and the reactions of people who tried them first, one after another, and you&#x27;ll see why.</p>
-    <p class="ptext"><strong>First, a disclaimer.</strong> Many of the benchmarks were measured by the companies that made the models. Each table notes who measured what. Also, I&#x27;m building this site with Claude Code, so I only used numbers that have a source. All figures are as of mid-September 2026 and are changing fast.</p>
+    <p class="ptext">Many of these benchmarks were measured by the companies that made the models, so each table notes who measured what. Because this site is built with Claude Code, I only used numbers with a clear source, all as of mid-September.</p>
     <h2 class="psub" id="s1">Specs: same price, different cache</h2>
     <div class="art__tablewrap"><table class="art__table">
       <thead><tr><th></th><th>Claude Fable 5.1</th><th>GPT-6 Astra</th></tr></thead>
@@ -2056,7 +2008,7 @@
       <content:encoded><![CDATA[    <p class="ptext">After a month or so with an image generator, one day the thought hits you: can I actually put this in client work?</p>
     <p class="ptext">The answer isn&#x27;t simple. Does copyright arise? Do the tool&#x27;s terms allow it? Does the contract forbid it? Does the result resemble someone else&#x27;s work? There are several layers, and you can get caught at each one separately.</p>
     <p class="ptext">I&#x27;m not a lawyer, but I&#x27;ve laid them out in the order you&#x27;d check them in practice.</p>
-    <p class="ptext"><strong>First, a disclaimer.</strong> This isn&#x27;t legal advice. The relevant laws, rulings and terms of service keep changing. For anything big, check with a lawyer or the client&#x27;s legal team. This piece is based on Korean law, with the US for comparison; rules differ by country.</p>
+    <p class="ptext">To be clear up front, this isn&#x27;t legal advice. Laws, rulings and terms of service keep changing, so for anything big, check with a lawyer or the client&#x27;s legal team. The piece follows Korean law, with the US for comparison; rules differ by country.</p>
     <h2 class="psub" id="s1">Copyright belongs to people</h2>
     <p class="ptext">Korea&#x27;s Copyright Act defines a work as &quot;a creative production that expresses human thoughts or emotions&quot;. The key is the word &quot;human&quot;. The basic interpretation so far is that output made just by entering a prompt is hard to see as something a person expressed, and the AI copyright guide published by Korea&#x27;s Ministry of Culture, Sports and Tourism pointed broadly the same way.</p>
     <p class="ptext">The US is similar. The Copyright Office has refused to register AI output without human creative contribution. In the case of a comic book containing AI images, the images were left out, and only the parts a person did, like the text and arrangement, were recognized.</p>

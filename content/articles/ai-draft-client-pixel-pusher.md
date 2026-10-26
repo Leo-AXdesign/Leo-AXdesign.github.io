@@ -14,8 +14,6 @@ related: ai, graphic
 
 10월 12일 Fast Company가 이 이야기를 다뤘다. 그래픽 디자이너 열두 명 넘게 인터뷰했는데, 지난 1년 반 사이 비슷한 일을 겪었다는 사람이 많았다. 클라이언트는 AI 시안을 보내며 값을 깎고, 회사에서는 상사가 AI로 만든 화면을 내밀며 "이대로 만들어 달라"고 한다. 의견을 내면 "챗GPT한테 물어봐"라는 답이 돌아오기도 하고, AI가 대신할 수 있다는 말과 함께 일자리를 잃은 사람도 있었다. 기사는 이렇게 디자이너가 '픽셀만 옮기는 사람'이 되어 간다고 썼다.
 
-**먼저 밝혀 둘 것.** 이 글은 인터뷰 기사와 몇 개의 조사를 바탕으로 한다. 이런 일이 얼마나 흔한지 보여 주는 정확한 통계는 아직 없다. 아래 그림과 순서는 기사 속 디자이너들의 이야기를 바탕으로, 이 사이트가 정리한 것이다.
-
 ## "거의 다 됐다"는 착각
 
 클라이언트 눈에 AI 시안은 완성품에 가깝다. 그럴듯한 색, 그럴듯한 구도, 그럴듯한 글자. 그런데 그걸 실제로 쓰려면 해야 할 일이 꽤 남아 있다.
@@ -70,5 +68,7 @@ AI 시안이 해 준 건 "이런 느낌"을 정하는 일이다. 그것도 쓸�
 3. **내가 바꾼 것을 기록하자.** 처음 받은 AI 시안과 최종 결과물을 나란히 저장해 두자. 포트폴리오에도, 다음 견적 협상에도 쓸 수 있다.
 
 AI 도구를 실제 작업에 어떻게 쓰는지는 [AI 디자인 도구, 실무에서는 어떻게 쓰나](https://designrefs.com/articles/ai-design-tools-in-practice/)에, 쓰임새별 AI 도구는 [AI 디자인 툴](https://designrefs.com/ai/)에 모아 두었다.
+
+※ 이런 일이 얼마나 흔한지 보여 주는 통계는 아직 없다. 그림과 순서는 인터뷰 기사와 조사 속 디자이너들의 이야기를 바탕으로 정리한 것이다.
 
 ※ 출처: [Fast Company(2026. 10. 12)](https://www.fastcompany.com/91621558/ai-pilled-bosses-and-clients-turning-designers-into-pixel-pushers), [Fast Company 단가 조사](https://www.fastcompany.com/91571502/freelance-design-pricing-transparency-project-report), [HBR](https://hbr.org/2024/11/research-how-gen-ai-is-already-impacting-the-labor-market), [Envato](https://elements.envato.com/learn/creative-ai-tools).

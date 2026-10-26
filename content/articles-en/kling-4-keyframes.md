@@ -9,8 +9,6 @@ Kling, the AI video model from China's Kuaishou, published its 4.0 specs. The fu
 
 The numbers stand out: up to 30 seconds per generation, up to 10 keyframes, up to 15 references. But as a designer, what I kept looking at was the keyframes. It means you can hand AI video a storyboard.
 
-**First, a disclaimer.** The full release isn't out yet, and Flash is limited to top-tier yearly subscribers, so I haven't tried it. What follows is based on Kling's published specs and write-ups of them.
-
 ## From two frames to ten
 
 Until now, there were two ways to direct AI video: describe it in words, or give a first and last frame. Kling 3.0 also took a first and last frame and let the AI fill in between.
@@ -55,5 +53,7 @@ There's some preparation worth doing before the full release.
 3. **Judge price on the full release.** 4.0 pricing isn't out yet. Thirty seconds at 4K uses a lot of credits even on 3.0, so get in the habit of reviewing drafts short and low-res, and rendering only the final long and large.
 
 AI tools for video and motion are collected under [AI design tools](https://designrefs.com/en/#ai).
+
+※ The full release isn't out, and Flash is limited to top-tier yearly subscribers, so I haven't tried it. This is based on Kling's published specs and write-ups of them.
 
 ※ Sources: [Atlas Cloud](https://www.atlascloud.ai/blog/tips/kling-4-flash-vs-full), [Pandaily](https://pandaily.com/kling-ai-kling-4-0-30-second-native-video-multi-reference-control), [Morphic](https://morphic.com/resources/models/kling-4), [sloptv](https://sloptv.co/news/kling-4-0-october-promise-flash-720p-only), [Atlas Cloud pricing](https://www.atlascloud.ai/blog/tips/kling-ai-pricing).

@@ -9,7 +9,7 @@ Last Tuesday, September 22, three price sheets changed in a single day. Anthropi
 
 API prices sound far removed from designers. Not many designers call an API directly. But the credit prices charged by Figma Make, Canva and every image and prototyping tool out there sit on top of these numbers. When the underlying cost goes down, what we pay moves too, eventually. The only question is when, and by how much.
 
-**First, a disclaimer.** All prices are as of September 27. OpenAI's developer event (DevDay) is scheduled for the 29th, so they may change again within days. Also, I'm building this site with Claude Code, which is why I've only used numbers from company announcements and independent outlets.
+All prices are as of September 27, and OpenAI's DevDay on the 29th may change them again within days. Since this site is built with Claude Code, I've only used numbers from company announcements and independent outlets.
 
 ## The price sheet, one week later
 

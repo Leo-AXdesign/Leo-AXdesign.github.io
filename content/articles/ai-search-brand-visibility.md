@@ -12,8 +12,6 @@ related: ai, graphic
 
 어도비가 든 근거는 이렇다. 소비자 넷 중 하나는 여행을 정할 때 AI를 가장 먼저 찾는다. 사람들이 검색창 대신 AI에게 묻기 시작하면, 브랜드가 신경 써야 할 '첫 화면'이 바뀐다.
 
-**먼저 밝혀 둘 것.** 어도비가 든 넷 중 하나라는 숫자는 조사 방법이 함께 공개되지 않았다. 아래에서는 이 흐름이 디자이너의 일과 어디서 만나는지에 집중했다. 이 사이트도 AI가 읽기 쉽도록 llms.txt라는 안내 파일을 두고 있다는 것도 함께 적어 둔다.
-
 ## AI 답변 속 브랜드는 어디서 오나
 
 ![AI는 공식 사이트의 글, 그림 설명, 리뷰와 기사, 구조화된 정보를 읽고 답을 만든다. 브랜드는 그 답에 얼마나 자주, 정확히 나오는지 잰다.](https://designrefs.com/articles/img/ai-search-brand.svg)
@@ -56,5 +54,7 @@ related: ai, graphic
 3. **브랜드 한 문장 쓰기.** 브랜드 가이드 첫 장에 "우리는 누구를 위해 무엇을 하는 곳인가"를 한 문장으로 적어 두자. AI가 인용하기 가장 좋은 문장이다.
 
 AI에게 우리 디자인 규칙을 건네는 법은 [DESIGN.md 글](https://designrefs.com/articles/design-md-for-ai/)에, 브랜딩 레퍼런스는 [그래픽 / 브랜딩](https://designrefs.com/graphic/)에 모아 두었다.
+
+※ 어도비가 든 '넷 중 하나'라는 숫자는 조사 방법이 함께 공개되지 않았다. 참고로 이 사이트도 AI가 읽기 쉽도록 llms.txt라는 안내 파일을 두고 있다.
 
 ※ 출처: [Adobe·Heathrow 발표](https://news.adobe.com/news/2026/10/adobe-and-heathrow-airport-partner), [IT Brief UK](https://itbrief.co.uk/story/heathrow-extends-adobe-deal-to-boost-ai-travel-search), [The Next Web](https://thenextweb.com/news/heathrow-adobe-agentic-ai-website), [CMSWire](https://www.cmswire.com/digital-experience/adobe-launches-brand-visibility-tool-for-ai-search/), [TechRadar](https://www.techradar.com/pro/security/forget-about-seo-adobe-already-has-an-llm-optimizer-to-help-businesses-rank-on-chatgpt-gemini-and-claude).

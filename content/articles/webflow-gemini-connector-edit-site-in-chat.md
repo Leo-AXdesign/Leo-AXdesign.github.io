@@ -1,6 +1,6 @@
 ---
 slug: webflow-gemini-connector-edit-site-in-chat
-title: 문구 세 군데 고치려고 웹플로를 열었다 닫았다 할 때, 제미나이에 붙은 Webflow 연결에서 확인할 것
+title: 제미나이 대화창에서 웹플로 사이트를 고친다, 연결 앱으로 되는 일과 아직 모르는 일
 desc: Webflow가 10월 15일 Google Gemini 앱의 연결 앱이 됐다. 채팅에서 페이지 제작, CMS 정리, 사이트 감사, 성과 질문을 할 수 있다고 한다. 설치는 무료이고 지금은 Webflow AI 크레딧을 쓰지 않는다. 보도자료와 마켓플레이스 페이지로 확인한 내용과 아직 알 수 없는 부분을 정리했다.
 date: 2026-10-23
 order: 1
@@ -15,13 +15,7 @@ related: ai, tools, ui-ux
 Webflow가 10월 15일 보도자료로 Google Gemini 앱의 '연결 앱'이 됐다고 발표했다. 이 글은 그 보도자료와 Webflow 앱 마켓플레이스 페이지에서 직접 확인한 내용만 옮긴다.
 
 ![Webflow 앱 마켓플레이스의 Google Gemini MCP Connector 페이지. 출처: webflow.com/apps/detail/google-gemini-mcp-connector (캡처일 2026-10-23)](https://designrefs.com/articles/img/webflow-gemini-connector-edit-site-in-chat-shot1.webp)
-## 먼저 밝혀 둘 것
-
-- 이 연결을 내 Webflow 계정에 설치해 써 보지는 않았다. 아래는 모두 보도자료와 마켓플레이스 페이지에 적힌 내용이다.
-- 내가 확인한 보도자료는 CMSWire와 TechIntelPro에 실린 사본이다. 원본 GlobeNewswire 페이지는 열어 보지 못했다.
-- 요금제별 조건, 지원 지역, 사용량 한도는 연 자료 어디에도 구체적으로 없었다.
-- 제3자가 이 연결을 시험한 결과는 찾지 못했다. "페이지가 잘 나온다"는 것은 Webflow 쪽 설명이다.
-- 같은 날 소식이 "웹 디자인 플랫폼에 제미나이를 통합했다"로 요약되는 곳도 있다. 보도자료의 표현은 Gemini 앱 안의 '연결 앱'이다. 이 글은 보도자료를 따른다.
+보도자료와 마켓플레이스 페이지에 적힌 내용을 따랐고, 연결을 직접 설치해 써 보지는 않았다. 요금제별 조건과 지원 지역, 사용량 한도는 어디에도 구체적으로 없었다. 어떤 곳은 '웹플로가 제미나이를 통합했다'고 요약했지만, 보도자료의 표현은 제미나이 앱 안의 '연결 앱'이라 이 글도 그 표현을 따른다.
 
 ## 연결 앱이 뭔가
 

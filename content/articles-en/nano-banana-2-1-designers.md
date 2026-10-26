@@ -1,6 +1,6 @@
 ---
 slug: nano-banana-2-1-designers
-title: Nano Banana 2.1 is "half price". What designers should check
+title: We opened Nano Banana 2.1's price list: 4K isn't half price
 desc: Google's image model Nano Banana 2.1 is out. 1K and 2K images cost half as much, but 4K doesn't, and text got better while the model card lists weak spots. Checked against Google's pricing page and model card, with charts and numbers.
 tag: AI Design
 ---
@@ -10,8 +10,6 @@ Google's image model Nano Banana has become a familiar name in Korea too. On Oct
 Most launch headlines said the same thing: "4K at half price." But when I opened Google's pricing page today, only 1K and 2K were half price. 4K came down by a quarter. And the "old model shuts down October 29" line in several articles doesn't appear anywhere in Google's own docs.
 
 So this piece follows the documents rather than the buzz. I went through Google's pricing page, model card and deprecation table one by one and kept only what designers need.
-
-**First, a disclaimer.** I'm building this site with Claude Code. Every performance number below was measured by Google itself, and no one has published tests of Korean text yet.
 
 ## What changed
 
@@ -73,5 +71,7 @@ This matters for client work. If you deliver images made with Nano Banana, the c
 **Use 4K only when you need it.** Unless it's a large print image, pick drafts at 2K and render only the final one at 4K.
 
 AI image tools by use case are under [AI tools](https://designrefs.com/en/#ai).
+
+※ Every performance number here was measured by Google itself, and no one has published tests of Korean text yet.
 
 ※ Sources: [Nano Banana 2.1 model card](https://deepmind.google/models/model-cards/nano-banana-2-1/), [Gemini API pricing](https://ai.google.dev/gemini-api/docs/pricing) · [deprecations](https://ai.google.dev/gemini-api/docs/deprecations) (checked Oct 15), [Neowin](https://www.neowin.net/news/google-launches-nano-banana-21-with-better-editing-and-subject-consistency/), [Android Headlines](https://www.androidheadlines.com/2026/10/google-launches-nano-banana-2-1-ai-images-price.html), [Apidog](https://apidog.com/blog/nano-banana-2-1/), [Google on YouTube](https://www.youtube.com/watch?v=Sm7OTow3mcY).

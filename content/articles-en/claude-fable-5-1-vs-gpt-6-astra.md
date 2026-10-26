@@ -9,7 +9,7 @@ In the first week of September, two frontier AI models came out two days apart: 
 
 Asked which is better, it's hard to answer in one line. Lay out the official specs, the independent evaluations and the reactions of people who tried them first, one after another, and you'll see why.
 
-**First, a disclaimer.** Many of the benchmarks were measured by the companies that made the models. Each table notes who measured what. Also, I'm building this site with Claude Code, so I only used numbers that have a source. All figures are as of mid-September 2026 and are changing fast.
+Many of these benchmarks were measured by the companies that made the models, so each table notes who measured what. Because this site is built with Claude Code, I only used numbers with a clear source, all as of mid-September.
 
 ## Specs: same price, different cache
 

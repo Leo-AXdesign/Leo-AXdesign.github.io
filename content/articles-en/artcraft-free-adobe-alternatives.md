@@ -9,7 +9,7 @@ A story made the rounds in design circles this week. A developer released seven 
 
 Headlines everywhere said you can finally cancel Adobe. I took a calm look at whether that's true and how far along it is.
 
-**First, a disclaimer.** These apps were reportedly built with Anthropic's Claude Opus 5.5. I'm building this site with Claude Code from the same company. So I've leaned on what the repositories say and on other outlets' checks rather than the developer's claims. I haven't installed the apps myself.
+These apps were reportedly built with Anthropic's Claude Opus 5.5, and this site is built with Claude Code from the same company. So I've leaned on what the repositories say and on other outlets' checks rather than the developer's claims. I haven't installed the apps myself.
 
 ## Who, why, and how
 

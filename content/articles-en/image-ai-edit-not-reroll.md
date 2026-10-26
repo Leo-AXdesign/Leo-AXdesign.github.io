@@ -9,8 +9,6 @@ Anyone who has made drafts with image AI has probably been here. You ask it to c
 
 This week's two image models aim right at that problem: Ideogram 4.5 on September 30, and Black Forest Labs' FLUX 3 Image, announced October 2. Both put "change only what you pick and leave the rest alone" ahead of "a more stunning picture".
 
-**First, a disclaimer.** I haven't run either model myself. What follows is based on each company's announcement, articles covering them, and reseller price sheets.
-
 ## Re-rolling vs. editing
 
 Until now, "editing" in image AI has been closer to redrawing. The model looks at the original, but rebuilds the whole thing every time. So each edit nudges areas you never touched. The industry calls this drift.
@@ -76,5 +74,7 @@ Before you trust "it doesn't change", here's a way to check. All you need is Pho
 Do this once before bringing a new model into your work, and you'll know how far you can trust it. Both models can be tried briefly, so test with a revision request you get often.
 
 How to put a mood into words is in [Putting "make it feel right" into words](https://designrefs.com/en/articles/describing-design-style/), and whether you can use AI images for client work is in [Can you use AI-generated images in client work?](https://designrefs.com/en/articles/ai-image-commercial-use/). Image tools are collected under [AI design tools](https://designrefs.com/en/#ai).
+
+※ I haven't run either model myself. This is based on each company's announcement, coverage of it, and reseller price sheets.
 
 ※ Sources: [Ideogram 4.5 overview (orcarouter)](https://www.orcarouter.ai/blog/ideogram-4-5-launch-precise-edit-model), [completeaitraining](https://completeaitraining.com/news/ideogram-45-reduces-pixel-drift-in-multi-turn-edits/), [the-decoder](https://the-decoder.com/black-forest-labs-launches-flux-3-image-with-multi-step-editing-that-leaves-the-rest-of-your-picture-alone/), [Tech Times](https://www.techtimes.com/articles/328502/20261002/black-forest-labs-launches-flux-3-image-json-bounding-boxes-lock-unchanged-pixels-numerically.htm), [OpenRouter FLUX.3 Image](https://openrouter.ai/black-forest-labs/flux-3-image), [kingy.ai](https://kingy.ai/blog/flux-3-image-specs-benchmarks-comparison/).

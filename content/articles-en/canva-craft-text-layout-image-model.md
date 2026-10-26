@@ -1,6 +1,6 @@
 ---
 slug: canva-craft-text-layout-image-model
-title: When the poster draft keeps misspelling the date, Canva Craft plans the layout first
+title: Canva Craft plans the layout first, so poster text stops breaking
 desc: On October 22 Canva released Craft, its first in-house image model, aimed at designs where layout and text matter. What press coverage says about its two-stage setup, the ranking claims, where you can use it, and what is still unknown, including price and commercial terms.
 tag: AI Design
 ---
@@ -11,13 +11,7 @@ You run the prompt through an image AI and the picture looks right. But the date
 
 On October 22, Canva released Canva Craft, its first image generation model built in-house. It is aimed at posters, social posts and presentations, where text and layout matter more than photographic realism. This is not a hands-on review. It is a read of what press coverage reports, from a designer's point of view.
 
-## Before you read
-
-- I did not run the model. Everything below comes from TechCrunch, Digital Trends and The Letter Two, plus a news roundup page.
-- Canva's own announcement page would not open for me (access denied). I know the official wording only as far as the articles quote it.
-- Rankings and performance figures are Canva's. None of the coverage I opened says they were independently verified.
-- None of the three articles states a price (API rates or credits).
-- Reports differ on some points. Whether the connector that lets ChatGPT and Gemini call Canva is live yet is described differently, and I note that below.
+I haven't run the model myself; this is based on reporting from TechCrunch, Digital Trends and others. The rankings and performance figures are Canva's own, and I found nothing that verified them independently. API pricing and credit costs weren't in the coverage either.
 
 ## Plan first, then draw
 

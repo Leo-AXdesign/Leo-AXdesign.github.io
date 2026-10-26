@@ -11,7 +11,7 @@ Open a design file and you can see the frames, but rarely why they look that way
 
 So this piece follows Figma's blog post and release notes rather than the launch buzz. I separate what works, who can use it, and what hasn't been confirmed.
 
-**First, a disclaimer.** I haven't used this feature myself. Everything below comes from what Figma published and what news reports say. I couldn't find per-plan limits or the exact range of supported markdown syntax in anything public.
+This is based on what Figma published and on news coverage; I haven't used the feature myself. Per-plan limits and the exact range of supported markdown weren't in anything public.
 
 ## What Specs is
 

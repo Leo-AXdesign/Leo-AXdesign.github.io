@@ -232,8 +232,8 @@ def build(groups, report):
       <h2 class="psub">더 많은 디자이너 공고</h2>
       <div class="page__navlinks">{more}</div>
     </section>
-{block("국내", "사람인 공개 API", groups["kr"],
-       "국내 공고는 준비 중입니다." if kr_skipped else "이번 주에 새로 올라온 국내 공고를 가져오지 못했습니다.")}
+{"" if kr_skipped and not groups["kr"] else block("국내", "사람인 공개 API", groups["kr"],
+       "이번 주에 새로 올라온 국내 공고를 가져오지 못했습니다.")}
 {block("해외 · 원격 근무", "Remotive · We Work Remotely · Remote OK · Himalayas · Jobicy", groups["global"],
        "이번 주에 새로 올라온 해외 원격 공고를 가져오지 못했습니다.")}
     <p class="ptext ptext--note">공고 출처: {credits or "없음"}. 공고의 저작권은 각 회사와 출처 사이트에 있습니다.
@@ -246,8 +246,10 @@ def build(groups, report):
                   {"@type": "ListItem", "position": 1, "name": "디자인 허브", "item": SITE},
                   {"@type": "ListItem", "position": 2, "name": "디자이너 채용 사이트", "item": SITE + "jobs/"},
                   {"@type": "ListItem", "position": 3, "name": title, "item": url}]}}
+    # 외부 피드의 공고를 옮겨 온 목록이라 검색 결과에는 내보내지 않습니다 (애드센스 '복사 콘텐츠' 대비, 2026-10-26).
+    # 사람에게는 그대로 보이고, 링크는 따라가도록 follow 는 둡니다.
     doc = document(title=title, desc=desc, url=url, body=body, jsonld=jsonld, menu=menu("jobs"),
-                   footer_nav=footer_links())
+                   footer_nav=footer_links(), robots="noindex, follow")
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / "index.html").write_text(doc, encoding="utf-8")
     DATA.mkdir(parents=True, exist_ok=True)

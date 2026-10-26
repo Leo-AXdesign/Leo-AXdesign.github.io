@@ -35,14 +35,13 @@ today = datetime.date.today().isoformat()
 
 # ---------- sitemap.xml ----------
 # 해시(#) 주소는 검색엔진이 별도 페이지로 보지 않으므로, 실제 파일이 있는 주소만 넣습니다.
-PAGE_SLUGS = ["en", "en/talk", "ui-ux", "graphic", "color", "font", "assets", "mockups", "dev", "tools",
+PAGE_SLUGS = ["en", "ui-ux", "graphic", "color", "font", "assets", "mockups", "dev", "tools",
               "freelance", "jobs", "ai", "community", "creators",
-              "styles", "trends", "glossary", "talk", "about", "updates", "privacy"]
+              "styles", "trends", "glossary", "about", "updates", "privacy"]
 urls = [(SITE, "1.0", today)] + [(SITE + s + "/", "0.8", today) for s in PAGE_SLUGS]
 urls.append((SITE + "articles/", "0.8", posts[0]["date"] if posts else today))
 # 매주 모으는 채용 공고 페이지 (tools/build-jobs.py 가 만든 뒤에만)
-if (ROOT / "jobs" / "weekly" / "index.html").exists():
-    urls.append((SITE + "jobs/weekly/", "0.7", today))
+# 주간 채용 공고(/jobs/weekly/)와 디자인 잡담(/talk/)은 noindex 라 사이트맵에 넣지 않습니다.
 # 글은 고칠 때마다 날짜가 바뀌므로 각 글의 작성일을 lastmod 로 넣습니다
 urls += [(f'{SITE}articles/{x["slug"]}/', "0.7", x["updated"]) for x in posts]
 # 영문판 글 (content/articles-en/)

@@ -13,8 +13,6 @@ related: ai, graphic
 
 환타는 할로윈을 자기 것으로 만들고 싶어 한다. 코카콜라가 크리스마스를 떠올리게 하듯이. 그래서 남의 영화 캐릭터를 빌려 오던 지난 2년과 달리, 올해는 사이보그 프랑켄슈타인, 디제이 늑대인간 같은 자기 괴물 넷을 만들었다. 그리고 그걸 AI 스튜디오와 함께 만들었다.
 
-**먼저 밝혀 둘 것.** 캠페인 영상은 공개돼 있지만, 반응을 숫자로 잰 자료는 많지 않다. 아래 숫자는 각각 누가 어떻게 쟀는지 함께 적었다.
-
 ## 누가 무엇을 했나
 
 ![환타 호러 유니버스에서 사람과 AI가 맡은 일, 그리고 반응. 환타와 제작사가 밝힌 내용을 바탕으로 정리했다.](https://designrefs.com/articles/img/fanta-who-did-what.svg)
@@ -74,5 +72,7 @@ related: ai, graphic
 3. **첫 3초를 따로 보기.** 완성본을 처음부터 끝까지 보는 시사 말고, 소셜 피드처럼 몇 초만 보고 넘기는 상황으로 한 번 더 보자. 댓글은 거기서 달린다.
 
 AI로 만든 이미지를 일에 써도 되는지는 [AI로 만든 이미지, 클라이언트 작업에 써도 될까](https://designrefs.com/articles/ai-image-commercial-use/)에, 그래픽·브랜딩 레퍼런스는 [그래픽 / 브랜딩](https://designrefs.com/graphic/)에 모아 두었다.
+
+※ 캠페인 영상은 공개돼 있지만 반응을 숫자로 잰 자료는 많지 않다. 숫자마다 누가 어떻게 쟀는지 함께 적었다.
 
 ※ 출처: [Creative Bloq](https://www.creativebloq.com/ai/fantas-ai-slop-halloween-advert-is-a-real-horror-show), [eMarketer](https://www.emarketer.com/content/fanta-bets-on-original-ip-own-halloween--ai-concerns-could-way), [Zappi](https://www.zappi.io/web/blog/innovation-spotlight-fantas-haunted-collection), [Adweek](https://www.adweek.com/creativity/fantas-big-bet-to-own-halloween-an-original-cinematic-universe/), [DesignRush](https://news.designrush.com/fanta-haunted-universe-halloween-2026), [Marketing-Interactive](https://www.marketing-interactive.com/can-ai-help-fanta-build-the-next-horror-universe).

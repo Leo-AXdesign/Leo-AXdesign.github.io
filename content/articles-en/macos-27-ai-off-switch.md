@@ -9,7 +9,7 @@ A tool spread quietly among Mac users this week. It's called RemoveMacAI. It tur
 
 There's a reason a tool like this appeared. In macOS 27, released this fall, the switch that turned off all AI features at once is gone.
 
-**First, a disclaimer.** I haven't run this tool on macOS 27 myself. What follows is based on reporting from Mac-focused outlets. Apple hasn't explained why it removed the switch.
+Apple hasn't explained why the switch went away. I haven't run this tool on macOS 27 either; this follows reporting from Mac-focused outlets.
 
 ## What changed
 

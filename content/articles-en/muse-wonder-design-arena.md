@@ -11,7 +11,7 @@ There wasn't a word about design. But the model showed up on Design Arena the sa
 
 Design Arena is where people look at designs made by AI and pick the better one, building a ranking from those votes. When a new model is called "No. 1 at design", this is usually where that comes from. So this time I looked first at how that ranking is made, rather than at the model itself.
 
-**First, a disclaimer.** I'm building this site with Claude Code, and Anthropic's models sit on the same leaderboard. Scores shift every day as votes come in, so every number below is as of October 14.
+Two things before the numbers. Scores shift daily as votes come in, so everything below is as of October 14. And Anthropic's models sit on the same leaderboard, while this site is built with Claude Code.
 
 ## From one vote to a ranking
 

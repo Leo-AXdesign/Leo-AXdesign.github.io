@@ -1,6 +1,6 @@
 ---
 slug: protopie-mcp-prototype-ai
-title: Build prototypes by prompt, hand them off as code: what to check in ProtoPie MCP
+title: ProtoPie opens up to MCP: AI can read, edit and hand off your prototypes
 desc: ProtoPie has announced official MCP support. Studio MCP lets an AI read and edit the prototype you have open; Code MCP hands finished prototypes to coding agents. Checked against ProtoPie's own post and docs: what works and what isn't confirmed.
 tag: AI Design
 ---
@@ -11,7 +11,7 @@ Anyone who has built interaction prototypes knows the scene. To make a card expa
 
 This piece follows ProtoPie's blog posts and docs, and separates what works from what hasn't been confirmed.
 
-**First, a disclaimer.** I haven't used this feature myself. Everything below comes from what ProtoPie published. Pricing, usage limits and the exact scope per plan were either missing or inconsistent across the public pages.
+This is based on what ProtoPie published; I haven't used the feature myself. Pricing, usage limits and per-plan scope were missing or inconsistent across the public pages.
 
 ## What MCP does here
 

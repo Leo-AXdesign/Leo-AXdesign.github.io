@@ -11,7 +11,7 @@ The interesting part is the money. In the same month, open models took only 14% 
 
 The same thing is happening with images. And right there, a problem popped up that designers can easily trip over.
 
-**First, a disclaimer.** This isn't legal advice. License terms differ between model versions and they change. Check the original text on the model page before you actually use anything.
+Since this is about licenses, one thing should be clear: this isn't legal advice. Terms differ between model versions and they change, so check the original text on the model page before you use anything.
 
 ## Transparent backgrounds, straight out
 

@@ -9,8 +9,6 @@ On October 5, OpenAI announced a new ad format for ChatGPT. While ChatGPT genera
 
 ChatGPT has 1.2 billion weekly users, and many of them come to make pictures. For OpenAI, the few seconds people spend waiting for an image to render are some of the longest they look at the screen. Now there's an ad slot there.
 
-**First, a disclaimer.** The test starts in late October, so nobody has seen a real ad yet. What follows is based on OpenAI's announcement and articles covering it. I'll also note that I'm building this site with Claude Code.
-
 ## Where it goes, and how
 
 The ad sits in a separate spot from the image you asked for. OpenAI made three promises. Ads are clearly labeled. They're kept apart from your image so the two don't blend. And ads don't influence ChatGPT's answers.
@@ -57,5 +55,7 @@ Here's what's worth setting up now.
 3. **If you make ad creative.** Try drafting with the constraint of one image placed next to an image request. Even for the same product, a photo that explains and a photo that fits are different.
 
 How AI tools are moving into the design workflow is covered in [what designers should take from DevDay](https://designrefs.com/en/articles/openai-devday-2026-designers/), and whether AI images can be used in your work is in [Can you use AI-generated images in client work?](https://designrefs.com/en/articles/ai-image-commercial-use/).
+
+※ The test starts in late October, so nobody has seen a real ad yet. This piece is based on OpenAI's announcement and coverage of it.
 
 ※ Sources: [TechCrunch](https://techcrunch.com/2026/10/05/openai-launches-visual-ads-that-appear-alongside-image-generation-results/), [OpenAI Help](https://help.openai.com/en/articles/20001047-ads-in-chatgpt), [WinBuzzer](https://winbuzzer.com/2026/10/05/chatgpt-to-test-visual-ads-during-image-generation-xcxwbn/), [Android Headlines](https://www.androidheadlines.com/2026/10/chatgpt-visual-ads-image-generation.html), [CNBC (weekly users)](https://www.cnbc.com/2026/10/05/anthropic-openai-google-meta-execs-testify-nyc-council-ai-hearing.html), [Honeyb (February launch)](https://www.honeyb.ai/blog/chatgpt-ads-february-2026).

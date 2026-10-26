@@ -1,6 +1,6 @@
 ---
 slug: figma-code-layers-open-beta
-title: When your mockup doesn't click: what to check in Figma's code layers (free on paid plans until Nov 4)
+title: Figma code layers in open beta: clickable mockups right on the canvas (free until Nov 4)
 desc: Figma opened code layers in open beta on October 15. You can turn design frames, a GitHub repo, a website capture or a prompt into a clickable, code-backed prototype on the canvas. Checked against the release notes, help article and blog: what is confirmed and what is missing.
 tag: AI Design
 ---
@@ -9,13 +9,7 @@ A client replies to your mockup: "What happens when I press this button?" A stat
 
 On October 15, at Config India 2026, Figma opened code layers in open beta. They put prototypes backed by running code right on the canvas. This piece repeats only what I verified in Figma's release notes, help article and blog, and lists separately what remains unconfirmed.
 
-## Before you read
-
-- I did not run code layers for this piece. Everything below comes from official documentation.
-- The rollout is gradual, so it may not appear in your account yet. The help article says "gradually rolling out."
-- I found no supported frameworks, usage limits or per-task credit costs in the docs.
-- Plan wording differs between documents. More on that below.
-- I found no public evidence on whether the code a layer produces is good enough for production, so I don't judge that.
+Code layers are rolling out gradually, so they may not show up in your account yet. This follows the official docs; I haven't run it myself. Supported frameworks, usage limits and credit costs weren't in the docs, and plan wording differs slightly between pages, which I cover later.
 
 ## What a code layer is
 

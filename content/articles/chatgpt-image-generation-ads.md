@@ -12,8 +12,6 @@ related: ai, tools
 
 챗GPT의 주간 사용자는 12억 명이다. 그중 상당수가 그림을 만들러 온다. 오픈AI 입장에서는 사람들이 가장 오래 화면을 바라보는 순간 중 하나가 그림이 그려지기를 기다리는 몇 초다. 거기에 광고 자리가 생겼다.
 
-**먼저 밝혀 둘 것.** 시험은 10월 말에 시작해서 아직 실제 광고를 본 사람이 없다. 아래 내용은 오픈AI 발표와 이를 다룬 기사를 바탕으로 했다. 나는 이 사이트를 클로드 코드로 만들고 있다는 것도 함께 적어 둔다.
-
 ## 어디에, 어떻게 붙나
 
 광고는 사용자가 요청한 그림과 떨어진 자리에 붙는다. 오픈AI는 세 가지를 약속했다. 광고라고 분명히 표시한다. 만든 그림과 섞이지 않게 따로 둔다. 광고가 챗GPT의 답에 영향을 주지 않는다.
@@ -60,5 +58,7 @@ related: ai, tools
 3. **광고 소재 일을 한다면.** 그림 요청 옆에 놓일 한 장이라는 조건으로 시안을 만들어 보자. 같은 제품이라도 '설명하는 사진'과 '어울리는 사진'은 다르다.
 
 AI 도구가 디자인 흐름 안으로 들어오는 이야기는 [데브데이에서 디자이너가 볼 것](https://designrefs.com/articles/openai-devday-2026-designers/)에, AI로 만든 이미지를 일에 써도 되는지는 [AI로 만든 이미지, 클라이언트 작업에 써도 될까](https://designrefs.com/articles/ai-image-commercial-use/)에 정리해 두었다.
+
+※ 시험은 10월 말에 시작해서 아직 실제 광고를 본 사람이 없다. 이 글은 오픈AI 발표와 이를 다룬 기사를 바탕으로 했다.
 
 ※ 출처: [TechCrunch](https://techcrunch.com/2026/10/05/openai-launches-visual-ads-that-appear-alongside-image-generation-results/), [OpenAI 도움말](https://help.openai.com/en/articles/20001047-ads-in-chatgpt), [WinBuzzer](https://winbuzzer.com/2026/10/05/chatgpt-to-test-visual-ads-during-image-generation-xcxwbn/), [Android Headlines](https://www.androidheadlines.com/2026/10/chatgpt-visual-ads-image-generation.html), [CNBC (주간 사용자 수)](https://www.cnbc.com/2026/10/05/anthropic-openai-google-meta-execs-testify-nyc-council-ai-hearing.html), [Honeyb (2월 출시)](https://www.honeyb.ai/blog/chatgpt-ads-february-2026).

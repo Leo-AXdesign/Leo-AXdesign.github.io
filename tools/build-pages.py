@@ -197,6 +197,11 @@ ABOUT = f"""
     <p class="ptext">그래서 한 페이지에 다 모았습니다. 검색창에 단어 하나 치면 나오게.
     지금 {n_site}개가 들어 있고, 분야는 {n_cat}개로 나눠 뒀습니다.</p>
 
+    <h2 class="psub">누가 만드나</h2>
+    <p class="ptext">8년 차 디자이너 한 명이 운영합니다. 일하면서 레퍼런스를 북마크에 모으던 습관이 이 사이트가 됐습니다. 어떤 사이트를 넣고 뺄지, 설명을 어떻게 쓸지는 직접 정합니다.</p>
+    <p class="ptext">사이트를 만들고 고치는 일, 읽을거리의 자료 조사와 초안에는 클로드 코드 같은 AI 도구를 함께 씁니다.
+    숫자와 사실은 공식 발표나 원문을 열어 확인하고, 글마다 출처를 적습니다. 틀린 곳이 있으면 고친 날과 함께 바로잡습니다.</p>
+
     <h2 class="psub">링크만 있는 건 아닙니다</h2>
     <p class="ptext">쓰다 보니 아쉬운 게 생겨서 몇 가지를 더 붙였습니다.</p>
     <ul class="ptext-list">
@@ -413,7 +418,9 @@ for slug, title, intro, body, n, names, navlabel in pages:
     </section>{related_articles(slug)}"""
     doc = document(title=title, desc=intro, url=url, body=body_full, jsonld=jsonld,
                    menu=menu(slug), footer_nav=FOOTER,
-                   alternates=TALK_ALT if slug == "talk" else None)
+                   alternates=TALK_ALT if slug == "talk" else None,
+                   # 디자인 잡담은 글이 쌓일 때까지 검색 결과에 내보내지 않습니다 (2026-10-26)
+                   **({"robots": "noindex, follow"} if slug == "talk" else {}))
     d = ROOT / slug
     d.mkdir(exist_ok=True)
     (d / "index.html").write_text(doc, encoding="utf-8")
@@ -461,7 +468,8 @@ talk_en_jsonld = {
     "isPartOf": {"@type": "WebSite", "url": SITE + "en/", "name": "Design Hub"},
 }
 doc = document(title="Design Talk", desc=TALK_EN_DESC, url=TALK_EN_URL, body=talk_en_body, jsonld=talk_en_jsonld,
-               menu=menu("talk", "en"), footer_nav=footer_links("en"), lang="en", alternates=TALK_ALT)
+               menu=menu("talk", "en"), footer_nav=footer_links("en"), lang="en", alternates=TALK_ALT,
+               robots="noindex, follow")
 (ROOT / "en" / "talk").mkdir(parents=True, exist_ok=True)
 (ROOT / "en" / "talk" / "index.html").write_text(doc, encoding="utf-8")
 
@@ -480,9 +488,19 @@ links = ('<div class="footer__navgroup">' + _group(_cat_slugs) + '</div>'
          '<div class="footer__navgroup">'
          + f'<a href="{SITE}articles/">읽을거리</a>' + _group(INSIGHT)
          + f'<a href="{SITE}updates/">업데이트 기록</a>' + '</div>')
+# 첫 화면 소개와 최근 글. 자바스크립트 없이도 보이게 index.html 에 직접 적습니다 (영문판은 build-en.py)
+_posts = A.load()[:3]
+_intro = (f'        <p class="hero__intro">디자이너가 실제로 자주 여는 사이트 {len(sites)}곳을 분야별로 모았습니다. '
+          '설명은 직접 쓰고, 분야마다 고르는 법을 적어 두었습니다. '
+          f'스타일 사전과 용어 사전, 읽을거리도 함께 냅니다.</p>\n'
+          '        <ul class="hero__posts" aria-label="최근 읽을거리">'
+          + "".join(f'<li><a href="{SITE}articles/{x["slug"]}/">{e(x["title"])}</a></li>' for x in _posts)
+          + '</ul>')
+doc = re.sub(r"<!-- HOME:INTRO -->.*?<!-- /HOME:INTRO -->",
+             lambda m: f"<!-- HOME:INTRO -->\n{_intro}\n        <!-- /HOME:INTRO -->", doc, flags=re.S)
 pat = re.compile(r"<!-- SEO:PAGELINKS -->.*?<!-- /SEO:PAGELINKS -->", re.S)
 if pat.search(doc):
     doc = pat.sub(f'<!-- SEO:PAGELINKS -->\n      <nav class="footer__nav">{links}</nav>\n      <!-- /SEO:PAGELINKS -->', doc)
-    p.write_text(doc, encoding="utf-8")
+p.write_text(doc, encoding="utf-8")
 
 print(f"페이지 {len(pages)}개 생성: " + ", ".join(f"/{s}/" for s, *_ in pages))

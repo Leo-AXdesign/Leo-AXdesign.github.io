@@ -9,8 +9,6 @@ Shopify launched Canvas on October 1. It's a new workbench for designing online 
 
 The name already sounds familiar to designers, and so does the thing itself. Every page of the store is laid out on one surface. You pan across it and zoom in on details, much like opening a Figma file. The difference is that what sits on this canvas isn't a mockup. It's the working store.
 
-**First, a disclaimer.** Canvas is rolling out to stores over the coming days. I don't run a Shopify store, so I haven't used it myself. What follows is based on Shopify's announcement and changelog, and on articles covering the launch.
-
 ## From one page at a time to everything at once
 
 Until now, Shopify stores were edited in the theme editor. You open one page and click through the settings listed on the left, one by one. To check the product page while working on the home page, you had to switch pages.
@@ -69,5 +67,7 @@ If you have a Shopify store, duplicating your current theme and opening the copy
 One thing worth trying on the copy: tell Sidekick three of your store's usual rules first (say, button shape, heading size and photo ratio), then ask it to build a new page. How many pages it keeps those rules for will tell you how far to trust this workbench.
 
 For store references, see [UI/UX references](https://designrefs.com/en/#uiux). AI tools are collected under [AI design tools](https://designrefs.com/en/#ai).
+
+※ Canvas is rolling out to stores over several days. I don't run a Shopify store, so I haven't used it; this is based on Shopify's announcement, changelog and coverage.
 
 ※ Sources: [Shopify, Introducing Canvas](https://www.shopify.com/news/introducing-canvas), [Shopify changelog](https://changelog.shopify.com/posts/design-a-fully-bespoke-store-with-canvas), [TechCrunch](https://techcrunch.com/2026/10/01/shopify-debuts-canvas-a-way-to-build-online-stores-by-chatting-with-ai/), [Unite.AI](https://www.unite.ai/shopify-rolls-out-canvas-a-sidekick-powered-store-design-surface/), [ecommercenews](https://ecommercenews.com.au/story/shopify-launches-canvas-ai-workspace-for-store-design).

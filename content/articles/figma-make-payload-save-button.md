@@ -1,6 +1,6 @@
 ---
 slug: figma-make-payload-save-button
-title: 화면은 다 됐는데 저장 버튼이 아무것도 저장하지 않을 때, 피그마 메이크에 붙은 Payload에서 확인할 것
+title: 피그마 메이크에 Payload가 들어왔다, 시안에 데이터베이스와 로그인이 생긴다
 desc: Figma가 10월 15일 오픈소스 CMS Payload를 Figma Make에 넣었다. 프롬프트로 앱을 만들면 데이터베이스, 파일 저장, 사용자 로그인, 관리자 화면이 같이 생긴다. 공식 블로그로 확인한 내용, 호스팅 베타·가격 미정, 아직 밝혀지지 않은 부분을 정리했다.
 date: 2026-10-22
 order: 1
@@ -13,13 +13,7 @@ related: ai, tools, ui-ux
 이 빈칸을 메우려면 지금까지는 별도의 백엔드(화면 뒤에서 데이터를 저장하고 로그인을 처리하는 부분)를 연결해야 했다. Figma가 10월 15일 공식 블로그에서 Payload를 Figma Make에 넣었다고 발표했다. 이 글은 그 블로그 글과 Figma 릴리스 기록에서 직접 확인한 내용만 옮긴다.
 
 ![Figma 블로그 'Create, ship, and manage data-backed websites with Payload in Figma'. 출처: figma.com/blog/websites-with-payload-in-figma (캡처일 2026-10-22)](https://designrefs.com/articles/img/figma-make-payload-save-button-shot1.webp)
-## 먼저 밝혀 둘 것
-
-- 이 글을 쓰려고 Payload를 Figma Make에서 직접 돌려 보지는 않았다. 아래 내용은 모두 Figma 공식 블로그와 릴리스 기록에 적힌 것이다.
-- Figma가 안내한 도움말 문서("Add a backend to a functional prototype or web app")는 열리지 않아 확인하지 못했다.
-- 사용량 한도, 저장 용량 제한, 속도 제한은 공식 글에 나와 있지 않다.
-- Figma에서 호스팅한 프로젝트를 밖으로 내보낼 수 있는지, 직접 서버에 올릴 수 있는지도 글에 적혀 있지 않다.
-- 접근 권한이 모든 계정에 열리는 데 몇 주가 걸린다고 해서, 내 계정에서 아직 안 보일 수 있다.
+피그마 공식 블로그와 릴리스 기록을 바탕으로 했고, Payload를 직접 돌려 보지는 않았다. 사용량과 저장 용량 한도, 프로젝트를 밖으로 내보낼 수 있는지는 공식 글에 나와 있지 않다. 모든 계정에 열리기까지 몇 주가 걸린다니 아직 안 보일 수도 있다.
 
 ## 공식 글이 약속한 것
 

@@ -11,7 +11,7 @@ The answer isn't simple. Does copyright arise? Do the tool's terms allow it? Doe
 
 I'm not a lawyer, but I've laid them out in the order you'd check them in practice.
 
-**First, a disclaimer.** This isn't legal advice. The relevant laws, rulings and terms of service keep changing. For anything big, check with a lawyer or the client's legal team. This piece is based on Korean law, with the US for comparison; rules differ by country.
+To be clear up front, this isn't legal advice. Laws, rulings and terms of service keep changing, so for anything big, check with a lawyer or the client's legal team. The piece follows Korean law, with the US for comparison; rules differ by country.
 
 ## Copyright belongs to people
 

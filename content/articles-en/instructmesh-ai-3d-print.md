@@ -9,7 +9,7 @@ AI that turns a line of text or a single photo into a 3D model is common now. On
 
 On October 1, MIT's Computer Science and Artificial Intelligence Laboratory (CSAIL) released a tool aimed at this problem. It's called InstructMesh. It lets you pick only the problem areas of an AI-made 3D model, fix them by describing the fix, and then print.
 
-**First, a disclaimer.** InstructMesh is still a research tool, so I haven't used it myself. What follows is based on MIT's announcement and the paper, which will be presented at the UIST user interface conference in November.
+InstructMesh is still a research tool, so trying it wasn't an option. This draws on MIT's announcement and the paper, which will be presented at UIST in November.
 
 ## Right to look at, wrong to use
 

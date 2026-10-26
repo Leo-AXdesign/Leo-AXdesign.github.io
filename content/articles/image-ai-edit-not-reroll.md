@@ -12,8 +12,6 @@ related: ai, tools
 
 이번 주 나온 두 이미지 모델은 바로 이 지점을 겨냥했다. 9월 30일 Ideogram 4.5, 그리고 10월 2일 발표된 Black Forest Labs의 FLUX 3 Image. 둘 다 "더 멋진 그림"보다 "고른 곳만 고치고 나머지는 그대로"를 앞에 내세웠다.
 
-**먼저 밝혀 둘 것.** 두 모델 모두 직접 돌려 보지 못했다. 아래 내용은 각 회사 발표와 이를 다룬 기사, 재판매처 가격표를 바탕으로 했다.
-
 ## 다시 뽑기와 고쳐 쓰기
 
 지금까지 이미지 AI의 '수정'은 사실 다시 그리기에 가까웠다. 원래 그림을 참고는 하지만, 매번 전체를 새로 만든다. 그래서 고칠 때마다 손대지 않은 자리까지 조금씩 흔들린다. 업계에서는 이걸 '드리프트(drift)'라고 부른다.
@@ -79,5 +77,7 @@ FLUX 3 Image는 한 걸음 더 갔다. 고칠 때 바꾸지 않은 픽셀은 숫
 새 모델을 작업에 들이기 전에 한 번만 해 보면, 어디까지 믿고 맡겨도 될지 감이 온다. 두 모델 모두 짧게라도 써 볼 수 있으니, 평소 자주 받는 수정 요청 하나로 시험해 보자.
 
 원하는 분위기를 말로 전하는 법은 ['느낌 있게'를 말로 옮기는 일](https://designrefs.com/articles/describing-design-style/)에, 만든 이미지를 일에 써도 되는지는 [AI로 만든 이미지, 클라이언트 작업에 써도 될까](https://designrefs.com/articles/ai-image-commercial-use/)에 정리해 두었다. 이미지 도구들은 [AI 디자인 툴](https://designrefs.com/ai/)에 모여 있다.
+
+※ 두 모델 모두 직접 돌려 보지는 못했다. 각 회사 발표와 이를 다룬 기사, 재판매처 가격표를 바탕으로 썼다.
 
 ※ 출처: [Ideogram 4.5 정리(orcarouter)](https://www.orcarouter.ai/blog/ideogram-4-5-launch-precise-edit-model), [completeaitraining](https://completeaitraining.com/news/ideogram-45-reduces-pixel-drift-in-multi-turn-edits/), [the-decoder](https://the-decoder.com/black-forest-labs-launches-flux-3-image-with-multi-step-editing-that-leaves-the-rest-of-your-picture-alone/), [Tech Times](https://www.techtimes.com/articles/328502/20261002/black-forest-labs-launches-flux-3-image-json-bounding-boxes-lock-unchanged-pixels-numerically.htm), [OpenRouter FLUX.3 Image](https://openrouter.ai/black-forest-labs/flux-3-image), [kingy.ai](https://kingy.ai/blog/flux-3-image-specs-benchmarks-comparison/).

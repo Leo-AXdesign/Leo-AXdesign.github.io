@@ -12,8 +12,6 @@ related: ai, tools
 
 숫자가 눈에 띈다. 한 번에 최대 30초, 키프레임 최대 10장, 참고 자료 최대 15개. 그런데 디자이너 입장에서 오래 들여다본 건 키프레임 쪽이다. AI 영상에 콘티를 건넬 수 있게 됐다는 뜻이라서.
 
-**먼저 밝혀 둘 것.** 정식판은 아직 나오지 않았고, Flash도 연간 최상위 구독자만 쓸 수 있어 직접 써 보지 못했다. 아래 내용은 클링이 공개한 사양과 이를 정리한 글을 바탕으로 했다.
-
 ## 두 장에서 열 장으로
 
 지금까지 AI 영상에서 연출을 정하는 방법은 둘이었다. 글로 설명하거나, 처음 장면과 끝 장면 두 장을 주는 것. 클링 3.0도 처음과 끝 두 장을 받아 그 사이를 AI가 채웠다.
@@ -58,5 +56,7 @@ related: ai, tools
 3. **값은 정식판을 보고.** 4.0의 가격은 아직 나오지 않았다. 30초 4K는 3.0 기준으로도 크레딧을 꽤 쓰는 조합이라, 시안은 짧고 낮은 화질로 보고 최종만 길고 크게 뽑는 습관이 필요하다.
 
 영상과 모션 쪽 AI 도구는 [AI 디자인 툴](https://designrefs.com/ai/)에 모아 두었다.
+
+※ 정식판은 아직 나오지 않았고 Flash도 연간 최상위 구독자만 쓸 수 있어 직접 써 보지 못했다. 클링이 공개한 사양과 이를 정리한 글을 바탕으로 했다.
 
 ※ 출처: [Atlas Cloud](https://www.atlascloud.ai/blog/tips/kling-4-flash-vs-full), [Pandaily](https://pandaily.com/kling-ai-kling-4-0-30-second-native-video-multi-reference-control), [Morphic](https://morphic.com/resources/models/kling-4), [sloptv](https://sloptv.co/news/kling-4-0-october-promise-flash-720p-only), [Atlas Cloud 가격 정리](https://www.atlascloud.ai/blog/tips/kling-ai-pricing).

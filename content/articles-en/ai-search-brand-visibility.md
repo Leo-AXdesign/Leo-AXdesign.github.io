@@ -9,8 +9,6 @@ On October 8, London's Heathrow Airport expanded its deal with Adobe. The headli
 
 Adobe's reasoning: one in four consumers now turn to AI first when making travel decisions. Once people ask AI instead of typing into a search box, the "first screen" a brand has to care about changes.
 
-**First, a disclaimer.** Adobe didn't publish how it arrived at the one-in-four figure. Below, I focus on where this trend meets designers' work. I'll also note that this site keeps a guide file for AI, llms.txt, to make it easier for AI to read.
-
 ## Where AI answers find brands
 
 ![AI reads site text, image descriptions, reviews and articles, and structured data to build answers. Brands measure how often and how accurately they appear.](https://designrefs.com/articles/img/ai-search-brand-en.svg)
@@ -53,5 +51,7 @@ There's something you can try without big tools.
 3. **Write one brand sentence.** On the first page of the brand guide, write in one sentence who the brand serves and what it does. It's the sentence AI is most likely to quote.
 
 How to hand AI your design rules is in [the DESIGN.md article](https://designrefs.com/en/articles/design-md-for-ai/), and branding references are under [Graphic / Branding](https://designrefs.com/en/#graphic).
+
+※ Adobe didn't publish how it arrived at the one-in-four figure. For what it's worth, this site also keeps a guide file for AI readers, llms.txt.
 
 ※ Sources: [Adobe and Heathrow](https://news.adobe.com/news/2026/10/adobe-and-heathrow-airport-partner), [IT Brief UK](https://itbrief.co.uk/story/heathrow-extends-adobe-deal-to-boost-ai-travel-search), [The Next Web](https://thenextweb.com/news/heathrow-adobe-agentic-ai-website), [CMSWire](https://www.cmswire.com/digital-experience/adobe-launches-brand-visibility-tool-for-ai-search/), [TechRadar](https://www.techradar.com/pro/security/forget-about-seo-adobe-already-has-an-llm-optimizer-to-help-businesses-rank-on-chatgpt-gemini-and-claude).

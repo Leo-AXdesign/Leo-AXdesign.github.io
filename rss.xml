@@ -8,7 +8,7 @@
     <language>ko</language>
     <lastBuildDate>Mon, 26 Oct 2026 09:00:00 +0900</lastBuildDate>
     <item>
-      <title>포스터 시안 글자가 깨져서 다시 뽑기만 반복할 때, 캔바 크래프트는 배치부터 짠다</title>
+      <title>글자가 깨지지 않는 포스터 시안을 위해, 캔바 크래프트는 배치부터 짠다</title>
       <link>https://designrefs.com/articles/canva-craft-text-layout-image-model/</link>
       <guid isPermaLink="true">https://designrefs.com/articles/canva-craft-text-layout-image-model/</guid>
       <pubDate>Mon, 26 Oct 2026 09:00:00 +0900</pubDate>
@@ -17,15 +17,8 @@
       <content:encoded><![CDATA[    <p class="ptext">클라이언트 메일은 한 줄이다. &quot;행사 포스터 시안 세 가지만 오늘 안에 부탁드려요. 날짜랑 장소는 크게요.&quot;</p>
     <p class="ptext">이미지 AI에 넣고 뽑으면 그림은 그럴듯하다. 그런데 날짜가 &quot;10월 27일&quot;이 아니라 &quot;10월 2기일&quot;로 찍혀 나온다. 다시 뽑는다. 이번에는 글자는 맞는데 제목이 구석으로 밀려 있다. 시안 세 장에 뽑는 횟수가 계속 늘어난다. (가정해서 그린 장면이다.)</p>
     <p class="ptext">Canva가 10월 22일 첫 자체 이미지 생성 모델 &#x27;Canva Craft&#x27;를 냈다. 사진보다 포스터, 소셜 게시물, 발표 자료처럼 글자와 배치가 중요한 결과물을 겨냥했다고 한다. 이 글은 Craft를 직접 써 본 후기가 아니라, 보도로 확인한 내용을 디자이너 관점에서 읽는 글이다.</p>
-    <h2 class="psub" id="s1">먼저 밝혀 둘 것</h2>
-    <ul class="ptext-list">
-      <li>모델을 직접 돌려 보지 않았다. 아래 내용은 TechCrunch, Digital Trends, The Letter Two의 보도와 소식 모음 페이지에서 읽은 것이다.</li>
-      <li>Canva 공식 발표 페이지는 열리지 않았다(접속 거부). 공식 문구는 보도에 인용된 만큼만 안다.</li>
-      <li>순위와 성능 수치는 Canva가 밝힌 것이다. 보도 어디에서도 독립적으로 검증됐다는 말은 없었다.</li>
-      <li>가격(API 요금, 크레딧)은 확인한 보도 세 곳 모두 밝히지 않았다.</li>
-      <li>보도마다 다른 부분이 있다. 서드파티 챗봇(ChatGPT, Gemini) 연결 도구가 이미 쓸 수 있는지는 기사마다 표현이 갈려, 아래에서 따로 적었다.</li>
-    </ul>
-    <h2 class="psub" id="s2">그림을 먼저 그리지 않고 계획을 먼저 짠다</h2>
+    <p class="ptext">모델을 직접 돌려 보지는 않았고, TechCrunch와 Digital Trends 같은 보도를 바탕으로 썼다. 순위와 성능 수치는 캔바가 밝힌 것이고, 독립적으로 검증된 자료는 찾지 못했다. API 요금이나 크레딧 가격도 보도에 나오지 않았다.</p>
+    <h2 class="psub" id="s1">그림을 먼저 그리지 않고 계획을 먼저 짠다</h2>
     <p class="ptext">TechCrunch와 Digital Trends가 공통으로 전한 구조는 두 단계다.</p>
     <div class="art__tablewrap"><table class="art__table">
       <thead><tr><th>단계</th><th>하는 일</th></tr></thead>
@@ -36,10 +29,10 @@
     </table></div>
     <p class="art__note">출처: <a href="https://techcrunch.com/2026/10/22/canva-releases-its-first-image-generation-model/" target="_blank" rel="noopener">TechCrunch (2026-10-22)</a>, <a href="https://www.digitaltrends.com/computing/canva-craft-ai-image-generation-model-launch/" target="_blank" rel="noopener">Digital Trends</a>. 표는 두 기사의 설명을 줄여 옮긴 것이다.</p>
     <p class="ptext">디자이너가 시안을 짤 때의 순서와 비슷하다. 제목을 어디에 두고 날짜를 얼마나 키울지 정하고 나서 색과 그림을 얹는다. 이 순서를 모델 안에 넣었다는 설명이다. 다만 이 구조가 실제로 글자 오류를 줄이는지는 내가 확인하지 못했다. 설명과 결과는 별개다.</p>
-    <h2 class="psub" id="s3">학습 재료가 사진이 아니라 템플릿이다</h2>
+    <h2 class="psub" id="s2">학습 재료가 사진이 아니라 템플릿이다</h2>
     <p class="ptext">기사에 따르면 Craft는 사진이 아니라 Canva 라이브러리에 있는 사람이 만든 템플릿으로 학습했다. 포스터, 소셜 게시물, 발표 자료, 인포그래픽, 메뉴, 글자 중심 레이아웃이 들어 있다. The Letter Two는 텍스트 생성이 55개 언어를 지원한다고 전했다. 한국어가 그 안에 있는지, 한글 획이 얼마나 정확한지는 어느 자료에도 없었다.</p>
     <p class="ptext">여기서 두 가지가 남는다. 하나는 한글 같은 비라틴 문자의 품질이다. 다른 하나는 템플릿 제작자에 대한 보상이다. The Letter Two는 템플릿 제작자 보상 여부와 고객 상업 이용에 대한 보호 여부가 명시되지 않았다고 정리했다. 클라이언트 작업에 넣는다면 이 두 가지는 약관이 나올 때까지 비워 둔 질문이다. 일반 이미지 AI의 상업 이용 기준은 <a href="https://designrefs.com/articles/ai-image-commercial-use/">AI로 만든 이미지, 클라이언트 작업에 써도 될까</a>에 정리해 두었는데, Craft에 그대로 적용된다는 확인은 아니다.</p>
-    <h2 class="psub" id="s4">순위는 이렇게 발표됐다</h2>
+    <h2 class="psub" id="s3">순위는 이렇게 발표됐다</h2>
     <p class="ptext">The Letter Two가 옮긴 Canva의 발표는 이렇다.</p>
     <div class="art__tablewrap"><table class="art__table">
       <thead><tr><th>구분</th><th>Canva가 밝힌 순위</th></tr></thead>
@@ -52,7 +45,7 @@
     </table></div>
     <p class="art__note">출처: <a href="https://thelettertwo.com/2026/10/23/canva-craft-ai-image-model" target="_blank" rel="noopener">The Letter Two (2026-10-23)</a>. Canva가 DesignArena 리더보드를 인용해 발표한 수치이며, 기사에서 독립 검증되지 않았다.</p>
     <p class="ptext">Digital Trends는 Canva가 자사 연구팀을 이미지 생성 분야 &quot;세계에서 두 번째로 앞선 연구소&quot;라고 소개했다고 전했다. 모델 순위(4위)와 연구소 순위(2위)가 다른 말이라서, 이 숫자를 한 줄로 합쳐 &quot;2위 모델&quot;이라고 읽으면 틀린다. 또 이 리더보드는 사람들의 투표로 순위를 매기는 방식이다. 투표가 포스터 작업의 편의성을 얼마나 반영하는지는 별도로 봐야 한다. 이런 순위를 읽는 법은 <a href="https://designrefs.com/articles/muse-wonder-design-arena/">메타의 첫 최상위 모델이 디자인 투표 1위, 이 순위를 어떻게 읽을까</a>에서 다뤘다.</p>
-    <h2 class="psub" id="s5">어디서 쓸 수 있나</h2>
+    <h2 class="psub" id="s4">어디서 쓸 수 있나</h2>
     <p class="ptext">보도에서 일치하는 부분과 갈리는 부분을 나눠 적는다.</p>
     <ul class="ptext-list">
       <li><strong>일치:</strong> 모든 Canva 사용자가 Dream Lab 탭에서 쓸 수 있다. Canva API로도 제공된다. 계정과 사용량 제한이 있다는 설명이 Digital Trends에 있다.</li>
@@ -61,12 +54,12 @@
       <li><strong>한 곳에만 있음:</strong> TechCrunch는 만든 이미지를 Canva Magic으로 레이어가 나뉜 디자인으로 바꿀 수 있다고 썼고, Digital Trends는 이를 Magic Layers 기술이라고 불렀다. The Letter Two에서는 이 내용을 찾지 못했다. 레이어가 어떻게 나뉘는지, 글자가 편집 가능한 텍스트로 남는지는 확인되지 않았다.</li>
     </ul>
     <p class="ptext">마지막 항목은 <a href="https://designrefs.com/articles/ideogram-vector-1-editable-svg/">아이디오그램 벡터 1.0</a>에서 던진 질문과 같다. 이미지 AI의 결과물이 &quot;그림 한 장&quot;인지 &quot;고칠 수 있는 파일&quot;인지가 실무에서는 가장 크게 갈린다.</p>
-    <h2 class="psub" id="s6">디자이너가 먼저 시험해 볼 것</h2>
+    <h2 class="psub" id="s5">디자이너가 먼저 시험해 볼 것</h2>
     <p class="ptext"><strong>글자가 많은 포스터 한 장.</strong> 날짜, 장소, 가격, 전화번호가 들어간 행사 포스터를 같은 프롬프트로 열 번 뽑는다. 몇 번이 글자 오류 없이 나오는지 세어 둔다. 기존에 쓰던 모델로도 같은 프롬프트를 돌려 비교한다. 이 비교가 없으면 &quot;글자가 잘 나온다&quot;는 말은 기분일 뿐이다.</p>
     <p class="ptext"><strong>한글 제목.</strong> 55개 언어에 한국어가 들어 있는지 알 수 없으니, 한글 제목과 작은 한글 본문을 따로 시험한다. 받침이 있는 글자와 작은 크기에서 먼저 무너진다.</p>
     <p class="ptext"><strong>한 군데만 고치기.</strong> &quot;로고는 그대로 두고 배경색만 바꿔 줘&quot;처럼 한 요소만 바꾸는 요청을 해 본다. 편집 기능을 내세우는 모델이 많아서, 실제로 나머지가 그대로 남는지 볼 만하다. <a href="https://designrefs.com/articles/krea-3-edit-keep-logo/">크레아 3 편집 모델</a>을 확인할 때 쓴 기준과 같다.</p>
     <p class="ptext"><strong>변환 뒤 파일 열기.</strong> 레이어 변환을 쓸 수 있다면 결과를 열어 글자가 텍스트 상자인지 확인한다. 이 한 가지가 납품까지 걸리는 시간을 가른다.</p>
-    <h2 class="psub" id="s7">지금 알 수 없는 것</h2>
+    <h2 class="psub" id="s6">지금 알 수 없는 것</h2>
     <ul class="ptext-list">
       <li><strong>가격.</strong> API 요금, 앱 크레딧 소모량, 무료 사용 한도 모두 확인된 자료가 없다.</li>
       <li><strong>독립 시험.</strong> Canva가 인용한 순위 말고 제3자의 비교 시험은 찾지 못했다.</li>
@@ -75,7 +68,7 @@
       <li><strong>레이어 변환의 실제.</strong> 분리 정도와 글자의 편집 가능 여부는 직접 열어 보기 전에는 모른다.</li>
       <li><strong>세부 사양.</strong> 모델 크기와 기술 문서는 공개되지 않았다고 보도됐다.</li>
     </ul>
-    <h2 class="psub" id="s8">그래서 지금은</h2>
+    <h2 class="psub" id="s7">그래서 지금은</h2>
     <p class="ptext"><strong>열 번 뽑아 세어 보자.</strong> 글자가 많은 포스터를 같은 프롬프트로 열 번 돌려 오류 없는 장수를 기록한다. 지금 쓰는 도구와 같은 조건으로 나란히 놓아야 바꿀 이유가 생긴다.</p>
     <p class="ptext"><strong>클라이언트 작업에는 약관을 먼저 본다.</strong> 상업 이용과 템플릿 학습에 관한 조건이 나오기 전까지는 연습용 시안과 납품용을 나눠 둔다. 확실하지 않은 것을 전제로 약속을 걸지 않는다.</p>
     <p class="ptext"><strong>시안은 배치부터 말로 정한다.</strong> 계획을 먼저 짜는 모델이든 아니든, &quot;제목은 위쪽 3분의 1, 날짜는 제목 아래 가장 크게, 장소는 하단&quot;처럼 위치와 크기 순서를 프롬프트에 적으면 다시 뽑는 횟수를 줄이는 데 도움이 될 수 있다. 이 문장은 직접 비교한 결과가 아니라 시도해 볼 만한 방법이다.</p>
@@ -83,7 +76,7 @@
     <p class="art__note">출처: <a href="https://techcrunch.com/2026/10/22/canva-releases-its-first-image-generation-model/" target="_blank" rel="noopener">TechCrunch: Canva releases its first image generation model</a>, <a href="https://www.digitaltrends.com/computing/canva-craft-ai-image-generation-model-launch/" target="_blank" rel="noopener">Digital Trends: Canva enters the AI image generation race with Craft</a>, <a href="https://thelettertwo.com/2026/10/23/canva-craft-ai-image-model" target="_blank" rel="noopener">The Letter Two: Canva Craft Is Canva Research&#x27;s First Image Model</a>, <a href="https://futuretools.io/news" target="_blank" rel="noopener">Future Tools 뉴스</a>.</p>]]></content:encoded>
     </item>
     <item>
-      <title>AI로 뽑은 로고를 확대하니 뭉개질 때, 아이디오그램 벡터 1.0에서 확인할 것</title>
+      <title>아이디오그램 벡터 1.0, AI 로고를 처음부터 SVG로 받는다면</title>
       <link>https://designrefs.com/articles/ideogram-vector-1-editable-svg/</link>
       <guid isPermaLink="true">https://designrefs.com/articles/ideogram-vector-1-editable-svg/</guid>
       <pubDate>Sat, 24 Oct 2026 09:00:00 +0900</pubDate>
@@ -96,18 +89,11 @@
       <img src="https://designrefs.com/articles/img/ideogram-vector-1-editable-svg-shot1.webp" alt="Ideogram 개발자 문서의 SVG 생성 API 페이지. 출처: developer.ideogram.ai/api-reference/vectors/generate-svg (캡처일 2026-10-24)" loading="lazy" decoding="async" />
       <figcaption>Ideogram 개발자 문서의 SVG 생성 API 페이지. 출처: developer.ideogram.ai/api-reference/vectors/generate-svg (캡처일 2026-10-24)</figcaption>
     </figure>
-    <h2 class="psub" id="s1">먼저 밝혀 둘 것</h2>
-    <ul class="ptext-list">
-      <li>이 모델을 직접 돌려 보지는 않았다. 아래는 Ideogram 개발자 문서와 발표를 옮긴 보도에서 읽은 내용이다.</li>
-      <li>Ideogram 발표 글(X)과 블로그, 제품 페이지는 열리지 않았다(접속 거부). 발표 문구는 검색에 잡힌 인용과 보도를 통해서만 봤다.</li>
-      <li>가격은 공식 API 문서 페이지에 적혀 있지 않았다. 아래 가격표는 문서를 인용한 외부 글 두 곳에서 가져왔고 서로 일치했다.</li>
-      <li>외부 기관이 결과물을 시험해 낸 자료는 찾지 못했다. &quot;깔끔하다&quot;는 말은 아직 Ideogram 쪽 설명이다.</li>
-      <li>앱 안에서 어느 요금제부터 쓸 수 있는지, 크레딧이 얼마나 드는지는 확인되지 않았다.</li>
-    </ul>
-    <h2 class="psub" id="s2">래스터와 벡터, 한 줄로</h2>
+    <p class="ptext">아이디오그램 개발자 문서와 발표를 옮긴 보도를 바탕으로 썼고, 모델을 직접 돌려 보지는 않았다. 가격은 공식 문서에 없어서 문서를 인용한 외부 글 두 곳에서 가져왔는데, 둘이 일치했다. &#x27;깔끔하다&#x27;는 평가는 아직 아이디오그램 쪽 설명이고, 외부에서 시험한 자료는 찾지 못했다.</p>
+    <h2 class="psub" id="s1">래스터와 벡터, 한 줄로</h2>
     <p class="ptext">래스터는 점(픽셀)으로 그린 그림이라 키우면 뭉개진다. 벡터는 점과 선의 계산식으로 그린 그림이라 얼마든 키워도 선이 선명하다. 로고, 아이콘, 간판, 굿즈 인쇄는 벡터를 요구하는 일이 흔하다. 지금까지 많은 이미지 AI는 래스터만 내놓았고, 그걸 벡터로 바꾸는 일은 별도 작업이었다.</p>
     <p class="ptext">Ideogram의 발표 문구는 이렇게 전해진다. 텍스트 프롬프트로 &quot;부드러운 그라데이션과 또렷한 글자체&quot;를 가진 깨끗하고 편집 가능한 SVG를 만들거나, 어떤 이미지든 세밀하고 확대해도 되는 벡터로 바꾼다. Ideogram 앱과 API에서 쓸 수 있다.</p>
-    <h2 class="psub" id="s3">공식 문서에서 읽은 것</h2>
+    <h2 class="psub" id="s2">공식 문서에서 읽은 것</h2>
     <p class="ptext">API 문서에는 두 가지 작업이 따로 있다.</p>
     <div class="art__tablewrap"><table class="art__table">
       <thead><tr><th>작업</th><th>주소(엔드포인트)</th><th>넣는 것</th></tr></thead>
@@ -126,7 +112,7 @@
       <li>동시에 돌릴 수 있는 작업 수에 한도가 있고, 넘으면 429 오류가 난다. 일일 한도, 구독 필요 같은 거절 사유도 문서에 나열돼 있다.</li>
     </ul>
     <p class="ptext">문서의 두 페이지 어디에도 레이어, 글자 처리, 그라데이션 품질 설명은 없었다. 그 부분은 결과 파일을 직접 열어 봐야 안다.</p>
-    <h2 class="psub" id="s4">값은 이렇게 보도됐다</h2>
+    <h2 class="psub" id="s3">값은 이렇게 보도됐다</h2>
     <div class="art__tablewrap"><table class="art__table">
       <thead><tr><th>작업</th><th>API 한 장당</th></tr></thead>
       <tbody>
@@ -139,15 +125,15 @@
     </table></div>
     <p class="art__note">출처: <a href="https://creatorstoolbox.com/blog/ideogram-vector-model" target="_blank" rel="noopener">Creators Toolbox: Ideogram Vector</a>, <a href="https://www.orcarouter.ai/blog/ideogram-vector-1-0-svg-file-output" target="_blank" rel="noopener">OrcaRouter: Ideogram Vector 1.0, What the SVG File Actually Holds</a>. 두 글이 Ideogram의 공개 요금이라며 같은 값을 적었다. 공식 개발자 문서 페이지에서는 값을 확인하지 못했다.</p>
     <p class="ptext">계산해 보면 높음 품질로 열 장을 뽑아도 2달러다. 시안을 여러 안 보여 주는 일이라면 부담이 큰 금액은 아니다. 다만 이건 API 값이고, 앱에서 쓰는 크레딧 값은 알려지지 않았다.</p>
-    <h2 class="psub" id="s5">디자이너가 먼저 열어 볼 세 가지</h2>
+    <h2 class="psub" id="s4">디자이너가 먼저 열어 볼 세 가지</h2>
     <p class="ptext"><strong>첫째, 레이어가 나뉘어 있나.</strong> 외부 글에 따르면 Ideogram은 글로 만든 SVG의 도형이 따로 움직일 수 있는 단위로 나온다고 설명한다. 반면 이미지를 변환하는 쪽은 도형을 묶어 레이어로 만드는 기능이 &quot;아직 제공되지 않는다&quot;고 한다. 내가 연 변환 문서에는 그 옵션이 보이지 않았다. 사진이나 PNG 로고를 변환하면 한 덩어리로 겹친 선과 면이 나올 수 있다고 보고, 일러스트레이터나 피그마에서 정리할 시간을 따로 잡는 편이 안전하다.</p>
     <p class="ptext"><strong>둘째, 글자가 글자로 남나.</strong> 발표는 &quot;또렷한 글자체&quot;를 내세운다. 그런데 그 글자가 수정할 수 있는 텍스트인지, 윤곽선으로 바뀐 도형인지는 자료에 없다. 로고 안의 이름을 오타 하나 고치려는 상황이라면 이 차이가 크다. 윤곽선이면 글자를 지우고 다시 쳐야 하고, 글꼴도 알 수 없다.</p>
     <p class="ptext"><strong>셋째, 점이 몇 개나 되나.</strong> 그라데이션과 디테일이 많은 SVG는 경로(선분 단위)가 수천 개일 수 있다. 외부 글은 파일이 커질 수 있다고만 짚고 수치는 내지 않았다. 웹에 올리는 아이콘이면 파일 크기와 렌더링 속도를, 인쇄용이면 선 두께와 면 겹침을 확인하는 게 순서다.</p>
     <p class="ptext">일러스트레이터나 피그마에서 편집된다는 말은 보도에 반복해서 나온다. 다만 이것도 Ideogram의 설명이다. 열렸을 때 파일 구성이 쓸 만한지는 별개 문제다.</p>
-    <h2 class="psub" id="s6">이미 있는 선택지와 나란히 놓으면</h2>
+    <h2 class="psub" id="s5">이미 있는 선택지와 나란히 놓으면</h2>
     <p class="ptext">벡터를 바로 뽑는 AI는 이번이 처음이 아니다. 검색 결과에는 Recraft가 SVG를 직접 내놓는다는 설명이 있었다. 이번 소식의 새로움은 &quot;벡터를 낸다&quot;보다 &quot;이미지 생성에서 이름난 회사가 벡터 전용 모델을 따로 냈다&quot;에 가깝다. 어느 쪽이 더 낫다고 비교한 자료는 찾지 못했다.</p>
     <p class="ptext">Ideogram 같은 이미지 생성 도구와 AI 로고·브랜드 키트 도구는 <a href="https://designrefs.com/ai/">AI 디자인 툴</a>의 이미지 생성 항목에 Recraft, Looka 등과 함께 모아 두었다. 이미지 AI의 결과물을 다시 뽑지 않고 고치는 흐름은 <a href="https://designrefs.com/articles/krea-3-edit-keep-logo/">배경만 바꿨는데 로고까지 바뀌었을 때, 크레아 3 편집 모델에서 확인할 것</a>에서 다뤘다. 그쪽은 래스터 편집, 이쪽은 벡터 출력이라 쓰는 자리가 다르다.</p>
-    <h2 class="psub" id="s7">지금 알 수 없는 것</h2>
+    <h2 class="psub" id="s6">지금 알 수 없는 것</h2>
     <ul class="ptext-list">
       <li><strong>결과 품질.</strong> 로고, 아이콘, 포스터 중 어느 쪽에 강한지 독립 시험이 없다.</li>
       <li><strong>앱 요금.</strong> 무료 계정에서 쓸 수 있는지, 크레딧이 몇 개 드는지 확인되지 않았다.</li>
@@ -155,7 +141,7 @@
       <li><strong>편집 기능.</strong> 문서에 만든 SVG를 말로 고치는 엔드포인트는 보이지 않았다. 외부 글도 수정은 디자인 툴에서 하라는 쪽이다.</li>
       <li><strong>품질 값의 의미.</strong> 낮음·중간·높음이 어떻게 다른지 문서에 설명이 없다.</li>
     </ul>
-    <h2 class="psub" id="s8">그래서 지금은</h2>
+    <h2 class="psub" id="s7">그래서 지금은</h2>
     <p class="ptext"><strong>래스터와 벡터를 먼저 구분하자.</strong> 클라이언트가 원본 파일을 달라고 할 때 받는 형식이 무엇인지부터 확인한다. 인쇄, 간판, 굿즈는 벡터가 필요하고 웹 화면용 일러스트는 PNG로 충분한 경우도 많다. 형식이 맞지 않는데 모델부터 바꿔 보는 일을 줄일 수 있다.</p>
     <p class="ptext"><strong>열 장 정도로 파일 속을 열어 보자.</strong> 로고 한 개, 아이콘 한 세트, 글자가 들어간 포스터를 각각 뽑아 일러스트레이터나 피그마에서 열어 본다. 레이어가 나뉘었는지, 글자가 살아 있는지, 점이 얼마나 많은지를 적어 두면 다음에 맡길 일과 맡기지 않을 일이 갈린다. API를 쓴다면 <code>dry_run</code>으로 값부터 확인한다.</p>
     <p class="ptext"><strong>납품 전에 사람 손을 한 번 넣는 시간을 잡자.</strong> 변환한 SVG는 도형이 한 덩어리로 겹쳐 있을 수 있다. 색 값과 획 두께를 정리하고 이름을 붙이는 작업을 견적에 넣어 두면 &quot;AI라서 금방 끝나겠죠&quot;라는 말에 답하기 쉽다.</p>
@@ -163,7 +149,7 @@
     <p class="art__note">출처: <a href="https://developer.ideogram.ai/api-reference/vectors/generate-svg.md" target="_blank" rel="noopener">Ideogram 개발자 문서: Generate SVG</a>, <a href="https://developer.ideogram.ai/api-reference/vectors/image-to-svg.md" target="_blank" rel="noopener">Ideogram 개발자 문서: Vectorizer</a>, <a href="https://x.com/ideogram_ai/status/2113300317584720259" target="_blank" rel="noopener">Ideogram 발표(X)</a>, <a href="https://runtimewire.com/article/ideogram-vector-1-svg-model-launch" target="_blank" rel="noopener">Runtime Wire: Ideogram launches its first vector model</a>, <a href="https://creatorstoolbox.com/blog/ideogram-vector-model" target="_blank" rel="noopener">Creators Toolbox: Ideogram Vector</a>, <a href="https://www.orcarouter.ai/blog/ideogram-vector-1-0-svg-file-output" target="_blank" rel="noopener">OrcaRouter: What the SVG File Actually Holds</a>, <a href="https://futuretools.io/news" target="_blank" rel="noopener">Future Tools 뉴스</a>.</p>]]></content:encoded>
     </item>
     <item>
-      <title>문구 세 군데 고치려고 웹플로를 열었다 닫았다 할 때, 제미나이에 붙은 Webflow 연결에서 확인할 것</title>
+      <title>제미나이 대화창에서 웹플로 사이트를 고친다, 연결 앱으로 되는 일과 아직 모르는 일</title>
       <link>https://designrefs.com/articles/webflow-gemini-connector-edit-site-in-chat/</link>
       <guid isPermaLink="true">https://designrefs.com/articles/webflow-gemini-connector-edit-site-in-chat/</guid>
       <pubDate>Fri, 23 Oct 2026 09:00:00 +0900</pubDate>
@@ -176,18 +162,11 @@
       <img src="https://designrefs.com/articles/img/webflow-gemini-connector-edit-site-in-chat-shot1.webp" alt="Webflow 앱 마켓플레이스의 Google Gemini MCP Connector 페이지. 출처: webflow.com/apps/detail/google-gemini-mcp-connector (캡처일 2026-10-23)" loading="lazy" decoding="async" />
       <figcaption>Webflow 앱 마켓플레이스의 Google Gemini MCP Connector 페이지. 출처: webflow.com/apps/detail/google-gemini-mcp-connector (캡처일 2026-10-23)</figcaption>
     </figure>
-    <h2 class="psub" id="s1">먼저 밝혀 둘 것</h2>
-    <ul class="ptext-list">
-      <li>이 연결을 내 Webflow 계정에 설치해 써 보지는 않았다. 아래는 모두 보도자료와 마켓플레이스 페이지에 적힌 내용이다.</li>
-      <li>내가 확인한 보도자료는 CMSWire와 TechIntelPro에 실린 사본이다. 원본 GlobeNewswire 페이지는 열어 보지 못했다.</li>
-      <li>요금제별 조건, 지원 지역, 사용량 한도는 연 자료 어디에도 구체적으로 없었다.</li>
-      <li>제3자가 이 연결을 시험한 결과는 찾지 못했다. &quot;페이지가 잘 나온다&quot;는 것은 Webflow 쪽 설명이다.</li>
-      <li>같은 날 소식이 &quot;웹 디자인 플랫폼에 제미나이를 통합했다&quot;로 요약되는 곳도 있다. 보도자료의 표현은 Gemini 앱 안의 &#x27;연결 앱&#x27;이다. 이 글은 보도자료를 따른다.</li>
-    </ul>
-    <h2 class="psub" id="s2">연결 앱이 뭔가</h2>
+    <p class="ptext">보도자료와 마켓플레이스 페이지에 적힌 내용을 따랐고, 연결을 직접 설치해 써 보지는 않았다. 요금제별 조건과 지원 지역, 사용량 한도는 어디에도 구체적으로 없었다. 어떤 곳은 &#x27;웹플로가 제미나이를 통합했다&#x27;고 요약했지만, 보도자료의 표현은 제미나이 앱 안의 &#x27;연결 앱&#x27;이라 이 글도 그 표현을 따른다.</p>
+    <h2 class="psub" id="s1">연결 앱이 뭔가</h2>
     <p class="ptext">MCP는 AI 앱이 다른 도구의 기능을 불러 쓰게 해 주는 연결 규격이다. 풀어 말하면 &quot;채팅창과 서비스를 잇는 콘센트&quot;다. Webflow는 이 규격의 서버를 이미 갖고 있었고, 보도자료에 따르면 Claude, ChatGPT, Codex, Slack에서 쓰던 것과 비슷한 기능이 이번에 Gemini에도 붙었다.</p>
     <p class="ptext">Gemini 쪽에는 승인된 파트너만 들어가는 커넥터 마켓플레이스가 있고, Webflow가 거기에 올랐다. 마켓플레이스 페이지는 이 앱을 &quot;Webflow 계정을 Gemini와 연결해 대화로 사이트를 고치고 성과 질문에 답하게 하는 앱&quot;으로 소개한다. 설치는 그 페이지에서 로그인한 뒤 진행한다. 세부 단계는 페이지에 없었다.</p>
-    <h2 class="psub" id="s3">보도자료가 말한 일곱 가지</h2>
+    <h2 class="psub" id="s2">보도자료가 말한 일곱 가지</h2>
     <div class="art__tablewrap"><table class="art__table">
       <thead><tr><th>하는 일</th><th>보도자료의 설명</th></tr></thead>
       <tbody>
@@ -202,11 +181,11 @@
     </table></div>
     <p class="art__note">출처: <a href="https://www.cmswire.com/the-wire/webflow-and-google-gemini-announce-new-agentic-integration/" target="_blank" rel="noopener">CMSWire: Webflow and Google Gemini announce new agentic integration</a> (2026-10-15 보도자료). 표는 보도자료 항목을 줄여 옮긴 것이다.</p>
     <p class="ptext">마켓플레이스 페이지에는 비슷한 목록이 조금 다른 말로 있다. 디자인이나 설명을 반응형 페이지로 만들기, 컬렉션 항목 대량 생성·수정, 모션 추가 뒤 Webflow의 시각 타임라인에서 세부 조정, 우선순위가 매겨진 수정 목록 받기 등이다.</p>
-    <h2 class="psub" id="s4">디자이너에게 눈에 띄는 세 가지</h2>
+    <h2 class="psub" id="s3">디자이너에게 눈에 띄는 세 가지</h2>
     <p class="ptext"><strong>첫째, &#x27;기존 스타일을 따른다&#x27;는 문구.</strong> 보도자료는 페이지와 부품을 기존 스타일과 브랜드 시스템 위에서 만든다고 한다. 브랜드 시스템은 이미 사이트에 정리해 둔 색·글자 크기 규칙, 버튼·카드 같은 부품 모음이다. 규칙이 정리돼 있지 않은 사이트에서 이 말이 어떻게 작동하는지는 자료에 없다. 규칙을 AI에게 건네는 방법은 <a href="https://designrefs.com/articles/design-md-for-ai/">AI에게 우리 디자인 규칙을 건네는 파일 한 장, DESIGN.md</a>에서 다뤘다. 이번 연결은 그 규칙이 사이트 안에 이미 있다는 전제로 읽힌다. 이건 내 해석이다.</p>
     <p class="ptext"><strong>둘째, 기록이 남는다.</strong> 보도자료는 기존 역할과 권한이 그대로 적용되고, AI가 한 작업이 활동 로그에 AI 작업으로 기록된다고 한다. 마켓플레이스 페이지는 설치 시 사이트 데이터 접근과 디자이너 작업 흐름 권한이 필요하다고 적었다. 클라이언트 사이트라면 &quot;누가 고쳤는지&quot;가 남는 쪽이 낫다. 다만 로그에서 AI 작업이 어떻게 보이는지는 직접 보지 못했다.</p>
     <p class="ptext"><strong>셋째, 분석 질문이 같이 들어 있다.</strong> 페이지를 만드는 기능만이 아니라 &quot;지난달 어느 페이지를 많이 봤나&quot;, &quot;AI 답변에서 우리 브랜드가 어떻게 소개되나&quot; 같은 질문도 같은 채팅에서 한다. 마지막 항목은 <a href="https://designrefs.com/articles/ai-search-brand-visibility/">검색 결과 대신 AI의 답이 첫 화면이 될 때</a>에서 다룬 문제와 이어진다. 다만 그 분석이 얼마나 정확한지는 이 자료로 알 수 없다.</p>
-    <h2 class="psub" id="s5">값과 조건</h2>
+    <h2 class="psub" id="s4">값과 조건</h2>
     <ul class="ptext-list">
       <li>연결 앱은 설치가 무료다.</li>
       <li>지금은 Webflow AI 크레딧을 쓰지 않는다. 보도자료의 표현은 &quot;currently&quot;에 해당하는 현재형이다. 나중에 바뀔 수 있다는 뜻으로 읽는 편이 안전하다. 바뀐다는 발표는 없었다.</li>
@@ -214,7 +193,7 @@
       <li>마켓플레이스 페이지는 &quot;Webflow가 앱 품질을 검토했지만 보증하거나 인증하지는 않는다&quot;고 적어 두었다.</li>
     </ul>
     <p class="ptext">같은 주에 나온 피그마 소식과 헷갈리지 않게 적어 둔다. 데이터 저장과 관리자 화면을 Figma Make에 붙인 이야기는 <a href="https://designrefs.com/articles/figma-make-payload-save-button/">화면은 다 됐는데 저장 버튼이 아무것도 저장하지 않을 때</a>에서 다뤘다. 그쪽은 새 사이트를 프롬프트로 만드는 흐름이고, 이쪽은 이미 있는 Webflow 사이트를 채팅에서 만지는 흐름이다.</p>
-    <h2 class="psub" id="s6">지금 알 수 없는 것</h2>
+    <h2 class="psub" id="s5">지금 알 수 없는 것</h2>
     <ul class="ptext-list">
       <li><strong>되돌리기.</strong> 채팅에서 고친 내용을 한 번에 되돌릴 수 있는지, 게시 전에 확인 단계가 있는지 자료에 없다.</li>
       <li><strong>결과 품질.</strong> 인터랙션과 반응형 페이지가 디자이너가 만든 수준으로 나오는지는 확인된 바 없다.</li>
@@ -222,10 +201,10 @@
       <li><strong>지역과 요금제.</strong> 보도자료는 지역별 제공 범위를 말하지 않는다.</li>
       <li><strong>무료 기간.</strong> 크레딧을 쓰지 않는 상태가 언제까지인지 밝히지 않았다.</li>
     </ul>
-    <h2 class="psub" id="s7">지금 쓰는 일과 맞춰 보면</h2>
+    <h2 class="psub" id="s6">지금 쓰는 일과 맞춰 보면</h2>
     <p class="ptext">문구 수정, 사진 교체, 블로그 항목 일곱 개 정리 같은 잔일이 이 연결의 첫 후보다. 컬렉션을 대량으로 만들고 고치는 기능이 목록에 있다. 새 레이아웃을 처음부터 잡는 일은 결과를 본 뒤에 판단해도 늦지 않다.</p>
     <p class="ptext">외주를 맡는 입장에서는 &#x27;운영 인수인계&#x27; 문서가 한 장 늘 수 있다. 클라이언트 쪽 담당자가 채팅으로 사이트를 고치게 된다면, 어떤 권한을 줄지 정해야 한다. 보도자료에 따르면 기존 권한 체계가 그대로 적용되니, 지금 권한 설정이 어떤지부터 점검해 볼 만하다. 이것도 내 의견이다.</p>
-    <h2 class="psub" id="s8">그래서 지금은</h2>
+    <h2 class="psub" id="s7">그래서 지금은</h2>
     <p class="ptext"><strong>내 Webflow 권한부터 확인하자.</strong> 설치하려면 사이트 데이터와 디자이너 작업 흐름 권한이 필요하다고 한다. 클라이언트 사이트에 연결하기 전에 누가 편집 권한을 갖는지 정리하고, 활동 로그 위치를 한 번 열어 둔다.</p>
     <p class="ptext"><strong>고쳐도 부담 없는 사이트에서 시작하자.</strong> 포트폴리오나 테스트 사이트에서 &quot;컬렉션 항목 다섯 개의 소개 문구를 같은 말투로 고쳐 줘&quot; 같은 작은 요청을 해 본다. 결과가 원하는 대로 안 나오면 되돌리는 방법도 그때 확인한다.</p>
     <p class="ptext"><strong>무료라는 말은 &#x27;지금은&#x27;으로 읽자.</strong> 크레딧을 쓰지 않는 상태가 계속된다는 약속은 없다. 클라이언트와 정한 월 유지 비용 안에 AI 사용료를 넣을지는 요금이 정해진 뒤에 다시 따져도 된다.</p>
@@ -233,7 +212,7 @@
     <p class="art__note">출처: <a href="https://www.cmswire.com/the-wire/webflow-and-google-gemini-announce-new-agentic-integration/" target="_blank" rel="noopener">CMSWire: Webflow and Google Gemini announce new agentic integration</a>, <a href="https://techintelpro.com/news/webflow-and-google-gemini-announce-agentic-integration" target="_blank" rel="noopener">TechIntelPro 보도자료 사본</a>, <a href="https://webflow.com/apps/detail/google-gemini-mcp-connector" target="_blank" rel="noopener">Webflow 앱 마켓플레이스: Google Gemini MCP Connector</a>, <a href="https://martech.org/the-latest-ai-powered-martech-news-and-releases/" target="_blank" rel="noopener">MarTech 소식 모음</a>.</p>]]></content:encoded>
     </item>
     <item>
-      <title>화면은 다 됐는데 저장 버튼이 아무것도 저장하지 않을 때, 피그마 메이크에 붙은 Payload에서 확인할 것</title>
+      <title>피그마 메이크에 Payload가 들어왔다, 시안에 데이터베이스와 로그인이 생긴다</title>
       <link>https://designrefs.com/articles/figma-make-payload-save-button/</link>
       <guid isPermaLink="true">https://designrefs.com/articles/figma-make-payload-save-button/</guid>
       <pubDate>Thu, 22 Oct 2026 09:00:00 +0900</pubDate>
@@ -245,15 +224,8 @@
       <img src="https://designrefs.com/articles/img/figma-make-payload-save-button-shot1.webp" alt="Figma 블로그 &#x27;Create, ship, and manage data-backed websites with Payload in Figma&#x27;. 출처: figma.com/blog/websites-with-payload-in-figma (캡처일 2026-10-22)" loading="lazy" decoding="async" />
       <figcaption>Figma 블로그 &#x27;Create, ship, and manage data-backed websites with Payload in Figma&#x27;. 출처: figma.com/blog/websites-with-payload-in-figma (캡처일 2026-10-22)</figcaption>
     </figure>
-    <h2 class="psub" id="s1">먼저 밝혀 둘 것</h2>
-    <ul class="ptext-list">
-      <li>이 글을 쓰려고 Payload를 Figma Make에서 직접 돌려 보지는 않았다. 아래 내용은 모두 Figma 공식 블로그와 릴리스 기록에 적힌 것이다.</li>
-      <li>Figma가 안내한 도움말 문서(&quot;Add a backend to a functional prototype or web app&quot;)는 열리지 않아 확인하지 못했다.</li>
-      <li>사용량 한도, 저장 용량 제한, 속도 제한은 공식 글에 나와 있지 않다.</li>
-      <li>Figma에서 호스팅한 프로젝트를 밖으로 내보낼 수 있는지, 직접 서버에 올릴 수 있는지도 글에 적혀 있지 않다.</li>
-      <li>접근 권한이 모든 계정에 열리는 데 몇 주가 걸린다고 해서, 내 계정에서 아직 안 보일 수 있다.</li>
-    </ul>
-    <h2 class="psub" id="s2">공식 글이 약속한 것</h2>
+    <p class="ptext">피그마 공식 블로그와 릴리스 기록을 바탕으로 했고, Payload를 직접 돌려 보지는 않았다. 사용량과 저장 용량 한도, 프로젝트를 밖으로 내보낼 수 있는지는 공식 글에 나와 있지 않다. 모든 계정에 열리기까지 몇 주가 걸린다니 아직 안 보일 수도 있다.</p>
+    <h2 class="psub" id="s1">공식 글이 약속한 것</h2>
     <p class="ptext">Payload는 오픈소스 헤드리스 CMS다. 풀어 말하면, 글·이미지 같은 내용을 넣고 꺼내는 관리 도구를 화면과 따로 두는 방식의 소프트웨어다. 이 Payload가 Figma에 합류했고, 이제 Figma Make 안에 들어 있다. 글을 쓴 사람은 Figma의 James Mikrut이고, 날짜는 2026년 10월 15일이다.</p>
     <p class="ptext">공식 글이 말하는 동작은 이렇다.</p>
     <ul class="ptext-list">
@@ -263,7 +235,7 @@
       <li>API 키(외부 서비스를 부르는 비밀번호 같은 값)를 Make 설정에 넣어 두면 Figma가 안전하게 보관하고, 사이트를 공개해도 방문자에게 노출되지 않는다고 한다. 이전에는 Supabase 프로젝트를 만들어 연결해야 했다고 글에 적혀 있다.</li>
       <li>공개한 사이트 주소 뒤에 <code>/admin</code>을 붙이면 관리자 화면으로 들어간다.</li>
     </ul>
-    <h2 class="psub" id="s3">역할마다 들어가는 곳이 다르다</h2>
+    <h2 class="psub" id="s2">역할마다 들어가는 곳이 다르다</h2>
     <p class="ptext">공식 글은 세 부류의 사람을 나눠 설명한다.</p>
     <div class="art__tablewrap"><table class="art__table">
       <thead><tr><th>역할</th><th>공식 글이 말하는 일</th></tr></thead>
@@ -276,7 +248,7 @@
     <p class="art__note">출처: <a href="https://www.figma.com/blog/websites-with-payload-in-figma/" target="_blank" rel="noopener">Figma 블로그: Payload in Figma</a>. 역할 구분과 권한은 Figma 설명을 그대로 요약한 것이다.</p>
     <p class="ptext">역할마다 작업 공간이 따로 있고, &quot;누가 무엇을 바꿀 수 있는지&quot; 세밀하게 정하는 권한 기능이 있다고 한다. 어떤 단계의 권한이 있는지는 글에 구체적으로 나와 있지 않다.</p>
     <p class="ptext">디자이너에게 눈에 띄는 대목은 첫 줄이다. 가짜 글(Lorem ipsum)로 채운 시안 대신 진짜 내용이 들어간 화면에서 일을 시작하라고 권하는 구조다. 이건 내 해석이다.</p>
-    <h2 class="psub" id="s4">값과 시기: 지금은 무료, 가격은 나중에</h2>
+    <h2 class="psub" id="s3">값과 시기: 지금은 무료, 가격은 나중에</h2>
     <p class="ptext">Figma 릴리스 기록과 블로그에서 확인한 내용이다.</p>
     <ul class="ptext-list">
       <li>Payload는 모든 요금제에서 쓸 수 있다. 접근 권한은 앞으로 몇 주에 걸쳐 모든 계정으로 열린다.</li>
@@ -285,7 +257,7 @@
     </ul>
     <p class="ptext">무료라는 말은 &quot;지금은&quot;이라는 조건이 붙어 있다. 클라이언트에게 넘길 사이트라면 나중에 요금이 생겼을 때 누가 내는지 미리 정해 둬야 한다. 이건 내 의견이다.</p>
     <p class="ptext">같은 주에 나온 다른 소식과 헷갈리지 않게 적어 둔다. 코드 레이어의 무료 기간은 Payload와 별개다. 에이전트가 AI 크레딧을 쓰기 시작한 이야기는 <a href="https://designrefs.com/articles/figma-agent-ai-credits-ga/">공짜로 시키던 피그마 에이전트가 크레딧을 쓰기 시작했다</a>에서 다뤘다.</p>
-    <h2 class="psub" id="s5">지금 알 수 없는 것</h2>
+    <h2 class="psub" id="s4">지금 알 수 없는 것</h2>
     <ul class="ptext-list">
       <li><strong>데이터를 꺼내 올 수 있는가.</strong> Figma 호스팅 프로젝트를 내보내거나 직접 서버에 올릴 수 있는지 공식 글에 없다. 공식 글은 &quot;직접 올리거나 확장하는 방법&quot;을 Payload 오픈소스 사이트로 안내하는데, 이는 Figma 호스팅 앱이 아니라 오픈소스 프로젝트 이야기로 읽힌다.</li>
       <li><strong>한도.</strong> 저장 용량, 요청 수, 사용자 수 제한이 적혀 있지 않다.</li>
@@ -293,12 +265,12 @@
       <li><strong>실제 완성도.</strong> &quot;프롬프트 한 번에 쓸 만한 관리자 화면이 나온다&quot;는 것은 Figma의 설명이다. 내 프로젝트에서 어떨지는 돌려 봐야 안다.</li>
       <li><strong>독립 검증.</strong> 내가 연 자료 중에는 제3자가 Payload in Figma를 시험한 결과가 없었다.</li>
     </ul>
-    <h2 class="psub" id="s6">디자이너에게 이것이 의미하는 것</h2>
+    <h2 class="psub" id="s5">디자이너에게 이것이 의미하는 것</h2>
     <p class="ptext">포트폴리오나 소규모 가게 사이트처럼 &quot;내용이 바뀌는 화면&quot;이 있다. 그런 일에서 시안과 실제 사이트 사이의 거리가 줄어든다. 클라이언트가 직접 글을 고칠 관리자 화면이 필요한 외주도 이 범위에 든다.</p>
     <p class="ptext">바이브 코더에게는 데이터베이스와 로그인을 따로 알아보는 단계가 줄어드는 소식이다. 다만 화면이 다 비슷해 보이는 문제는 백엔드가 풀어 주지 않는다. 폰트와 색을 정해 두는 일이 여전히 먼저다.</p>
     <p class="ptext">한 가지 걱정은 책임이다. 화면만 만들 때는 틀려도 새로 그리면 됐다. 사용자 로그인과 데이터가 붙으면 개인정보와 백업 문제가 따라온다. 누구의 데이터를 받는 사이트인지 먼저 생각해야 한다. 이것도 내 의견이다.</p>
     <p class="ptext">Figma 안에서 AI와 같이 일하는 흐름은 <a href="https://designrefs.com/articles/figma-specs-markdown-context/">피그마 Specs, 마크다운 한 장으로 팀과 AI에게 맥락을 건네는 방법</a>에서 한 번 다뤘다. 이번 Payload는 그 맥락 위에 &quot;데이터&quot;가 얹힌 모양이다.</p>
-    <h2 class="psub" id="s7">그래서 지금은</h2>
+    <h2 class="psub" id="s6">그래서 지금은</h2>
     <p class="ptext"><strong>진짜 내용 열 개로 시작하자.</strong> CSV 한 장에 실제 상품명이나 글 제목 열 줄을 적어 올리고, 그걸로 컬렉션을 만들게 한다. 공식 글이 소개한 방식이고, 가짜 글 대신 진짜 글이 화면을 얼마나 바꾸는지 바로 보인다.</p>
     <p class="ptext"><strong>클라이언트 작업이라면 호스팅 조건부터 적어 두자.</strong> 지금은 베타이고 무료지만 가격은 미정이다. 요금이 생길 때 누가 내는지, 데이터를 어떻게 옮길지 계약이나 메모에 한 줄 남겨 둔다.</p>
     <p class="ptext"><strong>개인정보가 들어가는 사이트는 한 번 더 멈추자.</strong> 사용자 로그인을 받는다면 어떤 정보를 저장하는지 정리하고, 정식 서비스 전에 도움말 문서에서 한도와 내보내기 가능 여부를 직접 확인한다.</p>
@@ -306,7 +278,7 @@
     <p class="art__note">출처: <a href="https://www.figma.com/blog/websites-with-payload-in-figma/" target="_blank" rel="noopener">Figma 블로그: Payload in Figma</a>, <a href="https://releasebot.io/updates/figma" target="_blank" rel="noopener">Figma 릴리스 기록(Releasebot)</a>.</p>]]></content:encoded>
     </item>
     <item>
-      <title>배경만 바꿨는데 로고까지 바뀌었을 때, 크레아 3 편집 모델에서 확인할 것 (2K 한 장 0.06달러)</title>
+      <title>크레아 3 편집 모델은 로고를 지켜 줄까? 2K 한 장 0.06달러</title>
       <link>https://designrefs.com/articles/krea-3-edit-keep-logo/</link>
       <guid isPermaLink="true">https://designrefs.com/articles/krea-3-edit-keep-logo/</guid>
       <pubDate>Wed, 21 Oct 2026 09:00:00 +0900</pubDate>
@@ -318,15 +290,8 @@
       <img src="https://designrefs.com/articles/img/krea-blog-v2.webp" alt="Krea 블로그 &#x27;Introducing Krea 3&#x27; 화면. 출처: krea.ai/blog/introducing-krea-3 (캡처일 2026-10-21)" loading="lazy" decoding="async" />
       <figcaption>Krea 블로그 &#x27;Introducing Krea 3&#x27; 화면. 출처: krea.ai/blog/introducing-krea-3 (캡처일 2026-10-21)</figcaption>
     </figure>
-    <h2 class="psub" id="s1">먼저 밝혀 둘 것</h2>
-    <ul class="ptext-list">
-      <li>Krea 3을 이 글을 쓰려고 직접 돌려 보지는 않았다. 아래 속도, 값, 품질은 모두 Krea가 직접 밝힌 내용이다.</li>
-      <li>Krea가 비교한 상대는 나노 바나나 프로와 GPT Image 2다. 제3자가 같은 조건으로 재현한 자료는 내가 연 자료 안에 없었다.</li>
-      <li>소개 글에 나온 장면(소파, 라벨 등)이 내 작업물에서도 그렇게 나올지는 알 수 없다.</li>
-      <li>글자(타이포)가 많은 포장이나 복잡한 로고에서 얼마나 버티는지는 공식 글에 구체 사례가 없다.</li>
-      <li>요금제별 정확한 한도는 가격 페이지의 표기가 엇갈려 확정하지 못했다. 뒤에서 따로 적는다.</li>
-    </ul>
-    <h2 class="psub" id="s2">소개 글이 약속한 것</h2>
+    <p class="ptext">속도와 값, 품질은 모두 크레아가 직접 밝힌 숫자다. 비교 상대는 나노 바나나 프로와 GPT Image 2였고, 다른 곳에서 같은 조건으로 재현한 자료는 찾지 못했다. 글자가 많은 포장이나 복잡한 로고에서 얼마나 버티는지도 아직 사례가 없다. 요금제별 한도는 가격 페이지 표기가 엇갈려 뒤에서 따로 적었다.</p>
+    <h2 class="psub" id="s1">소개 글이 약속한 것</h2>
     <p class="ptext">Krea 3의 블로그 글은 편집 동작을 이렇게 설명한다.</p>
     <ul class="ptext-list">
       <li>바꾸라고 하지 않은 부분은 보존한다. 제품은 라벨과 로고를 그대로 두고 주변 장면만 바뀐다.</li>
@@ -338,7 +303,7 @@
     </ul>
     <p class="ptext">소파 전/후 예시 이미지는 Krea의 것이라 이 글에 옮기지 않았다. 원문 소개 글에서 직접 볼 수 있다.</p>
     <p class="ptext">말하자면 &quot;다시 뽑기&quot;가 아니라 &quot;그 자리만 수정&quot;에 가깝다. 이미지 AI가 이 방향으로 가는 흐름은 <a href="https://designrefs.com/articles/image-ai-edit-not-reroll/">다시 뽑지 말고 고쳐 쓴다, 이미지 AI가 &#x27;편집&#x27; 쪽으로 간 한 주</a>에서 한 번 다뤘다.</p>
-    <h2 class="psub" id="s3">속도와 값: Krea가 내놓은 숫자</h2>
+    <h2 class="psub" id="s2">속도와 값: Krea가 내놓은 숫자</h2>
     <p class="ptext">소개 글의 수치는 이렇다.</p>
     <ul class="ptext-list">
       <li>대부분의 편집이 2K 해상도 기준으로 끝까지 8초 안에 끝난다.</li>
@@ -362,7 +327,7 @@
     <p class="art__note">출처: <a href="https://www.krea.ai/blog/introducing-krea-3" target="_blank" rel="noopener">Krea 블로그: Introducing Krea 3</a>. 시간은 Krea가 9월 24일~10월 1일에 측정한 값이다. Krea 3의 &#x27;8초 안&#x27;은 중간값이 아니라 대부분의 편집이 끝나는 상한으로 소개 글에 적혀 있다.</p>
     <p class="ptext">표의 숫자를 한 장 값으로 나누면 나노 바나나 프로가 0.135달러, GPT Image 2가 0.22달러다. 소개 글에도 같은 값이 적혀 있다. 한 번에 한 장씩 만지는 디자이너에게는 큰 차이가 아닐 수 있다. 쇼핑몰 상품 수백 장의 배경을 바꾸는 일이라면 얘기가 달라진다.</p>
     <p class="ptext">여기서 주의할 점이 있다. 시간 비교는 Krea 자신의 서비스에서 잰 값이고, 상대 모델은 다른 환경에서 돌아간다. 대기열 상황이 다르면 결과도 달라진다. 숫자는 방향을 알려 주는 정도로만 보자.</p>
-    <h2 class="psub" id="s4">쓰는 법도 공식 글에 있다</h2>
+    <h2 class="psub" id="s3">쓰는 법도 공식 글에 있다</h2>
     <p class="ptext">Krea가 소개 글에 적은 요령은 네 가지다.</p>
     <ol class="ptext-list">
       <li>먼저 &quot;그대로 둘 것&quot;을 말한다.</li>
@@ -373,7 +338,7 @@
     <p class="ptext">이 요령을 제품 사진 상황에 옮기면 이런 문장이 된다. 아래는 Krea의 요령을 내가 우리말로 옮겨 적은 예시이고, 실제로 돌려 보지는 않았다.</p>
     <blockquote class="art__quote">병의 라벨과 로고는 그대로 둔다. 배경만 아침 햇빛이 드는 나무 선반으로 바꾼다. 카메라 각도는 그대로.</blockquote>
     <p class="ptext">바꿀 것보다 지킬 것을 먼저 쓰는 순서가 눈에 띈다. 편집 모델이 &quot;어디를 건드려도 되는지&quot;를 문장에서 읽기 때문일 것이다. 이 해석은 내 추측이다.</p>
-    <h2 class="psub" id="s5">어디서 쓰나</h2>
+    <h2 class="psub" id="s4">어디서 쓰나</h2>
     <p class="ptext">소개 글에 따르면 Krea 3은 krea.ai에서 바로 쓸 수 있고(Krea는 사용자 3천만 명이라고 밝혔다), Krea API로도 열려 있다. fal, Hedra, Together AI, Nous Research, OpenRouter, Replicate 같은 외부 서비스에도 올라가 있다. 기업 팀은 Krea에 따로 문의하면 된다.</p>
     <figure class="art__fig">
       <img src="https://designrefs.com/articles/img/krea-home.webp" alt="Krea 첫 화면. 출처: krea.ai (캡처일 2026-10-21)" loading="lazy" decoding="async" />
@@ -396,7 +361,7 @@
     </table></div>
     <p class="art__note">출처: <a href="https://www.krea.ai/pricing" target="_blank" rel="noopener">Krea 가격 페이지</a>. 가격 페이지의 구조화 데이터에는 Max가 70달러·40,000 유닛으로 적혀 있어 화면 표기와 달랐다. 결제 전에 현재 표기를 직접 확인하자.</p>
     <p class="ptext">무료 요금제에서 Krea 3을 몇 장 쓸 수 있는지는 페이지 표기가 엇갈렸다. 비교표의 Krea 3 칸에는 하루 약 5장(추정치 표기)이라고 보이고, 별도의 편집 한도 표에는 다른 숫자가 있다. 어느 쪽이 맞는지 가려내지 못했다. 처음에는 무료로 몇 장 돌려 보고 판단하는 편이 안전하다.</p>
-    <h2 class="psub" id="s6">아직 비어 있는 것</h2>
+    <h2 class="psub" id="s5">아직 비어 있는 것</h2>
     <ul class="ptext-list">
       <li><strong>원본 보존의 한계.</strong> 소개 글은 &quot;그대로 둔다&quot;고 하지만, 글자가 작은 라벨이나 복잡한 패턴에서 어떻게 되는지 수치로 낸 곳은 없다.</li>
       <li><strong>영역을 지정하는 방식.</strong> 소개 글의 로드맵에는 원을 그리거나 이미지 위에 글을 써서 지시하는 기능이 있다. 아직 만드는 중이라고 적었다. 지금은 문장 설명으로 위치를 말해야 한다.</li>
@@ -404,21 +369,21 @@
       <li><strong>저작권과 상업 사용.</strong> 이 모델로 만든 이미지를 일에 써도 되는지는 이 글에서 다루지 않았다. 일반 원칙은 <a href="https://designrefs.com/articles/ai-image-commercial-use/">AI로 만든 이미지, 클라이언트 작업에 써도 될까</a>에 적어 두었다. 서비스 약관은 따로 읽어야 한다.</li>
       <li><strong>독립 검증.</strong> 내가 연 자료 중에는 제3자가 Krea 3과 다른 모델을 같은 조건으로 비교한 것이 없었다.</li>
     </ul>
-    <h2 class="psub" id="s7">디자이너에게 이것이 의미하는 것</h2>
+    <h2 class="psub" id="s6">디자이너에게 이것이 의미하는 것</h2>
     <p class="ptext">제품 사진, 패키지 목업, 광고 시안처럼 &quot;무엇이 절대 바뀌면 안 되는지&quot;가 분명한 일에서 편집 모델이 쓸모 있다. 반대로 새 이미지를 아이디어 단계에서 많이 뽑는 일에는 큰 의미가 없다.</p>
     <p class="ptext">한 가지 걱정은 속도다. 8초면 부담 없이 여러 번 돌릴 수 있지만, 그만큼 &quot;그럴듯하게 틀린 결과&quot;를 지나칠 위험도 커진다. 로고와 글자는 매번 원본과 겹쳐 놓고 확인하는 습관이 필요하다. 이것도 내 의견이다.</p>
     <p class="ptext">바이브 코더에게는 랜딩 페이지에 넣을 제품 이미지, 히어로 배경을 손쉽게 맞추는 길이 된다. 다만 AI로 만든 화면이 다 비슷해 보이는 문제는 이미지로 풀리지 않는다. 폰트와 색을 정해 두는 일이 먼저다.</p>
-    <h2 class="psub" id="s8">그래서 지금은</h2>
+    <h2 class="psub" id="s7">그래서 지금은</h2>
     <p class="ptext"><strong>지킬 것부터 한 줄로 쓰자.</strong> 편집을 시킬 때 &quot;라벨과 로고는 그대로 둔다&quot;를 맨 앞에 두고, 바꿀 것은 &quot;only&quot;로 하나만 적는다. Krea가 소개 글에서 권하는 순서이고, 어느 편집 모델에서나 먼저 시도해 볼 만하다.</p>
     <p class="ptext"><strong>무료 한도 안에서 내 사진 한 장으로 확인하자.</strong> 소개 글의 예시 말고, 라벨 글자가 가장 작은 내 제품 사진으로 한 번 돌려 본다. 원본과 겹쳐 놓고 글자 가장자리를 확대해 보면 쓸 수 있는지 바로 가려진다.</p>
     <p class="ptext"><strong>상업 작업이라면 약관부터 읽자.</strong> 속도와 값이 좋아도 클라이언트에게 넘길 이미지라면 사용 조건이 먼저다. 확인한 내용은 작업 파일 옆에 메모해 둔다.</p>
     <p class="ptext">쓰임별 이미지 생성·편집 도구는 <a href="https://designrefs.com/ai/">AI 디자인 툴</a>에 모아 두었다. Krea도 이미지 생성 목록에 있다.</p>
-    <h2 class="psub" id="s9">제작사가 밝힌 숫자, 내 파일에서는</h2>
+    <h2 class="psub" id="s8">제작사가 밝힌 숫자, 내 파일에서는</h2>
     <p class="ptext">Krea 3은 &quot;바꾸지 말라고 한 것은 그대로 둔다&quot;를 내세운 편집 모델이고, 2K 한 장 0.06달러에 대부분 8초 안에 끝난다고 Krea가 밝혔다. 이 숫자들은 제작사가 직접 낸 것이라, 내 작업물에서의 결과는 직접 돌려 봐야 안다.</p>
     <p class="art__note">출처: <a href="https://www.krea.ai/blog/introducing-krea-3" target="_blank" rel="noopener">Krea 블로그: Introducing Krea 3</a>, <a href="https://www.krea.ai/blog" target="_blank" rel="noopener">Krea 블로그 목록</a>, <a href="https://www.krea.ai/pricing" target="_blank" rel="noopener">Krea 가격 페이지</a>.</p>]]></content:encoded>
     </item>
     <item>
-      <title>시안을 눌러 보면 안 눌릴 때, 피그마 &#x27;코드 레이어&#x27;로 확인할 것 (유료 플랜 11월 4일까지 무료)</title>
+      <title>피그마 코드 레이어 오픈 베타, 눌리는 시안을 캔버스에서 바로 (11월 4일까지 무료)</title>
       <link>https://designrefs.com/articles/figma-code-layers-open-beta/</link>
       <guid isPermaLink="true">https://designrefs.com/articles/figma-code-layers-open-beta/</guid>
       <pubDate>Tue, 20 Oct 2026 09:00:00 +0900</pubDate>
@@ -426,18 +391,11 @@
       <description>피그마가 10월 15일 코드 레이어를 오픈 베타로 열었다. 디자인 프레임, 깃허브 저장소, 웹사이트 캡처, 프롬프트로 눌러 볼 수 있는 프로토타입을 캔버스 위에 만든다. 공식 릴리스 노트·도움말·블로그로 확인된 것과 비어 있는 것을 정리했다.</description>
       <content:encoded><![CDATA[    <p class="ptext">클라이언트에게 시안을 보냈더니 답이 왔다. &quot;이 버튼 누르면 어떻게 되나요?&quot; 정지된 화면에는 답이 없다. 프로토타입 연결선을 이어 붙이다 하루가 가기도 한다. 진짜 눌리는 화면이 필요한 순간이다.</p>
     <p class="ptext">피그마는 10월 15일 Config India 2026에서 &#x27;코드 레이어(Code layers)&#x27;를 오픈 베타로 열었다. 캔버스 위에 실제 코드로 돌아가는 프로토타입을 올리는 기능이다. 이 글은 피그마 릴리스 노트, 도움말 문서, 공식 블로그를 직접 열어 확인한 내용만 옮긴다. 확인되지 않은 부분은 따로 적었다.</p>
-    <h2 class="psub" id="s1">먼저 밝혀 둘 것</h2>
-    <ul class="ptext-list">
-      <li>코드 레이어를 이 글을 쓰려고 직접 돌려 보지는 않았다. 아래는 공식 문서에 적힌 내용이다.</li>
-      <li>단계적으로 열리는 기능이라 내 계정에 아직 안 보일 수 있다. 도움말 문서도 &quot;gradually rolling out&quot;이라고 적었다.</li>
-      <li>지원하는 프레임워크, 사용량 한도, 크레딧 단가는 문서에서 찾지 못했다.</li>
-      <li>플랜 표기가 문서마다 조금 다르다. 뒤에서 따로 적는다.</li>
-      <li>코드 레이어로 만든 화면이 실제 제품 코드로 바로 쓸 만한지는 확인된 자료가 없다. 그 부분은 판단하지 않는다.</li>
-    </ul>
-    <h2 class="psub" id="s2">코드 레이어가 뭔가</h2>
+    <p class="ptext">코드 레이어는 단계적으로 열리는 중이라 아직 계정에 안 보일 수 있다. 이 글은 공식 문서를 따라 썼고 직접 돌려 보지는 않았다. 지원 프레임워크와 사용량 한도, 크레딧 단가는 문서에 없었고, 플랜 표기가 문서마다 조금 달라 뒤에서 따로 정리했다.</p>
+    <h2 class="psub" id="s1">코드 레이어가 뭔가</h2>
     <p class="ptext">도움말 문서는 코드 레이어를 &quot;캔버스 위에 있는, 실행 중인 코드로 뒷받침되는 인터랙티브 프로토타입&quot;으로 설명한다. 디자인과 코드가 한 파일에 같이 있어서 변형안을 나란히 놓고 비교할 수 있고, 바꾼 내용을 코드 레이어로 되돌려 보낼 수도 있다.</p>
     <p class="ptext">말하자면 그림으로 그린 버튼이 아니라 진짜 눌리는 버튼이 캔버스에 놓이는 셈이다. 레이어를 고르고 재생(Play)을 누르면 돌아가고, 여러 개를 동시에 돌릴 수 있다. 피그마 앱으로 모바일 미리보기도 된다.</p>
-    <h2 class="psub" id="s3">만드는 길은 다섯 가지</h2>
+    <h2 class="psub" id="s2">만드는 길은 다섯 가지</h2>
     <p class="ptext">문서에 적힌 방법을 줄이면 이렇다.</p>
     <div class="art__tablewrap"><table class="art__table">
       <thead><tr><th>방법</th><th>순서</th></tr></thead>
@@ -453,7 +411,7 @@
     <p class="ptext">피그마와 코딩 도구를 잇는 방법도 하나 더 있다. 클로드 코드 같은 코딩 에이전트에게 &quot;이 프로젝트를 이 피그마 파일에 코드 레이어로 가져와 줘&quot;라고 시키면 된다. 문서가 예로 든 프롬프트는 &quot;Import this project as a code layer in &lt;Figma file URL&gt;.&quot;이다. 이 방식으로 만들려면 Full 좌석이 필요하다고 문서가 밝혔다.</p>
     <h3 class="art__h3">가져오기는 느릴 수 있다</h3>
     <p class="ptext">문서는 MCP로 프로젝트를 가져오면 10분 이상 걸릴 수 있고, 프로젝트에 따라 코드 레이어에서 돌아가도록 고쳐야 할 수도 있다고 적었다. 복잡한 코드베이스를 더 잘 지원하는 것은 앞으로의 계획이라고 블로그가 말한다. 첫 시도는 작은 화면 하나로 해 보는 편이 안전하다.</p>
-    <h2 class="psub" id="s4">고치는 법: 말로, 클릭으로</h2>
+    <h2 class="psub" id="s3">고치는 법: 말로, 클릭으로</h2>
     <p class="ptext">만든 뒤 고치는 방법도 문서에 있다.</p>
     <ol class="ptext-list">
       <li>피그마 에이전트에게 말로 시킨다.</li>
@@ -462,7 +420,7 @@
       <li>Reload code layer를 눌러 변경이 보이게 한다.</li>
     </ol>
     <p class="ptext">디자이너에게 3번이 눈에 띈다. 코드를 몰라도 화면에서 요소를 짚어 고칠 수 있는 길이다. 다만 이것이 얼마나 정확하게 고쳐 주는지는 공개된 비교가 없다.</p>
-    <h2 class="psub" id="s5">캔버스로 되돌리고, 깃허브로 내보내기</h2>
+    <h2 class="psub" id="s4">캔버스로 되돌리고, 깃허브로 내보내기</h2>
     <p class="ptext">코드 레이어는 한 방향으로만 흐르지 않는다고 문서가 밝혔다.</p>
     <ul class="ptext-list">
       <li>현재 상태, 고른 요소, 또는 흐름을 녹화해 여러 프레임으로 뽑아 디자인으로 되돌릴 수 있다.</li>
@@ -470,7 +428,7 @@
       <li>깃허브를 쓰면 피그마가 복제본을 보관한다. 브랜치를 따고 풀 리퀘스트(변경 합치기 요청)를 만들어 원래 저장소에 합칠 수 있다.</li>
     </ul>
     <p class="ptext">그러니 흐름은 &quot;시안 → 눌러 보는 화면 → 다시 시안 → 개발 저장소&quot;로 돌 수 있다. 개발자에게 넘길 때 &quot;이렇게 동작해야 해요&quot;를 글과 그림이 아니라 돌아가는 화면으로 건넨다는 점이 이전과 다르다.</p>
-    <h2 class="psub" id="s6">누가 쓸 수 있고, 값은 어떻게 되나</h2>
+    <h2 class="psub" id="s5">누가 쓸 수 있고, 값은 어떻게 되나</h2>
     <ul class="ptext-list">
       <li>도움말 문서: Education(K-12), Starter, Professional, Organization, Enterprise 플랜에서 쓸 수 있고, 디자인 파일 편집 권한이 필요하다.</li>
       <li>릴리스 노트와 블로그: 오픈 베타이며 전 플랜에서 열린다고 적었다.</li>
@@ -482,7 +440,7 @@
     <p class="ptext">에이전트 크레딧 이야기는 <a href="https://designrefs.com/articles/figma-agent-ai-credits-ga/">공짜로 시키던 피그마 에이전트가 크레딧을 쓰기 시작했다</a>에서 다뤘다. 같은 지갑을 쓰는 셈이라, 무료 기간이 끝난 뒤 얼마나 나갈지는 지금 숫자로 알 수 없다.</p>
     <p class="ptext">플랜 표기 차이도 있다. 블로그는 &quot;전 플랜&quot;이라 했고, 릴리스 노트의 무료 조건은 &quot;유료 플랜&quot;이다. 무료 플랜 계정에서 어디까지 되는지는 문서만으로 가려지지 않는다. 결제 전에는 피그마 요금 안내에서 현재 조건을 확인하자.</p>
     <p class="ptext">관리 쪽 한계도 있다. 코드 레이어를 끄는 선택은 Enterprise 플랜만 할 수 있고, 관리자가 끄려면 AI 기능 전체를 끄는 방법뿐이라고 문서가 적었다. 팀에서 도입을 논의한다면 알아 둘 부분이다.</p>
-    <h2 class="psub" id="s7">같은 날 나온 발표와의 관계</h2>
+    <h2 class="psub" id="s6">같은 날 나온 발표와의 관계</h2>
     <p class="ptext">10월 15일 릴리스 노트에는 코드 레이어 말고도 여러 항목이 있었다.</p>
     <div class="art__tablewrap"><table class="art__table">
       <thead><tr><th>항목</th><th>상태</th><th>내용</th></tr></thead>
@@ -496,7 +454,7 @@
     </table></div>
     <p class="art__note">출처: <a href="https://www.figma.com/release-notes/" target="_blank" rel="noopener">Figma 릴리스 노트</a>, <a href="https://www.figma.com/blog/build-by-design/" target="_blank" rel="noopener">Figma 블로그: Config India 2026</a></p>
     <p class="ptext">블로그에 따르면 가이드라인과 코드 소스는 모든 유료 플랜에서 쓸 수 있게 된다. 이 둘이 눈여겨볼 대목이다. 코드 레이어가 &quot;눌러 보는 화면&quot;을 만든다면, 가이드라인은 그 화면이 우리 규칙에서 벗어나지 않게 하는 쪽이기 때문이다. 이 흐름은 <a href="https://designrefs.com/articles/design-md-for-ai/">AI에게 우리 디자인 규칙을 건네는 파일 한 장, DESIGN.md</a>와 <a href="https://designrefs.com/articles/figma-specs-markdown-context/">피그마 Specs</a>에서 다룬 방향과 이어진다.</p>
-    <h2 class="psub" id="s8">아직 확인되지 않은 것</h2>
+    <h2 class="psub" id="s7">아직 확인되지 않은 것</h2>
     <ul class="ptext-list">
       <li>코드 레이어가 지원하는 프레임워크와 언어. 도움말에 이름이 없다.</li>
       <li>무료 기간이 끝난 뒤 작업별 크레딧 소모량.</li>
@@ -504,20 +462,20 @@
       <li>무료 플랜에서의 정확한 이용 범위. 문서마다 표현이 다르다.</li>
       <li>가져오기가 실패하는 프로젝트의 구체적 조건. 문서는 &quot;일부 프로젝트는 고쳐야 한다&quot;고만 적었다.</li>
     </ul>
-    <h2 class="psub" id="s9">디자이너에게 이것이 의미하는 것</h2>
+    <h2 class="psub" id="s8">디자이너에게 이것이 의미하는 것</h2>
     <p class="ptext">프로토타입을 만드는 일은 지금까지 &quot;연결선을 잇는 일&quot;이었다. 코드 레이어는 그 자리에 &quot;돌아가는 화면에 말로 지시하는 일&quot;을 놓는다. 시안을 넘기기 전에 눌러 보게 하면 개발 단계에서 &quot;이게 이렇게 움직이는 거였어요?&quot;가 줄어들지 모른다. 이것은 내 추측이고, 아직 검증된 자료는 없다.</p>
     <p class="ptext">바이브 코더에게는 반대 방향의 이야기다. 만든 화면을 피그마로 가져와 디자인으로 뽑고, 거기서 간격과 색을 손봐 되돌려 보낼 수 있다. 감이 없어서 막힐 때 디자인 도구 쪽에서 다듬는 길이 생긴 셈이다.</p>
-    <h2 class="psub" id="s10">그래서 지금은</h2>
+    <h2 class="psub" id="s9">그래서 지금은</h2>
     <p class="ptext"><strong>작은 화면 하나로 11월 4일 전에 시험해 보자.</strong> 로그인 화면이나 가격표처럼 작은 프레임을 골라 Build selection을 눌러 본다. 외부 프로젝트를 가져올 때는 10분 넘게 걸릴 수 있으니 큰 프로젝트는 피한다. 무료 기간에 얼마나 되는지 감을 잡아 두면 이후 크레딧 판단이 쉬워진다. 무료는 유료 플랜 기준이다.</p>
     <p class="ptext"><strong>시안을 넘길 때 &quot;눌러 보는 화면&quot;을 같이 건네 보자.</strong> 정적 시안에 설명을 길게 쓰는 대신 코드 레이어로 돌아가는 모습을 보여 준다. 클라이언트 질문 한 줄(&quot;이 버튼 누르면요?&quot;)에 답이 되는지 확인하는 용도로 시작하면 부담이 적다.</p>
     <p class="ptext"><strong>우리 규칙을 글로 먼저 적어 두자.</strong> 가이드라인은 발행한 라이브러리에 붙이는 방식이다. 라이브러리가 아직 없다면 주 색, 글꼴, 모서리 둥글기, 여백 단위를 열 줄 안팎으로 적어 두는 것부터 하면 된다. 어느 도구를 쓰든 그대로 쓸 수 있다.</p>
     <p class="ptext">쓰임별 AI 디자인 도구는 <a href="https://designrefs.com/ai/">AI 디자인 툴</a>에 모아 두었다.</p>
-    <h2 class="psub" id="s11">정리하면</h2>
+    <h2 class="psub" id="s10">정리하면</h2>
     <p class="ptext">피그마는 정지된 시안 옆에 실제 코드로 돌아가는 프로토타입을 둘 수 있게 했고, 11월 4일까지는 유료 플랜에서 만들기·수정이 무료다. 어디까지 믿고 쓸 수 있는지는 아직 공개된 비교가 없다. 확실한 것은 시안을 &quot;그리는 일&quot;에서 &quot;눌러 보게 하는 일&quot;로 한 걸음 옮겨 가고 있다는 점이다.</p>
     <p class="art__note">출처: <a href="https://www.figma.com/release-notes/" target="_blank" rel="noopener">Figma 릴리스 노트</a>, <a href="https://help.figma.com/hc/en-us/articles/44193259600535-Code-layers-in-Figma-Design" target="_blank" rel="noopener">Figma 도움말: Code layers in Figma Design</a>, <a href="https://www.figma.com/blog/build-by-design/" target="_blank" rel="noopener">Figma 블로그: Config India 2026</a>.</p>]]></content:encoded>
     </item>
     <item>
-      <title>AI가 만든 화면이 다 똑같이 보일 때, 러버블은 &#x27;디자인 방향 3안&#x27;을 빼고 디자인 시스템을 앞세웠다</title>
+      <title>러버블은 왜 &#x27;디자인 방향 3안&#x27;을 없앴을까, 비슷비슷한 AI 화면과 디자인 시스템</title>
       <link>https://designrefs.com/articles/lovable-design-system-same-look/</link>
       <guid isPermaLink="true">https://designrefs.com/articles/lovable-design-system-same-look/</guid>
       <pubDate>Mon, 19 Oct 2026 09:00:00 +0900</pubDate>
@@ -525,14 +483,8 @@
       <description>러버블이 첫 빌드 전의 디자인 방향 세 가지 선택 단계를 없앴고, 디자인 시스템은 모든 유료 플랜에서 쓸 수 있다. 공식 변경 기록과 문서로 무엇이 확인되고 무엇이 비어 있는지, 내 규칙을 한 번 정해 두는 법을 정리했다.</description>
       <content:encoded><![CDATA[    <p class="ptext">러버블이나 커서로 화면을 몇 개 만들다 보면 이상하게 다 비슷해 보인다. 둥근 카드, 비슷한 보라색, 비슷한 여백. 프롬프트를 바꿔 다시 시켜도 결이 같다. 그래서 &quot;디자인 감이 없어서 그런가&quot; 하고 넘기기 쉽다.</p>
     <p class="ptext">러버블의 공식 변경 기록(changelog)에는 이 문제와 관련된 항목이 최근 몇 주 사이에 몇 개 올라왔다. 하나는 첫 빌드 전에 보여 주던 &#x27;디자인 방향 3안&#x27; 단계를 없앴다는 것이고, 다른 하나는 디자인 시스템이 모든 유료 플랜으로 열렸다는 것이다. 이 글은 러버블 변경 기록과 공식 문서를 직접 열어 확인한 내용만 옮기고, 확인되지 않은 부분은 따로 적는다.</p>
-    <h2 class="psub" id="s1">먼저 밝혀 둘 것</h2>
-    <ul class="ptext-list">
-      <li>러버블을 이 글을 쓰기 위해 직접 돌려 보지는 않았다. 아래 내용은 공식 변경 기록과 문서에 적힌 것이다.</li>
-      <li>변경 기록 페이지는 길어서, 이번에 읽은 범위는 앞부분(2026년 8월~10월 항목)이다.</li>
-      <li>&#x27;디자인 시스템을 쓰면 화면이 덜 비슷해진다&#x27;는 것을 보여 주는 공개 비교 자료는 찾지 못했다. 그 부분은 내 해석이다.</li>
-      <li>검색 요약에 나온 플랜 설명이 공식 변경 기록·문서와 달랐다. 뒤에서 따로 적는다.</li>
-    </ul>
-    <h2 class="psub" id="s2">무엇이 바뀌었나</h2>
+    <p class="ptext">러버블의 공식 변경 기록과 문서(8~10월 항목)를 바탕으로 썼다. &#x27;디자인 시스템을 쓰면 화면이 덜 비슷해진다&#x27;는 건 공개된 비교 자료가 없어서, 그 부분은 내 해석이다. 플랜 설명은 검색 요약과 공식 문서가 서로 달라 뒤에서 따로 적었다.</p>
+    <h2 class="psub" id="s1">무엇이 바뀌었나</h2>
     <p class="ptext">공식 변경 기록에서 이번 글과 관련된 항목을 모으면 이렇다.</p>
     <div class="art__tablewrap"><table class="art__table">
       <thead><tr><th>날짜</th><th>항목</th><th>내용</th></tr></thead>
@@ -551,7 +503,7 @@
     <h3 class="art__h3">디자인 시스템은 유료 전 플랜으로</h3>
     <p class="ptext">8월 19일 항목은 &quot;Create a design system and attach it to your projects so every build inherits your components, tokens, and design rules.&quot;라고 적었다. 풀어 쓰면, 버튼·카드 같은 부품과 색·글자 크기 규칙을 한 번 만들어 프로젝트에 붙이면 이후 빌드가 그 규칙을 물려받는다는 뜻이다.</p>
     <p class="ptext">기존 npm 패키지를 디자인 시스템으로 감싸는 방식은 Enterprise 플랜 전용이라고 같은 항목이 밝혔다. 문서 페이지에도 같은 구분이 있다. React 컴포넌트 라이브러리 기반 시스템은 모든 유료 플랜, npm 래퍼 방식은 Enterprise 전용이다.</p>
-    <h2 class="psub" id="s3">디자인 시스템은 어떻게 생겼나</h2>
+    <h2 class="psub" id="s2">디자인 시스템은 어떻게 생겼나</h2>
     <p class="ptext">러버블 공식 문서는 디자인 시스템을 &quot;컴포넌트 라이브러리, 스타일 가이드, 설치 방법을 한 번 정의해 워크스페이스의 여러 프로젝트에서 재사용하는 기능&quot;으로 설명한다. 디자인 시스템 자체가 전용 러버블 프로젝트다.</p>
     <p class="ptext">문서가 말하는 구성은 세 가지다.</p>
     <ol class="ptext-list">
@@ -570,7 +522,7 @@
       <li>새 프로젝트는 + → Design → Use a design system에서 고른다. 기존 프로젝트는 Project settings → General의 Design system 섹션에서 Attach design system을 누른다.</li>
     </ol>
     <p class="ptext">연결하면 부품이 <code>src/design-system/&lt;슬러그&gt;/</code>로 복사되고, 규칙 파일이 <code>.lovable/rules/libraries/&lt;슬러그&gt;/</code>에 들어간다. 새 버전이 나오면 채팅에 &quot;Update available&quot;이 뜨고, 받아들이면 기존 디자인 시스템 파일이 교체된다. 프로젝트 자체 코드는 바뀌지 않는다고 문서가 적었다.</p>
-    <h2 class="psub" id="s4">쓰기 전에 알아 둘 한계</h2>
+    <h2 class="psub" id="s3">쓰기 전에 알아 둘 한계</h2>
     <p class="ptext">문서가 직접 밝힌 제한 중 디자이너가 알아 둘 것만 추렸다.</p>
     <ul class="ptext-list">
       <li>프로젝트 하나에 디자인 시스템 하나만 연결된다. 바꾸려면 먼저 떼어 내야 한다.</li>
@@ -582,30 +534,30 @@
       <li>올린 자료를 읽는 방식은 &quot;best-effort&quot;, 곧 최선을 다하는 수준이다. 첫 결과를 직접 검토하라고 문서가 안내한다.</li>
     </ul>
     <p class="ptext">플랜 설명이 어긋나는 부분도 있다. 검색에서 나온 문서 요약에는 &quot;Enterprise 플랜에서 쓸 수 있다&quot;는 표현이 보였지만, 변경 기록(8월 19일)과 문서의 플랜 항목은 React 기반이 모든 유료 플랜이라고 적었다. 결제 전에는 러버블의 요금 안내에서 현재 조건을 확인하자.</p>
-    <h2 class="psub" id="s5">같은 시기의 다른 변화</h2>
+    <h2 class="psub" id="s4">같은 시기의 다른 변화</h2>
     <p class="ptext">10월 12일 항목은 프로젝트의 Files 탭에서 이미지 위를 직접 그려 표시하거나, 댓글을 핀으로 꽂거나, 지우거나, 배경을 제거할 수 있다고 적었다. 결과는 새 파일로 저장된다. 이미지를 통째로 다시 뽑지 않고 고치는 쪽으로 간다는 점에서, 앞서 다룬 <a href="https://designrefs.com/articles/image-ai-edit-not-reroll/">다시 뽑지 말고 고쳐 쓴다</a>와 같은 흐름이다.</p>
     <p class="ptext">이 외에 러버블이 5월에 낸 &#x27;Aesthetics&#x27; 업데이트가 있다. 러버블의 <a href="https://x.com/Lovable/status/2053874566460752191" target="_blank" rel="noopener">X 게시물</a>은 타이포그래피, 레이아웃, 색 선호를 요청하고, 짓기 전에 디자인 콘셉트를 미리 볼 수 있으며, 더 대담한 랜딩 페이지·앱·블로그를 만들 수 있다고 소개했다. 날짜(5월 11일)는 2차 매체인 Create With의 보도에서 확인했고, 러버블 쪽 상세 문서는 찾지 못했다. 이 기능과 이번에 사라진 &#x27;방향 3안&#x27; 단계가 어떻게 이어지는지는 공개된 자료로 확인되지 않았다.</p>
-    <h2 class="psub" id="s6">아직 확인되지 않은 것</h2>
+    <h2 class="psub" id="s5">아직 확인되지 않은 것</h2>
     <ul class="ptext-list">
       <li>방향 3안 단계를 없앤 이유. 변경 기록에 설명이 없다.</li>
       <li>디자인 시스템을 붙인 빌드와 안 붙인 빌드의 결과 차이를 보여 주는 공개 비교.</li>
       <li>디자인 시스템의 크레딧 비용. 문서는 설정 확인 단계가 0크레딧이라고만 밝히고, 업데이트 같은 다른 작업의 비용은 적지 않았다.</li>
       <li>변경 기록 뒷부분(이번에 읽지 못한 범위)에 있을 수 있는 관련 항목.</li>
     </ul>
-    <h2 class="psub" id="s7">디자이너에게 이것이 의미하는 것</h2>
+    <h2 class="psub" id="s6">디자이너에게 이것이 의미하는 것</h2>
     <p class="ptext">바이브 코더에게는 단순한 소식이다. 모양을 매번 프롬프트로 설득하지 말고, 한 번 정해 둔 규칙을 붙이라는 방향이다. 디자이너에게는 조금 다른 일이다. 버튼·카드 같은 부품과 색·글자 규칙을 AI가 읽을 수 있는 형태로 정리하는 일이 새 업무가 될 수 있다. 이것은 내 추측이다.</p>
     <p class="ptext"><a href="https://designrefs.com/articles/figma-specs-markdown-context/">피그마 Specs</a>가 시안의 맥락을 마크다운 한 장으로 건네는 구조였다면, 러버블의 디자인 시스템은 코딩 도구 쪽에서 같은 문제를 푸는 방식으로 보인다. 도구는 달라도 &#x27;규칙을 글과 파일로 남겨 둔다&#x27;는 일은 같다.</p>
-    <h2 class="psub" id="s8">그래서 지금은</h2>
+    <h2 class="psub" id="s7">그래서 지금은</h2>
     <p class="ptext"><strong>내 규칙부터 열 줄로 적자.</strong> 주 색 하나, 보조 색 하나, 글꼴 둘, 모서리 둥글기, 여백 단위를 먼저 정한다. 러버블을 쓰지 않아도 커서나 클로드 코드에 줄 규칙 메모로 그대로 쓸 수 있다. 작성법은 <a href="https://designrefs.com/articles/design-md-for-ai/">DESIGN.md</a> 글에 적어 두었다.</p>
     <p class="ptext"><strong>첫 프롬프트에서 모양을 비워 두지 말자.</strong> 변경 기록에 따르면 색, 글자, 레이아웃을 정하지 않으면 러버블이 되묻는다. 처음부터 &quot;주 색은 이것, 글꼴은 이것&quot;이라고 적어 두면 되묻는 과정을 건너뛸 수 있다.</p>
     <p class="ptext"><strong>고친 곳은 규칙 쪽에 반영하자.</strong> 문서가 안내하듯 연결된 프로젝트의 복사된 부품을 직접 고치면 업데이트 때 덮어써진다. 마음에 드는 변경은 디자인 시스템 프로젝트에 넣어야 남는다.</p>
     <p class="ptext">쓰임별 AI 디자인 도구는 <a href="https://designrefs.com/ai/">AI 디자인 툴</a>에 모아 두었다.</p>
-    <h2 class="psub" id="s9">정리하면</h2>
+    <h2 class="psub" id="s8">정리하면</h2>
     <p class="ptext">러버블은 열려 있는 프롬프트에서 방향을 고르게 하던 단계를 없앴고, 부품과 규칙을 한 번 정해 모든 빌드에 물려주는 디자인 시스템을 모든 유료 플랜의 기능으로 내놓았다. 그것이 화면이 덜 비슷해지게 만드는지는 아직 확인된 바 없다. 확실한 것은 모양을 정하는 일이 프롬프트 한 줄에서 규칙 파일로 옮겨 가고 있다는 점이다.</p>
     <p class="art__note">출처: <a href="https://docs.lovable.dev/changelog" target="_blank" rel="noopener">Lovable 변경 기록</a>, <a href="https://docs.lovable.dev/features/design-systems" target="_blank" rel="noopener">Lovable 문서: Design systems</a>, <a href="https://x.com/Lovable/status/2053874566460752191" target="_blank" rel="noopener">Lovable X 게시물</a>, <a href="https://www.createwith.com/tool/lovable/updates/lovable-launches-aesthetics-to-give-users-more-control-over-design-output" target="_blank" rel="noopener">Create With: Lovable Aesthetics</a>.</p>]]></content:encoded>
     </item>
     <item>
-      <title>공짜로 시키던 피그마 에이전트가 크레딧을 쓰기 시작했다, 디자이너가 확인할 것</title>
+      <title>피그마 에이전트 유료 전환, 크레딧 한 달 치를 아껴 쓰는 법</title>
       <link>https://designrefs.com/articles/figma-agent-ai-credits-ga/</link>
       <guid isPermaLink="true">https://designrefs.com/articles/figma-agent-ai-credits-ga/</guid>
       <pubDate>Sun, 18 Oct 2026 09:00:00 +0900</pubDate>
@@ -671,7 +623,7 @@
     <p class="art__note">출처: <a href="https://help.figma.com/hc/en-us/articles/42614902212887" target="_blank" rel="noopener">Figma 도움말: AI 크레딧 FAQ</a>, <a href="https://www.figma.com/pricing/" target="_blank" rel="noopener">Figma 요금 페이지</a>, <a href="https://forum.figma.com/ask-the-community-7/figma-agent-beta-pricing-56929" target="_blank" rel="noopener">Figma 커뮤니티 포럼: figma agent beta pricing</a>.</p>]]></content:encoded>
     </item>
     <item>
-      <title>프로토타입을 말로 만들고 코드로 넘긴다, 프로토파이 MCP에서 디자이너가 확인할 것</title>
+      <title>프로토파이가 MCP를 열었다, AI가 프로토타입을 읽고 고치고 코드로 넘긴다</title>
       <link>https://designrefs.com/articles/protopie-mcp-prototype-ai/</link>
       <guid isPermaLink="true">https://designrefs.com/articles/protopie-mcp-prototype-ai/</guid>
       <pubDate>Sat, 17 Oct 2026 09:00:00 +0900</pubDate>
@@ -680,7 +632,7 @@
       <content:encoded><![CDATA[    <p class="ptext">프로토파이(ProtoPie)가 MCP 지원을 공식으로 알렸다. 프로토파이 블로그의 공식 지원 글 상단에는 날짜가 10월 7일로 적혀 있고, 페이지 정보에는 10월 15일로 되어 있다. 두 날짜가 달라 정확한 게시일은 확인하지 못했다.</p>
     <p class="ptext">인터랙션 프로토타입을 만들어 본 사람이라면 아는 장면이 있다. 버튼을 누르면 카드가 펼쳐지는 동작 하나를 위해 트리거를 붙이고, 응답을 고르고, 변수를 연결한다. 어렵지는 않은데 손이 많이 간다. 그렇게 완성한 프로토타입을 개발자에게 넘기면 &quot;이 동작은 어떻게 구현하나요&quot;라는 질문이 돌아온다. 프로토파이는 이 두 구간에 AI를 끼워 넣었다.</p>
     <p class="ptext">이번 글은 프로토파이의 공식 블로그 글과 문서를 따라가며, 무엇이 되는지와 아직 확인되지 않은 것을 나눠 적는다.</p>
-    <p class="ptext"><strong>먼저 밝혀 둘 것.</strong> 나는 이 기능을 직접 써 보지 못했다. 아래 내용은 프로토파이가 공개한 글과 문서에 적힌 것이다. 가격, 사용 횟수 제한, 정확한 요금제별 범위는 공개된 글끼리 다르거나 적혀 있지 않았다.</p>
+    <p class="ptext">프로토파이가 공개한 글과 문서를 바탕으로 했고, 기능을 직접 써 보지는 못했다. 가격과 사용 횟수 제한, 요금제별 범위는 공개된 글끼리 다르거나 적혀 있지 않았다.</p>
     <h2 class="psub" id="s1">MCP가 여기서 하는 일</h2>
     <p class="ptext">MCP는 AI 도구가 다른 프로그램의 기능을 불러 쓰도록 이어 주는 약속이다. 프로토파이의 문서 표현으로는 두 개의 서버가 있고, 둘은 같은 프로토파이 계정을 쓴다.</p>
     <ul class="ptext-list">
@@ -754,7 +706,7 @@
       <content:encoded><![CDATA[    <p class="ptext">피그마가 캔버스 위에 마크다운 문서를 올려 두는 기능 &#x27;Specs&#x27;를 냈다. 인도에서 열린 첫 Config 행사에서 나온 소식이고, 피그마 공식 글의 날짜는 10월 15일이다.</p>
     <p class="ptext">디자인 파일을 열면 프레임은 있는데 &quot;왜 이렇게 했는지&quot;는 어디에도 없을 때가 많다. 결정은 메신저에, 요구 사항은 문서에, 시안은 피그마에 흩어져 있다. 이제는 여기에 AI 에이전트까지 읽어야 한다. 피그마는 이 흩어진 맥락을 캔버스 위 한 곳에 모으겠다고 했다.</p>
     <p class="ptext">그래서 이번 글은 발표 문구보다 피그마 공식 블로그 글과 릴리스 노트를 따라갔다. 무엇이 되는지, 누가 쓸 수 있는지, 아직 확인되지 않은 것은 무엇인지를 나눠서 적는다.</p>
-    <p class="ptext"><strong>먼저 밝혀 둘 것.</strong> 나는 이 기능을 직접 써 보지 못했다. 아래 내용은 모두 피그마가 공개한 글과 노트, 그리고 기사에 적힌 것이다. 요금제별 세부 제한이나 마크다운 문법의 지원 범위는 공개된 글에서 찾지 못했다.</p>
+    <p class="ptext">피그마가 공개한 글과 노트, 기사를 바탕으로 했고, 기능을 직접 써 보지는 못했다. 요금제별 세부 제한이나 마크다운 문법을 어디까지 지원하는지는 공개된 글에서 찾지 못했다.</p>
     <h2 class="psub" id="s1">Specs는 무엇인가</h2>
     <p class="ptext">피그마는 Specs를 캔버스 위에 놓이는 &#x27;맥락을 담는 컨테이너&#x27;로 소개한다. 원문 표현으로는 &quot;a multiplayer container that allows context to fully express itself&quot;다. 여럿이 함께 편집하는 문서이고, 마크다운으로 쓴다.</p>
     <p class="ptext">특징은 문서 안에 디자인이 들어간다는 점이다. 스펙 안에 FigJam 파일, 프레임, 캔버스의 노드를 직접 끼워 넣을 수 있다. 글과 시안이 나란히 놓이니, 설명 문서를 따로 열어 보는 수고가 줄어든다. 독립된 파일로 둘 수도 있고, 캔버스 안에 같이 둘 수도 있다.</p>
@@ -809,7 +761,7 @@
     <p class="art__note">출처: <a href="https://www.figma.com/blog/introducing-figma-specs/" target="_blank" rel="noopener">Introducing Specs: Markdown as a medium (Figma 블로그)</a>, <a href="https://www.figma.com/release-notes/" target="_blank" rel="noopener">Figma 릴리스 노트</a> (10월 16일 확인), <a href="https://techcrunch.com/2026/10/14/figma-announces-new-features-to-define-how-agents-work-on-its-platform/" target="_blank" rel="noopener">TechCrunch</a>.</p>]]></content:encoded>
     </item>
     <item>
-      <title>나노 바나나 2.1, 값은 절반이 됐다는데 디자이너가 확인할 것</title>
+      <title>나노 바나나 2.1 요금표를 직접 열어 보니, 4K는 반값이 아니었다</title>
       <link>https://designrefs.com/articles/nano-banana-2-1-designers/</link>
       <guid isPermaLink="true">https://designrefs.com/articles/nano-banana-2-1-designers/</guid>
       <pubDate>Thu, 15 Oct 2026 09:00:00 +0900</pubDate>
@@ -818,7 +770,6 @@
       <content:encoded><![CDATA[    <p class="ptext">구글의 이미지 모델 &#x27;나노 바나나&#x27;는 국내에서도 꽤 익숙한 이름이 됐다. 그 나노 바나나가 10월 6일 2.1로 올라갔다.</p>
     <p class="ptext">발표 직후 기사 제목은 대부분 비슷했다. &quot;절반 값에 4K.&quot; 그런데 오늘 구글 요금표를 직접 열어 보니, 절반이 된 건 1K와 2K뿐이었다. 4K는 4분의 1만 내렸다. 기사마다 나온 &#x27;10월 29일 이전 모델 종료&#x27;도 구글 공식 문서에서는 찾을 수 없었다.</p>
     <p class="ptext">그래서 이번 글은 소문보다 문서를 따라갔다. 구글 요금표, 모델 카드, 사용 중단 일정표를 하나씩 확인해서 디자이너에게 필요한 것만 추렸다.</p>
-    <p class="ptext"><strong>먼저 밝혀 둘 것.</strong> 나는 이 사이트를 클로드 코드로 만들고 있다. 아래 성능 숫자는 모두 구글이 직접 잰 것이고, 한글 글자를 따로 시험한 결과는 아직 어디에도 없다.</p>
     <h2 class="psub" id="s1">무엇이 달라졌나</h2>
     <p class="ptext">나노 바나나 2.1은 제미나이 3.6 플래시를 바탕으로 만든 이미지 생성·편집 모델이다. 제미나이 앱과 검색의 AI 모드, AI 스튜디오, 영상 도구 Flow, UI 디자인 도구 Stitch, 구글 광고까지 차례로 들어가고 있다.</p>
     <p class="ptext">구글이 내세운 건 세 가지다. 시각 디자인, 고칠 곳을 말로 고르는 편집, 그리고 여러 장을 만들어도 같은 인물과 물건이 유지되는 일관성이다. 참고 이미지는 한 번에 14장까지 넣을 수 있고, 그 안에서 인물 넷과 물건 열 개까지 따라간다. 화면 비율은 8:1처럼 아주 긴 띠 모양까지 된다. 웹 배너나 현수막 시안을 뽑을 때 쓸 만한 변화다.</p>
@@ -865,6 +816,7 @@
     <p class="ptext"><strong>API나 자동화로 쓰고 있다면 모델 이름을 확인하자.</strong> 구글은 이전 모델(나노 바나나 2)을 대신할 모델로 2.1을 권하고 있다. 다만 종료 날짜는 아직 정하지 않았다. &#x27;10월 29일 종료&#x27;라는 글을 봤다면, 구글 <a href="https://ai.google.dev/gemini-api/docs/deprecations" target="_blank" rel="noopener">사용 중단 일정표</a>에서 직접 확인하자. API에는 두 모델 모두 무료 사용량이 없다.</p>
     <p class="ptext"><strong>4K는 꼭 필요할 때만 쓰자.</strong> 인쇄용 큰 이미지가 아니라면 2K로 시안을 고르고, 마지막 한 장만 4K로 뽑는 게 값에 맞다.</p>
     <p class="ptext">쓰임새별 이미지 AI 도구는 <a href="https://designrefs.com/ai/">AI 디자인 툴</a>에 모아 두었다.</p>
+    <p class="art__note">성능 숫자는 모두 구글이 직접 잰 것이다. 한글 글자를 따로 시험한 결과는 아직 어디에도 없다.</p>
     <p class="art__note">출처: <a href="https://deepmind.google/models/model-cards/nano-banana-2-1/" target="_blank" rel="noopener">나노 바나나 2.1 모델 카드</a>, <a href="https://ai.google.dev/gemini-api/docs/pricing" target="_blank" rel="noopener">Gemini API 요금표</a> · <a href="https://ai.google.dev/gemini-api/docs/deprecations" target="_blank" rel="noopener">사용 중단 일정표</a> (10월 15일 확인), <a href="https://www.neowin.net/news/google-launches-nano-banana-21-with-better-editing-and-subject-consistency/" target="_blank" rel="noopener">Neowin</a>, <a href="https://www.androidheadlines.com/2026/10/google-launches-nano-banana-2-1-ai-images-price.html" target="_blank" rel="noopener">Android Headlines</a>, <a href="https://apidog.com/blog/nano-banana-2-1/" target="_blank" rel="noopener">Apidog</a>, <a href="https://www.youtube.com/watch?v=Sm7OTow3mcY" target="_blank" rel="noopener">Google 유튜브</a>.</p>]]></content:encoded>
     </item>
     <item>
@@ -877,7 +829,7 @@
       <content:encoded><![CDATA[    <p class="ptext">10월 12일, 메타가 Muse Wonder와 Muse Wonder Full을 내놓았다. 메타가 AI 조직을 다시 짠 뒤 처음 내는 최상위급 모델이다. 발표의 중심은 기억력이었다. 며칠, 몇 주가 지나도 사용자에게 중요한 걸 기억하고, 어려운 일도 끝까지 붙들고 가는 모델이라는 설명이다.</p>
     <p class="ptext">디자인 이야기는 발표문에 한 줄도 없었다. 그런데 같은 날 Design Arena에 이 모델이 올라왔고, 이틀이 지난 오늘 웹사이트 부문과 UI 컴포넌트 부문에서 1위에 올라 있다.</p>
     <p class="ptext">Design Arena는 사람들이 AI가 만든 디자인을 직접 보고 골라서 순위를 매기는 곳이다. 새 모델이 나올 때마다 &quot;디자인 1위&quot;라는 말이 붙는 근거가 대개 여기서 나온다. 그래서 이번에는 모델 자체보다 그 순위가 어떻게 만들어지는지를 먼저 들여다봤다.</p>
-    <p class="ptext"><strong>먼저 밝혀 둘 것.</strong> 나는 이 사이트를 클로드 코드로 만들고 있고, 같은 순위표에는 앤트로픽 모델도 올라 있다. 점수는 투표가 쌓이면서 매일 바뀌기 때문에, 아래 숫자는 모두 10월 14일에 본 것이다.</p>
+    <p class="ptext">숫자를 읽기 전에 두 가지. 점수는 투표가 쌓이면서 매일 바뀌어서 아래 숫자는 모두 10월 14일에 본 것이다. 그리고 같은 순위표에 앤트로픽 모델도 올라 있는데, 이 사이트는 클로드 코드로 만들고 있다.</p>
     <h2 class="psub" id="s1">투표 한 번이 순위가 되기까지</h2>
     <p class="ptext">Design Arena의 소개 페이지에 방식이 꽤 자세히 적혀 있다. 누군가 &quot;카페 랜딩 페이지 만들어 줘&quot; 같은 요청을 넣으면, 모델 넷이 무작위로 뽑혀 같은 요청을 동시에 받는다. 투표하는 사람은 어느 모델이 만든 건지 모른 채 둘씩 나란히 놓인 결과를 보고 하나를 고른다.</p>
     <figure class="art__fig">
@@ -940,7 +892,6 @@
       <content:encoded><![CDATA[    <p class="ptext">&quot;AI로 대충 만들어 봤는데, 이것만 좀 다듬어 주실 수 있을까요?&quot;</p>
     <p class="ptext">요즘 이런 메일을 받는 디자이너가 많다. 첨부된 건 챗GPT나 클로드로 만든 로고, 포스터, 랜딩 페이지 시안이다. 그리고 대개 한 줄이 더 붙는다. &quot;거의 다 된 거라, 비용은 좀 낮춰 주시면 좋겠어요.&quot;</p>
     <p class="ptext">10월 12일 Fast Company가 이 이야기를 다뤘다. 그래픽 디자이너 열두 명 넘게 인터뷰했는데, 지난 1년 반 사이 비슷한 일을 겪었다는 사람이 많았다. 클라이언트는 AI 시안을 보내며 값을 깎고, 회사에서는 상사가 AI로 만든 화면을 내밀며 &quot;이대로 만들어 달라&quot;고 한다. 의견을 내면 &quot;챗GPT한테 물어봐&quot;라는 답이 돌아오기도 하고, AI가 대신할 수 있다는 말과 함께 일자리를 잃은 사람도 있었다. 기사는 이렇게 디자이너가 &#x27;픽셀만 옮기는 사람&#x27;이 되어 간다고 썼다.</p>
-    <p class="ptext"><strong>먼저 밝혀 둘 것.</strong> 이 글은 인터뷰 기사와 몇 개의 조사를 바탕으로 한다. 이런 일이 얼마나 흔한지 보여 주는 정확한 통계는 아직 없다. 아래 그림과 순서는 기사 속 디자이너들의 이야기를 바탕으로, 이 사이트가 정리한 것이다.</p>
     <h2 class="psub" id="s1">&quot;거의 다 됐다&quot;는 착각</h2>
     <p class="ptext">클라이언트 눈에 AI 시안은 완성품에 가깝다. 그럴듯한 색, 그럴듯한 구도, 그럴듯한 글자. 그런데 그걸 실제로 쓰려면 해야 할 일이 꽤 남아 있다.</p>
     <figure class="art__fig">
@@ -989,6 +940,7 @@
       <li><strong>내가 바꾼 것을 기록하자.</strong> 처음 받은 AI 시안과 최종 결과물을 나란히 저장해 두자. 포트폴리오에도, 다음 견적 협상에도 쓸 수 있다.</li>
     </ol>
     <p class="ptext">AI 도구를 실제 작업에 어떻게 쓰는지는 <a href="https://designrefs.com/articles/ai-design-tools-in-practice/">AI 디자인 도구, 실무에서는 어떻게 쓰나</a>에, 쓰임새별 AI 도구는 <a href="https://designrefs.com/ai/">AI 디자인 툴</a>에 모아 두었다.</p>
+    <p class="art__note">이런 일이 얼마나 흔한지 보여 주는 통계는 아직 없다. 그림과 순서는 인터뷰 기사와 조사 속 디자이너들의 이야기를 바탕으로 정리한 것이다.</p>
     <p class="art__note">출처: <a href="https://www.fastcompany.com/91621558/ai-pilled-bosses-and-clients-turning-designers-into-pixel-pushers" target="_blank" rel="noopener">Fast Company(2026. 10. 12)</a>, <a href="https://www.fastcompany.com/91571502/freelance-design-pricing-transparency-project-report" target="_blank" rel="noopener">Fast Company 단가 조사</a>, <a href="https://hbr.org/2024/11/research-how-gen-ai-is-already-impacting-the-labor-market" target="_blank" rel="noopener">HBR</a>, <a href="https://elements.envato.com/learn/creative-ai-tools" target="_blank" rel="noopener">Envato</a>.</p>]]></content:encoded>
     </item>
     <item>
@@ -1000,7 +952,6 @@
       <description>히드로 공항이 어도비와 손잡고 AI 답변 속에 자기 브랜드가 어떻게 언급되는지 재기 시작했다. 여행자 넷 중 하나가 AI로 정보를 찾는다는 지금, 브랜드를 다루는 디자이너가 챙길 것을 그림과 표로 정리했다.</description>
       <content:encoded><![CDATA[    <p class="ptext">지난 10월 8일, 런던 히드로 공항이 어도비와의 계약을 넓혔다. 새 웹사이트를 어도비 기술로 다시 만든다는 내용인데, 눈에 띄는 대목은 따로 있었다. 챗GPT, 코파일럿, 퍼플렉시티 같은 AI가 히드로를 어떻게 말하는지 재고, 빈틈을 찾겠다는 것이다.</p>
     <p class="ptext">어도비가 든 근거는 이렇다. 소비자 넷 중 하나는 여행을 정할 때 AI를 가장 먼저 찾는다. 사람들이 검색창 대신 AI에게 묻기 시작하면, 브랜드가 신경 써야 할 &#x27;첫 화면&#x27;이 바뀐다.</p>
-    <p class="ptext"><strong>먼저 밝혀 둘 것.</strong> 어도비가 든 넷 중 하나라는 숫자는 조사 방법이 함께 공개되지 않았다. 아래에서는 이 흐름이 디자이너의 일과 어디서 만나는지에 집중했다. 이 사이트도 AI가 읽기 쉽도록 llms.txt라는 안내 파일을 두고 있다는 것도 함께 적어 둔다.</p>
     <h2 class="psub" id="s1">AI 답변 속 브랜드는 어디서 오나</h2>
     <figure class="art__fig">
       <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/ai-search-brand-m.svg" width="600" height="877" /><img src="https://designrefs.com/articles/img/ai-search-brand.svg" alt="AI는 공식 사이트의 글, 그림 설명, 리뷰와 기사, 구조화된 정보를 읽고 답을 만든다. 브랜드는 그 답에 얼마나 자주, 정확히 나오는지 잰다." width="1200" height="511" loading="lazy" decoding="async" /></picture>
@@ -1034,6 +985,7 @@
       <li><strong>브랜드 한 문장 쓰기.</strong> 브랜드 가이드 첫 장에 &quot;우리는 누구를 위해 무엇을 하는 곳인가&quot;를 한 문장으로 적어 두자. AI가 인용하기 가장 좋은 문장이다.</li>
     </ol>
     <p class="ptext">AI에게 우리 디자인 규칙을 건네는 법은 <a href="https://designrefs.com/articles/design-md-for-ai/">DESIGN.md 글</a>에, 브랜딩 레퍼런스는 <a href="https://designrefs.com/graphic/">그래픽 / 브랜딩</a>에 모아 두었다.</p>
+    <p class="art__note">어도비가 든 &#x27;넷 중 하나&#x27;라는 숫자는 조사 방법이 함께 공개되지 않았다. 참고로 이 사이트도 AI가 읽기 쉽도록 llms.txt라는 안내 파일을 두고 있다.</p>
     <p class="art__note">출처: <a href="https://news.adobe.com/news/2026/10/adobe-and-heathrow-airport-partner" target="_blank" rel="noopener">Adobe·Heathrow 발표</a>, <a href="https://itbrief.co.uk/story/heathrow-extends-adobe-deal-to-boost-ai-travel-search" target="_blank" rel="noopener">IT Brief UK</a>, <a href="https://thenextweb.com/news/heathrow-adobe-agentic-ai-website" target="_blank" rel="noopener">The Next Web</a>, <a href="https://www.cmswire.com/digital-experience/adobe-launches-brand-visibility-tool-for-ai-search/" target="_blank" rel="noopener">CMSWire</a>, <a href="https://www.techradar.com/pro/security/forget-about-seo-adobe-already-has-an-llm-optimizer-to-help-businesses-rank-on-chatgpt-gemini-and-claude" target="_blank" rel="noopener">TechRadar</a>.</p>]]></content:encoded>
     </item>
     <item>
@@ -1045,7 +997,7 @@
       <description>macOS 27에서 애플 인텔리전스를 통째로 끄던 스위치가 없어졌다. 사용자들은 외부 도구까지 만들어 AI를 지우고 있다. 무엇이 바뀌었는지, 디자이너의 맥에서는 무엇을 확인할지, AI 기능을 설계하는 사람에게 남는 질문을 정리했다.</description>
       <content:encoded><![CDATA[    <p class="ptext">이번 주 맥 사용자들 사이에서 조용히 퍼진 도구가 있다. 이름은 RemoveMacAI. 맥에 깔린 애플의 AI 기능을 끄고, 그 AI가 쓰는 모델 파일까지 지워 준다. 지우고 나면 12GB 넘는 저장 공간이 돌아온다는 후기가 여럿 올라왔다.</p>
     <p class="ptext">이런 도구가 나온 데는 이유가 있다. 올가을 나온 macOS 27에서, AI 기능 전체를 한 번에 끄던 스위치가 사라졌다.</p>
-    <p class="ptext"><strong>먼저 밝혀 둘 것.</strong> 나는 macOS 27에서 이 도구를 직접 돌려 보지 않았다. 아래 내용은 맥 전문 매체들의 보도를 바탕으로 했다. 애플은 스위치를 없앤 이유를 설명하지 않았다.</p>
+    <p class="ptext">애플은 스위치를 없앤 이유를 따로 설명하지 않았다. 이 도구도 macOS 27에서 직접 돌려 보지는 않았고, 맥 전문 매체들의 보도를 따라 정리했다.</p>
     <h2 class="psub" id="s1">무엇이 바뀌었나</h2>
     <figure class="art__fig">
       <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/macos27-ai-switch-m.svg" width="600" height="1060" /><img src="https://designrefs.com/articles/img/macos27-ai-switch.svg" alt="macOS 26에서는 스위치 하나로 AI 기능을 모두 껐고, macOS 27에서는 기능마다 따로 꺼야 한다. 보도를 바탕으로 그린 개념도." width="1200" height="639" loading="lazy" decoding="async" /></picture>
@@ -1096,7 +1048,6 @@
       <description>환타가 AI 스튜디오와 만든 할로윈 캠페인이 온라인에서 혹평을 받고 있다. 그런데 소비자 조사 숫자는 반대로 나왔다. 누가 무엇을 했는지, 왜 반응이 갈렸는지, 브랜드 일을 하는 디자이너가 챙길 것을 정리했다.</description>
       <content:encoded><![CDATA[    <p class="ptext">할로윈을 3주 앞두고, 한 음료 광고가 디자인 매체의 단골 소재가 됐다. 코카콜라의 브랜드 환타가 만든 &#x27;호러 유니버스(Haunted Universe)&#x27;다.</p>
     <p class="ptext">환타는 할로윈을 자기 것으로 만들고 싶어 한다. 코카콜라가 크리스마스를 떠올리게 하듯이. 그래서 남의 영화 캐릭터를 빌려 오던 지난 2년과 달리, 올해는 사이보그 프랑켄슈타인, 디제이 늑대인간 같은 자기 괴물 넷을 만들었다. 그리고 그걸 AI 스튜디오와 함께 만들었다.</p>
-    <p class="ptext"><strong>먼저 밝혀 둘 것.</strong> 캠페인 영상은 공개돼 있지만, 반응을 숫자로 잰 자료는 많지 않다. 아래 숫자는 각각 누가 어떻게 쟀는지 함께 적었다.</p>
     <h2 class="psub" id="s1">누가 무엇을 했나</h2>
     <figure class="art__fig">
       <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/fanta-who-did-what-m.svg" width="600" height="883" /><img src="https://designrefs.com/articles/img/fanta-who-did-what.svg" alt="환타 호러 유니버스에서 사람과 AI가 맡은 일, 그리고 반응. 환타와 제작사가 밝힌 내용을 바탕으로 정리했다." width="1200" height="499" loading="lazy" decoding="async" /></picture>
@@ -1148,6 +1099,7 @@
       <li><strong>첫 3초를 따로 보기.</strong> 완성본을 처음부터 끝까지 보는 시사 말고, 소셜 피드처럼 몇 초만 보고 넘기는 상황으로 한 번 더 보자. 댓글은 거기서 달린다.</li>
     </ol>
     <p class="ptext">AI로 만든 이미지를 일에 써도 되는지는 <a href="https://designrefs.com/articles/ai-image-commercial-use/">AI로 만든 이미지, 클라이언트 작업에 써도 될까</a>에, 그래픽·브랜딩 레퍼런스는 <a href="https://designrefs.com/graphic/">그래픽 / 브랜딩</a>에 모아 두었다.</p>
+    <p class="art__note">캠페인 영상은 공개돼 있지만 반응을 숫자로 잰 자료는 많지 않다. 숫자마다 누가 어떻게 쟀는지 함께 적었다.</p>
     <p class="art__note">출처: <a href="https://www.creativebloq.com/ai/fantas-ai-slop-halloween-advert-is-a-real-horror-show" target="_blank" rel="noopener">Creative Bloq</a>, <a href="https://www.emarketer.com/content/fanta-bets-on-original-ip-own-halloween--ai-concerns-could-way" target="_blank" rel="noopener">eMarketer</a>, <a href="https://www.zappi.io/web/blog/innovation-spotlight-fantas-haunted-collection" target="_blank" rel="noopener">Zappi</a>, <a href="https://www.adweek.com/creativity/fantas-big-bet-to-own-halloween-an-original-cinematic-universe/" target="_blank" rel="noopener">Adweek</a>, <a href="https://news.designrush.com/fanta-haunted-universe-halloween-2026" target="_blank" rel="noopener">DesignRush</a>, <a href="https://www.marketing-interactive.com/can-ai-help-fanta-build-the-next-horror-universe" target="_blank" rel="noopener">Marketing-Interactive</a>.</p>]]></content:encoded>
     </item>
     <item>
@@ -1159,7 +1111,7 @@
       <description>한 개발자가 AI로 어도비 앱 일곱 개를 대신할 무료 오픈소스 앱을 만들고 있다. 포토샵 대체 앱은 PSD를 열고 저장하지만 아직 초기 알파다. 지금 어디까지 왔는지, 디자이너가 볼 것은 무엇인지 정리했다.</description>
       <content:encoded><![CDATA[    <p class="ptext">이번 주 디자인 쪽에서 화제가 된 소식이 있다. 한 개발자가 포토샵, 일러스트레이터, 프리미어, 라이트룸, 애프터 이펙트, 인디자인, 애크로뱃을 대신할 앱 일곱 개를 무료로 공개했다. 이름은 ArtCraft. 그리고 이걸 AI로 만들었다고 했다.</p>
     <p class="ptext">&quot;어도비 구독을 끊을 수 있다&quot;는 제목이 여기저기 붙었다. 실제로 그런지, 지금 어디까지 왔는지 차분히 들여다봤다.</p>
-    <p class="ptext"><strong>먼저 밝혀 둘 것.</strong> 이 앱들은 Anthropic의 Claude Opus 5.5로 만들어졌다고 알려졌다. 나는 이 사이트를 같은 회사의 클로드 코드로 만들고 있다. 그래서 개발자의 주장보다 저장소에 적힌 내용과 다른 매체의 확인을 중심으로 옮겼다. 앱은 직접 설치해 보지 않았다.</p>
+    <p class="ptext">이 앱들은 앤트로픽의 Claude Opus 5.5로 만들어졌다고 알려졌는데, 이 사이트도 같은 회사의 클로드 코드로 만들고 있다. 그래서 개발자의 말보다 저장소에 적힌 내용과 다른 매체의 확인을 따랐다. 앱은 직접 설치해 보지 않았다.</p>
     <h2 class="psub" id="s1">누가, 왜, 어떻게</h2>
     <p class="ptext">만든 사람은 소프트웨어 엔지니어 브랜든 토마스(Brandon Thomas)다. 계기는 어도비의 해지 수수료였다고 밝혔다. 어도비의 &#x27;연간 약정, 월 결제&#x27; 요금제는 1년을 채우기 전에 해지하면 남은 금액의 절반을 위약금으로 낸다. 미국 연방거래위원회(FTC)가 2024년 이 문제로 어도비를 고소했고, 합의로 끝났다.</p>
     <p class="ptext">만드는 방식은 이렇다.</p>
@@ -1220,7 +1172,7 @@
       <content:encoded><![CDATA[    <p class="ptext">이번 주에 AI가 화면을 그리는 소식이 두 개 연달아 나왔다.</p>
     <p class="ptext">10월 6일, 피그마가 디자인 에이전트의 베타를 끝냈다. 다음 날인 7일에는 오픈AI가 챗GPT에 GPT-6를 넣으면서 &#x27;Intelligent UI&#x27;를 공개했다. 질문에 글로만 답하지 않고, 버튼과 폼과 차트가 들어간 화면으로 답하는 기능이다. 유료 사용자부터 열렸고, 오늘부터는 무료 사용자에게도 풀린다.</p>
     <p class="ptext">하나는 대화창 안에서, 하나는 디자인 툴 안에서. 자리는 다르지만 둘 다 AI가 화면을 직접 그린다는 점은 같다. 그래서 같은 질문이 떠오른다. 그 화면의 규칙은 누가 정하나.</p>
-    <p class="ptext"><strong>먼저 밝혀 둘 것.</strong> 두 기능 모두 나온 지 며칠 안 돼서 써 본 사람의 후기가 거의 없다. 회사 발표와 정리 기사를 바탕으로 했다. 나는 이 사이트를 클로드 코드로 만들고 있다는 것도 함께 적어 둔다.</p>
+    <p class="ptext">두 기능 모두 나온 지 며칠밖에 안 돼서 써 본 사람의 후기는 거의 없다. 회사 발표와 정리 기사를 따라 썼다.</p>
     <h2 class="psub" id="s1">답이 화면으로 온다</h2>
     <p class="ptext">오픈AI의 설명은 이렇다. GPT-6는 글, 그림, 조작할 수 있는 요소를 섞어 답을 짜고, 질문마다 어떻게 배치할지 스스로 정한다. 비교는 나란히 놓고, 설명은 직접 만져 보는 도표로 보여 주고, 간단한 질문에는 그냥 글로 답한다.</p>
     <p class="ptext">오픈AI가 든 예는 이런 것들이다. 레시피 옆에 조리 시간표, 여행 경로를 찍은 지도, 그리고 그 자리에서 만들어 주는 작은 도구들. 적금 계산기, 더치페이 계산기, 대화창 안에서 하는 게임까지.</p>
@@ -1269,7 +1221,7 @@
       <description>9월 30일부터 10월 6일까지 나온 AI·디자인 소식 여섯 가지를 한 장에 모았다. 가게 전체, 규칙, 고칠 자리, 장면 순서까지, 운에 맡기던 것을 사람이 정하는 쪽으로 바뀌었다. 디자이너가 AI를 얼마나 쓰는지 숫자와 함께 정리했다.</description>
       <content:encoded><![CDATA[    <p class="ptext">지난 일주일 동안 이 사이트에 AI와 디자인 이야기를 매일 한 편씩 올렸다. 쇼핑몰 편집기, 디자인 규칙 파일, 이미지 모델 둘, 3D 출력 도구, 챗GPT 광고, 영상 모델. 따로 보면 서로 상관없어 보이는데, 나란히 놓고 보니 공통점이 하나 보였다.</p>
     <p class="ptext"><strong>AI에게 통째로 맡기고 결과를 기다리던 자리를, 사람이 직접 정할 수 있게 바뀌고 있다.</strong></p>
-    <p class="ptext"><strong>먼저 밝혀 둘 것.</strong> 이 글은 지난 글들을 묶은 정리다. 각 소식의 자세한 내용과 출처는 해당 글에 있다. 나는 이 사이트를 클로드 코드로 만들고 있다는 것도 함께 적어 둔다. 아래 숫자에 Claude가 나오기 때문이다.</p>
+    <p class="ptext">한 주 동안 쓴 글을 한데 묶은 정리라서, 소식마다 자세한 내용과 출처는 원래 글에 남겨 두었다. 아래 숫자에 Claude가 나오니 하나 밝혀 두면, 이 사이트는 클로드 코드로 만들고 있다.</p>
     <h2 class="psub" id="s1">여섯 가지 소식, 한 장으로</h2>
     <figure class="art__fig">
       <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/week-1001-1006-m.svg" width="600" height="1394" /><img src="https://designrefs.com/articles/img/week-1001-1006.svg" alt="지난 일주일 나온 여섯 가지 소식과, 각각 사람이 정할 수 있게 된 것." width="1200" height="609" loading="lazy" decoding="async" /></picture>
@@ -1327,7 +1279,6 @@
       <description>클링 4.0은 한 번에 30초, 키프레임 10장, 참고 자료 15개를 받는다. 처음과 끝 두 장만 주던 방식에서 장면 흐름을 직접 짜는 쪽으로 바뀌었다. 무엇이 달라지는지, 아직 나오지 않은 것은 뭔지 그림과 표로 정리했다.</description>
       <content:encoded><![CDATA[    <p class="ptext">중국 콰이쇼우의 AI 영상 모델 클링(Kling)이 4.0의 사양을 공개했다. 정식판은 10월 중에 나온다고 했고, 가벼운 판인 4.0 Flash는 9월 28일부터 일부 구독자에게 먼저 열렸다.</p>
     <p class="ptext">숫자가 눈에 띈다. 한 번에 최대 30초, 키프레임 최대 10장, 참고 자료 최대 15개. 그런데 디자이너 입장에서 오래 들여다본 건 키프레임 쪽이다. AI 영상에 콘티를 건넬 수 있게 됐다는 뜻이라서.</p>
-    <p class="ptext"><strong>먼저 밝혀 둘 것.</strong> 정식판은 아직 나오지 않았고, Flash도 연간 최상위 구독자만 쓸 수 있어 직접 써 보지 못했다. 아래 내용은 클링이 공개한 사양과 이를 정리한 글을 바탕으로 했다.</p>
     <h2 class="psub" id="s1">두 장에서 열 장으로</h2>
     <p class="ptext">지금까지 AI 영상에서 연출을 정하는 방법은 둘이었다. 글로 설명하거나, 처음 장면과 끝 장면 두 장을 주는 것. 클링 3.0도 처음과 끝 두 장을 받아 그 사이를 AI가 채웠다.</p>
     <figure class="art__fig">
@@ -1366,6 +1317,7 @@
       <li><strong>값은 정식판을 보고.</strong> 4.0의 가격은 아직 나오지 않았다. 30초 4K는 3.0 기준으로도 크레딧을 꽤 쓰는 조합이라, 시안은 짧고 낮은 화질로 보고 최종만 길고 크게 뽑는 습관이 필요하다.</li>
     </ol>
     <p class="ptext">영상과 모션 쪽 AI 도구는 <a href="https://designrefs.com/ai/">AI 디자인 툴</a>에 모아 두었다.</p>
+    <p class="art__note">정식판은 아직 나오지 않았고 Flash도 연간 최상위 구독자만 쓸 수 있어 직접 써 보지 못했다. 클링이 공개한 사양과 이를 정리한 글을 바탕으로 했다.</p>
     <p class="art__note">출처: <a href="https://www.atlascloud.ai/blog/tips/kling-4-flash-vs-full" target="_blank" rel="noopener">Atlas Cloud</a>, <a href="https://pandaily.com/kling-ai-kling-4-0-30-second-native-video-multi-reference-control" target="_blank" rel="noopener">Pandaily</a>, <a href="https://morphic.com/resources/models/kling-4" target="_blank" rel="noopener">Morphic</a>, <a href="https://sloptv.co/news/kling-4-0-october-promise-flash-720p-only" target="_blank" rel="noopener">sloptv</a>, <a href="https://www.atlascloud.ai/blog/tips/kling-ai-pricing" target="_blank" rel="noopener">Atlas Cloud 가격 정리</a>.</p>]]></content:encoded>
     </item>
     <item>
@@ -1377,7 +1329,6 @@
       <description>오픈AI가 10월 5일 챗GPT 이미지 생성 화면에 붙는 이미지 광고를 발표했다. 글 광고에서 이미지 광고로 넘어온 여덟 달을 짚고, 디자이너에게 새로 생기는 일과 조심할 점을 정리했다.</description>
       <content:encoded><![CDATA[    <p class="ptext">오픈AI가 10월 5일(미국 시간) 챗GPT의 새 광고 형식을 발표했다. 챗GPT가 그림을 만드는 동안, 그 옆에 이미지로 된 광고가 붙는다.</p>
     <p class="ptext">챗GPT의 주간 사용자는 12억 명이다. 그중 상당수가 그림을 만들러 온다. 오픈AI 입장에서는 사람들이 가장 오래 화면을 바라보는 순간 중 하나가 그림이 그려지기를 기다리는 몇 초다. 거기에 광고 자리가 생겼다.</p>
-    <p class="ptext"><strong>먼저 밝혀 둘 것.</strong> 시험은 10월 말에 시작해서 아직 실제 광고를 본 사람이 없다. 아래 내용은 오픈AI 발표와 이를 다룬 기사를 바탕으로 했다. 나는 이 사이트를 클로드 코드로 만들고 있다는 것도 함께 적어 둔다.</p>
     <h2 class="psub" id="s1">어디에, 어떻게 붙나</h2>
     <p class="ptext">광고는 사용자가 요청한 그림과 떨어진 자리에 붙는다. 오픈AI는 세 가지를 약속했다. 광고라고 분명히 표시한다. 만든 그림과 섞이지 않게 따로 둔다. 광고가 챗GPT의 답에 영향을 주지 않는다.</p>
     <figure class="art__fig">
@@ -1417,6 +1368,7 @@
       <li><strong>광고 소재 일을 한다면.</strong> 그림 요청 옆에 놓일 한 장이라는 조건으로 시안을 만들어 보자. 같은 제품이라도 &#x27;설명하는 사진&#x27;과 &#x27;어울리는 사진&#x27;은 다르다.</li>
     </ol>
     <p class="ptext">AI 도구가 디자인 흐름 안으로 들어오는 이야기는 <a href="https://designrefs.com/articles/openai-devday-2026-designers/">데브데이에서 디자이너가 볼 것</a>에, AI로 만든 이미지를 일에 써도 되는지는 <a href="https://designrefs.com/articles/ai-image-commercial-use/">AI로 만든 이미지, 클라이언트 작업에 써도 될까</a>에 정리해 두었다.</p>
+    <p class="art__note">시험은 10월 말에 시작해서 아직 실제 광고를 본 사람이 없다. 이 글은 오픈AI 발표와 이를 다룬 기사를 바탕으로 했다.</p>
     <p class="art__note">출처: <a href="https://techcrunch.com/2026/10/05/openai-launches-visual-ads-that-appear-alongside-image-generation-results/" target="_blank" rel="noopener">TechCrunch</a>, <a href="https://help.openai.com/en/articles/20001047-ads-in-chatgpt" target="_blank" rel="noopener">OpenAI 도움말</a>, <a href="https://winbuzzer.com/2026/10/05/chatgpt-to-test-visual-ads-during-image-generation-xcxwbn/" target="_blank" rel="noopener">WinBuzzer</a>, <a href="https://www.androidheadlines.com/2026/10/chatgpt-visual-ads-image-generation.html" target="_blank" rel="noopener">Android Headlines</a>, <a href="https://www.cnbc.com/2026/10/05/anthropic-openai-google-meta-execs-testify-nyc-council-ai-hearing.html" target="_blank" rel="noopener">CNBC (주간 사용자 수)</a>, <a href="https://www.honeyb.ai/blog/chatgpt-ads-february-2026" target="_blank" rel="noopener">Honeyb (2월 출시)</a>.</p>]]></content:encoded>
     </item>
     <item>
@@ -1428,7 +1380,7 @@
       <description>MIT 연구진이 AI로 만든 3D 모델을 출력 전에 고치는 도구 InstructMesh를 내놓았다. 생성된 모델의 약 80%에 구조 결함이 있었고, 초보자들은 이 도구로 약 90%를 고쳤다. 고치는 순서와 출력 전에 확인할 것을 정리했다.</description>
       <content:encoded><![CDATA[    <p class="ptext">글 한 줄이나 사진 한 장으로 3D 모델을 만드는 AI가 흔해졌다. 화면 속 결과물은 그럴듯하다. 그런데 3D 프린터로 뽑아 보면 이야기가 달라진다. 손잡이가 너무 가늘어 부러지고, 피리는 속이 막혀 소리가 안 나고, 벽은 얇아서 출력 중에 무너진다.</p>
     <p class="ptext">MIT 컴퓨터과학·인공지능연구소(CSAIL)가 10월 1일 이 문제를 다룬 도구를 공개했다. 이름은 InstructMesh. AI가 만든 3D 모델에서 문제 있는 부위만 골라, 말로 고치고 나서 출력하게 해 준다.</p>
-    <p class="ptext"><strong>먼저 밝혀 둘 것.</strong> InstructMesh는 아직 연구 단계의 도구라 직접 써 보지 못했다. 아래 내용은 MIT의 발표와 논문을 바탕으로 했다. 논문은 11월 사용자 인터페이스 학회(UIST)에서 발표된다.</p>
+    <p class="ptext">InstructMesh는 아직 연구 단계라 직접 써 볼 수는 없었다. MIT의 발표와 논문을 바탕으로 썼고, 논문은 11월 사용자 인터페이스 학회(UIST)에서 발표된다.</p>
     <h2 class="psub" id="s1">보기에는 맞는데, 쓰기에는 틀리다</h2>
     <p class="ptext">연구진의 진단은 한 문장으로 요약된다. AI는 물건이 어떻게 생겼는지는 알지만, 어떻게 쓰이는지는 모른다.</p>
     <p class="ptext">그래서 연구진은 먼저 얼마나 자주 그런지 재 봤다. 3D 프린팅 공유 사이트 씽기버스(Thingiverse)의 인기 모델들을 3D 생성 AI TRELLIS로 다시 만들게 했다.</p>
@@ -1479,7 +1431,6 @@
       <description>9월 30일 Ideogram 4.5, 10월 2일 FLUX 3 Image. 이번 주 나온 두 이미지 모델은 더 예쁜 그림보다 &#x27;한 군데만 고치기&#x27;를 앞세웠다. 상자로 먼저 배치하는 방식과 크기별 가격까지 그림과 숫자로 정리했다.</description>
       <content:encoded><![CDATA[    <p class="ptext">이미지 AI로 시안을 만들어 본 사람이라면 한 번쯤 겪었을 일이 있다. 제목 글자 하나만 바꿔 달라고 했는데, 돌아온 그림에서 모델 얼굴이 달라져 있고 병 색이 미묘하게 틀어져 있다. 두 번, 세 번 고칠수록 처음 그림에서 점점 멀어진다.</p>
     <p class="ptext">이번 주 나온 두 이미지 모델은 바로 이 지점을 겨냥했다. 9월 30일 Ideogram 4.5, 그리고 10월 2일 발표된 Black Forest Labs의 FLUX 3 Image. 둘 다 &quot;더 멋진 그림&quot;보다 &quot;고른 곳만 고치고 나머지는 그대로&quot;를 앞에 내세웠다.</p>
-    <p class="ptext"><strong>먼저 밝혀 둘 것.</strong> 두 모델 모두 직접 돌려 보지 못했다. 아래 내용은 각 회사 발표와 이를 다룬 기사, 재판매처 가격표를 바탕으로 했다.</p>
     <h2 class="psub" id="s1">다시 뽑기와 고쳐 쓰기</h2>
     <p class="ptext">지금까지 이미지 AI의 &#x27;수정&#x27;은 사실 다시 그리기에 가까웠다. 원래 그림을 참고는 하지만, 매번 전체를 새로 만든다. 그래서 고칠 때마다 손대지 않은 자리까지 조금씩 흔들린다. 업계에서는 이걸 &#x27;드리프트(drift)&#x27;라고 부른다.</p>
     <figure class="art__fig">
@@ -1532,6 +1483,7 @@
     </ol>
     <p class="ptext">새 모델을 작업에 들이기 전에 한 번만 해 보면, 어디까지 믿고 맡겨도 될지 감이 온다. 두 모델 모두 짧게라도 써 볼 수 있으니, 평소 자주 받는 수정 요청 하나로 시험해 보자.</p>
     <p class="ptext">원하는 분위기를 말로 전하는 법은 <a href="https://designrefs.com/articles/describing-design-style/">&#x27;느낌 있게&#x27;를 말로 옮기는 일</a>에, 만든 이미지를 일에 써도 되는지는 <a href="https://designrefs.com/articles/ai-image-commercial-use/">AI로 만든 이미지, 클라이언트 작업에 써도 될까</a>에 정리해 두었다. 이미지 도구들은 <a href="https://designrefs.com/ai/">AI 디자인 툴</a>에 모여 있다.</p>
+    <p class="art__note">두 모델 모두 직접 돌려 보지는 못했다. 각 회사 발표와 이를 다룬 기사, 재판매처 가격표를 바탕으로 썼다.</p>
     <p class="art__note">출처: <a href="https://www.orcarouter.ai/blog/ideogram-4-5-launch-precise-edit-model" target="_blank" rel="noopener">Ideogram 4.5 정리(orcarouter)</a>, <a href="https://completeaitraining.com/news/ideogram-45-reduces-pixel-drift-in-multi-turn-edits/" target="_blank" rel="noopener">completeaitraining</a>, <a href="https://the-decoder.com/black-forest-labs-launches-flux-3-image-with-multi-step-editing-that-leaves-the-rest-of-your-picture-alone/" target="_blank" rel="noopener">the-decoder</a>, <a href="https://www.techtimes.com/articles/328502/20261002/black-forest-labs-launches-flux-3-image-json-bounding-boxes-lock-unchanged-pixels-numerically.htm" target="_blank" rel="noopener">Tech Times</a>, <a href="https://openrouter.ai/black-forest-labs/flux-3-image" target="_blank" rel="noopener">OpenRouter FLUX.3 Image</a>, <a href="https://kingy.ai/blog/flux-3-image-specs-benchmarks-comparison/" target="_blank" rel="noopener">kingy.ai</a>.</p>]]></content:encoded>
     </item>
     <item>
@@ -1544,7 +1496,7 @@
       <content:encoded><![CDATA[    <p class="ptext">이번 주 디자인 쪽 소식 두 개가 묘하게 같은 방향을 가리켰다.</p>
     <p class="ptext">어제 쇼피파이가 내놓은 <a href="https://designrefs.com/articles/shopify-canvas-sidekick/">캔버스</a>는 가게의 디자인 시스템을 AI 비서 옆에 함께 펼쳐 놓는다. 그 하루 전 피그마는 모션 기능을 고치면서, 이징과 길이 같은 움직임 값을 &#x27;애니메이션 스타일&#x27;로 저장해 라이브러리에 올리게 했다. 둘 다 결국 규칙을 한곳에 모아 두는 일이다. 사람과 AI가 같은 규칙을 꺼내 쓸 수 있게.</p>
     <p class="ptext">규칙을 모아 두는 방법 중에 요즘 자주 보이는 게 있다. DESIGN.md라는 파일 한 장이다.</p>
-    <p class="ptext"><strong>먼저 밝혀 둘 것.</strong> 나는 이 사이트를 클로드 코드로 만들고 있고, 아래 실험도 그 안에서 했다. 검사기는 구글이 공개한 공식 도구(0.4.0)를 그대로 썼다.</p>
+    <p class="ptext">아래 실험은 이 사이트를 만들고 있는 클로드 코드 안에서 했고, 검사기는 구글이 공개한 공식 도구(0.4.0)를 그대로 썼다.</p>
     <h2 class="psub" id="s1">DESIGN.md가 뭔가</h2>
     <p class="ptext">구글 랩스가 AI 디자인 툴 스티치(Stitch) 안에서 쓰던 형식이다. 4월 21일에 형식을 공개해서, 지금은 어떤 AI 도구든 읽을 수 있다. 라이선스는 Apache 2.0이고, 아직 알파 단계다.</p>
     <p class="ptext">생김새는 단순하다. 마크다운 파일 하나에 두 층이 있다.</p>
@@ -1607,7 +1559,6 @@
       <description>쇼피파이가 10월 1일 내놓은 캔버스는 가게의 모든 페이지를 한 화면에 펼치고, 눌러서 고치거나 사이드킥에게 말로 시키는 작업대다. 무엇이 달라졌는지, 아직 안 되는 건 뭔지 그림과 표로 정리했다.</description>
       <content:encoded><![CDATA[    <p class="ptext">쇼피파이가 10월 1일(미국 시간) &#x27;캔버스(Canvas)&#x27;를 내놓았다. 온라인 가게를 꾸미는 새 작업대다.</p>
     <p class="ptext">이름부터 디자이너에게 익숙하다. 실제로 생긴 것도 그렇다. 가게의 모든 페이지를 한 판에 펼쳐 놓고, 손으로 끌어 옮겨 다니고, 확대해서 들여다본다. 피그마 파일을 열었을 때와 비슷한 감각이다. 다른 점은 그 판 위에 있는 게 시안이 아니라 실제로 돌아가는 가게라는 것.</p>
-    <p class="ptext"><strong>먼저 밝혀 둘 것.</strong> 캔버스는 앞으로 며칠에 걸쳐 가게마다 차례로 열린다. 나는 쇼피파이 가게를 운영하지 않아서 직접 써 보지 못했다. 아래 내용은 쇼피파이 발표와 변경 기록, 그리고 이를 다룬 기사를 바탕으로 했다.</p>
     <h2 class="psub" id="s1">한 페이지씩에서, 한 판으로</h2>
     <p class="ptext">지금까지 쇼피파이 가게는 &#x27;테마 편집기&#x27;에서 고쳤다. 페이지를 하나 열고, 왼쪽에 줄지어 있는 설정 칸을 하나씩 눌러 바꾸는 방식이다. 홈 화면을 고치다가 상품 페이지를 보려면 페이지를 바꿔 열어야 했다.</p>
     <figure class="art__fig">
@@ -1653,6 +1604,7 @@
     <p class="ptext">쇼피파이 가게가 있다면, 지금 테마를 복제해서 캔버스로 열어 보는 정도가 알맞다. 원본은 그대로 두고, 앱 블록이나 번역을 쓰는 가게라면 아직 옮기지 않는 게 낫다.</p>
     <p class="ptext">복제본에서 해 볼 만한 건 이것. 평소 가게의 규칙 세 가지(예: 버튼 모양, 제목 글자 크기, 사진 비율)를 사이드킥에게 먼저 알려 주고, 그다음 페이지 하나를 새로 만들게 해 보자. 규칙을 몇 페이지까지 지키는지 보면 이 작업대를 어디까지 믿어도 될지 감이 온다.</p>
     <p class="ptext">쇼핑몰 레퍼런스가 필요하다면 <a href="https://designrefs.com/ui-ux/">UI/UX 레퍼런스</a>에, AI 툴은 <a href="https://designrefs.com/ai/">AI 디자인 툴</a>에 모아 두었다.</p>
+    <p class="art__note">캔버스는 며칠에 걸쳐 가게마다 차례로 열린다. 쇼피파이 가게를 운영하지 않아 직접 써 보지는 못했고, 쇼피파이 발표와 변경 기록, 기사를 바탕으로 했다.</p>
     <p class="art__note">출처: <a href="https://www.shopify.com/news/introducing-canvas" target="_blank" rel="noopener">Shopify &#x27;Introducing Canvas&#x27;</a>, <a href="https://changelog.shopify.com/posts/design-a-fully-bespoke-store-with-canvas" target="_blank" rel="noopener">Shopify 변경 기록</a>, <a href="https://techcrunch.com/2026/10/01/shopify-debuts-canvas-a-way-to-build-online-stores-by-chatting-with-ai/" target="_blank" rel="noopener">TechCrunch</a>, <a href="https://www.unite.ai/shopify-rolls-out-canvas-a-sidekick-powered-store-design-surface/" target="_blank" rel="noopener">Unite.AI</a>, <a href="https://ecommercenews.com.au/story/shopify-launches-canvas-ai-workspace-for-store-design" target="_blank" rel="noopener">ecommercenews</a>.</p>]]></content:encoded>
     </item>
     <item>
@@ -1664,7 +1616,6 @@
       <description>오늘 새벽 오픈AI 데브데이에서 발표가 스무 개 넘게 쏟아졌다. 그중 디자인 작업과 닿는 것만 골라, 그림과 숫자로 정리했다.</description>
       <content:encoded><![CDATA[    <p class="ptext">오늘 새벽 2시, 오픈AI의 개발자 행사 데브데이가 샌프란시스코에서 열렸다. 발표만 스무 개가 넘었다.</p>
     <p class="ptext">제일 크게 다뤄진 건 &#x27;닷(dots)&#x27;이다. 앱을 닫아도 뒤에서 계속 일하는 에이전트다. 그런데 디자이너 입장에서 오래 들여다본 건 다른 쪽이었다. 캔바, 피그마, 어도비가 챗GPT 화면 안으로 들어왔다.</p>
-    <p class="ptext"><strong>먼저 밝혀 둘 것.</strong> 발표 직후라 아직 직접 써 본 사람의 후기가 거의 없다. 아래 내용은 오픈AI 발표와 행사를 정리한 기사들을 바탕으로 했다. 나는 이 사이트를 클로드 코드로 만들고 있다는 것도 함께 적어 둔다.</p>
     <h2 class="psub" id="s1">플러그인이 들어가는 세 자리</h2>
     <p class="ptext">새로 나온 건 &#x27;플러그인 익스텐션&#x27;이다. 대화창 안에서 링크만 건네던 예전 방식과 달리, 앱 화면 자체를 챗GPT 안에 띄운다. 들어가는 자리는 세 군데다.</p>
     <figure class="art__fig">
@@ -1701,6 +1652,7 @@
     <h2 class="psub" id="s5">그래서 지금은</h2>
     <p class="ptext">오늘 당장 할 일은 많지 않다. 데스크톱 챗GPT 앱을 쓰고 있다면, 평소 쓰는 캔바·피그마·어도비 플러그인을 하나 설치해서 대화 옆에서 얼마나 쓸 만한지 보는 정도면 된다.</p>
     <p class="ptext">더 중요한 건 흐름이다. 디자인 툴이 챗GPT 안으로 들어오고, 챗GPT는 디자인 툴 안으로 들어간다. 어디서 시작하든 같은 파일에 닿게 되는 쪽으로 가고 있다. 그 사이에서 원본을 어디에 두고, 마지막 확인을 누가 하는지는 여전히 사람이 정할 일이다. 이 경계에 대해서는 <a href="https://designrefs.com/articles/ai-design-tools-in-practice/">AI가 시안을 서른 장 뽑아 줘도 일이 줄지 않는 이유</a>에 따로 적었다.</p>
+    <p class="art__note">발표 직후에 쓴 글이라 직접 써 본 사람의 후기는 거의 없다. 오픈AI 발표와 행사를 정리한 기사들을 바탕으로 했다.</p>
     <p class="art__note">출처: <a href="https://openai.com/index/devday-2026-recap/" target="_blank" rel="noopener">OpenAI DevDay 2026 정리</a>, <a href="https://the-decoder.com/openais-reveals-a-new-chatgpt-that-looks-less-like-a-chatbot-and-more-like-an-operating-system/" target="_blank" rel="noopener">the-decoder</a>, <a href="https://antihype.com.br/c/software/plugin-extensions-chatgpt-apps-na-barra-lateral/" target="_blank" rel="noopener">antihype.com.br</a>, <a href="https://dev.to/axrisi/openai-devday-2026-every-announcement-with-prices-and-availability-1mbh" target="_blank" rel="noopener">DEV Community 발표 정리</a>, <a href="https://thenextweb.com/news/openai-devday-pro-200-usage-cut-pro-500-plan" target="_blank" rel="noopener">The Next Web</a>, <a href="https://www.beri.net/article/gpt-6-1-sol-devday-2026-astra-fifth-price-terminal-bench-score-gap-cost-per-task" target="_blank" rel="noopener">THE DAILY BRIEF</a>.</p>]]></content:encoded>
     </item>
     <item>
@@ -1713,7 +1665,7 @@
       <content:encoded><![CDATA[    <p class="ptext">앤트로픽이 9월 28일(미국 시간) Claude Sonnet 5.5를 내놓았다. 한국에서는 오늘 아침부터 소식이 돌았다.</p>
     <p class="ptext">Sonnet은 앤트로픽 모델 가운데 가운데 칸이다. 가장 비싸고 똑똑한 모델도 아니고, 가장 싸고 빠른 모델도 아니다. 그래서 보통은 발표가 조용한 편인데, 이번에는 눈에 띄는 문장이 하나 있었다. 앤트로픽은 이 모델이 &quot;디자인을 보는 눈이 날카롭다&quot;고 적었다.</p>
     <p class="ptext">중간 가격 모델이 디자인을 내세우는 건 흔한 일이 아니다. 그리고 이 칸은 디자이너와 생각보다 가깝다. AI 기능을 파는 툴 회사 입장에서는, 원가를 생각하면 가장 비싼 모델보다 이 가격대를 기본값으로 두고 싶기 마련이니까.</p>
-    <p class="ptext"><strong>먼저 밝혀 둘 것.</strong> 나는 이 사이트를 클로드 코드로 만들고 있다. 그래서 회사 발표와 외부에서 직접 돌려 본 결과만 옮겼고, 누가 잰 숫자인지 적었다.</p>
+    <p class="ptext">이 사이트는 클로드 코드로 만들고 있다. 그래서 회사 발표와 외부에서 직접 돌려 본 결과만 옮기고, 숫자마다 누가 쟀는지 적었다.</p>
     <h2 class="psub" id="s1">값은 그대로, 칸은 붐빈다</h2>
     <p class="ptext">가격은 Sonnet 5와 같다. 100만 토큰에 입력 2달러, 출력 10달러. 달라진 건 속도와 말의 양이다. 앤트로픽은 이전 모델보다 30% 넘게 빠르고, 같은 일을 더 적은 토큰으로 끝내서 대부분의 작업에서 비용이 최대 30% 줄어든다고 했다.</p>
     <figure class="art__fig">
@@ -1760,7 +1712,7 @@
       <content:encoded><![CDATA[    <p class="ptext">28일 파이낸셜타임스는 기업들의 AI 지출이 오픈AI와 앤트로픽에서 값싼 오픈 모델 쪽으로 옮겨 가고 있다고 보도했다. 숫자로 보면 더 분명하다. 여러 AI 모델을 한곳에서 연결해 주는 <a href="https://vercel.com/blog/ai-gateway-production-index-september-2026" target="_blank" rel="noopener">버셀의 집계</a>에서, 가중치를 내려받을 수 있는 오픈 모델이 처리한 토큰은 지난해 12월 7%였다. 올해 8월에는 56%로 처음 절반을 넘었다.</p>
     <p class="ptext">재미있는 건 돈이다. 같은 달 지출에서 오픈 모델의 몫은 14%뿐이었다. 양은 오픈 모델이 가져가고, 돈은 여전히 닫힌 모델이 번다. 흔한 일은 싼 모델에 맡기고 중요한 일에만 비싼 모델을 쓰는 식으로 나눠 쓰기 시작했다는 뜻이다.</p>
     <p class="ptext">이미지 쪽에서도 같은 일이 벌어지고 있다. 그리고 바로 그 자리에서 디자이너가 걸려 넘어지기 쉬운 문제가 하나 튀어나왔다.</p>
-    <p class="ptext"><strong>먼저 밝혀 둘 것.</strong> 이 글은 법률 자문이 아니다. 라이선스 조건은 모델 버전마다 다르고 바뀌기도 한다. 실제로 쓰기 전에는 모델 페이지의 원문을 확인하자.</p>
+    <p class="ptext">라이선스 이야기라 한 가지는 분명히 해 둔다. 이 글은 법률 자문이 아니고, 조건은 모델 버전마다 다르고 바뀌기도 한다. 실제로 쓰기 전에는 모델 페이지의 원문을 확인하자.</p>
     <h2 class="psub" id="s1">투명 배경이 그대로 나온다</h2>
     <p class="ptext">9월 20일 알리바바가 이미지 모델 Qwen-Image-2.1을 공개했다. 디자이너가 반길 만한 기능이 몇 가지 있다.</p>
     <p class="ptext">가장 눈에 띄는 건 투명 배경이다. 배경이 빠진 PNG를 처음부터 만들어 준다. 누끼를 따로 딸 필요가 없고, 투명 레이어 위의 글자만 골라 고칠 수도 있다. 참조 이미지를 한 번에 열 장까지 넣을 수 있어서 단체 사진, 옷 입혀 보기, 방 꾸미기 시안에 쓰기 좋다. 기본 출력은 2048×2048이다.</p>
@@ -1802,7 +1754,7 @@
       <description>9월 22일 하루에 Opus 5.5, GPT-6 Sol, Luna가 한꺼번에 나오며 가격표가 크게 바뀌었다. 디자이너가 내는 크레딧과 구독료에는 어떻게 이어질지 숫자로 짚었다.</description>
       <content:encoded><![CDATA[    <p class="ptext">지난 화요일, 9월 22일 하루 사이에 가격표가 세 장 바뀌었다. 앤트로픽이 Claude Opus 5.5를 내놓았고, 같은 날 오픈AI가 GPT-6 Sol과 GPT-6 Luna를 공개했다. 셋 다 이전 세대보다 싸다. 그것도 꽤 많이.</p>
     <p class="ptext">API 가격은 디자이너에게 먼 이야기처럼 들린다. 직접 API를 부르는 디자이너는 많지 않다. 그런데 피그마 메이크, 캔바, 온갖 이미지·프로토타입 툴이 받는 크레딧 값은 결국 이 숫자 위에 올라가 있다. 원가가 내려가면 언젠가는 우리가 내는 값도 움직인다. 언제, 얼마나 움직이느냐가 문제일 뿐.</p>
-    <p class="ptext"><strong>먼저 밝혀 둘 것.</strong> 모든 가격은 9월 27일 기준이다. 29일에 오픈AI 개발자 행사(데브데이)가 잡혀 있어서 며칠 안에 또 바뀔 수 있다. 그리고 나는 이 사이트를 클로드 코드로 만들고 있다. 그래서 회사 발표와 독립 매체의 숫자만 옮겼다.</p>
+    <p class="ptext">가격은 모두 9월 27일 기준이다. 29일에 오픈AI 데브데이가 잡혀 있어서 며칠 안에 또 바뀔 수 있다. 이 사이트를 클로드 코드로 만들고 있는 만큼, 숫자는 회사 발표와 독립 매체에서만 가져왔다.</p>
     <h2 class="psub" id="s1">한 주 동안 바뀐 가격표</h2>
     <div class="art__tablewrap"><table class="art__table">
       <thead><tr><th>모델</th><th>입력 (100만 토큰)</th><th>출력 (100만 토큰)</th><th>이전 세대와 비교</th></tr></thead>
@@ -1850,7 +1802,7 @@
       <description>이틀 차이로 나온 두 최상위 모델. 공식 사양, 제3자 평가, 디자이너들의 초기 반응을 출처와 함께 나란히 놓았다.</description>
       <content:encoded><![CDATA[    <p class="ptext">9월 첫 주, 최상위 AI 모델 두 개가 이틀 간격으로 나왔다. 앤트로픽의 Claude Fable 5.1이 9월 1~2일, 오픈AI의 GPT-6 아스트라가 9월 3일이다. 둘 다 자기가 가장 똑똑하다고 발표했고, 공교롭게 가격표까지 같다.</p>
     <p class="ptext">어느 쪽이 낫냐고 물으면 한 줄로 답하기가 어렵다. 공식 사양, 독립 기관의 평가, 먼저 써 본 사람들의 반응을 차례로 놓고 보면 왜 그런지 보인다.</p>
-    <p class="ptext"><strong>먼저 밝혀 둘 것.</strong> 벤치마크 가운데 상당수는 모델을 만든 회사가 직접 잰 수치다. 누가 잰 숫자인지 표마다 적었다. 참고로 나는 이 사이트를 클로드 코드로 만들고 있어서, 그만큼 출처가 있는 숫자만 옮겼다. 모든 수치는 2026년 9월 중순 기준이고 빠르게 바뀐다.</p>
+    <p class="ptext">벤치마크 상당수는 모델을 만든 회사가 직접 잰 수치라서, 누가 잰 숫자인지 표마다 적었다. 이 사이트를 클로드 코드로 만들고 있으니 출처가 분명한 숫자만 옮겼고, 모두 9월 중순 기준이다.</p>
     <h2 class="psub" id="s1">사양: 가격은 같고, 캐시가 다르다</h2>
     <div class="art__tablewrap"><table class="art__table">
       <thead><tr><th></th><th>Claude Fable 5.1</th><th>GPT-6 아스트라</th></tr></thead>
@@ -2059,7 +2011,7 @@
       <content:encoded><![CDATA[    <p class="ptext">이미지 생성 툴을 한 달쯤 쓰다 보면 어느 날 문득 이런 생각이 든다. 이거, 클라이언트 작업에 넣어도 되나.</p>
     <p class="ptext">답이 간단하지 않다. 저작권이 생기는지, 툴의 약관이 허락하는지, 계약서가 막고 있지는 않은지, 결과물이 누군가의 것을 닮지는 않았는지. 층이 여러 개고 각 층에서 따로 걸린다.</p>
     <p class="ptext">법을 공부한 사람은 아니지만, 실무에서 확인해야 할 순서대로 정리해 봤다.</p>
-    <p class="ptext"><strong>먼저 밝혀 둘 것.</strong> 이 글은 법률 자문이 아니다. 관련 법과 판결, 서비스 약관은 계속 바뀌고 있다. 규모가 큰 일이라면 꼭 변호사나 클라이언트 법무팀에 확인하자.</p>
+    <p class="ptext">법률 자문은 아니라는 점부터 분명히 해 둔다. 법과 판결, 서비스 약관은 계속 바뀌니 규모가 큰 일이라면 변호사나 클라이언트 법무팀에 꼭 확인하자.</p>
     <h2 class="psub" id="s1">저작권은 사람에게 생긴다</h2>
     <p class="ptext">우리 저작권법은 저작물을 &quot;인간의 사상 또는 감정을 표현한 창작물&quot;로 정의한다. 열쇠는 &#x27;인간&#x27;이라는 두 글자다. 프롬프트만 넣어서 나온 결과물은 사람이 표현한 것으로 보기 어렵다는 게 지금까지의 기본 해석이고, 문화체육관광부가 낸 AI 저작권 안내서도 대체로 같은 방향이었다.</p>
     <p class="ptext">미국도 비슷하다. 저작권청은 사람의 창작적 기여가 없는 AI 산출물의 등록을 받아 주지 않았다. AI 이미지가 들어간 만화책 사례에서는 이미지는 빠지고, 글과 배치처럼 사람이 한 부분만 인정됐다.</p>

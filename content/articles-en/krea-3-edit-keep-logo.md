@@ -1,6 +1,6 @@
 ---
 slug: krea-3-edit-keep-logo
-title: When you swapped the background and the logo changed too: what to check in Krea 3 (about $0.06 per 2K edit)
+title: Will Krea 3 keep your logo intact? About $0.06 per 2K edit
 desc: Krea released its image editing model Krea 3 on October 15. It promises to keep a product's label and logo while changing the scene around it. Checked against Krea's blog and pricing page: speed, cost, how to prompt it, and what is still unverified.
 tag: AI Design
 ---
@@ -11,13 +11,7 @@ On October 15, the image AI company Krea released Krea 3. It is an editing model
 
 ![Krea blog 'Introducing Krea 3'. Source: krea.ai/blog/introducing-krea-3 (captured 2026-10-21)](https://designrefs.com/articles/img/krea-blog-v2.webp)
 
-## Before you read
-
-- I did not run Krea 3 for this piece. Speed, price and quality figures below are all Krea's own claims.
-- Krea compared itself with Nano Banana Pro and GPT Image 2. I found no third-party test under the same conditions in the sources I opened.
-- Whether the examples in the post (a sofa, a label) hold up on your own files is unknown.
-- The post gives no specific case for packaging with lots of small type or complex logos.
-- Plan limits are shown inconsistently on the pricing page, so I couldn't pin them down. More below.
+Speed, price and quality are all Krea's own numbers. It compared against Nano Banana Pro and GPT Image 2, and I found no third-party reproduction under the same conditions. How it holds up on text-heavy packaging or complex logos has no examples yet. Plan limits are inconsistent on the pricing page, so I cover them separately later.
 
 ## What the launch post promises
 

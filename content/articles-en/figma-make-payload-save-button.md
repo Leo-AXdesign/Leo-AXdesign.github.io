@@ -1,6 +1,6 @@
 ---
 slug: figma-make-payload-save-button
-title: When the Save button saves nothing: what to check in Payload, now inside Figma Make
+title: Payload lands in Figma Make: your prototype gets a database and logins
 desc: On October 15, Figma put the open-source CMS Payload inside Figma Make. Prompting an app now also sets up a database, file storage, user login and an admin panel. Checked against Figma's blog and release notes: what it does, hosting in free beta with pricing TBA, and what is still unknown.
 tag: AI Design
 ---
@@ -10,13 +10,7 @@ The mockup looks right. There is a list of posts, product cards, and a Save butt
 Filling that gap used to mean connecting a separate backend: the part behind the screen that stores data and handles login. On October 15, Figma announced on its official blog that Payload is now inside Figma Make. This piece repeats only what I verified on that post and Figma's release notes.
 
 ![Figma blog 'Create, ship, and manage data-backed websites with Payload in Figma'. Source: figma.com/blog/websites-with-payload-in-figma (captured 2026-10-22)](https://designrefs.com/articles/img/figma-make-payload-save-button-shot1.webp)
-## Before you read
-
-- I did not run Payload in Figma Make for this piece. Everything below is what Figma's blog and release notes say.
-- The help article Figma points to ("Add a backend to a functional prototype or web app") would not open for me, so I could not check it.
-- The post gives no usage limits, storage caps or rate limits.
-- It also does not say whether Figma-hosted projects can be exported or self-hosted.
-- Access rolls out to all accounts over several weeks, so it may not be visible in yours yet.
+This is based on Figma's official blog and release notes; I haven't run Payload myself. Usage and storage limits, and whether projects can be exported, aren't stated. Access takes a few weeks to reach every account, so it may not show up for you yet.
 
 ## What the post promises
 

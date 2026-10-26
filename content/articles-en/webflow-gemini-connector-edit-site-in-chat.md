@@ -1,6 +1,6 @@
 ---
 slug: webflow-gemini-connector-edit-site-in-chat
-title: When a three-line copy fix means opening Webflow again: what to check in the Gemini connector
+title: Editing a Webflow site from Gemini chat: what the connector does and what's still unclear
 desc: On October 15, Webflow became a connected app in the Google Gemini app. Per the release, you can build pages, manage CMS content, audit a site and ask performance questions from chat. Free to install, and currently no Webflow AI credits. What the release and marketplace page say, and what is still unknown.
 tag: AI Design
 ---
@@ -12,13 +12,7 @@ To do it, you open the Webflow editor, find the collection, open items one by on
 On October 15, Webflow announced in a press release that it is now a connected app in the Google Gemini app. This piece repeats only what I verified in that release and on Webflow's app marketplace page.
 
 ![Webflow marketplace page for the Google Gemini MCP Connector. Source: webflow.com/apps/detail/google-gemini-mcp-connector (captured 2026-10-23)](https://designrefs.com/articles/img/webflow-gemini-connector-edit-site-in-chat-shot1.webp)
-## Before you read
-
-- I did not install this connector on my own Webflow account. Everything below is what the release and the marketplace page say.
-- I read the release as republished by CMSWire and TechIntelPro. I could not open the original GlobeNewswire page.
-- Plan-by-plan conditions, supported regions and usage limits were not specified in any source I opened.
-- I found no third-party test of the connector. That pages come out well is Webflow's claim.
-- Some roundups describe the news as Webflow "integrating Gemini into its design platform." The release says Webflow is a connected app inside the Gemini app. This piece follows the release.
+This follows the press release and the marketplace page; I haven't installed the connector myself. Per-plan terms, regions and usage limits weren't specified anywhere. Some outlets summarized it as Webflow integrating Gemini, but the press release calls it a connected app inside the Gemini app, and this piece follows that wording.
 
 ## What a connected app is
 

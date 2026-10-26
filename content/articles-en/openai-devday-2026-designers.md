@@ -9,8 +9,6 @@ OpenAI's developer event, DevDay, took place in San Francisco on September 29 (i
 
 The biggest headline was "dots", agents that keep working in the background even after you close the app. But as a designer, what I kept coming back to was something else. Canva, Figma and Adobe moved inside the ChatGPT window.
 
-**First, a disclaimer.** This is right after the event, so there are almost no hands-on reviews yet. What follows is based on OpenAI's announcements and articles covering the event. I'll also note that I'm building this site with Claude Code.
-
 ## Three places a plugin can live
 
 The new thing is "plugin extensions". Instead of the old approach of just handing you links in the chat, they put the app's own screen inside ChatGPT. There are three places it can go.
@@ -64,5 +62,7 @@ Subscription plans changed too. There's a new top plan at $500 a month (Pro 500)
 There isn't much to do today. If you use the ChatGPT desktop app, install the Canva, Figma or Adobe plugin you already use and see how useful it is beside the chat.
 
 The bigger thing is the direction. Design tools are moving into ChatGPT, and ChatGPT is moving into design tools. Wherever you start, you're heading toward the same files. In between, where the original lives and who does the final check is still a person's call. I wrote about that boundary in [Why thirty AI drafts don't make the work any shorter](https://designrefs.com/en/articles/ai-design-tools-in-practice/).
+
+※ This was written right after the event, so hands-on reviews are scarce. It's based on OpenAI's announcements and coverage of the event.
 
 ※ Sources: [OpenAI DevDay 2026 recap](https://openai.com/index/devday-2026-recap/), [the-decoder](https://the-decoder.com/openais-reveals-a-new-chatgpt-that-looks-less-like-a-chatbot-and-more-like-an-operating-system/), [antihype.com.br](https://antihype.com.br/c/software/plugin-extensions-chatgpt-apps-na-barra-lateral/), [DEV Community roundup](https://dev.to/axrisi/openai-devday-2026-every-announcement-with-prices-and-availability-1mbh), [The Next Web](https://thenextweb.com/news/openai-devday-pro-200-usage-cut-pro-500-plan), [THE DAILY BRIEF](https://www.beri.net/article/gpt-6-1-sol-devday-2026-astra-fifth-price-terminal-bench-score-gap-cost-per-task).

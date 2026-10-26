@@ -154,6 +154,16 @@ def build():
         doc = doc.replace(ko, en)
     assert FOOTER_RE.search(doc), "index.html 에 footer 가 없습니다"
     doc = FOOTER_RE.sub(lambda m: FOOTER, doc, count=1)
+    import articles as A
+    posts = A.load("en")[:3]
+    intro = (f'        <p class="hero__intro">{len(D.sites)} sites designers actually open, sorted by field with descriptions we write ourselves. '
+             'Each field comes with a short guide on how to choose, alongside a style guide, a glossary and articles.</p>\n'
+             '        <ul class="hero__posts" aria-label="Latest articles">'
+             + "".join(f'<li><a href="{SITE}en/articles/{x["slug"]}/">{e(x["title"])}</a></li>' for x in posts)
+             + '</ul>')
+    pat = re.compile(r"<!-- HOME:INTRO -->.*?<!-- /HOME:INTRO -->", re.S)
+    assert pat.search(doc), "index.html 에 HOME:INTRO 표시가 없습니다"
+    doc = pat.sub(lambda m: f"<!-- HOME:INTRO -->\n{intro}\n        <!-- /HOME:INTRO -->", doc, count=1)
     for tag, body in (("JSONLD", jsonld_html), ("NOSCRIPT", noscript_html)):
         pat = re.compile(rf"<!-- SEO:{tag} -->.*?<!-- /SEO:{tag} -->", re.S)
         assert pat.search(doc), f"index.html 에 SEO:{tag} 표시가 없습니다"

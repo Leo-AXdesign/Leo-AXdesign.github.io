@@ -12,8 +12,6 @@ related: ai, tools
 
 이름부터 디자이너에게 익숙하다. 실제로 생긴 것도 그렇다. 가게의 모든 페이지를 한 판에 펼쳐 놓고, 손으로 끌어 옮겨 다니고, 확대해서 들여다본다. 피그마 파일을 열었을 때와 비슷한 감각이다. 다른 점은 그 판 위에 있는 게 시안이 아니라 실제로 돌아가는 가게라는 것.
 
-**먼저 밝혀 둘 것.** 캔버스는 앞으로 며칠에 걸쳐 가게마다 차례로 열린다. 나는 쇼피파이 가게를 운영하지 않아서 직접 써 보지 못했다. 아래 내용은 쇼피파이 발표와 변경 기록, 그리고 이를 다룬 기사를 바탕으로 했다.
-
 ## 한 페이지씩에서, 한 판으로
 
 지금까지 쇼피파이 가게는 '테마 편집기'에서 고쳤다. 페이지를 하나 열고, 왼쪽에 줄지어 있는 설정 칸을 하나씩 눌러 바꾸는 방식이다. 홈 화면을 고치다가 상품 페이지를 보려면 페이지를 바꿔 열어야 했다.
@@ -72,5 +70,7 @@ related: ai, tools
 복제본에서 해 볼 만한 건 이것. 평소 가게의 규칙 세 가지(예: 버튼 모양, 제목 글자 크기, 사진 비율)를 사이드킥에게 먼저 알려 주고, 그다음 페이지 하나를 새로 만들게 해 보자. 규칙을 몇 페이지까지 지키는지 보면 이 작업대를 어디까지 믿어도 될지 감이 온다.
 
 쇼핑몰 레퍼런스가 필요하다면 [UI/UX 레퍼런스](https://designrefs.com/ui-ux/)에, AI 툴은 [AI 디자인 툴](https://designrefs.com/ai/)에 모아 두었다.
+
+※ 캔버스는 며칠에 걸쳐 가게마다 차례로 열린다. 쇼피파이 가게를 운영하지 않아 직접 써 보지는 못했고, 쇼피파이 발표와 변경 기록, 기사를 바탕으로 했다.
 
 ※ 출처: [Shopify 'Introducing Canvas'](https://www.shopify.com/news/introducing-canvas), [Shopify 변경 기록](https://changelog.shopify.com/posts/design-a-fully-bespoke-store-with-canvas), [TechCrunch](https://techcrunch.com/2026/10/01/shopify-debuts-canvas-a-way-to-build-online-stores-by-chatting-with-ai/), [Unite.AI](https://www.unite.ai/shopify-rolls-out-canvas-a-sidekick-powered-store-design-surface/), [ecommercenews](https://ecommercenews.com.au/story/shopify-launches-canvas-ai-workspace-for-store-design).

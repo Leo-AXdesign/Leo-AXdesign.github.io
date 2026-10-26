@@ -11,7 +11,7 @@ Two design stories this week pointed in oddly similar directions.
 
 One way of keeping rules in one place keeps coming up lately: a single file called DESIGN.md.
 
-**First, a disclaimer.** I'm building this site with Claude Code, and the experiment below was done there too. The checker is Google's official tool (version 0.4.0), used as is.
+The experiment below ran inside Claude Code, which I also use to build this site, and the checker is Google's official tool (version 0.4.0), used as is.
 
 ## What is DESIGN.md?
 

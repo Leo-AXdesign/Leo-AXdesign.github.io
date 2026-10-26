@@ -1,6 +1,6 @@
 ---
 slug: figma-agent-ai-credits-ga
-title: The Figma agent used to be free to try. Now it draws AI credits: what designers should check
+title: The Figma agent now costs credits. How to make a month's worth last
 desc: Figma's design agent has left beta and now consumes AI credits. Checked against Figma's FAQ and pricing page: what is confirmed, what is missing, and how to stretch a month's allowance.
 tag: AI Design
 ---
