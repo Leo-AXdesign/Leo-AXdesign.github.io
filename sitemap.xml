@@ -140,12 +140,18 @@
   </url>
   <url>
     <loc>https://designrefs.com/articles/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://designrefs.com/jobs/weekly/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://designrefs.com/articles/canva-craft-text-layout-image-model/</loc>
     <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -356,9 +362,15 @@
   </url>
   <url>
     <loc>https://designrefs.com/en/articles/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://designrefs.com/en/articles/canva-craft-text-layout-image-model/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://designrefs.com/en/articles/ideogram-vector-1-editable-svg/</loc>

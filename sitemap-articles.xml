@@ -3,6 +3,14 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
+    <loc>https://designrefs.com/articles/canva-craft-text-layout-image-model/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://designrefs.com/articles/canva-craft-text-layout-image-model/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://designrefs.com/en/articles/canva-craft-text-layout-image-model/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://designrefs.com/articles/canva-craft-text-layout-image-model/"/>
+    <image:image><image:loc>https://designrefs.com/og/canva-craft-text-layout-image-model.png</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://designrefs.com/articles/ideogram-vector-1-editable-svg/</loc>
     <lastmod>2026-10-24</lastmod>
     <xhtml:link rel="alternate" hreflang="ko" href="https://designrefs.com/articles/ideogram-vector-1-editable-svg/"/>
@@ -273,6 +281,14 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://designrefs.com/en/articles/ai-image-commercial-use/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://designrefs.com/articles/ai-image-commercial-use/"/>
     <image:image><image:loc>https://designrefs.com/og/ai-image-commercial-use.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://designrefs.com/en/articles/canva-craft-text-layout-image-model/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://designrefs.com/articles/canva-craft-text-layout-image-model/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://designrefs.com/en/articles/canva-craft-text-layout-image-model/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://designrefs.com/articles/canva-craft-text-layout-image-model/"/>
+    <image:image><image:loc>https://designrefs.com/og/en/canva-craft-text-layout-image-model.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://designrefs.com/en/articles/ideogram-vector-1-editable-svg/</loc>

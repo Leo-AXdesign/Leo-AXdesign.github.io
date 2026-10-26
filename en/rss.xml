@@ -6,7 +6,82 @@
     <atom:link href="https://designrefs.com/en/rss.xml" rel="self" type="application/rss+xml" />
     <description>Notes from a designer in Korea: working with AI, putting style into words, collecting references and design communities. Translated from Korean.</description>
     <language>en</language>
-    <lastBuildDate>Sat, 24 Oct 2026 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 26 Oct 2026 09:00:00 +0900</lastBuildDate>
+    <item>
+      <title>When the poster draft keeps misspelling the date, Canva Craft plans the layout first</title>
+      <link>https://designrefs.com/en/articles/canva-craft-text-layout-image-model/</link>
+      <guid isPermaLink="true">https://designrefs.com/en/articles/canva-craft-text-layout-image-model/</guid>
+      <pubDate>Mon, 26 Oct 2026 09:00:00 +0900</pubDate>
+      <category>AI Design</category>
+      <description>On October 22 Canva released Craft, its first in-house image model, aimed at designs where layout and text matter. What press coverage says about its two-stage setup, the ranking claims, where you can use it, and what is still unknown, including price and commercial terms.</description>
+      <content:encoded><![CDATA[    <p class="ptext">The client&#x27;s email is one line. &quot;Can you send three poster options today? Make the date and venue big.&quot;</p>
+    <p class="ptext">You run the prompt through an image AI and the picture looks right. But the date reads &quot;Oct 2th&quot; instead of &quot;Oct 27&quot;. You regenerate. This time the text is correct, but the title has slid into a corner. For three drafts, the number of generations keeps climbing. (This is an imagined scene.)</p>
+    <p class="ptext">On October 22, Canva released Canva Craft, its first image generation model built in-house. It is aimed at posters, social posts and presentations, where text and layout matter more than photographic realism. This is not a hands-on review. It is a read of what press coverage reports, from a designer&#x27;s point of view.</p>
+    <h2 class="psub" id="s1">Before you read</h2>
+    <ul class="ptext-list">
+      <li>I did not run the model. Everything below comes from TechCrunch, Digital Trends and The Letter Two, plus a news roundup page.</li>
+      <li>Canva&#x27;s own announcement page would not open for me (access denied). I know the official wording only as far as the articles quote it.</li>
+      <li>Rankings and performance figures are Canva&#x27;s. None of the coverage I opened says they were independently verified.</li>
+      <li>None of the three articles states a price (API rates or credits).</li>
+      <li>Reports differ on some points. Whether the connector that lets ChatGPT and Gemini call Canva is live yet is described differently, and I note that below.</li>
+    </ul>
+    <h2 class="psub" id="s2">Plan first, then draw</h2>
+    <p class="ptext">TechCrunch and Digital Trends both describe two stages.</p>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th>Stage</th><th>What it does</th></tr></thead>
+      <tbody>
+        <tr><td>1: Plan</td><td>Reads the prompt and decides which elements go in, where they sit relative to each other, their relative sizes, the visual hierarchy, and the text to include</td></tr>
+        <tr><td>2: Render</td><td>Takes that plan and produces the image, up to 2K resolution, in about 30 aspect ratios matched to platform use</td></tr>
+      </tbody>
+    </table></div>
+    <p class="art__note">Sources: <a href="https://techcrunch.com/2026/10/22/canva-releases-its-first-image-generation-model/" target="_blank" rel="noopener">TechCrunch (2026-10-22)</a>, <a href="https://www.digitaltrends.com/computing/canva-craft-ai-image-generation-model-launch/" target="_blank" rel="noopener">Digital Trends</a>. The table condenses the two articles&#x27; descriptions.</p>
+    <p class="ptext">It resembles how a designer builds a draft: decide where the title goes and how large the date is, then add color and imagery. The claim is that this order is built into the model. I could not confirm that it actually reduces text errors. A description is not a result.</p>
+    <h2 class="psub" id="s3">Trained on templates, not photos</h2>
+    <p class="ptext">According to the coverage, Craft was trained on human-made templates from Canva&#x27;s library rather than on photographs: posters, social posts, presentations, infographics, menus and type-heavy layouts. The Letter Two says text generation supports 55 languages. No source I opened says whether Korean is among them or how accurate the glyphs are.</p>
+    <p class="ptext">Two questions remain. One is quality for non-Latin scripts. The other is compensation for template creators. The Letter Two notes that neither creator compensation nor protection for customers&#x27; commercial use is stated. If you plan to use output in client work, treat both as open until terms appear. Our general guide to commercial use of AI images is <a href="https://designrefs.com/articles/ai-image-commercial-use/">Can you use AI images in client work</a>; it does not confirm that those rules apply to Craft.</p>
+    <h2 class="psub" id="s4">The ranking, as announced</h2>
+    <p class="ptext">The Letter Two relays Canva&#x27;s announcement as follows.</p>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th>Category</th><th>Rank Canva reports</th></tr></thead>
+      <tbody>
+        <tr><td>Overall</td><td>4th at launch (behind GPT-Image-2.5 Sunburst, GPT-Image-2.5 Flare and GPT Image 2)</td></tr>
+        <tr><td>People and portraits</td><td>1st (ahead of 86 models)</td></tr>
+        <tr><td>Abstract and patterns</td><td>2nd</td></tr>
+        <tr><td>Products</td><td>4th</td></tr>
+      </tbody>
+    </table></div>
+    <p class="art__note">Source: <a href="https://thelettertwo.com/2026/10/23/canva-craft-ai-image-model" target="_blank" rel="noopener">The Letter Two (2026-10-23)</a>. Figures cited by Canva from the DesignArena leaderboard; not independently verified in the article.</p>
+    <p class="ptext">Digital Trends reports that Canva describes its research team as the world&#x27;s second most advanced lab for image generation. That is a different claim from the model&#x27;s 4th place, so merging them into &quot;a #2 model&quot; would be wrong. The leaderboard is also built on human votes, and how well those votes reflect poster-making convenience is a separate matter. We covered how to read such rankings in <a href="https://designrefs.com/articles/muse-wonder-design-arena/">Meta&#x27;s first top model is #1 in design voting</a>.</p>
+    <h2 class="psub" id="s5">Where you can use it</h2>
+    <p class="ptext">What the reports agree on, and where they split.</p>
+    <ul class="ptext-list">
+      <li><strong>Agree:</strong> All Canva users can use it in the Dream Lab tab. It is also offered through the Canva API. Digital Trends mentions account and usage limits.</li>
+      <li><strong>Agree:</strong> Cheaper versions, Craftfast and Craft-ultrafast, are coming. No dates are given.</li>
+      <li><strong>Split:</strong> Using Craft from ChatGPT or Gemini through Canva&#x27;s MCP (a connection that lets an AI assistant call Canva) is described as planned by TechCrunch and Digital Trends, and as &quot;expected to launch soon&quot; by The Letter Two. None of the sources I opened said it is usable today.</li>
+      <li><strong>Single mention:</strong> TechCrunch says generated images can be turned into layered designs through Canva Magic, and Digital Trends calls this Magic Layers technology. I did not find it in The Letter Two. How the layers are split, and whether text stays editable, is not confirmed.</li>
+    </ul>
+    <p class="ptext">That last item is the same question we raised for <a href="https://designrefs.com/articles/ideogram-vector-1-editable-svg/">Ideogram Vector 1.0</a>. Whether an image AI hands you one picture or a file you can edit is what matters most in real work.</p>
+    <h2 class="psub" id="s6">What to test first</h2>
+    <p class="ptext"><strong>One text-heavy poster.</strong> Run a poster with a date, venue, price and phone number through the same prompt ten times. Count how many come out with no text errors. Run the same prompt through the model you use now. Without that comparison, &quot;handles text well&quot; is just a feeling.</p>
+    <p class="ptext"><strong>Korean headlines.</strong> It is unknown whether Korean is among the 55 languages, so test a Korean headline and small Korean body text separately. Characters with final consonants and small sizes break first.</p>
+    <p class="ptext"><strong>Change one thing.</strong> Ask for a single-element edit, such as &quot;keep the logo, change only the background color.&quot; Many models advertise editing, so it is worth checking whether the rest really stays put. It is the same test we used for <a href="https://designrefs.com/articles/krea-3-edit-keep-logo/">Krea 3&#x27;s edit model</a>.</p>
+    <p class="ptext"><strong>Open the converted file.</strong> If you can use the layer conversion, open the result and check whether the text is a text box. That one check decides how long delivery takes.</p>
+    <h2 class="psub" id="s7">What we don&#x27;t know yet</h2>
+    <ul class="ptext-list">
+      <li><strong>Price.</strong> API rates, app credit use and free limits have no confirmed source.</li>
+      <li><strong>Independent tests.</strong> Apart from the rankings Canva cites, I found no third-party comparison.</li>
+      <li><strong>Commercial terms.</strong> Compensation for the template creators whose work trained it, and protection for generated output, are not stated.</li>
+      <li><strong>Korean quality.</strong> Whether Korean is a supported language is unconfirmed.</li>
+      <li><strong>Layer conversion in practice.</strong> How well it separates layers, and whether text stays editable, is unknown until someone opens a file.</li>
+      <li><strong>Specifications.</strong> Model size and technical documentation were reported as not published.</li>
+    </ul>
+    <h2 class="psub" id="s8">So for now</h2>
+    <p class="ptext"><strong>Count ten generations.</strong> Run one text-heavy poster ten times with the same prompt and record how many have no text errors. Put it next to your current tool under identical conditions, or there is no reason to switch.</p>
+    <p class="ptext"><strong>Read the terms before client work.</strong> Until conditions on commercial use and template training appear, keep practice drafts and deliverables separate. Don&#x27;t make promises that rest on something unconfirmed.</p>
+    <p class="ptext"><strong>Fix the layout in words first.</strong> Whether or not a model plans first, writing position and size order into the prompt, such as &quot;title in the top third, date largest under it, venue at the bottom,&quot; may help cut the number of regenerations. That is a method worth trying, not a result I compared.</p>
+    <p class="ptext">If there is a type of site you&#x27;d like us to find next, leave a comment. Requests become the first topic for the next collection.</p>
+    <p class="art__note">Sources: <a href="https://techcrunch.com/2026/10/22/canva-releases-its-first-image-generation-model/" target="_blank" rel="noopener">TechCrunch: Canva releases its first image generation model</a>, <a href="https://www.digitaltrends.com/computing/canva-craft-ai-image-generation-model-launch/" target="_blank" rel="noopener">Digital Trends: Canva enters the AI image generation race with Craft</a>, <a href="https://thelettertwo.com/2026/10/23/canva-craft-ai-image-model" target="_blank" rel="noopener">The Letter Two: Canva Craft Is Canva Research&#x27;s First Image Model</a>, <a href="https://futuretools.io/news" target="_blank" rel="noopener">Future Tools news</a>.</p>]]></content:encoded>
+    </item>
     <item>
       <title>When an AI-made logo turns blurry once you enlarge it: what to check in Ideogram Vector 1.0</title>
       <link>https://designrefs.com/en/articles/ideogram-vector-1-editable-svg/</link>
