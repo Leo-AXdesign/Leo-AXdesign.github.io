@@ -6,7 +6,81 @@
     <atom:link href="https://designrefs.com/en/rss.xml" rel="self" type="application/rss+xml" />
     <description>Notes from a designer in Korea: working with AI, putting style into words, collecting references and design communities. Translated from Korean.</description>
     <language>en</language>
-    <lastBuildDate>Mon, 26 Oct 2026 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 27 Oct 2026 09:00:00 +0900</lastBuildDate>
+    <item>
+      <title>If you repeat the same retouch every week, Runway App Studio packs the steps into one app</title>
+      <link>https://designrefs.com/en/articles/runway-app-studio-repeat-work-app/</link>
+      <guid isPermaLink="true">https://designrefs.com/en/articles/runway-app-studio-repeat-work-app/</guid>
+      <pubDate>Tue, 27 Oct 2026 09:00:00 +0900</pubDate>
+      <category>AI Design</category>
+      <description>Runway added App Studio to every paid plan. Describe a task in plain language and it becomes an app teammates can run from a link. What Runway&#x27;s own pages confirm about how it works, pricing and sharing, and what is still unknown.</description>
+      <content:encoded><![CDATA[    <p class="ptext">The client&#x27;s email reads: &quot;Can you take last time&#x27;s product shot and swap the background for six more markets? Same tone, please.&quot;</p>
+    <p class="ptext">Which model you used last time, which reference images went in and which sentence produced the result are all somewhere in an old chat. You find it, paste it again, change the background description and run it six times. Next week the same request arrives and you do it all over. (This is an imagined scene.)</p>
+    <p class="ptext">Runway has released App Studio, aimed at exactly this kind of repetition. Its changelog dates the entry October 23, while press coverage is dated October 26, so the dates differ by a couple of days. This is not a hands-on review. It is based on Runway&#x27;s App Studio page, its changelog and its pricing page, plus press coverage. I did not find how many credits a single app run costs in any page I opened.</p>
+    <figure class="art__fig">
+      <img src="https://designrefs.com/articles/img/runway-app-studio-repeat-work-app-shot1.webp" alt="Runway App Studio official page (source: https://runway.com/app-studio, captured 2026-10-27)" loading="lazy" decoding="async" />
+      <figcaption>Runway App Studio official page (source: https://runway.com/app-studio, captured 2026-10-27)</figcaption>
+    </figure>
+    <h2 class="psub" id="s1">Describe it in words, get an app</h2>
+    <p class="ptext">The official description is simple. You write the creative app you want in plain language, and App Studio builds, tests and deploys it. The page says there is no code, API key or hosting to manage. A finished app holds your prompts, models and processing steps as one bundle that you can rerun when needed.</p>
+    <p class="ptext">According to AlphaSignal&#x27;s coverage, you specify the inputs, the generation steps and the output. After that you refine it with follow-up instructions and roll back to an earlier version if you don&#x27;t like a change.</p>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th>Feature</th><th>What the official pages say</th></tr></thead>
+      <tbody>
+        <tr><td>Build</td><td>Describe it in plain language; it builds, tests and deploys</td></tr>
+        <tr><td>Edit</td><td>Change it in plain language and roll back any time</td></tr>
+        <tr><td>Convert</td><td>Turn an Agent session or Workflow into an app in one click</td></tr>
+        <tr><td>Brand</td><td>Pulls from Brand Kits and references to stay on brand</td></tr>
+        <tr><td>Variations</td><td>Adapts one asset across products, markets and formats</td></tr>
+      </tbody>
+    </table></div>
+    <p class="art__note">Sources: <a href="https://runway.com/app-studio" target="_blank" rel="noopener">Runway App Studio</a>, <a href="https://runway.com/changelog" target="_blank" rel="noopener">Runway changelog</a>. The table condenses the two pages.</p>
+    <p class="ptext">A Brand Kit is a reusable collection of reference images and videos for a brand&#x27;s products, locations, colors and so on. Per the changelog, Agent has been able to create and edit Brand Kits in conversation since September 10, and since September 22 agents connected through MCP (the way AI tools plug into each other) can find kits and use their assets as references. Over MCP the kits are read-only; creating and editing still happens inside the product.</p>
+    <h2 class="psub" id="s2">The apps on the first screen</h2>
+    <p class="ptext">The official page shows Character Swap, Precise Edit, Product Photos and Style Out as starting apps. The existing library lists Remove from Video, Reshoot Product, Upscale Video, Add Dialogue and Relight Scene. The press coverage named the launch apps as Character Swap, Precise Edit, Style Out, Product Shoot and Table Read. The names differ from the page; I could not tell which is current, and the official page I opened says Product Photos.</p>
+    <p class="ptext">What stands out is the nature of the list. Most of these tools edit or multiply material that already exists rather than draw something new. Swap a person, make a precise edit, reshoot a product, relight a scene. It points the same way as <a href="https://designrefs.com/articles/image-ai-edit-not-reroll/">the week image AI moved toward editing</a>.</p>
+    <h2 class="psub" id="s3">Pricing comes out of one credit pool</h2>
+    <p class="ptext">App Studio is included in every paid plan with no add-on cost, according to the official page. Building, running and hosting draw from credits you already have. The plans on the pricing page:</p>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th>Plan</th><th>Monthly price</th><th>Monthly credits</th></tr></thead>
+      <tbody>
+        <tr><td>Free</td><td>$0</td><td>None (125 one-time)</td></tr>
+        <tr><td>Standard</td><td>$12 billed annually, $15 billed monthly</td><td>625</td></tr>
+        <tr><td>Pro</td><td>$28 billed annually, $35 billed monthly</td><td>2,250</td></tr>
+        <tr><td>Max</td><td>$76 billed annually, $95 billed monthly</td><td>9,500</td></tr>
+      </tbody>
+    </table></div>
+    <p class="art__note">Source: <a href="https://runway.com/pricing" target="_blank" rel="noopener">Runway Pricing</a> (checked 2026-10-27). App Studio was mentioned for Standard, Pro and Max, not Free.</p>
+    <p class="ptext">The free plan gets a one-time grant of 125 credits instead of a monthly allowance. Because App Studio is described as a paid-plan feature, whether you can build and try an app for free is not confirmed. The open question about where credits go is the same one raised in <a href="https://designrefs.com/articles/figma-agent-ai-credits-ga/">the Figma agent credit piece</a>. I could not find a published per-run cost for apps.</p>
+    <h2 class="psub" id="s4">The link runs on the visitor&#x27;s credits</h2>
+    <p class="ptext">Sharing is the most practical part.</p>
+    <ul class="ptext-list">
+      <li>An app stays private until its creator shares it.</li>
+      <li>It can be shared with teammates or published as a public link.</li>
+      <li>Every link requires a Runway sign-in.</li>
+      <li>Whoever runs the app from a link uses credits from their own account.</li>
+      <li>Admins can see usage across all apps and control which models the workspace can use.</li>
+    </ul>
+    <p class="ptext">The last two lines mean this: if you build a &quot;product shot variations by market&quot; app and send the link to a client or colleague, they run it on their own credits and your allowance doesn&#x27;t shrink. It also means they need a Runway account. Whether they must be on a paid plan to spend credits is not confirmed.</p>
+    <h2 class="psub" id="s5">What is still unknown</h2>
+    <ul class="ptext-list">
+      <li><strong>Credits per run.</strong> I found no per-app consumption table.</li>
+      <li><strong>Free plan.</strong> No official statement on whether you can build and run apps.</li>
+      <li><strong>Consistency.</strong> No independent test of how similar results are when the same app gets the same input. For apps made from a text description, this matters most.</li>
+      <li><strong>Scope.</strong> The coverage said custom code, webhooks, external API support, source-code export, custom domains and embedding in other products were not addressed. Support is unknown.</li>
+      <li><strong>Commercial terms.</strong> Rights to app output weren&#x27;t confirmed in the pages I opened. For a general baseline, see <a href="https://designrefs.com/articles/ai-image-commercial-use/">Can you use AI images in client work?</a>, which does not necessarily apply to Runway.</li>
+      <li><strong>Korean text.</strong> None of the sources say whether apps handle Hangul.</li>
+    </ul>
+    <h2 class="psub" id="s6">What to try first</h2>
+    <p class="ptext"><strong>The one task you repeat most.</strong> Background swaps, size variants, five images in the same tone. Pick something you do at least twice a month. A task that happens once is a weak reason to build an app.</p>
+    <p class="ptext"><strong>Five runs with the same input.</strong> If you build an app, feed it the same asset five times and count how many results drift from the brand tone. That number tells you whether you can hand it to a team.</p>
+    <p class="ptext"><strong>The screen your recipient sees.</strong> Open the share link from a teammate&#x27;s account and look at the sign-in and credit display. If you plan to give it to a client, that screen becomes part of the deliverable.</p>
+    <h2 class="psub" id="s7">So for now</h2>
+    <p class="ptext"><strong>Write the steps down first.</strong> Before building, reduce the task to one input, three steps and one output. A task that is hard to write down will be hard to turn into an app. As in <a href="https://designrefs.com/articles/lovable-design-system-same-look/">why Lovable dropped its three design directions</a>, fixing the rules first makes results wobble less.</p>
+    <p class="ptext"><strong>Count credits on the smallest plan.</strong> Note how many credits drop after a few runs. With no published consumption, your own log is the only reference.</p>
+    <p class="ptext"><strong>Keep practice and delivery separate.</strong> Until the rights terms are confirmed, don&#x27;t put the output straight into client work. Don&#x27;t promise on things that aren&#x27;t confirmed.</p>
+    <p class="art__note">Sources: <a href="https://runway.com/app-studio" target="_blank" rel="noopener">Runway App Studio</a>, <a href="https://runway.com/changelog" target="_blank" rel="noopener">Runway Product Updates &amp; Changelog</a>, <a href="https://runway.com/pricing" target="_blank" rel="noopener">Runway Pricing</a>, <a href="https://alphasignal.ai/news/runway-s-app-studio-turns-ai-model-chains-into-shareable-no-code-tools" target="_blank" rel="noopener">AlphaSignal: Runway&#x27;s App Studio Turns AI Model Chains Into Shareable No-Code Tools</a>, <a href="https://futuretools.io/news" target="_blank" rel="noopener">Future Tools news</a>.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Canva Craft plans the layout first, so poster text stops breaking</title>
       <link>https://designrefs.com/en/articles/canva-craft-text-layout-image-model/</link>
