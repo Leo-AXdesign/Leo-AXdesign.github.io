@@ -359,8 +359,6 @@ def lab_body():
 
 
 LAB_HTML = """
-    <p class="ptext lab-lead">내 사진을 디자인 양식으로 바꿔 보는 도구입니다. 리소그래프, 팝아트, 픽셀 아트, 펑크 복사기, 구성주의, 사이버펑크 가운데 하나를 고르고,
-    몇 가지만 다듬은 뒤 인스타그램 크기로 저장하면 됩니다. 사진은 이 기기 안에서만 처리되고 어디로도 올라가지 않습니다.</p>
 
     <section class="lab" id="lab">
       <div class="lab__stage">
@@ -378,7 +376,8 @@ LAB_HTML = """
       <div class="lab__panel" id="lab-panel"></div>
     </section>
 
-    <h2 class="psub">쓰는 법</h2>
+    <div class="lab-more">
+    <details><summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>쓰는 법</summary>
     <ol class="ptext-list">
       <li>사진을 끌어 놓거나 '사진 고르기'로 엽니다. 휴대폰에서는 앨범에서 바로 고를 수 있습니다.</li>
       <li>양식을 고릅니다. 사진을 열면 양식 카드마다 내 사진이 그 양식으로 바뀐 작은 미리보기가 뜹니다.</li>
@@ -387,13 +386,13 @@ LAB_HTML = """
       <li>4:5(피드), 9:16(릴스·스토리), 1:1 가운데 비율을 고릅니다. 자세히 모드에서는 3:4, 16:9, 원본 비율도 있습니다.</li>
       <li>'저장'을 누르면 긴 변 최대 3000픽셀로 저장됩니다. 자세히 모드에서 JPG와 인스타그램 크기(짧은 변 1080픽셀)도 고를 수 있습니다.</li>
     </ol>
-
-    <h2 class="psub">양식 이야기</h2>
+    </details>
+    <details><summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>양식 이야기</summary>
     <div class="lab-styles">
 {STYLES}
     </div>
-
-    <h2 class="psub">자주 묻는 질문</h2>
+    </details>
+    <details><summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>자주 묻는 질문</summary>
     <h3 class="art__h3">사진이 서버로 올라가나요?</h3>
     <p class="ptext">아니요. 모든 처리는 지금 보고 계신 브라우저 안에서 합니다. 사진과 결과물 모두 어디에도 보내지 않고 저장하지도 않습니다. 창을 닫으면 사라집니다.</p>
     <h3 class="art__h3">만든 이미지를 상업적으로 써도 되나요?</h3>
@@ -404,6 +403,8 @@ LAB_HTML = """
     <p class="ptext">네. 저장 버튼 위의 표시 항목을 끄면 됩니다. 켜 두시면 이 도구를 알리는 데 큰 도움이 됩니다.</p>
     <h3 class="art__h3">원하는 양식이 없어요</h3>
     <p class="ptext">양식은 반응을 보며 하나씩 늘려 갑니다. 써 보고 싶은 양식을 <a href="mailto:nisov0924@gmail.com">nisov0924@gmail.com</a>으로 알려 주세요.</p>
+    </details>
+    </div>
 
     <script src="{SITE}js/lab.js" defer></script>
 """
