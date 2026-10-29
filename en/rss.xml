@@ -6,7 +6,80 @@
     <atom:link href="https://designrefs.com/en/rss.xml" rel="self" type="application/rss+xml" />
     <description>Notes from a designer in Korea: working with AI, putting style into words, collecting references and design communities. Translated from Korean.</description>
     <language>en</language>
-    <lastBuildDate>Tue, 27 Oct 2026 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 29 Oct 2026 09:00:00 +0900</lastBuildDate>
+    <item>
+      <title>Genie 4 is still a waitlist: what a world model you steer by typing means for designers</title>
+      <link>https://designrefs.com/en/articles/genie-4-world-model-designers-waitlist/</link>
+      <guid isPermaLink="true">https://designrefs.com/en/articles/genie-4-world-model-designers-waitlist/</guid>
+      <pubDate>Thu, 29 Oct 2026 09:00:00 +0900</pubDate>
+      <category>AI Design</category>
+      <description>Google DeepMind released Genie 4 as a research preview. It does not output a clip; it keeps generating the scene as you move. What the official posts confirm about features, access and limits, and what is still unknown about price, resolution and usage.</description>
+      <content:encoded><![CDATA[    <p class="ptext">A client email might read: &quot;I just want to see the mood first. A walk down a rainy alley. And what it looks like when the sun comes out.&quot; (This is an imagined scene.)</p>
+    <p class="ptext">Until now you generated one video, then another for the sunny version. Every scene started from scratch. Genie 4 is a model built to change that order: while the camera walks, you type &quot;let the sun come out&quot; and the scene changes on the spot.</p>
+    <p class="ptext">But it is not something anyone can open today. This is not a hands-on review. It is based on the official Google and Google DeepMind posts I opened, plus TechCrunch&#x27;s coverage. Price and resolution were not in any source I read.</p>
+    <figure class="art__fig">
+      <img src="https://designrefs.com/articles/img/genie-4-world-model-designers-waitlist-shot1.webp" alt="Google DeepMind Genie 4 official blog (source: https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/, captured 2026-10-29)" loading="lazy" decoding="async" />
+      <figcaption>Google DeepMind Genie 4 official blog (source: https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/, captured 2026-10-29)</figcaption>
+    </figure>
+    <h2 class="psub" id="s1">First, which Genie</h2>
+    <p class="ptext">The name is common. This Genie 4 is the world model Google DeepMind announced on October 27, 2026, described in its own post as a new world model for real-time interactive simulation. A world model, put simply, is an AI that keeps generating the next part of a scene as you act. It is not a pre-rendered video being played back.</p>
+    <p class="ptext">According to TechCrunch, Genie 3 appeared as a research preview a little over a year earlier. Genie 4 is its successor.</p>
+    <h2 class="psub" id="s2">What the official posts confirm</h2>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th>Item</th><th>What the posts say</th></tr></thead>
+      <tbody>
+        <tr><td>Steering</td><td>Keyboard for movement and camera; text to change weather or add people and objects</td></tr>
+        <tr><td>Sound</td><td>DeepMind calls it its first real-time world model to generate audio natively: ambient sound, music, dialogue</td></tr>
+        <tr><td>Dialogue</td><td>Characters talk and react to user input in real time</td></tr>
+        <tr><td>Realism</td><td>Gemini Omni anchors appearance and behavior; other Gemini models keep it coherent</td></tr>
+        <tr><td>Marking</td><td>Generated video and audio carry SynthID, an imperceptible watermark</td></tr>
+      </tbody>
+    </table></div>
+    <p class="art__note">Sources: <a href="https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/" target="_blank" rel="noopener">Google DeepMind, Genie 4</a>, <a href="https://blog.google/innovation-and-ai/models-and-research/google-deepmind/introducing-genie-4/" target="_blank" rel="noopener">Google blog</a>. The table condenses both posts.</p>
+    <p class="ptext">DeepMind&#x27;s post says a guiding AI observes the scene, splits a goal into steps and checks each one. TechCrunch describes it as Gemini acting as a director while Genie produces the visuals.</p>
+    <h2 class="psub" id="s3">Can you use it now</h2>
+    <p class="ptext">No. Access today:</p>
+    <ul class="ptext-list">
+      <li>A research preview for a limited group of trusted testers.</li>
+      <li>Google AI Ultra subscribers get it in Project Genie &quot;coming soon&quot;, in the official wording.</li>
+      <li>Early access partners get it in the Gemini API and Google AI Studio.</li>
+      <li>DeepMind&#x27;s post says a waitlist is open.</li>
+    </ul>
+    <p class="ptext">TechCrunch says &quot;in the coming weeks&quot;, but the official posts I opened give no date. A general release date and pricing are not stated. I did not look up the Ultra subscription price.</p>
+    <h2 class="psub" id="s4">Where it might matter for designers</h2>
+    <p class="ptext">Official uses are games, creative tools for film, journalism and manufacturing, and training robots and AI agents. The designer-adjacent angle comes from TechCrunch: trusted testers see possible use for prototyping films, especially ideation and storyboarding.</p>
+    <p class="ptext">So what to think about:</p>
+    <ul class="ptext-list">
+      <li><strong>Mood studies.</strong> Change conditions in one space, such as rain or time of day, without regenerating a clip each time.</li>
+      <li><strong>Spatial feel.</strong> Walk around a scene to check sightlines and flow. This is far from app screen design.</li>
+      <li><strong>Sound with the picture.</strong> Scene audio comes out together with the visuals.</li>
+    </ul>
+    <p class="ptext">These are possibilities drawn from public descriptions, not results I produced.</p>
+    <h2 class="psub" id="s5">For vibe coders it is still far off</h2>
+    <p class="ptext">If you build screens with Lovable or Cursor, Genie 4 gives you nothing directly. It does not make apps or web pages. Since API partners get it first, backgrounds for games or interactive pages might become possible later. What format results come in and how they hook into code has not been published.</p>
+    <h2 class="psub" id="s6">The limits were listed by Google first</h2>
+    <ul class="ptext-list">
+      <li>Visual details and object permanence can drift in long sessions or after several prompt edits.</li>
+      <li>Complex physical interactions, real-time audio accuracy, legible text, spatial accuracy and long-term consistency are listed as active research areas.</li>
+      <li>TechCrunch reports a scene stays consistent for up to two minutes, double Genie 3. I did not find that number in the official posts I opened.</li>
+    </ul>
+    <p class="ptext">Illegible text matters a lot to designers. Signs, posters and UI text inside a scene cannot be relied on right now. It is the same problem behind <a href="https://designrefs.com/articles/canva-craft-text-layout-image-model/">Canva Craft laying out text before generating the poster</a>.</p>
+    <h2 class="psub" id="s7">What is not known yet</h2>
+    <ul class="ptext-list">
+      <li><strong>Price.</strong> Whether there are fees or usage caps beyond an Ultra subscription.</li>
+      <li><strong>Quality.</strong> Resolution and frame rate are not in the official posts.</li>
+      <li><strong>Output.</strong> Whether you can download video files or only view it interactively.</li>
+      <li><strong>Commercial use.</strong> Whether scenes can go into client work. For general guidance see <a href="https://designrefs.com/articles/ai-image-commercial-use/">Can you use AI-made images in client work</a>, which does not necessarily apply to Genie 4.</li>
+      <li><strong>Korean.</strong> No source confirms whether Korean prompts work.</li>
+      <li><strong>Model names.</strong> DeepMind&#x27;s post mentions Gemini 3.8 Flash and Gemini 4 Argon. The first appears in the real-time guiding role, the second in the robot demo and task-decomposition experiments. The names are unfamiliar and I could not confirm how they relate.</li>
+      <li><strong>Independent testing.</strong> Everything available is Google&#x27;s own posts and press coverage; I found no outside test results. In TechCrunch, DeepMind engineer Diego Rivas said real-time steering is especially useful in the ideation and storyboarding phases, and added that turning prototypes into final creative assets is still a long way off.</li>
+    </ul>
+    <h2 class="psub" id="s8">So for now</h2>
+    <p class="ptext"><strong>Check whether the waitlist is open.</strong> DeepMind&#x27;s post mentions it. Sign up only if you can imagine using it.</p>
+    <p class="ptext"><strong>Write down where your mockups need readable text.</strong> If the mood and sound come from Genie and the text from another tool, deciding that split now saves time once access opens.</p>
+    <p class="ptext"><strong>Hold off on subscribing.</strong> With no general release date and no price, nothing in the sources justifies signing up for Ultra today.</p>
+    <p class="art__note">Sources: <a href="https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/" target="_blank" rel="noopener">Google DeepMind, Genie 4: A new generation of world simulation</a>, <a href="https://blog.google/innovation-and-ai/models-and-research/google-deepmind/introducing-genie-4/" target="_blank" rel="noopener">Google blog, Introducing Genie 4</a>, <a href="https://techcrunch.com/2026/10/27/googles-genie-4-world-model-adds-audio-more-realistic-worlds-and-real-time-steering/" target="_blank" rel="noopener">TechCrunch (2026-10-27)</a>.</p>]]></content:encoded>
+    </item>
     <item>
       <title>If you repeat the same retouch every week, Runway App Studio packs the steps into one app</title>
       <link>https://designrefs.com/en/articles/runway-app-studio-repeat-work-app/</link>
