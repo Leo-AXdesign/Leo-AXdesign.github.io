@@ -242,6 +242,7 @@
     html += item('glossary', PSEUDO.glossary.label, GLOSSARY.length);
     // 디자인 잡담은 화면 전환이 아니라 별도 주소라서 링크로 둡니다 (영문판은 /en/talk/)
     html += SEP;
+    if (LANG !== 'en') html += '<a class="nav__item nav__item--link" href="lab/"><span class="nav__label">스타일 현상소</span></a>';
     html += '<a class="nav__item nav__item--link" href="talk/">'
           + `<span class="nav__label">${T('디자인 잡담', 'Design Talk')}</span></a>`;
     els.nav.innerHTML = html;

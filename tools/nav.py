@@ -68,6 +68,8 @@ def menu(active="", lang="ko"):
     parts.append(_item("trends", L["trends"], len(D.trends), active, app("trends")))
     parts.append(_item("glossary", L["glossary"], len(D.terms), active, app("glossary")))
     parts.append(SEP)
+    if lang != "en":
+        parts.append(_item("lab", "스타일 현상소", None, active, SITE + "lab/"))
     if lang == "en":
         parts.append(_item("talk", "Design Talk", None, active, SITE + "en/talk/"))
     else:
