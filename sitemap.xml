@@ -139,6 +139,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://designrefs.com/articles/figma-make-gemini-4-argon-model-picker/</loc>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://designrefs.com/articles/runway-app-studio-repeat-work-app/</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
@@ -362,6 +368,12 @@
   </url>
   <url>
     <loc>https://designrefs.com/en/articles/genie-4-world-model-designers-waitlist/</loc>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://designrefs.com/en/articles/figma-make-gemini-4-argon-model-picker/</loc>
     <lastmod>2026-10-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>

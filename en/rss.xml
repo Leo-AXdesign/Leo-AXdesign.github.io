@@ -81,6 +81,99 @@
     <p class="art__note">Sources: <a href="https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/" target="_blank" rel="noopener">Google DeepMind, Genie 4: A new generation of world simulation</a>, <a href="https://blog.google/innovation-and-ai/models-and-research/google-deepmind/introducing-genie-4/" target="_blank" rel="noopener">Google blog, Introducing Genie 4</a>, <a href="https://techcrunch.com/2026/10/27/googles-genie-4-world-model-adds-audio-more-realistic-worlds-and-real-time-steering/" target="_blank" rel="noopener">TechCrunch (2026-10-27)</a>.</p>]]></content:encoded>
     </item>
     <item>
+      <title>30 credits to change one font: Figma Make has a model picker, and Gemini 4 Argon just joined it</title>
+      <link>https://designrefs.com/en/articles/figma-make-gemini-4-argon-model-picker/</link>
+      <guid isPermaLink="true">https://designrefs.com/en/articles/figma-make-gemini-4-argon-model-picker/</guid>
+      <pubDate>Thu, 29 Oct 2026 09:00:00 +0900</pubDate>
+      <category>AI Design</category>
+      <description>Gemini 4 Argon is now in Figma Make&#x27;s model picker. What Figma&#x27;s release notes, help pages and Google&#x27;s docs confirm, what they leave out (credit cost per run), and a simple way to log the same prompt on two models.</description>
+      <content:encoded><![CDATA[    <p class="ptext">The client&#x27;s email is short. &quot;Can you swap the font on the mockup and show me once more?&quot;</p>
+    <p class="ptext">You type one line into Make&#x27;s chat. The result looks fine. But the credit balance has dropped noticeably. Figma&#x27;s help page says that changing a font takes roughly 30+ credits on its default model. Once is fine. Twelve revision requests is a different story. (This is an imagined scene.)</p>
+    <p class="ptext">There is one lever for this: the model picker in Make&#x27;s chatbox. On October 13, Gemini 4 Argon was added to it. This is not a hands-on review. It is based on Figma&#x27;s release notes and help pages, plus Google&#x27;s model documentation and announcement post. I did not find how many credits a single Argon run in Make costs in any page I opened.</p>
+    <figure class="art__fig">
+      <img src="https://designrefs.com/articles/img/figma-make-gemini-4-argon-model-picker-shot1.webp" alt="Make entry in Figma&#x27;s release notes (source: https://www.figma.com/release-notes/, captured 2026-10-28)" loading="lazy" decoding="async" />
+      <figcaption>Make entry in Figma&#x27;s release notes (source: https://www.figma.com/release-notes/, captured 2026-10-28)</figcaption>
+    </figure>
+    <h2 class="psub" id="s1">The release note is three lines long</h2>
+    <p class="ptext">The October 13 entry is titled &quot;Gemini 4 Argon is rolling out in Figma Make.&quot; It opens: &quot;Gemini 4 Argon, Gemini&#x27;s latest and most advanced model, is now rolling out in Figma Make.&quot; It also says how to use it and who gets it.</p>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th>Item</th><th>What the release note says</th></tr></thead>
+      <tbody>
+        <tr><td>Date</td><td>October 13, 2026, rolling out gradually</td></tr>
+        <tr><td>Where to pick it</td><td>The model picker in the Make chatbox</td></tr>
+        <tr><td>Who gets it</td><td>All plans</td></tr>
+        <tr><td>Credits</td><td>Not mentioned</td></tr>
+      </tbody>
+    </table></div>
+    <p class="art__note">Sources: <a href="https://www.figma.com/release-notes/" target="_blank" rel="noopener">Figma Release Notes</a>, <a href="https://www.figma.com/whats-new/" target="_blank" rel="noopener">Figma What&#x27;s new</a> (checked 2026-10-28). The last row means the note says nothing on the subject.</p>
+    <p class="ptext">Because the rollout is gradual, the picker may show up at different times for different accounts. I did not confirm whether it appears in my own account today.</p>
+    <h2 class="psub" id="s2">What Google&#x27;s docs confirm, and what they leave blank</h2>
+    <p class="ptext">The model itself I checked in Google&#x27;s developer docs. The model ID is <code>gemini-4-argon</code> and its status is listed as stable. The context window, the amount it can hold across input and output, is 1,048,576 tokens. It accepts text, images, video, audio and PDF. Output is text only. The docs state that image generation is not supported.</p>
+    <p class="ptext">That last line matters in practice. Argon is a model for structure and code, not for drawing pictures. Inside Make, images run through a separate image feature. Figma&#x27;s help page lists 16 credits per image for Nano Banana 2 and 2 credits per image for ChatGPT Images 2.0. Switching the chat model does not move those numbers.</p>
+    <p class="ptext">Google&#x27;s October 13 post says Argon is available in the Gemini app and mentions coding improvements, for Google AI Pro and Ultra subscribers. It makes no specific claim about design or building screens, and neither the post nor the model page gives benchmark numbers. The docs page did not list a price either. Some other sites quote prices, but they are not official sources, so I left them out.</p>
+    <p class="ptext">So what is confirmed is that Figma calls this its most advanced model available in Make. There is no evidence yet that it beats the other models on design work.</p>
+    <h2 class="psub" id="s3">Credits drain differently by model</h2>
+    <p class="ptext">Figma&#x27;s help page &quot;How Figma AI credits work&quot; has two relevant sentences. One: &quot;If more than one model is available, like in Figma Make, you can choose which model to use.&quot; The other: &quot;Some models consume significantly more credits than others.&quot; It adds that each Make model has its own pricing structure, which varies with task complexity.</p>
+    <figure class="art__fig">
+      <img src="https://designrefs.com/articles/img/figma-make-gemini-4-argon-model-picker-shot2.webp" alt="Figma help page &quot;How Figma AI credits work&quot; (source: https://help.figma.com/hc/en-us/articles/33459875669015, captured 2026-10-28)" loading="lazy" decoding="async" />
+      <figcaption>Figma help page &quot;How Figma AI credits work&quot; (source: https://help.figma.com/hc/en-us/articles/33459875669015, captured 2026-10-28)</figcaption>
+    </figure>
+    <p class="ptext">The task examples for Make on that page are all there is.</p>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th>Task</th><th>Credits (approx.)</th></tr></thead>
+      <tbody>
+        <tr><td>Changing a font</td><td>about 30+</td></tr>
+        <tr><td>Making an attached design interactive</td><td>about 75+</td></tr>
+        <tr><td>Generating an app from scratch</td><td>about 100+</td></tr>
+      </tbody>
+    </table></div>
+    <p class="art__note">Source: <a href="https://help.figma.com/hc/en-us/articles/33459875669015" target="_blank" rel="noopener">How Figma AI credits work</a>. The page says these examples were calculated with the default model as of February 2026. There is no per-model table for Make chat.</p>
+    <p class="ptext">These are not Argon&#x27;s numbers. The page does not name the default model or say whether it is still the same. Use the figures only for scale: an app costs about three times what a font change does.</p>
+    <p class="ptext">The order in which credits are spent matches what was covered in <a href="https://designrefs.com/articles/figma-agent-ai-credits-ga/">Figma agent credits</a>: seat credits first, then subscription credits, then pay-as-you-go.</p>
+    <h2 class="psub" id="s4">On the team side, admin controls grew on October 22</h2>
+    <p class="ptext">Picking a model is an individual choice, but limits are set by admins. The release notes have an October 22 entry for Enterprise admins. It opens: &quot;Admins on Enterprise plans have more ways to manage paid AI credit usage.&quot;</p>
+    <ul class="ptext-list">
+      <li>Admins can set default access to paid AI credits at the organization and billing group levels.</li>
+      <li>Through an identity provider (the company&#x27;s account system), they can set credit access and limits for SCIM-managed users.</li>
+      <li>They can block members from creating new Starter or Professional plans with company email addresses.</li>
+      <li>Admin REST APIs can automate team, folder and file management.</li>
+      <li>It is rolling out to Enterprise plans &quot;in the coming days.&quot;</li>
+    </ul>
+    <p class="ptext">Per-person settings are confirmed in the help page. Admins can choose full access, a custom monthly limit or no access for each person, and people who hit a limit can ask the admin for more. A request does not change anything automatically. Admins on paid plans can see usage, while history and CSV export are limited to Organization and Enterprise admins.</p>
+    <p class="ptext">This does not apply to freelancers working alone. For a designer on a team account doing client work, it is worth knowing that an admin can see usage by person. Whether the usage screen breaks it down by model was not in the pages I read.</p>
+    <h2 class="psub" id="s5">What is still unknown</h2>
+    <ul class="ptext-list">
+      <li><strong>Argon&#x27;s credit cost.</strong> I found no public figure comparing the same task on the default model and on Argon.</li>
+      <li><strong>Which model is the default.</strong> The 30, 75 and 100 credit examples do not name their model.</li>
+      <li><strong>Design quality.</strong> I found no independent comparison of Argon on layout, spacing or type sizes.</li>
+      <li><strong>What else is in the picker.</strong> The release note mentions only Argon. The help page links to a separate article for other models.</li>
+      <li><strong>Plan differences.</strong> It is available on all plans, but how many runs fit inside the free plan&#x27;s monthly credits is unknown.</li>
+      <li><strong>Korean text.</strong> None of the sources say how reliably it handles Korean copy inside a screen.</li>
+    </ul>
+    <h2 class="psub" id="s6">Logging the same prompt on two models</h2>
+    <p class="ptext">With no public numbers, the only way is to measure. The method is simple.</p>
+    <ol class="ptext-list">
+      <li>Pick one small task whose result is easy to see, such as changing a font.</li>
+      <li>Open two copies of the same file and give the same sentence. One uses the default model, the other Argon.</li>
+      <li>Write down the credit balance before and after. Your own usage is visible from the main menu of any file.</li>
+      <li>Count what went off in the result (spacing, color, type size).</li>
+    </ol>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th>Model</th><th>Prompt</th><th>Before</th><th>After</th><th>Off-spec items</th></tr></thead>
+      <tbody>
+        <tr><td>Default</td><td>[ ]</td><td>[ ]</td><td>[ ]</td><td>[ ]</td></tr>
+        <tr><td>Gemini 4 Argon</td><td>[ ]</td><td>[ ]</td><td>[ ]</td><td>[ ]</td></tr>
+      </tbody>
+    </table></div>
+    <p class="art__note">The table above is an empty logging template. No values have been measured yet.</p>
+    <p class="ptext">One run is a weak signal. Running the same task three times shows both the credit spread and the result spread. I would guess larger tasks vary more, but that is a guess until measured.</p>
+    <h2 class="psub" id="s7">What to do now</h2>
+    <p class="ptext"><strong>Batch revision requests.</strong> Putting font, color and spacing into one sentence instead of three chats reduces the number of runs. Whether this costs fewer credits is not stated in the help page; if each request rereads the file, fewer runs should not hurt. That part is an inference.</p>
+    <p class="ptext"><strong>Write down the balance before switching models.</strong> A new model in the picker is not a reason to make it the default. Measure one small task with the log above and post the numbers in the team chat. If credits are shared, that one line becomes the basis for an admin-settings discussion.</p>
+    <p class="ptext"><strong>Count images and screens separately.</strong> Argon outputs text and images come from a separate feature. Noting how much of the month&#x27;s credits goes to images and how much to screen edits shows where they leak. For the data side of Make, see <a href="https://designrefs.com/articles/figma-make-payload-save-button/">Make with Payload</a>, and for setting rules first, <a href="https://designrefs.com/articles/lovable-design-system-same-look/">Lovable&#x27;s design system</a>.</p>
+    <p class="art__note">Sources: <a href="https://www.figma.com/release-notes/" target="_blank" rel="noopener">Figma Release Notes</a>, <a href="https://www.figma.com/whats-new/" target="_blank" rel="noopener">Figma What&#x27;s new</a>, <a href="https://help.figma.com/hc/en-us/articles/33459875669015" target="_blank" rel="noopener">How Figma AI credits work</a>, <a href="https://help.figma.com/hc/en-us/articles/35865276858647-Manage-AI-credits" target="_blank" rel="noopener">Manage AI credits</a>, <a href="https://ai.google.dev/gemini-api/docs/models/gemini-4-argon" target="_blank" rel="noopener">Gemini 4 Argon, Gemini API docs</a>, <a href="https://blog.google/innovation-and-ai/products/gemini-app/gemini-4-availability" target="_blank" rel="noopener">Google: Gemini 4 availability</a></p>]]></content:encoded>
+    </item>
+    <item>
       <title>If you repeat the same retouch every week, Runway App Studio packs the steps into one app</title>
       <link>https://designrefs.com/en/articles/runway-app-studio-repeat-work-app/</link>
       <guid isPermaLink="true">https://designrefs.com/en/articles/runway-app-studio-repeat-work-app/</guid>
