@@ -15,7 +15,7 @@ const FONT = '"Pretendard Variable", Pretendard, "Apple SD Gothic Neo", "Noto Sa
 const fontHandle = typeof window !== "undefined" ? delayRender("Pretendard 글꼴") : null;
 if (typeof window !== "undefined") {
   const f = new FontFace("Pretendard Variable",
-    "url(https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/woff2/PretendardVariable.woff2)",
+    "url(https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/woff2/PretendardVariable.woff2)",
     { weight: "45 920" });
   f.load().then((ff) => { document.fonts.add(ff); continueRender(fontHandle); })
     .catch(() => continueRender(fontHandle));   // 못 받으면 기본 글꼴로라도 만듭니다
@@ -198,7 +198,7 @@ const Web = ({ s }) => {
       <div style={{ position: "absolute", left: 0, right: 0, bottom: 0, height: 760,
         background: "linear-gradient(to bottom, rgba(17,17,17,0) 0%, rgba(17,17,17,0.82) 42%, rgba(17,17,17,0.96) 100%)" }} />
       <div style={{ position: "absolute", left: 72, right: 72, bottom: 230, opacity: text, transform: `translateY(${(1 - text) * 40}px)` }}>
-        <div style={{ fontSize: 34, fontWeight: 800, color: "#B5B5B5" }}>{String(s.n).padStart(2, "0")} / {String(s.total).padStart(2, "0")}</div>
+        {s.n ? <div style={{ fontSize: 34, fontWeight: 800, color: "#B5B5B5" }}>{String(s.n).padStart(2, "0")} / {String(s.total).padStart(2, "0")}</div> : null}
         <div style={{ marginTop: 10, fontSize: s.name.length > 16 ? 76 : 96, fontWeight: 850, letterSpacing: "-0.045em", color: C.white, lineHeight: 1.05 }}>{s.name}</div>
         <Words text={s.text} delay={10} style={{ marginTop: 18, fontSize: 44, fontWeight: 600, color: "#D6D6D6", lineHeight: 1.35 }} />
       </div>
@@ -223,6 +223,12 @@ const Figure = ({ s }) => {
   return (
     <Enter>
       <AbsoluteFill style={{ padding: "0 64px", justifyContent: "center", alignItems: "center" }}>
+        {s.label ? (   // 그림 위 이름표 (예: 현상소 양식 이름)
+          <div style={{ alignSelf: "flex-start", display: "flex", alignItems: "center", gap: 18, marginBottom: 36, opacity: up }}>
+            {s.n ? <span style={{ fontSize: 34, fontWeight: 800, color: C.dot }}>{String(s.n).padStart(2, "0")} / {String(s.total).padStart(2, "0")}</span> : null}
+            <span style={{ fontSize: 64, fontWeight: 850, letterSpacing: "-0.04em", color: C.ink }}>{s.label}</span>
+          </div>
+        ) : null}
         <div style={{ width: "100%", borderRadius: 36, overflow: "hidden", background: C.white,
           boxShadow: "0 30px 80px rgba(0,0,0,0.12)", transform: `translateY(${(1 - up) * 300}px)`, opacity: up }}>
           <Img src={staticFile(s.image)} style={{ width: "100%", display: "block", transform: `scale(${zoom})` }} />
