@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>&quot;The earlier effect was better&quot;: Figma&#x27;s generative shaders and plugins now keep version history | Design Hub</title>
+  <meta name="description" content="When you edit a shader or generative plugin made by Figma&#x27;s agent, earlier versions are now kept and can be restored. What the October 27 release note, Figma&#x27;s help pages and developer docs confirm, what they leave out, and what to do before the next edit." />
+  <link rel="canonical" href="https://designrefs.com/en/articles/figma-shader-plugin-version-restore/" />
+  <link rel="alternate" hreflang="ko" href="https://designrefs.com/articles/figma-shader-plugin-version-restore/" />
+  <link rel="alternate" hreflang="en" href="https://designrefs.com/en/articles/figma-shader-plugin-version-restore/" />
+  <link rel="alternate" hreflang="x-default" href="https://designrefs.com/articles/figma-shader-plugin-version-restore/" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Design Hub" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="&quot;The earlier effect was better&quot;: Figma&#x27;s generative shaders and plugins now keep version history | Design Hub" />
+  <meta property="og:description" content="When you edit a shader or generative plugin made by Figma&#x27;s agent, earlier versions are now kept and can be restored. What the October 27 release note, Figma&#x27;s help pages and developer docs confirm, what they leave out, and what to do before the next edit." />
+  <meta property="og:url" content="https://designrefs.com/en/articles/figma-shader-plugin-version-restore/" />
+  <meta property="og:image" content="https://designrefs.com/og/en/figma-shader-plugin-version-restore.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="alternate" type="application/rss+xml" title="Design Hub Articles" href="https://designrefs.com/en/rss.xml" />
+  <link rel="icon" href="https://designrefs.com/favicon.ico" sizes="32x32" />
+  <link rel="icon" type="image/svg+xml" href="https://designrefs.com/favicon.svg" />
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+  <link rel="stylesheet" href="https://designrefs.com/css/style.css" />
+  <!-- 구글 애드센스 -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5831827822584395" crossorigin="anonymous"></script>
+
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q7QVVHSLQ6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Q7QVVHSLQ6');
+  </script>
+  <script>
+    // 메인에서 고른 테마를 그대로 따릅니다.
+    try {
+      var t = localStorage.getItem('designhub:theme') || 'light';
+      if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+    } catch (e) {}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://designrefs.com/en/articles/figma-shader-plugin-version-restore/#post",
+      "url": "https://designrefs.com/en/articles/figma-shader-plugin-version-restore/",
+      "mainEntityOfPage": "https://designrefs.com/en/articles/figma-shader-plugin-version-restore/",
+      "headline": "\"The earlier effect was better\": Figma's generative shaders and plugins now keep version history",
+      "description": "When you edit a shader or generative plugin made by Figma's agent, earlier versions are now kept and can be restored. What the October 27 release note, Figma's help pages and developer docs confirm, what they leave out, and what to do before the next edit.",
+      "articleSection": "AI Design",
+      "datePublished": "2026-10-30",
+      "dateModified": "2026-10-30",
+      "inLanguage": "en",
+      "wordCount": 1279,
+      "timeRequired": "PT6M",
+      "image": "https://designrefs.com/og/en/figma-shader-plugin-version-restore.png",
+      "author": {
+        "@type": "Organization",
+        "name": "Design Hub",
+        "url": "https://designrefs.com/en/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Design Hub",
+        "url": "https://designrefs.com/en/"
+      },
+      "isPartOf": {
+        "@type": "Blog",
+        "@id": "https://designrefs.com/en/articles/#blog",
+        "name": "Design Hub Articles"
+      },
+      "translationOfWork": {
+        "@id": "https://designrefs.com/articles/figma-shader-plugin-version-restore/#post"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Design Hub",
+          "item": "https://designrefs.com/en/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Articles",
+          "item": "https://designrefs.com/en/articles/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "\"The earlier effect was better\": Figma's generative shaders and plugins now keep version history",
+          "item": "https://designrefs.com/en/articles/figma-shader-plugin-version-restore/"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <meta property="article:published_time" content="2026-10-30T09:00:00+09:00" />
+  <meta property="article:modified_time" content="2026-10-30T09:00:00+09:00" />
+  <meta property="article:section" content="AI Design" />
+  <meta property="article:tag" content="AI Design" />
+  <meta property="article:tag" content="AI tools" />
+  <meta property="article:tag" content="Design Tools" />
+  <meta property="article:tag" content="UI/UX" />
+</head>
+<body class="page">
+  <header class="top">
+    <div class="wrap top__inner">
+      <a class="logo" href="https://designrefs.com/en/">d<span>.</span></a>
+
+      <!-- 검색어를 넣고 엔터를 치면 메인 화면에서 검색 결과가 열립니다 (?q=) -->
+      <form class="search" action="https://designrefs.com/en/" method="get" role="search">
+        <svg class="search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+        <input id="search" class="search__input" type="search" name="q" placeholder="Search sites" autocomplete="off" />
+        <kbd class="search__kbd">/</kbd>
+      </form>
+
+      <div class="top__actions">
+        <a class="top__lang" href="https://designrefs.com/articles/figma-shader-plugin-version-restore/" hreflang="ko" lang="ko" title="한국어">KO</a>
+        <button id="theme-toggle" class="top__btn" type="button" aria-label="Theme" title="Light / Dark">
+          <span class="dot"></span>
+        </button>
+        <button id="menu-open" class="top__btn top__btn--menu" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 모바일 전체 메뉴 -->
+  <div class="drawer" id="drawer" hidden>
+    <div class="drawer__backdrop" id="drawer-backdrop"></div>
+    <aside class="drawer__panel" role="dialog" aria-modal="true" aria-label="Menu">
+      <header class="drawer__head">
+        <span class="drawer__title">Menu</span>
+        <button id="menu-close" class="drawer__close" type="button" aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      </header>
+      <div class="drawer__body">
+        <nav class="nav" aria-label="Menu"><a class="nav__item" href="https://designrefs.com/en/"><span class="nav__label">All</span><span class="nav__count">397</span></a><a class="nav__item" href="https://designrefs.com/en/#bookmarks"><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="m12 2.5 2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8Z"/></svg><span class="nav__label">Bookmarks</span><span class="nav__count" data-bm-count>0</span></a><hr class="nav__sep" /><a class="nav__item" href="https://designrefs.com/en/#uiux"><span class="nav__label">UI/UX</span><span class="nav__count">40</span></a><a class="nav__item" href="https://designrefs.com/en/#graphic"><span class="nav__label">Graphic &amp; Branding</span><span class="nav__count">24</span></a><a class="nav__item" href="https://designrefs.com/en/#color"><span class="nav__label">Color</span><span class="nav__count">24</span></a><a class="nav__item" href="https://designrefs.com/en/#typo"><span class="nav__label">Type &amp; Fonts</span><span class="nav__count">23</span></a><a class="nav__item" href="https://designrefs.com/en/#asset"><span class="nav__label">Icons &amp; Assets</span><span class="nav__count">33</span></a><a class="nav__item" href="https://designrefs.com/en/#mockup"><span class="nav__label">Mockups</span><span class="nav__count">19</span></a><a class="nav__item" href="https://designrefs.com/en/#tool"><span class="nav__label">Design Tools</span><span class="nav__count">30</span></a><a class="nav__item" href="https://designrefs.com/en/#ai"><span class="nav__label">AI</span><span class="nav__count">61</span></a><a class="nav__item" href="https://designrefs.com/en/#dev"><span class="nav__label">Design &amp; Code</span><span class="nav__count">34</span></a><a class="nav__item" href="https://designrefs.com/en/#community"><span class="nav__label">Community &amp; Media</span><span class="nav__count">29</span></a><a class="nav__item" href="https://designrefs.com/en/#creator"><span class="nav__label">Creators</span><span class="nav__count">47</span></a><a class="nav__item" href="https://designrefs.com/en/#freelance"><span class="nav__label">Freelance</span><span class="nav__count">13</span></a><a class="nav__item" href="https://designrefs.com/en/#job"><span class="nav__label">Jobs</span><span class="nav__count">20</span></a><hr class="nav__sep" /><a class="nav__item is-active" href="https://designrefs.com/en/#articles"><span class="nav__label">Articles</span><span class="nav__count">39</span></a><a class="nav__item" href="https://designrefs.com/en/#styles"><span class="nav__label">Style Guide</span><span class="nav__count">34</span></a><a class="nav__item" href="https://designrefs.com/en/#trends"><span class="nav__label">2026 Trends</span><span class="nav__count">20</span></a><a class="nav__item" href="https://designrefs.com/en/#glossary"><span class="nav__label">Glossary</span><span class="nav__count">155</span></a><hr class="nav__sep" /><a class="nav__item" href="https://designrefs.com/en/talk/"><span class="nav__label">Design Talk</span></a></nav>
+        <div class="drawer__section">
+          <p class="nav__group">Filter</p>
+          <div class="pills pills--tags"><a class="pill is-active" href="https://designrefs.com/en/">All</a><a class="pill" href="https://designrefs.com/en/?tag=%ED%95%9C%EA%B5%AD">Korean</a><a class="pill" href="https://designrefs.com/en/?tag=%EB%AC%B4%EB%A3%8C">Free</a><a class="pill" href="https://designrefs.com/en/?tag=%EC%9C%A0%EB%A3%8C">Paid</a><a class="pill" href="https://designrefs.com/en/?tag=AI">AI</a></div>
+        </div>
+        <div class="drawer__section">
+          <p class="nav__group">View</p>
+          <div class="drawer__row">
+            <button class="drawer__opt" id="drawer-theme" type="button">Theme</button>
+            <button class="drawer__opt" data-view="list" type="button">List</button>
+            <button class="drawer__opt" data-view="grid" type="button">Grid</button>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <div class="wrap layout">
+    <aside class="sidebar">
+      <nav class="nav" aria-label="Menu"><a class="nav__item" href="https://designrefs.com/en/"><span class="nav__label">All</span><span class="nav__count">397</span></a><a class="nav__item" href="https://designrefs.com/en/#bookmarks"><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="m12 2.5 2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8Z"/></svg><span class="nav__label">Bookmarks</span><span class="nav__count" data-bm-count>0</span></a><hr class="nav__sep" /><a class="nav__item" href="https://designrefs.com/en/#uiux"><span class="nav__label">UI/UX</span><span class="nav__count">40</span></a><a class="nav__item" href="https://designrefs.com/en/#graphic"><span class="nav__label">Graphic &amp; Branding</span><span class="nav__count">24</span></a><a class="nav__item" href="https://designrefs.com/en/#color"><span class="nav__label">Color</span><span class="nav__count">24</span></a><a class="nav__item" href="https://designrefs.com/en/#typo"><span class="nav__label">Type &amp; Fonts</span><span class="nav__count">23</span></a><a class="nav__item" href="https://designrefs.com/en/#asset"><span class="nav__label">Icons &amp; Assets</span><span class="nav__count">33</span></a><a class="nav__item" href="https://designrefs.com/en/#mockup"><span class="nav__label">Mockups</span><span class="nav__count">19</span></a><a class="nav__item" href="https://designrefs.com/en/#tool"><span class="nav__label">Design Tools</span><span class="nav__count">30</span></a><a class="nav__item" href="https://designrefs.com/en/#ai"><span class="nav__label">AI</span><span class="nav__count">61</span></a><a class="nav__item" href="https://designrefs.com/en/#dev"><span class="nav__label">Design &amp; Code</span><span class="nav__count">34</span></a><a class="nav__item" href="https://designrefs.com/en/#community"><span class="nav__label">Community &amp; Media</span><span class="nav__count">29</span></a><a class="nav__item" href="https://designrefs.com/en/#creator"><span class="nav__label">Creators</span><span class="nav__count">47</span></a><a class="nav__item" href="https://designrefs.com/en/#freelance"><span class="nav__label">Freelance</span><span class="nav__count">13</span></a><a class="nav__item" href="https://designrefs.com/en/#job"><span class="nav__label">Jobs</span><span class="nav__count">20</span></a><hr class="nav__sep" /><a class="nav__item is-active" href="https://designrefs.com/en/#articles"><span class="nav__label">Articles</span><span class="nav__count">39</span></a><a class="nav__item" href="https://designrefs.com/en/#styles"><span class="nav__label">Style Guide</span><span class="nav__count">34</span></a><a class="nav__item" href="https://designrefs.com/en/#trends"><span class="nav__label">2026 Trends</span><span class="nav__count">20</span></a><a class="nav__item" href="https://designrefs.com/en/#glossary"><span class="nav__label">Glossary</span><span class="nav__count">155</span></a><hr class="nav__sep" /><a class="nav__item" href="https://designrefs.com/en/talk/"><span class="nav__label">Design Talk</span></a></nav>
+    </aside>
+    <main class="main page__main page__main--art">
+    <article class="art">
+      <p class="art__kicker"><a href="https://designrefs.com/en/articles/">Articles</a> · AI Design</p>
+      <h1 class="page__title">&quot;The earlier effect was better&quot;: Figma&#x27;s generative shaders and plugins now keep version history</h1>
+      <p class="page__intro">When you edit a shader or generative plugin made by Figma&#x27;s agent, earlier versions are now kept and can be restored. What the October 27 release note, Figma&#x27;s help pages and developer docs confirm, what they leave out, and what to do before the next edit.</p>
+      <p class="art__meta"><time datetime="2026-10-30">October 30, 2026</time> · 6 min read<span data-views hidden></span></p>
+      <p class="art__note">Translated from the Korean original. <a href="https://designrefs.com/articles/figma-shader-plugin-version-restore/" hreflang="ko" lang="ko">Read in Korean</a></p>
+      <nav class="art__toc" aria-label="In this article"><p class="art__toc-t">In this article</p><ol><li><a href="#s1">First, what shaders and generative plugins are</a></li><li><a href="#s2">What the release note says</a></li><li><a href="#s3">An agent writes the change log</a></li><li><a href="#s4">How far versions reach: the developer docs</a></li><li><a href="#s5">What else was confirmed around the same time</a></li><li><a href="#s6">Where do the credits go</a></li><li><a href="#s7">What is still unknown</a></li><li><a href="#s8">So for now</a></li></ol></nav>
+    <p class="ptext">The client&#x27;s email is short. &quot;The glow effect from before was better. Can you show me that one again?&quot;</p>
+    <p class="ptext">You asked Figma&#x27;s agent for a shader, then asked it to fix a few things two or three times. Somewhere in there the first version disappeared. That scene should now be less painful. (This is an imagined scene, not something that happened to me.)</p>
+    <p class="ptext">On October 27, Figma&#x27;s release notes added an entry titled &quot;View and restore previous versions of your generative plugins and shaders.&quot; This is not a hands-on review. It is based on the release notes, Figma&#x27;s help pages and forum post, and the developer docs. I did not find where in the interface the version list lives in any page I opened.</p>
+    <figure class="art__fig">
+      <img src="https://designrefs.com/articles/img/figma-shader-plugin-version-restore-shot1.webp" alt="Figma release notes, October 27 entry (source: https://www.figma.com/release-notes/, captured 2026-10-30)" loading="lazy" decoding="async" />
+      <figcaption>Figma release notes, October 27 entry (source: https://www.figma.com/release-notes/, captured 2026-10-30)</figcaption>
+    </figure>
+    <h2 class="psub" id="s1">First, what shaders and generative plugins are</h2>
+    <p class="ptext">A shader is a small graphics program that changes pixels in real time. You apply it to an image or layer as an effect, or use it as a fill. Figma&#x27;s help page lists Bloom, Dither, Halftone, Gooey merge and Warp as effects, and Clouds, Fractal noise, Mesh gradient and Water caustics as fills.</p>
+    <p class="ptext">A generative plugin is a code-backed tool, such as a layout generator or a QR code maker. Both are built by asking the agent in plain language. In a September 1 blog post, Figma product designer Rogie King wrote that he could create the same shader &quot;with one simple prompt, maybe two to nail it.&quot;</p>
+    <h2 class="psub" id="s2">What the release note says</h2>
+    <p class="ptext">The body has three parts.</p>
+    <ul class="ptext-list">
+      <li>Editing a generative plugin or shader now creates a new version, and earlier versions are preserved so you can revisit and restore them.</li>
+      <li>Each new version gets an agent-written description that forms a change log. You can also see which version is currently published.</li>
+      <li>&quot;Rolling out this week.&quot;</li>
+    </ul>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th>Item</th><th>What the release note says</th></tr></thead>
+      <tbody>
+        <tr><td>Date</td><td>October 27, 2026, rolling out this week</td></tr>
+        <tr><td>Applies to</td><td>Generative plugins, shaders</td></tr>
+        <tr><td>What you can do</td><td>View and restore earlier versions</td></tr>
+        <tr><td>Change log</td><td>Agent-written description per version</td></tr>
+        <tr><td>Where to find it</td><td>Not mentioned</td></tr>
+        <tr><td>Plans</td><td>Not mentioned</td></tr>
+      </tbody>
+    </table></div>
+    <p class="art__note">Source: <a href="https://www.figma.com/release-notes/" target="_blank" rel="noopener">Figma Release Notes</a> (checked 2026-10-30). &quot;Not mentioned&quot; means the note says nothing on the subject.</p>
+    <p class="ptext">The entry has no help-article link either, so I cannot give button names or click paths.</p>
+    <h2 class="psub" id="s3">An agent writes the change log</h2>
+    <p class="ptext">Humans rarely keep up with version names. &quot;Final,&quot; &quot;final2,&quot; &quot;really final.&quot; Since the agent writes a description for each new version, the list at least says what changed.</p>
+    <p class="ptext">How accurate those descriptions are, I do not know. An agent could write &quot;softened the glow&quot; and also have changed a color. Open the version and look before trusting the text. That is general caution, not a reported problem with this feature.</p>
+    <h2 class="psub" id="s4">How far versions reach: the developer docs</h2>
+    <p class="ptext">The developer docs for generative plugins and shaders on the Figma MCP server also mention versions. This is a separate matter from the restore feature in the release note.</p>
+    <ul class="ptext-list">
+      <li>Read tools take an optional <code>version</code>, a 40-character commit SHA. Leave it out and you get the latest. The docs suggest using it to read the exact code a file uses, or to compare two versions.</li>
+      <li>An update call builds, versions and deploys in one step. &quot;There&#x27;s no separate publish step.&quot;</li>
+      <li>Updates can only replace existing files. For shaders that is <code>main.ts</code>; for plugins, <code>code.ts</code> and <code>ui.html</code>. <code>features.json</code>, which controls animation and mouse interaction, and <code>manifest.json</code> cannot be changed.</li>
+      <li>Source code is visible to anyone with access, so secrets must never go in.</li>
+      <li>If a build fails, the agent makes the smallest fix the compiler suggests, tries once more, then shows you the error.</li>
+    </ul>
+    <p class="ptext">The line that stands out is &quot;no separate publish step.&quot; Ask an external agent for a change and it goes live. That is an uncomfortable setup without a way back, and the new version history looks like it fills the gap. But I could not confirm that the developer docs mention the restore feature. How the two connect is my guess.</p>
+    <h2 class="psub" id="s5">What else was confirmed around the same time</h2>
+    <p class="ptext">The October 7 forum post lists the wider expansion.</p>
+    <ul class="ptext-list">
+      <li>You can ask the agent for motion shaders that react to mouse movement.</li>
+      <li>Shaders and generative plugins can be published to the Figma Community.</li>
+      <li>Private publishing inside an organization is available only on Organization and Enterprise plans.</li>
+      <li>You can view and download shader and plugin code inside Figma.</li>
+      <li>Third-party agents can view and edit them through the MCP server. When a design with shaders is copied to an external agent, the shaders render correctly in the generated React code, according to the post.</li>
+    </ul>
+    <p class="ptext">The help page lists Starter, Professional, Education, Organization and Enterprise plans, and you need edit access to the file. Shaders are in open beta, and Figma warns that &quot;features may change and you may experience performance issues.&quot;</p>
+    <p class="art__note">Sources: <a href="https://forum.figma.com/product-updates-3/updates-to-generative-plugins-and-shaders-57397" target="_blank" rel="noopener">Figma forum: Updates to generative plugins and shaders</a>, <a href="https://help.figma.com/hc/en-us/articles/41409034424215" target="_blank" rel="noopener">Figma help: shaders and plugins made by Figma</a>, <a href="https://developers.figma.com/docs/figma-mcp-server/generative-plugins-and-shaders/" target="_blank" rel="noopener">Figma MCP server docs</a></p>
+    <figure class="art__fig">
+      <img src="https://designrefs.com/articles/img/figma-shader-plugin-version-restore-shot2.webp" alt="Figma MCP server docs, generative plugins and shaders page (source: https://developers.figma.com/docs/figma-mcp-server/generative-plugins-and-shaders/, captured 2026-10-30)" loading="lazy" decoding="async" />
+      <figcaption>Figma MCP server docs, generative plugins and shaders page (source: https://developers.figma.com/docs/figma-mcp-server/generative-plugins-and-shaders/, captured 2026-10-30)</figcaption>
+    </figure>
+    <h2 class="psub" id="s6">Where do the credits go</h2>
+    <p class="ptext">Asking the agent to fix an effect can cost credits each time. The October 6 release note says Figma&#x27;s agent became generally available and starts using AI credits that day. The September 1 blog said the beta was free and credits would apply &quot;in a few weeks.&quot; Put together, credits now appear to apply.</p>
+    <p class="ptext">How many credits one shader edit costs, I did not find. Nor did I find whether restoring a version costs anything. The order in which credits are spent is covered in <a href="https://designrefs.com/articles/figma-agent-ai-credits-ga/">Figma agent credits</a>.</p>
+    <h2 class="psub" id="s7">What is still unknown</h2>
+    <ul class="ptext-list">
+      <li><strong>Where the version list is.</strong> The release note has no screen description.</li>
+      <li><strong>How many versions are kept, and for how long.</strong> Not stated.</li>
+      <li><strong>What restoring does.</strong> Whether it overwrites or copies the old version forward, I could not confirm.</li>
+      <li><strong>Whether existing tools are covered.</strong> It is unclear if edits made before the rollout are recorded.</li>
+      <li><strong>Whether edits through MCP by an external agent create versions.</strong> The release note and developer docs do not point at each other.</li>
+      <li><strong>When it reaches your account.</strong> It is a gradual rollout, and I could not check mine.</li>
+    </ul>
+    <h2 class="psub" id="s8">So for now</h2>
+    <p class="ptext"><strong>Name the current state before you edit.</strong> The change log is written by the agent. If a version is the one the client called &quot;the look,&quot; leave a note or a duplicate in the file before asking for changes. The feature may not be in your account yet.</p>
+    <p class="ptext"><strong>Ask for one change at a time.</strong> If color, glow and motion go into one sentence, the version description gets vague too. One request per version gives you a clear point to return to. Batching saves credits, and the two goals pull against each other, so choose by the size of the job.</p>
+    <p class="ptext"><strong>Compare after restoring.</strong> What exactly a restore brings back is unknown. Right after restoring, turn the effect on and put it next to the image you sent the client. For building clickable mockups on the canvas, see <a href="https://designrefs.com/articles/figma-code-layers-open-beta/">Figma code layers in open beta</a>. For a sense of how model choice affects credits, see <a href="https://designrefs.com/articles/figma-make-gemini-4-argon-model-picker/">Make&#x27;s model picker</a>.</p>
+    <p class="art__note">Sources: <a href="https://www.figma.com/release-notes/" target="_blank" rel="noopener">Figma Release Notes</a>, <a href="https://forum.figma.com/product-updates-3/updates-to-generative-plugins-and-shaders-57397" target="_blank" rel="noopener">Figma forum: Updates to generative plugins and shaders</a>, <a href="https://help.figma.com/hc/en-us/articles/41409034424215" target="_blank" rel="noopener">Figma help: shaders and plugins</a>, <a href="https://developers.figma.com/docs/figma-mcp-server/generative-plugins-and-shaders/" target="_blank" rel="noopener">Figma MCP server docs: Generative plugins and shaders</a>, <a href="https://www.figma.com/blog/how-we-built-generative-plugins-and-shaders/" target="_blank" rel="noopener">Behind the build: Generative plugins and shaders at Figma</a></p>
+      <div class="share">
+        <button class="share__btn" type="button" data-share>Share</button>
+        <button class="share__btn" type="button" data-copy>Copy link</button>
+        <span class="share__msg" role="status"></span>
+      </div>
+    </article>
+    <script src="https://designrefs.com/js/views.js" defer></script>
+
+    <nav class="page__nav">
+      <h2 class="psub">Keep exploring</h2>
+      <div class="page__navlinks"><a href="https://designrefs.com/en/#ai">AI tools</a><a href="https://designrefs.com/en/#tool">Design Tools</a><a href="https://designrefs.com/en/#uiux">UI/UX</a></div>
+    </nav>
+
+    <section class="section">
+      <header class="section__head">
+        <h2 class="section__title">Read next</h2>
+      </header>
+      <div class="list list--insight">
+        <a class="arow" href="https://designrefs.com/en/articles/genie-4-world-model-designers-waitlist/" data-tag="AI Design">
+          <span class="arow__date">2026. 10. 29</span>
+          <span class="arow__main">
+            <span class="arow__title">Genie 4 is still a waitlist: what a world model you steer by typing means for designers</span>
+            <p class="arow__desc">Google DeepMind released Genie 4 as a research preview. It does not output a clip; it keeps generating the scene as you move. What the official posts confirm about features, access and limits, and what is still unknown about price, resolution and usage.</p>
+          </span>
+          <span class="arow__tag">AI Design · 4 min</span>
+        </a>
+        <a class="arow" href="https://designrefs.com/en/articles/figma-make-gemini-4-argon-model-picker/" data-tag="AI Design">
+          <span class="arow__date">2026. 10. 29</span>
+          <span class="arow__main">
+            <span class="arow__title">30 credits to change one font: Figma Make has a model picker, and Gemini 4 Argon just joined it</span>
+            <p class="arow__desc">Gemini 4 Argon is now in Figma Make&#x27;s model picker. What Figma&#x27;s release notes, help pages and Google&#x27;s docs confirm, what they leave out (credit cost per run), and a simple way to log the same prompt on two models.</p>
+          </span>
+          <span class="arow__tag">AI Design · 6 min</span>
+        </a>
+        <a class="arow" href="https://designrefs.com/en/articles/webflow-gemini-connector-edit-site-in-chat/" data-tag="AI Design">
+          <span class="arow__date">2026. 10. 23</span>
+          <span class="arow__main">
+            <span class="arow__title">Editing a Webflow site from Gemini chat: what the connector does and what&#x27;s still unclear</span>
+            <p class="arow__desc">On October 15, Webflow became a connected app in the Google Gemini app. Per the release, you can build pages, manage CMS content, audit a site and ask performance questions from chat. Free to install, and currently no Webflow AI credits. What the release and marketplace page say, and what is still unknown.</p>
+          </span>
+          <span class="arow__tag">AI Design · 5 min</span>
+        </a>
+      </div>
+      <nav class="art__pn"><a class="art__pn-a is-prev" href="https://designrefs.com/en/articles/genie-4-world-model-designers-waitlist/" rel="prev"><span class="art__pn-l">← Previous</span><span class="art__pn-t">Genie 4 is still a waitlist: what a world model you steer by typing means for designers</span></a><span></span></nav>
+      <p class="art__all"><a href="https://designrefs.com/en/articles/">All articles (39) →</a></p>
+    </section>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <div class="wrap">
+      <nav class="footer__nav"><div class="footer__navgroup"><a href="https://designrefs.com/en/#uiux">UI/UX</a><a href="https://designrefs.com/en/#graphic">Graphic &amp; Branding</a><a href="https://designrefs.com/en/#color">Color</a><a href="https://designrefs.com/en/#typo">Type &amp; Fonts</a><a href="https://designrefs.com/en/#asset">Icons &amp; Assets</a><a href="https://designrefs.com/en/#mockup">Mockups</a><a href="https://designrefs.com/en/#tool">Design Tools</a><a href="https://designrefs.com/en/#ai">AI</a><a href="https://designrefs.com/en/#dev">Design &amp; Code</a><a href="https://designrefs.com/en/#community">Community &amp; Media</a><a href="https://designrefs.com/en/#creator">Creators</a><a href="https://designrefs.com/en/#freelance">Freelance</a><a href="https://designrefs.com/en/#job">Jobs</a></div><div class="footer__navgroup"><a href="https://designrefs.com/en/articles/">Articles</a><a href="https://designrefs.com/en/#styles">Style Guide</a><a href="https://designrefs.com/en/#trends">2026 Trends</a><a href="https://designrefs.com/en/#glossary">Glossary</a></div></nav>
+    </div>
+    <div class="wrap footer__inner">
+      <span>Copyright 2026. Design Hub. all rights reserved.</span>
+      <a href="https://designrefs.com/en/articles/">Articles</a>
+      <a href="https://designrefs.com/en/talk/">Design Talk</a>
+      <a href="https://designrefs.com/" hreflang="ko" lang="ko">한국어</a>
+      <a href="https://designrefs.com/privacy/">Privacy (Korean)</a>
+      <a href="mailto:nisov0924@gmail.com">CONTACT : nisov0924@gmail.com</a>
+      <a href="#" id="footer-top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <button id="to-top" class="to-top" type="button" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg></button>
+  <script src="https://designrefs.com/js/page.js" defer></script>
+</body>
+</html>

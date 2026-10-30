@@ -6,7 +6,90 @@
     <atom:link href="https://designrefs.com/en/rss.xml" rel="self" type="application/rss+xml" />
     <description>Notes from a designer in Korea: working with AI, putting style into words, collecting references and design communities. Translated from Korean.</description>
     <language>en</language>
-    <lastBuildDate>Thu, 29 Oct 2026 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 30 Oct 2026 09:00:00 +0900</lastBuildDate>
+    <item>
+      <title>&quot;The earlier effect was better&quot;: Figma&#x27;s generative shaders and plugins now keep version history</title>
+      <link>https://designrefs.com/en/articles/figma-shader-plugin-version-restore/</link>
+      <guid isPermaLink="true">https://designrefs.com/en/articles/figma-shader-plugin-version-restore/</guid>
+      <pubDate>Fri, 30 Oct 2026 09:00:00 +0900</pubDate>
+      <category>AI Design</category>
+      <description>When you edit a shader or generative plugin made by Figma&#x27;s agent, earlier versions are now kept and can be restored. What the October 27 release note, Figma&#x27;s help pages and developer docs confirm, what they leave out, and what to do before the next edit.</description>
+      <content:encoded><![CDATA[    <p class="ptext">The client&#x27;s email is short. &quot;The glow effect from before was better. Can you show me that one again?&quot;</p>
+    <p class="ptext">You asked Figma&#x27;s agent for a shader, then asked it to fix a few things two or three times. Somewhere in there the first version disappeared. That scene should now be less painful. (This is an imagined scene, not something that happened to me.)</p>
+    <p class="ptext">On October 27, Figma&#x27;s release notes added an entry titled &quot;View and restore previous versions of your generative plugins and shaders.&quot; This is not a hands-on review. It is based on the release notes, Figma&#x27;s help pages and forum post, and the developer docs. I did not find where in the interface the version list lives in any page I opened.</p>
+    <figure class="art__fig">
+      <img src="https://designrefs.com/articles/img/figma-shader-plugin-version-restore-shot1.webp" alt="Figma release notes, October 27 entry (source: https://www.figma.com/release-notes/, captured 2026-10-30)" loading="lazy" decoding="async" />
+      <figcaption>Figma release notes, October 27 entry (source: https://www.figma.com/release-notes/, captured 2026-10-30)</figcaption>
+    </figure>
+    <h2 class="psub" id="s1">First, what shaders and generative plugins are</h2>
+    <p class="ptext">A shader is a small graphics program that changes pixels in real time. You apply it to an image or layer as an effect, or use it as a fill. Figma&#x27;s help page lists Bloom, Dither, Halftone, Gooey merge and Warp as effects, and Clouds, Fractal noise, Mesh gradient and Water caustics as fills.</p>
+    <p class="ptext">A generative plugin is a code-backed tool, such as a layout generator or a QR code maker. Both are built by asking the agent in plain language. In a September 1 blog post, Figma product designer Rogie King wrote that he could create the same shader &quot;with one simple prompt, maybe two to nail it.&quot;</p>
+    <h2 class="psub" id="s2">What the release note says</h2>
+    <p class="ptext">The body has three parts.</p>
+    <ul class="ptext-list">
+      <li>Editing a generative plugin or shader now creates a new version, and earlier versions are preserved so you can revisit and restore them.</li>
+      <li>Each new version gets an agent-written description that forms a change log. You can also see which version is currently published.</li>
+      <li>&quot;Rolling out this week.&quot;</li>
+    </ul>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th>Item</th><th>What the release note says</th></tr></thead>
+      <tbody>
+        <tr><td>Date</td><td>October 27, 2026, rolling out this week</td></tr>
+        <tr><td>Applies to</td><td>Generative plugins, shaders</td></tr>
+        <tr><td>What you can do</td><td>View and restore earlier versions</td></tr>
+        <tr><td>Change log</td><td>Agent-written description per version</td></tr>
+        <tr><td>Where to find it</td><td>Not mentioned</td></tr>
+        <tr><td>Plans</td><td>Not mentioned</td></tr>
+      </tbody>
+    </table></div>
+    <p class="art__note">Source: <a href="https://www.figma.com/release-notes/" target="_blank" rel="noopener">Figma Release Notes</a> (checked 2026-10-30). &quot;Not mentioned&quot; means the note says nothing on the subject.</p>
+    <p class="ptext">The entry has no help-article link either, so I cannot give button names or click paths.</p>
+    <h2 class="psub" id="s3">An agent writes the change log</h2>
+    <p class="ptext">Humans rarely keep up with version names. &quot;Final,&quot; &quot;final2,&quot; &quot;really final.&quot; Since the agent writes a description for each new version, the list at least says what changed.</p>
+    <p class="ptext">How accurate those descriptions are, I do not know. An agent could write &quot;softened the glow&quot; and also have changed a color. Open the version and look before trusting the text. That is general caution, not a reported problem with this feature.</p>
+    <h2 class="psub" id="s4">How far versions reach: the developer docs</h2>
+    <p class="ptext">The developer docs for generative plugins and shaders on the Figma MCP server also mention versions. This is a separate matter from the restore feature in the release note.</p>
+    <ul class="ptext-list">
+      <li>Read tools take an optional <code>version</code>, a 40-character commit SHA. Leave it out and you get the latest. The docs suggest using it to read the exact code a file uses, or to compare two versions.</li>
+      <li>An update call builds, versions and deploys in one step. &quot;There&#x27;s no separate publish step.&quot;</li>
+      <li>Updates can only replace existing files. For shaders that is <code>main.ts</code>; for plugins, <code>code.ts</code> and <code>ui.html</code>. <code>features.json</code>, which controls animation and mouse interaction, and <code>manifest.json</code> cannot be changed.</li>
+      <li>Source code is visible to anyone with access, so secrets must never go in.</li>
+      <li>If a build fails, the agent makes the smallest fix the compiler suggests, tries once more, then shows you the error.</li>
+    </ul>
+    <p class="ptext">The line that stands out is &quot;no separate publish step.&quot; Ask an external agent for a change and it goes live. That is an uncomfortable setup without a way back, and the new version history looks like it fills the gap. But I could not confirm that the developer docs mention the restore feature. How the two connect is my guess.</p>
+    <h2 class="psub" id="s5">What else was confirmed around the same time</h2>
+    <p class="ptext">The October 7 forum post lists the wider expansion.</p>
+    <ul class="ptext-list">
+      <li>You can ask the agent for motion shaders that react to mouse movement.</li>
+      <li>Shaders and generative plugins can be published to the Figma Community.</li>
+      <li>Private publishing inside an organization is available only on Organization and Enterprise plans.</li>
+      <li>You can view and download shader and plugin code inside Figma.</li>
+      <li>Third-party agents can view and edit them through the MCP server. When a design with shaders is copied to an external agent, the shaders render correctly in the generated React code, according to the post.</li>
+    </ul>
+    <p class="ptext">The help page lists Starter, Professional, Education, Organization and Enterprise plans, and you need edit access to the file. Shaders are in open beta, and Figma warns that &quot;features may change and you may experience performance issues.&quot;</p>
+    <p class="art__note">Sources: <a href="https://forum.figma.com/product-updates-3/updates-to-generative-plugins-and-shaders-57397" target="_blank" rel="noopener">Figma forum: Updates to generative plugins and shaders</a>, <a href="https://help.figma.com/hc/en-us/articles/41409034424215" target="_blank" rel="noopener">Figma help: shaders and plugins made by Figma</a>, <a href="https://developers.figma.com/docs/figma-mcp-server/generative-plugins-and-shaders/" target="_blank" rel="noopener">Figma MCP server docs</a></p>
+    <figure class="art__fig">
+      <img src="https://designrefs.com/articles/img/figma-shader-plugin-version-restore-shot2.webp" alt="Figma MCP server docs, generative plugins and shaders page (source: https://developers.figma.com/docs/figma-mcp-server/generative-plugins-and-shaders/, captured 2026-10-30)" loading="lazy" decoding="async" />
+      <figcaption>Figma MCP server docs, generative plugins and shaders page (source: https://developers.figma.com/docs/figma-mcp-server/generative-plugins-and-shaders/, captured 2026-10-30)</figcaption>
+    </figure>
+    <h2 class="psub" id="s6">Where do the credits go</h2>
+    <p class="ptext">Asking the agent to fix an effect can cost credits each time. The October 6 release note says Figma&#x27;s agent became generally available and starts using AI credits that day. The September 1 blog said the beta was free and credits would apply &quot;in a few weeks.&quot; Put together, credits now appear to apply.</p>
+    <p class="ptext">How many credits one shader edit costs, I did not find. Nor did I find whether restoring a version costs anything. The order in which credits are spent is covered in <a href="https://designrefs.com/articles/figma-agent-ai-credits-ga/">Figma agent credits</a>.</p>
+    <h2 class="psub" id="s7">What is still unknown</h2>
+    <ul class="ptext-list">
+      <li><strong>Where the version list is.</strong> The release note has no screen description.</li>
+      <li><strong>How many versions are kept, and for how long.</strong> Not stated.</li>
+      <li><strong>What restoring does.</strong> Whether it overwrites or copies the old version forward, I could not confirm.</li>
+      <li><strong>Whether existing tools are covered.</strong> It is unclear if edits made before the rollout are recorded.</li>
+      <li><strong>Whether edits through MCP by an external agent create versions.</strong> The release note and developer docs do not point at each other.</li>
+      <li><strong>When it reaches your account.</strong> It is a gradual rollout, and I could not check mine.</li>
+    </ul>
+    <h2 class="psub" id="s8">So for now</h2>
+    <p class="ptext"><strong>Name the current state before you edit.</strong> The change log is written by the agent. If a version is the one the client called &quot;the look,&quot; leave a note or a duplicate in the file before asking for changes. The feature may not be in your account yet.</p>
+    <p class="ptext"><strong>Ask for one change at a time.</strong> If color, glow and motion go into one sentence, the version description gets vague too. One request per version gives you a clear point to return to. Batching saves credits, and the two goals pull against each other, so choose by the size of the job.</p>
+    <p class="ptext"><strong>Compare after restoring.</strong> What exactly a restore brings back is unknown. Right after restoring, turn the effect on and put it next to the image you sent the client. For building clickable mockups on the canvas, see <a href="https://designrefs.com/articles/figma-code-layers-open-beta/">Figma code layers in open beta</a>. For a sense of how model choice affects credits, see <a href="https://designrefs.com/articles/figma-make-gemini-4-argon-model-picker/">Make&#x27;s model picker</a>.</p>
+    <p class="art__note">Sources: <a href="https://www.figma.com/release-notes/" target="_blank" rel="noopener">Figma Release Notes</a>, <a href="https://forum.figma.com/product-updates-3/updates-to-generative-plugins-and-shaders-57397" target="_blank" rel="noopener">Figma forum: Updates to generative plugins and shaders</a>, <a href="https://help.figma.com/hc/en-us/articles/41409034424215" target="_blank" rel="noopener">Figma help: shaders and plugins</a>, <a href="https://developers.figma.com/docs/figma-mcp-server/generative-plugins-and-shaders/" target="_blank" rel="noopener">Figma MCP server docs: Generative plugins and shaders</a>, <a href="https://www.figma.com/blog/how-we-built-generative-plugins-and-shaders/" target="_blank" rel="noopener">Behind the build: Generative plugins and shaders at Figma</a></p>]]></content:encoded>
+    </item>
     <item>
       <title>Genie 4 is still a waitlist: what a world model you steer by typing means for designers</title>
       <link>https://designrefs.com/en/articles/genie-4-world-model-designers-waitlist/</link>
