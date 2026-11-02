@@ -145,6 +145,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://designrefs.com/articles/penpot-2-19-shared-design-tokens/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://designrefs.com/articles/figma-shader-plugin-version-restore/</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
@@ -386,6 +392,12 @@
   </url>
   <url>
     <loc>https://designrefs.com/en/articles/figma-mcp-weave-models-credits/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://designrefs.com/en/articles/penpot-2-19-shared-design-tokens/</loc>
     <lastmod>2026-11-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>

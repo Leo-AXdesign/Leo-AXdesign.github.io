@@ -11,6 +11,14 @@
     <image:image><image:loc>https://designrefs.com/og/figma-mcp-weave-models-credits.png</image:loc></image:image>
   </url>
   <url>
+    <loc>https://designrefs.com/articles/penpot-2-19-shared-design-tokens/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://designrefs.com/articles/penpot-2-19-shared-design-tokens/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://designrefs.com/en/articles/penpot-2-19-shared-design-tokens/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://designrefs.com/articles/penpot-2-19-shared-design-tokens/"/>
+    <image:image><image:loc>https://designrefs.com/og/penpot-2-19-shared-design-tokens.png</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://designrefs.com/articles/figma-shader-plugin-version-restore/</loc>
     <lastmod>2026-10-30</lastmod>
     <xhtml:link rel="alternate" hreflang="ko" href="https://designrefs.com/articles/figma-shader-plugin-version-restore/"/>
@@ -329,6 +337,14 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://designrefs.com/en/articles/figma-mcp-weave-models-credits/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://designrefs.com/articles/figma-mcp-weave-models-credits/"/>
     <image:image><image:loc>https://designrefs.com/og/en/figma-mcp-weave-models-credits.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://designrefs.com/en/articles/penpot-2-19-shared-design-tokens/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://designrefs.com/articles/penpot-2-19-shared-design-tokens/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://designrefs.com/en/articles/penpot-2-19-shared-design-tokens/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://designrefs.com/articles/penpot-2-19-shared-design-tokens/"/>
+    <image:image><image:loc>https://designrefs.com/og/en/penpot-2-19-shared-design-tokens.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://designrefs.com/en/articles/figma-shader-plugin-version-restore/</loc>
