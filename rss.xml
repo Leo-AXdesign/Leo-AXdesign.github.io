@@ -6,7 +6,88 @@
     <atom:link href="https://designrefs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>디자인하면서 생각한 것들을 적습니다. AI와 같이 일하는 법, 스타일을 말로 옮기는 법, 레퍼런스와 커뮤니티 이야기.</description>
     <language>ko</language>
-    <lastBuildDate>Fri, 30 Oct 2026 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 02 Nov 2026 09:00:00 +0900</lastBuildDate>
+    <item>
+      <title>시안 옆에 5초짜리 움직이는 버전을 붙여 달라고 할 때, 피그마 MCP로 Weave 모델을 부르면 크레딧은 어디서 나갈까</title>
+      <link>https://designrefs.com/articles/figma-mcp-weave-models-credits/</link>
+      <guid isPermaLink="true">https://designrefs.com/articles/figma-mcp-weave-models-credits/</guid>
+      <pubDate>Mon, 02 Nov 2026 09:00:00 +0900</pubDate>
+      <category>AI 디자인</category>
+      <description>피그마 릴리스 노트에 10월 26일, 외부 AI 에이전트가 Figma MCP로 Weave의 영상·이미지 모델(Seedance, Kling, Nano Banana)을 쓸 수 있다는 항목이 올라왔다. 공식 페이지에서 확인한 조건, Weave 요금표로 어림한 1회 비용, 아직 확인되지 않은 부분을 적었다.</description>
+      <content:encoded><![CDATA[    <p class="ptext">클라이언트 메일은 이렇게 온다. &quot;시안 옆에 5초짜리 움직이는 버전도 하나만 붙여 주세요. 인스타 상단에 쓸 거예요.&quot;</p>
+    <p class="ptext">시안은 피그마에 있다. 영상은 다른 도구에서 만든다. 이미지를 내보내고, 영상 툴을 열고, 올리고, 문장을 쓰고, 결과를 받아 다시 피그마나 메신저에 붙인다. 이 왕복이 한 건에 두세 번 돈다. (가정해서 그린 장면이다.)</p>
+    <p class="ptext">피그마 릴리스 노트에 이 왕복을 줄일 만한 항목이 10월 26일자로 올라왔다. 클로드나 커서 같은 외부 AI 에이전트가 Figma MCP(AI 도구와 피그마를 이어 주는 연결 방식)를 통해 Weave의 영상·이미지 모델을 부를 수 있다는 내용이다. 이 글은 직접 써 본 후기가 아니다. 피그마 릴리스 노트와 Weave 요금 페이지를 열어 확인한 내용, 그리고 이를 설명한 도움말 요약을 바탕으로 썼다. 어떤 문장을 넣으면 어떤 결과가 나오는지, 결과물의 품질은 내가 확인하지 못했다.</p>
+    <figure class="art__fig">
+      <img src="https://designrefs.com/articles/img/figma-mcp-weave-models-credits-shot1.webp" alt="피그마 릴리스 노트 (출처: https://www.figma.com/release-notes/, 캡처일 2026-10-29)" loading="lazy" decoding="async" />
+      <figcaption>피그마 릴리스 노트 (출처: https://www.figma.com/release-notes/, 캡처일 2026-10-29)</figcaption>
+    </figure>
+    <h2 class="psub" id="s1">릴리스 노트에 적힌 것은 세 줄이다</h2>
+    <p class="ptext">10월 26일 항목을 옮기면 이렇다.</p>
+    <ul class="ptext-list">
+      <li>Figma Weave의 영상·이미지 모델을 외부 AI 에이전트에서 Figma MCP로 쓸 수 있다.</li>
+      <li>예로 든 모델은 Seedance, Kling, Nano Banana다.</li>
+      <li>Weave 계정이 피그마 계정에 연결되어 있어야 하고, 이 모델로 만든 영상과 이미지는 Weave 크레딧을 쓴다.</li>
+    </ul>
+    <p class="ptext">여기까지가 내가 직접 열어 확인한 공식 문장이다. 이 항목 바로 위, 10월 27일에는 생성형 플러그인과 셰이더를 고치면 이전 버전이 남고 에이전트가 버전마다 변경 내용을 적어 준다는 항목이 있다. 같은 주에 나온 항목이지만 별개의 기능이다.</p>
+    <h2 class="psub" id="s2">8월에 이미 열린 문과 이번 업데이트의 차이</h2>
+    <p class="ptext">Weave 도구를 MCP로 쓰는 방법을 다룬 외부 글(rar.design)은 8월 11일부터 Weave 도구가 Figma MCP 서버에 연결됐다고 적는다. 이 날짜는 그 글에서 가져온 것이고, 피그마 공식 발표로는 확인하지 못했다.</p>
+    <p class="ptext">그 글이 설명하는 구조는 이렇다. Weave에서 자주 하는 작업을 노드 워크플로로 짜서 도구로 저장해 둔다. 클로드, 챗GPT, 커서 같은 클라이언트를 Figma MCP 서버에 연결하고 계정 인증을 마친다. 대화에서 &quot;내 Brand mockup 도구를 이 이미지로 돌려 줘&quot;처럼 도구 이름을 말하면 에이전트가 도구를 찾아 실행하고 진행 상황을 추적한 뒤 결과를 돌려준다. 같은 글은 에이전트가 이미 만들어진 도구만 부를 수 있고, 대화 중에 새 워크플로를 짜는 기능은 예정이라고 소개한다.</p>
+    <p class="ptext">내가 이해한 차이는 이렇다. 8월에는 &#x27;미리 짜 둔 작업 묶음&#x27;을 불렀다면, 10월 26일 항목은 &#x27;모델 자체&#x27;를 부를 수 있다고 적는다. 다만 이 둘이 정확히 어떻게 이어지는지, 모델을 부를 때도 도구 저장이 필요한지는 공식 자료에서 확인하지 못했다. 이 부분은 단정하지 않는다.</p>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th>구분</th><th>근거</th><th>확인 수준</th></tr></thead>
+      <tbody>
+        <tr><td>저장해 둔 Weave 도구를 MCP로 실행</td><td>외부 가이드(rar.design)</td><td>공식 발표 날짜 미확인</td></tr>
+        <tr><td>Weave 영상·이미지 모델을 MCP로 사용</td><td>피그마 릴리스 노트 10월 26일</td><td>공식 문장 확인</td></tr>
+        <tr><td>모델 호출 시 크레딧</td><td>릴리스 노트: Weave 크레딧 소모</td><td>공식 문장 확인</td></tr>
+      </tbody>
+    </table></div>
+    <p class="art__note">출처: <a href="https://www.figma.com/release-notes/" target="_blank" rel="noopener">Figma release notes</a>, <a href="https://rar.design/posts/figma-weave-tools-mcp-guide" target="_blank" rel="noopener">rar.design 가이드</a>. 표는 두 글의 설명을 줄여 옮긴 것이다.</p>
+    <h2 class="psub" id="s3">Weave 요금표로 어림한 한 번의 값</h2>
+    <p class="ptext">릴리스 노트는 Weave 크레딧을 쓴다고만 하고 모델별 소모량은 적지 않았다. Weave 요금 페이지도 한 번에 몇 크레딧이라고 직접 적지 않는다. 대신 플랜별로 &#x27;이 달 크레딧으로 모델마다 몇 개를 만들 수 있는지&#x27;를 표로 보여 준다. 이 숫자를 월 크레딧으로 나눠 어림해 보았다.</p>
+    <figure class="art__fig">
+      <img src="https://designrefs.com/articles/img/figma-mcp-weave-models-credits-shot2.webp" alt="Weave 요금 페이지 (출처: https://weave.figma.com/pricing, 캡처일 2026-10-29)" loading="lazy" decoding="async" />
+      <figcaption>Weave 요금 페이지 (출처: https://weave.figma.com/pricing, 캡처일 2026-10-29)</figcaption>
+    </figure>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th>플랜</th><th>월 요금(연간 결제 기준)</th><th>월 크레딧</th><th>Nano Banana 2.1</th><th>Seedance 2.5</th><th>Kling 3</th></tr></thead>
+      <tbody>
+        <tr><td>Free</td><td>$0</td><td>150</td><td>21</td><td>없음</td><td>없음</td></tr>
+        <tr><td>Starter</td><td>$24</td><td>1,500</td><td>214</td><td>115</td><td>122</td></tr>
+        <tr><td>Professional</td><td>$45</td><td>4,000</td><td>571</td><td>308</td><td>324</td></tr>
+        <tr><td>Max</td><td>$100</td><td>10,000</td><td>1,429</td><td>769</td><td>811</td></tr>
+      </tbody>
+    </table></div>
+    <p class="art__note">출처: <a href="https://weave.figma.com/pricing" target="_blank" rel="noopener">Weave Pricing</a> (2026-10-29 확인). 모델 열은 요금 페이지가 &#x27;월 크레딧으로 만들 수 있는 개수&#x27;로 보여 준 값이다. 월 요금은 연간 결제 기준 표시이고, 월 결제 가격은 페이지 본문에서 확인하지 못했다. Team과 Enterprise는 생략했다.</p>
+    <p class="ptext">나눗셈은 단순하다. Starter 기준으로 1,500 ÷ 214는 약 7, 1,500 ÷ 115는 약 13, 1,500 ÷ 122는 약 12다. Professional과 Max에서도 같은 값이 나온다. 그러니 이미지 한 장이 약 7크레딧, 영상 한 건이 약 12~13크레딧이라는 계산이다. 이것은 요금 페이지의 개수를 거꾸로 계산한 어림값이다. 영상 길이, 해상도, 옵션에 따라 실제 소모가 달라지는지는 페이지에 나오지 않는다. 같은 페이지의 Starter 설명에는 &#x27;영상 약 7분 또는 이미지 3,750장&#x27;이라는 표현도 있어서, 영상 한 건의 길이 기준이 따로 있을 가능성이 크다.</p>
+    <p class="ptext">그래도 쓸 만한 감각은 얻는다. 클라이언트 요청 한 건에 영상 시안을 열 개 뽑아 본다고 하면 Starter 기준으로 130크레딧 안팎이다. 월 1,500에서 한 건에 열 개씩 열 건이면 한 달이 찬다는 뜻이다. 어림값이니 계획표가 아니라 &#x27;한 달에 몇 번까지 부담 없이 눌러 볼 수 있는가&#x27;를 가늠하는 용도로만 쓴다.</p>
+    <p class="ptext">무료 플랜은 월 150크레딧이고 영상 모델은 표에 &#x27;없음&#x27;으로 나온다. 위의 Nano Banana 2.1 열 21은 무료 플랜 기준 이미지 개수다. 무료로 MCP 호출까지 되는지는 어느 페이지에서도 확인하지 못했다. 요금 페이지는 API 접근을 Enterprise 항목에만 적고 MCP는 언급하지 않는다.</p>
+    <h2 class="psub" id="s4">크레딧이 두 군데에 있다</h2>
+    <p class="ptext">이 업데이트에서 실무상 가장 신경 쓰이는 부분이다. 피그마 에이전트는 10월 6일부터 피그마 AI 크레딧을 쓴다고 릴리스 노트에 적혀 있다(<a href="https://designrefs.com/articles/figma-agent-ai-credits-ga/">피그마 에이전트 유료 전환 글</a>에서 다뤘다). 이번 항목은 Weave 모델을 부르면 Weave 크레딧을 쓴다고 따로 적는다. 피그마 안에서 에이전트에게 시키는 일과, 밖의 AI에서 Weave 모델을 부르는 일이 서로 다른 지갑에서 나간다는 말이다.</p>
+    <ul class="ptext-list">
+      <li>팀에서 크레딧 담당자가 한 명이면 Weave 쪽 잔량도 같이 봐야 한다.</li>
+      <li>피그마 AI 크레딧이 남아 있어도 Weave 크레딧이 비면 영상은 안 나온다고 읽는 것이 안전하다. 다만 이 연동이 두 크레딧을 어떻게 나눠 쓰는지는 공식 문장으로 확인하지 못했다.</li>
+      <li>Weave 요금 페이지에 따르면 Starter는 크레딧이 이월되지 않고, Professional은 월 크레딧의 3배까지, Max는 4배까지 이월된다. 추가 구매 크레딧은 구매일로부터 12개월 남는다.</li>
+    </ul>
+    <p class="ptext">한 가지 더. 도움말 요약에는 에이전트가 실행 전에 사용자에게 확인을 구한다는 설명이 있었다. 원문 도움말이 열리지 않아 직접 읽지는 못했다. 확인 단계가 있다고 믿고 맡기기보다, 처음 연결한 날 한 번 돌려 보고 어느 시점에 크레딧이 빠지는지 눈으로 보는 편이 낫다.</p>
+    <h2 class="psub" id="s5">아직 모르는 것</h2>
+    <ul class="ptext-list">
+      <li><strong>모델별 정확한 소모량.</strong> 공식 표는 개수만 준다. 위 숫자는 내가 나눈 어림값이다.</li>
+      <li><strong>무료 플랜에서의 MCP 사용.</strong> 되는지 안 되는지 공식 설명이 없다.</li>
+      <li><strong>지원 모델의 전체 목록.</strong> 릴리스 노트는 Seedance, Kling, Nano Banana를 예로 들었다. 어떤 버전까지 열리는지는 적혀 있지 않다.</li>
+      <li><strong>결과물의 품질과 일관성.</strong> 같은 시안에서 움직임이 얼마나 안정적인지 독립적으로 시험한 자료를 찾지 못했다.</li>
+      <li><strong>결과물을 피그마 캔버스로 되돌리는 방식.</strong> 에이전트의 대화창에 돌려준다는 설명은 있지만, 피그마 파일에 바로 놓이는지는 확인되지 않았다.</li>
+      <li><strong>상업 이용 조건.</strong> Weave 요금 페이지는 무료 플랜에 상업 이용 라이선스가 있다고 적는다. 모델별 조건은 열어 본 자료에서 확인하지 못했다. 기준이 필요하면 <a href="https://designrefs.com/articles/ai-image-commercial-use/">AI로 만든 이미지, 클라이언트 작업에 써도 될까</a>를 먼저 본다.</li>
+    </ul>
+    <h2 class="psub" id="s6">시험해 볼 만한 것</h2>
+    <p class="ptext"><strong>요청 문장 하나로 한 번.</strong> 시안 이미지를 올려 두고 &quot;이 구도를 유지하고 5초 안에 배경만 천천히 움직이게&quot; 같은 한 문장으로 영상 한 건을 만든다. 이때 Weave 크레딧이 몇 줄었는지 적는다. 이 한 줄이 위 어림값을 맞춰 보는 유일한 기준이다.</p>
+    <p class="ptext"><strong>같은 문장으로 모델만 바꿔 두 번.</strong> Seedance와 Kling처럼 예로 든 모델 둘에 같은 문장을 주고 로고나 글자가 유지되는지 비교한다. <a href="https://designrefs.com/articles/image-ai-edit-not-reroll/">다시 뽑지 말고 고쳐 쓰는 흐름</a>에서 본 것처럼, 새로 뽑는 것보다 있는 소재를 지키는 쪽이 클라이언트 작업에는 중요하다.</p>
+    <p class="ptext"><strong>규칙 메모와 같이.</strong> 색과 글자 규칙을 적은 메모를 에이전트에 먼저 주면 움직이는 버전에서도 톤이 덜 흔들릴 수 있다. 피그마 쪽 방법은 <a href="https://designrefs.com/articles/figma-specs-markdown-context/">Specs 글</a>에 있다. 영상에서 실제로 효과가 있는지는 시험해 봐야 안다.</p>
+    <h2 class="psub" id="s7">그래서 지금은</h2>
+    <p class="ptext"><strong>먼저 가장 작은 플랜에서 크레딧을 센다.</strong> 영상 한 건, 이미지 한 장이 각각 몇 크레딧인지 직접 기록한다. 공개된 소모량이 없으니 이 기록이 팀의 기준표가 된다.</p>
+    <p class="ptext"><strong>크레딧 담당을 나눠 적는다.</strong> 피그마 AI 크레딧과 Weave 크레딧이 따로 나간다는 점을 팀 메모 한 줄로 남긴다. 클라이언트 납품 직전에 한쪽이 비어 있는 일을 막는다.</p>
+    <p class="ptext"><strong>납품에는 바로 쓰지 않는다.</strong> 모델별 사용 조건과 결과의 안정성이 확인되기 전까지는 시안 검토용 움직임으로 쓰고, 최종 파일은 따로 판단한다.</p>
+    <p class="art__note">출처: <a href="https://www.figma.com/release-notes/" target="_blank" rel="noopener">Figma release notes</a>, <a href="https://weave.figma.com/pricing" target="_blank" rel="noopener">Weave Pricing</a>, <a href="https://help.figma.com/hc/en-us/articles/35280808976151-Figma-MCP-collection-Overview" target="_blank" rel="noopener">Figma MCP collection overview</a>, <a href="https://rar.design/posts/figma-weave-tools-mcp-guide" target="_blank" rel="noopener">rar.design: Figma Weave 도구 MCP 가이드</a>, <a href="https://slightlymoody.substack.com/p/last-week-in-ai-tools-for-creatives-0f5" target="_blank" rel="noopener">Last Week in AI Tools for Creatives (Oct 12th to Oct 18th, 2026)</a>.</p>]]></content:encoded>
+    </item>
     <item>
       <title>&quot;아까 효과가 더 나았어요&quot; 메일 한 통, 피그마 셰이더와 생성 플러그인에 버전 기록이 생겼다</title>
       <link>https://designrefs.com/articles/figma-shader-plugin-version-restore/</link>

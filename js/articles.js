@@ -1,6 +1,7 @@
 // 이 파일은 tools/build-articles.py 가 만듭니다. 직접 고치지 마세요.
 // 글은 content/articles/*.md 에서 고칩니다.
 const ARTICLES = [
+  { slug: "figma-mcp-weave-models-credits", title: "시안 옆에 5초짜리 움직이는 버전을 붙여 달라고 할 때, 피그마 MCP로 Weave 모델을 부르면 크레딧은 어디서 나갈까", desc: "피그마 릴리스 노트에 10월 26일, 외부 AI 에이전트가 Figma MCP로 Weave의 영상·이미지 모델(Seedance, Kling, Nano Banana)을 쓸 수 있다는 항목이 올라왔다. 공식 페이지에서 확인한 조건, Weave 요금표로 어림한 1회 비용, 아직 확인되지 않은 부분을 적었다.", date: "2026-11-02", tag: "AI 디자인", min: 6, views: ["ai", "tool", "uiux"] },
   { slug: "figma-shader-plugin-version-restore", title: "\"아까 효과가 더 나았어요\" 메일 한 통, 피그마 셰이더와 생성 플러그인에 버전 기록이 생겼다", desc: "피그마 에이전트가 만든 셰이더와 생성 플러그인을 고치면 이제 이전 버전이 남고, 되돌릴 수 있다. 10월 27일 릴리스 노트와 개발자 문서에서 확인된 것, 화면에서 어디서 보는지 같은 비어 있는 부분, 수정 전에 해 둘 일을 적었다.", date: "2026-10-30", tag: "AI 디자인", min: 6, views: ["ai", "tool", "uiux"] },
   { slug: "genie-4-world-model-designers-waitlist", title: "지니 4는 아직 대기 명단이다, 말로 날씨를 바꾸는 세계 모델이 디자이너에게 주는 것", desc: "구글 딥마인드가 월드 모델 지니 4를 연구 프리뷰로 냈다. 영상을 뽑는 도구가 아니라 움직이는 동안 장면을 계속 만든다. 공식 블로그에서 확인한 기능, 공개 범위, 한계와 아직 밝혀지지 않은 가격·화질·사용법을 나눠 적었다.", date: "2026-10-29", tag: "AI 디자인", min: 5, views: ["ai", "tool", "uiux"] },
   { slug: "figma-make-gemini-4-argon-model-picker", title: "폰트 하나 바꾸는 데 30크레딧, 피그마 메이크에 모델을 고르는 칸이 있다", desc: "피그마 메이크 모델 선택기에 Gemini 4 Argon이 들어왔다. 릴리스 노트, 도움말, 구글 문서에서 확인한 사실과 확인하지 못한 크레딧 소모량, 같은 문장을 두 모델로 돌려 기록하는 방법을 적었다.", date: "2026-10-29", tag: "AI 디자인", min: 6, views: ["ai", "tool", "uiux"] },

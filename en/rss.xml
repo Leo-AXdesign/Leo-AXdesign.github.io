@@ -6,7 +6,88 @@
     <atom:link href="https://designrefs.com/en/rss.xml" rel="self" type="application/rss+xml" />
     <description>Notes from a designer in Korea: working with AI, putting style into words, collecting references and design communities. Translated from Korean.</description>
     <language>en</language>
-    <lastBuildDate>Fri, 30 Oct 2026 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 02 Nov 2026 09:00:00 +0900</lastBuildDate>
+    <item>
+      <title>When a client asks for a 5-second moving version next to the mockup, where do the credits go if you call Weave models through Figma MCP?</title>
+      <link>https://designrefs.com/en/articles/figma-mcp-weave-models-credits/</link>
+      <guid isPermaLink="true">https://designrefs.com/en/articles/figma-mcp-weave-models-credits/</guid>
+      <pubDate>Mon, 02 Nov 2026 09:00:00 +0900</pubDate>
+      <category>AI Design</category>
+      <description>Figma&#x27;s release notes say that since October 26, an outside AI agent can use Weave&#x27;s video and image models (Seedance, Kling, Nano Banana) through the Figma MCP. What the official pages confirm, a rough per-run cost worked out from Weave&#x27;s pricing page, and what is still unknown.</description>
+      <content:encoded><![CDATA[    <p class="ptext">The client&#x27;s email reads: &quot;Could you add a 5-second moving version next to the mockup? It&#x27;s for the top of an Instagram post.&quot;</p>
+    <p class="ptext">The mockup is in Figma. The video gets made somewhere else. You export the image, open a video tool, upload it, write a sentence, take the result and paste it back into Figma or a chat. That round trip happens two or three times per request. (This is an imagined scene.)</p>
+    <p class="ptext">Figma&#x27;s release notes have an entry dated October 26 that could shorten it. An outside AI agent such as Claude or Cursor can now use Weave&#x27;s video and image models through the Figma MCP (the connection that lets AI tools talk to Figma). This is not a hands-on review. It is based on the release notes and Weave&#x27;s pricing page that I opened, plus a summary of a help article. I did not test what a given prompt produces or how good the results are.</p>
+    <figure class="art__fig">
+      <img src="https://designrefs.com/articles/img/figma-mcp-weave-models-credits-shot1.webp" alt="Figma release notes (source: https://www.figma.com/release-notes/, captured 2026-10-29)" loading="lazy" decoding="async" />
+      <figcaption>Figma release notes (source: https://www.figma.com/release-notes/, captured 2026-10-29)</figcaption>
+    </figure>
+    <h2 class="psub" id="s1">The release note is three lines long</h2>
+    <p class="ptext">The October 26 entry says:</p>
+    <ul class="ptext-list">
+      <li>Weave&#x27;s video and image models can be used from an external AI agent through the Figma MCP.</li>
+      <li>The models named as examples are Seedance, Kling and Nano Banana.</li>
+      <li>A Weave account must be connected to your Figma account, and videos and images made with these models consume Weave credits.</li>
+    </ul>
+    <p class="ptext">That is what I confirmed directly from the official page. The entry above it, dated October 27, is a separate feature: editing a generative plugin or shader now keeps earlier versions, and the agent writes a change description for each.</p>
+    <h2 class="psub" id="s2">The door opened in August, and what is different now</h2>
+    <p class="ptext">A third-party guide to using Weave tools through MCP (rar.design) says Weave tools were connected to the Figma MCP server on August 11. That date comes from the guide, and I could not confirm it against an official Figma announcement.</p>
+    <p class="ptext">The guide describes the flow like this. You build a task as a node workflow in Weave and save it as a tool. You connect a client such as Claude, ChatGPT or Cursor to the Figma MCP server and finish authentication. In the chat you name the tool, for example &quot;run my Brand mockup tool with these images,&quot; and the agent finds it, runs it, tracks progress and returns the result. The guide also says the agent can only call tools that already exist, and that building new workflows from the chat is planned.</p>
+    <p class="ptext">As I read it, August was about calling a prepared bundle of steps, while the October 26 entry says the models themselves can be called. How the two connect, and whether calling a model still requires a saved tool, is not stated in any official page I saw. I am not asserting either.</p>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th>Item</th><th>Basis</th><th>Confidence</th></tr></thead>
+      <tbody>
+        <tr><td>Run saved Weave tools through MCP</td><td>External guide (rar.design)</td><td>Official announcement date not confirmed</td></tr>
+        <tr><td>Use Weave video and image models through MCP</td><td>Figma release notes, Oct 26</td><td>Official sentence confirmed</td></tr>
+        <tr><td>Credits when calling models</td><td>Release notes: consumes Weave credits</td><td>Official sentence confirmed</td></tr>
+      </tbody>
+    </table></div>
+    <p class="art__note">Sources: <a href="https://www.figma.com/release-notes/" target="_blank" rel="noopener">Figma release notes</a>, <a href="https://rar.design/posts/figma-weave-tools-mcp-guide" target="_blank" rel="noopener">rar.design guide</a>. The table condenses both.</p>
+    <h2 class="psub" id="s3">A rough per-run cost from Weave&#x27;s pricing page</h2>
+    <p class="ptext">The release note says Weave credits are used but gives no per-model amounts. Weave&#x27;s pricing page does not state a per-run cost either. Instead it shows how many outputs each plan&#x27;s monthly credits produce per model. I divided the monthly credits by those counts.</p>
+    <figure class="art__fig">
+      <img src="https://designrefs.com/articles/img/figma-mcp-weave-models-credits-shot2.webp" alt="Weave pricing page (source: https://weave.figma.com/pricing, captured 2026-10-29)" loading="lazy" decoding="async" />
+      <figcaption>Weave pricing page (source: https://weave.figma.com/pricing, captured 2026-10-29)</figcaption>
+    </figure>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th>Plan</th><th>Monthly price (annual billing)</th><th>Monthly credits</th><th>Nano Banana 2.1</th><th>Seedance 2.5</th><th>Kling 3</th></tr></thead>
+      <tbody>
+        <tr><td>Free</td><td>$0</td><td>150</td><td>21</td><td>none</td><td>none</td></tr>
+        <tr><td>Starter</td><td>$24</td><td>1,500</td><td>214</td><td>115</td><td>122</td></tr>
+        <tr><td>Professional</td><td>$45</td><td>4,000</td><td>571</td><td>308</td><td>324</td></tr>
+        <tr><td>Max</td><td>$100</td><td>10,000</td><td>1,429</td><td>769</td><td>811</td></tr>
+      </tbody>
+    </table></div>
+    <p class="art__note">Source: <a href="https://weave.figma.com/pricing" target="_blank" rel="noopener">Weave Pricing</a> (checked 2026-10-29). The model columns are the output counts the page shows for a month of credits. Prices are shown for annual billing; I could not find monthly-billing prices in the page text. Team and Enterprise are omitted.</p>
+    <p class="ptext">The arithmetic is simple. On Starter, 1,500 ÷ 214 is about 7, 1,500 ÷ 115 is about 13 and 1,500 ÷ 122 is about 12. Professional and Max give the same values. That implies roughly 7 credits per image and 12 to 13 credits per video. This is a back-calculated estimate, not a published price. The page does not say whether video length, resolution or options change the cost. Its Starter description also says &quot;about 7 minutes of video or 3,750 images,&quot; so there may be a length basis behind the video count.</p>
+    <p class="ptext">Still, it gives a feel for scale. Ten video drafts for one client request would be around 130 credits on Starter, so ten such requests would use up the 1,500 monthly credits. Treat it as a way to judge how many times a month you can press the button without worry, not as a budget.</p>
+    <p class="ptext">The free plan has 150 monthly credits and shows no video models. The 21 under Nano Banana 2.1 is the image count on Free. I could not confirm whether MCP calls work on the free plan. The pricing page mentions API access only under Enterprise and does not mention MCP.</p>
+    <h2 class="psub" id="s4">Credits now live in two places</h2>
+    <p class="ptext">This is the part that matters most in practice. The release notes say the Figma agent has used Figma AI credits since October 6 (covered in <a href="https://designrefs.com/articles/figma-agent-ai-credits-ga/">our piece on the Figma agent going paid</a>). This new entry says calling Weave models uses Weave credits. Work you ask the agent to do inside Figma and work you ask an outside AI to do with Weave models therefore come out of different wallets.</p>
+    <ul class="ptext-list">
+      <li>If one person on the team watches credits, Weave balances need watching too.</li>
+      <li>It is safest to assume that having Figma AI credits left will not produce video if Weave credits run out. How the integration splits the two is not stated in an official sentence I could confirm.</li>
+      <li>According to the pricing page, Starter credits do not roll over, Professional rolls over up to 3× the monthly credits and Max up to 4×. Top-up credits last 12 months from purchase.</li>
+    </ul>
+    <p class="ptext">One more point. A summary of the help article said the agent asks for confirmation before running. I could not open the original help page. Rather than trusting a confirmation step, run it once on the day you connect and watch when credits actually drop.</p>
+    <h2 class="psub" id="s5">What is still unknown</h2>
+    <ul class="ptext-list">
+      <li><strong>Exact per-model cost.</strong> The official table gives counts only. The figures above are my division.</li>
+      <li><strong>MCP on the free plan.</strong> No official statement either way.</li>
+      <li><strong>The full model list.</strong> The release note names Seedance, Kling and Nano Banana as examples. Which versions are open is not listed.</li>
+      <li><strong>Quality and consistency.</strong> I found no independent test of how steady the motion is for the same mockup.</li>
+      <li><strong>How results return to the Figma canvas.</strong> The guide says results come back to the chat. Whether they land in a Figma file is not confirmed.</li>
+      <li><strong>Commercial terms.</strong> The pricing page says the free plan includes a commercial license. Per-model terms were not in the pages I opened. For a baseline, see <a href="https://designrefs.com/articles/ai-image-commercial-use/">Can you use AI images in client work?</a>.</li>
+    </ul>
+    <h2 class="psub" id="s6">Things worth trying</h2>
+    <p class="ptext"><strong>One sentence, one run.</strong> Upload a mockup and ask for something like &quot;keep the composition and move only the background slowly over 5 seconds.&quot; Write down how many Weave credits it cost. That single line is the only way to check the estimate above.</p>
+    <p class="ptext"><strong>Same sentence, two models.</strong> Give Seedance and Kling the same sentence and see whether the logo and text survive. As in <a href="https://designrefs.com/articles/image-ai-edit-not-reroll/">the shift from re-rolling to editing</a>, keeping the existing asset matters more than generating a new one in client work.</p>
+    <p class="ptext"><strong>Alongside a rules note.</strong> Giving the agent a note with your colors and type rules first may keep the moving version closer to the brand. The Figma side is in <a href="https://designrefs.com/articles/figma-specs-markdown-context/">our Specs article</a>. Whether it helps for video has to be tested.</p>
+    <h2 class="psub" id="s7">So for now</h2>
+    <p class="ptext"><strong>Count credits on the smallest plan first.</strong> Record what one video and one image cost. With no published amounts, that record becomes your team&#x27;s reference.</p>
+    <p class="ptext"><strong>Write down who watches which credits.</strong> One line in a team note saying Figma AI credits and Weave credits are separate prevents one running dry right before delivery.</p>
+    <p class="ptext"><strong>Don&#x27;t ship it straight away.</strong> Until per-model terms and consistency are clear, use the motion for review drafts and judge final files separately.</p>
+    <p class="art__note">Sources: <a href="https://www.figma.com/release-notes/" target="_blank" rel="noopener">Figma release notes</a>, <a href="https://weave.figma.com/pricing" target="_blank" rel="noopener">Weave Pricing</a>, <a href="https://help.figma.com/hc/en-us/articles/35280808976151-Figma-MCP-collection-Overview" target="_blank" rel="noopener">Figma MCP collection overview</a>, <a href="https://rar.design/posts/figma-weave-tools-mcp-guide" target="_blank" rel="noopener">rar.design: Figma Weave tools via MCP guide</a>, <a href="https://slightlymoody.substack.com/p/last-week-in-ai-tools-for-creatives-0f5" target="_blank" rel="noopener">Last Week in AI Tools for Creatives (Oct 12th to Oct 18th, 2026)</a>.</p>]]></content:encoded>
+    </item>
     <item>
       <title>&quot;The earlier effect was better&quot;: Figma&#x27;s generative shaders and plugins now keep version history</title>
       <link>https://designrefs.com/en/articles/figma-shader-plugin-version-restore/</link>
