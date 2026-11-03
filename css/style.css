@@ -360,6 +360,7 @@ mark { background: none; color: inherit; text-decoration: underline; text-underl
 .srow__links { display: flex; gap: 14px; padding-top: 3px; white-space: nowrap; }
 .srow__links a { font-size: 12px; font-weight: 500; color: var(--ink-2); }
 .srow__links a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+.srow__try { align-self: flex-start; margin-top: 8px; font-size: 12px; font-weight: 600; color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
 .sources { display: flex; flex-wrap: wrap; gap: 6px 18px; align-items: baseline; padding: 20px 0 0; font-size: 12.5px; }
 .sources__label { color: var(--ink-3); }
 .sources__link { color: var(--ink-2); }

@@ -360,6 +360,13 @@
       </a>`;
   }
 
+  // 스타일 현상소(/lab/)에 있는 양식은 '내 사진으로 해 보기'. tools/build-pages.py 의 LAB_SLUGS 와 같아야 합니다
+  const LAB_SLUGS = new Set(['risograph', 'pop-art', 'pixel-art', 'punk', 'constructivism', 'cyberpunk', 'vaporwave', 'psychedelic', 'memphis']);
+  function labLink(x) {
+    const slug = (x.img || '').split('/').pop().split('.')[0];
+    return LANG !== 'en' && LAB_SLUGS.has(slug) ? `<a class="srow__try" href="/lab/#${slug}">내 사진으로 해 보기</a>` : '';
+  }
+
   function renderStyleRow(x) {
     return `
       <div class="srow srow--style">
@@ -368,6 +375,7 @@
           <span class="srow__era">${escapeHtml(x.era)}</span>
           <a class="srow__name" href="${pinUrl(x.q)}" target="_blank" rel="noopener noreferrer">${highlight(x.name, state.query)}</a>
           <span class="srow__en">${highlight(LANG === 'en' ? x.ko || '' : x.en, state.query)}</span>
+          ${labLink(x)}
         </span>
         <span class="srow__body">
           <p class="srow__desc">${highlight(x.desc, state.query)}</p>

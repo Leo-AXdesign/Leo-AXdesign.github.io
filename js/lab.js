@@ -184,6 +184,44 @@
   function resetText(x) { x.textAlign = 'left'; x.textBaseline = 'alphabetic'; if ('letterSpacing' in x) x.letterSpacing = '0px'; }
   const mixInk = (r, g, b, ink, k) => [r * (1 - k * (1 - ink[0] / 255)), g * (1 - k * (1 - ink[1] / 255)), b * (1 - k * (1 - ink[2] / 255))];
 
+  // 색이 필요한 양식은 분석본에 R·G·B 를 따로 둡니다 (sampler 로 한 채널씩 읽으려고)
+  function withRGB(A) {
+    const n = A.w * A.h; A.R = new Float32Array(n); A.G = new Float32Array(n); A.B = new Float32Array(n);
+    for (let i = 0, j = 0; j < n; i += 4, j++) { A.R[j] = A.d[i]; A.G[j] = A.d[i + 1]; A.B[j] = A.d[i + 2]; }
+    return A;
+  }
+  // 그림을 상자에 꽉 차게. bias 는 세로로 어디를 남길지 (0 위 · 0.5 가운데). 얼굴은 대개 위쪽에 있어서 틀 안에서는 위를 남깁니다
+  function fitInto(x, src, bx, by, bw, bh, bias = 0.5) {
+    const k = Math.max(bw / src.width, bh / src.height), dw = src.width * k, dh = src.height * k;
+    x.drawImage(src, bx + (bw - dw) / 2, by + (bh - dh) * bias, dw, dh);
+  }
+  // VHS: 빨강·파랑이 옆으로 번지고, 주사선과 아래쪽 트래킹 띠, 노이즈
+  function vhs(x, W, H, p, s) {
+    if (p.vhs <= 0 && p.noise <= 0) return;
+    const im = x.getImageData(0, 0, W, H), d = im.data, src = new Uint8ClampedArray(d);
+    const off = Math.round((1 + 7 * p.vhs) * s), line = Math.max(2, Math.round(3 * s));
+    const bands = [[0.83, 0.03], [0.91, 0.01]];
+    for (let y = 0; y < H; y++) {
+      let shift = 0, hot = 0;
+      for (const [a, b] of bands) if (p.vhs > 0 && Math.abs(y / H - a) < b) { shift = Math.round((hash((y / (2 * s)) | 0, 3, 71) - 0.5) * W * 0.05 * p.vhs); hot = 1; }
+      const sc = (y / line | 0) % 2 ? 1 : 1 - p.vhs * 0.2, row = y * W;
+      for (let xx = 0; xx < W; xx++) {
+        const sx = clamp(xx + shift, 0, W - 1), i = (row + xx) * 4;
+        const r = src[(row + clamp(sx - off, 0, W - 1)) * 4], g = src[(row + sx) * 4 + 1], b = src[(row + clamp(sx + off, 0, W - 1)) * 4 + 2];
+        const nz = (hash(xx, y, 73) - 0.5) * 36 * p.noise + (hot ? (hash(xx, y, 79) - 0.5) * 110 * p.vhs : 0);
+        d[i] = r * sc + nz; d[i + 1] = g * sc + nz; d[i + 2] = b * sc + nz;
+      }
+    }
+    x.putImageData(im, 0, 0);
+  }
+  // 번짐: 작게 줄였다 키운 사본을 '스크린'으로 겹칩니다 (ctx.filter 없는 사파리에서도 같게)
+  function bloom(x, W, H, k) {
+    const sm = canvas(W / 14, H / 14), smx = ctx2d(sm);
+    smx.imageSmoothingQuality = 'high'; smx.drawImage(x.canvas, 0, 0, sm.width, sm.height);
+    x.save(); x.globalCompositeOperation = 'screen'; x.globalAlpha = k; x.imageSmoothingQuality = 'high';
+    x.drawImage(sm, 0, 0, W, H); x.restore();
+  }
+
   /* ================= 양식들 ================= */
   const STYLES = [
     {
@@ -601,13 +639,282 @@
           d[i] = r * sc + nz; d[i + 1] = g * sc + nz; d[i + 2] = b * sc + nz; d[i + 3] = 255;
         }
         c.putImageData(im, 0, 0);
-        // 번짐: 작게 줄였다 키운 사본을 '스크린'으로 겹칩니다 (ctx.filter 없는 사파리에서도 같게)
-        if (p.glow > 0) {
-          const k = 1 / 14, sm = canvas(W * k, H * k), smx = ctx2d(sm);
-          smx.imageSmoothingQuality = 'high'; smx.drawImage(c.canvas, 0, 0, sm.width, sm.height);
-          c.save(); c.globalCompositeOperation = 'screen'; c.globalAlpha = p.glow * 0.55; c.imageSmoothingQuality = 'high';
-          c.drawImage(sm, 0, 0, W, H); c.restore();
+        if (p.glow > 0) bloom(c, W, H, p.glow * 0.55);
+      },
+    },
+    {
+      id: 'vapor', name: '바포웨이브', thumb: 'vaporwave',
+      note: '분홍과 하늘색으로 물든 사진, 줄무늬 태양과 끝없는 격자 바닥, 늘어진 VHS 테이프. 1990년대 인터넷을 향한 향수.',
+      controls: [
+        { key: 'frame', label: '틀', type: 'choice', options: ['태양과 격자', '옛날 창', '사진 가득'], value: '태양과 격자' },
+        { key: 'tone', label: '색 세기', min: 0.4, max: 1, step: 0.05, value: 0.85 },
+        { key: 'vhs', label: 'VHS 줄', min: 0, max: 1, step: 0.05, value: 0.45 },
+        { key: 'sun', label: '태양 크기', min: 0.24, max: 0.44, step: 0.01, value: 0.34, adv: true },
+        { key: 'grid', label: '격자 촘촘함', min: 6, max: 24, step: 1, value: 12, adv: true },
+        { key: 'glow', label: '번짐', min: 0, max: 1, step: 0.05, value: 0.35, adv: true },
+        { key: 'noise', label: '노이즈', min: 0, max: 1, step: 0.05, value: 0.3, adv: true },
+      ],
+      slots: ['어둠', '중간', '밝음', '하늘', '태양', '격자'],
+      palettes: [
+        { name: '마이애미', colors: ['#2a0f5c', '#ff4fa3', '#7df9ff', '#ff8fd8', '#ffe45e', '#ff2fd0'] },
+        { name: '파스텔 몰', colors: ['#3b2a6e', '#f7a8d8', '#d4f8ff', '#b8a4ff', '#fff4a8', '#ff71ce'] },
+        { name: '청록 노을', colors: ['#0d1b4c', '#01cdfe', '#fffb96', '#ff71ce', '#fff6c2', '#05ffa1'] },
+        { name: '보라 밤', colors: ['#140726', '#7b2cbf', '#ff9ef5', '#4a1d8f', '#ff6ad5', '#b967ff'] },
+      ],
+      prep: (src, p, g) => withRGB(analyze(src, 0, g)),
+      render(c, A, W, H, p, s) {
+        const [dk, md, lt, sky, sun, grd] = p.colors.map(rgb), m = Math.min(W, H);
+        // 사진: 밝기를 어둠 → 중간 → 밝음 그라데이션으로. '색 세기'만큼 원래 색에서 옮겨 갑니다
+        const S = sampler(A, W, H), photo = canvas(W, H), px = ctx2d(photo), im = px.createImageData(W, H), d = im.data;
+        for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) {
+          const l = clamp(S(A.L, x, y) * 1.1 - 0.05), t = l * 2, j = t < 1 ? 0 : 1, f = t - j, a = j ? md : dk, b = j ? lt : md, i = (y * W + x) * 4;
+          const o = [S(A.R, x, y), S(A.G, x, y), S(A.B, x, y)];
+          for (let ch = 0; ch < 3; ch++) d[i + ch] = o[ch] + (a[ch] + (b[ch] - a[ch]) * f - o[ch]) * p.tone;
+          d[i + 3] = 255;
         }
+        px.putImageData(im, 0, 0);
+        const vgrad = (y0, y1, a, b) => { const gr = c.createLinearGradient(0, y0, 0, y1); gr.addColorStop(0, css(a)); gr.addColorStop(1, css(b)); return gr; };
+
+        if (p.frame === '사진 가득') c.drawImage(photo, 0, 0);
+        else if (p.frame === '태양과 격자') {
+          const hz = H * 0.64;
+          c.fillStyle = vgrad(0, hz, dk, sky); c.fillRect(0, 0, W, hz);
+          // 태양 = 사진. 아래쪽 절반에만 줄무늬 틈을 내서 얼굴은 그대로 둡니다
+          const r = W * p.sun, sx = W / 2, sy = hz - r * 0.55, sc = canvas(r * 2, r * 2), sx2 = ctx2d(sc);
+          sx2.beginPath(); sx2.arc(r, r, r, 0, Math.PI * 2); sx2.clip();
+          fitInto(sx2, photo, 0, 0, r * 2, r * 2, 0.3);
+          sx2.globalCompositeOperation = 'source-atop'; sx2.globalAlpha = 0.3;
+          sx2.fillStyle = (() => { const gr = sx2.createLinearGradient(0, 0, 0, r * 2); gr.addColorStop(0, css(sun)); gr.addColorStop(1, css(md)); return gr; })();
+          sx2.fillRect(0, 0, r * 2, r * 2);
+          sx2.globalCompositeOperation = 'destination-out'; sx2.globalAlpha = 1;
+          for (let i = 0; i < 6; i++) sx2.fillRect(0, r * (1.18 + i * 0.085), r * 2, r * (0.012 + i * 0.01));
+          c.save(); c.shadowColor = css(sun); c.shadowBlur = r * 0.35; c.fillStyle = css(sun); c.globalAlpha = 0.55;
+          c.beginPath(); c.arc(sx, sy, r * 0.97, 0, Math.PI * 2); c.fill(); c.restore();
+          c.drawImage(sc, sx - r, sy - r);
+          // 바닥: 소실점으로 모이는 격자
+          c.fillStyle = vgrad(hz, H, dk.map((v, k) => v + (sky[k] - v) * 0.18), dk); c.fillRect(0, hz, W, H - hz);
+          c.save(); c.strokeStyle = css(grd); c.lineWidth = Math.max(1, 2.2 * s); c.shadowColor = css(grd); c.shadowBlur = 10 * s;
+          const n = Math.round(p.grid), bot = W * 3 / n;
+          c.beginPath();
+          for (let i = -n; i <= n; i++) { c.moveTo(W / 2 + i * bot * 0.1, hz); c.lineTo(W / 2 + i * bot, H); }
+          const rows = Math.round(n * 0.8);
+          for (let k = 0; k <= rows; k++) { const y = hz + (H - hz) * Math.pow(k / rows, 2.1); c.moveTo(0, y); c.lineTo(W, y); }
+          c.stroke(); c.restore();
+        } else {
+          // 옛날 창: 그라데이션 하늘 + 모눈 위에 90년대 컴퓨터 창 두 개 (글자는 넣지 않습니다)
+          c.fillStyle = vgrad(0, H, dk, sky); c.fillRect(0, 0, W, H);
+          c.save(); c.strokeStyle = css(lt); c.globalAlpha = 0.16; c.lineWidth = Math.max(1, 1.4 * s); c.beginPath();
+          const gs = W / Math.round(p.grid);
+          for (let x = gs; x < W; x += gs) { c.moveTo(x, 0); c.lineTo(x, H); }
+          for (let y = gs; y < H; y += gs) { c.moveTo(0, y); c.lineTo(W, y); }
+          c.stroke(); c.restore();
+          const win = (x, y, w, h, fill) => {
+            const b = Math.max(2, m * 0.011), tb = m * 0.05, hi = '#ffffff', lo = '#3a3a3a', face = '#c6c6c6';
+            c.fillStyle = css(dk); c.globalAlpha = 0.55; c.fillRect(x + m * 0.022, y + m * 0.022, w, h); c.globalAlpha = 1;
+            const bevel = (x2, y2, w2, h2, a, z) => { c.fillStyle = face; c.fillRect(x2, y2, w2, h2); c.fillStyle = a; c.fillRect(x2, y2, w2, b * 0.5); c.fillRect(x2, y2, b * 0.5, h2); c.fillStyle = z; c.fillRect(x2, y2 + h2 - b * 0.5, w2, b * 0.5); c.fillRect(x2 + w2 - b * 0.5, y2, b * 0.5, h2); };
+            bevel(x, y, w, h, hi, lo);
+            const gr = c.createLinearGradient(x, 0, x + w, 0); gr.addColorStop(0, css(dk)); gr.addColorStop(1, css(md));
+            c.fillStyle = gr; c.fillRect(x + b, y + b, w - b * 2, tb);
+            const bs = tb * 0.72, by = y + b + (tb - bs) / 2;
+            for (let k = 0; k < 3; k++) {
+              const bx = x + w - b * 1.6 - (bs + b * 0.4) * (3 - k);
+              bevel(bx, by, bs, bs, hi, lo);
+              c.strokeStyle = '#111'; c.lineWidth = Math.max(1, bs * 0.12); c.beginPath();
+              if (k === 0) { c.moveTo(bx + bs * 0.28, by + bs * 0.7); c.lineTo(bx + bs * 0.62, by + bs * 0.7); }
+              else if (k === 1) c.rect(bx + bs * 0.28, by + bs * 0.28, bs * 0.44, bs * 0.4);
+              else { c.moveTo(bx + bs * 0.3, by + bs * 0.3); c.lineTo(bx + bs * 0.7, by + bs * 0.7); c.moveTo(bx + bs * 0.7, by + bs * 0.3); c.lineTo(bx + bs * 0.3, by + bs * 0.7); }
+              c.stroke();
+            }
+            const ix = x + b * 1.5, iy = y + b * 2 + tb, iw = w - b * 3, ih = h - b * 3.5 - tb;
+            c.fillStyle = lo; c.fillRect(ix - b * 0.5, iy - b * 0.5, iw + b, ih + b);
+            fill(ix, iy, iw, ih);
+          };
+          win(W * 0.06, H * 0.05, W * 0.5, H * 0.26, (x, y, w, h) => { c.fillStyle = vgrad(y, y + h, lt, sky); c.fillRect(x, y, w, h); });
+          win(W * 0.11, H * 0.15, W * 0.8, H * 0.74, (x, y, w, h) => { c.save(); c.beginPath(); c.rect(x, y, w, h); c.clip(); fitInto(c, photo, x, y, w, h, 0.3); c.restore(); });
+          // 반짝이 몇 개
+          const R = rng(7);
+          c.fillStyle = css(lt);
+          for (let k = 0; k < 5; k++) {
+            const x = (0.08 + R() * 0.84) * W, y = (k < 2 ? 0.92 + R() * 0.05 : R() < 0.5 ? 0.04 + R() * 0.08 : 0.35 + R() * 0.3) * H, r = m * (0.012 + R() * 0.02);
+            if (k >= 2 && x > W * 0.08 && x < W * 0.93 && y > H * 0.13) continue;
+            c.beginPath(); c.moveTo(x, y - r * 2); c.quadraticCurveTo(x, y, x + r * 2, y); c.quadraticCurveTo(x, y, x, y + r * 2); c.quadraticCurveTo(x, y, x - r * 2, y); c.quadraticCurveTo(x, y, x, y - r * 2); c.fill();
+          }
+        }
+        vhs(c, W, H, p, s);
+        if (p.glow > 0) bloom(c, W, H, p.glow * 0.5);
+      },
+    },
+
+    {
+      id: 'psych', name: '사이키델릭', thumb: 'psychedelic', shuffle: '무늬 섞기',
+      note: '녹아 흐르는 사진과 등고선처럼 겹친 색 띠. 1960년대 샌프란시스코 공연 포스터의 환각. 무늬는 섞을 때마다 바뀝니다.',
+      controls: [
+        { key: 'melt', label: '녹임', min: 0, max: 1, step: 0.05, value: 0.5 },
+        { key: 'bands', label: '색 띠 수', min: 3, max: 12, step: 1, value: 6 },
+        { key: 'swirl', label: '소용돌이', min: 0, max: 1, step: 0.05, value: 0.35 },
+        { key: 'scale', label: '무늬 크기', min: 0.5, max: 2, step: 0.05, value: 1, adv: true },
+        { key: 'edge', label: '띠 경계', type: 'choice', options: ['딱딱하게', '부드럽게'], value: '딱딱하게', adv: true },
+        { key: 'face', label: '얼굴 살리기', type: 'toggle', value: true, adv: true },
+      ],
+      slots: ['색 1', '색 2', '색 3', '색 4', '색 5'],
+      palettes: [
+        { name: '공연 포스터', colors: ['#2b1055', '#d7263d', '#f46036', '#ffd23f', '#1b998b'] },
+        { name: '사탕', colors: ['#3a0ca3', '#ff006e', '#fb5607', '#ffbe0b', '#3a86ff'] },
+        { name: '자두와 이끼', colors: ['#3d0c45', '#9b2d6f', '#e86a33', '#f2c14e', '#5f8d4e'] },
+        { name: '흑백', colors: ['#141414', '#f1ebe0', '#5c5c5c', '#f1ebe0', '#141414'] },
+      ],
+      prep: (src, p, g) => analyze(src, 0, g),
+      render(c, A, W, H, p, s) {
+        const S = sampler(A, W, H), P = p.colors.map(rgb), n = P.length, m = Math.min(W, H);
+        const ink = P.reduce((a, b) => (a[0] + a[1] + a[2] < b[0] + b[1] + b[2] ? a : b));
+        const R = rng(p.seed), rr = (a, b) => a + R() * (b - a), sd = (R() * 1000) | 0;
+        const f = 0.0032 / p.scale, amp = p.melt * 120, hard = p.edge === '딱딱하게';
+        // 소용돌이 중심: 얼굴 살리기를 켜면 아래쪽 구석으로 비켜 둡니다
+        const scx = (p.face ? (R() < 0.5 ? rr(0.08, 0.3) : rr(0.7, 0.92)) : rr(0.25, 0.75)) * W, scy = (p.face ? rr(0.6, 0.92) : rr(0.25, 0.75)) * H;
+        const im = c.createImageData(W, H), d = im.data;
+        for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) {
+          const u = x / s, v = y / s;
+          // 얼굴 자리(가운데 위쪽)는 덜 휩니다
+          const w = p.face ? 0.15 + 0.85 * smooth(0.75, 1.5, Math.hypot((x / W - 0.5) / 0.26, (y / H - 0.4) / 0.3)) : 1;
+          const q1 = vnoise(u * f, v * f, sd), q2 = vnoise(u * f + 3.1, v * f + 7.7, sd + 1);
+          let qx = x + (vnoise(u * f * 1.7 + q1 * 2.6, v * f * 1.7 + q2 * 2.6, sd + 2) - 0.5) * 2 * amp * w * s;
+          let qy = y + (vnoise(u * f * 1.7 + q2 * 2.6 + 5, v * f * 1.7 + q1 * 2.6, sd + 3) - 0.5) * 2 * amp * w * s;
+          if (p.swirl > 0) {
+            const ox = qx - scx, oy = qy - scy, dd = Math.hypot(ox, oy) / (m * 0.5), a = p.swirl * 4 * Math.exp(-dd * dd) * w, ca = Math.cos(a), sa = Math.sin(a);
+            qx = scx + ox * ca - oy * sa; qy = scy + ox * sa + oy * ca;
+          }
+          const t = clamp(S(A.L, qx, qy) * 1.05 - 0.02) * p.bands * 0.999 + (q1 - 0.5) * 1.4 * w;
+          const k = Math.floor(t), fr = t - k, a = P[((k % n) + n) % n], b = P[(((k + 1) % n) + n) % n], i = (y * W + x) * 4;
+          let col = a;
+          if (!hard) { const e = smooth(0.5, 1, fr); col = [a[0] + (b[0] - a[0]) * e, a[1] + (b[1] - a[1]) * e, a[2] + (b[2] - a[2]) * e]; }
+          else if (fr > 0.94) col = ink;
+          d[i] = col[0]; d[i + 1] = col[1]; d[i + 2] = col[2]; d[i + 3] = 255;
+        }
+        c.putImageData(im, 0, 0);
+      },
+    },
+
+    {
+      id: 'memphis', name: '멤피스', thumb: 'memphis', shuffle: true,
+      note: '파스텔 바탕, 굵은 검정 테두리, 꼬불선과 지그재그와 색종이 조각. 1980년대 밀라노 디자인 그룹의 장난기. 배치는 섞을 때마다 바뀝니다.',
+      controls: [
+        { key: 'frame', label: '사진 모양', type: 'choice', options: ['아치', '원', '사각형'], value: '아치' },
+        { key: 'shapes', label: '무늬 수', min: 0, max: 14, step: 1, value: 8 },
+        { key: 'photoSize', label: '사진 크기', min: 0.45, max: 0.85, step: 0.05, value: 0.62 },
+        { key: 'bg', label: '바탕 무늬', type: 'choice', options: ['점', '줄', '격자', '없음'], value: '점', adv: true },
+        { key: 'shadow', label: '그림자 거리', min: 0, max: 1, step: 0.05, value: 0.5, adv: true },
+        { key: 'line', label: '선 굵기', min: 0.5, max: 2, step: 0.1, value: 1, adv: true },
+        { key: 'photo', label: '사진 처리', type: 'choice', options: ['그대로', '두 색', '망점'], value: '그대로', adv: true },
+      ],
+      slots: ['바탕', '색 1', '색 2', '색 3', '검정'],
+      palettes: [
+        { name: '민트 + 핑크', colors: ['#f6efe4', '#ff6f91', '#2ec4b6', '#ffd23f', '#151515'] },
+        { name: '바나나', colors: ['#fff3b0', '#ff5d8f', '#3a86ff', '#00c49a', '#151515'] },
+        { name: '라벤더', colors: ['#e9e3ff', '#ff8c42', '#00b4d8', '#ffd166', '#151515'] },
+        { name: '분홍 바탕', colors: ['#ffd1e3', '#3a86ff', '#ffbe0b', '#06d6a0', '#151515'] },
+      ],
+      prep: (src, p, g) => withRGB(analyze(src, 0, g)),
+      render(c, A, W, H, p, s) {
+        const [bg, c1, c2, c3, ink] = p.colors, K = rgb(ink), B = rgb(bg), C1 = rgb(c1), cols = [c1, c2, c3];
+        const m = Math.min(W, H), lw = Math.max(1.5, m * 0.008 * p.line), R = rng(p.seed), rr = (a, b) => a + R() * (b - a);
+        c.fillStyle = bg; c.fillRect(0, 0, W, H);
+        // 바탕 무늬
+        c.save(); c.fillStyle = ink; c.strokeStyle = ink; c.globalAlpha = 0.2;
+        const sp = 34 * s;
+        if (p.bg === '점') { for (let y = sp / 2, r = 0; y < H; y += sp, r++) for (let x = (r % 2 ? sp : sp / 2); x < W; x += sp) { c.beginPath(); c.arc(x, y, 2.8 * s, 0, Math.PI * 2); c.fill(); } }
+        else if (p.bg === '줄') { c.lineWidth = 3 * s; c.beginPath(); for (let k = -H; k < W; k += sp * 0.9) { c.moveTo(k, 0); c.lineTo(k + H, H); } c.stroke(); }
+        else if (p.bg === '격자') { c.lineWidth = 1.6 * s; c.beginPath(); for (let x = sp; x < W; x += sp) { c.moveTo(x, 0); c.lineTo(x, H); } for (let y = sp; y < H; y += sp) { c.moveTo(0, y); c.lineTo(W, y); } c.stroke(); }
+        c.restore();
+
+        // 사진 처리
+        const S = sampler(A, W, H), photo = canvas(W, H), px = ctx2d(photo), im = px.createImageData(W, H), d = im.data;
+        const scr = screen(7 * s, Math.PI / 4), dens = (x, y) => clamp(smooth(0.92, 0.1, S(A.L, x, y)) * 1.05);
+        for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) {
+          const i = (y * W + x) * 4, l = S(A.L, x, y);
+          let col;
+          if (p.photo === '두 색') col = l < 0.36 ? K : l < 0.64 ? C1 : B;
+          else if (p.photo === '망점') { const a = scr(x, y, dens); col = [B[0] + (K[0] - B[0]) * a, B[1] + (K[1] - B[1]) * a, B[2] + (K[2] - B[2]) * a]; }
+          else { const o = [S(A.R, x, y), S(A.G, x, y), S(A.B, x, y)], lv = l * 255; col = o.map(v => (lv + (v - lv) * 1.25 - 128) * 1.08 + 128); }
+          d[i] = col[0]; d[i + 1] = col[1]; d[i + 2] = col[2]; d[i + 3] = 255;
+        }
+        px.putImageData(im, 0, 0);
+
+        // 사진 자리와 모양
+        const pw = W * p.photoSize, ph = Math.min(H * 0.84, pw * rr(1.05, 1.3));
+        const cx = W / 2 + (R() - 0.5) * (W - pw) * 0.9, cy = H / 2 + (R() - 0.5) * (H - ph) * 0.9;
+        const shape = new Path2D();
+        let bx = cx - pw / 2, by = cy - ph / 2, bw = pw, bh = ph;
+        if (p.frame === '원') { const r = Math.min(pw, ph) / 2; shape.arc(cx, cy, r, 0, Math.PI * 2); bx = cx - r; by = cy - r; bw = bh = r * 2; }
+        else if (p.frame === '아치') { shape.moveTo(bx, by + pw / 2); shape.arc(cx, by + pw / 2, pw / 2, Math.PI, Math.PI * 2); shape.lineTo(bx + pw, by + ph); shape.lineTo(bx, by + ph); shape.closePath(); }
+        else shape.rect(bx, by, bw, bh);
+
+        // 무늬: 사진과 겹치지 않는 자리를 먼저 찾고, 끝내 못 찾으면 사진 뒤에 둡니다
+        const KINDS = ['꼬불선', '지그재그', '삼각형', '원', '점박이', '색종이', '반원', '고리'];
+        // 오른쪽 아래 사이트 표시 자리도 비워 둡니다
+        const hits = (x, y, r) => { const qx = clamp(x, bx, bx + bw), qy = clamp(y, by, by + bh); return Math.hypot(x - qx, y - qy) < r || (x + r > W * 0.7 && y + r > H * 0.9); };
+        const items = [];
+        for (let i = 0; i < Math.round(p.shapes); i++) {
+          const kind = KINDS[(R() * KINDS.length) | 0], sz = rr(0.05, 0.095) * m, reach = sz * (['꼬불선', '지그재그', '색종이'].includes(kind) ? 1.6 : 0.75);
+          let x, y, behind = true;
+          for (let t = 0; t < 16 && behind; t++) { x = rr(0.06, 0.94) * W; y = rr(0.05, 0.95) * H; behind = hits(x, y, reach); }
+          items.push({ kind, x, y, sz, behind, a: rr(0, Math.PI * 2), col: R() < 0.18 ? ink : cols[(R() * 3) | 0], fill: R() < 0.7, seed: (R() * 1e6) | 0 });
+        }
+        const drawItem = it => {
+          const z = it.sz;
+          c.save(); c.translate(it.x, it.y); c.rotate(it.a);
+          c.fillStyle = it.col; c.strokeStyle = it.col; c.lineCap = 'round'; c.lineJoin = 'round';
+          if (it.kind === '꼬불선' || it.kind === '지그재그') {
+            c.lineWidth = lw * 1.7; c.beginPath();
+            for (let k = 0; k <= 48; k++) {
+              const t = k / 48, xx = (t - 0.5) * z * 3.2;
+              const yy = it.kind === '꼬불선' ? Math.sin(t * Math.PI * 6) * z * 0.22 : (Math.abs(((t * 6) % 2) - 1) - 0.5) * z * 0.55;
+              k ? c.lineTo(xx, yy) : c.moveTo(xx, yy);
+            }
+            c.stroke();
+          } else if (it.kind === '색종이') {
+            const r2 = rng(it.seed);
+            c.lineWidth = lw * 1.9;
+            for (let k = 0; k < 6; k++) {
+              const a = r2() * Math.PI * 2, dd = r2() * z * 1.3, l = z * (0.22 + r2() * 0.18), ang = r2() * Math.PI;
+              c.strokeStyle = k % 3 === 0 ? ink : cols[(r2() * 3) | 0];
+              c.beginPath(); c.moveTo(Math.cos(a) * dd - Math.cos(ang) * l / 2, Math.sin(a) * dd - Math.sin(ang) * l / 2); c.lineTo(Math.cos(a) * dd + Math.cos(ang) * l / 2, Math.sin(a) * dd + Math.sin(ang) * l / 2); c.stroke();
+            }
+          } else {
+            c.beginPath();
+            if (it.kind === '삼각형') { c.moveTo(0, -z * 0.7); c.lineTo(z * 0.65, z * 0.45); c.lineTo(-z * 0.65, z * 0.45); c.closePath(); }
+            else if (it.kind === '반원') { c.arc(0, 0, z * 0.6, Math.PI, Math.PI * 2); c.closePath(); }
+            else c.arc(0, 0, z * (it.kind === '점박이' ? 0.6 : it.kind === '고리' ? 0.5 : 0.45), 0, Math.PI * 2);
+            if (it.kind === '고리') { c.lineWidth = z * 0.16; c.stroke(); }
+            else if (it.kind === '점박이') {
+              c.fill(); c.save(); c.clip(); c.fillStyle = ink;
+              const g2 = z * 0.2; for (let yy = -z; yy < z; yy += g2) for (let xx = -z; xx < z; xx += g2) { c.beginPath(); c.arc(xx, yy, z * 0.035, 0, Math.PI * 2); c.fill(); }
+              c.restore(); c.strokeStyle = ink; c.lineWidth = lw; c.stroke();
+            } else {
+              if (it.fill || it.col === ink) c.fill(); else { c.lineWidth = lw * 1.4; c.stroke(); }
+              if (it.fill && it.col !== ink) { c.strokeStyle = ink; c.lineWidth = lw; c.stroke(); }
+            }
+          }
+          c.restore();
+        };
+        // 사진 뒤 큰 색 면: 사진 모서리 하나에 걸쳐 둡니다
+        if (p.shapes >= 1) {
+          const qx = R() < 0.5 ? bx : bx + bw, qy = R() < 0.5 ? by : by + bh, big = rr(0.2, 0.3) * m;
+          c.save(); c.translate(qx + (R() - 0.5) * big * 0.6, qy + (R() - 0.5) * big * 0.6); c.rotate(rr(-0.5, 0.5));
+          c.fillStyle = cols[(R() * 3) | 0]; c.beginPath();
+          if (R() < 0.5) c.arc(0, 0, big, 0, Math.PI * 2); else c.rect(-big * 1.2, -big * 0.45, big * 2.4, big * 0.9);
+          c.fill(); c.strokeStyle = ink; c.lineWidth = lw; c.stroke(); c.restore();
+        }
+        items.filter(it => it.behind).forEach(drawItem);
+        // 그림자: 한 색으로 칠하거나 빗금
+        const off = m * 0.045 * p.shadow;
+        if (off > 0) {
+          c.save(); c.translate(off, off); c.fillStyle = cols[(R() * 3) | 0]; c.fill(shape);
+          if (R() < 0.45) { c.clip(shape); c.strokeStyle = ink; c.lineWidth = lw * 0.7; c.beginPath(); for (let k = -bh; k < bw; k += lw * 3.2) { c.moveTo(bx + k, by); c.lineTo(bx + k + bh, by + bh); } c.stroke(); }
+          c.restore();
+        }
+        c.save(); c.clip(shape); fitInto(c, photo, bx, by, bw, bh, p.frame === '사각형' ? 0.4 : 0.25); c.restore();
+        c.strokeStyle = ink; c.lineWidth = lw * 1.3; c.stroke(shape);
+        items.filter(it => !it.behind).forEach(drawItem);
       },
     },
   ];
@@ -808,7 +1115,7 @@
       <button type="button" class="lab__style${s2 === st ? ' is-on' : ''}" data-id="${s2.id}" aria-pressed="${s2 === st}">
         <span class="lab__thumb"><img src="/assets/styles/${s2.thumb}.webp" alt="" width="96" height="96" loading="lazy" /><canvas></canvas></span>
         <span>${s2.name}</span></button>`).join('')}</div><p class="lab__note">${st.note}</p>`);
-    html += sec(num(), A ? '양식 세부' : '다듬기', (st.shuffle ? `<button type="button" class="lab__btn lab__shuffle" id="lab-shuffle">배치 섞기</button>` : '') + ctrls.map(c => control(c, v[c.key], 'style')).join(''));
+    html += sec(num(), A ? '양식 세부' : '다듬기', (st.shuffle ? `<button type="button" class="lab__btn lab__shuffle" id="lab-shuffle">${st.shuffle === true ? '배치 섞기' : st.shuffle}</button>` : '') + ctrls.map(c => control(c, v[c.key], 'style')).join(''));
     html += sec(num(), '색', `<div class="lab__pals">${st.palettes.map((p2, i) => `
       <button type="button" class="lab__pal${state.pal[st.id] === i ? ' is-on' : ''}" data-i="${i}" title="${p2.name}">
         <span class="lab__dots">${[...new Set(p2.colors)].slice(0, 5).map(c => `<i style="background:${c}"></i>`).join('')}</span><span>${p2.name}</span>
@@ -956,6 +1263,13 @@
     }, 30);
   }
 
+  // /lab/#vaporwave 처럼 열면 그 양식을 고른 채로 시작합니다
+  function fromHash() {
+    const h = decodeURIComponent(location.hash.slice(1)), st = STYLES.find(x => x.thumb === h || x.id === h);
+    if (st && st !== state.style) { state.style = st; renderPanel(); refresh(); }
+  }
+  window.addEventListener('hashchange', fromHash);
+  fromHash();
   renderPanel();
   if (document.fonts && document.fonts.load) document.fonts.load(`600 40px ${FONT}`).then(refresh).catch(() => {});
 })();
