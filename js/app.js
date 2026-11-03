@@ -62,14 +62,14 @@
     all:       { id: 'all', label: 'All' },
     bookmarks: { id: 'bookmarks', label: 'Bookmarks', desc: 'Bookmarks saved in this browser' },
     styles:    { id: 'styles', label: 'Style Guide', desc: 'Major graphic design styles and movements. Click a name to open Pinterest references.' },
-    trends:    { id: 'trends', label: '2026 Trends', desc: '2026 reports and continuing design directions · Reviewed Oct 14' },
+    trends:    { id: 'trends', label: '2026 Trends', desc: '2026 reports and continuing design directions · Reviewed Nov 4' },
     glossary:  { id: 'glossary', label: 'Glossary', desc: 'Everyday terms in design, print and UI/UX work, with the Korean term used in Korean studios' },
     articles:  { id: 'articles', label: 'Articles', desc: 'Notes from designing, translated from Korean' },
   } : {
     all:       { id: 'all', label: '전체' },
     bookmarks: { id: 'bookmarks', label: '즐겨찾기', desc: '이 브라우저에 저장된 즐겨찾기' },
     styles:    { id: 'styles', label: '스타일 사전', desc: '유명 그래픽 디자인 양식과 흐름. 이름을 누르면 핀터레스트 레퍼런스가 열립니다.' },
-    trends:    { id: 'trends', label: '2026 트렌드', desc: '2026 공식 리포트와 지속 흐름 · 10월 14일 확인' },
+    trends:    { id: 'trends', label: '2026 트렌드', desc: '2026 공식 리포트와 지속 흐름 · 11월 4일 확인' },
     glossary:  { id: 'glossary', label: '용어 사전', desc: '디자인 · 편집/인쇄 · UI/UX 구축 시 자주 쓰는 용어' },
     articles:  { id: 'articles', label: '읽을거리', desc: '디자인하면서 생각한 것들' },
   };

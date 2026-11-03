@@ -446,7 +446,7 @@ for slug, title, intro, body in PROSE_PAGES:
 SHORT_DESC = {PAGE_META[c["id"]][0]: c.get("desc", "") for c in cats if c["id"] in PAGE_META}
 SHORT_DESC.update({
     "styles": "유명 그래픽 디자인 양식과 흐름",
-    "trends": "2026 공식 리포트와 지속 흐름 · 10월 14일 확인",
+    "trends": "2026 공식 리포트와 지속 흐름 · 11월 4일 확인",
     "glossary": "디자인 · 편집/인쇄 · UI/UX 구축 시 자주 쓰는 용어",
     "talk": "디자인 이야기를 편하게 나누는 공간",
     "updates": "사이트를 넣고 옮기고 고친 날짜별 기록",
