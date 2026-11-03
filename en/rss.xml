@@ -76,6 +76,79 @@
     <p class="art__note">Sources: <a href="https://www.figma.com/release-notes/" target="_blank" rel="noopener">Figma release notes</a>, <a href="https://help.figma.com/hc/en-us/articles/41175721167767" target="_blank" rel="noopener">Shaders in Figma Design (help)</a>, <a href="https://help.figma.com/hc/en-us/articles/44193259600535-Code-layers-in-Figma-Design" target="_blank" rel="noopener">Code layers in Figma Design (help)</a></p>]]></content:encoded>
     </item>
     <item>
+      <title>A client asks for twelve slide titles cut to one line: Canva&#x27;s Brush edits what you already made</title>
+      <link>https://designrefs.com/en/articles/canva-brush-edit-existing-design/</link>
+      <guid isPermaLink="true">https://designrefs.com/en/articles/canva-brush-edit-existing-design/</guid>
+      <pubDate>Tue, 03 Nov 2026 09:00:00 +0900</pubDate>
+      <category>AI Design</category>
+      <description>Canva&#x27;s Brush, announced October 29–30, is a model for editing existing designs by instruction. It is open to Pro subscribers first. What the reports confirm, what stays unknown because Canva&#x27;s own page would not open, and what to do before trying it.</description>
+      <content:encoded><![CDATA[    <p class="ptext">&quot;The titles on slides 3 to 12 are too long. Please make each one a single line. Same colors as last time.&quot;</p>
+    <p class="ptext">Client emails are usually about this short. On a one-page job it takes a minute. On a twelve-slide deck, you repeat the same fix twelve times. (This is an imagined scene, not something that happened to me.)</p>
+    <p class="ptext">Canva&#x27;s Brush, released at the end of October, targets exactly this kind of work: editing a design that already exists. If Craft, the image model that arrived a week earlier, is the one that draws, Brush is the one that adjusts what has been drawn.</p>
+    <p class="ptext">This is not a hands-on review. When I tried to open Canva&#x27;s newsroom post (canva.com/newsroom/news/canva-brush/), access was blocked (403), so I could not read it. What follows is based on sentences from that post quoted in search results, plus four news and explainer pages that I did open. I do not describe button positions or output quality, because I have seen neither.</p>
+    <h2 class="psub" id="s1">Craft draws, Brush adjusts</h2>
+    <p class="ptext">Craft, released on October 22, is Canva&#x27;s first in-house image generation model. It aims at posters, presentations and menus, where text and layout matter. We covered it separately in <a href="https://designrefs.com/articles/canva-craft-text-layout-image-model/">our Canva Craft article</a>.</p>
+    <p class="ptext">Brush comes next in the chain. In the wording quoted from Canva, Craft produces the image and Brush refines the design around it. Brush is a vision-language model from Canva Research. In plain terms, it is an AI that looks at the page and understands instructions in words. You use it inside Canva AI.</p>
+    <h2 class="psub" id="s2">What the announcement confirms</h2>
+    <p class="ptext">Several reports agree on the same points.</p>
+    <ul class="ptext-list">
+      <li>It edits existing designs, from a single line of text to a whole presentation.</li>
+      <li>It works in a loop: it writes and runs code to change elements, checks the page visually, then decides the next adjustment.</li>
+      <li>The output stays fully editable like any other Canva design, so a person can adjust text, images and layout afterward.</li>
+      <li>For now it powers &quot;supported design edits&quot; in Canva AI for Canva Pro subscribers. Wider availability is described only as &quot;coming soon.&quot;</li>
+      <li>Canva used the line &quot;Great design happens in the edit.&quot;</li>
+    </ul>
+    <p class="ptext">One explainer gave the steps like this.</p>
+    <ol class="ptext-list">
+      <li>Open an existing design in the Canva editor, or attach or link a design in Canva AI.</li>
+      <li>Choose Brush from the model dropdown.</li>
+      <li>Describe the change you want.</li>
+    </ol>
+    <p class="ptext">The same piece lists uses such as restyling colors or overall look, updating headings across a multi-page presentation, and adapting slides for Instagram. The starting point is said to be canva.com/ai.</p>
+    <h2 class="psub" id="s3">The two numbers are Canva&#x27;s own</h2>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th>Item</th><th>What was reported</th><th>Compared with</th></tr></thead>
+      <tbody>
+        <tr><td>Speed</td><td>Up to 69% faster on general design editing tasks</td><td>Canva&#x27;s previous design agent</td></tr>
+        <tr><td>Cost</td><td>46% cheaper per edit task</td><td>Canva&#x27;s previous design agent</td></tr>
+        <tr><td>Announced</td><td>October 29 (two outlets), October 30 (two outlets)</td><td>Probably a time-zone difference; not confirmed</td></tr>
+        <tr><td>Availability</td><td>Canva Pro subscribers</td><td>Wider rollout undated</td></tr>
+      </tbody>
+    </table></div>
+    <p class="art__note">Sources: <a href="https://fourweekmba.com/ai-canva-builds-its-own-ai-model-says-it-cuts-edit-costs-46/" target="_blank" rel="noopener">FourWeekMBA</a>, <a href="https://www.capitalbrief.com/briefing/canva-launches-ai-design-editing-model-brush-48352e11-c62c-4319-973a-490efa945f92/" target="_blank" rel="noopener">Capital Brief</a>, <a href="https://smallbiztrends.com/canva-unveils-brush-ai-tool-revolutionizes-design-editing-speed-and-quality/" target="_blank" rel="noopener">Small Business Trends</a>, <a href="https://unboxdailyhq.com/new-agentic-ai-design-editor-canva-brush-arrives-for-pro-users/" target="_blank" rel="noopener">Unbox Daily</a> (checked 2026-11-01)</p>
+    <p class="ptext">Both figures are maximums, and the baseline is Canva&#x27;s own earlier agent, not an outside model. FourWeekMBA pointed out that some write-ups recast this as a comparison with frontier models, which Canva&#x27;s announcement does not say. None of the pages I read described the test conditions, such as how many tasks or what mix. For a designer, 69% does not mean your own work gets 69% faster. It means Canva measured an internal improvement over its earlier setup.</p>
+    <h2 class="psub" id="s4">Where it started</h2>
+    <p class="ptext">According to the reports, Brush began from an unnamed open-weights model (one whose weights are public). Canva post-trained it on real design and editing tasks and added large-scale reinforcement learning. The inputs reportedly include Canva&#x27;s design data, its reward setup and professional designers&#x27; judgment, and user data is described as anonymized and from people who opted in. Canva has not said which base model it used.</p>
+    <p class="ptext">This matters to designers for one reason: it raises the question of whether your own work was used. I confirmed only the &quot;opted-in, anonymized&quot; description. Where that opt-in is switched on or off was not in anything I read.</p>
+    <h2 class="psub" id="s5">What is still missing</h2>
+    <p class="ptext">One explainer lists these limits, which I repeat as written.</p>
+    <ul class="ptext-list">
+      <li><strong>No Brand Kit integration yet.</strong> Brand fonts and colors may not be applied consistently. It is said to be in development.</li>
+      <li><strong>No attachment referencing yet.</strong> You cannot hand it an image and say &quot;like this.&quot; Also in development.</li>
+      <li><strong>Image-heavy layouts may come out weaker.</strong> Improvement is planned.</li>
+      <li><strong>Review the output by eye</strong> before using it in important client work.</li>
+    </ul>
+    <p class="ptext">Things I could not confirm:</p>
+    <ul class="ptext-list">
+      <li>Whether Pro plans have a usage cap or credits for Brush. One explainer says Canva has not clearly stated whether usage is unlimited.</li>
+      <li>When Free and team plans get it.</li>
+      <li>Whether edits are logged and can be undone step by step.</li>
+      <li>How well it follows instructions written in Korean.</li>
+      <li>Whether there is an API for calling it outside Canva. Craft has a public API, but none of the pages I read mention one for Brush.</li>
+    </ul>
+    <h2 class="psub" id="s6">One instruction, twelve times or once</h2>
+    <p class="ptext">Back to the email. Until now this job went one of two ways: open all twelve slides and fix each by hand, or build a good master page (a shared template applied to every slide) and change it once. If the file has no master, the first way is the only way.</p>
+    <p class="ptext">Brush seems to fit in the gap: applying the same edit across a whole file that was built without a master. That is my guess from the announcement&#x27;s description. How far you can trust it on a complicated file needs more results from people who have used it.</p>
+    <p class="ptext">Canva&#x27;s choice is also worth noting. It split the model that produces a new draft from the model that edits one. Our recent piece on <a href="https://designrefs.com/articles/figma-agent-ai-credits-ga/">Figma agent credits</a> noted that an agent&#x27;s credit use varies by request. Canva putting a per-edit cost figure up front reads in the same vein. Whether editing is actually cheaper than starting over was not established in the announcement.</p>
+    <h2 class="psub" id="s7">What to do now</h2>
+    <p class="ptext"><strong>Duplicate the design before editing.</strong> I could not confirm an undo feature. Use &quot;Make a copy&quot; in Canva and run Brush on the copy. It covers the day a client says &quot;last time was better.&quot;</p>
+    <p class="ptext"><strong>Write the brand font and color into the instruction.</strong> With no Brand Kit support, say what must stay. The line below is an example I have not tried.</p>
+    <p class="ptext"><code>Keep the title font and color as they are, shorten only the titles on slides 3 to 12 to one line. Do not touch the images.</code></p>
+    <p class="ptext">Name both what to change and what to leave. Asking for one change at a time also makes the results easier to compare.</p>
+    <p class="ptext"><strong>Scan the result slide by slide.</strong> Image-heavy layouts were flagged as weaker, so start with slides that have large photos. Check that text is readable over the picture and that no line overflows. If the file goes to a client, do not skip this step.</p>
+    <p class="art__note">Sources: <a href="https://www.canva.com/newsroom/news/canva-brush/" target="_blank" rel="noopener">Canva newsroom: Introducing Canva Brush</a> (could not be opened; only sentences quoted in search results used), <a href="https://fourweekmba.com/ai-canva-builds-its-own-ai-model-says-it-cuts-edit-costs-46/" target="_blank" rel="noopener">FourWeekMBA</a>, <a href="https://www.capitalbrief.com/briefing/canva-launches-ai-design-editing-model-brush-48352e11-c62c-4319-973a-490efa945f92/" target="_blank" rel="noopener">Capital Brief</a>, <a href="https://smallbiztrends.com/canva-unveils-brush-ai-tool-revolutionizes-design-editing-speed-and-quality/" target="_blank" rel="noopener">Small Business Trends</a>, <a href="https://unboxdailyhq.com/new-agentic-ai-design-editor-canva-brush-arrives-for-pro-users/" target="_blank" rel="noopener">Unbox Daily</a></p>]]></content:encoded>
+    </item>
+    <item>
       <title>When a client asks for a 5-second moving version next to the mockup, where do the credits go if you call Weave models through Figma MCP?</title>
       <link>https://designrefs.com/en/articles/figma-mcp-weave-models-credits/</link>
       <guid isPermaLink="true">https://designrefs.com/en/articles/figma-mcp-weave-models-credits/</guid>
