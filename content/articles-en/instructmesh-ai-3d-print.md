@@ -45,7 +45,7 @@ InstructMesh goes the same way. Rebuild the whole thing and something else goes 
 
 The division of labor is the same too. AI produces the shape quickly, and a person judges whether it can actually be used. Will the handle hold when gripped? Will it leak? Where will it break? What product designers have always done matters even more here.
 
-## So, for now
+## Four places to check before you print
 
 InstructMesh isn't a product you can download yet. But if you plan to print from the 3D generator you use now, the three things the researchers fixed make a ready-made checklist.
 

@@ -66,7 +66,7 @@ Figma is also aware that AI output varies from run to run. TechCrunch reported t
 
 The agent has used AI credits since October 6. The more context you attach and the more often you prompt, the more credits it may use, so check this if your team plans to use it. The release notes say custom skills are available even on the Starter plan.
 
-## What isn't confirmed
+## Pricing and Korean-language behavior are open
 
 - Specs pricing and when the beta ends. Figma only says open beta on paid plans.
 - Limits such as file size or number of specs.
@@ -74,7 +74,7 @@ The agent has used AI credits since October 6. The more context you attach and t
 - Behavior with Korean documents. No published test shows how well the agent follows a spec written in Korean.
 - Which plans get guidelines and centralized design systems.
 
-## So for now
+## Put one existing .md on the canvas
 
 **Drag one existing document onto the canvas as a spec.** A project brief or meeting notes in `.md` is enough. Before writing anything new, see how what you already have looks on the canvas. If you aren't on a paid plan, you'll have to wait for access.
 

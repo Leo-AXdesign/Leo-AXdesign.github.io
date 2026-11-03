@@ -69,7 +69,7 @@ The difference is who reads it. Token files are read by code people write. DESIG
 
 One caution. As the format caught on, sites offering "DESIGN.md collections" appeared, and people have pointed out that some of them don't match Google's official spec. If you're going to use someone else's file, run `lint` on it first.
 
-## So, for now
+## Start with five colors, three sizes, three don'ts
 
 You don't need to fill all eight sections from the start. This is enough to begin.
 

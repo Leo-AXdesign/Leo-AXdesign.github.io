@@ -5,11 +5,11 @@ desc: Google DeepMind released Genie 4 as a research preview. It does not output
 tag: AI Design
 ---
 
-A client email might read: "I just want to see the mood first. A walk down a rainy alley. And what it looks like when the sun comes out." (This is an imagined scene.)
+What if you could make the sun come out halfway down a rainy alley, without generating the scene again? Mood studies tend to mean changing conditions like this over and over.
 
 Until now you generated one video, then another for the sunny version. Every scene started from scratch. Genie 4 is a model built to change that order: while the camera walks, you type "let the sun come out" and the scene changes on the spot.
 
-But it is not something anyone can open today. This is not a hands-on review. It is based on the official Google and Google DeepMind posts I opened, plus TechCrunch's coverage. Price and resolution were not in any source I read.
+But it is not something anyone can open today, and I have not been able to try it either. This is based on the official Google and Google DeepMind posts I opened, plus TechCrunch's coverage. Price and resolution were not in any source I read.
 
 ![Google DeepMind Genie 4 official blog (source: https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/, captured 2026-10-29)](https://designrefs.com/articles/img/genie-4-world-model-designers-waitlist-shot1.webp)
 ## First, which Genie
@@ -67,7 +67,7 @@ If you build screens with Lovable or Cursor, Genie 4 gives you nothing directly.
 
 Illegible text matters a lot to designers. Signs, posters and UI text inside a scene cannot be relied on right now. It is the same problem behind [Canva Craft laying out text before generating the poster](https://designrefs.com/articles/canva-craft-text-layout-image-model/).
 
-## What is not known yet
+## Price, resolution and output format are not public
 
 - **Price.** Whether there are fees or usage caps beyond an Ultra subscription.
 - **Quality.** Resolution and frame rate are not in the official posts.
@@ -77,7 +77,7 @@ Illegible text matters a lot to designers. Signs, posters and UI text inside a s
 - **Model names.** DeepMind's post mentions Gemini 3.8 Flash and Gemini 4 Argon. The first appears in the real-time guiding role, the second in the robot demo and task-decomposition experiments. The names are unfamiliar and I could not confirm how they relate.
 - **Independent testing.** Everything available is Google's own posts and press coverage; I found no outside test results. In TechCrunch, DeepMind engineer Diego Rivas said real-time steering is especially useful in the ideation and storyboarding phases, and added that turning prototypes into final creative assets is still a long way off.
 
-## So for now
+## Join the waitlist, hold off on the subscription
 
 **Check whether the waitlist is open.** DeepMind's post mentions it. Sign up only if you can imagine using it.
 

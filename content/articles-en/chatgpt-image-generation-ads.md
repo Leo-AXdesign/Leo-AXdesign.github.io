@@ -44,7 +44,7 @@ On February 9, text ads began for US users on the Free and Go plans. On May 5, A
 
 **One more difference between free and paid.** Until now, paid plans meant better models and more usage. Now add "no ads next to your images". If you often share your screen while making drafts in front of clients, that difference may matter more than you'd think.
 
-## So, for now
+## Download, don't screenshot, for your mood board
 
 Outside the US, nothing changes yet. But given how text ads spread from the US to other countries within months, image ads will likely widen before long.
 

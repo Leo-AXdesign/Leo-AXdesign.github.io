@@ -58,7 +58,7 @@
       "datePublished": "2026-11-03",
       "dateModified": "2026-11-03",
       "inLanguage": "en",
-      "wordCount": 1104,
+      "wordCount": 1098,
       "timeRequired": "PT5M",
       "image": "https://designrefs.com/og/en/figma-shaders-4096-export-code-layers.png",
       "author": {
@@ -173,14 +173,14 @@
       <p class="page__intro">What Figma&#x27;s November 2 release note and two help articles confirm about shaders going generally available, 4096px export and code layers, where the two documents disagree on browser requirements, and what changes after November 4.</p>
       <p class="art__meta"><time datetime="2026-11-03">November 3, 2026</time> · 5 min read<span data-views hidden></span></p>
       <p class="art__note">Translated from the Korean original. <a href="https://designrefs.com/articles/figma-shaders-4096-export-code-layers/" hreflang="ko" lang="ko">Read in Korean</a></p>
-      <nav class="art__toc" aria-label="In this article"><p class="art__toc-t">In this article</p><ol><li><a href="#s1">Five lines from the note</a></li><li><a href="#s2">What a shader is</a></li><li><a href="#s3">What 4096px gets you</a></li><li><a href="#s4">Where to click when sending a shader to a code layer</a></li><li><a href="#s5">The browser requirement differs between two documents</a></li><li><a href="#s6">What ends on November 4</a></li><li><a href="#s7">What is still unknown</a></li><li><a href="#s8">So, for now</a></li></ol></nav>
-    <p class="ptext">You send a mock with an animated gradient behind a card, and the reply says, &quot;If I get a PNG, it won&#x27;t move, right?&quot; (An imagined scene, not something that happened to me.) The effect runs inside your file, turns into one still picture on export, and the developer is left with the question of how to build it.</p>
-    <p class="ptext">Figma&#x27;s November 2 release note has an item that sits between those two points: &quot;Export shaders at higher resolutions and bring them into code layers.&quot; A shader is an effect that adds texture or motion to a layer. This is not a hands-on review. I only wrote down what I could confirm in the release note, the shaders help article and the code layers help article. I could not find a permalink for the individual note, so the source link goes to the release notes list. I did not try a 4096px export in my own account.</p>
+      <nav class="art__toc" aria-label="In this article"><p class="art__toc-t">In this article</p><ol><li><a href="#s1">GA, 4096px and Chrome 157</a></li><li><a href="#s2">What a shader is</a></li><li><a href="#s3">What 4096px gets you</a></li><li><a href="#s4">Where to click when sending a shader to a code layer</a></li><li><a href="#s5">The browser requirement differs between two documents</a></li><li><a href="#s6">What ends on November 4</a></li><li><a href="#s7">Which side 4096px measures, and other gaps</a></li><li><a href="#s8">Export one, and spend the free period on one file</a></li></ol></nav>
+    <p class="ptext">Suppose you send a mock with an animated gradient behind a card, and the reply says, &quot;If I get a PNG, it won&#x27;t move, right?&quot; The effect runs inside your file, turns into one still picture on export, and the developer is left with the question of how to build it.</p>
+    <p class="ptext">Figma&#x27;s November 2 release note has an item that sits between those two points: &quot;Export shaders at higher resolutions and bring them into code layers.&quot; A shader is an effect that adds texture or motion to a layer. What follows is taken from three documents: the release note, the shaders help article and the code layers help article. I could not find a permalink for the individual note, so the source link goes to the release notes list. I did not try a 4096px export in my own account.</p>
     <figure class="art__fig">
       <img src="https://designrefs.com/articles/img/figma-shaders-4096-export-code-layers-shot1.webp" alt="Figma release notes (source: https://www.figma.com/release-notes/, captured 2026-11-03)" loading="lazy" decoding="async" />
       <figcaption>Figma release notes (source: https://www.figma.com/release-notes/, captured 2026-11-03)</figcaption>
     </figure>
-    <h2 class="psub" id="s1">Five lines from the note</h2>
+    <h2 class="psub" id="s1">GA, 4096px and Chrome 157</h2>
     <p class="ptext">The note is short. Summarized:</p>
     <div class="art__tablewrap"><table class="art__table">
       <thead><tr><th>Item</th><th>What the note says</th></tr></thead>
@@ -221,7 +221,7 @@
     <p class="ptext">Per the code layers help article, creating and editing code in a code layer is free on paid plans through November 4. Other agent work in the same prompt still uses AI credits. After that, code layer tasks use AI credits like other agentic features, and the amount varies with the task.</p>
     <p class="ptext">Importing a project through the MCP server (the link between Figma and AI coding tools) uses no credits, but later Make agent edits do. That import needs a Full seat, can take 10 minutes or more, and some projects need changes to run.</p>
     <p class="ptext">On how credits get spent, see <a href="https://designrefs.com/articles/figma-mcp-weave-models-credits/">our Weave models post</a>.</p>
-    <h2 class="psub" id="s7">What is still unknown</h2>
+    <h2 class="psub" id="s7">Which side 4096px measures, and other gaps</h2>
     <ul class="ptext-list">
       <li><strong>What 4096px measures.</strong> Long side, width or square is not stated.</li>
       <li><strong>Export format and file size.</strong> Nothing in the documents.</li>
@@ -229,7 +229,7 @@
       <li><strong>How general the availability is.</strong> The English shaders help article has no beta label. A search snippet suggested another-language help page still said open beta; I did not open it.</li>
       <li><strong>The Chrome condition.</strong> The two documents differ, as above.</li>
     </ul>
-    <h2 class="psub" id="s8">So, for now</h2>
+    <h2 class="psub" id="s8">Export one, and spend the free period on one file</h2>
     <p class="ptext"><strong>Pick one shader and export it once.</strong> Take a fine-grained one, export at 4096px and look at 100% zoom. Export the same one small and compare. File size you have to check yourself.</p>
     <p class="ptext"><strong>If you want the free period, use it on one file before November 4.</strong> Run Build selection on a single frame with a shader. If nothing moves, press Play first, then check the Chrome version and flag. Credits only start counting afterward, so one file gives you a rough feel.</p>
     <p class="ptext"><strong>One moving background per page.</strong> Since only one runs at a time, keep one animated shader per mock and make the rest static. If you miss an earlier look while tweaking, there is <a href="https://designrefs.com/articles/figma-shader-plugin-version-restore/">version history</a>.</p>

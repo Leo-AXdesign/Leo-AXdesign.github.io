@@ -53,7 +53,7 @@ The marketplace page lists similar things in different words: turning a design o
 
 Do not confuse it with this week's Figma news. Data storage and an admin panel inside Figma Make were covered in [When the Save button saves nothing](https://designrefs.com/articles/figma-make-payload-save-button/). That one is about building a new site from a prompt. This one is about handling an existing Webflow site from chat.
 
-## What is still unknown
+## Undo and limits aren't in the material
 
 - **Undo.** Whether a chat edit can be reverted in one step, or whether there is a confirmation before publishing, is not stated.
 - **Quality.** Whether interactions and responsive pages match a designer's work has not been shown.
@@ -67,7 +67,7 @@ Copy tweaks, photo swaps and tidying seven blog entries are the first candidates
 
 For freelancers, one more handover note may be needed. If a client's staff will edit the site by chat, you have to decide what permission they get. The release says the existing permission system applies, so checking your current settings is a sensible first step. That is my opinion.
 
-## What to do now
+## Before connecting a client site
 
 **Check your Webflow permissions first.** Installing needs site data and designer-workflow permissions, according to the page. Before connecting a client site, list who holds edit rights and find where the activity log lives.
 

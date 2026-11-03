@@ -59,7 +59,7 @@ Fanta's case isn't about whether to use AI. Many brands already do, and as I not
 | Judge reaction by? | Surveys and comments | Expect numbers and comments to disagree, from the start |
 ※ Sources: [Creative Bloq](https://www.creativebloq.com/ai/fantas-ai-slop-halloween-advert-is-a-real-horror-show), [eMarketer](https://www.emarketer.com/content/fanta-bets-on-original-ip-own-halloween--ai-concerns-could-way), [Zappi product analysis](https://www.zappi.io/web/blog/innovation-spotlight-fantas-haunted-collection), [Zappi ad analysis](https://www.zappi.io/web/blog/admiration-feature-fantas-halloween-reveal), [DesignRush](https://news.designrush.com/fanta-haunted-universe-halloween-2026), [Marketing-Interactive](https://www.marketing-interactive.com/can-ai-help-fanta-build-the-next-horror-universe).
 
-## So, for now
+## Three questions for "should we go with AI?"
 
 When a client asks "should we do this campaign with AI?", there are now some questions worth raising.
 

@@ -5,12 +5,12 @@ desc: What Figma's November 2 release note and two help articles confirm about s
 tag: AI Design
 ---
 
-You send a mock with an animated gradient behind a card, and the reply says, "If I get a PNG, it won't move, right?" (An imagined scene, not something that happened to me.) The effect runs inside your file, turns into one still picture on export, and the developer is left with the question of how to build it.
+Suppose you send a mock with an animated gradient behind a card, and the reply says, "If I get a PNG, it won't move, right?" The effect runs inside your file, turns into one still picture on export, and the developer is left with the question of how to build it.
 
-Figma's November 2 release note has an item that sits between those two points: "Export shaders at higher resolutions and bring them into code layers." A shader is an effect that adds texture or motion to a layer. This is not a hands-on review. I only wrote down what I could confirm in the release note, the shaders help article and the code layers help article. I could not find a permalink for the individual note, so the source link goes to the release notes list. I did not try a 4096px export in my own account.
+Figma's November 2 release note has an item that sits between those two points: "Export shaders at higher resolutions and bring them into code layers." A shader is an effect that adds texture or motion to a layer. What follows is taken from three documents: the release note, the shaders help article and the code layers help article. I could not find a permalink for the individual note, so the source link goes to the release notes list. I did not try a 4096px export in my own account.
 
 ![Figma release notes (source: https://www.figma.com/release-notes/, captured 2026-11-03)](https://designrefs.com/articles/img/figma-shaders-4096-export-code-layers-shot1.webp)
-## Five lines from the note
+## GA, 4096px and Chrome 157
 
 The note is short. Summarized:
 
@@ -67,7 +67,7 @@ Importing a project through the MCP server (the link between Figma and AI coding
 
 On how credits get spent, see [our Weave models post](https://designrefs.com/articles/figma-mcp-weave-models-credits/).
 
-## What is still unknown
+## Which side 4096px measures, and other gaps
 
 - **What 4096px measures.** Long side, width or square is not stated.
 - **Export format and file size.** Nothing in the documents.
@@ -75,7 +75,7 @@ On how credits get spent, see [our Weave models post](https://designrefs.com/art
 - **How general the availability is.** The English shaders help article has no beta label. A search snippet suggested another-language help page still said open beta; I did not open it.
 - **The Chrome condition.** The two documents differ, as above.
 
-## So, for now
+## Export one, and spend the free period on one file
 
 **Pick one shader and export it once.** Take a fine-grained one, export at 4096px and look at 100% zoom. Export the same one small and compare. File size you have to check yourself.
 

@@ -58,7 +58,7 @@
       "datePublished": "2026-10-29",
       "dateModified": "2026-10-29",
       "inLanguage": "en",
-      "wordCount": 1453,
+      "wordCount": 1442,
       "timeRequired": "PT6M",
       "image": "https://designrefs.com/og/en/figma-make-gemini-4-argon-model-picker.png",
       "author": {
@@ -173,15 +173,14 @@
       <p class="page__intro">Gemini 4 Argon is now in Figma Make&#x27;s model picker. What Figma&#x27;s release notes, help pages and Google&#x27;s docs confirm, what they leave out (credit cost per run), and a simple way to log the same prompt on two models.</p>
       <p class="art__meta"><time datetime="2026-10-29">October 29, 2026</time> · 6 min read<span data-views hidden></span></p>
       <p class="art__note">Translated from the Korean original. <a href="https://designrefs.com/articles/figma-make-gemini-4-argon-model-picker/" hreflang="ko" lang="ko">Read in Korean</a></p>
-      <nav class="art__toc" aria-label="In this article"><p class="art__toc-t">In this article</p><ol><li><a href="#s1">The release note is three lines long</a></li><li><a href="#s2">What Google&#x27;s docs confirm, and what they leave blank</a></li><li><a href="#s3">Credits drain differently by model</a></li><li><a href="#s4">On the team side, admin controls grew on October 22</a></li><li><a href="#s5">What is still unknown</a></li><li><a href="#s6">Logging the same prompt on two models</a></li><li><a href="#s7">What to do now</a></li></ol></nav>
-    <p class="ptext">The client&#x27;s email is short. &quot;Can you swap the font on the mockup and show me once more?&quot;</p>
-    <p class="ptext">You type one line into Make&#x27;s chat. The result looks fine. But the credit balance has dropped noticeably. Figma&#x27;s help page says that changing a font takes roughly 30+ credits on its default model. Once is fine. Twelve revision requests is a different story. (This is an imagined scene.)</p>
-    <p class="ptext">There is one lever for this: the model picker in Make&#x27;s chatbox. On October 13, Gemini 4 Argon was added to it. This is not a hands-on review. It is based on Figma&#x27;s release notes and help pages, plus Google&#x27;s model documentation and announcement post. I did not find how many credits a single Argon run in Make costs in any page I opened.</p>
+      <nav class="art__toc" aria-label="In this article"><p class="art__toc-t">In this article</p><ol><li><a href="#s1">All plans, rolling out, no word on credits</a></li><li><a href="#s2">What Google&#x27;s docs confirm, and what they leave blank</a></li><li><a href="#s3">Credits drain differently by model</a></li><li><a href="#s4">On the team side, admin controls grew on October 22</a></li><li><a href="#s5">Not even which model the 30 credits refer to</a></li><li><a href="#s6">Logging the same prompt on two models</a></li><li><a href="#s7">Batch the requests, note the balance first</a></li></ol></nav>
+    <p class="ptext">Figma&#x27;s help page says that changing a font takes roughly 30+ credits on its default model. Once, it is not a number to worry about. Twelve requests to show the mockup again with only the font swapped, and you are past 360 credits.</p>
+    <p class="ptext">There is one lever for this: the model picker in Make&#x27;s chatbox. On October 13, Gemini 4 Argon was added to it. I did not find how many credits a single Argon run in Make costs in any page I opened.</p>
     <figure class="art__fig">
       <img src="https://designrefs.com/articles/img/figma-make-gemini-4-argon-model-picker-shot1.webp" alt="Make entry in Figma&#x27;s release notes (source: https://www.figma.com/release-notes/, captured 2026-10-28)" loading="lazy" decoding="async" />
       <figcaption>Make entry in Figma&#x27;s release notes (source: https://www.figma.com/release-notes/, captured 2026-10-28)</figcaption>
     </figure>
-    <h2 class="psub" id="s1">The release note is three lines long</h2>
+    <h2 class="psub" id="s1">All plans, rolling out, no word on credits</h2>
     <p class="ptext">The October 13 entry is titled &quot;Gemini 4 Argon is rolling out in Figma Make.&quot; It opens: &quot;Gemini 4 Argon, Gemini&#x27;s latest and most advanced model, is now rolling out in Figma Make.&quot; It also says how to use it and who gets it.</p>
     <div class="art__tablewrap"><table class="art__table">
       <thead><tr><th>Item</th><th>What the release note says</th></tr></thead>
@@ -228,7 +227,7 @@
     </ul>
     <p class="ptext">Per-person settings are confirmed in the help page. Admins can choose full access, a custom monthly limit or no access for each person, and people who hit a limit can ask the admin for more. A request does not change anything automatically. Admins on paid plans can see usage, while history and CSV export are limited to Organization and Enterprise admins.</p>
     <p class="ptext">This does not apply to freelancers working alone. For a designer on a team account doing client work, it is worth knowing that an admin can see usage by person. Whether the usage screen breaks it down by model was not in the pages I read.</p>
-    <h2 class="psub" id="s5">What is still unknown</h2>
+    <h2 class="psub" id="s5">Not even which model the 30 credits refer to</h2>
     <ul class="ptext-list">
       <li><strong>Argon&#x27;s credit cost.</strong> I found no public figure comparing the same task on the default model and on Argon.</li>
       <li><strong>Which model is the default.</strong> The 30, 75 and 100 credit examples do not name their model.</li>
@@ -254,10 +253,11 @@
     </table></div>
     <p class="art__note">The table above is an empty logging template. No values have been measured yet.</p>
     <p class="ptext">One run is a weak signal. Running the same task three times shows both the credit spread and the result spread. I would guess larger tasks vary more, but that is a guess until measured.</p>
-    <h2 class="psub" id="s7">What to do now</h2>
+    <h2 class="psub" id="s7">Batch the requests, note the balance first</h2>
     <p class="ptext"><strong>Batch revision requests.</strong> Putting font, color and spacing into one sentence instead of three chats reduces the number of runs. Whether this costs fewer credits is not stated in the help page; if each request rereads the file, fewer runs should not hurt. That part is an inference.</p>
     <p class="ptext"><strong>Write down the balance before switching models.</strong> A new model in the picker is not a reason to make it the default. Measure one small task with the log above and post the numbers in the team chat. If credits are shared, that one line becomes the basis for an admin-settings discussion.</p>
     <p class="ptext"><strong>Count images and screens separately.</strong> Argon outputs text and images come from a separate feature. Noting how much of the month&#x27;s credits goes to images and how much to screen edits shows where they leak. For the data side of Make, see <a href="https://designrefs.com/articles/figma-make-payload-save-button/">Make with Payload</a>, and for setting rules first, <a href="https://designrefs.com/articles/lovable-design-system-same-look/">Lovable&#x27;s design system</a>.</p>
+    <p class="art__note">I have not run Argon in Make myself. This piece rests only on Figma&#x27;s release notes and help pages, plus Google&#x27;s model documentation and announcement post.</p>
     <p class="art__note">Sources: <a href="https://www.figma.com/release-notes/" target="_blank" rel="noopener">Figma Release Notes</a>, <a href="https://www.figma.com/whats-new/" target="_blank" rel="noopener">Figma What&#x27;s new</a>, <a href="https://help.figma.com/hc/en-us/articles/33459875669015" target="_blank" rel="noopener">How Figma AI credits work</a>, <a href="https://help.figma.com/hc/en-us/articles/35865276858647-Manage-AI-credits" target="_blank" rel="noopener">Manage AI credits</a>, <a href="https://ai.google.dev/gemini-api/docs/models/gemini-4-argon" target="_blank" rel="noopener">Gemini 4 Argon, Gemini API docs</a>, <a href="https://blog.google/innovation-and-ai/products/gemini-app/gemini-4-availability" target="_blank" rel="noopener">Google: Gemini 4 availability</a></p>
       <div class="share">
         <button class="share__btn" type="button" data-share>Share</button>

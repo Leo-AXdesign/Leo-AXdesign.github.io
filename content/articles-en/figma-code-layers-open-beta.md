@@ -85,7 +85,7 @@ The October 15 release notes held more than code layers.
 
 The blog says guidelines and code sources will be available on all paid plans. Those two matter here: if code layers make a screen you can click, guidelines keep it from drifting off your rules. That ties to [DESIGN.md](https://designrefs.com/articles/design-md-for-ai/) and [Figma Specs](https://designrefs.com/articles/figma-specs-markdown-context/), covered earlier.
 
-## Still unconfirmed
+## Framework names and credit costs aren't in the docs
 
 - Which frameworks and languages code layers support. The help article names none.
 - Per-task credit costs after the free period.
@@ -93,13 +93,13 @@ The blog says guidelines and code sources will be available on all paid plans. T
 - Exactly what a free-plan account can do. The documents word it differently.
 - Which projects fail to import. The docs say only that some need changes.
 
-## What this means for designers
+## Instructions in words where links used to go
 
 Making a prototype has meant wiring links. Code layers put "instructing a running screen in words" in that place. If people can click a design before handoff, questions like "is it supposed to move like this?" in development might shrink. That is my guess, with no verified evidence yet.
 
 For vibe coders it runs the other way. You can bring a built screen into Figma, extract it as a design, adjust spacing and color there, and send it back. If you lack design sense, there is now a path to polish in a design tool.
 
-## What to do now
+## One small screen before November 4
 
 **Test one small screen before November 4.** Pick a login screen or a pricing table and click Build selection. When importing an outside project, avoid large ones because imports can take 10 minutes or more. A feel for how it behaves during the free window helps you judge credits later. The free window applies to paid plans.
 
@@ -109,7 +109,7 @@ For vibe coders it runs the other way. You can bring a built screen into Figma, 
 
 AI design tools by use are collected on [AI design tools](https://designrefs.com/ai/).
 
-## Summary
+## From drawn mockups to clickable ones
 
 Figma now lets a running, code-backed prototype sit beside a static mockup, and creating and editing is free on paid plans through November 4. How far you can trust it has no public comparison yet. What is certain is that the work is moving a step from drawing a design to letting people click it.
 

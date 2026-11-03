@@ -5,12 +5,12 @@ desc: What Penpot's October 28 release note and user guide confirm about shared 
 tag: AI Design
 ---
 
-When a message arrives saying the brand blue has changed, someone with twelve files opens twelve files. Fix the color style, check the buttons by eye, move on to the next file. (This is an imagined scene, not something that happened to me.)
+Say a message arrives saying the brand blue has changed. Someone with twelve files opens twelve files. Fix the color style, check the buttons by eye, move on to the next file.
 
-Penpot's release notes added 2.19, "Is this it," dated October 28. One line touches that scene directly: you store tokens in one library and every file connected to it uses them. This is not a hands-on review. I only wrote down what I could confirm in the release note, Penpot's user guide and the GitHub releases page. I did not check whether the feature is switched on in my own account.
+Penpot's release notes added 2.19, "Is this it," dated October 28. One line touches that scene directly: you store tokens in one library and every file connected to it uses them.
 
 ![Penpot 2.19 release note (source: https://penpot.app/release-notes/2-19-is-this-it, captured 2026-11-02)](https://designrefs.com/articles/img/penpot-2-19-shared-design-tokens-shot1.webp)
-## Five lines in the release note
+## Five features, from shared tokens to WebGL
 
 The note is short. It lists five features with a sentence or two each.
 
@@ -73,7 +73,7 @@ There are several readings. The site's note may have gone up before the GitHub r
 
 The note has no new AI feature. The only AI-adjacent line is a bug fix from a community contributor: a crash when switching pages with the MCP plugin (the connection between an AI tool and your file) attached. The other fixes are a Windows build error, prototype overlay position and stroke-to-path on path ends.
 
-## What I could not find out
+## When it arrives, and how fast edits spread
 
 - **When the hosted app gets it.** The note is dated October 28, while GitHub's latest looked like 2.18.5.
 - **The steps to connect a file to a library.** The 2.19 note gives none. Whether the guide's "set as tokens source" is the same flow, I could not confirm.
@@ -81,12 +81,14 @@ The note has no new AI feature. The only AI-adjacent line is a bug fix from a co
 - **Whether WebGL is the default.**
 - **How per-side strokes appear in export or inspect view.**
 
-## What to do now
+## Download your tokens before you move them
 
 **Export your current tokens before moving them.** Import replaces the global token set. Download today's token JSON so you have a way back. Since setting a library as the source blocks import, doing import first and source second seems easier. That order is my inference from two lines in the guide.
 
 **Name tokens by use, not by color.** "Button background" stays true when the brand color changes; "blue" does not. For gray text, check contrast against the background first. While building this site I once checked gray text contrast with a checker and fixed it, so I filter for that before collecting values into tokens. For handing the same rules to an AI coding tool, see [DESIGN.md, one file to hand your design rules to AI](https://designrefs.com/articles/design-md-for-ai/).
 
 **Time WebGL on the same file.** Export your heaviest file once with it off and once with it on. "Much faster" in the note means some number of seconds on your file, and you only learn it by trying. If something misbehaves, switch it off in the same settings. For why AI screens look alike from the design-system side, see [Why Lovable dropped the three design directions](https://designrefs.com/articles/lovable-design-system-same-look/).
+
+※ I have not switched 2.19 on in my own account. This piece is put together from the release note, Penpot's user guide and the GitHub releases page.
 
 ※ Sources: [Penpot 2.19 "Is this it" release note](https://penpot.app/release-notes/2-19-is-this-it), [Penpot release notes index](https://penpot.app/release-notes), [Penpot user guide: design tokens](https://help.penpot.app/user-guide/design-systems/design-tokens/), [Penpot on GitHub: releases](https://github.com/penpot/penpot/releases), [Penpot changelog (CHANGES.md)](https://github.com/penpot/penpot/blob/develop/CHANGES.md#2190-unreleased), [Penpot community: What's next for the Penpot WebGL renderer](https://community.penpot.app/t/whats-next-for-the-penpot-webgl-renderer/10627)

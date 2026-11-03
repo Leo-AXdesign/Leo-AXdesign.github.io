@@ -5,11 +5,11 @@ desc: When you edit a shader or generative plugin made by Figma's agent, earlier
 tag: AI Design
 ---
 
-The client's email is short. "The glow effect from before was better. Can you show me that one again?"
+On October 27, Figma's release notes added an entry titled "View and restore previous versions of your generative plugins and shaders." Edit a shader or generative plugin made by Figma's agent, and the earlier version now stays around so you can go back to it.
 
-You asked Figma's agent for a shader, then asked it to fix a few things two or three times. Somewhere in there the first version disappeared. That scene should now be less painful. (This is an imagined scene, not something that happened to me.)
+Say you asked the agent for a shader, then asked it to fix a few things two or three times, and somewhere in there the first version disappeared. Then the client writes back: "The glow effect from before was better. Can you show me that one again?" That situation should now be less painful.
 
-On October 27, Figma's release notes added an entry titled "View and restore previous versions of your generative plugins and shaders." This is not a hands-on review. It is based on the release notes, Figma's help pages and forum post, and the developer docs. I did not find where in the interface the version list lives in any page I opened.
+I have not been able to turn the feature on in my own account. What follows comes from the release notes, Figma's help pages and forum post, and the developer docs. I did not find where in the interface the version list lives in any page I opened.
 
 ![Figma release notes, October 27 entry (source: https://www.figma.com/release-notes/, captured 2026-10-30)](https://designrefs.com/articles/img/figma-shader-plugin-version-restore-shot1.webp)
 ## First, what shaders and generative plugins are
@@ -18,7 +18,7 @@ A shader is a small graphics program that changes pixels in real time. You apply
 
 A generative plugin is a code-backed tool, such as a layout generator or a QR code maker. Both are built by asking the agent in plain language. In a September 1 blog post, Figma product designer Rogie King wrote that he could create the same shader "with one simple prompt, maybe two to nail it."
 
-## What the release note says
+## Versions kept, agent notes, rolling out this week
 
 The body has three parts.
 
@@ -78,7 +78,7 @@ Asking the agent to fix an effect can cost credits each time. The October 6 rele
 
 How many credits one shader edit costs, I did not find. Nor did I find whether restoring a version costs anything. The order in which credits are spent is covered in [Figma agent credits](https://designrefs.com/articles/figma-agent-ai-credits-ga/).
 
-## What is still unknown
+## Whether a restore overwrites or copies is unclear
 
 - **Where the version list is.** The release note has no screen description.
 - **How many versions are kept, and for how long.** Not stated.
@@ -87,7 +87,7 @@ How many credits one shader edit costs, I did not find. Nor did I find whether r
 - **Whether edits through MCP by an external agent create versions.** The release note and developer docs do not point at each other.
 - **When it reaches your account.** It is a gradual rollout, and I could not check mine.
 
-## So for now
+## Keep the approved state aside yourself
 
 **Name the current state before you edit.** The change log is written by the agent. If a version is the one the client called "the look," leave a note or a duplicate in the file before asking for changes. The feature may not be in your account yet.
 

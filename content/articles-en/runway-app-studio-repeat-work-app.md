@@ -5,11 +5,9 @@ desc: Runway added App Studio to every paid plan. Describe a task in plain langu
 tag: AI Design
 ---
 
-The client's email reads: "Can you take last time's product shot and swap the background for six more markets? Same tone, please."
+Which model you used for last time's product shot, which reference images went in and which sentence produced it are all somewhere in an old chat. When a request comes in for six more in the same tone, with the background swapped for each market, you find that chat, paste it again, change the background description and run it six times. Next week the same request arrives and you do it all over.
 
-Which model you used last time, which reference images went in and which sentence produced the result are all somewhere in an old chat. You find it, paste it again, change the background description and run it six times. Next week the same request arrives and you do it all over. (This is an imagined scene.)
-
-Runway has released App Studio, aimed at exactly this kind of repetition. Its changelog dates the entry October 23, while press coverage is dated October 26, so the dates differ by a couple of days. This is not a hands-on review. It is based on Runway's App Studio page, its changelog and its pricing page, plus press coverage. I did not find how many credits a single app run costs in any page I opened.
+Runway has released App Studio, aimed at exactly this kind of repetition. Its changelog dates the entry October 23, while press coverage is dated October 26, so the dates differ by a couple of days. I did not find how many credits a single app run costs in any page I opened.
 
 ![Runway App Studio official page (source: https://runway.com/app-studio, captured 2026-10-27)](https://designrefs.com/articles/img/runway-app-studio-repeat-work-app-shot1.webp)
 ## Describe it in words, get an app
@@ -63,7 +61,7 @@ Sharing is the most practical part.
 
 The last two lines mean this: if you build a "product shot variations by market" app and send the link to a client or colleague, they run it on their own credits and your allowance doesn't shrink. It also means they need a Runway account. Whether they must be on a paid plan to spend credits is not confirmed.
 
-## What is still unknown
+## Per-run credit cost is not published
 
 - **Credits per run.** I found no per-app consumption table.
 - **Free plan.** No official statement on whether you can build and run apps.
@@ -72,7 +70,7 @@ The last two lines mean this: if you build a "product shot variations by market"
 - **Commercial terms.** Rights to app output weren't confirmed in the pages I opened. For a general baseline, see [Can you use AI images in client work?](https://designrefs.com/articles/ai-image-commercial-use/), which does not necessarily apply to Runway.
 - **Korean text.** None of the sources say whether apps handle Hangul.
 
-## What to try first
+## One frequent task, five identical runs
 
 **The one task you repeat most.** Background swaps, size variants, five images in the same tone. Pick something you do at least twice a month. A task that happens once is a weak reason to build an app.
 
@@ -80,12 +78,14 @@ The last two lines mean this: if you build a "product shot variations by market"
 
 **The screen your recipient sees.** Open the share link from a teammate's account and look at the sign-in and credit display. If you plan to give it to a client, that screen becomes part of the deliverable.
 
-## So for now
+## Write the steps down, count the credits yourself
 
 **Write the steps down first.** Before building, reduce the task to one input, three steps and one output. A task that is hard to write down will be hard to turn into an app. As in [why Lovable dropped its three design directions](https://designrefs.com/articles/lovable-design-system-same-look/), fixing the rules first makes results wobble less.
 
 **Count credits on the smallest plan.** Note how many credits drop after a few runs. With no published consumption, your own log is the only reference.
 
 **Keep practice and delivery separate.** Until the rights terms are confirmed, don't put the output straight into client work. Don't promise on things that aren't confirmed.
+
+※ I have not built an app in App Studio myself. This piece is put together from Runway's App Studio page, changelog and pricing page, plus press coverage.
 
 ※ Sources: [Runway App Studio](https://runway.com/app-studio), [Runway Product Updates & Changelog](https://runway.com/changelog), [Runway Pricing](https://runway.com/pricing), [AlphaSignal: Runway's App Studio Turns AI Model Chains Into Shareable No-Code Tools](https://alphasignal.ai/news/runway-s-app-studio-turns-ai-model-chains-into-shareable-no-code-tools), [Future Tools news](https://futuretools.io/news).

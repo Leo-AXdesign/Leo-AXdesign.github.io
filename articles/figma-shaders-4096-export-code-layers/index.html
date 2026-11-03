@@ -58,7 +58,7 @@
       "datePublished": "2026-11-03",
       "dateModified": "2026-11-03",
       "inLanguage": "ko",
-      "wordCount": 2986,
+      "wordCount": 2989,
       "timeRequired": "PT5M",
       "image": "https://designrefs.com/og/figma-shaders-4096-export-code-layers.png",
       "author": {
@@ -169,14 +169,14 @@
       <h1 class="page__title">움직이는 배경을 PNG로 내보내면 멈춘다, 피그마 셰이더는 4096px까지 뽑고 코드 레이어로도 넘어간다</h1>
       <p class="page__intro">11월 2일자 피그마 릴리스 노트와 도움말 두 편에서 확인한 것을 적었다. 셰이더 정식 제공, 최대 4096px 내보내기, 코드 레이어에서 재생 버튼을 눌러야 하는 이유. 브라우저 조건이 두 문서에서 다르게 적힌 부분과 11월 4일 이후 크레딧도 함께 적었다.</p>
       <p class="art__meta"><time datetime="2026-11-03">2026년 11월 3일</time> · 읽는 데 약 5분<span data-views hidden></span></p>
-      <nav class="art__toc" aria-label="이 글의 차례"><p class="art__toc-t">이 글의 차례</p><ol><li><a href="#s1">노트에서 읽은 다섯 줄</a></li><li><a href="#s2">셰이더가 무엇인지부터</a></li><li><a href="#s3">4096px로 뽑는다는 것</a></li><li><a href="#s4">코드 레이어로 넘길 때 누르는 곳</a></li><li><a href="#s5">브라우저 조건이 두 문서에서 다르다</a></li><li><a href="#s6">11월 4일에 끝나는 것</a></li><li><a href="#s7">아직 모르는 것</a></li><li><a href="#s8">그래서 지금은</a></li></ol></nav>
-    <p class="ptext">카드 배경에 움직이는 그라데이션을 얹은 시안을 보냈더니 &quot;PNG로 받으면 이건 안 움직이는 거죠&quot;라는 답이 왔다. (가정해서 그린 장면이다. 내가 겪은 일은 아니다.) 시안 파일에서는 돌아가던 효과가 내보내는 순간 멈춘 그림 한 장이 되고, 개발 쪽에는 &quot;이 효과는 어떻게 구현하나요&quot;라는 질문만 남는다.</p>
-    <p class="ptext">11월 2일자 피그마 릴리스 노트에 이 사이에 걸치는 항목이 올라왔다. 제목은 &quot;Export shaders at higher resolutions and bring them into code layers&quot;. 셰이더(그림 위에 질감이나 움직임을 입히는 효과)를 더 큰 해상도로 내보내고, 코드 레이어로도 가져간다는 내용이다. 이 글은 직접 써 본 후기가 아니다. 릴리스 노트, 셰이더 도움말, 코드 레이어 도움말을 열어 확인한 것만 적었다. 노트 개별 주소는 확인하지 못해 목록 페이지를 출처로 달았고, 내 계정에서 4096px 내보내기를 해 보지는 못했다.</p>
+      <nav class="art__toc" aria-label="이 글의 차례"><p class="art__toc-t">이 글의 차례</p><ol><li><a href="#s1">정식 제공, 4096px, 크롬 157</a></li><li><a href="#s2">셰이더가 무엇인지부터</a></li><li><a href="#s3">4096px로 뽑는다는 것</a></li><li><a href="#s4">코드 레이어로 넘길 때 누르는 곳</a></li><li><a href="#s5">브라우저 조건이 두 문서에서 다르다</a></li><li><a href="#s6">11월 4일에 끝나는 것</a></li><li><a href="#s7">기준 변, 용량, 움직임은 문서에 없다</a></li><li><a href="#s8">한 장만 뽑아 보고, 무료 기간엔 한 파일만</a></li></ol></nav>
+    <p class="ptext">카드 배경에 움직이는 그라데이션을 얹은 시안을 보냈는데 &quot;PNG로 받으면 이건 안 움직이는 거죠&quot;라는 답이 왔다고 해 보자. 시안 파일에서는 돌아가던 효과가 내보내는 순간 멈춘 그림 한 장이 되고, 개발 쪽에는 &quot;이 효과는 어떻게 구현하나요&quot;라는 질문만 남는다.</p>
+    <p class="ptext">11월 2일자 피그마 릴리스 노트에 이 사이에 걸치는 항목이 올라왔다. 제목은 &quot;Export shaders at higher resolutions and bring them into code layers&quot;. 셰이더(그림 위에 질감이나 움직임을 입히는 효과)를 더 큰 해상도로 내보내고, 코드 레이어로도 가져간다는 내용이다. 아래 내용은 릴리스 노트와 셰이더 도움말, 코드 레이어 도움말 세 문서에 적힌 것을 옮긴 것이다. 노트 개별 주소는 확인하지 못해 목록 페이지를 출처로 달았고, 내 계정에서 4096px 내보내기를 해 보지는 못했다.</p>
     <figure class="art__fig">
       <img src="https://designrefs.com/articles/img/figma-shaders-4096-export-code-layers-shot1.webp" alt="피그마 릴리스 노트 목록 (출처: https://www.figma.com/release-notes/, 캡처일 2026-11-03)" loading="lazy" decoding="async" />
       <figcaption>피그마 릴리스 노트 목록 (출처: https://www.figma.com/release-notes/, 캡처일 2026-11-03)</figcaption>
     </figure>
-    <h2 class="psub" id="s1">노트에서 읽은 다섯 줄</h2>
+    <h2 class="psub" id="s1">정식 제공, 4096px, 크롬 157</h2>
     <p class="ptext">노트는 짧다. 바뀐 점을 아래처럼 요약할 수 있다.</p>
     <div class="art__tablewrap"><table class="art__table">
       <thead><tr><th>항목</th><th>노트에 적힌 내용</th></tr></thead>
@@ -217,7 +217,7 @@
     <p class="ptext">코드 레이어 도움말 기준으로, 유료 요금제에서 코드 레이어를 만들고 고치는 일은 11월 4일까지 무료다. 같은 프롬프트에 섞인 다른 에이전트 작업은 크레딧을 쓴다. 11월 4일 이후에는 코드 레이어 작업도 다른 에이전트 기능처럼 AI 크레딧으로 나가고, 쓰는 양은 작업이 복잡할수록 달라진다고 적혀 있다.</p>
     <p class="ptext">MCP(피그마와 AI 코딩 도구를 잇는 연결)로 프로젝트를 가져올 때는 크레딧이 안 들지만, 그 뒤에 메이크 에이전트가 고치면 든다. 이 가져오기는 풀 시트(Full seat)가 필요하다. MCP 가져오기는 10분 넘게 걸릴 수 있고, 일부 프로젝트는 고쳐야 돌아간다고 한다.</p>
     <p class="ptext">크레딧이 어떻게 나가는지는 <a href="https://designrefs.com/articles/figma-mcp-weave-models-credits/">Weave 모델 크레딧 글</a>에서 따로 짚었다.</p>
-    <h2 class="psub" id="s7">아직 모르는 것</h2>
+    <h2 class="psub" id="s7">기준 변, 용량, 움직임은 문서에 없다</h2>
     <ul class="ptext-list">
       <li><strong>4096px의 기준.</strong> 긴 변인지, 가로인지, 정사각형 기준인지 적혀 있지 않다.</li>
       <li><strong>내보내기 형식과 용량.</strong> 큰 해상도에서 파일이 얼마나 커지는지 문서에 없다.</li>
@@ -225,7 +225,7 @@
       <li><strong>정식 제공의 범위.</strong> 영문 셰이더 도움말에는 베타 표시가 없다. 검색 결과에 잡힌 다른 언어 도움말 요약은 오픈 베타라고 한 것 같았는데, 그 문서를 내가 열어 보지는 않았다.</li>
       <li><strong>크롬 조건.</strong> 위에 적은 대로 두 문서가 다르다.</li>
     </ul>
-    <h2 class="psub" id="s8">그래서 지금은</h2>
+    <h2 class="psub" id="s8">한 장만 뽑아 보고, 무료 기간엔 한 파일만</h2>
     <p class="ptext"><strong>내려받을 해상도를 정하고 한 장만 뽑는다.</strong> 질감이 고운 셰이더 하나를 4096px로 내보내 100% 확대로 본다. 같은 셰이더를 작은 크기로도 뽑아 비교하면 큰 해상도가 필요한 장면이 어디인지 알 수 있다. 용량은 직접 확인해야 한다.</p>
     <p class="ptext"><strong>무료 기간을 쓸 거면 11월 4일 안에 한 파일만.</strong> 셰이더를 넣은 프레임 하나로 Build selection을 눌러 본다. 움직이지 않으면 Play부터 누르고, 그래도 안 되면 크롬 버전과 플래그를 본다. 크레딧이 걸리는 건 그다음부터이니 한 파일로 가늠해 보면 된다.</p>
     <p class="ptext"><strong>움직이는 배경은 한 페이지에 하나씩.</strong> 한 번에 하나만 도는 제한이 있으니, 시안 한 장에 하나만 두고 나머지는 정지 셰이더로 둔다. 셰이더를 고치다 이전 모습이 그리워지면 <a href="https://designrefs.com/articles/figma-shader-plugin-version-restore/">버전 기록</a>이 있다.</p>

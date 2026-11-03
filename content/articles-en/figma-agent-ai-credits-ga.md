@@ -9,7 +9,7 @@ If you tried Figma's agent during the beta, you probably never worried about the
 
 If you don't know what a prompt costs or how large the monthly allowance is, you hit a wall at the end of the month. This piece follows Figma's FAQ, its pricing page and a community forum reply, and separates what is confirmed from what is missing.
 
-## What changed
+## Credits count from October 6
 
 From the 'Agent and Weave tools' section of Figma's FAQ:
 
@@ -55,7 +55,7 @@ Smaller prompts would allow more and larger ones fewer. Read it as a sense of sc
 
 Teams that use AI often can buy more credits through a subscription or pay-as-you-go billing. The pricing page says purchased credits are shared by the whole team. The FAQ says that from August 25 the add-ons give more credits at the same price: 2x on Professional and 1.6x on Organization and Enterprise. It applies automatically, invoices may show adjustment lines but the net cost stays the same, and the monthly spending limit is unchanged.
 
-## What isn't confirmed
+## No official price per prompt
 
 - The average credits for one agent prompt. There is no official price list.
 - Which plans can use the agent. The pricing page doesn't say.
@@ -67,7 +67,7 @@ Teams that use AI often can buy more credits through a subscription or pay-as-yo
 
 [Figma Specs](https://designrefs.com/articles/figma-specs-markdown-context/) was about handing context to a team and AI in one markdown page. This change adds a price to handing that context to an AI. The FAQ says credit use varies with the context you provide. Keeping your rules short might improve results and also reduce usage. That is my guess, and no public test backs it up. The rules memo is covered in the [DESIGN.md](https://designrefs.com/articles/design-md-for-ai/) piece.
 
-## So for now
+## Measure your own unit price in AI Balance
 
 **Open AI Balance first.** Note today's remaining credits, run one small prompt, and see how much dropped. That gives you a unit price for your own work. With no official price list, this is the most accurate method.
 
@@ -77,7 +77,7 @@ Teams that use AI often can buy more credits through a subscription or pay-as-yo
 
 AI design tools by use are collected in [AI design tools](https://designrefs.com/ai/).
 
-## In short
+## The math rests on one forum number
 
 The agent started drawing credits at general availability, and there is no official price list for one run. The most reliable way is to measure your own work with AI Balance. The arithmetic here rests on a single forum number. I haven't used the agent under credit billing.
 

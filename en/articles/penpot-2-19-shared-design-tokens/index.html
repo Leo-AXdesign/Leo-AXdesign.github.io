@@ -58,7 +58,7 @@
       "datePublished": "2026-11-02",
       "dateModified": "2026-11-02",
       "inLanguage": "en",
-      "wordCount": 1355,
+      "wordCount": 1338,
       "timeRequired": "PT6M",
       "image": "https://designrefs.com/og/en/penpot-2-19-shared-design-tokens.png",
       "author": {
@@ -173,14 +173,14 @@
       <p class="page__intro">What Penpot&#x27;s October 28 release note and user guide confirm about shared design tokens, per-side strokes and WebGL rendering, where the GitHub releases page disagrees, and what to back up before you try it.</p>
       <p class="art__meta"><time datetime="2026-11-02">November 2, 2026</time> · 6 min read<span data-views hidden></span></p>
       <p class="art__note">Translated from the Korean original. <a href="https://designrefs.com/articles/penpot-2-19-shared-design-tokens/" hreflang="ko" lang="ko">Read in Korean</a></p>
-      <nav class="art__toc" aria-label="In this article"><p class="art__toc-t">In this article</p><ol><li><a href="#s1">Five lines in the release note</a></li><li><a href="#s2">What a token is, and what changes when it lives in one place</a></li><li><a href="#s3">How the docs say sharing works, and the catch</a></li><li><a href="#s4">Borders per side</a></li><li><a href="#s5">Path editor, shortcuts and WebGL</a></li><li><a href="#s6">GitHub still shows 2.18.5</a></li><li><a href="#s7">Quiet on the AI side</a></li><li><a href="#s8">What I could not find out</a></li><li><a href="#s9">What to do now</a></li></ol></nav>
-    <p class="ptext">When a message arrives saying the brand blue has changed, someone with twelve files opens twelve files. Fix the color style, check the buttons by eye, move on to the next file. (This is an imagined scene, not something that happened to me.)</p>
-    <p class="ptext">Penpot&#x27;s release notes added 2.19, &quot;Is this it,&quot; dated October 28. One line touches that scene directly: you store tokens in one library and every file connected to it uses them. This is not a hands-on review. I only wrote down what I could confirm in the release note, Penpot&#x27;s user guide and the GitHub releases page. I did not check whether the feature is switched on in my own account.</p>
+      <nav class="art__toc" aria-label="In this article"><p class="art__toc-t">In this article</p><ol><li><a href="#s1">Five features, from shared tokens to WebGL</a></li><li><a href="#s2">What a token is, and what changes when it lives in one place</a></li><li><a href="#s3">How the docs say sharing works, and the catch</a></li><li><a href="#s4">Borders per side</a></li><li><a href="#s5">Path editor, shortcuts and WebGL</a></li><li><a href="#s6">GitHub still shows 2.18.5</a></li><li><a href="#s7">Quiet on the AI side</a></li><li><a href="#s8">When it arrives, and how fast edits spread</a></li><li><a href="#s9">Download your tokens before you move them</a></li></ol></nav>
+    <p class="ptext">Say a message arrives saying the brand blue has changed. Someone with twelve files opens twelve files. Fix the color style, check the buttons by eye, move on to the next file.</p>
+    <p class="ptext">Penpot&#x27;s release notes added 2.19, &quot;Is this it,&quot; dated October 28. One line touches that scene directly: you store tokens in one library and every file connected to it uses them.</p>
     <figure class="art__fig">
       <img src="https://designrefs.com/articles/img/penpot-2-19-shared-design-tokens-shot1.webp" alt="Penpot 2.19 release note (source: https://penpot.app/release-notes/2-19-is-this-it, captured 2026-11-02)" loading="lazy" decoding="async" />
       <figcaption>Penpot 2.19 release note (source: https://penpot.app/release-notes/2-19-is-this-it, captured 2026-11-02)</figcaption>
     </figure>
-    <h2 class="psub" id="s1">Five lines in the release note</h2>
+    <h2 class="psub" id="s1">Five features, from shared tokens to WebGL</h2>
     <p class="ptext">The note is short. It lists five features with a sentence or two each.</p>
     <div class="art__tablewrap"><table class="art__table">
       <thead><tr><th>Feature</th><th>What the note says</th></tr></thead>
@@ -224,7 +224,7 @@
     <p class="ptext">There are several readings. The site&#x27;s note may have gone up before the GitHub release, or the GitHub page I opened may be an older copy. Whether the hosted app already has 2.19, and when self-hosters can get it, I could not confirm.</p>
     <h2 class="psub" id="s7">Quiet on the AI side</h2>
     <p class="ptext">The note has no new AI feature. The only AI-adjacent line is a bug fix from a community contributor: a crash when switching pages with the MCP plugin (the connection between an AI tool and your file) attached. The other fixes are a Windows build error, prototype overlay position and stroke-to-path on path ends.</p>
-    <h2 class="psub" id="s8">What I could not find out</h2>
+    <h2 class="psub" id="s8">When it arrives, and how fast edits spread</h2>
     <ul class="ptext-list">
       <li><strong>When the hosted app gets it.</strong> The note is dated October 28, while GitHub&#x27;s latest looked like 2.18.5.</li>
       <li><strong>The steps to connect a file to a library.</strong> The 2.19 note gives none. Whether the guide&#x27;s &quot;set as tokens source&quot; is the same flow, I could not confirm.</li>
@@ -232,10 +232,11 @@
       <li><strong>Whether WebGL is the default.</strong></li>
       <li><strong>How per-side strokes appear in export or inspect view.</strong></li>
     </ul>
-    <h2 class="psub" id="s9">What to do now</h2>
+    <h2 class="psub" id="s9">Download your tokens before you move them</h2>
     <p class="ptext"><strong>Export your current tokens before moving them.</strong> Import replaces the global token set. Download today&#x27;s token JSON so you have a way back. Since setting a library as the source blocks import, doing import first and source second seems easier. That order is my inference from two lines in the guide.</p>
     <p class="ptext"><strong>Name tokens by use, not by color.</strong> &quot;Button background&quot; stays true when the brand color changes; &quot;blue&quot; does not. For gray text, check contrast against the background first. While building this site I once checked gray text contrast with a checker and fixed it, so I filter for that before collecting values into tokens. For handing the same rules to an AI coding tool, see <a href="https://designrefs.com/articles/design-md-for-ai/">DESIGN.md, one file to hand your design rules to AI</a>.</p>
     <p class="ptext"><strong>Time WebGL on the same file.</strong> Export your heaviest file once with it off and once with it on. &quot;Much faster&quot; in the note means some number of seconds on your file, and you only learn it by trying. If something misbehaves, switch it off in the same settings. For why AI screens look alike from the design-system side, see <a href="https://designrefs.com/articles/lovable-design-system-same-look/">Why Lovable dropped the three design directions</a>.</p>
+    <p class="art__note">I have not switched 2.19 on in my own account. This piece is put together from the release note, Penpot&#x27;s user guide and the GitHub releases page.</p>
     <p class="art__note">Sources: <a href="https://penpot.app/release-notes/2-19-is-this-it" target="_blank" rel="noopener">Penpot 2.19 &quot;Is this it&quot; release note</a>, <a href="https://penpot.app/release-notes" target="_blank" rel="noopener">Penpot release notes index</a>, <a href="https://help.penpot.app/user-guide/design-systems/design-tokens/" target="_blank" rel="noopener">Penpot user guide: design tokens</a>, <a href="https://github.com/penpot/penpot/releases" target="_blank" rel="noopener">Penpot on GitHub: releases</a>, <a href="https://github.com/penpot/penpot/blob/develop/CHANGES.md#2190-unreleased" target="_blank" rel="noopener">Penpot changelog (CHANGES.md)</a>, <a href="https://community.penpot.app/t/whats-next-for-the-penpot-webgl-renderer/10627" target="_blank" rel="noopener">Penpot community: What&#x27;s next for the Penpot WebGL renderer</a></p>
       <div class="share">
         <button class="share__btn" type="button" data-share>Share</button>

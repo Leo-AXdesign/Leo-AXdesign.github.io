@@ -58,7 +58,7 @@
       "datePublished": "2026-11-02",
       "dateModified": "2026-11-02",
       "inLanguage": "ko",
-      "wordCount": 3521,
+      "wordCount": 3513,
       "timeRequired": "PT6M",
       "image": "https://designrefs.com/og/penpot-2-19-shared-design-tokens.png",
       "author": {
@@ -169,14 +169,14 @@
       <h1 class="page__title">펜팟 2.19는 색·글자 규칙을 라이브러리 한 곳에 두고 여러 파일이 가져다 쓰게 한다</h1>
       <p class="page__intro">10월 28일자 펜팟 2.19 릴리스 노트와 공식 문서에서 확인한 것을 적었다. 공유 디자인 토큰, 면마다 따로 주는 테두리, WebGL 렌더링. GitHub 릴리스 페이지와 어긋나는 부분, 내 계정에서 켜 보기 전에 해 둘 백업도 함께 적었다.</p>
       <p class="art__meta"><time datetime="2026-11-02">2026년 11월 2일</time> · 읽는 데 약 6분<span data-views hidden></span></p>
-      <nav class="art__toc" aria-label="이 글의 차례"><p class="art__toc-t">이 글의 차례</p><ol><li><a href="#s1">릴리스 노트에 적힌 다섯 줄</a></li><li><a href="#s2">토큰이 무엇이고, 한 곳에 두면 무엇이 달라지나</a></li><li><a href="#s3">문서가 말하는 공유 방식과 함정</a></li><li><a href="#s4">테두리를 면마다 따로</a></li><li><a href="#s5">경로 편집기, 단축키, WebGL</a></li><li><a href="#s6">GitHub 페이지는 아직 2.18.5</a></li><li><a href="#s7">AI 쪽은 이번에 조용하다</a></li><li><a href="#s8">아직 모르는 것</a></li><li><a href="#s9">그래서 지금은</a></li></ol></nav>
-    <p class="ptext">브랜드 파란색이 바뀌었다는 공지가 오면, 파일이 열두 개인 사람은 파일을 열두 번 연다. 색 스타일을 고치고, 버튼을 눈으로 확인하고, 다음 파일로 간다. (가정해서 그린 장면이다. 내가 겪은 일은 아니다.)</p>
-    <p class="ptext">10월 28일자 펜팟(Penpot) 릴리스 노트에 2.19 &quot;Is this it&quot;가 올라왔다. 항목 중에 이 장면과 맞닿은 줄이 있다. 토큰을 라이브러리 한 곳에 두고, 그 라이브러리에 연결된 모든 파일이 쓴다는 내용이다. 이 글은 직접 써 본 후기가 아니다. 릴리스 노트, 펜팟 사용자 가이드, GitHub 릴리스 페이지를 열어 확인한 것만 적었다. 내 계정에서 기능이 켜지는지는 확인하지 못했다.</p>
+      <nav class="art__toc" aria-label="이 글의 차례"><p class="art__toc-t">이 글의 차례</p><ol><li><a href="#s1">토큰 공유부터 WebGL까지, 기능 다섯 개</a></li><li><a href="#s2">토큰이 무엇이고, 한 곳에 두면 무엇이 달라지나</a></li><li><a href="#s3">문서가 말하는 공유 방식과 함정</a></li><li><a href="#s4">테두리를 면마다 따로</a></li><li><a href="#s5">경로 편집기, 단축키, WebGL</a></li><li><a href="#s6">GitHub 페이지는 아직 2.18.5</a></li><li><a href="#s7">AI 쪽은 이번에 조용하다</a></li><li><a href="#s8">언제 쓸 수 있는지, 얼마나 빨리 반영되는지</a></li><li><a href="#s9">옮기기 전에 지금 토큰부터 내려받기</a></li></ol></nav>
+    <p class="ptext">브랜드 파란색이 바뀌었다는 공지가 왔다고 해 보자. 파일이 열두 개인 사람은 파일을 열두 번 연다. 색 스타일을 고치고, 버튼을 눈으로 확인하고, 다음 파일로 간다.</p>
+    <p class="ptext">10월 28일자 펜팟(Penpot) 릴리스 노트에 2.19 &quot;Is this it&quot;가 올라왔다. 항목 중에 이 장면과 맞닿은 줄이 있다. 토큰을 라이브러리 한 곳에 두고, 그 라이브러리에 연결된 모든 파일이 쓴다는 내용이다.</p>
     <figure class="art__fig">
       <img src="https://designrefs.com/articles/img/penpot-2-19-shared-design-tokens-shot1.webp" alt="펜팟 2.19 릴리스 노트 (출처: https://penpot.app/release-notes/2-19-is-this-it, 캡처일 2026-11-02)" loading="lazy" decoding="async" />
       <figcaption>펜팟 2.19 릴리스 노트 (출처: https://penpot.app/release-notes/2-19-is-this-it, 캡처일 2026-11-02)</figcaption>
     </figure>
-    <h2 class="psub" id="s1">릴리스 노트에 적힌 다섯 줄</h2>
+    <h2 class="psub" id="s1">토큰 공유부터 WebGL까지, 기능 다섯 개</h2>
     <p class="ptext">릴리스 노트의 본문은 짧다. 기능이 다섯 개 나열돼 있고, 각각 한두 문장이다.</p>
     <div class="art__tablewrap"><table class="art__table">
       <thead><tr><th>기능</th><th>노트에 적힌 내용</th></tr></thead>
@@ -220,7 +220,7 @@
     <p class="ptext">해석은 여러 가지다. 사이트의 노트가 GitHub 배포보다 먼저 올라왔을 수도 있고, 내가 연 GitHub 페이지가 오래된 사본일 수도 있다. 펜팟 호스팅 앱(design.penpot.app)에서 이미 쓸 수 있는지, 직접 설치해 쓰는 쪽은 언제 받을 수 있는지는 확인하지 못했다.</p>
     <h2 class="psub" id="s7">AI 쪽은 이번에 조용하다</h2>
     <p class="ptext">노트 어디에도 새 AI 기능은 없다. AI와 이어지는 줄은 커뮤니티 기여자가 고친 버그 하나뿐이다. MCP 플러그인(AI 도구와 파일을 잇는 연결)을 켠 채 페이지를 옮기면 멈추던 문제를 고쳤다고 한다. 다른 고침은 윈도우 빌드 오류, 프로토타입 오버레이 위치, 선을 경로로 바꿀 때의 오류다.</p>
-    <h2 class="psub" id="s8">아직 모르는 것</h2>
+    <h2 class="psub" id="s8">언제 쓸 수 있는지, 얼마나 빨리 반영되는지</h2>
     <ul class="ptext-list">
       <li><strong>호스팅 앱에서 쓸 수 있는 시점.</strong> 노트는 10월 28일자인데 GitHub 릴리스는 2.18.5가 최신으로 보였다.</li>
       <li><strong>파일을 라이브러리에 연결하는 순서.</strong> 2.19 노트에는 설정 단계가 없다. 문서의 &quot;토큰 출처로 지정&quot;이 같은 흐름인지는 확인하지 못했다.</li>
@@ -228,10 +228,11 @@
       <li><strong>WebGL이 기본값인지.</strong> 켜는 방법만 있고 기본값 언급이 없다.</li>
       <li><strong>면마다 다른 테두리가 내보내기나 개발자 정보 보기에서 어떻게 나오는지.</strong></li>
     </ul>
-    <h2 class="psub" id="s9">그래서 지금은</h2>
+    <h2 class="psub" id="s9">옮기기 전에 지금 토큰부터 내려받기</h2>
     <p class="ptext"><strong>토큰을 옮기기 전에 지금 것을 내보낸다.</strong> 가져오기가 전역 토큰 세트를 교체한다. 지금 쓰는 토큰 JSON을 먼저 내려받아 두면 되돌릴 길이 남는다. 라이브러리를 토큰 출처로 지정하면 가져오기가 막히니, 순서도 &quot;가져오기 먼저, 출처 지정은 나중&quot;으로 잡는 편이 편하다. 이 순서는 문서의 두 줄을 이어 본 나의 추정이다.</p>
     <p class="ptext"><strong>이름은 색 이름이 아니라 쓰임으로 붙인다.</strong> &quot;파랑&quot; 대신 &quot;버튼 배경&quot;으로 두면 브랜드 색이 바뀌어도 이름이 틀리지 않는다. 회색 글자의 값을 정할 때는 배경과의 명도 대비부터 본다. 이 사이트를 만들며 회색 글자의 명도 대비를 검사기로 확인하고 고친 적이 있어서, 토큰으로 모으기 전에 한 번 거르는 습관이 있다. AI 코딩 도구에게 이 규칙을 건네는 방법은 <a href="https://designrefs.com/articles/design-md-for-ai/">AI에게 우리 디자인 규칙을 건네는 파일 한 장, DESIGN.md</a>에서 정리했다.</p>
     <p class="ptext"><strong>WebGL은 같은 파일로 재 본다.</strong> 설정에서 켜기 전후로 가장 무거운 파일 하나의 내보내기 시간을 직접 재 본다. &quot;훨씬 빠르다&quot;는 노트의 표현이 내 파일에서 몇 초 차이인지는 켜 봐야 안다. 문제가 생기면 같은 설정에서 끄면 된다. 비슷비슷한 AI 화면이 나오는 이유를 디자인 시스템 쪽에서 본 글은 <a href="https://designrefs.com/articles/lovable-design-system-same-look/">러버블은 왜 &#x27;디자인 방향 3안&#x27;을 없앴을까</a>에 있다.</p>
+    <p class="art__note">2.19를 내 계정에서 켜 보지는 못했다. 릴리스 노트와 펜팟 사용자 가이드, GitHub 릴리스 페이지를 읽고 정리한 글이다.</p>
     <p class="art__note">출처: <a href="https://penpot.app/release-notes/2-19-is-this-it" target="_blank" rel="noopener">Penpot 2.19 &quot;Is this it&quot; 릴리스 노트</a>, <a href="https://penpot.app/release-notes" target="_blank" rel="noopener">Penpot 릴리스 노트 목록</a>, <a href="https://help.penpot.app/user-guide/design-systems/design-tokens/" target="_blank" rel="noopener">Penpot 사용자 가이드: 디자인 토큰</a>, <a href="https://github.com/penpot/penpot/releases" target="_blank" rel="noopener">Penpot GitHub 릴리스</a>, <a href="https://github.com/penpot/penpot/blob/develop/CHANGES.md#2190-unreleased" target="_blank" rel="noopener">Penpot 변경 기록(CHANGES.md)</a>, <a href="https://community.penpot.app/t/whats-next-for-the-penpot-webgl-renderer/10627" target="_blank" rel="noopener">Penpot 커뮤니티: What&#x27;s next for the Penpot WebGL renderer</a></p>
       <div class="share">
         <button class="share__btn" type="button" data-share>공유하기</button>

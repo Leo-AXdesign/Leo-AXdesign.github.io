@@ -58,7 +58,7 @@ The key is not to dismiss the AI draft. A client showing the direction they want
 
 It's the same inside a company. When a boss holds up an AI-made screen, take it as a starting point, but separately note "what I decided from here": what you changed and why. Over time, that becomes a record that the designer did more than push pixels.
 
-## So, for now
+## Start by splitting the quote into lines
 
 1. **Split the lines on your quote.** Instead of "design, one lot", list the remaining work line by line: rights check, resetting type, file prep, per-medium production, number of revision rounds. Clients can see what they're paying for.
 2. **Ask where the draft came from.** Which AI made it, and whether that service allows commercial use. Keep it in an email so the designer isn't left holding the problem later.

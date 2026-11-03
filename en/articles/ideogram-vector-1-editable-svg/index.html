@@ -173,9 +173,8 @@
       <p class="page__intro">On October 22, Ideogram released Vector 1.0, its first vector model, which makes editable SVGs from text or from an existing image. What Ideogram&#x27;s API docs and press coverage say, the reported prices, and what is still unknown about layers and live text.</p>
       <p class="art__meta"><time datetime="2026-10-24">October 24, 2026</time> · 6 min read<span data-views hidden></span></p>
       <p class="art__note">Translated from the Korean original. <a href="https://designrefs.com/articles/ideogram-vector-1-editable-svg/" hreflang="ko" lang="ko">Read in Korean</a></p>
-      <nav class="art__toc" aria-label="In this article"><p class="art__toc-t">In this article</p><ol><li><a href="#s1">Raster and vector in one line</a></li><li><a href="#s2">What the official docs show</a></li><li><a href="#s3">The reported prices</a></li><li><a href="#s4">Three things to open first</a></li><li><a href="#s5">Next to what already exists</a></li><li><a href="#s6">What is not known yet</a></li><li><a href="#s7">What to do now</a></li></ol></nav>
-    <p class="ptext">The client&#x27;s email is two lines. &quot;I like the AI logo. We&#x27;ll use it on business cards and a banner, so please send the original file.&quot;</p>
-    <p class="ptext">What you have is one PNG. Blow it up to banner size and the edges go soft. The print shop wants an AI or SVG file, meaning a vector. Many people hit exactly this wall when they try to use image-AI output for real work.</p>
+      <nav class="art__toc" aria-label="In this article"><p class="art__toc-t">In this article</p><ol><li><a href="#s1">Raster and vector in one line</a></li><li><a href="#s2">What the official docs show</a></li><li><a href="#s3">The reported prices</a></li><li><a href="#s4">Three things to open first</a></li><li><a href="#s5">Next to what already exists</a></li><li><a href="#s6">No independent tests, no app price list</a></li><li><a href="#s7">Open ten test files, put cleanup in the estimate</a></li></ol></nav>
+    <p class="ptext">Print shops ask for a vector file, AI or SVG, when you hand over a logo. What image AI usually gives you is a single PNG, and something that looked fine on a business card goes soft at the edges once you blow it up to banner size. Many people hit exactly this wall when they try to use image-AI output for real work.</p>
     <p class="ptext">On October 22, Ideogram released Ideogram Vector 1.0, its first vector model. Describe something in text and you get an SVG. Upload an existing picture and it converts it to a vector. This piece reports only what I verified in Ideogram&#x27;s API documentation and in coverage of the launch.</p>
     <figure class="art__fig">
       <img src="https://designrefs.com/articles/img/ideogram-vector-1-editable-svg-shot1.webp" alt="Ideogram developer docs, Generate SVG API page. Source: developer.ideogram.ai/api-reference/vectors/generate-svg (captured 2026-10-24)" loading="lazy" decoding="async" />
@@ -225,7 +224,7 @@
     <h2 class="psub" id="s5">Next to what already exists</h2>
     <p class="ptext">This is not the first AI that outputs vectors directly. One search result described Recraft as producing SVG natively. What is new here is less &quot;an AI makes vectors&quot; and more &quot;a well-known image-generation company shipped a dedicated vector model.&quot; I found no comparison showing which is better.</p>
     <p class="ptext">Image generators like Ideogram, along with AI logo and brand-kit tools, are collected with Recraft, Looka and others under image generation on <a href="https://designrefs.com/ai/">AI design tools</a>. Fixing an image instead of rerolling it is covered in <a href="https://designrefs.com/articles/krea-3-edit-keep-logo/">Background changed and the logo changed too: what to check in Krea 3&#x27;s edit model</a>. That one is raster editing; this one is vector output, so they serve different moments.</p>
-    <h2 class="psub" id="s6">What is not known yet</h2>
+    <h2 class="psub" id="s6">No independent tests, no app price list</h2>
     <ul class="ptext-list">
       <li><strong>Output quality.</strong> No independent test shows whether it is stronger on logos, icons or posters.</li>
       <li><strong>App pricing.</strong> Whether free accounts can use it, and what it costs in credits, was not confirmed.</li>
@@ -233,7 +232,7 @@
       <li><strong>Editing.</strong> I saw no endpoint for revising a generated SVG by prompt, and outside articles also point you to a design tool for edits.</li>
       <li><strong>What quality levels mean.</strong> The docs do not explain how low, medium and high differ.</li>
     </ul>
-    <h2 class="psub" id="s7">What to do now</h2>
+    <h2 class="psub" id="s7">Open ten test files, put cleanup in the estimate</h2>
     <p class="ptext"><strong>Sort raster from vector first.</strong> When a client asks for the original file, find out which format they actually need. Print, signage and merchandise need vector. Web illustrations are often fine as PNG. That saves you from swapping models when the real issue is the format.</p>
     <p class="ptext"><strong>Open about ten files.</strong> Generate one logo, one icon set and one poster with type, then open each in Illustrator or Figma. Note whether layers are separated, whether text is live, and how many points there are. That tells you what to hand to this model and what not to. If you use the API, check the price with <code>dry_run</code> first.</p>
     <p class="ptext"><strong>Reserve time for a human pass before delivery.</strong> A converted SVG may be one lump of overlapping shapes. Put color values, stroke widths and naming cleanup into your estimate, and &quot;AI should make it quick&quot; becomes easier to answer.</p>

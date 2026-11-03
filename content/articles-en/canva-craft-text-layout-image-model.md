@@ -5,11 +5,9 @@ desc: On October 22 Canva released Craft, its first in-house image model, aimed 
 tag: AI Design
 ---
 
-The client's email is one line. "Can you send three poster options today? Make the date and venue big."
+The event poster from the image AI has the date as "Oct 2th". The date in the prompt was "Oct 27". The picture looks right, which makes it worse. You regenerate, and this time the text is correct but the title has slid into a corner. Say three drafts with a big date and venue are due today. The number of generations just keeps climbing.
 
-You run the prompt through an image AI and the picture looks right. But the date reads "Oct 2th" instead of "Oct 27". You regenerate. This time the text is correct, but the title has slid into a corner. For three drafts, the number of generations keeps climbing. (This is an imagined scene.)
-
-On October 22, Canva released Canva Craft, its first image generation model built in-house. It is aimed at posters, social posts and presentations, where text and layout matter more than photographic realism. This is not a hands-on review. It is a read of what press coverage reports, from a designer's point of view.
+On October 22, Canva released Canva Craft, its first image generation model built in-house. It is aimed at posters, social posts and presentations, where text and layout matter more than photographic realism.
 
 I haven't run the model myself; this is based on reporting from TechCrunch, Digital Trends and others. The rankings and performance figures are Canva's own, and I found nothing that verified them independently. API pricing and credit costs weren't in the coverage either.
 
@@ -68,7 +66,7 @@ That last item is the same question we raised for [Ideogram Vector 1.0](https://
 
 **Open the converted file.** If you can use the layer conversion, open the result and check whether the text is a text box. That one check decides how long delivery takes.
 
-## What we don't know yet
+## Price and Korean quality are still blank
 
 - **Price.** API rates, app credit use and free limits have no confirmed source.
 - **Independent tests.** Apart from the rankings Canva cites, I found no third-party comparison.
@@ -77,7 +75,7 @@ That last item is the same question we raised for [Ideogram Vector 1.0](https://
 - **Layer conversion in practice.** How well it separates layers, and whether text stays editable, is unknown until someone opens a file.
 - **Specifications.** Model size and technical documentation were reported as not published.
 
-## So for now
+## Count ten runs before switching
 
 **Count ten generations.** Run one text-heavy poster ten times with the same prompt and record how many have no text errors. Put it next to your current tool under identical conditions, or there is no reason to switch.
 

@@ -8,14 +8,12 @@ tag: AI 디자인
 related: ai, tools, ui-ux
 ---
 
-클라이언트 메일은 짧다. "시안 폰트만 바꿔서 한 번 더 보여 주세요."
+피그마 도움말에는 기본 모델로 글꼴 하나를 바꾸는 작업이 약 30크레딧 이상이라고 적혀 있다. 한 번이면 신경 쓸 숫자가 아니다. 시안 폰트만 바꿔 다시 보여 달라는 요청이 열두 번 오면 360크레딧을 넘긴다.
 
-메이크 채팅창에 한 줄을 적는다. 결과는 마음에 든다. 그런데 크레딧 잔량이 눈에 띄게 줄어 있다. 피그마 도움말은 기본 모델로 글꼴 하나를 바꾸는 작업이 약 30크레딧 이상이라고 적어 둔다. 한 번이면 괜찮다. 수정 요청이 열두 번 오면 얘기가 달라진다. (가정해서 그린 장면이다.)
-
-이럴 때 쓸 수 있는 손잡이가 하나 있다. 메이크 채팅창의 모델 선택기다. 10월 13일 여기에 Gemini 4 Argon이 추가됐다. 이 글은 직접 써 본 후기가 아니다. 피그마 릴리스 노트와 도움말, 구글의 모델 문서와 발표 글을 열어 확인한 내용만 적었다. Argon으로 메이크 작업을 한 번 돌릴 때 크레딧이 얼마나 드는지는 내가 연 자료 어디에도 없었다.
+이럴 때 쓸 수 있는 손잡이가 하나 있다. 메이크 채팅창의 모델 선택기다. 10월 13일 여기에 Gemini 4 Argon이 추가됐다. Argon으로 메이크 작업을 한 번 돌릴 때 크레딧이 얼마나 드는지는 내가 연 자료 어디에도 없었다.
 
 ![피그마 릴리스 노트의 Make 항목 (출처: https://www.figma.com/release-notes/, 캡처일 2026-10-28)](https://designrefs.com/articles/img/figma-make-gemini-4-argon-model-picker-shot1.webp)
-## 릴리스 노트에 적힌 것은 세 줄이다
+## 모든 플랜, 순차 제공, 크레딧 언급 없음
 
 10월 13일자 항목의 제목은 "Gemini 4 Argon is rolling out in Figma Make"다. 본문은 "Gemini 4 Argon, Gemini's latest and most advanced model, is now rolling out in Figma Make."라고 시작한다. 쓰는 방법과 대상 플랜도 함께 나와 있다.
 
@@ -73,7 +71,7 @@ related: ai, tools, ui-ux
 
 혼자 일하는 프리랜서에게는 해당 없는 이야기다. 팀 계정으로 클라이언트 작업을 하는 디자이너라면 "왜 이번 달 크레딧이 벌써 바닥인지"를 관리자가 모델 단위가 아니라 사람 단위로만 볼 수 있다는 점을 알아 둘 만하다. 사용량 화면에서 모델별 내역이 나오는지는 내가 본 자료에 없었다.
 
-## 아직 모르는 것
+## 30크레딧이 어느 모델 기준인지도 없다
 
 - **Argon의 크레딧 소모량.** 같은 작업을 기본 모델과 Argon으로 돌렸을 때 차이는 공개된 곳을 찾지 못했다.
 - **기본 모델이 무엇인지.** 도움말의 30·75·100 크레딧 예시가 어느 모델 기준인지 이름이 없다.
@@ -100,12 +98,14 @@ related: ai, tools, ui-ux
 
 한 번으로는 의미가 약하다. 같은 작업을 세 번쯤 돌리면 크레딧 편차와 결과 편차를 둘 다 볼 수 있다. 작업 단위가 클수록 편차도 커질 것이라고 짐작은 되지만, 그것도 재 봐야 안다.
 
-## 그래서 지금은
+## 요청은 묶어 보내고, 잔량은 미리 적는다
 
 **수정 요청은 모아서 한 번에 보낸다.** 폰트, 색, 간격을 세 번에 나눠 시키는 것보다 한 문장에 담는 편이 채팅 횟수를 줄인다. 한 번에 보내는 쪽이 크레딧이 덜 드는지는 도움말에 없지만, 요청마다 파일을 다시 읽는다고 가정하면 횟수를 줄이는 쪽이 손해 볼 일은 적다. 이 부분은 추정이다.
 
 **모델을 바꾸기 전에 잔량부터 적어 둔다.** 새 모델이 선택기에 보인다고 바로 기본값으로 쓰지 않는다. 위 기록표로 작은 작업 하나를 먼저 재고, 그 숫자를 팀 채팅에 남긴다. 팀에서 크레딧을 같이 쓴다면 이 한 줄이 관리자 설정 논의의 근거가 된다.
 
 **이미지와 화면을 나눠서 센다.** Argon은 글을 출력하는 모델이고 이미지는 별도 기능이다. 이미지 몇 장과 화면 수정 몇 번이 한 달 크레딧에서 각각 얼마를 차지하는지 따로 적어 두면 어디서 새는지 보인다. 시안에 데이터를 붙이는 쪽 이야기는 [메이크의 Payload](https://designrefs.com/articles/figma-make-payload-save-button/)에서, 규칙을 먼저 정해 두는 방법은 [러버블의 디자인 시스템](https://designrefs.com/articles/lovable-design-system-same-look/)에서 이어서 볼 수 있다.
+
+※ Argon을 메이크에서 직접 돌려 보지는 않았다. 피그마 릴리스 노트와 도움말, 구글의 모델 문서와 발표 글을 열어 확인한 내용으로만 썼다.
 
 ※ 출처: [Figma Release Notes](https://www.figma.com/release-notes/), [Figma What's new](https://www.figma.com/whats-new/), [How Figma AI credits work](https://help.figma.com/hc/en-us/articles/33459875669015), [Manage AI credits](https://help.figma.com/hc/en-us/articles/35865276858647-Manage-AI-credits), [Gemini 4 Argon, Gemini API 문서](https://ai.google.dev/gemini-api/docs/models/gemini-4-argon), [Google: Gemini 4 availability](https://blog.google/innovation-and-ai/products/gemini-app/gemini-4-availability)

@@ -11,7 +11,7 @@ There's a reason a tool like this appeared. In macOS 27, released this fall, the
 
 Apple hasn't explained why the switch went away. I haven't run this tool on macOS 27 either; this follows reporting from Mac-focused outlets.
 
-## What changed
+## One switch, scattered across ten places
 
 ![In macOS 26, one switch turned off every AI feature; in macOS 27, each feature has to be turned off separately. A sketch based on reports.](https://designrefs.com/articles/img/macos27-ai-switch-en.svg)
 
@@ -51,7 +51,7 @@ Apple's choice is a useful cautionary example.
 
 Do the opposite. If you design AI features, put the off controls in one place, and tell users in one line what turns off and what remains. If you change a feature, say why. If users start looking for outside tools, that's a sign the settings screen's design has failed.
 
-## So, for now
+## How many clicks it takes to turn it off
 
 1. **Start with your own Mac.** Use the table above to see which AI features are on and how much space the models use. Turn off what you don't use.
 2. **Ask the same of what you build.** For the AI feature you're working on, find where "off" is and count how many taps it takes. More than three is worth another look.

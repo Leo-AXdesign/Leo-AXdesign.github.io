@@ -11,7 +11,7 @@ Lovable's official changelog has had a few entries on this over the past weeks. 
 
 This is based on Lovable's official changelog and docs (August to October entries). There's no public comparison showing that design systems make screens look less alike, so that part is my interpretation. Plan descriptions differed between search summaries and the official docs, which I cover later.
 
-## What changed
+## Four entries in the changelog
 
 The relevant changelog entries:
 
@@ -83,20 +83,20 @@ The October 12 entry says you can mark a change directly on an image in the File
 
 There was also an 'Aesthetics' update in May. Lovable's [post on X](https://x.com/Lovable/status/2053874566460752191) says you can ask for typography, layout and color preferences, preview design concepts before building, and make bolder landing pages, apps and blogs. I got the May 11 date from the secondary outlet Create With and found no detailed Lovable doc. How it connects to the removed 'three directions' step is not confirmed in public material.
 
-## What is still unconfirmed
+## The changelog doesn't say why
 
 - Why the three directions step was removed. The changelog gives no explanation.
 - Any public side-by-side of builds with and without a design system.
 - The credit cost of design systems. The docs say only that the setup verification step costs zero credits, and give no cost for other operations such as updates.
 - Related entries in the part of the changelog I did not read.
 
-## What it means for designers
+## Writing the rules down as files
 
 For vibe coders the message is simple: stop persuading the tool with every prompt and attach a rule set you decided once. For designers it's a different job. Writing buttons, cards, colors and type rules in a form AI can read may become a new task. That is my guess.
 
 If [Figma Specs](https://designrefs.com/articles/figma-specs-markdown-context/) passes the context of a design as one markdown page, Lovable's design system looks like the coding-tool version of the same idea. Different tools, same chore: write your rules down.
 
-## So for now
+## Ten lines to write before the first prompt
 
 **Write your rules in ten lines.** Pick a main color, an accent, two typefaces, a corner radius and a spacing unit. Even without Lovable, it works as a rules memo for Cursor or Claude Code. We wrote up how in the [DESIGN.md](https://designrefs.com/articles/design-md-for-ai/) piece.
 
@@ -106,7 +106,7 @@ If [Figma Specs](https://designrefs.com/articles/figma-specs-markdown-context/) 
 
 AI design tools by use are collected on the [AI design tools](https://designrefs.com/ai/) page.
 
-## In short
+## The look moves from the prompt to a rules file
 
 Lovable removed the step that offered directions on open prompts and made design systems, which hand parts and rules to every build, a feature of all paid plans. Whether that makes screens look less alike is not confirmed. What is clear is that deciding the look is shifting from a line in a prompt to a rules file.
 

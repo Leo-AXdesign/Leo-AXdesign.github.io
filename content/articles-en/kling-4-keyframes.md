@@ -36,7 +36,7 @@ Thirty seconds fits a whole ad spot. Until now you had to make clips of around 1
 
 The middle column is what matters. Flash, which opened first, has no multi-keyframe input. So the most notable feature in this announcement is something nobody can use yet. Until the full release, the spec sheet is all there is to judge by.
 
-## What changes for designers
+## Storyboards start to matter more than prompts
 
 I've seen the same current all week. Image AI moved toward [placing boxes first and editing only the chosen spot](https://designrefs.com/en/articles/image-ai-edit-not-reroll/), and 3D AI toward [picking and fixing only the problem area](https://designrefs.com/en/articles/instructmesh-ai-3d-print/). Kling 4.0's keyframes are the same story: turning what was left to luck into something a person decides.
 
@@ -44,7 +44,7 @@ That shifts where the work sits. Knowing how to split a scene into frames, and w
 
 One more thing. Ten keyframes are, in the end, ten images. They might come from image AI or be drawn by a designer. For the video to look natural, the same person, product and lighting have to hold across all ten. That's where "edits that don't drift" on the image side meet keyframes on the video side.
 
-## So, for now
+## A 15-second storyboard to sketch before launch
 
 There's some preparation worth doing before the full release.
 

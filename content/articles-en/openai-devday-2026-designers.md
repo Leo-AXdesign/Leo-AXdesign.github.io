@@ -57,7 +57,7 @@ The interesting part is the $2 / $10 price. It's exactly the same as [Claude Son
 
 Subscription plans changed too. There's a new top plan at $500 a month (Pro 500), and on the $200 plan, usage for new subscribers was cut in half. Existing subscribers keep what they had. That part has drawn plenty of criticism since the announcement.
 
-## So, for now
+## Installing one plugin is enough for now
 
 There isn't much to do today. If you use the ChatGPT desktop app, install the Canva, Figma or Adobe plugin you already use and see how useful it is beside the chat.
 

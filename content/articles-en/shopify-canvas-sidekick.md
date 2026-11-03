@@ -50,7 +50,7 @@ The last two rows are the ones to watch. A theme edited in Canvas no longer gets
 
 The good news is you can start carefully. Under Online Store > Themes, create a new theme in Canvas, or duplicate your current theme and open the copy in Canvas. The original stays in the existing editor. For now, Canvas is desktop-only.
 
-## What changes for designers
+## When the mockup and the store share one canvas
 
 If you design Shopify stores for clients, the shape of the work shifts a little.
 
@@ -60,7 +60,7 @@ So the work that remains is this: deciding which buttons should be black, and wh
 
 One more thing. In last week's [DevDay roundup](https://designrefs.com/en/articles/openai-devday-2026-designers/), design tools were moving into ChatGPT. This time a design workbench moved into a commerce tool. Wherever you start, things are converging toward touching the real product directly.
 
-## So, for now
+## Test three rules on a duplicated theme
 
 If you have a Shopify store, duplicating your current theme and opening the copy in Canvas is about right. Leave the original alone, and if your store relies on app blocks or translations, hold off on moving over.
 

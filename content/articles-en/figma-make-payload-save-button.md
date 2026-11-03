@@ -50,7 +50,7 @@ From Figma's release notes and blog:
 
 To avoid mixing up news from the same week: the free window for code layers is separate from Payload. We covered the agent starting to use AI credits in [Figma's agent started charging credits](https://designrefs.com/articles/figma-agent-ai-credits-ga/).
 
-## What we can't know yet
+## Whether the data can leave Figma
 
 - **Getting data out.** The post does not say whether Figma-hosted projects can be exported or self-hosted. It points to Payload.org for self-hosting or extending, which reads as being about the open-source project, not Figma-hosted apps.
 - **Limits.** No storage, request or user caps are listed.
@@ -58,7 +58,7 @@ To avoid mixing up news from the same week: the free window for code layers is s
 - **Real-world quality.** That one prompt yields a usable admin panel is Figma's description. Your project is the test.
 - **Independent checks.** None of the sources I opened was a third-party test of Payload in Figma.
 
-## What this means for designers
+## Client sites with an admin panel get closer
 
 For screens whose content changes, such as a portfolio or a small shop site, the distance between mockup and live site shrinks. Client jobs that need an admin panel for editing copy fall in this range too.
 
@@ -68,7 +68,7 @@ One worry is responsibility. When you only draw screens, a mistake means redrawi
 
 We covered the related Figma flow in [Figma Specs: handing context to your team and AI in one Markdown page](https://designrefs.com/articles/figma-specs-markdown-context/). Payload adds data on top of that.
 
-## So for now
+## A CSV first, and a note on hosting terms
 
 **Start with ten real rows.** Put ten real product names or post titles in a CSV, upload it and have a collection created. It is the method the post shows, and you see at once how real text changes the screen.
 

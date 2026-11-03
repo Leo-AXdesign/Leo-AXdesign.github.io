@@ -72,7 +72,7 @@ A comparison that split five design tasks between them ([Better Stack](https://b
 
 One more. Artificial Analysis noted that on a measure of the quality of documents like presentations, Astra scored lower than its predecessor, GPT-5.6 Sol. Worth knowing if you make a lot of slides.
 
-## In short
+## Long material to Fable, short answers to Astra
 
 The price sheets are the same, but the actual cost depends on how you use them. For work where you attach long material and ask many times, Fable 5.1 with its cheaper cache has the edge; for short, one-shot answers, Astra, which talks less, has the edge.
 

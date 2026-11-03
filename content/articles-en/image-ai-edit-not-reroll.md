@@ -55,7 +55,7 @@ Output goes up to 4K (5456 × 3072). But the price jumps a lot with size.
 
 Midjourney shipped a small update the same week too: style previews in the sidebar before you generate, and a fix so edits keep the original aspect ratio. Different scale, same direction. Predict before you generate, and drift less after.
 
-## What changes for designers
+## "Just change the headline" becomes doable
 
 Until now, image AI has been close to a slot machine. Pull until you like something, pick one, and start over if it's slightly off. So the output often stayed in mood boards and early exploration.
 
@@ -63,7 +63,7 @@ If only the edited spot changes, that's different. When a client says "just chan
 
 And box layout means composition becomes the person's job again. Where things go and how big is still the designer's call. Layout sense becomes more useful than tricks for writing long prompts.
 
-## So, for now
+## Check for drift with Photoshop's Difference mode
 
 Before you trust "it doesn't change", here's a way to check. All you need is Photoshop.
 

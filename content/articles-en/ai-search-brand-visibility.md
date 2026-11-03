@@ -42,7 +42,7 @@ There's a reason this can't stay a marketers-only job. Much of what AI reads pas
 
 This echoes the [DESIGN.md](https://designrefs.com/en/articles/design-md-for-ai/) story. That was about letting AI read our design rules; this is about letting AI read our brand. Both come down to describing ourselves in text a machine can read.
 
-## So, for now
+## Start by asking ChatGPT about your client
 
 There's something you can try without big tools.
 

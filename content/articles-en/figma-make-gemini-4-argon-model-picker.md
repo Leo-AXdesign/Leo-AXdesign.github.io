@@ -5,14 +5,12 @@ desc: Gemini 4 Argon is now in Figma Make's model picker. What Figma's release n
 tag: AI Design
 ---
 
-The client's email is short. "Can you swap the font on the mockup and show me once more?"
+Figma's help page says that changing a font takes roughly 30+ credits on its default model. Once, it is not a number to worry about. Twelve requests to show the mockup again with only the font swapped, and you are past 360 credits.
 
-You type one line into Make's chat. The result looks fine. But the credit balance has dropped noticeably. Figma's help page says that changing a font takes roughly 30+ credits on its default model. Once is fine. Twelve revision requests is a different story. (This is an imagined scene.)
-
-There is one lever for this: the model picker in Make's chatbox. On October 13, Gemini 4 Argon was added to it. This is not a hands-on review. It is based on Figma's release notes and help pages, plus Google's model documentation and announcement post. I did not find how many credits a single Argon run in Make costs in any page I opened.
+There is one lever for this: the model picker in Make's chatbox. On October 13, Gemini 4 Argon was added to it. I did not find how many credits a single Argon run in Make costs in any page I opened.
 
 ![Make entry in Figma's release notes (source: https://www.figma.com/release-notes/, captured 2026-10-28)](https://designrefs.com/articles/img/figma-make-gemini-4-argon-model-picker-shot1.webp)
-## The release note is three lines long
+## All plans, rolling out, no word on credits
 
 The October 13 entry is titled "Gemini 4 Argon is rolling out in Figma Make." It opens: "Gemini 4 Argon, Gemini's latest and most advanced model, is now rolling out in Figma Make." It also says how to use it and who gets it.
 
@@ -70,7 +68,7 @@ Per-person settings are confirmed in the help page. Admins can choose full acces
 
 This does not apply to freelancers working alone. For a designer on a team account doing client work, it is worth knowing that an admin can see usage by person. Whether the usage screen breaks it down by model was not in the pages I read.
 
-## What is still unknown
+## Not even which model the 30 credits refer to
 
 - **Argon's credit cost.** I found no public figure comparing the same task on the default model and on Argon.
 - **Which model is the default.** The 30, 75 and 100 credit examples do not name their model.
@@ -97,12 +95,14 @@ With no public numbers, the only way is to measure. The method is simple.
 
 One run is a weak signal. Running the same task three times shows both the credit spread and the result spread. I would guess larger tasks vary more, but that is a guess until measured.
 
-## What to do now
+## Batch the requests, note the balance first
 
 **Batch revision requests.** Putting font, color and spacing into one sentence instead of three chats reduces the number of runs. Whether this costs fewer credits is not stated in the help page; if each request rereads the file, fewer runs should not hurt. That part is an inference.
 
 **Write down the balance before switching models.** A new model in the picker is not a reason to make it the default. Measure one small task with the log above and post the numbers in the team chat. If credits are shared, that one line becomes the basis for an admin-settings discussion.
 
 **Count images and screens separately.** Argon outputs text and images come from a separate feature. Noting how much of the month's credits goes to images and how much to screen edits shows where they leak. For the data side of Make, see [Make with Payload](https://designrefs.com/articles/figma-make-payload-save-button/), and for setting rules first, [Lovable's design system](https://designrefs.com/articles/lovable-design-system-same-look/).
+
+※ I have not run Argon in Make myself. This piece rests only on Figma's release notes and help pages, plus Google's model documentation and announcement post.
 
 ※ Sources: [Figma Release Notes](https://www.figma.com/release-notes/), [Figma What's new](https://www.figma.com/whats-new/), [How Figma AI credits work](https://help.figma.com/hc/en-us/articles/33459875669015), [Manage AI credits](https://help.figma.com/hc/en-us/articles/35865276858647-Manage-AI-credits), [Gemini 4 Argon, Gemini API docs](https://ai.google.dev/gemini-api/docs/models/gemini-4-argon), [Google: Gemini 4 availability](https://blog.google/innovation-and-ai/products/gemini-app/gemini-4-availability)

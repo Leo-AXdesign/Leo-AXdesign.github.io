@@ -14,13 +14,13 @@
       <pubDate>Tue, 03 Nov 2026 09:00:00 +0900</pubDate>
       <category>AI Design</category>
       <description>What Figma&#x27;s November 2 release note and two help articles confirm about shaders going generally available, 4096px export and code layers, where the two documents disagree on browser requirements, and what changes after November 4.</description>
-      <content:encoded><![CDATA[    <p class="ptext">You send a mock with an animated gradient behind a card, and the reply says, &quot;If I get a PNG, it won&#x27;t move, right?&quot; (An imagined scene, not something that happened to me.) The effect runs inside your file, turns into one still picture on export, and the developer is left with the question of how to build it.</p>
-    <p class="ptext">Figma&#x27;s November 2 release note has an item that sits between those two points: &quot;Export shaders at higher resolutions and bring them into code layers.&quot; A shader is an effect that adds texture or motion to a layer. This is not a hands-on review. I only wrote down what I could confirm in the release note, the shaders help article and the code layers help article. I could not find a permalink for the individual note, so the source link goes to the release notes list. I did not try a 4096px export in my own account.</p>
+      <content:encoded><![CDATA[    <p class="ptext">Suppose you send a mock with an animated gradient behind a card, and the reply says, &quot;If I get a PNG, it won&#x27;t move, right?&quot; The effect runs inside your file, turns into one still picture on export, and the developer is left with the question of how to build it.</p>
+    <p class="ptext">Figma&#x27;s November 2 release note has an item that sits between those two points: &quot;Export shaders at higher resolutions and bring them into code layers.&quot; A shader is an effect that adds texture or motion to a layer. What follows is taken from three documents: the release note, the shaders help article and the code layers help article. I could not find a permalink for the individual note, so the source link goes to the release notes list. I did not try a 4096px export in my own account.</p>
     <figure class="art__fig">
       <img src="https://designrefs.com/articles/img/figma-shaders-4096-export-code-layers-shot1.webp" alt="Figma release notes (source: https://www.figma.com/release-notes/, captured 2026-11-03)" loading="lazy" decoding="async" />
       <figcaption>Figma release notes (source: https://www.figma.com/release-notes/, captured 2026-11-03)</figcaption>
     </figure>
-    <h2 class="psub" id="s1">Five lines from the note</h2>
+    <h2 class="psub" id="s1">GA, 4096px and Chrome 157</h2>
     <p class="ptext">The note is short. Summarized:</p>
     <div class="art__tablewrap"><table class="art__table">
       <thead><tr><th>Item</th><th>What the note says</th></tr></thead>
@@ -61,7 +61,7 @@
     <p class="ptext">Per the code layers help article, creating and editing code in a code layer is free on paid plans through November 4. Other agent work in the same prompt still uses AI credits. After that, code layer tasks use AI credits like other agentic features, and the amount varies with the task.</p>
     <p class="ptext">Importing a project through the MCP server (the link between Figma and AI coding tools) uses no credits, but later Make agent edits do. That import needs a Full seat, can take 10 minutes or more, and some projects need changes to run.</p>
     <p class="ptext">On how credits get spent, see <a href="https://designrefs.com/articles/figma-mcp-weave-models-credits/">our Weave models post</a>.</p>
-    <h2 class="psub" id="s7">What is still unknown</h2>
+    <h2 class="psub" id="s7">Which side 4096px measures, and other gaps</h2>
     <ul class="ptext-list">
       <li><strong>What 4096px measures.</strong> Long side, width or square is not stated.</li>
       <li><strong>Export format and file size.</strong> Nothing in the documents.</li>
@@ -69,7 +69,7 @@
       <li><strong>How general the availability is.</strong> The English shaders help article has no beta label. A search snippet suggested another-language help page still said open beta; I did not open it.</li>
       <li><strong>The Chrome condition.</strong> The two documents differ, as above.</li>
     </ul>
-    <h2 class="psub" id="s8">So, for now</h2>
+    <h2 class="psub" id="s8">Export one, and spend the free period on one file</h2>
     <p class="ptext"><strong>Pick one shader and export it once.</strong> Take a fine-grained one, export at 4096px and look at 100% zoom. Export the same one small and compare. File size you have to check yourself.</p>
     <p class="ptext"><strong>If you want the free period, use it on one file before November 4.</strong> Run Build selection on a single frame with a shader. If nothing moves, press Play first, then check the Chrome version and flag. Credits only start counting afterward, so one file gives you a rough feel.</p>
     <p class="ptext"><strong>One moving background per page.</strong> Since only one runs at a time, keep one animated shader per mock and make the rest static. If you miss an earlier look while tweaking, there is <a href="https://designrefs.com/articles/figma-shader-plugin-version-restore/">version history</a>.</p>
@@ -82,10 +82,9 @@
       <pubDate>Tue, 03 Nov 2026 09:00:00 +0900</pubDate>
       <category>AI Design</category>
       <description>Canva&#x27;s Brush, announced October 29–30, is a model for editing existing designs by instruction. It is open to Pro subscribers first. What the reports confirm, what stays unknown because Canva&#x27;s own page would not open, and what to do before trying it.</description>
-      <content:encoded><![CDATA[    <p class="ptext">&quot;The titles on slides 3 to 12 are too long. Please make each one a single line. Same colors as last time.&quot;</p>
-    <p class="ptext">Client emails are usually about this short. On a one-page job it takes a minute. On a twelve-slide deck, you repeat the same fix twelve times. (This is an imagined scene, not something that happened to me.)</p>
+      <content:encoded><![CDATA[    <p class="ptext">On a twelve-slide deck, cutting every title to one line means making the same fix twelve times. One slide takes no time. By about the seventh, you are flipping back to see how you shortened the earlier ones, and if the colors have to stay as they were last time, you check each slide once more.</p>
     <p class="ptext">Canva&#x27;s Brush, released at the end of October, targets exactly this kind of work: editing a design that already exists. If Craft, the image model that arrived a week earlier, is the one that draws, Brush is the one that adjusts what has been drawn.</p>
-    <p class="ptext">This is not a hands-on review. When I tried to open Canva&#x27;s newsroom post (canva.com/newsroom/news/canva-brush/), access was blocked (403), so I could not read it. What follows is based on sentences from that post quoted in search results, plus four news and explainer pages that I did open. I do not describe button positions or output quality, because I have seen neither.</p>
+    <p class="ptext">I have not opened Brush myself. Canva&#x27;s newsroom post (canva.com/newsroom/news/canva-brush/) was blocked (403) when I tried to open it, so I could not read that either. What follows is based on sentences from that post quoted in search results, plus four news and explainer pages that I did open. I do not describe button positions or output quality, because I have seen neither.</p>
     <h2 class="psub" id="s1">Craft draws, Brush adjusts</h2>
     <p class="ptext">Craft, released on October 22, is Canva&#x27;s first in-house image generation model. It aims at posters, presentations and menus, where text and layout matter. We covered it separately in <a href="https://designrefs.com/articles/canva-craft-text-layout-image-model/">our Canva Craft article</a>.</p>
     <p class="ptext">Brush comes next in the chain. In the wording quoted from Canva, Craft produces the image and Brush refines the design around it. Brush is a vision-language model from Canva Research. In plain terms, it is an AI that looks at the page and understands instructions in words. You use it inside Canva AI.</p>
@@ -120,7 +119,7 @@
     <h2 class="psub" id="s4">Where it started</h2>
     <p class="ptext">According to the reports, Brush began from an unnamed open-weights model (one whose weights are public). Canva post-trained it on real design and editing tasks and added large-scale reinforcement learning. The inputs reportedly include Canva&#x27;s design data, its reward setup and professional designers&#x27; judgment, and user data is described as anonymized and from people who opted in. Canva has not said which base model it used.</p>
     <p class="ptext">This matters to designers for one reason: it raises the question of whether your own work was used. I confirmed only the &quot;opted-in, anonymized&quot; description. Where that opt-in is switched on or off was not in anything I read.</p>
-    <h2 class="psub" id="s5">What is still missing</h2>
+    <h2 class="psub" id="s5">Brand Kit support is still in the works</h2>
     <p class="ptext">One explainer lists these limits, which I repeat as written.</p>
     <ul class="ptext-list">
       <li><strong>No Brand Kit integration yet.</strong> Brand fonts and colors may not be applied consistently. It is said to be in development.</li>
@@ -137,10 +136,10 @@
       <li>Whether there is an API for calling it outside Canva. Craft has a public API, but none of the pages I read mention one for Brush.</li>
     </ul>
     <h2 class="psub" id="s6">One instruction, twelve times or once</h2>
-    <p class="ptext">Back to the email. Until now this job went one of two ways: open all twelve slides and fix each by hand, or build a good master page (a shared template applied to every slide) and change it once. If the file has no master, the first way is the only way.</p>
+    <p class="ptext">Back to the twelve slides. Until now this job went one of two ways: open all twelve slides and fix each by hand, or build a good master page (a shared template applied to every slide) and change it once. If the file has no master, the first way is the only way.</p>
     <p class="ptext">Brush seems to fit in the gap: applying the same edit across a whole file that was built without a master. That is my guess from the announcement&#x27;s description. How far you can trust it on a complicated file needs more results from people who have used it.</p>
     <p class="ptext">Canva&#x27;s choice is also worth noting. It split the model that produces a new draft from the model that edits one. Our recent piece on <a href="https://designrefs.com/articles/figma-agent-ai-credits-ga/">Figma agent credits</a> noted that an agent&#x27;s credit use varies by request. Canva putting a per-edit cost figure up front reads in the same vein. Whether editing is actually cheaper than starting over was not established in the announcement.</p>
-    <h2 class="psub" id="s7">What to do now</h2>
+    <h2 class="psub" id="s7">Keep a copy, and spell out what stays</h2>
     <p class="ptext"><strong>Duplicate the design before editing.</strong> I could not confirm an undo feature. Use &quot;Make a copy&quot; in Canva and run Brush on the copy. It covers the day a client says &quot;last time was better.&quot;</p>
     <p class="ptext"><strong>Write the brand font and color into the instruction.</strong> With no Brand Kit support, say what must stay. The line below is an example I have not tried.</p>
     <p class="ptext"><code>Keep the title font and color as they are, shorten only the titles on slides 3 to 12 to one line. Do not touch the images.</code></p>
@@ -155,14 +154,13 @@
       <pubDate>Mon, 02 Nov 2026 09:00:00 +0900</pubDate>
       <category>AI Design</category>
       <description>Figma&#x27;s release notes say that since October 26, an outside AI agent can use Weave&#x27;s video and image models (Seedance, Kling, Nano Banana) through the Figma MCP. What the official pages confirm, a rough per-run cost worked out from Weave&#x27;s pricing page, and what is still unknown.</description>
-      <content:encoded><![CDATA[    <p class="ptext">The client&#x27;s email reads: &quot;Could you add a 5-second moving version next to the mockup? It&#x27;s for the top of an Instagram post.&quot;</p>
-    <p class="ptext">The mockup is in Figma. The video gets made somewhere else. You export the image, open a video tool, upload it, write a sentence, take the result and paste it back into Figma or a chat. That round trip happens two or three times per request. (This is an imagined scene.)</p>
-    <p class="ptext">Figma&#x27;s release notes have an entry dated October 26 that could shorten it. An outside AI agent such as Claude or Cursor can now use Weave&#x27;s video and image models through the Figma MCP (the connection that lets AI tools talk to Figma). This is not a hands-on review. It is based on the release notes and Weave&#x27;s pricing page that I opened, plus a summary of a help article. I did not test what a given prompt produces or how good the results are.</p>
+      <content:encoded><![CDATA[    <p class="ptext">Export the mockup image from Figma. Open a video tool and upload it. Describe the motion in a sentence and wait. Paste the video back into Figma or a chat. Say a client wants a five-second moving version next to the mockup, for the top of an Instagram post. With a revision or two, that round trip runs two or three times per request.</p>
+    <p class="ptext">Figma&#x27;s release notes have an entry dated October 26 that could shorten it. An outside AI agent such as Claude or Cursor can now use Weave&#x27;s video and image models through the Figma MCP (the connection that lets AI tools talk to Figma). What follows comes from the release notes and Weave&#x27;s pricing page that I opened, plus a summary of a help article. I did not hook up the connection and generate video myself, so I cannot say what a given prompt produces or how good the results are.</p>
     <figure class="art__fig">
       <img src="https://designrefs.com/articles/img/figma-mcp-weave-models-credits-shot1.webp" alt="Figma release notes (source: https://www.figma.com/release-notes/, captured 2026-10-29)" loading="lazy" decoding="async" />
       <figcaption>Figma release notes (source: https://www.figma.com/release-notes/, captured 2026-10-29)</figcaption>
     </figure>
-    <h2 class="psub" id="s1">The release note is three lines long</h2>
+    <h2 class="psub" id="s1">The October 26 entry: a linked Weave account, Weave credits</h2>
     <p class="ptext">The October 26 entry says:</p>
     <ul class="ptext-list">
       <li>Weave&#x27;s video and image models can be used from an external AI agent through the Figma MCP.</li>
@@ -210,7 +208,7 @@
       <li>According to the pricing page, Starter credits do not roll over, Professional rolls over up to 3× the monthly credits and Max up to 4×. Top-up credits last 12 months from purchase.</li>
     </ul>
     <p class="ptext">One more point. A summary of the help article said the agent asks for confirmation before running. I could not open the original help page. Rather than trusting a confirmation step, run it once on the day you connect and watch when credits actually drop.</p>
-    <h2 class="psub" id="s5">What is still unknown</h2>
+    <h2 class="psub" id="s5">No answer yet on whether the free plan works</h2>
     <ul class="ptext-list">
       <li><strong>Exact per-model cost.</strong> The official table gives counts only. The figures above are my division.</li>
       <li><strong>MCP on the free plan.</strong> No official statement either way.</li>
@@ -219,11 +217,11 @@
       <li><strong>How results return to the Figma canvas.</strong> The guide says results come back to the chat. Whether they land in a Figma file is not confirmed.</li>
       <li><strong>Commercial terms.</strong> The pricing page says the free plan includes a commercial license. Per-model terms were not in the pages I opened. For a baseline, see <a href="https://designrefs.com/articles/ai-image-commercial-use/">Can you use AI images in client work?</a>.</li>
     </ul>
-    <h2 class="psub" id="s6">Things worth trying</h2>
+    <h2 class="psub" id="s6">One sentence, two models, one rules memo</h2>
     <p class="ptext"><strong>One sentence, one run.</strong> Upload a mockup and ask for something like &quot;keep the composition and move only the background slowly over 5 seconds.&quot; Write down how many Weave credits it cost. That single line is the only way to check the estimate above.</p>
     <p class="ptext"><strong>Same sentence, two models.</strong> Give Seedance and Kling the same sentence and see whether the logo and text survive. As in <a href="https://designrefs.com/articles/image-ai-edit-not-reroll/">the shift from re-rolling to editing</a>, keeping the existing asset matters more than generating a new one in client work.</p>
     <p class="ptext"><strong>Alongside a rules note.</strong> Giving the agent a note with your colors and type rules first may keep the moving version closer to the brand. The Figma side is in <a href="https://designrefs.com/articles/figma-specs-markdown-context/">our Specs article</a>. Whether it helps for video has to be tested.</p>
-    <h2 class="psub" id="s7">So for now</h2>
+    <h2 class="psub" id="s7">Count on the smallest plan, hold off on delivery</h2>
     <p class="ptext"><strong>Count credits on the smallest plan first.</strong> Record what one video and one image cost. With no published amounts, that record becomes your team&#x27;s reference.</p>
     <p class="ptext"><strong>Write down who watches which credits.</strong> One line in a team note saying Figma AI credits and Weave credits are separate prevents one running dry right before delivery.</p>
     <p class="ptext"><strong>Don&#x27;t ship it straight away.</strong> Until per-model terms and consistency are clear, use the motion for review drafts and judge final files separately.</p>
@@ -236,13 +234,13 @@
       <pubDate>Mon, 02 Nov 2026 09:00:00 +0900</pubDate>
       <category>AI Design</category>
       <description>What Penpot&#x27;s October 28 release note and user guide confirm about shared design tokens, per-side strokes and WebGL rendering, where the GitHub releases page disagrees, and what to back up before you try it.</description>
-      <content:encoded><![CDATA[    <p class="ptext">When a message arrives saying the brand blue has changed, someone with twelve files opens twelve files. Fix the color style, check the buttons by eye, move on to the next file. (This is an imagined scene, not something that happened to me.)</p>
-    <p class="ptext">Penpot&#x27;s release notes added 2.19, &quot;Is this it,&quot; dated October 28. One line touches that scene directly: you store tokens in one library and every file connected to it uses them. This is not a hands-on review. I only wrote down what I could confirm in the release note, Penpot&#x27;s user guide and the GitHub releases page. I did not check whether the feature is switched on in my own account.</p>
+      <content:encoded><![CDATA[    <p class="ptext">Say a message arrives saying the brand blue has changed. Someone with twelve files opens twelve files. Fix the color style, check the buttons by eye, move on to the next file.</p>
+    <p class="ptext">Penpot&#x27;s release notes added 2.19, &quot;Is this it,&quot; dated October 28. One line touches that scene directly: you store tokens in one library and every file connected to it uses them.</p>
     <figure class="art__fig">
       <img src="https://designrefs.com/articles/img/penpot-2-19-shared-design-tokens-shot1.webp" alt="Penpot 2.19 release note (source: https://penpot.app/release-notes/2-19-is-this-it, captured 2026-11-02)" loading="lazy" decoding="async" />
       <figcaption>Penpot 2.19 release note (source: https://penpot.app/release-notes/2-19-is-this-it, captured 2026-11-02)</figcaption>
     </figure>
-    <h2 class="psub" id="s1">Five lines in the release note</h2>
+    <h2 class="psub" id="s1">Five features, from shared tokens to WebGL</h2>
     <p class="ptext">The note is short. It lists five features with a sentence or two each.</p>
     <div class="art__tablewrap"><table class="art__table">
       <thead><tr><th>Feature</th><th>What the note says</th></tr></thead>
@@ -286,7 +284,7 @@
     <p class="ptext">There are several readings. The site&#x27;s note may have gone up before the GitHub release, or the GitHub page I opened may be an older copy. Whether the hosted app already has 2.19, and when self-hosters can get it, I could not confirm.</p>
     <h2 class="psub" id="s7">Quiet on the AI side</h2>
     <p class="ptext">The note has no new AI feature. The only AI-adjacent line is a bug fix from a community contributor: a crash when switching pages with the MCP plugin (the connection between an AI tool and your file) attached. The other fixes are a Windows build error, prototype overlay position and stroke-to-path on path ends.</p>
-    <h2 class="psub" id="s8">What I could not find out</h2>
+    <h2 class="psub" id="s8">When it arrives, and how fast edits spread</h2>
     <ul class="ptext-list">
       <li><strong>When the hosted app gets it.</strong> The note is dated October 28, while GitHub&#x27;s latest looked like 2.18.5.</li>
       <li><strong>The steps to connect a file to a library.</strong> The 2.19 note gives none. Whether the guide&#x27;s &quot;set as tokens source&quot; is the same flow, I could not confirm.</li>
@@ -294,10 +292,11 @@
       <li><strong>Whether WebGL is the default.</strong></li>
       <li><strong>How per-side strokes appear in export or inspect view.</strong></li>
     </ul>
-    <h2 class="psub" id="s9">What to do now</h2>
+    <h2 class="psub" id="s9">Download your tokens before you move them</h2>
     <p class="ptext"><strong>Export your current tokens before moving them.</strong> Import replaces the global token set. Download today&#x27;s token JSON so you have a way back. Since setting a library as the source blocks import, doing import first and source second seems easier. That order is my inference from two lines in the guide.</p>
     <p class="ptext"><strong>Name tokens by use, not by color.</strong> &quot;Button background&quot; stays true when the brand color changes; &quot;blue&quot; does not. For gray text, check contrast against the background first. While building this site I once checked gray text contrast with a checker and fixed it, so I filter for that before collecting values into tokens. For handing the same rules to an AI coding tool, see <a href="https://designrefs.com/articles/design-md-for-ai/">DESIGN.md, one file to hand your design rules to AI</a>.</p>
     <p class="ptext"><strong>Time WebGL on the same file.</strong> Export your heaviest file once with it off and once with it on. &quot;Much faster&quot; in the note means some number of seconds on your file, and you only learn it by trying. If something misbehaves, switch it off in the same settings. For why AI screens look alike from the design-system side, see <a href="https://designrefs.com/articles/lovable-design-system-same-look/">Why Lovable dropped the three design directions</a>.</p>
+    <p class="art__note">I have not switched 2.19 on in my own account. This piece is put together from the release note, Penpot&#x27;s user guide and the GitHub releases page.</p>
     <p class="art__note">Sources: <a href="https://penpot.app/release-notes/2-19-is-this-it" target="_blank" rel="noopener">Penpot 2.19 &quot;Is this it&quot; release note</a>, <a href="https://penpot.app/release-notes" target="_blank" rel="noopener">Penpot release notes index</a>, <a href="https://help.penpot.app/user-guide/design-systems/design-tokens/" target="_blank" rel="noopener">Penpot user guide: design tokens</a>, <a href="https://github.com/penpot/penpot/releases" target="_blank" rel="noopener">Penpot on GitHub: releases</a>, <a href="https://github.com/penpot/penpot/blob/develop/CHANGES.md#2190-unreleased" target="_blank" rel="noopener">Penpot changelog (CHANGES.md)</a>, <a href="https://community.penpot.app/t/whats-next-for-the-penpot-webgl-renderer/10627" target="_blank" rel="noopener">Penpot community: What&#x27;s next for the Penpot WebGL renderer</a></p>]]></content:encoded>
     </item>
     <item>
@@ -307,9 +306,9 @@
       <pubDate>Fri, 30 Oct 2026 09:00:00 +0900</pubDate>
       <category>AI Design</category>
       <description>When you edit a shader or generative plugin made by Figma&#x27;s agent, earlier versions are now kept and can be restored. What the October 27 release note, Figma&#x27;s help pages and developer docs confirm, what they leave out, and what to do before the next edit.</description>
-      <content:encoded><![CDATA[    <p class="ptext">The client&#x27;s email is short. &quot;The glow effect from before was better. Can you show me that one again?&quot;</p>
-    <p class="ptext">You asked Figma&#x27;s agent for a shader, then asked it to fix a few things two or three times. Somewhere in there the first version disappeared. That scene should now be less painful. (This is an imagined scene, not something that happened to me.)</p>
-    <p class="ptext">On October 27, Figma&#x27;s release notes added an entry titled &quot;View and restore previous versions of your generative plugins and shaders.&quot; This is not a hands-on review. It is based on the release notes, Figma&#x27;s help pages and forum post, and the developer docs. I did not find where in the interface the version list lives in any page I opened.</p>
+      <content:encoded><![CDATA[    <p class="ptext">On October 27, Figma&#x27;s release notes added an entry titled &quot;View and restore previous versions of your generative plugins and shaders.&quot; Edit a shader or generative plugin made by Figma&#x27;s agent, and the earlier version now stays around so you can go back to it.</p>
+    <p class="ptext">Say you asked the agent for a shader, then asked it to fix a few things two or three times, and somewhere in there the first version disappeared. Then the client writes back: &quot;The glow effect from before was better. Can you show me that one again?&quot; That situation should now be less painful.</p>
+    <p class="ptext">I have not been able to turn the feature on in my own account. What follows comes from the release notes, Figma&#x27;s help pages and forum post, and the developer docs. I did not find where in the interface the version list lives in any page I opened.</p>
     <figure class="art__fig">
       <img src="https://designrefs.com/articles/img/figma-shader-plugin-version-restore-shot1.webp" alt="Figma release notes, October 27 entry (source: https://www.figma.com/release-notes/, captured 2026-10-30)" loading="lazy" decoding="async" />
       <figcaption>Figma release notes, October 27 entry (source: https://www.figma.com/release-notes/, captured 2026-10-30)</figcaption>
@@ -317,7 +316,7 @@
     <h2 class="psub" id="s1">First, what shaders and generative plugins are</h2>
     <p class="ptext">A shader is a small graphics program that changes pixels in real time. You apply it to an image or layer as an effect, or use it as a fill. Figma&#x27;s help page lists Bloom, Dither, Halftone, Gooey merge and Warp as effects, and Clouds, Fractal noise, Mesh gradient and Water caustics as fills.</p>
     <p class="ptext">A generative plugin is a code-backed tool, such as a layout generator or a QR code maker. Both are built by asking the agent in plain language. In a September 1 blog post, Figma product designer Rogie King wrote that he could create the same shader &quot;with one simple prompt, maybe two to nail it.&quot;</p>
-    <h2 class="psub" id="s2">What the release note says</h2>
+    <h2 class="psub" id="s2">Versions kept, agent notes, rolling out this week</h2>
     <p class="ptext">The body has three parts.</p>
     <ul class="ptext-list">
       <li>Editing a generative plugin or shader now creates a new version, and earlier versions are preserved so you can revisit and restore them.</li>
@@ -368,7 +367,7 @@
     <h2 class="psub" id="s6">Where do the credits go</h2>
     <p class="ptext">Asking the agent to fix an effect can cost credits each time. The October 6 release note says Figma&#x27;s agent became generally available and starts using AI credits that day. The September 1 blog said the beta was free and credits would apply &quot;in a few weeks.&quot; Put together, credits now appear to apply.</p>
     <p class="ptext">How many credits one shader edit costs, I did not find. Nor did I find whether restoring a version costs anything. The order in which credits are spent is covered in <a href="https://designrefs.com/articles/figma-agent-ai-credits-ga/">Figma agent credits</a>.</p>
-    <h2 class="psub" id="s7">What is still unknown</h2>
+    <h2 class="psub" id="s7">Whether a restore overwrites or copies is unclear</h2>
     <ul class="ptext-list">
       <li><strong>Where the version list is.</strong> The release note has no screen description.</li>
       <li><strong>How many versions are kept, and for how long.</strong> Not stated.</li>
@@ -377,7 +376,7 @@
       <li><strong>Whether edits through MCP by an external agent create versions.</strong> The release note and developer docs do not point at each other.</li>
       <li><strong>When it reaches your account.</strong> It is a gradual rollout, and I could not check mine.</li>
     </ul>
-    <h2 class="psub" id="s8">So for now</h2>
+    <h2 class="psub" id="s8">Keep the approved state aside yourself</h2>
     <p class="ptext"><strong>Name the current state before you edit.</strong> The change log is written by the agent. If a version is the one the client called &quot;the look,&quot; leave a note or a duplicate in the file before asking for changes. The feature may not be in your account yet.</p>
     <p class="ptext"><strong>Ask for one change at a time.</strong> If color, glow and motion go into one sentence, the version description gets vague too. One request per version gives you a clear point to return to. Batching saves credits, and the two goals pull against each other, so choose by the size of the job.</p>
     <p class="ptext"><strong>Compare after restoring.</strong> What exactly a restore brings back is unknown. Right after restoring, turn the effect on and put it next to the image you sent the client. For building clickable mockups on the canvas, see <a href="https://designrefs.com/articles/figma-code-layers-open-beta/">Figma code layers in open beta</a>. For a sense of how model choice affects credits, see <a href="https://designrefs.com/articles/figma-make-gemini-4-argon-model-picker/">Make&#x27;s model picker</a>.</p>
@@ -390,9 +389,9 @@
       <pubDate>Thu, 29 Oct 2026 09:00:00 +0900</pubDate>
       <category>AI Design</category>
       <description>Google DeepMind released Genie 4 as a research preview. It does not output a clip; it keeps generating the scene as you move. What the official posts confirm about features, access and limits, and what is still unknown about price, resolution and usage.</description>
-      <content:encoded><![CDATA[    <p class="ptext">A client email might read: &quot;I just want to see the mood first. A walk down a rainy alley. And what it looks like when the sun comes out.&quot; (This is an imagined scene.)</p>
+      <content:encoded><![CDATA[    <p class="ptext">What if you could make the sun come out halfway down a rainy alley, without generating the scene again? Mood studies tend to mean changing conditions like this over and over.</p>
     <p class="ptext">Until now you generated one video, then another for the sunny version. Every scene started from scratch. Genie 4 is a model built to change that order: while the camera walks, you type &quot;let the sun come out&quot; and the scene changes on the spot.</p>
-    <p class="ptext">But it is not something anyone can open today. This is not a hands-on review. It is based on the official Google and Google DeepMind posts I opened, plus TechCrunch&#x27;s coverage. Price and resolution were not in any source I read.</p>
+    <p class="ptext">But it is not something anyone can open today, and I have not been able to try it either. This is based on the official Google and Google DeepMind posts I opened, plus TechCrunch&#x27;s coverage. Price and resolution were not in any source I read.</p>
     <figure class="art__fig">
       <img src="https://designrefs.com/articles/img/genie-4-world-model-designers-waitlist-shot1.webp" alt="Google DeepMind Genie 4 official blog (source: https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/, captured 2026-10-29)" loading="lazy" decoding="async" />
       <figcaption>Google DeepMind Genie 4 official blog (source: https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/, captured 2026-10-29)</figcaption>
@@ -440,7 +439,7 @@
       <li>TechCrunch reports a scene stays consistent for up to two minutes, double Genie 3. I did not find that number in the official posts I opened.</li>
     </ul>
     <p class="ptext">Illegible text matters a lot to designers. Signs, posters and UI text inside a scene cannot be relied on right now. It is the same problem behind <a href="https://designrefs.com/articles/canva-craft-text-layout-image-model/">Canva Craft laying out text before generating the poster</a>.</p>
-    <h2 class="psub" id="s7">What is not known yet</h2>
+    <h2 class="psub" id="s7">Price, resolution and output format are not public</h2>
     <ul class="ptext-list">
       <li><strong>Price.</strong> Whether there are fees or usage caps beyond an Ultra subscription.</li>
       <li><strong>Quality.</strong> Resolution and frame rate are not in the official posts.</li>
@@ -450,7 +449,7 @@
       <li><strong>Model names.</strong> DeepMind&#x27;s post mentions Gemini 3.8 Flash and Gemini 4 Argon. The first appears in the real-time guiding role, the second in the robot demo and task-decomposition experiments. The names are unfamiliar and I could not confirm how they relate.</li>
       <li><strong>Independent testing.</strong> Everything available is Google&#x27;s own posts and press coverage; I found no outside test results. In TechCrunch, DeepMind engineer Diego Rivas said real-time steering is especially useful in the ideation and storyboarding phases, and added that turning prototypes into final creative assets is still a long way off.</li>
     </ul>
-    <h2 class="psub" id="s8">So for now</h2>
+    <h2 class="psub" id="s8">Join the waitlist, hold off on the subscription</h2>
     <p class="ptext"><strong>Check whether the waitlist is open.</strong> DeepMind&#x27;s post mentions it. Sign up only if you can imagine using it.</p>
     <p class="ptext"><strong>Write down where your mockups need readable text.</strong> If the mood and sound come from Genie and the text from another tool, deciding that split now saves time once access opens.</p>
     <p class="ptext"><strong>Hold off on subscribing.</strong> With no general release date and no price, nothing in the sources justifies signing up for Ultra today.</p>
@@ -463,14 +462,13 @@
       <pubDate>Thu, 29 Oct 2026 09:00:00 +0900</pubDate>
       <category>AI Design</category>
       <description>Gemini 4 Argon is now in Figma Make&#x27;s model picker. What Figma&#x27;s release notes, help pages and Google&#x27;s docs confirm, what they leave out (credit cost per run), and a simple way to log the same prompt on two models.</description>
-      <content:encoded><![CDATA[    <p class="ptext">The client&#x27;s email is short. &quot;Can you swap the font on the mockup and show me once more?&quot;</p>
-    <p class="ptext">You type one line into Make&#x27;s chat. The result looks fine. But the credit balance has dropped noticeably. Figma&#x27;s help page says that changing a font takes roughly 30+ credits on its default model. Once is fine. Twelve revision requests is a different story. (This is an imagined scene.)</p>
-    <p class="ptext">There is one lever for this: the model picker in Make&#x27;s chatbox. On October 13, Gemini 4 Argon was added to it. This is not a hands-on review. It is based on Figma&#x27;s release notes and help pages, plus Google&#x27;s model documentation and announcement post. I did not find how many credits a single Argon run in Make costs in any page I opened.</p>
+      <content:encoded><![CDATA[    <p class="ptext">Figma&#x27;s help page says that changing a font takes roughly 30+ credits on its default model. Once, it is not a number to worry about. Twelve requests to show the mockup again with only the font swapped, and you are past 360 credits.</p>
+    <p class="ptext">There is one lever for this: the model picker in Make&#x27;s chatbox. On October 13, Gemini 4 Argon was added to it. I did not find how many credits a single Argon run in Make costs in any page I opened.</p>
     <figure class="art__fig">
       <img src="https://designrefs.com/articles/img/figma-make-gemini-4-argon-model-picker-shot1.webp" alt="Make entry in Figma&#x27;s release notes (source: https://www.figma.com/release-notes/, captured 2026-10-28)" loading="lazy" decoding="async" />
       <figcaption>Make entry in Figma&#x27;s release notes (source: https://www.figma.com/release-notes/, captured 2026-10-28)</figcaption>
     </figure>
-    <h2 class="psub" id="s1">The release note is three lines long</h2>
+    <h2 class="psub" id="s1">All plans, rolling out, no word on credits</h2>
     <p class="ptext">The October 13 entry is titled &quot;Gemini 4 Argon is rolling out in Figma Make.&quot; It opens: &quot;Gemini 4 Argon, Gemini&#x27;s latest and most advanced model, is now rolling out in Figma Make.&quot; It also says how to use it and who gets it.</p>
     <div class="art__tablewrap"><table class="art__table">
       <thead><tr><th>Item</th><th>What the release note says</th></tr></thead>
@@ -517,7 +515,7 @@
     </ul>
     <p class="ptext">Per-person settings are confirmed in the help page. Admins can choose full access, a custom monthly limit or no access for each person, and people who hit a limit can ask the admin for more. A request does not change anything automatically. Admins on paid plans can see usage, while history and CSV export are limited to Organization and Enterprise admins.</p>
     <p class="ptext">This does not apply to freelancers working alone. For a designer on a team account doing client work, it is worth knowing that an admin can see usage by person. Whether the usage screen breaks it down by model was not in the pages I read.</p>
-    <h2 class="psub" id="s5">What is still unknown</h2>
+    <h2 class="psub" id="s5">Not even which model the 30 credits refer to</h2>
     <ul class="ptext-list">
       <li><strong>Argon&#x27;s credit cost.</strong> I found no public figure comparing the same task on the default model and on Argon.</li>
       <li><strong>Which model is the default.</strong> The 30, 75 and 100 credit examples do not name their model.</li>
@@ -543,10 +541,11 @@
     </table></div>
     <p class="art__note">The table above is an empty logging template. No values have been measured yet.</p>
     <p class="ptext">One run is a weak signal. Running the same task three times shows both the credit spread and the result spread. I would guess larger tasks vary more, but that is a guess until measured.</p>
-    <h2 class="psub" id="s7">What to do now</h2>
+    <h2 class="psub" id="s7">Batch the requests, note the balance first</h2>
     <p class="ptext"><strong>Batch revision requests.</strong> Putting font, color and spacing into one sentence instead of three chats reduces the number of runs. Whether this costs fewer credits is not stated in the help page; if each request rereads the file, fewer runs should not hurt. That part is an inference.</p>
     <p class="ptext"><strong>Write down the balance before switching models.</strong> A new model in the picker is not a reason to make it the default. Measure one small task with the log above and post the numbers in the team chat. If credits are shared, that one line becomes the basis for an admin-settings discussion.</p>
     <p class="ptext"><strong>Count images and screens separately.</strong> Argon outputs text and images come from a separate feature. Noting how much of the month&#x27;s credits goes to images and how much to screen edits shows where they leak. For the data side of Make, see <a href="https://designrefs.com/articles/figma-make-payload-save-button/">Make with Payload</a>, and for setting rules first, <a href="https://designrefs.com/articles/lovable-design-system-same-look/">Lovable&#x27;s design system</a>.</p>
+    <p class="art__note">I have not run Argon in Make myself. This piece rests only on Figma&#x27;s release notes and help pages, plus Google&#x27;s model documentation and announcement post.</p>
     <p class="art__note">Sources: <a href="https://www.figma.com/release-notes/" target="_blank" rel="noopener">Figma Release Notes</a>, <a href="https://www.figma.com/whats-new/" target="_blank" rel="noopener">Figma What&#x27;s new</a>, <a href="https://help.figma.com/hc/en-us/articles/33459875669015" target="_blank" rel="noopener">How Figma AI credits work</a>, <a href="https://help.figma.com/hc/en-us/articles/35865276858647-Manage-AI-credits" target="_blank" rel="noopener">Manage AI credits</a>, <a href="https://ai.google.dev/gemini-api/docs/models/gemini-4-argon" target="_blank" rel="noopener">Gemini 4 Argon, Gemini API docs</a>, <a href="https://blog.google/innovation-and-ai/products/gemini-app/gemini-4-availability" target="_blank" rel="noopener">Google: Gemini 4 availability</a></p>]]></content:encoded>
     </item>
     <item>
@@ -556,9 +555,8 @@
       <pubDate>Tue, 27 Oct 2026 09:00:00 +0900</pubDate>
       <category>AI Design</category>
       <description>Runway added App Studio to every paid plan. Describe a task in plain language and it becomes an app teammates can run from a link. What Runway&#x27;s own pages confirm about how it works, pricing and sharing, and what is still unknown.</description>
-      <content:encoded><![CDATA[    <p class="ptext">The client&#x27;s email reads: &quot;Can you take last time&#x27;s product shot and swap the background for six more markets? Same tone, please.&quot;</p>
-    <p class="ptext">Which model you used last time, which reference images went in and which sentence produced the result are all somewhere in an old chat. You find it, paste it again, change the background description and run it six times. Next week the same request arrives and you do it all over. (This is an imagined scene.)</p>
-    <p class="ptext">Runway has released App Studio, aimed at exactly this kind of repetition. Its changelog dates the entry October 23, while press coverage is dated October 26, so the dates differ by a couple of days. This is not a hands-on review. It is based on Runway&#x27;s App Studio page, its changelog and its pricing page, plus press coverage. I did not find how many credits a single app run costs in any page I opened.</p>
+      <content:encoded><![CDATA[    <p class="ptext">Which model you used for last time&#x27;s product shot, which reference images went in and which sentence produced it are all somewhere in an old chat. When a request comes in for six more in the same tone, with the background swapped for each market, you find that chat, paste it again, change the background description and run it six times. Next week the same request arrives and you do it all over.</p>
+    <p class="ptext">Runway has released App Studio, aimed at exactly this kind of repetition. Its changelog dates the entry October 23, while press coverage is dated October 26, so the dates differ by a couple of days. I did not find how many credits a single app run costs in any page I opened.</p>
     <figure class="art__fig">
       <img src="https://designrefs.com/articles/img/runway-app-studio-repeat-work-app-shot1.webp" alt="Runway App Studio official page (source: https://runway.com/app-studio, captured 2026-10-27)" loading="lazy" decoding="async" />
       <figcaption>Runway App Studio official page (source: https://runway.com/app-studio, captured 2026-10-27)</figcaption>
@@ -604,7 +602,7 @@
       <li>Admins can see usage across all apps and control which models the workspace can use.</li>
     </ul>
     <p class="ptext">The last two lines mean this: if you build a &quot;product shot variations by market&quot; app and send the link to a client or colleague, they run it on their own credits and your allowance doesn&#x27;t shrink. It also means they need a Runway account. Whether they must be on a paid plan to spend credits is not confirmed.</p>
-    <h2 class="psub" id="s5">What is still unknown</h2>
+    <h2 class="psub" id="s5">Per-run credit cost is not published</h2>
     <ul class="ptext-list">
       <li><strong>Credits per run.</strong> I found no per-app consumption table.</li>
       <li><strong>Free plan.</strong> No official statement on whether you can build and run apps.</li>
@@ -613,14 +611,15 @@
       <li><strong>Commercial terms.</strong> Rights to app output weren&#x27;t confirmed in the pages I opened. For a general baseline, see <a href="https://designrefs.com/articles/ai-image-commercial-use/">Can you use AI images in client work?</a>, which does not necessarily apply to Runway.</li>
       <li><strong>Korean text.</strong> None of the sources say whether apps handle Hangul.</li>
     </ul>
-    <h2 class="psub" id="s6">What to try first</h2>
+    <h2 class="psub" id="s6">One frequent task, five identical runs</h2>
     <p class="ptext"><strong>The one task you repeat most.</strong> Background swaps, size variants, five images in the same tone. Pick something you do at least twice a month. A task that happens once is a weak reason to build an app.</p>
     <p class="ptext"><strong>Five runs with the same input.</strong> If you build an app, feed it the same asset five times and count how many results drift from the brand tone. That number tells you whether you can hand it to a team.</p>
     <p class="ptext"><strong>The screen your recipient sees.</strong> Open the share link from a teammate&#x27;s account and look at the sign-in and credit display. If you plan to give it to a client, that screen becomes part of the deliverable.</p>
-    <h2 class="psub" id="s7">So for now</h2>
+    <h2 class="psub" id="s7">Write the steps down, count the credits yourself</h2>
     <p class="ptext"><strong>Write the steps down first.</strong> Before building, reduce the task to one input, three steps and one output. A task that is hard to write down will be hard to turn into an app. As in <a href="https://designrefs.com/articles/lovable-design-system-same-look/">why Lovable dropped its three design directions</a>, fixing the rules first makes results wobble less.</p>
     <p class="ptext"><strong>Count credits on the smallest plan.</strong> Note how many credits drop after a few runs. With no published consumption, your own log is the only reference.</p>
     <p class="ptext"><strong>Keep practice and delivery separate.</strong> Until the rights terms are confirmed, don&#x27;t put the output straight into client work. Don&#x27;t promise on things that aren&#x27;t confirmed.</p>
+    <p class="art__note">I have not built an app in App Studio myself. This piece is put together from Runway&#x27;s App Studio page, changelog and pricing page, plus press coverage.</p>
     <p class="art__note">Sources: <a href="https://runway.com/app-studio" target="_blank" rel="noopener">Runway App Studio</a>, <a href="https://runway.com/changelog" target="_blank" rel="noopener">Runway Product Updates &amp; Changelog</a>, <a href="https://runway.com/pricing" target="_blank" rel="noopener">Runway Pricing</a>, <a href="https://alphasignal.ai/news/runway-s-app-studio-turns-ai-model-chains-into-shareable-no-code-tools" target="_blank" rel="noopener">AlphaSignal: Runway&#x27;s App Studio Turns AI Model Chains Into Shareable No-Code Tools</a>, <a href="https://futuretools.io/news" target="_blank" rel="noopener">Future Tools news</a>.</p>]]></content:encoded>
     </item>
     <item>
@@ -630,9 +629,8 @@
       <pubDate>Mon, 26 Oct 2026 09:00:00 +0900</pubDate>
       <category>AI Design</category>
       <description>On October 22 Canva released Craft, its first in-house image model, aimed at designs where layout and text matter. What press coverage says about its two-stage setup, the ranking claims, where you can use it, and what is still unknown, including price and commercial terms.</description>
-      <content:encoded><![CDATA[    <p class="ptext">The client&#x27;s email is one line. &quot;Can you send three poster options today? Make the date and venue big.&quot;</p>
-    <p class="ptext">You run the prompt through an image AI and the picture looks right. But the date reads &quot;Oct 2th&quot; instead of &quot;Oct 27&quot;. You regenerate. This time the text is correct, but the title has slid into a corner. For three drafts, the number of generations keeps climbing. (This is an imagined scene.)</p>
-    <p class="ptext">On October 22, Canva released Canva Craft, its first image generation model built in-house. It is aimed at posters, social posts and presentations, where text and layout matter more than photographic realism. This is not a hands-on review. It is a read of what press coverage reports, from a designer&#x27;s point of view.</p>
+      <content:encoded><![CDATA[    <p class="ptext">The event poster from the image AI has the date as &quot;Oct 2th&quot;. The date in the prompt was &quot;Oct 27&quot;. The picture looks right, which makes it worse. You regenerate, and this time the text is correct but the title has slid into a corner. Say three drafts with a big date and venue are due today. The number of generations just keeps climbing.</p>
+    <p class="ptext">On October 22, Canva released Canva Craft, its first image generation model built in-house. It is aimed at posters, social posts and presentations, where text and layout matter more than photographic realism.</p>
     <p class="ptext">I haven&#x27;t run the model myself; this is based on reporting from TechCrunch, Digital Trends and others. The rankings and performance figures are Canva&#x27;s own, and I found nothing that verified them independently. API pricing and credit costs weren&#x27;t in the coverage either.</p>
     <h2 class="psub" id="s1">Plan first, then draw</h2>
     <p class="ptext">TechCrunch and Digital Trends both describe two stages.</p>
@@ -675,7 +673,7 @@
     <p class="ptext"><strong>Korean headlines.</strong> It is unknown whether Korean is among the 55 languages, so test a Korean headline and small Korean body text separately. Characters with final consonants and small sizes break first.</p>
     <p class="ptext"><strong>Change one thing.</strong> Ask for a single-element edit, such as &quot;keep the logo, change only the background color.&quot; Many models advertise editing, so it is worth checking whether the rest really stays put. It is the same test we used for <a href="https://designrefs.com/articles/krea-3-edit-keep-logo/">Krea 3&#x27;s edit model</a>.</p>
     <p class="ptext"><strong>Open the converted file.</strong> If you can use the layer conversion, open the result and check whether the text is a text box. That one check decides how long delivery takes.</p>
-    <h2 class="psub" id="s6">What we don&#x27;t know yet</h2>
+    <h2 class="psub" id="s6">Price and Korean quality are still blank</h2>
     <ul class="ptext-list">
       <li><strong>Price.</strong> API rates, app credit use and free limits have no confirmed source.</li>
       <li><strong>Independent tests.</strong> Apart from the rankings Canva cites, I found no third-party comparison.</li>
@@ -684,7 +682,7 @@
       <li><strong>Layer conversion in practice.</strong> How well it separates layers, and whether text stays editable, is unknown until someone opens a file.</li>
       <li><strong>Specifications.</strong> Model size and technical documentation were reported as not published.</li>
     </ul>
-    <h2 class="psub" id="s7">So for now</h2>
+    <h2 class="psub" id="s7">Count ten runs before switching</h2>
     <p class="ptext"><strong>Count ten generations.</strong> Run one text-heavy poster ten times with the same prompt and record how many have no text errors. Put it next to your current tool under identical conditions, or there is no reason to switch.</p>
     <p class="ptext"><strong>Read the terms before client work.</strong> Until conditions on commercial use and template training appear, keep practice drafts and deliverables separate. Don&#x27;t make promises that rest on something unconfirmed.</p>
     <p class="ptext"><strong>Fix the layout in words first.</strong> Whether or not a model plans first, writing position and size order into the prompt, such as &quot;title in the top third, date largest under it, venue at the bottom,&quot; may help cut the number of regenerations. That is a method worth trying, not a result I compared.</p>
@@ -698,8 +696,7 @@
       <pubDate>Sat, 24 Oct 2026 09:00:00 +0900</pubDate>
       <category>AI Design</category>
       <description>On October 22, Ideogram released Vector 1.0, its first vector model, which makes editable SVGs from text or from an existing image. What Ideogram&#x27;s API docs and press coverage say, the reported prices, and what is still unknown about layers and live text.</description>
-      <content:encoded><![CDATA[    <p class="ptext">The client&#x27;s email is two lines. &quot;I like the AI logo. We&#x27;ll use it on business cards and a banner, so please send the original file.&quot;</p>
-    <p class="ptext">What you have is one PNG. Blow it up to banner size and the edges go soft. The print shop wants an AI or SVG file, meaning a vector. Many people hit exactly this wall when they try to use image-AI output for real work.</p>
+      <content:encoded><![CDATA[    <p class="ptext">Print shops ask for a vector file, AI or SVG, when you hand over a logo. What image AI usually gives you is a single PNG, and something that looked fine on a business card goes soft at the edges once you blow it up to banner size. Many people hit exactly this wall when they try to use image-AI output for real work.</p>
     <p class="ptext">On October 22, Ideogram released Ideogram Vector 1.0, its first vector model. Describe something in text and you get an SVG. Upload an existing picture and it converts it to a vector. This piece reports only what I verified in Ideogram&#x27;s API documentation and in coverage of the launch.</p>
     <figure class="art__fig">
       <img src="https://designrefs.com/articles/img/ideogram-vector-1-editable-svg-shot1.webp" alt="Ideogram developer docs, Generate SVG API page. Source: developer.ideogram.ai/api-reference/vectors/generate-svg (captured 2026-10-24)" loading="lazy" decoding="async" />
@@ -749,7 +746,7 @@
     <h2 class="psub" id="s5">Next to what already exists</h2>
     <p class="ptext">This is not the first AI that outputs vectors directly. One search result described Recraft as producing SVG natively. What is new here is less &quot;an AI makes vectors&quot; and more &quot;a well-known image-generation company shipped a dedicated vector model.&quot; I found no comparison showing which is better.</p>
     <p class="ptext">Image generators like Ideogram, along with AI logo and brand-kit tools, are collected with Recraft, Looka and others under image generation on <a href="https://designrefs.com/ai/">AI design tools</a>. Fixing an image instead of rerolling it is covered in <a href="https://designrefs.com/articles/krea-3-edit-keep-logo/">Background changed and the logo changed too: what to check in Krea 3&#x27;s edit model</a>. That one is raster editing; this one is vector output, so they serve different moments.</p>
-    <h2 class="psub" id="s6">What is not known yet</h2>
+    <h2 class="psub" id="s6">No independent tests, no app price list</h2>
     <ul class="ptext-list">
       <li><strong>Output quality.</strong> No independent test shows whether it is stronger on logos, icons or posters.</li>
       <li><strong>App pricing.</strong> Whether free accounts can use it, and what it costs in credits, was not confirmed.</li>
@@ -757,7 +754,7 @@
       <li><strong>Editing.</strong> I saw no endpoint for revising a generated SVG by prompt, and outside articles also point you to a design tool for edits.</li>
       <li><strong>What quality levels mean.</strong> The docs do not explain how low, medium and high differ.</li>
     </ul>
-    <h2 class="psub" id="s7">What to do now</h2>
+    <h2 class="psub" id="s7">Open ten test files, put cleanup in the estimate</h2>
     <p class="ptext"><strong>Sort raster from vector first.</strong> When a client asks for the original file, find out which format they actually need. Print, signage and merchandise need vector. Web illustrations are often fine as PNG. That saves you from swapping models when the real issue is the format.</p>
     <p class="ptext"><strong>Open about ten files.</strong> Generate one logo, one icon set and one poster with type, then open each in Illustrator or Figma. Note whether layers are separated, whether text is live, and how many points there are. That tells you what to hand to this model and what not to. If you use the API, check the price with <code>dry_run</code> first.</p>
     <p class="ptext"><strong>Reserve time for a human pass before delivery.</strong> A converted SVG may be one lump of overlapping shapes. Put color values, stroke widths and naming cleanup into your estimate, and &quot;AI should make it quick&quot; becomes easier to answer.</p>
@@ -809,7 +806,7 @@
       <li>The marketplace page says Webflow reviewed the app&#x27;s quality but does not endorse or certify it.</li>
     </ul>
     <p class="ptext">Do not confuse it with this week&#x27;s Figma news. Data storage and an admin panel inside Figma Make were covered in <a href="https://designrefs.com/articles/figma-make-payload-save-button/">When the Save button saves nothing</a>. That one is about building a new site from a prompt. This one is about handling an existing Webflow site from chat.</p>
-    <h2 class="psub" id="s5">What is still unknown</h2>
+    <h2 class="psub" id="s5">Undo and limits aren&#x27;t in the material</h2>
     <ul class="ptext-list">
       <li><strong>Undo.</strong> Whether a chat edit can be reverted in one step, or whether there is a confirmation before publishing, is not stated.</li>
       <li><strong>Quality.</strong> Whether interactions and responsive pages match a designer&#x27;s work has not been shown.</li>
@@ -820,7 +817,7 @@
     <h2 class="psub" id="s6">Matching it to the work you already do</h2>
     <p class="ptext">Copy tweaks, photo swaps and tidying seven blog entries are the first candidates, since bulk create and edit for collections is on the list. Laying out a brand-new page from scratch can wait until you have seen results.</p>
     <p class="ptext">For freelancers, one more handover note may be needed. If a client&#x27;s staff will edit the site by chat, you have to decide what permission they get. The release says the existing permission system applies, so checking your current settings is a sensible first step. That is my opinion.</p>
-    <h2 class="psub" id="s7">What to do now</h2>
+    <h2 class="psub" id="s7">Before connecting a client site</h2>
     <p class="ptext"><strong>Check your Webflow permissions first.</strong> Installing needs site data and designer-workflow permissions, according to the page. Before connecting a client site, list who holds edit rights and find where the activity log lives.</p>
     <p class="ptext"><strong>Start on a site where mistakes are cheap.</strong> On a portfolio or test site, try a small request such as &quot;rewrite the intro of these five collection items in the same tone.&quot; If it goes wrong, check how to revert at the same time.</p>
     <p class="ptext"><strong>Read &quot;free&quot; as &quot;for now.&quot;</strong> Nothing promises that credit-free use continues. Whether to build AI usage into a monthly maintenance fee can wait until pricing is set.</p>
@@ -872,7 +869,7 @@
     </ul>
     <p class="ptext">&quot;Free&quot; comes with &quot;for now.&quot; If the site is for a client, settle in advance who pays when a fee appears. That is my opinion.</p>
     <p class="ptext">To avoid mixing up news from the same week: the free window for code layers is separate from Payload. We covered the agent starting to use AI credits in <a href="https://designrefs.com/articles/figma-agent-ai-credits-ga/">Figma&#x27;s agent started charging credits</a>.</p>
-    <h2 class="psub" id="s4">What we can&#x27;t know yet</h2>
+    <h2 class="psub" id="s4">Whether the data can leave Figma</h2>
     <ul class="ptext-list">
       <li><strong>Getting data out.</strong> The post does not say whether Figma-hosted projects can be exported or self-hosted. It points to Payload.org for self-hosting or extending, which reads as being about the open-source project, not Figma-hosted apps.</li>
       <li><strong>Limits.</strong> No storage, request or user caps are listed.</li>
@@ -880,12 +877,12 @@
       <li><strong>Real-world quality.</strong> That one prompt yields a usable admin panel is Figma&#x27;s description. Your project is the test.</li>
       <li><strong>Independent checks.</strong> None of the sources I opened was a third-party test of Payload in Figma.</li>
     </ul>
-    <h2 class="psub" id="s5">What this means for designers</h2>
+    <h2 class="psub" id="s5">Client sites with an admin panel get closer</h2>
     <p class="ptext">For screens whose content changes, such as a portfolio or a small shop site, the distance between mockup and live site shrinks. Client jobs that need an admin panel for editing copy fall in this range too.</p>
     <p class="ptext">For vibe coders, it removes the step of shopping for a database and login separately. It does not fix the problem of AI-made screens all looking alike. Choosing fonts and colors still comes first.</p>
     <p class="ptext">One worry is responsibility. When you only draw screens, a mistake means redrawing. Once login and data are attached, privacy and backups follow. Think first about whose data the site collects. That is also my opinion.</p>
     <p class="ptext">We covered the related Figma flow in <a href="https://designrefs.com/articles/figma-specs-markdown-context/">Figma Specs: handing context to your team and AI in one Markdown page</a>. Payload adds data on top of that.</p>
-    <h2 class="psub" id="s6">So for now</h2>
+    <h2 class="psub" id="s6">A CSV first, and a note on hosting terms</h2>
     <p class="ptext"><strong>Start with ten real rows.</strong> Put ten real product names or post titles in a CSV, upload it and have a collection created. It is the method the post shows, and you see at once how real text changes the screen.</p>
     <p class="ptext"><strong>For client work, write down the hosting terms.</strong> It is free beta now but pricing is unset. Note who pays when a fee appears and how the data would move.</p>
     <p class="ptext"><strong>Pause before collecting personal data.</strong> If you accept user logins, list what you store, and check limits and export options in the help center before going live.</p>
@@ -952,7 +949,7 @@
     <p class="ptext">Applied to the product photo above, a prompt might read as follows. This is my paraphrase of Krea&#x27;s advice, and I haven&#x27;t run it.</p>
     <blockquote class="art__quote">Keep the bottle&#x27;s label and logo as they are. Change only the background to a wooden shelf in morning light. Keep the camera angle.</blockquote>
     <p class="ptext">Putting what to protect before what to change stands out. Presumably the model reads from the sentence where it is allowed to touch. That is my guess.</p>
-    <h2 class="psub" id="s4">Where you can use it</h2>
+    <h2 class="psub" id="s4">krea.ai, the API, and three plans</h2>
     <p class="ptext">According to the post, Krea 3 is live on krea.ai (Krea says it has 30 million users) and in the Krea API. It is also available through fal, Hedra, Together AI, Nous Research, OpenRouter and Replicate. Enterprise teams can contact Krea.</p>
     <figure class="art__fig">
       <img src="https://designrefs.com/articles/img/krea-home.webp" alt="Krea home page. Source: krea.ai (captured 2026-10-21)" loading="lazy" decoding="async" />
@@ -975,7 +972,7 @@
     </table></div>
     <p class="art__note">Source: <a href="https://www.krea.ai/pricing" target="_blank" rel="noopener">Krea pricing</a>. The page&#x27;s structured data lists Max as $70 and 40,000 units, which differs from the visible text. Check the current page before you pay.</p>
     <p class="ptext">How many Krea 3 images the free plan allows was unclear. The comparison table seems to show about 5 images a day (marked as approximate) in the Krea 3 row, while a separate editing-allowance table shows other numbers. I couldn&#x27;t tell which applies. Try a few free runs before deciding.</p>
-    <h2 class="psub" id="s5">What is still missing</h2>
+    <h2 class="psub" id="s5">No numbers yet for tiny label text</h2>
     <ul class="ptext-list">
       <li><strong>How well it preserves originals.</strong> The post says &quot;stays as it was,&quot; but nobody published numbers for tiny label text or intricate patterns.</li>
       <li><strong>Choosing the area.</strong> The post&#x27;s roadmap lists instructions by circling an area or writing on the image. Krea says it is building that. For now you describe the location in words.</li>
@@ -983,11 +980,11 @@
       <li><strong>Copyright and commercial use.</strong> This piece doesn&#x27;t cover whether you may use the output for paid work. See <a href="https://designrefs.com/articles/ai-image-commercial-use/">Can you use AI images in client work?</a> for the general principles, and read the service terms separately.</li>
       <li><strong>Independent verification.</strong> Among the sources I opened, none compared Krea 3 with other models under the same conditions.</li>
     </ul>
-    <h2 class="psub" id="s6">What this means for designers</h2>
+    <h2 class="psub" id="s6">Best where you know what must not change</h2>
     <p class="ptext">Editing models are useful when what must not change is clear: product photos, packaging mockups, ad drafts. They matter less for brainstorming many new images.</p>
     <p class="ptext">One worry is speed. Eight seconds makes it easy to run many times, and that raises the odds of missing a result that is plausible but wrong. Overlay the output on the original and check logos and lettering every time. That is my opinion.</p>
     <p class="ptext">For vibe coders it is an easy way to adjust product images and hero backgrounds for a landing page. But the problem of AI screens all looking alike isn&#x27;t solved by images. Choosing fonts and colors comes first.</p>
-    <h2 class="psub" id="s7">So for now</h2>
+    <h2 class="psub" id="s7">Test it on your smallest label</h2>
     <p class="ptext"><strong>Write what to keep first, in one line.</strong> Put &quot;keep the label and logo as they are&quot; at the front, then name a single change with &quot;only.&quot; It is the order Krea recommends, and worth trying on any editing model.</p>
     <p class="ptext"><strong>Test with one of your own photos inside the free limit.</strong> Skip the launch examples. Use the photo with the smallest label text, run it once, and overlay it on the original. Zoom in on the letter edges and you&#x27;ll know quickly.</p>
     <p class="ptext"><strong>Read the terms before client work.</strong> Good speed and price don&#x27;t settle usage rights. Note what you confirmed next to the project file.</p>
@@ -1066,7 +1063,7 @@
     </table></div>
     <p class="art__note">Source: <a href="https://www.figma.com/release-notes/" target="_blank" rel="noopener">Figma release notes</a>, <a href="https://www.figma.com/blog/build-by-design/" target="_blank" rel="noopener">Figma blog: Config India 2026</a></p>
     <p class="ptext">The blog says guidelines and code sources will be available on all paid plans. Those two matter here: if code layers make a screen you can click, guidelines keep it from drifting off your rules. That ties to <a href="https://designrefs.com/articles/design-md-for-ai/">DESIGN.md</a> and <a href="https://designrefs.com/articles/figma-specs-markdown-context/">Figma Specs</a>, covered earlier.</p>
-    <h2 class="psub" id="s7">Still unconfirmed</h2>
+    <h2 class="psub" id="s7">Framework names and credit costs aren&#x27;t in the docs</h2>
     <ul class="ptext-list">
       <li>Which frameworks and languages code layers support. The help article names none.</li>
       <li>Per-task credit costs after the free period.</li>
@@ -1074,15 +1071,15 @@
       <li>Exactly what a free-plan account can do. The documents word it differently.</li>
       <li>Which projects fail to import. The docs say only that some need changes.</li>
     </ul>
-    <h2 class="psub" id="s8">What this means for designers</h2>
+    <h2 class="psub" id="s8">Instructions in words where links used to go</h2>
     <p class="ptext">Making a prototype has meant wiring links. Code layers put &quot;instructing a running screen in words&quot; in that place. If people can click a design before handoff, questions like &quot;is it supposed to move like this?&quot; in development might shrink. That is my guess, with no verified evidence yet.</p>
     <p class="ptext">For vibe coders it runs the other way. You can bring a built screen into Figma, extract it as a design, adjust spacing and color there, and send it back. If you lack design sense, there is now a path to polish in a design tool.</p>
-    <h2 class="psub" id="s9">What to do now</h2>
+    <h2 class="psub" id="s9">One small screen before November 4</h2>
     <p class="ptext"><strong>Test one small screen before November 4.</strong> Pick a login screen or a pricing table and click Build selection. When importing an outside project, avoid large ones because imports can take 10 minutes or more. A feel for how it behaves during the free window helps you judge credits later. The free window applies to paid plans.</p>
     <p class="ptext"><strong>Hand off a clickable screen with your next mockup.</strong> Instead of long notes on a static frame, show how it behaves. Start by checking whether it answers the client&#x27;s one-line question: &quot;what happens when I press this?&quot;</p>
     <p class="ptext"><strong>Write your rules down first.</strong> Guidelines attach to published libraries. If you don&#x27;t have one yet, start with a ten-line note: main color, fonts, corner radius, spacing unit. It works in any tool.</p>
     <p class="ptext">AI design tools by use are collected on <a href="https://designrefs.com/ai/">AI design tools</a>.</p>
-    <h2 class="psub" id="s10">Summary</h2>
+    <h2 class="psub" id="s10">From drawn mockups to clickable ones</h2>
     <p class="ptext">Figma now lets a running, code-backed prototype sit beside a static mockup, and creating and editing is free on paid plans through November 4. How far you can trust it has no public comparison yet. What is certain is that the work is moving a step from drawing a design to letting people click it.</p>
     <p class="art__note">Sources: <a href="https://www.figma.com/release-notes/" target="_blank" rel="noopener">Figma release notes</a>, <a href="https://help.figma.com/hc/en-us/articles/44193259600535-Code-layers-in-Figma-Design" target="_blank" rel="noopener">Figma Help: Code layers in Figma Design</a>, <a href="https://www.figma.com/blog/build-by-design/" target="_blank" rel="noopener">Figma blog: Config India 2026</a>.</p>]]></content:encoded>
     </item>
@@ -1096,7 +1093,7 @@
       <content:encoded><![CDATA[    <p class="ptext">If you build screens with Lovable or Cursor, they start to look alike. Rounded cards, a familiar purple, similar spacing. Rewording the prompt doesn&#x27;t change the feel much. It&#x27;s easy to blame a lack of design sense and move on.</p>
     <p class="ptext">Lovable&#x27;s official changelog has had a few entries on this over the past weeks. One removed the &#x27;three design directions&#x27; step shown before a first build. Another opened design systems to every paid plan. This piece repeats only what I verified in the changelog and the official docs, and lists separately what remains unconfirmed.</p>
     <p class="ptext">This is based on Lovable&#x27;s official changelog and docs (August to October entries). There&#x27;s no public comparison showing that design systems make screens look less alike, so that part is my interpretation. Plan descriptions differed between search summaries and the official docs, which I cover later.</p>
-    <h2 class="psub" id="s1">What changed</h2>
+    <h2 class="psub" id="s1">Four entries in the changelog</h2>
     <p class="ptext">The relevant changelog entries:</p>
     <div class="art__tablewrap"><table class="art__table">
       <thead><tr><th>Date</th><th>Item</th><th>What it says</th></tr></thead>
@@ -1149,22 +1146,22 @@
     <h2 class="psub" id="s4">Other changes at the same time</h2>
     <p class="ptext">The October 12 entry says you can mark a change directly on an image in the Files tab by drawing over an area, pinning a comment, erasing, or removing the background. The result is saved as a new file. It follows the same direction as <a href="https://designrefs.com/articles/image-ai-edit-not-reroll/">fixing instead of rerolling</a>.</p>
     <p class="ptext">There was also an &#x27;Aesthetics&#x27; update in May. Lovable&#x27;s <a href="https://x.com/Lovable/status/2053874566460752191" target="_blank" rel="noopener">post on X</a> says you can ask for typography, layout and color preferences, preview design concepts before building, and make bolder landing pages, apps and blogs. I got the May 11 date from the secondary outlet Create With and found no detailed Lovable doc. How it connects to the removed &#x27;three directions&#x27; step is not confirmed in public material.</p>
-    <h2 class="psub" id="s5">What is still unconfirmed</h2>
+    <h2 class="psub" id="s5">The changelog doesn&#x27;t say why</h2>
     <ul class="ptext-list">
       <li>Why the three directions step was removed. The changelog gives no explanation.</li>
       <li>Any public side-by-side of builds with and without a design system.</li>
       <li>The credit cost of design systems. The docs say only that the setup verification step costs zero credits, and give no cost for other operations such as updates.</li>
       <li>Related entries in the part of the changelog I did not read.</li>
     </ul>
-    <h2 class="psub" id="s6">What it means for designers</h2>
+    <h2 class="psub" id="s6">Writing the rules down as files</h2>
     <p class="ptext">For vibe coders the message is simple: stop persuading the tool with every prompt and attach a rule set you decided once. For designers it&#x27;s a different job. Writing buttons, cards, colors and type rules in a form AI can read may become a new task. That is my guess.</p>
     <p class="ptext">If <a href="https://designrefs.com/articles/figma-specs-markdown-context/">Figma Specs</a> passes the context of a design as one markdown page, Lovable&#x27;s design system looks like the coding-tool version of the same idea. Different tools, same chore: write your rules down.</p>
-    <h2 class="psub" id="s7">So for now</h2>
+    <h2 class="psub" id="s7">Ten lines to write before the first prompt</h2>
     <p class="ptext"><strong>Write your rules in ten lines.</strong> Pick a main color, an accent, two typefaces, a corner radius and a spacing unit. Even without Lovable, it works as a rules memo for Cursor or Claude Code. We wrote up how in the <a href="https://designrefs.com/articles/design-md-for-ai/">DESIGN.md</a> piece.</p>
     <p class="ptext"><strong>Don&#x27;t leave the look open in the first prompt.</strong> Per the changelog, Lovable asks when color, type and layout are unspecified. State them up front, such as &quot;main color this, typeface this,&quot; and you skip the question.</p>
     <p class="ptext"><strong>Put the edits you like back into the rules.</strong> As the docs say, editing copied components in a connected project gets overwritten on update. Only changes made in the design system project last.</p>
     <p class="ptext">AI design tools by use are collected on the <a href="https://designrefs.com/ai/">AI design tools</a> page.</p>
-    <h2 class="psub" id="s8">In short</h2>
+    <h2 class="psub" id="s8">The look moves from the prompt to a rules file</h2>
     <p class="ptext">Lovable removed the step that offered directions on open prompts and made design systems, which hand parts and rules to every build, a feature of all paid plans. Whether that makes screens look less alike is not confirmed. What is clear is that deciding the look is shifting from a line in a prompt to a rules file.</p>
     <p class="art__note">Sources: <a href="https://docs.lovable.dev/changelog" target="_blank" rel="noopener">Lovable changelog</a>, <a href="https://docs.lovable.dev/features/design-systems" target="_blank" rel="noopener">Lovable docs: Design systems</a>, <a href="https://x.com/Lovable/status/2053874566460752191" target="_blank" rel="noopener">Lovable on X</a>, <a href="https://www.createwith.com/tool/lovable/updates/lovable-launches-aesthetics-to-give-users-more-control-over-design-output" target="_blank" rel="noopener">Create With: Lovable Aesthetics</a>.</p>]]></content:encoded>
     </item>
@@ -1177,7 +1174,7 @@
       <description>Figma&#x27;s design agent has left beta and now consumes AI credits. Checked against Figma&#x27;s FAQ and pricing page: what is confirmed, what is missing, and how to stretch a month&#x27;s allowance.</description>
       <content:encoded><![CDATA[    <p class="ptext">If you tried Figma&#x27;s agent during the beta, you probably never worried about the cost of a prompt. That period is over. According to Figma&#x27;s official AI credits FAQ, the agent in Figma Design and the Weave tools became generally available on October 6, 2026, and have consumed AI credits since.</p>
     <p class="ptext">If you don&#x27;t know what a prompt costs or how large the monthly allowance is, you hit a wall at the end of the month. This piece follows Figma&#x27;s FAQ, its pricing page and a community forum reply, and separates what is confirmed from what is missing.</p>
-    <h2 class="psub" id="s1">What changed</h2>
+    <h2 class="psub" id="s1">Credits count from October 6</h2>
     <p class="ptext">From the &#x27;Agent and Weave tools&#x27; section of Figma&#x27;s FAQ:</p>
     <ul class="ptext-list">
       <li>The agent in Figma Design and the Weave tools became generally available on October 6, 2026, and now consume AI credits.</li>
@@ -1215,7 +1212,7 @@
     <p class="ptext">Smaller prompts would allow more and larger ones fewer. Read it as a sense of scale, not an exact count. If you hand over whole screens every day, a month&#x27;s allowance could shrink quickly. The forum answer is community guidance rather than an official policy page, and when it was written on August 12 no GA date had been set. The only reliable way to know today&#x27;s cost is to run a prompt and check AI Balance.</p>
     <h2 class="psub" id="s4">When you run short</h2>
     <p class="ptext">Teams that use AI often can buy more credits through a subscription or pay-as-you-go billing. The pricing page says purchased credits are shared by the whole team. The FAQ says that from August 25 the add-ons give more credits at the same price: 2x on Professional and 1.6x on Organization and Enterprise. It applies automatically, invoices may show adjustment lines but the net cost stays the same, and the monthly spending limit is unchanged.</p>
-    <h2 class="psub" id="s5">What isn&#x27;t confirmed</h2>
+    <h2 class="psub" id="s5">No official price per prompt</h2>
     <ul class="ptext-list">
       <li>The average credits for one agent prompt. There is no official price list.</li>
       <li>Which plans can use the agent. The pricing page doesn&#x27;t say.</li>
@@ -1225,12 +1222,12 @@
     </ul>
     <h2 class="psub" id="s6">Read it with the earlier pieces</h2>
     <p class="ptext"><a href="https://designrefs.com/articles/figma-specs-markdown-context/">Figma Specs</a> was about handing context to a team and AI in one markdown page. This change adds a price to handing that context to an AI. The FAQ says credit use varies with the context you provide. Keeping your rules short might improve results and also reduce usage. That is my guess, and no public test backs it up. The rules memo is covered in the <a href="https://designrefs.com/articles/design-md-for-ai/">DESIGN.md</a> piece.</p>
-    <h2 class="psub" id="s7">So for now</h2>
+    <h2 class="psub" id="s7">Measure your own unit price in AI Balance</h2>
     <p class="ptext"><strong>Open AI Balance first.</strong> Note today&#x27;s remaining credits, run one small prompt, and see how much dropped. That gives you a unit price for your own work. With no official price list, this is the most accurate method.</p>
     <p class="ptext"><strong>Split prompts into small ones.</strong> Asking for one card or one header at a time, instead of a whole screen, limits how much you spend on a result you don&#x27;t like. This leans on the FAQ&#x27;s note that usage varies with complexity and context.</p>
     <p class="ptext"><strong>If you&#x27;re on a team, ask your admin.</strong> Purchased credits are shared, and Organization and Enterprise admins can download beta usage as a CSV. Seeing how much you used in the beta gives a rough idea of scale after GA.</p>
     <p class="ptext">AI design tools by use are collected in <a href="https://designrefs.com/ai/">AI design tools</a>.</p>
-    <h2 class="psub" id="s8">In short</h2>
+    <h2 class="psub" id="s8">The math rests on one forum number</h2>
     <p class="ptext">The agent started drawing credits at general availability, and there is no official price list for one run. The most reliable way is to measure your own work with AI Balance. The arithmetic here rests on a single forum number. I haven&#x27;t used the agent under credit billing.</p>
     <p class="art__note">Sources: <a href="https://help.figma.com/hc/en-us/articles/42614902212887" target="_blank" rel="noopener">Figma Help: AI credits FAQ</a>, <a href="https://www.figma.com/pricing/" target="_blank" rel="noopener">Figma pricing page</a>, <a href="https://forum.figma.com/ask-the-community-7/figma-agent-beta-pricing-56929" target="_blank" rel="noopener">Figma Community Forum: figma agent beta pricing</a>.</p>]]></content:encoded>
     </item>
@@ -1292,7 +1289,7 @@
     </table></div>
     <p class="art__note">Sources: <a href="https://www.protopie.io/blog/protopie-mcp-official" target="_blank" rel="noopener">ProtoPie blog: official MCP support</a>, <a href="https://www.protopie.io/blog/blog-protopie-mcp-from-design-to-code-faster" target="_blank" rel="noopener">ProtoPie blog: from design to code</a>, <a href="https://www.protopie.io/learn/docs/mcp-studio-mcp-introduction" target="_blank" rel="noopener">ProtoPie docs: Studio MCP</a></p>
     <p class="ptext">Whether Code MCP is available on the Pro plan reads differently depending on the page. The October post ties it to Enterprise, while the July post says Pro and Enterprise users pay nothing extra during the beta. It does not clearly say whether Code MCP falls inside that beta. Which one holds today is something to check on ProtoPie&#x27;s pricing page. The official-support post lists no prices.</p>
-    <h2 class="psub" id="s6">What isn&#x27;t confirmed yet</h2>
+    <h2 class="psub" id="s6">Pricing and code quality are still blank</h2>
     <ul class="ptext-list">
       <li>Pricing and any AI usage limits. The official-support post has none.</li>
       <li>Whether the Pro plan can use Code MCP.</li>
@@ -1301,7 +1298,7 @@
       <li>The quality of code for each of the seven frameworks.</li>
       <li>The exact publication date of the official post, since dates on the page disagree.</li>
     </ul>
-    <h2 class="psub" id="s7">So for now</h2>
+    <h2 class="psub" id="s7">Time it on a single modal first</h2>
     <p class="ptext"><strong>Test it on one small interaction.</strong> A button that opens a modal is enough. If you have a Pro plan and Studio 10.3.0 or later, write down how long the same interaction takes by hand versus by prompt, and how many times you fixed it. That tells you whether it suits your team.</p>
     <p class="ptext"><strong>Tidy your component names and library first.</strong> Studio MCP pulls components from your library. Messy names confuse people and AI alike. Since you copy element IDs into prompts, keeping layer names readable helps.</p>
     <p class="ptext"><strong>Decide what you hand to developers.</strong> Whole screen or a single component? Practice narrowing it with Dev View. Rules can live in <a href="https://designrefs.com/articles/design-md-for-ai/">DESIGN.md</a> or guidelines, and motion in the prototype, so each has its role.</p>
@@ -1357,7 +1354,7 @@
     <p class="ptext">Guidelines deserve attention. Per the release notes, you can attach rules, best practices and anti-patterns to a published design library as markdown files, and the agent reads them every time someone prompts with the library enabled. Our earlier piece on <a href="https://designrefs.com/articles/chatgpt-intelligent-ui-figma-agent/">the week AI started drawing screens</a> asked who holds the design rules. This is Figma&#x27;s answer: people write the rules down, and the agent follows them.</p>
     <p class="ptext">Figma is also aware that AI output varies from run to run. TechCrunch reported that the announcements include tools meant to make results more predictable. No numbers on how much more predictable have been published.</p>
     <p class="ptext">The agent has used AI credits since October 6. The more context you attach and the more often you prompt, the more credits it may use, so check this if your team plans to use it. The release notes say custom skills are available even on the Starter plan.</p>
-    <h2 class="psub" id="s5">What isn&#x27;t confirmed</h2>
+    <h2 class="psub" id="s5">Pricing and Korean-language behavior are open</h2>
     <ul class="ptext-list">
       <li>Specs pricing and when the beta ends. Figma only says open beta on paid plans.</li>
       <li>Limits such as file size or number of specs.</li>
@@ -1365,7 +1362,7 @@
       <li>Behavior with Korean documents. No published test shows how well the agent follows a spec written in Korean.</li>
       <li>Which plans get guidelines and centralized design systems.</li>
     </ul>
-    <h2 class="psub" id="s6">So for now</h2>
+    <h2 class="psub" id="s6">Put one existing .md on the canvas</h2>
     <p class="ptext"><strong>Drag one existing document onto the canvas as a spec.</strong> A project brief or meeting notes in <code>.md</code> is enough. Before writing anything new, see how what you already have looks on the canvas. If you aren&#x27;t on a paid plan, you&#x27;ll have to wait for access.</p>
     <p class="ptext"><strong>Write three lines on why you did it this way.</strong> Next to a mockup, note the decision, the options you dropped, and what you still don&#x27;t know. These three lines are useful whether a person or an agent reads them. Keeping open questions in their own place comes from the Figma researcher&#x27;s example.</p>
     <p class="ptext"><strong>Keep rules and context separate.</strong> Put colors and type in <a href="https://designrefs.com/articles/design-md-for-ai/">DESIGN.md</a> or guidelines, and the background of this piece of work in the spec. They won&#x27;t blur together, and it&#x27;s clear which text an agent should read.</p>
@@ -1545,7 +1542,7 @@
     <p class="art__note">Examples put together by this site. Adjust the tone to the situation and relationship.</p>
     <p class="ptext">The key is not to dismiss the AI draft. A client showing the direction they want as a picture is actually helpful; it&#x27;s much faster than explaining in words. Just show, with a list of remaining work, that the picture is a starting point.</p>
     <p class="ptext">It&#x27;s the same inside a company. When a boss holds up an AI-made screen, take it as a starting point, but separately note &quot;what I decided from here&quot;: what you changed and why. Over time, that becomes a record that the designer did more than push pixels.</p>
-    <h2 class="psub" id="s4">So, for now</h2>
+    <h2 class="psub" id="s4">Start by splitting the quote into lines</h2>
     <ol class="ptext-list">
       <li><strong>Split the lines on your quote.</strong> Instead of &quot;design, one lot&quot;, list the remaining work line by line: rights check, resetting type, file prep, per-medium production, number of revision rounds. Clients can see what they&#x27;re paying for.</li>
       <li><strong>Ask where the draft came from.</strong> Which AI made it, and whether that service allows commercial use. Keep it in an email so the designer isn&#x27;t left holding the problem later.</li>
@@ -1589,7 +1586,7 @@
     <p class="ptext"><strong>The sentence that describes the brand.</strong> Logos and colors don&#x27;t appear in AI answers. Instead, a sentence or two explaining &quot;what kind of brand we are&quot; gets quoted directly. If your brand guide has tone and manner but no single sentence describing the brand, now is the time to write one.</p>
     <p class="ptext"><strong>Page structure.</strong> AI reads pages with proper headings, subheadings, tables and lists far better. A real heading tag beats large text that only looks like a heading. That&#x27;s why a design system should cover the structure of text too.</p>
     <p class="ptext">This echoes the <a href="https://designrefs.com/en/articles/design-md-for-ai/">DESIGN.md</a> story. That was about letting AI read our design rules; this is about letting AI read our brand. Both come down to describing ourselves in text a machine can read.</p>
-    <h2 class="psub" id="s4">So, for now</h2>
+    <h2 class="psub" id="s4">Start by asking ChatGPT about your client</h2>
     <p class="ptext">There&#x27;s something you can try without big tools.</p>
     <ol class="ptext-list">
       <li><strong>Ask AI directly.</strong> Ask ChatGPT or Perplexity &quot;what kind of place is brand X?&quot; and &quot;what would you recommend in field Y?&quot;. Just checking how your brand or your client is introduced, and whether anything is wrong, is a start.</li>
@@ -1610,7 +1607,7 @@
       <content:encoded><![CDATA[    <p class="ptext">A tool spread quietly among Mac users this week. It&#x27;s called RemoveMacAI. It turns off Apple&#x27;s AI features on a Mac and deletes the model files they use. Several people reported getting back more than 12GB of storage.</p>
     <p class="ptext">There&#x27;s a reason a tool like this appeared. In macOS 27, released this fall, the switch that turned off all AI features at once is gone.</p>
     <p class="ptext">Apple hasn&#x27;t explained why the switch went away. I haven&#x27;t run this tool on macOS 27 either; this follows reporting from Mac-focused outlets.</p>
-    <h2 class="psub" id="s1">What changed</h2>
+    <h2 class="psub" id="s1">One switch, scattered across ten places</h2>
     <figure class="art__fig">
       <picture><source media="(max-width: 640px)" srcset="https://designrefs.com/articles/img/macos27-ai-switch-en-m.svg" width="600" height="1060" /><img src="https://designrefs.com/articles/img/macos27-ai-switch-en.svg" alt="In macOS 26, one switch turned off every AI feature; in macOS 27, each feature has to be turned off separately. A sketch based on reports." width="1200" height="639" loading="lazy" decoding="async" /></picture>
       <figcaption>In macOS 26, one switch turned off every AI feature; in macOS 27, each feature has to be turned off separately. A sketch based on reports.</figcaption>
@@ -1642,7 +1639,7 @@
       <li><strong>Changes without explanation.</strong> When a switch disappears with no reason given, people assume the worst.</li>
     </ul>
     <p class="ptext">Do the opposite. If you design AI features, put the off controls in one place, and tell users in one line what turns off and what remains. If you change a feature, say why. If users start looking for outside tools, that&#x27;s a sign the settings screen&#x27;s design has failed.</p>
-    <h2 class="psub" id="s4">So, for now</h2>
+    <h2 class="psub" id="s4">How many clicks it takes to turn it off</h2>
     <ol class="ptext-list">
       <li><strong>Start with your own Mac.</strong> Use the table above to see which AI features are on and how much space the models use. Turn off what you don&#x27;t use.</li>
       <li><strong>Ask the same of what you build.</strong> For the AI feature you&#x27;re working on, find where &quot;off&quot; is and count how many taps it takes. More than three is worth another look.</li>
@@ -1703,7 +1700,7 @@
       </tbody>
     </table></div>
     <p class="art__note">Sources: <a href="https://www.creativebloq.com/ai/fantas-ai-slop-halloween-advert-is-a-real-horror-show" target="_blank" rel="noopener">Creative Bloq</a>, <a href="https://www.emarketer.com/content/fanta-bets-on-original-ip-own-halloween--ai-concerns-could-way" target="_blank" rel="noopener">eMarketer</a>, <a href="https://www.zappi.io/web/blog/innovation-spotlight-fantas-haunted-collection" target="_blank" rel="noopener">Zappi product analysis</a>, <a href="https://www.zappi.io/web/blog/admiration-feature-fantas-halloween-reveal" target="_blank" rel="noopener">Zappi ad analysis</a>, <a href="https://news.designrush.com/fanta-haunted-universe-halloween-2026" target="_blank" rel="noopener">DesignRush</a>, <a href="https://www.marketing-interactive.com/can-ai-help-fanta-build-the-next-horror-universe" target="_blank" rel="noopener">Marketing-Interactive</a>.</p>
-    <h2 class="psub" id="s5">So, for now</h2>
+    <h2 class="psub" id="s5">Three questions for &quot;should we go with AI?&quot;</h2>
     <p class="ptext">When a client asks &quot;should we do this campaign with AI?&quot;, there are now some questions worth raising.</p>
     <ol class="ptext-list">
       <li><strong>Split where to use it first.</strong> Decide separately between places where awkwardness hides, like concept exploration, backgrounds and props, and places where it shows instantly, like faces and hands.</li>
@@ -1764,7 +1761,7 @@
     <p class="ptext">There are two things worth watching instead.</p>
     <p class="ptext"><strong>First, what holds us is the file format.</strong> Designers stay with Adobe partly because the apps are good, but also because the files we trade are PSD, AI, INDD and AEP. That&#x27;s why PhotoCraft put PSD compatibility first. A replacement becomes a real threat not when it has more features, but when it can open a client&#x27;s file as is and send it back as is.</p>
     <p class="ptext"><strong>Second, the cost of building software is falling.</strong> One person, working with AI, put out the skeleton of seven apps. The polish is far off, but there will be more attempts like this. For Adobe, pressure on pricing and cancellation terms will likely come before pressure on features. That&#x27;s not bad news for designers.</p>
-    <h2 class="psub" id="s5">So, for now</h2>
+    <h2 class="psub" id="s5">For now, one PSD copy and your contract terms</h2>
     <p class="ptext">Don&#x27;t switch. Watch, and try one thing.</p>
     <ol class="ptext-list">
       <li><strong>Test with a copy of a work file.</strong> Copy a PSD you use often and open it in PhotoCraft. See which of layers, masks, adjustment layers and type layers break, and you&#x27;ll get a feel for how close it is to your work. Never overwrite the original.</li>
@@ -1817,7 +1814,7 @@
     </figure>
     <p class="ptext">The screens ChatGPT draws are made of OpenAI&#x27;s components. Whoever asks, the buttons and charts look the same. The announcement said nothing about other companies bringing their own components or design rules. OpenAI owns the rules.</p>
     <p class="ptext">The Figma agent is the opposite. It uses components your team made and reads guidelines your team wrote. Your team owns the rules. And those rules fit in a single markdown file, the same idea as <a href="https://designrefs.com/en/articles/design-md-for-ai/">DESIGN.md</a>, which I covered last week. If you want AI to do the work, you have to write the rules down in a form AI can read.</p>
-    <h2 class="psub" id="s4">What&#x27;s left for designers</h2>
+    <h2 class="psub" id="s4">Judge, write it down, keep watch</h2>
     <p class="ptext"><strong>Judging when a screen beats text.</strong> OpenAI says the model decides the format for each question. That judgment is what UI designers do every day: a calculator, a table, or one sentence? OpenAI says this is still being improved, so for now a person&#x27;s eye is better.</p>
     <p class="ptext"><strong>Writing the rules down.</strong> If you&#x27;ll use the Figma agent, start with library guidelines. They don&#x27;t need to be long. Five lines of don&#x27;ts is enough: one accent color per screen, body text never below 16px, shadows only on cards. If you already have a DESIGN.md, carry the same content over.</p>
     <p class="ptext"><strong>Watching credits for a month.</strong> More complex requests and more attached files cost more credits. For the first month, attach only what you need instead of a whole library, and count how fast the credits go.</p>
@@ -1917,11 +1914,11 @@
     </table></div>
     <p class="art__note">Sources: <a href="https://www.atlascloud.ai/blog/tips/kling-4-flash-vs-full" target="_blank" rel="noopener">Atlas Cloud spec comparison</a>, <a href="https://pandaily.com/kling-ai-kling-4-0-30-second-native-video-multi-reference-control" target="_blank" rel="noopener">Pandaily</a>, <a href="https://morphic.com/resources/models/kling-4" target="_blank" rel="noopener">Morphic</a>. Credit pricing for 4.0 hasn&#x27;t been announced. 3.0 runs from 6 credits per second (720p) to 30 (4K).</p>
     <p class="ptext">The middle column is what matters. Flash, which opened first, has no multi-keyframe input. So the most notable feature in this announcement is something nobody can use yet. Until the full release, the spec sheet is all there is to judge by.</p>
-    <h2 class="psub" id="s4">What changes for designers</h2>
+    <h2 class="psub" id="s4">Storyboards start to matter more than prompts</h2>
     <p class="ptext">I&#x27;ve seen the same current all week. Image AI moved toward <a href="https://designrefs.com/en/articles/image-ai-edit-not-reroll/">placing boxes first and editing only the chosen spot</a>, and 3D AI toward <a href="https://designrefs.com/en/articles/instructmesh-ai-3d-print/">picking and fixing only the problem area</a>. Kling 4.0&#x27;s keyframes are the same story: turning what was left to luck into something a person decides.</p>
     <p class="ptext">That shifts where the work sits. Knowing how to split a scene into frames, and what must be visible at which second, becomes more useful than writing long, elaborate prompts. It&#x27;s a change that favors motion designers and ad producers who have drawn storyboards.</p>
     <p class="ptext">One more thing. Ten keyframes are, in the end, ten images. They might come from image AI or be drawn by a designer. For the video to look natural, the same person, product and lighting have to hold across all ten. That&#x27;s where &quot;edits that don&#x27;t drift&quot; on the image side meet keyframes on the video side.</p>
-    <h2 class="psub" id="s5">So, for now</h2>
+    <h2 class="psub" id="s5">A 15-second storyboard to sketch before launch</h2>
     <p class="ptext">There&#x27;s some preparation worth doing before the full release.</p>
     <ol class="ptext-list">
       <li><strong>Start with a 15-second storyboard.</strong> With the video AI you use now, give only a first and last frame and generate 15 seconds. Mark the moments in the middle that go off course. Those are where you&#x27;ll pin keyframes in 4.0.</li>
@@ -1971,7 +1968,7 @@
     <p class="ptext"><strong>A new ad placement appears.</strong> Where there are advertisers, someone has to make the creative. This format differs from banners so far. It sits right beside the picture the user just asked for, so a photo that blends naturally into that scene will likely beat a loud discount message. One image that fits next to someone drawing &quot;a campsite at dusk&quot;. The eye for shooting and choosing styled lifestyle shots, more than plain product photos, starts to matter.</p>
     <p class="ptext"><strong>References and ads share one screen.</strong> On the other hand, designers who use ChatGPT for mood boards or early directions have something to watch. Real brands&#x27; product photos will sit next to your images under the name &quot;inspiration&quot;. Even with clear labels, once you collect and save many images, it&#x27;s easy to lose track of which you made and which was an ad. Pass an ad image along as a reference and you&#x27;re using someone else&#x27;s brand photo.</p>
     <p class="ptext"><strong>One more difference between free and paid.</strong> Until now, paid plans meant better models and more usage. Now add &quot;no ads next to your images&quot;. If you often share your screen while making drafts in front of clients, that difference may matter more than you&#x27;d think.</p>
-    <h2 class="psub" id="s5">So, for now</h2>
+    <h2 class="psub" id="s5">Download, don&#x27;t screenshot, for your mood board</h2>
     <p class="ptext">Outside the US, nothing changes yet. But given how text ads spread from the US to other countries within months, image ads will likely widen before long.</p>
     <p class="ptext">Here&#x27;s what&#x27;s worth setting up now.</p>
     <ol class="ptext-list">
@@ -2019,7 +2016,7 @@
     <p class="ptext">Yesterday I wrote about <a href="https://designrefs.com/en/articles/image-ai-edit-not-reroll/">the week image AI turned toward editing</a>: image models leading with &quot;fix only the chosen spot&quot; instead of &quot;re-roll the whole thing&quot;.</p>
     <p class="ptext">InstructMesh goes the same way. Rebuild the whole thing and something else goes wrong besides what you fixed. So you pick the region and touch only that. In 2D or 3D, it&#x27;s becoming clear that this kind of partial editing is essential to actually using AI output.</p>
     <p class="ptext">The division of labor is the same too. AI produces the shape quickly, and a person judges whether it can actually be used. Will the handle hold when gripped? Will it leak? Where will it break? What product designers have always done matters even more here.</p>
-    <h2 class="psub" id="s4">So, for now</h2>
+    <h2 class="psub" id="s4">Four places to check before you print</h2>
     <p class="ptext">InstructMesh isn&#x27;t a product you can download yet. But if you plan to print from the 3D generator you use now, the three things the researchers fixed make a ready-made checklist.</p>
     <div class="art__tablewrap"><table class="art__table">
       <thead><tr><th>What to check</th><th>Why</th><th>How to look</th></tr></thead>
@@ -2082,11 +2079,11 @@
     </table></div>
     <p class="art__note">Sources: <a href="https://www.orcarouter.ai/blog/ideogram-4-5-launch-precise-edit-model" target="_blank" rel="noopener">Ideogram 4.5 overview (orcarouter)</a>, <a href="https://the-decoder.com/black-forest-labs-launches-flux-3-image-with-multi-step-editing-that-leaves-the-rest-of-your-picture-alone/" target="_blank" rel="noopener">the-decoder</a>, <a href="https://www.techtimes.com/articles/328502/20261002/black-forest-labs-launches-flux-3-image-json-bounding-boxes-lock-unchanged-pixels-numerically.htm" target="_blank" rel="noopener">Tech Times</a>, <a href="https://kingy.ai/blog/flux-3-image-specs-benchmarks-comparison/" target="_blank" rel="noopener">kingy.ai pricing</a>. Prices are reseller rates and vary by provider.</p>
     <p class="ptext">Midjourney shipped a small update the same week too: style previews in the sidebar before you generate, and a fix so edits keep the original aspect ratio. Different scale, same direction. Predict before you generate, and drift less after.</p>
-    <h2 class="psub" id="s5">What changes for designers</h2>
+    <h2 class="psub" id="s5">&quot;Just change the headline&quot; becomes doable</h2>
     <p class="ptext">Until now, image AI has been close to a slot machine. Pull until you like something, pick one, and start over if it&#x27;s slightly off. So the output often stayed in mood boards and early exploration.</p>
     <p class="ptext">If only the edited spot changes, that&#x27;s different. When a client says &quot;just change the headline&quot;, you can do it without touching everything they already approved. For the first time, it&#x27;s shaped to fit into real work, where revision requests go back and forth.</p>
     <p class="ptext">And box layout means composition becomes the person&#x27;s job again. Where things go and how big is still the designer&#x27;s call. Layout sense becomes more useful than tricks for writing long prompts.</p>
-    <h2 class="psub" id="s6">So, for now</h2>
+    <h2 class="psub" id="s6">Check for drift with Photoshop&#x27;s Difference mode</h2>
     <p class="ptext">Before you trust &quot;it doesn&#x27;t change&quot;, here&#x27;s a way to check. All you need is Photoshop.</p>
     <ol class="ptext-list">
       <li>Stack the original and the result after 3–5 edits as layers in one file.</li>
@@ -2151,7 +2148,7 @@
     <p class="ptext">DESIGN.md doesn&#x27;t replace Figma variables or token files. With the checker&#x27;s <code>export</code> command, the same tokens can be exported as a Tailwind config, CSS variables, or the W3C design token format (DTCG). Values stay in one place and flow out to many.</p>
     <p class="ptext">The difference is who reads it. Token files are read by code people write. DESIGN.md is read by AI. Put the file in a project folder and coding agents like Claude Code or Cursor read it before building any screens.</p>
     <p class="ptext">One caution. As the format caught on, sites offering &quot;DESIGN.md collections&quot; appeared, and people have pointed out that some of them don&#x27;t match Google&#x27;s official spec. If you&#x27;re going to use someone else&#x27;s file, run <code>lint</code> on it first.</p>
-    <h2 class="psub" id="s5">So, for now</h2>
+    <h2 class="psub" id="s5">Start with five colors, three sizes, three don&#x27;ts</h2>
     <p class="ptext">You don&#x27;t need to fill all eight sections from the start. This is enough to begin.</p>
     <ol class="ptext-list">
       <li><strong>Five colors or fewer.</strong> A name, a value and one line on where each is used.</li>
@@ -2207,12 +2204,12 @@
     <p class="art__note">Sources: <a href="https://changelog.shopify.com/posts/design-a-fully-bespoke-store-with-canvas" target="_blank" rel="noopener">Shopify changelog</a>, <a href="https://techcrunch.com/2026/10/01/shopify-debuts-canvas-a-way-to-build-online-stores-by-chatting-with-ai/" target="_blank" rel="noopener">TechCrunch</a>. Sidekick is included on every plan at no extra cost.</p>
     <p class="ptext">The last two rows are the ones to watch. A theme edited in Canvas no longer gets updates from the original theme, and you can&#x27;t download its files to work on elsewhere. Once a theme goes in, it lives inside Canvas.</p>
     <p class="ptext">The good news is you can start carefully. Under Online Store &gt; Themes, create a new theme in Canvas, or duplicate your current theme and open the copy in Canvas. The original stays in the existing editor. For now, Canvas is desktop-only.</p>
-    <h2 class="psub" id="s4">What changes for designers</h2>
+    <h2 class="psub" id="s4">When the mockup and the store share one canvas</h2>
     <p class="ptext">If you design Shopify stores for clients, the shape of the work shifts a little.</p>
     <p class="ptext">Until now it was two steps: make the design in Figma, then move it over through a developer or the theme editor. Canvas shortens the gap, because the surface you design on and the live store become the same surface. It also brings the moment when the store owner tells Sidekick &quot;make the buttons black&quot; themselves.</p>
     <p class="ptext">So the work that remains is this: deciding which buttons should be black, and why, and writing it down. Having the design system on the canvas also means the AI reads those rules and follows them. If the rules are blank, the AI fills them in on its own. I pick this up tomorrow in <a href="https://designrefs.com/en/articles/design-md-for-ai/">DESIGN.md, the file that hands your design rules to AI</a>.</p>
     <p class="ptext">One more thing. In last week&#x27;s <a href="https://designrefs.com/en/articles/openai-devday-2026-designers/">DevDay roundup</a>, design tools were moving into ChatGPT. This time a design workbench moved into a commerce tool. Wherever you start, things are converging toward touching the real product directly.</p>
-    <h2 class="psub" id="s5">So, for now</h2>
+    <h2 class="psub" id="s5">Test three rules on a duplicated theme</h2>
     <p class="ptext">If you have a Shopify store, duplicating your current theme and opening the copy in Canvas is about right. Leave the original alone, and if your store relies on app blocks or translations, hold off on moving over.</p>
     <p class="ptext">One thing worth trying on the copy: tell Sidekick three of your store&#x27;s usual rules first (say, button shape, heading size and photo ratio), then ask it to build a new page. How many pages it keeps those rules for will tell you how far to trust this workbench.</p>
     <p class="ptext">For store references, see <a href="https://designrefs.com/en/#uiux">UI/UX references</a>. AI tools are collected under <a href="https://designrefs.com/en/#ai">AI design tools</a>.</p>
@@ -2261,7 +2258,7 @@
     <p class="ptext">OpenAI&#x27;s own tables show a wider gap in places. On a science-focused terminal benchmark, Sol scored 57.0% and Astra 68.1%. It won&#x27;t stand in for Astra on everything.</p>
     <p class="ptext">The interesting part is the $2 / $10 price. It&#x27;s exactly the same as <a href="https://designrefs.com/en/articles/claude-sonnet-5-5-design/">Claude Sonnet 5.5</a>, released a day earlier. The two companies are now going head to head in the middle tier at the same price.</p>
     <p class="ptext">Subscription plans changed too. There&#x27;s a new top plan at $500 a month (Pro 500), and on the $200 plan, usage for new subscribers was cut in half. Existing subscribers keep what they had. That part has drawn plenty of criticism since the announcement.</p>
-    <h2 class="psub" id="s5">So, for now</h2>
+    <h2 class="psub" id="s5">Installing one plugin is enough for now</h2>
     <p class="ptext">There isn&#x27;t much to do today. If you use the ChatGPT desktop app, install the Canva, Figma or Adobe plugin you already use and see how useful it is beside the chat.</p>
     <p class="ptext">The bigger thing is the direction. Design tools are moving into ChatGPT, and ChatGPT is moving into design tools. Wherever you start, you&#x27;re heading toward the same files. In between, where the original lives and who does the final check is still a person&#x27;s call. I wrote about that boundary in <a href="https://designrefs.com/en/articles/ai-design-tools-in-practice/">Why thirty AI drafts don&#x27;t make the work any shorter</a>.</p>
     <p class="art__note">This was written right after the event, so hands-on reviews are scarce. It&#x27;s based on OpenAI&#x27;s announcements and coverage of the event.</p>
@@ -2466,7 +2463,7 @@
     </ul>
     <p class="ptext">A comparison that split five design tasks between them (<a href="https://betterstack.com/community/guides/ai/kimi-claude-astra-design/" target="_blank" rel="noopener">Better Stack</a>, September 14) reached a similar conclusion. For web design, Kimi K3 actually did best; Astra won 3D, and Fable 5.1 won 2D games. UI components were about even across the three, and none of them produced mobile app designs usable as is.</p>
     <p class="ptext">One more. Artificial Analysis noted that on a measure of the quality of documents like presentations, Astra scored lower than its predecessor, GPT-5.6 Sol. Worth knowing if you make a lot of slides.</p>
-    <h2 class="psub" id="s5">In short</h2>
+    <h2 class="psub" id="s5">Long material to Fable, short answers to Astra</h2>
     <p class="ptext">The price sheets are the same, but the actual cost depends on how you use them. For work where you attach long material and ask many times, Fable 5.1 with its cheaper cache has the edge; for short, one-shot answers, Astra, which talks less, has the edge.</p>
     <p class="ptext">In evaluations, Astra leads at quickly producing web screens and 3D, while Fable 5.1 leads at long tasks involving tool use. The approach recommended by designers who tried them first lines up with these results: explore first with Astra, finish and refine with Fable 5.1.</p>
     <p class="ptext">And both models are less than a month old. The rankings could change again in a few weeks. In the end, you only know if it fits your work by running it on your work.</p>

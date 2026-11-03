@@ -45,7 +45,7 @@ related: ai, graphic
 
 이건 [DESIGN.md](https://designrefs.com/articles/design-md-for-ai/) 이야기와도 닮았다. 그때는 AI가 우리 디자인 규칙을 읽게 하는 법이었고, 이번에는 AI가 우리 브랜드를 읽게 하는 법이다. 둘 다 결국, 기계가 읽을 수 있는 글로 우리를 설명해 두는 일이다.
 
-## 그래서 지금은
+## 챗GPT에 클라이언트 이름부터 물어본다
 
 큰 도구 없이도 해 볼 수 있는 게 있다.
 

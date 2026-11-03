@@ -5,14 +5,12 @@ desc: Figma's release notes say that since October 26, an outside AI agent can u
 tag: AI Design
 ---
 
-The client's email reads: "Could you add a 5-second moving version next to the mockup? It's for the top of an Instagram post."
+Export the mockup image from Figma. Open a video tool and upload it. Describe the motion in a sentence and wait. Paste the video back into Figma or a chat. Say a client wants a five-second moving version next to the mockup, for the top of an Instagram post. With a revision or two, that round trip runs two or three times per request.
 
-The mockup is in Figma. The video gets made somewhere else. You export the image, open a video tool, upload it, write a sentence, take the result and paste it back into Figma or a chat. That round trip happens two or three times per request. (This is an imagined scene.)
-
-Figma's release notes have an entry dated October 26 that could shorten it. An outside AI agent such as Claude or Cursor can now use Weave's video and image models through the Figma MCP (the connection that lets AI tools talk to Figma). This is not a hands-on review. It is based on the release notes and Weave's pricing page that I opened, plus a summary of a help article. I did not test what a given prompt produces or how good the results are.
+Figma's release notes have an entry dated October 26 that could shorten it. An outside AI agent such as Claude or Cursor can now use Weave's video and image models through the Figma MCP (the connection that lets AI tools talk to Figma). What follows comes from the release notes and Weave's pricing page that I opened, plus a summary of a help article. I did not hook up the connection and generate video myself, so I cannot say what a given prompt produces or how good the results are.
 
 ![Figma release notes (source: https://www.figma.com/release-notes/, captured 2026-10-29)](https://designrefs.com/articles/img/figma-mcp-weave-models-credits-shot1.webp)
-## The release note is three lines long
+## The October 26 entry: a linked Weave account, Weave credits
 
 The October 26 entry says:
 
@@ -68,7 +66,7 @@ This is the part that matters most in practice. The release notes say the Figma 
 
 One more point. A summary of the help article said the agent asks for confirmation before running. I could not open the original help page. Rather than trusting a confirmation step, run it once on the day you connect and watch when credits actually drop.
 
-## What is still unknown
+## No answer yet on whether the free plan works
 
 - **Exact per-model cost.** The official table gives counts only. The figures above are my division.
 - **MCP on the free plan.** No official statement either way.
@@ -77,7 +75,7 @@ One more point. A summary of the help article said the agent asks for confirmati
 - **How results return to the Figma canvas.** The guide says results come back to the chat. Whether they land in a Figma file is not confirmed.
 - **Commercial terms.** The pricing page says the free plan includes a commercial license. Per-model terms were not in the pages I opened. For a baseline, see [Can you use AI images in client work?](https://designrefs.com/articles/ai-image-commercial-use/).
 
-## Things worth trying
+## One sentence, two models, one rules memo
 
 **One sentence, one run.** Upload a mockup and ask for something like "keep the composition and move only the background slowly over 5 seconds." Write down how many Weave credits it cost. That single line is the only way to check the estimate above.
 
@@ -85,7 +83,7 @@ One more point. A summary of the help article said the agent asks for confirmati
 
 **Alongside a rules note.** Giving the agent a note with your colors and type rules first may keep the moving version closer to the brand. The Figma side is in [our Specs article](https://designrefs.com/articles/figma-specs-markdown-context/). Whether it helps for video has to be tested.
 
-## So for now
+## Count on the smallest plan, hold off on delivery
 
 **Count credits on the smallest plan first.** Record what one video and one image cost. With no published amounts, that record becomes your team's reference.
 

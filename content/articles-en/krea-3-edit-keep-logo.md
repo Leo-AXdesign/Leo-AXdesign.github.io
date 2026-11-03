@@ -65,7 +65,7 @@ Applied to the product photo above, a prompt might read as follows. This is my p
 
 Putting what to protect before what to change stands out. Presumably the model reads from the sentence where it is allowed to touch. That is my guess.
 
-## Where you can use it
+## krea.ai, the API, and three plans
 
 According to the post, Krea 3 is live on krea.ai (Krea says it has 30 million users) and in the Krea API. It is also available through fal, Hedra, Together AI, Nous Research, OpenRouter and Replicate. Enterprise teams can contact Krea.
 
@@ -87,7 +87,7 @@ Plans on Krea's pricing page. The monthly prices look like annual-billing rates;
 
 How many Krea 3 images the free plan allows was unclear. The comparison table seems to show about 5 images a day (marked as approximate) in the Krea 3 row, while a separate editing-allowance table shows other numbers. I couldn't tell which applies. Try a few free runs before deciding.
 
-## What is still missing
+## No numbers yet for tiny label text
 
 - **How well it preserves originals.** The post says "stays as it was," but nobody published numbers for tiny label text or intricate patterns.
 - **Choosing the area.** The post's roadmap lists instructions by circling an area or writing on the image. Krea says it is building that. For now you describe the location in words.
@@ -95,7 +95,7 @@ How many Krea 3 images the free plan allows was unclear. The comparison table se
 - **Copyright and commercial use.** This piece doesn't cover whether you may use the output for paid work. See [Can you use AI images in client work?](https://designrefs.com/articles/ai-image-commercial-use/) for the general principles, and read the service terms separately.
 - **Independent verification.** Among the sources I opened, none compared Krea 3 with other models under the same conditions.
 
-## What this means for designers
+## Best where you know what must not change
 
 Editing models are useful when what must not change is clear: product photos, packaging mockups, ad drafts. They matter less for brainstorming many new images.
 
@@ -103,7 +103,7 @@ One worry is speed. Eight seconds makes it easy to run many times, and that rais
 
 For vibe coders it is an easy way to adjust product images and hero backgrounds for a landing page. But the problem of AI screens all looking alike isn't solved by images. Choosing fonts and colors comes first.
 
-## So for now
+## Test it on your smallest label
 
 **Write what to keep first, in one line.** Put "keep the label and logo as they are" at the front, then name a single change with "only." It is the order Krea recommends, and worth trying on any editing model.
 

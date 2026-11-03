@@ -5,13 +5,11 @@ desc: Canva's Brush, announced October 29–30, is a model for editing existing 
 tag: AI Design
 ---
 
-"The titles on slides 3 to 12 are too long. Please make each one a single line. Same colors as last time."
-
-Client emails are usually about this short. On a one-page job it takes a minute. On a twelve-slide deck, you repeat the same fix twelve times. (This is an imagined scene, not something that happened to me.)
+On a twelve-slide deck, cutting every title to one line means making the same fix twelve times. One slide takes no time. By about the seventh, you are flipping back to see how you shortened the earlier ones, and if the colors have to stay as they were last time, you check each slide once more.
 
 Canva's Brush, released at the end of October, targets exactly this kind of work: editing a design that already exists. If Craft, the image model that arrived a week earlier, is the one that draws, Brush is the one that adjusts what has been drawn.
 
-This is not a hands-on review. When I tried to open Canva's newsroom post (canva.com/newsroom/news/canva-brush/), access was blocked (403), so I could not read it. What follows is based on sentences from that post quoted in search results, plus four news and explainer pages that I did open. I do not describe button positions or output quality, because I have seen neither.
+I have not opened Brush myself. Canva's newsroom post (canva.com/newsroom/news/canva-brush/) was blocked (403) when I tried to open it, so I could not read that either. What follows is based on sentences from that post quoted in search results, plus four news and explainer pages that I did open. I do not describe button positions or output quality, because I have seen neither.
 
 ## Craft draws, Brush adjusts
 
@@ -56,7 +54,7 @@ According to the reports, Brush began from an unnamed open-weights model (one wh
 
 This matters to designers for one reason: it raises the question of whether your own work was used. I confirmed only the "opted-in, anonymized" description. Where that opt-in is switched on or off was not in anything I read.
 
-## What is still missing
+## Brand Kit support is still in the works
 
 One explainer lists these limits, which I repeat as written.
 
@@ -75,13 +73,13 @@ Things I could not confirm:
 
 ## One instruction, twelve times or once
 
-Back to the email. Until now this job went one of two ways: open all twelve slides and fix each by hand, or build a good master page (a shared template applied to every slide) and change it once. If the file has no master, the first way is the only way.
+Back to the twelve slides. Until now this job went one of two ways: open all twelve slides and fix each by hand, or build a good master page (a shared template applied to every slide) and change it once. If the file has no master, the first way is the only way.
 
 Brush seems to fit in the gap: applying the same edit across a whole file that was built without a master. That is my guess from the announcement's description. How far you can trust it on a complicated file needs more results from people who have used it.
 
 Canva's choice is also worth noting. It split the model that produces a new draft from the model that edits one. Our recent piece on [Figma agent credits](https://designrefs.com/articles/figma-agent-ai-credits-ga/) noted that an agent's credit use varies by request. Canva putting a per-edit cost figure up front reads in the same vein. Whether editing is actually cheaper than starting over was not established in the announcement.
 
-## What to do now
+## Keep a copy, and spell out what stays
 
 **Duplicate the design before editing.** I could not confirm an undo feature. Use "Make a copy" in Canva and run Brush on the copy. It covers the day a client says "last time was better."
 

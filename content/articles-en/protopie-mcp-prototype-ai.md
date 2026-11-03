@@ -74,7 +74,7 @@ ProtoPie's public pages describe the plans slightly differently. A table helps.
 
 Whether Code MCP is available on the Pro plan reads differently depending on the page. The October post ties it to Enterprise, while the July post says Pro and Enterprise users pay nothing extra during the beta. It does not clearly say whether Code MCP falls inside that beta. Which one holds today is something to check on ProtoPie's pricing page. The official-support post lists no prices.
 
-## What isn't confirmed yet
+## Pricing and code quality are still blank
 
 - Pricing and any AI usage limits. The official-support post has none.
 - Whether the Pro plan can use Code MCP.
@@ -83,7 +83,7 @@ Whether Code MCP is available on the Pro plan reads differently depending on the
 - The quality of code for each of the seven frameworks.
 - The exact publication date of the official post, since dates on the page disagree.
 
-## So for now
+## Time it on a single modal first
 
 **Test it on one small interaction.** A button that opens a modal is enough. If you have a Pro plan and Studio 10.3.0 or later, write down how long the same interaction takes by hand versus by prompt, and how many times you fixed it. That tells you whether it suits your team.
 

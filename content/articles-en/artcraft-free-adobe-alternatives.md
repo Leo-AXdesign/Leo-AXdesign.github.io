@@ -59,7 +59,7 @@ There are two things worth watching instead.
 
 **Second, the cost of building software is falling.** One person, working with AI, put out the skeleton of seven apps. The polish is far off, but there will be more attempts like this. For Adobe, pressure on pricing and cancellation terms will likely come before pressure on features. That's not bad news for designers.
 
-## So, for now
+## For now, one PSD copy and your contract terms
 
 Don't switch. Watch, and try one thing.
 

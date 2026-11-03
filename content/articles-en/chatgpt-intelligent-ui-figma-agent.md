@@ -53,7 +53,7 @@ The screens ChatGPT draws are made of OpenAI's components. Whoever asks, the but
 
 The Figma agent is the opposite. It uses components your team made and reads guidelines your team wrote. Your team owns the rules. And those rules fit in a single markdown file, the same idea as [DESIGN.md](https://designrefs.com/en/articles/design-md-for-ai/), which I covered last week. If you want AI to do the work, you have to write the rules down in a form AI can read.
 
-## What's left for designers
+## Judge, write it down, keep watch
 
 **Judging when a screen beats text.** OpenAI says the model decides the format for each question. That judgment is what UI designers do every day: a calculator, a table, or one sentence? OpenAI says this is still being improved, so for now a person's eye is better.
 

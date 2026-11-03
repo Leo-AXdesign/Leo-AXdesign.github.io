@@ -63,7 +63,7 @@ related: ai, graphic
 | 반응을 무엇으로 볼까 | 조사 + 댓글 | 숫자와 댓글이 다를 수 있다는 걸 미리 알고 시작하기 |
 ※ 출처: [Creative Bloq](https://www.creativebloq.com/ai/fantas-ai-slop-halloween-advert-is-a-real-horror-show), [eMarketer](https://www.emarketer.com/content/fanta-bets-on-original-ip-own-halloween--ai-concerns-could-way), [Zappi 제품 분석](https://www.zappi.io/web/blog/innovation-spotlight-fantas-haunted-collection), [Zappi 광고 분석](https://www.zappi.io/web/blog/admiration-feature-fantas-halloween-reveal), [DesignRush](https://news.designrush.com/fanta-haunted-universe-halloween-2026), [Marketing-Interactive](https://www.marketing-interactive.com/can-ai-help-fanta-build-the-next-horror-universe).
 
-## 그래서 지금은
+## "AI로 가 볼까요"에 꺼낼 세 가지 질문
 
 클라이언트가 "이번 캠페인 AI로 가 볼까요"라고 물을 때 꺼낼 만한 질문이 생겼다.
 

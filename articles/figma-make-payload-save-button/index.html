@@ -58,7 +58,7 @@
       "datePublished": "2026-10-22",
       "dateModified": "2026-10-22",
       "inLanguage": "ko",
-      "wordCount": 2628,
+      "wordCount": 2647,
       "timeRequired": "PT4M",
       "image": "https://designrefs.com/og/figma-make-payload-save-button.png",
       "author": {
@@ -169,7 +169,7 @@
       <h1 class="page__title">피그마 메이크에 Payload가 들어왔다, 시안에 데이터베이스와 로그인이 생긴다</h1>
       <p class="page__intro">Figma가 10월 15일 오픈소스 CMS Payload를 Figma Make에 넣었다. 프롬프트로 앱을 만들면 데이터베이스, 파일 저장, 사용자 로그인, 관리자 화면이 같이 생긴다. 공식 블로그로 확인한 내용, 호스팅 베타·가격 미정, 아직 밝혀지지 않은 부분을 정리했다.</p>
       <p class="art__meta"><time datetime="2026-10-22">2026년 10월 22일</time> · 읽는 데 약 4분<span data-views hidden></span></p>
-      <nav class="art__toc" aria-label="이 글의 차례"><p class="art__toc-t">이 글의 차례</p><ol><li><a href="#s1">공식 글이 약속한 것</a></li><li><a href="#s2">역할마다 들어가는 곳이 다르다</a></li><li><a href="#s3">값과 시기: 지금은 무료, 가격은 나중에</a></li><li><a href="#s4">지금 알 수 없는 것</a></li><li><a href="#s5">디자이너에게 이것이 의미하는 것</a></li><li><a href="#s6">그래서 지금은</a></li></ol></nav>
+      <nav class="art__toc" aria-label="이 글의 차례"><p class="art__toc-t">이 글의 차례</p><ol><li><a href="#s1">공식 글이 약속한 것</a></li><li><a href="#s2">역할마다 들어가는 곳이 다르다</a></li><li><a href="#s3">값과 시기: 지금은 무료, 가격은 나중에</a></li><li><a href="#s4">데이터를 밖으로 꺼낼 수 있는지는 미정</a></li><li><a href="#s5">관리자 화면이 필요한 외주가 가까워진다</a></li><li><a href="#s6">CSV 한 장과 호스팅 메모부터</a></li></ol></nav>
     <p class="ptext">시안은 그럴듯하다. 글 목록도 있고 상품 카드도 있고 &quot;저장&quot; 버튼도 있다. 그런데 눌러 보면 새로 고침과 함께 다 사라진다. 화면만 있고 데이터를 넣어 둘 곳이 없기 때문이다.</p>
     <p class="ptext">이 빈칸을 메우려면 지금까지는 별도의 백엔드(화면 뒤에서 데이터를 저장하고 로그인을 처리하는 부분)를 연결해야 했다. Figma가 10월 15일 공식 블로그에서 Payload를 Figma Make에 넣었다고 발표했다. 이 글은 그 블로그 글과 Figma 릴리스 기록에서 직접 확인한 내용만 옮긴다.</p>
     <figure class="art__fig">
@@ -209,7 +209,7 @@
     </ul>
     <p class="ptext">무료라는 말은 &quot;지금은&quot;이라는 조건이 붙어 있다. 클라이언트에게 넘길 사이트라면 나중에 요금이 생겼을 때 누가 내는지 미리 정해 둬야 한다. 이건 내 의견이다.</p>
     <p class="ptext">같은 주에 나온 다른 소식과 헷갈리지 않게 적어 둔다. 코드 레이어의 무료 기간은 Payload와 별개다. 에이전트가 AI 크레딧을 쓰기 시작한 이야기는 <a href="https://designrefs.com/articles/figma-agent-ai-credits-ga/">공짜로 시키던 피그마 에이전트가 크레딧을 쓰기 시작했다</a>에서 다뤘다.</p>
-    <h2 class="psub" id="s4">지금 알 수 없는 것</h2>
+    <h2 class="psub" id="s4">데이터를 밖으로 꺼낼 수 있는지는 미정</h2>
     <ul class="ptext-list">
       <li><strong>데이터를 꺼내 올 수 있는가.</strong> Figma 호스팅 프로젝트를 내보내거나 직접 서버에 올릴 수 있는지 공식 글에 없다. 공식 글은 &quot;직접 올리거나 확장하는 방법&quot;을 Payload 오픈소스 사이트로 안내하는데, 이는 Figma 호스팅 앱이 아니라 오픈소스 프로젝트 이야기로 읽힌다.</li>
       <li><strong>한도.</strong> 저장 용량, 요청 수, 사용자 수 제한이 적혀 있지 않다.</li>
@@ -217,12 +217,12 @@
       <li><strong>실제 완성도.</strong> &quot;프롬프트 한 번에 쓸 만한 관리자 화면이 나온다&quot;는 것은 Figma의 설명이다. 내 프로젝트에서 어떨지는 돌려 봐야 안다.</li>
       <li><strong>독립 검증.</strong> 내가 연 자료 중에는 제3자가 Payload in Figma를 시험한 결과가 없었다.</li>
     </ul>
-    <h2 class="psub" id="s5">디자이너에게 이것이 의미하는 것</h2>
+    <h2 class="psub" id="s5">관리자 화면이 필요한 외주가 가까워진다</h2>
     <p class="ptext">포트폴리오나 소규모 가게 사이트처럼 &quot;내용이 바뀌는 화면&quot;이 있다. 그런 일에서 시안과 실제 사이트 사이의 거리가 줄어든다. 클라이언트가 직접 글을 고칠 관리자 화면이 필요한 외주도 이 범위에 든다.</p>
     <p class="ptext">바이브 코더에게는 데이터베이스와 로그인을 따로 알아보는 단계가 줄어드는 소식이다. 다만 화면이 다 비슷해 보이는 문제는 백엔드가 풀어 주지 않는다. 폰트와 색을 정해 두는 일이 여전히 먼저다.</p>
     <p class="ptext">한 가지 걱정은 책임이다. 화면만 만들 때는 틀려도 새로 그리면 됐다. 사용자 로그인과 데이터가 붙으면 개인정보와 백업 문제가 따라온다. 누구의 데이터를 받는 사이트인지 먼저 생각해야 한다. 이것도 내 의견이다.</p>
     <p class="ptext">Figma 안에서 AI와 같이 일하는 흐름은 <a href="https://designrefs.com/articles/figma-specs-markdown-context/">피그마 Specs, 마크다운 한 장으로 팀과 AI에게 맥락을 건네는 방법</a>에서 한 번 다뤘다. 이번 Payload는 그 맥락 위에 &quot;데이터&quot;가 얹힌 모양이다.</p>
-    <h2 class="psub" id="s6">그래서 지금은</h2>
+    <h2 class="psub" id="s6">CSV 한 장과 호스팅 메모부터</h2>
     <p class="ptext"><strong>진짜 내용 열 개로 시작하자.</strong> CSV 한 장에 실제 상품명이나 글 제목 열 줄을 적어 올리고, 그걸로 컬렉션을 만들게 한다. 공식 글이 소개한 방식이고, 가짜 글 대신 진짜 글이 화면을 얼마나 바꾸는지 바로 보인다.</p>
     <p class="ptext"><strong>클라이언트 작업이라면 호스팅 조건부터 적어 두자.</strong> 지금은 베타이고 무료지만 가격은 미정이다. 요금이 생길 때 누가 내는지, 데이터를 어떻게 옮길지 계약이나 메모에 한 줄 남겨 둔다.</p>
     <p class="ptext"><strong>개인정보가 들어가는 사이트는 한 번 더 멈추자.</strong> 사용자 로그인을 받는다면 어떤 정보를 저장하는지 정리하고, 정식 서비스 전에 도움말 문서에서 한도와 내보내기 가능 여부를 직접 확인한다.</p>

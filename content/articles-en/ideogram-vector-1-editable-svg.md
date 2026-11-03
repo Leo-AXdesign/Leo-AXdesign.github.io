@@ -5,9 +5,7 @@ desc: On October 22, Ideogram released Vector 1.0, its first vector model, which
 tag: AI Design
 ---
 
-The client's email is two lines. "I like the AI logo. We'll use it on business cards and a banner, so please send the original file."
-
-What you have is one PNG. Blow it up to banner size and the edges go soft. The print shop wants an AI or SVG file, meaning a vector. Many people hit exactly this wall when they try to use image-AI output for real work.
+Print shops ask for a vector file, AI or SVG, when you hand over a logo. What image AI usually gives you is a single PNG, and something that looked fine on a business card goes soft at the edges once you blow it up to banner size. Many people hit exactly this wall when they try to use image-AI output for real work.
 
 On October 22, Ideogram released Ideogram Vector 1.0, its first vector model. Describe something in text and you get an SVG. Upload an existing picture and it converts it to a vector. This piece reports only what I verified in Ideogram's API documentation and in coverage of the launch.
 
@@ -72,7 +70,7 @@ This is not the first AI that outputs vectors directly. One search result descri
 
 Image generators like Ideogram, along with AI logo and brand-kit tools, are collected with Recraft, Looka and others under image generation on [AI design tools](https://designrefs.com/ai/). Fixing an image instead of rerolling it is covered in [Background changed and the logo changed too: what to check in Krea 3's edit model](https://designrefs.com/articles/krea-3-edit-keep-logo/). That one is raster editing; this one is vector output, so they serve different moments.
 
-## What is not known yet
+## No independent tests, no app price list
 
 - **Output quality.** No independent test shows whether it is stronger on logos, icons or posters.
 - **App pricing.** Whether free accounts can use it, and what it costs in credits, was not confirmed.
@@ -80,7 +78,7 @@ Image generators like Ideogram, along with AI logo and brand-kit tools, are coll
 - **Editing.** I saw no endpoint for revising a generated SVG by prompt, and outside articles also point you to a design tool for edits.
 - **What quality levels mean.** The docs do not explain how low, medium and high differ.
 
-## What to do now
+## Open ten test files, put cleanup in the estimate
 
 **Sort raster from vector first.** When a client asks for the original file, find out which format they actually need. Print, signage and merchandise need vector. Web illustrations are often fine as PNG. That saves you from swapping models when the real issue is the format.
 

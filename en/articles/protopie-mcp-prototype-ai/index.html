@@ -58,7 +58,7 @@
       "datePublished": "2026-10-17",
       "dateModified": "2026-10-17",
       "inLanguage": "en",
-      "wordCount": 1167,
+      "wordCount": 1174,
       "timeRequired": "PT5M",
       "image": "https://designrefs.com/og/en/protopie-mcp-prototype-ai.png",
       "author": {
@@ -173,7 +173,7 @@
       <p class="page__intro">ProtoPie has announced official MCP support. Studio MCP lets an AI read and edit the prototype you have open; Code MCP hands finished prototypes to coding agents. Checked against ProtoPie&#x27;s own post and docs: what works and what isn&#x27;t confirmed.</p>
       <p class="art__meta"><time datetime="2026-10-17">October 17, 2026</time> · 5 min read<span data-views hidden></span></p>
       <p class="art__note">Translated from the Korean original. <a href="https://designrefs.com/articles/protopie-mcp-prototype-ai/" hreflang="ko" lang="ko">Read in Korean</a></p>
-      <nav class="art__toc" aria-label="In this article"><p class="art__toc-t">In this article</p><ol><li><a href="#s1">What MCP does here</a></li><li><a href="#s2">Studio MCP: ask in words, fix by hand</a></li><li><a href="#s3">Code MCP: handing a prototype to implementation</a></li><li><a href="#s4">Which AI connects</a></li><li><a href="#s5">Plans: what is confirmed and what isn&#x27;t</a></li><li><a href="#s6">What isn&#x27;t confirmed yet</a></li><li><a href="#s7">So for now</a></li></ol></nav>
+      <nav class="art__toc" aria-label="In this article"><p class="art__toc-t">In this article</p><ol><li><a href="#s1">What MCP does here</a></li><li><a href="#s2">Studio MCP: ask in words, fix by hand</a></li><li><a href="#s3">Code MCP: handing a prototype to implementation</a></li><li><a href="#s4">Which AI connects</a></li><li><a href="#s5">Plans: what is confirmed and what isn&#x27;t</a></li><li><a href="#s6">Pricing and code quality are still blank</a></li><li><a href="#s7">Time it on a single modal first</a></li></ol></nav>
     <p class="ptext">ProtoPie has announced official support for MCP. The byline on ProtoPie&#x27;s blog post says October 7, while the page metadata says October 15. The two dates disagree, so I couldn&#x27;t confirm the exact publication date.</p>
     <p class="ptext">Anyone who has built interaction prototypes knows the scene. To make a card expand when a button is tapped, you attach a trigger, pick a response and wire up a variable. It isn&#x27;t hard, but it takes many small steps. Then you hand the finished prototype to a developer and the question comes back: how do we build this behavior? ProtoPie has put AI into both of those stretches.</p>
     <p class="ptext">This piece follows ProtoPie&#x27;s blog posts and docs, and separates what works from what hasn&#x27;t been confirmed.</p>
@@ -225,7 +225,7 @@
     </table></div>
     <p class="art__note">Sources: <a href="https://www.protopie.io/blog/protopie-mcp-official" target="_blank" rel="noopener">ProtoPie blog: official MCP support</a>, <a href="https://www.protopie.io/blog/blog-protopie-mcp-from-design-to-code-faster" target="_blank" rel="noopener">ProtoPie blog: from design to code</a>, <a href="https://www.protopie.io/learn/docs/mcp-studio-mcp-introduction" target="_blank" rel="noopener">ProtoPie docs: Studio MCP</a></p>
     <p class="ptext">Whether Code MCP is available on the Pro plan reads differently depending on the page. The October post ties it to Enterprise, while the July post says Pro and Enterprise users pay nothing extra during the beta. It does not clearly say whether Code MCP falls inside that beta. Which one holds today is something to check on ProtoPie&#x27;s pricing page. The official-support post lists no prices.</p>
-    <h2 class="psub" id="s6">What isn&#x27;t confirmed yet</h2>
+    <h2 class="psub" id="s6">Pricing and code quality are still blank</h2>
     <ul class="ptext-list">
       <li>Pricing and any AI usage limits. The official-support post has none.</li>
       <li>Whether the Pro plan can use Code MCP.</li>
@@ -234,7 +234,7 @@
       <li>The quality of code for each of the seven frameworks.</li>
       <li>The exact publication date of the official post, since dates on the page disagree.</li>
     </ul>
-    <h2 class="psub" id="s7">So for now</h2>
+    <h2 class="psub" id="s7">Time it on a single modal first</h2>
     <p class="ptext"><strong>Test it on one small interaction.</strong> A button that opens a modal is enough. If you have a Pro plan and Studio 10.3.0 or later, write down how long the same interaction takes by hand versus by prompt, and how many times you fixed it. That tells you whether it suits your team.</p>
     <p class="ptext"><strong>Tidy your component names and library first.</strong> Studio MCP pulls components from your library. Messy names confuse people and AI alike. Since you copy element IDs into prompts, keeping layer names readable helps.</p>
     <p class="ptext"><strong>Decide what you hand to developers.</strong> Whole screen or a single component? Practice narrowing it with Dev View. Rules can live in <a href="https://designrefs.com/articles/design-md-for-ai/">DESIGN.md</a> or guidelines, and motion in the prototype, so each has its role.</p>
