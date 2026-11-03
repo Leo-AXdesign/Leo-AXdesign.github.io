@@ -1,6 +1,7 @@
 // 이 파일은 tools/build-articles.py 가 만듭니다. 직접 고치지 마세요.
 // 글은 content/articles/*.md 에서 고칩니다.
 const ARTICLES = [
+  { slug: "figma-shaders-4096-export-code-layers", title: "움직이는 배경을 PNG로 내보내면 멈춘다, 피그마 셰이더는 4096px까지 뽑고 코드 레이어로도 넘어간다", desc: "11월 2일자 피그마 릴리스 노트와 도움말 두 편에서 확인한 것을 적었다. 셰이더 정식 제공, 최대 4096px 내보내기, 코드 레이어에서 재생 버튼을 눌러야 하는 이유. 브라우저 조건이 두 문서에서 다르게 적힌 부분과 11월 4일 이후 크레딧도 함께 적었다.", date: "2026-11-03", tag: "AI 디자인", min: 5, views: ["tool", "uiux", "graphic"] },
   { slug: "figma-mcp-weave-models-credits", title: "시안 옆에 5초짜리 움직이는 버전을 붙여 달라고 할 때, 피그마 MCP로 Weave 모델을 부르면 크레딧은 어디서 나갈까", desc: "피그마 릴리스 노트에 10월 26일, 외부 AI 에이전트가 Figma MCP로 Weave의 영상·이미지 모델(Seedance, Kling, Nano Banana)을 쓸 수 있다는 항목이 올라왔다. 공식 페이지에서 확인한 조건, Weave 요금표로 어림한 1회 비용, 아직 확인되지 않은 부분을 적었다.", date: "2026-11-02", tag: "AI 디자인", min: 6, views: ["ai", "tool", "uiux"] },
   { slug: "penpot-2-19-shared-design-tokens", title: "펜팟 2.19는 색·글자 규칙을 라이브러리 한 곳에 두고 여러 파일이 가져다 쓰게 한다", desc: "10월 28일자 펜팟 2.19 릴리스 노트와 공식 문서에서 확인한 것을 적었다. 공유 디자인 토큰, 면마다 따로 주는 테두리, WebGL 렌더링. GitHub 릴리스 페이지와 어긋나는 부분, 내 계정에서 켜 보기 전에 해 둘 백업도 함께 적었다.", date: "2026-11-02", tag: "AI 디자인", min: 6, views: ["tool", "uiux", "color"] },
   { slug: "figma-shader-plugin-version-restore", title: "\"아까 효과가 더 나았어요\" 메일 한 통, 피그마 셰이더와 생성 플러그인에 버전 기록이 생겼다", desc: "피그마 에이전트가 만든 셰이더와 생성 플러그인을 고치면 이제 이전 버전이 남고, 되돌릴 수 있다. 10월 27일 릴리스 노트와 개발자 문서에서 확인된 것, 화면에서 어디서 보는지 같은 비어 있는 부분, 수정 전에 해 둘 일을 적었다.", date: "2026-10-30", tag: "AI 디자인", min: 6, views: ["ai", "tool", "uiux"] },

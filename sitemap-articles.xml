@@ -3,6 +3,14 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
+    <loc>https://designrefs.com/articles/figma-shaders-4096-export-code-layers/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://designrefs.com/articles/figma-shaders-4096-export-code-layers/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://designrefs.com/en/articles/figma-shaders-4096-export-code-layers/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://designrefs.com/articles/figma-shaders-4096-export-code-layers/"/>
+    <image:image><image:loc>https://designrefs.com/og/figma-shaders-4096-export-code-layers.png</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://designrefs.com/articles/figma-mcp-weave-models-credits/</loc>
     <lastmod>2026-11-02</lastmod>
     <xhtml:link rel="alternate" hreflang="ko" href="https://designrefs.com/articles/figma-mcp-weave-models-credits/"/>
@@ -329,6 +337,14 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://designrefs.com/en/articles/ai-image-commercial-use/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://designrefs.com/articles/ai-image-commercial-use/"/>
     <image:image><image:loc>https://designrefs.com/og/ai-image-commercial-use.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://designrefs.com/en/articles/figma-shaders-4096-export-code-layers/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://designrefs.com/articles/figma-shaders-4096-export-code-layers/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://designrefs.com/en/articles/figma-shaders-4096-export-code-layers/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://designrefs.com/articles/figma-shaders-4096-export-code-layers/"/>
+    <image:image><image:loc>https://designrefs.com/og/en/figma-shaders-4096-export-code-layers.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://designrefs.com/en/articles/figma-mcp-weave-models-credits/</loc>

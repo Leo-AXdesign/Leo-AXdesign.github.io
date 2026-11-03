@@ -6,7 +6,75 @@
     <atom:link href="https://designrefs.com/en/rss.xml" rel="self" type="application/rss+xml" />
     <description>Notes from a designer in Korea: working with AI, putting style into words, collecting references and design communities. Translated from Korean.</description>
     <language>en</language>
-    <lastBuildDate>Mon, 02 Nov 2026 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 03 Nov 2026 09:00:00 +0900</lastBuildDate>
+    <item>
+      <title>Animated backgrounds freeze when you export to PNG. Figma shaders now export up to 4096px and carry over to code layers</title>
+      <link>https://designrefs.com/en/articles/figma-shaders-4096-export-code-layers/</link>
+      <guid isPermaLink="true">https://designrefs.com/en/articles/figma-shaders-4096-export-code-layers/</guid>
+      <pubDate>Tue, 03 Nov 2026 09:00:00 +0900</pubDate>
+      <category>AI Design</category>
+      <description>What Figma&#x27;s November 2 release note and two help articles confirm about shaders going generally available, 4096px export and code layers, where the two documents disagree on browser requirements, and what changes after November 4.</description>
+      <content:encoded><![CDATA[    <p class="ptext">You send a mock with an animated gradient behind a card, and the reply says, &quot;If I get a PNG, it won&#x27;t move, right?&quot; (An imagined scene, not something that happened to me.) The effect runs inside your file, turns into one still picture on export, and the developer is left with the question of how to build it.</p>
+    <p class="ptext">Figma&#x27;s November 2 release note has an item that sits between those two points: &quot;Export shaders at higher resolutions and bring them into code layers.&quot; A shader is an effect that adds texture or motion to a layer. This is not a hands-on review. I only wrote down what I could confirm in the release note, the shaders help article and the code layers help article. I could not find a permalink for the individual note, so the source link goes to the release notes list. I did not try a 4096px export in my own account.</p>
+    <figure class="art__fig">
+      <img src="https://designrefs.com/articles/img/figma-shaders-4096-export-code-layers-shot1.webp" alt="Figma release notes (source: https://www.figma.com/release-notes/, captured 2026-11-03)" loading="lazy" decoding="async" />
+      <figcaption>Figma release notes (source: https://www.figma.com/release-notes/, captured 2026-11-03)</figcaption>
+    </figure>
+    <h2 class="psub" id="s1">Five lines from the note</h2>
+    <p class="ptext">The note is short. Summarized:</p>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th>Item</th><th>What the note says</th></tr></thead>
+      <tbody>
+        <tr><td>Status</td><td>Shaders are generally available to all users</td></tr>
+        <tr><td>Export size</td><td>Render and export up to 4096px</td></tr>
+        <tr><td>Code layers</td><td>Shaders come along when you use &quot;build this with code&quot;</td></tr>
+        <tr><td>Browser</td><td>The code layer path works in the browser only, on Chrome 157, rolling out that week</td></tr>
+        <tr><td>Playback</td><td>Set the layer to Play with the control at its top right to see the shader render</td></tr>
+      </tbody>
+    </table></div>
+    <p class="art__note">Source: <a href="https://www.figma.com/release-notes/" target="_blank" rel="noopener">Figma release notes</a>, Nov 2, 2026 entry (checked 2026-11-03). The table summarizes the note&#x27;s sentences.</p>
+    <h2 class="psub" id="s2">What a shader is</h2>
+    <p class="ptext">Per the help article, a shader is a visual effect applied to a layer. Shader fills generate patterns, gradients, noise or textures. Shader effects change how an existing layer looks: color shifts, distortion, grain, halftones, blurs. Some are static, some animated, and some react to the mouse.</p>
+    <p class="ptext">They go in the Fill or Stroke sections, or in Effects, and stack with other fills and effects. Any combination can be saved as a style and published to a team library.</p>
+    <p class="ptext">The requirements: Starter, Professional, Education, Organization or Enterprise plans, plus edit access to the file. Using a shader costs no AI credits. Building or editing one with the Figma agent does. Shaders need WebGPU support, and not in compatibility mode.</p>
+    <figure class="art__fig">
+      <img src="https://designrefs.com/articles/img/figma-shaders-4096-export-code-layers-shot2.webp" alt="Figma&#x27;s shaders help article (source: https://help.figma.com/hc/en-us/articles/41175721167767, captured 2026-11-03)" loading="lazy" decoding="async" />
+      <figcaption>Figma&#x27;s shaders help article (source: https://help.figma.com/hc/en-us/articles/41175721167767, captured 2026-11-03)</figcaption>
+    </figure>
+    <h2 class="psub" id="s3">What 4096px gets you</h2>
+    <p class="ptext">The note&#x27;s resolution sentence is one line: shaders can be rendered and exported at up to 4096px to keep their detail.</p>
+    <p class="ptext">Fine-grained shaders such as film grain or halftone turn mushy at small sizes. You notice it first on large backgrounds or print mocks. Whether 4096px refers to the long side or the width, and which file format comes out, I could not confirm. The help article gives no export formats or size limits either.</p>
+    <p class="ptext">Nor does the note say what you get when you export an animated shader. The opening question, whether a PNG will move, is not answered. The code layer route looks like the one aimed at showing motion.</p>
+    <h2 class="psub" id="s4">Where to click when sending a shader to a code layer</h2>
+    <p class="ptext">A code layer is a prototype backed by running code that sits on the canvas. The help article calls it an open beta, rolling out gradually. We covered how to make one in <a href="https://designrefs.com/articles/figma-code-layers-open-beta/">the code layers open beta post</a>.</p>
+    <p class="ptext">The note gives three steps.</p>
+    <ol class="ptext-list">
+      <li>Put the shader in your design.</li>
+      <li>Use &quot;build this with code.&quot; Per the help article, that means selecting frames, choosing Code in the toolbar and clicking Build selection.</li>
+      <li>If the shader does not move in the code layer, click Play at the layer&#x27;s top right.</li>
+    </ol>
+    <p class="ptext">Step three matters. The shaders help article says the same: an animated shader runs when you press Play, and only one animated or interactive shader can run per page at a time. A mock with several animated backgrounds has to be played one by one. Whether that one-at-a-time limit also applies inside a code layer, I could not confirm.</p>
+    <h2 class="psub" id="s5">The browser requirement differs between two documents</h2>
+    <p class="ptext">The note says this flow works in the browser only, on Chrome 157, rolling out that week. The code layers help article says something different: Chrome with the HTML-in-Canvas flag (chrome://flags/#canvas-draw-element), and no support in the Figma desktop app or other Chromium browsers.</p>
+    <p class="ptext">The documents do not say whether these are the same condition at different times, or whether Chrome 157 removes the need for the flag. To check your Chrome version, type chrome://version in the address bar.</p>
+    <h2 class="psub" id="s6">What ends on November 4</h2>
+    <p class="ptext">Per the code layers help article, creating and editing code in a code layer is free on paid plans through November 4. Other agent work in the same prompt still uses AI credits. After that, code layer tasks use AI credits like other agentic features, and the amount varies with the task.</p>
+    <p class="ptext">Importing a project through the MCP server (the link between Figma and AI coding tools) uses no credits, but later Make agent edits do. That import needs a Full seat, can take 10 minutes or more, and some projects need changes to run.</p>
+    <p class="ptext">On how credits get spent, see <a href="https://designrefs.com/articles/figma-mcp-weave-models-credits/">our Weave models post</a>.</p>
+    <h2 class="psub" id="s7">What is still unknown</h2>
+    <ul class="ptext-list">
+      <li><strong>What 4096px measures.</strong> Long side, width or square is not stated.</li>
+      <li><strong>Export format and file size.</strong> Nothing in the documents.</li>
+      <li><strong>What an animated shader exports as.</strong> Not stated.</li>
+      <li><strong>How general the availability is.</strong> The English shaders help article has no beta label. A search snippet suggested another-language help page still said open beta; I did not open it.</li>
+      <li><strong>The Chrome condition.</strong> The two documents differ, as above.</li>
+    </ul>
+    <h2 class="psub" id="s8">So, for now</h2>
+    <p class="ptext"><strong>Pick one shader and export it once.</strong> Take a fine-grained one, export at 4096px and look at 100% zoom. Export the same one small and compare. File size you have to check yourself.</p>
+    <p class="ptext"><strong>If you want the free period, use it on one file before November 4.</strong> Run Build selection on a single frame with a shader. If nothing moves, press Play first, then check the Chrome version and flag. Credits only start counting afterward, so one file gives you a rough feel.</p>
+    <p class="ptext"><strong>One moving background per page.</strong> Since only one runs at a time, keep one animated shader per mock and make the rest static. If you miss an earlier look while tweaking, there is <a href="https://designrefs.com/articles/figma-shader-plugin-version-restore/">version history</a>.</p>
+    <p class="art__note">Sources: <a href="https://www.figma.com/release-notes/" target="_blank" rel="noopener">Figma release notes</a>, <a href="https://help.figma.com/hc/en-us/articles/41175721167767" target="_blank" rel="noopener">Shaders in Figma Design (help)</a>, <a href="https://help.figma.com/hc/en-us/articles/44193259600535-Code-layers-in-Figma-Design" target="_blank" rel="noopener">Code layers in Figma Design (help)</a></p>]]></content:encoded>
+    </item>
     <item>
       <title>When a client asks for a 5-second moving version next to the mockup, where do the credits go if you call Weave models through Figma MCP?</title>
       <link>https://designrefs.com/en/articles/figma-mcp-weave-models-credits/</link>
