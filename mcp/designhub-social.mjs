@@ -46,6 +46,32 @@ function autoreplySave(campaigns) {
   fs.writeFileSync(AUTOREPLY, JSON.stringify({ campaigns }, null, 2));
 }
 const autoreplyInstalled = () => fs.existsSync(AUTOREPLY_AGENT);
+// 스레드 자동 답글 (같은 폴더의 th-autoreply.mjs)
+const TH_AUTOREPLY = path.join(os.homedir(), ".designhub", "th-autoreply.json");
+const TH_AUTOREPLY_LOG = path.join(os.homedir(), ".designhub", "th-autoreply-log.jsonl");
+const TH_AUTOREPLY_RUNNER = path.join(path.dirname(AUTOREPLY_RUNNER), "th-autoreply.mjs");
+const TH_DM_QUEUE = path.join(os.homedir(), ".designhub", "th-dm-queue.jsonl");
+function thQueue() {
+  try { return fs.readFileSync(TH_DM_QUEUE, "utf8").split("\n").filter(Boolean).map((l) => JSON.parse(l)); } catch { return []; }
+}
+function thAutoreplyList() {
+  try { return JSON.parse(fs.readFileSync(TH_AUTOREPLY, "utf8")).campaigns || []; } catch { return []; }
+}
+function thAutoreplySave(campaigns) {
+  fs.mkdirSync(path.dirname(TH_AUTOREPLY), { recursive: true });
+  fs.writeFileSync(TH_AUTOREPLY, JSON.stringify({ campaigns }, null, 2));
+}
+// 자동 답장 실행 파일을 한 번 돌리고 출력을 돌려줍니다
+function runRunner(file, dry_run) {
+  return new Promise((resolve, reject) => {
+    const p = spawn(process.execPath, [file, ...(dry_run ? ["--dry-run"] : [])], { env: process.env });
+    let out = "";
+    p.stdout.on("data", (d) => (out += d));
+    p.stderr.on("data", (d) => (out += d));
+    p.on("error", reject);
+    p.on("close", (code) => resolve({ dry_run, exit_code: code, output: hide(out).trim() }));
+  });
+}
 
 // ---------- 메타 API 호출 ----------
 
@@ -463,14 +489,98 @@ const TOOLS = {
   ig_autoreply_run: {
     description: "댓글 자동 답장을 지금 한 번 돌립니다. dry_run 이 true 면 보내지 않고 무엇을 보낼지만 보여 줍니다 (처음엔 꼭 시험부터).",
     schema: { type: "object", properties: { dry_run: { type: "boolean", description: "true 면 시험 (기본 true)" } } },
-    run: async ({ dry_run = true }) => new Promise((resolve, reject) => {
-      const p = spawn(process.execPath, [AUTOREPLY_RUNNER, ...(dry_run ? ["--dry-run"] : [])], { env: process.env });
-      let out = "";
-      p.stdout.on("data", (d) => (out += d));
-      p.stderr.on("data", (d) => (out += d));
-      p.on("error", reject);
-      p.on("close", (code) => resolve({ dry_run, exit_code: code, output: hide(out).trim() }));
-    }),
+    run: async ({ dry_run = true }) => runRunner(AUTOREPLY_RUNNER, dry_run),
+  },
+
+  th_autoreply_on: {
+    description: "스레드 글의 새 댓글에 자동으로 답글을 답니다 (스레드는 DM API가 없어 공개 답글로 가이드 링크 등을 답니다). " +
+      "post_id 에 \"all\" 을 넣으면 최근 7일 안의 내 글 전부를 봅니다. keywords 를 주면 그 말이 든 댓글에만 답합니다. " +
+      "실제로 다는 일은 5분마다 도는 th-autoreply.mjs 가 합니다(setup-autoreply.sh 로 설치). 답글 문구는 사용자가 확인한 뒤에만 켜세요.",
+    schema: {
+      type: "object",
+      properties: {
+        post_id: { type: "string", description: "스레드 글 id (threads_recent_posts 의 id), 또는 \"all\"" },
+        replies: { type: "array", items: { type: "string" }, description: "답글 후보 (500자 이내). 매번 하나를 골라 답니다" },
+        keywords: { type: "array", items: { type: "string" }, description: "이 말이 든 댓글에만 답 (비우면 모든 댓글)" },
+        dm: { type: "string", description: "적어 두면 답글을 단 사람을 'DM 보낼 사람 목록'에 이 문구와 함께 쌓고 맥 알림을 띄웁니다 (스레드는 DM API가 없어 사용자가 앱에서 직접 보냄). 이때 답글은 'DM으로 보내드릴게요' 같은 문구로" },
+        account: { type: "string", description: "스레드 계정 이름 (비우면 디자인 허브 계정)" },
+        days: { type: "number", description: "며칠 동안 켜 둘지 (기본 7)" },
+      },
+      required: ["post_id", "replies"],
+    },
+    run: async ({ post_id, replies, keywords = [], dm = "", account = MAIN, days = 7 }) => {
+      const list = replies.map((r) => r.trim()).filter(Boolean);
+      if (!list.length) throw new Error("답글 문구가 비어 있습니다.");
+      const long = list.find((r) => [...r].length > 500);
+      if (long) throw new Error(`스레드 답글은 500자까지입니다: "${long.slice(0, 30)}…"`);
+      thAccount(account); // 연결된 계정인지 확인
+      let permalink = null;
+      if (post_id !== "all") permalink = (await th(thAccount(account), "GET", `/${post_id}`, { fields: "permalink" })).permalink;
+      const until = new Date(Date.now() + Math.max(days, 1) * 86400e3).toISOString();
+      const all = thAutoreplyList().filter((c) => !(c.post_id === post_id && (c.account || MAIN) === account));
+      all.push({ post_id, permalink, keywords: keywords.map((k) => k.trim()).filter(Boolean), replies: list, ...(dm.trim() ? { dm: dm.trim() } : {}), account, until, paused: false });
+      thAutoreplySave(all);
+      return { on: true, post_id, permalink, until, runner: autoreplyInstalled() ? "5분마다 도는 중" : "아직 설치 안 됨: 터미널에서 tools/setup-autoreply.sh 를 실행하세요" };
+    },
+  },
+
+  th_autoreply_off: {
+    description: "스레드 댓글 자동 답글을 끕니다. post_id 를 비우면 전부 끕니다.",
+    schema: { type: "object", properties: { post_id: { type: "string", description: "글 id 또는 \"all\" (비우면 전부)" } } },
+    run: async ({ post_id }) => {
+      const list = thAutoreplyList().map((c) => (!post_id || c.post_id === post_id ? { ...c, paused: true } : c));
+      thAutoreplySave(list);
+      return { off: post_id || "전부", campaigns: list };
+    },
+  },
+
+  th_autoreply_status: {
+    description: "스레드 자동 답글이 켜진 글과, 지금까지 단 답글 수·최근 오류를 봅니다.",
+    schema: { type: "object", properties: {} },
+    run: async () => {
+      let rows = [];
+      try { rows = fs.readFileSync(TH_AUTOREPLY_LOG, "utf8").split("\n").filter(Boolean).map((l) => JSON.parse(l)); } catch {}
+      return {
+        runner: autoreplyInstalled() ? "5분마다 도는 중" : "설치 안 됨 (tools/setup-autoreply.sh)",
+        campaigns: thAutoreplyList().map((c) => {
+          const mine = rows.filter((r) => c.post_id === "all" ? r.account === (c.account || MAIN) : r.post_id === c.post_id);
+          return {
+            post_id: c.post_id, permalink: c.permalink, keywords: c.keywords, account: c.account || MAIN, until: c.until,
+            state: c.paused ? "꺼짐" : new Date(c.until) < new Date() ? "기간 끝남" : "켜짐",
+            sent: mine.filter((r) => r.status === "sent").length,
+            last_error: mine.filter((r) => r.status === "error").slice(-1)[0]?.why || null,
+          };
+        }),
+      };
+    },
+  },
+
+  th_dm_queue: {
+    description: "스레드에서 DM을 직접 보내야 할 사람 목록과 보낼 문구를 봅니다 (th_autoreply_on 에 dm 을 적어 둔 경우). 사용자에게 프로필 링크와 문구를 보여 주세요.",
+    schema: { type: "object", properties: {} },
+    run: async () => {
+      const rows = thQueue().filter((r) => r.status === "pending");
+      return { waiting: rows.length, people: rows.map((r) => ({ username: r.username, profile: `https://www.threads.com/@${r.username}`, comment: r.text, dm: r.dm, at: r.at })) };
+    },
+  },
+
+  th_dm_done: {
+    description: "스레드 DM을 보낸 사람을 목록에서 '보냄'으로 표시합니다. usernames 에 [\"all\"] 을 넣으면 전부.",
+    schema: { type: "object", properties: { usernames: { type: "array", items: { type: "string" }, description: "보낸 사람 아이디들" } }, required: ["usernames"] },
+    run: async ({ usernames }) => {
+      const all = usernames.includes("all");
+      const set = new Set(usernames.map((n) => n.replace(/^@/, "")));
+      let n = 0;
+      const rows = thQueue().map((r) => (r.status === "pending" && (all || set.has(r.username)) ? (n++, { ...r, status: "sent", sent_at: new Date().toISOString() }) : r));
+      fs.writeFileSync(TH_DM_QUEUE, rows.map((r) => JSON.stringify(r)).join("\n") + (rows.length ? "\n" : ""));
+      return { marked: n, still_waiting: rows.filter((r) => r.status === "pending").length };
+    },
+  },
+
+  th_autoreply_run: {
+    description: "스레드 자동 답글을 지금 한 번 돌립니다. dry_run 이 true 면 답글을 달지 않고 무엇을 달지만 보여 줍니다.",
+    schema: { type: "object", properties: { dry_run: { type: "boolean", description: "true 면 시험 (기본 true)" } } },
+    run: async ({ dry_run = true }) => runRunner(TH_AUTOREPLY_RUNNER, dry_run),
   },
 
   ig_publish_limit: {
@@ -777,7 +887,7 @@ async function handle(req) {
       return send({ id, result: {
         protocolVersion: params.protocolVersion || "2025-06-18",
         capabilities: { tools: {}, prompts: {} },
-        serverInfo: { name: "designhub-social", version: "1.8.0" },
+        serverInfo: { name: "designhub-social", version: "1.10.0" },
       } });
     }
     if (method === "ping") return send({ id, result: {} });

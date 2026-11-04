@@ -68,6 +68,7 @@ say "Claude 데스크톱 연결 갱신 중…"
 mkdir -p "$HOME/.designhub"
 curl -fsSL https://designrefs.com/mcp/designhub-social.mjs -o "$HOME/.designhub/designhub-social.mjs" && echo "designhub MCP 서버: 최신으로 받음"
 curl -fsSL https://designrefs.com/mcp/ig-autoreply.mjs -o "$HOME/.designhub/ig-autoreply.mjs" && echo "인스타 댓글 자동 답장: 최신으로 받음"
+curl -fsSL https://designrefs.com/mcp/th-autoreply.mjs -o "$HOME/.designhub/th-autoreply.mjs" && echo "스레드 댓글 자동 답글: 최신으로 받음"
 REPO="$REPO" python3 - <<'PY'
 import json, os, pathlib
 p = pathlib.Path.home() / "Library/Application Support/Claude/claude_desktop_config.json"

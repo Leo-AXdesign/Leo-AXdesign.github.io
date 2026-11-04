@@ -1,71 +1,6 @@
 {
   "sets": [
     {
-      "id": "article-figma-make-gemini-4-argon-model-picker",
-      "title": "폰트 하나 바꾸는 데 30크레딧, 피그마 메이크에 모델을 고르는 칸이 있다",
-      "count": 3,
-      "images": [
-        "https://designrefs.com/social/cards/article-figma-make-gemini-4-argon-model-picker/01.jpg",
-        "https://designrefs.com/social/cards/article-figma-make-gemini-4-argon-model-picker/02.jpg",
-        "https://designrefs.com/social/cards/article-figma-make-gemini-4-argon-model-picker/03.jpg"
-      ],
-      "caption": "폰트 하나 바꾸는 데 30크레딧, 피그마 메이크에 모델을 고르는 칸이 있다\n\n피그마 메이크 모델 선택기에 Gemini 4 Argon이 들어왔다. 릴리스 노트, 도움말, 구글 문서에서 확인한 사실과 확인하지 못한 크레딧 소모량, 같은 문장을 두 모델로 돌려 기록하는 방법을 적었다.\n\n📌 저장해 두고 필요할 때 꺼내 보세요\n전문과 출처는 프로필 링크(designrefs.com)에 있어요.\n\n#디자인레퍼런스 #디자이너 #AI디자인 #디자인인사이트 #UXUI",
-      "comment": "📎 이 글의 출처\n· Figma Release Notes — figma.com\n· Figma What's new — figma.com\n· How Figma AI credits work — help.figma.com\n· Manage AI credits — help.figma.com\n· Gemini 4 Argon, Gemini API 문서 — ai.google.dev\n· Google: Gemini 4 availability — blog.google\n\n전문은 여기서 읽을 수 있어요\ndesignrefs.com/articles/figma-make-gemini-4-argon-model-picker/",
-      "article": "https://designrefs.com/articles/figma-make-gemini-4-argon-model-picker/"
-    },
-    {
-      "id": "article-canva-craft-text-layout-image-model",
-      "title": "포스터 시안 글자가 깨져서 다시 뽑기만 반복할 때, 캔바 크래프트는 배치부터 짠다",
-      "count": 3,
-      "images": [
-        "https://designrefs.com/social/cards/article-canva-craft-text-layout-image-model/01.jpg",
-        "https://designrefs.com/social/cards/article-canva-craft-text-layout-image-model/02.jpg",
-        "https://designrefs.com/social/cards/article-canva-craft-text-layout-image-model/03.jpg"
-      ],
-      "caption": "포스터 시안 글자가 깨져서 다시 뽑기만 반복할 때, 캔바 크래프트는 배치부터 짠다\n\nCanva가 10월 22일 첫 자체 이미지 모델 Craft를 냈다. 글자와 배치가 중요한 디자인용이라는 설명이다. 언론 보도로 확인한 구조, 순위 주장, 접근 방법과 함께 가격·상업 이용처럼 아직 확인되지 않은 부분을 정리했다.\n\n📌 저장해 두고 필요할 때 꺼내 보세요\n전문과 출처는 프로필 링크(designrefs.com)에 있어요.\n\n#디자인레퍼런스 #디자이너 #AI디자인 #디자인인사이트 #UXUI",
-      "comment": "📎 이 글의 출처\n· TechCrunch (2026-10-22) — techcrunch.com\n· Digital Trends — digitaltrends.com\n· The Letter Two (2026-10-23) — thelettertwo.com\n· Future Tools 뉴스 — futuretools.io\n\n전문은 여기서 읽을 수 있어요\ndesignrefs.com/articles/canva-craft-text-layout-image-model/",
-      "article": "https://designrefs.com/articles/canva-craft-text-layout-image-model/"
-    },
-    {
-      "id": "article-figma-make-payload-save-button",
-      "title": "화면은 다 됐는데 저장 버튼이 아무것도 저장하지 않을 때, 피그마 메이크에 붙은 Payload에서 확인할 것",
-      "count": 3,
-      "images": [
-        "https://designrefs.com/social/cards/article-figma-make-payload-save-button/01.jpg",
-        "https://designrefs.com/social/cards/article-figma-make-payload-save-button/02.jpg",
-        "https://designrefs.com/social/cards/article-figma-make-payload-save-button/03.jpg"
-      ],
-      "caption": "화면은 다 됐는데 저장 버튼이 아무것도 저장하지 않을 때, 피그마 메이크에 붙은 Payload에서 확인할 것\n\nFigma가 10월 15일 오픈소스 CMS Payload를 Figma Make에 넣었다. 프롬프트로 앱을 만들면 데이터베이스, 파일 저장, 사용자 로그인, 관리자 화면이 같이 생긴다. 공식 블로그로 확인한 내용, 호스팅 베타·가격 미정, 아직 밝혀지지 않은 부분을 정리했다.\n\n📌 저장해 두고 필요할 때 꺼내 보세요\n전문과 출처는 프로필 링크(designrefs.com)에 있어요.\n\n#디자인레퍼런스 #디자이너 #AI디자인 #디자인인사이트 #UXUI",
-      "comment": "📎 이 글의 출처\n· Figma 블로그: Payload in Figma — figma.com\n· Figma 릴리스 기록(Releasebot) — releasebot.io\n\n전문은 여기서 읽을 수 있어요\ndesignrefs.com/articles/figma-make-payload-save-button/",
-      "article": "https://designrefs.com/articles/figma-make-payload-save-button/"
-    },
-    {
-      "id": "article-protopie-mcp-prototype-ai",
-      "title": "프로토타입을 말로 만들고 코드로 넘긴다, 프로토파이 MCP에서 디자이너가 확인할 것",
-      "count": 3,
-      "images": [
-        "https://designrefs.com/social/cards/article-protopie-mcp-prototype-ai/01.jpg",
-        "https://designrefs.com/social/cards/article-protopie-mcp-prototype-ai/02.jpg",
-        "https://designrefs.com/social/cards/article-protopie-mcp-prototype-ai/03.jpg"
-      ],
-      "caption": "프로토타입을 말로 만들고 코드로 넘긴다, 프로토파이 MCP에서 디자이너가 확인할 것\n\n프로토파이가 MCP 지원을 공식으로 알렸다. Studio MCP는 열어 둔 프로토타입을 AI가 읽고 고치고, Code MCP는 완성본을 코딩 에이전트에게 넘긴다. 프로토파이 공식 글과 문서로 무엇이 되고 무엇이 확인되지 않았는지 정리했다.\n\n📌 저장해 두고 필요할 때 꺼내 보세요\n전문과 출처는 프로필 링크(designrefs.com)에 있어요.\n\n#디자인레퍼런스 #디자이너 #AI디자인 #디자인인사이트 #UXUI",
-      "comment": "📎 이 글의 출처\n· ProtoPie 블로그: MCP 공식 지원 — protopie.io\n· ProtoPie 블로그: 디자인에서 코드까지 — protopie.io\n· ProtoPie 문서: Studio MCP — protopie.io\n· ProtoPie 문서: 시작하기 — protopie.io\n\n전문은 여기서 읽을 수 있어요\ndesignrefs.com/articles/protopie-mcp-prototype-ai/",
-      "article": "https://designrefs.com/articles/protopie-mcp-prototype-ai/"
-    },
-    {
-      "id": "article-figma-specs-markdown-context",
-      "title": "피그마 Specs, 마크다운 한 장으로 팀과 AI에게 맥락을 건네는 방법",
-      "count": 3,
-      "images": [
-        "https://designrefs.com/social/cards/article-figma-specs-markdown-context/01.jpg",
-        "https://designrefs.com/social/cards/article-figma-specs-markdown-context/02.jpg",
-        "https://designrefs.com/social/cards/article-figma-specs-markdown-context/03.jpg"
-      ],
-      "caption": "피그마 Specs, 마크다운 한 장으로 팀과 AI에게 맥락을 건네는 방법\n\n피그마가 캔버스 위에 마크다운 문서를 놓는 기능 Specs를 유료 플랜에 오픈 베타로 냈다. 무엇이 되고 무엇이 아직 확인되지 않았는지, 앞서 다룬 DESIGN.md와는 어떻게 다른지 피그마 공식 글과 릴리스 노트로 확인해 정리했다.\n\n📌 저장해 두고 필요할 때 꺼내 보세요\n전문과 출처는 프로필 링크(designrefs.com)에 있어요.\n\n#디자인레퍼런스 #디자이너 #AI디자인 #디자인인사이트 #UXUI",
-      "comment": "📎 이 글의 출처\n· Figma 릴리스 노트 — figma.com\n· TechCrunch — techcrunch.com\n· Introducing Specs: Markdown as a medium (Figma 블로그) — figma.com\n\n전문은 여기서 읽을 수 있어요\ndesignrefs.com/articles/figma-specs-markdown-context/",
-      "article": "https://designrefs.com/articles/figma-specs-markdown-context/"
-    },
-    {
       "id": "ai-ui-tools",
       "title": "프롬프트로 화면 시안 뽑는 AI 툴 5",
       "count": 7,
@@ -98,6 +33,19 @@
       "comment": "📎 이 글의 출처\n· HBR(연구 소개) — hbr.org\n· Fast Company 단가 조사 — fastcompany.com\n· Envato — elements.envato.com\n· Fast Company(2026. 10. 12) — fastcompany.com\n\n전문은 여기서 읽을 수 있어요\ndesignrefs.com/articles/ai-draft-client-pixel-pusher/"
     },
     {
+      "id": "article-canva-craft-text-layout-image-model",
+      "title": "포스터 시안 글자가 깨져서 다시 뽑기만 반복할 때, 캔바 크래프트는 배치부터 짠다",
+      "count": 3,
+      "images": [
+        "https://designrefs.com/social/cards/article-canva-craft-text-layout-image-model/01.jpg",
+        "https://designrefs.com/social/cards/article-canva-craft-text-layout-image-model/02.jpg",
+        "https://designrefs.com/social/cards/article-canva-craft-text-layout-image-model/03.jpg"
+      ],
+      "caption": "포스터 시안 글자가 깨져서 다시 뽑기만 반복할 때, 캔바 크래프트는 배치부터 짠다\n\nCanva가 10월 22일 첫 자체 이미지 모델 Craft를 냈다. 글자와 배치가 중요한 디자인용이라는 설명이다. 언론 보도로 확인한 구조, 순위 주장, 접근 방법과 함께 가격·상업 이용처럼 아직 확인되지 않은 부분을 정리했다.\n\n📌 저장해 두고 필요할 때 꺼내 보세요\n전문과 출처는 프로필 링크(designrefs.com)에 있어요.\n\n#디자인레퍼런스 #디자이너 #AI디자인 #디자인인사이트 #UXUI",
+      "comment": "📎 이 글의 출처\n· TechCrunch (2026-10-22) — techcrunch.com\n· Digital Trends — digitaltrends.com\n· The Letter Two (2026-10-23) — thelettertwo.com\n· Future Tools 뉴스 — futuretools.io\n\n전문은 여기서 읽을 수 있어요\ndesignrefs.com/articles/canva-craft-text-layout-image-model/",
+      "article": "https://designrefs.com/articles/canva-craft-text-layout-image-model/"
+    },
+    {
       "id": "article-design-md-for-ai",
       "title": "AI에게 우리 디자인 규칙을 건네는 파일 한 장, DESIGN.md",
       "count": 6,
@@ -112,6 +60,45 @@
       "caption": "AI에게 우리 디자인 규칙을 건네는 파일 한 장, DESIGN.md\n\nAI가 시안을 만들고 코드를 짜는 일이 늘수록, 규칙을 어디에 적어 두느냐가 중요해진다. 구글이 공개한 DESIGN.md 형식으로 이 사이트의 규칙을 직접 옮겨 적고 검사기를 돌려 봤다. 걸린 것까지 그대로 옮긴다.\n\n그래서 지금은\n1. 색 다섯 개 이내\n2. 글자 크기 세 단계\n3. 하지 말 것 세 줄\n\n📌 저장해 두고 필요할 때 꺼내 보세요\n전문과 출처는 프로필 링크(designrefs.com)에 있어요.\n\n#디자인레퍼런스 #디자이너 #AI디자인 #디자인인사이트 #UXUI",
       "article": "https://designrefs.com/articles/design-md-for-ai/",
       "comment": "📎 이 글의 출처\n· google-labs-code/design.md — github.com\n· 구글 블로그 'Stitch's DESIGN.md format is now open-source' — blog.google\n· the-decoder — the-decoder.com\n· Figma 릴리스 노트 — figma.com\n· note.com 공식 규격 비교 글 — note.com\n\n전문은 여기서 읽을 수 있어요\ndesignrefs.com/articles/design-md-for-ai/"
+    },
+    {
+      "id": "article-figma-make-gemini-4-argon-model-picker",
+      "title": "폰트 하나 바꾸는 데 30크레딧, 피그마 메이크에 모델을 고르는 칸이 있다",
+      "count": 3,
+      "images": [
+        "https://designrefs.com/social/cards/article-figma-make-gemini-4-argon-model-picker/01.jpg",
+        "https://designrefs.com/social/cards/article-figma-make-gemini-4-argon-model-picker/02.jpg",
+        "https://designrefs.com/social/cards/article-figma-make-gemini-4-argon-model-picker/03.jpg"
+      ],
+      "caption": "폰트 하나 바꾸는 데 30크레딧, 피그마 메이크에 모델을 고르는 칸이 있다\n\n피그마 메이크 모델 선택기에 Gemini 4 Argon이 들어왔다. 릴리스 노트, 도움말, 구글 문서에서 확인한 사실과 확인하지 못한 크레딧 소모량, 같은 문장을 두 모델로 돌려 기록하는 방법을 적었다.\n\n📌 저장해 두고 필요할 때 꺼내 보세요\n전문과 출처는 프로필 링크(designrefs.com)에 있어요.\n\n#디자인레퍼런스 #디자이너 #AI디자인 #디자인인사이트 #UXUI",
+      "comment": "📎 이 글의 출처\n· Figma Release Notes — figma.com\n· Figma What's new — figma.com\n· How Figma AI credits work — help.figma.com\n· Manage AI credits — help.figma.com\n· Gemini 4 Argon, Gemini API 문서 — ai.google.dev\n· Google: Gemini 4 availability — blog.google\n\n전문은 여기서 읽을 수 있어요\ndesignrefs.com/articles/figma-make-gemini-4-argon-model-picker/",
+      "article": "https://designrefs.com/articles/figma-make-gemini-4-argon-model-picker/"
+    },
+    {
+      "id": "article-figma-make-payload-save-button",
+      "title": "화면은 다 됐는데 저장 버튼이 아무것도 저장하지 않을 때, 피그마 메이크에 붙은 Payload에서 확인할 것",
+      "count": 3,
+      "images": [
+        "https://designrefs.com/social/cards/article-figma-make-payload-save-button/01.jpg",
+        "https://designrefs.com/social/cards/article-figma-make-payload-save-button/02.jpg",
+        "https://designrefs.com/social/cards/article-figma-make-payload-save-button/03.jpg"
+      ],
+      "caption": "화면은 다 됐는데 저장 버튼이 아무것도 저장하지 않을 때, 피그마 메이크에 붙은 Payload에서 확인할 것\n\nFigma가 10월 15일 오픈소스 CMS Payload를 Figma Make에 넣었다. 프롬프트로 앱을 만들면 데이터베이스, 파일 저장, 사용자 로그인, 관리자 화면이 같이 생긴다. 공식 블로그로 확인한 내용, 호스팅 베타·가격 미정, 아직 밝혀지지 않은 부분을 정리했다.\n\n📌 저장해 두고 필요할 때 꺼내 보세요\n전문과 출처는 프로필 링크(designrefs.com)에 있어요.\n\n#디자인레퍼런스 #디자이너 #AI디자인 #디자인인사이트 #UXUI",
+      "comment": "📎 이 글의 출처\n· Figma 블로그: Payload in Figma — figma.com\n· Figma 릴리스 기록(Releasebot) — releasebot.io\n\n전문은 여기서 읽을 수 있어요\ndesignrefs.com/articles/figma-make-payload-save-button/",
+      "article": "https://designrefs.com/articles/figma-make-payload-save-button/"
+    },
+    {
+      "id": "article-figma-specs-markdown-context",
+      "title": "피그마 Specs, 마크다운 한 장으로 팀과 AI에게 맥락을 건네는 방법",
+      "count": 3,
+      "images": [
+        "https://designrefs.com/social/cards/article-figma-specs-markdown-context/01.jpg",
+        "https://designrefs.com/social/cards/article-figma-specs-markdown-context/02.jpg",
+        "https://designrefs.com/social/cards/article-figma-specs-markdown-context/03.jpg"
+      ],
+      "caption": "피그마 Specs, 마크다운 한 장으로 팀과 AI에게 맥락을 건네는 방법\n\n피그마가 캔버스 위에 마크다운 문서를 놓는 기능 Specs를 유료 플랜에 오픈 베타로 냈다. 무엇이 되고 무엇이 아직 확인되지 않았는지, 앞서 다룬 DESIGN.md와는 어떻게 다른지 피그마 공식 글과 릴리스 노트로 확인해 정리했다.\n\n📌 저장해 두고 필요할 때 꺼내 보세요\n전문과 출처는 프로필 링크(designrefs.com)에 있어요.\n\n#디자인레퍼런스 #디자이너 #AI디자인 #디자인인사이트 #UXUI",
+      "comment": "📎 이 글의 출처\n· Figma 릴리스 노트 — figma.com\n· TechCrunch — techcrunch.com\n· Introducing Specs: Markdown as a medium (Figma 블로그) — figma.com\n\n전문은 여기서 읽을 수 있어요\ndesignrefs.com/articles/figma-specs-markdown-context/",
+      "article": "https://designrefs.com/articles/figma-specs-markdown-context/"
     },
     {
       "id": "article-image-ai-edit-not-reroll",
@@ -129,6 +116,36 @@
       "caption": "다시 뽑지 말고 고쳐 쓴다, 이미지 AI가 '편집' 쪽으로 간 한 주\n\n9월 30일 Ideogram 4.5, 10월 2일 FLUX 3 Image. 이번 주 나온 두 이미지 모델은 더 예쁜 그림보다 '한 군데만 고치기'를 앞세웠다. 상자로 먼저 배치하는 방식과 크기별 가격까지 그림과 숫자로 정리했다.\n\n그래서 지금은\n1. 원본과 3~5번 고친 결과를 한 파일에 레이어로 겹친다.\n2. 위 레이어의 혼합 모드를 차이(Difference)로 바꾼다.\n3. 화면이 거의 까맣다면 정말 그대로인 것이다.\n\n📌 저장해 두고 필요할 때 꺼내 보세요\n전문과 출처는 프로필 링크(designrefs.com)에 있어요.\n\n#디자인레퍼런스 #디자이너 #AI디자인 #디자인인사이트 #UXUI",
       "article": "https://designrefs.com/articles/image-ai-edit-not-reroll/",
       "comment": "📎 이 글의 출처\n· Ideogram 4.5 정리(orcarouter) — orcarouter.ai\n· the-decoder — the-decoder.com\n· Tech Times — techtimes.com\n· kingy.ai 가격 정리 — kingy.ai\n· completeaitraining — completeaitraining.com\n· OpenRouter FLUX.3 Image — openrouter.ai\n\n전문은 여기서 읽을 수 있어요\ndesignrefs.com/articles/image-ai-edit-not-reroll/"
+    },
+    {
+      "id": "article-protopie-mcp-prototype-ai",
+      "title": "프로토타입을 말로 만들고 코드로 넘긴다, 프로토파이 MCP에서 디자이너가 확인할 것",
+      "count": 3,
+      "images": [
+        "https://designrefs.com/social/cards/article-protopie-mcp-prototype-ai/01.jpg",
+        "https://designrefs.com/social/cards/article-protopie-mcp-prototype-ai/02.jpg",
+        "https://designrefs.com/social/cards/article-protopie-mcp-prototype-ai/03.jpg"
+      ],
+      "caption": "프로토타입을 말로 만들고 코드로 넘긴다, 프로토파이 MCP에서 디자이너가 확인할 것\n\n프로토파이가 MCP 지원을 공식으로 알렸다. Studio MCP는 열어 둔 프로토타입을 AI가 읽고 고치고, Code MCP는 완성본을 코딩 에이전트에게 넘긴다. 프로토파이 공식 글과 문서로 무엇이 되고 무엇이 확인되지 않았는지 정리했다.\n\n📌 저장해 두고 필요할 때 꺼내 보세요\n전문과 출처는 프로필 링크(designrefs.com)에 있어요.\n\n#디자인레퍼런스 #디자이너 #AI디자인 #디자인인사이트 #UXUI",
+      "comment": "📎 이 글의 출처\n· ProtoPie 블로그: MCP 공식 지원 — protopie.io\n· ProtoPie 블로그: 디자인에서 코드까지 — protopie.io\n· ProtoPie 문서: Studio MCP — protopie.io\n· ProtoPie 문서: 시작하기 — protopie.io\n\n전문은 여기서 읽을 수 있어요\ndesignrefs.com/articles/protopie-mcp-prototype-ai/",
+      "article": "https://designrefs.com/articles/protopie-mcp-prototype-ai/"
+    },
+    {
+      "id": "claude-skills",
+      "title": "클로드 스킬, 찾는 데만 반나절 걸린다면",
+      "count": 8,
+      "images": [
+        "https://designrefs.com/social/cards/claude-skills/01.jpg",
+        "https://designrefs.com/social/cards/claude-skills/02.jpg",
+        "https://designrefs.com/social/cards/claude-skills/03.jpg",
+        "https://designrefs.com/social/cards/claude-skills/04.jpg",
+        "https://designrefs.com/social/cards/claude-skills/05.jpg",
+        "https://designrefs.com/social/cards/claude-skills/06.jpg",
+        "https://designrefs.com/social/cards/claude-skills/07.jpg",
+        "https://designrefs.com/social/cards/claude-skills/08.jpg"
+      ],
+      "caption": "클로드 스킬 고를 때 저장해 두세요\n\nfind-skills는 스킬을 대신 찾아 주는 스킬이에요. 하고 싶은 일을 말하면 설치 수, 만든 곳, 깃허브 별을 보고 걸러서 설치까지 해 줘요.\n\n1. 버셀이 만든 무료 저장소 (깃허브 별 3.8만, MIT)\n2. skills.sh 설치 420만 번\n3. 설치는 터미널 한 줄\n4. 디자이너가 먼저 볼 스킬: frontend-design, extract-design-system, accessibility, figma-use\n\n💬 댓글에 '스킬' 남기면 디자이너용 스킬 10개 가이드를 DM으로 보내드려요\n\n#클로드 #클로드코드 #클로드스킬 #AI디자인 #디자이너",
+      "comment": "🔗 소개한 곳 주소\n· find-skills — skills.sh/vercel-labs/skills/find-skills\n· 저장소 — github.com/vercel-labs/skills\n\n가이드 전체는 여기\ndesignrefs.com/skills"
     },
     {
       "id": "colors-pick",
