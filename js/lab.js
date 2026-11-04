@@ -4,7 +4,7 @@
      사진과 결과를 어디에도 보내지 않습니다. 글자를 얹는 기능은 두지 않습니다(사진 자체를 바꾸는 도구).
    - 처리 순서: 구도(확대·이동·뒤집기) → 분석(작은 크기, 보정·면 정리) → 양식 그리기(저장 크기)
                 → 마감(원본 섞기·입자·종이·가장자리) → 테두리 → 사이트 표시
-   - 패널은 '기본'과 '자세히' 두 모드. adv: true 인 항목은 자세히 모드에서만 보입니다.
+   - 패널은 기본 항목을 먼저 보여 주고, adv: true 인 항목과 공통 옵션은 '더 다듬기'를 펼쳐야 보입니다.
    - 양식 하나 = STYLES 의 객체 하나 (조절 항목 + 색 조합 + prep + render). 새 양식은 하나 더하면 됩니다.
    - 크기에 따라 달라지는 값은 폭 1000px 기준이고 s(= W/1000)를 곱합니다. 미리보기와 저장 결과가 같은 모양이 됩니다.
    ========================================================= */
@@ -944,7 +944,7 @@
     });
   }
 
-  /* ================= 공통 옵션 (자세히 모드) ================= */
+  /* ================= 공통 옵션 ('더 다듬기'에서 펼침) ================= */
   const GLOBAL = {
     photo: [
       { key: 'auto', label: '자동 보정', type: 'toggle', value: true },
@@ -974,8 +974,8 @@
   /* ================= 상태 ================= */
   const defaults = list => Object.fromEntries(list.map(c => [c.key, c.value]));
   const state = {
-    img: null, style: STYLES[0], ratio: '4:5', mark: true, mode: 'basic',
-    vals: {}, pal: {}, custom: {},
+    img: null, style: STYLES[0], ratio: '4:5', mark: true, more: false,
+    vals: {}, pal: {}, custom: {}, picking: false,
     g: { ...defaults(GLOBAL.photo), ...defaults(GLOBAL.finish), ...defaults(GLOBAL.save) },
   };
   const fresh = st => ({ ...defaults(st.controls), seed: 1 });
@@ -1090,7 +1090,6 @@
   }
 
   /* ================= 패널 ================= */
-  const adv = () => state.mode === 'adv';
   function control(c, v, scope) {
     const id = `lab-${scope}-${c.key}`;
     if (c.type === 'choice') return `<div class="lab__row"><span class="lab__label">${c.label}</span><div class="lab__seg">${c.options.map(o =>
@@ -1103,41 +1102,57 @@
   const sec = (n, title, body, extra = '') => `<section class="lab__sec"${extra}><h2 class="lab__h"><b>${n}</b>${title}</h2>${body}</section>`;
 
   function renderPanel() {
-    const st = state.style, v = state.vals[st.id], A = adv(), g = state.g;
-    const ctrls = st.controls.filter(c => A || !c.adv);
+    const st = state.style, v = state.vals[st.id], M = state.more, g = state.g;
     const pal = params(st);
     let n = 0, num = () => String(++n).padStart(2, '0');
-    let html = `<div class="lab__mode" role="tablist">
-        <button type="button" data-mode="basic" class="${A ? '' : 'is-on'}" role="tab" aria-selected="${!A}">기본</button>
-        <button type="button" data-mode="adv" class="${A ? 'is-on' : ''}" role="tab" aria-selected="${A}">자세히</button>
-      </div>`;
-    html += sec(num(), '양식', `<div class="lab__styles">${STYLES.map(s2 => `
+    let html = sec(num(), '양식', `<div class="lab__styles">${STYLES.map(s2 => `
       <button type="button" class="lab__style${s2 === st ? ' is-on' : ''}" data-id="${s2.id}" aria-pressed="${s2 === st}">
         <span class="lab__thumb"><img src="/assets/styles/${s2.thumb}.webp" alt="" width="96" height="96" loading="lazy" /><canvas></canvas></span>
         <span>${s2.name}</span></button>`).join('')}</div><p class="lab__note">${st.note}</p>`);
-    html += sec(num(), A ? '양식 세부' : '다듬기', (st.shuffle ? `<button type="button" class="lab__btn lab__shuffle" id="lab-shuffle">${st.shuffle === true ? '배치 섞기' : st.shuffle}</button>` : '') + ctrls.map(c => control(c, v[c.key], 'style')).join(''));
+    html += sec(num(), '다듬기', (st.shuffle ? `<button type="button" class="lab__btn lab__shuffle" id="lab-shuffle">${st.shuffle === true ? '배치 섞기' : st.shuffle}</button>` : '') + st.controls.filter(c => !c.adv).map(c => control(c, v[c.key], 'style')).join(''));
+    const mine = !!state.custom[st.id], picking = st.slots && (mine || state.picking);
     html += sec(num(), '색', `<div class="lab__pals">${st.palettes.map((p2, i) => `
-      <button type="button" class="lab__pal${state.pal[st.id] === i ? ' is-on' : ''}" data-i="${i}" title="${p2.name}">
+      <button type="button" class="lab__pal${!mine && state.pal[st.id] === i ? ' is-on' : ''}" data-i="${i}" title="${p2.name}">
         <span class="lab__dots">${[...new Set(p2.colors)].slice(0, 5).map(c => `<i style="background:${c}"></i>`).join('')}</span><span>${p2.name}</span>
-      </button>`).join('')}</div>` + (A && st.slots ? `<div class="lab__colors">${st.slots.map((name, i) => pal.colors[i] ? `
+      </button>`).join('')}${st.slots ? `
+      <button type="button" class="lab__pal lab__pal--mine${mine ? ' is-on' : ''}" id="lab-mine" aria-expanded="${!!picking}">
+        <span class="lab__dots">${mine ? [...new Set(pal.colors)].slice(0, 5).map(c => `<i style="background:${c}"></i>`).join('') : '<i class="lab__wheel"></i>'}</span><span>직접 고르기</span>
+      </button>` : ''}</div>` + (picking ? `<div class="lab__colors">${st.slots.map((name, i) => pal.colors[i] ? `
         <label class="lab__color"><input type="color" data-slot="${i}" value="${pal.colors[i]}" /><span>${name}</span></label>` : '').join('')}</div>` : ''));
-    if (A) {
+    html += sec(num(), '비율', `<div class="lab__seg">${Object.keys(RATIOS).map(r =>
+      `<button type="button" data-r="${r}" class="${state.ratio === r ? 'is-on' : ''}">${r}</button>`).join('')}</div>` +
+      `<label class="lab__check"><input type="checkbox" id="lab-mark"${state.mark ? ' checked' : ''} /> 오른쪽 아래에 designrefs.com 표시</label>`);
+    // 더 다듬기: 양식 세부, 사진, 질감, 저장 형식은 필요할 때만 펼칩니다
+    const advCtrls = st.controls.filter(c => c.adv);
+    html += `<button type="button" class="lab__more" id="lab-more" aria-expanded="${M}">
+        <span>${M ? '접기' : '더 다듬기'}</span><small>${[advCtrls.length ? '양식 세부' : '', '사진', '질감', '저장 형식'].filter(Boolean).join(' · ')}</small>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </button>`;
+    if (M) {
+      html += '<div class="lab__adv">';
+      if (advCtrls.length) html += sec(num(), '양식 세부', advCtrls.map(c => control(c, v[c.key], 'style')).join(''));
       html += sec(num(), '사진', GLOBAL.photo.map(c => control(c, g[c.key], 'g')).join('') + '<p class="lab__hint2">확대한 뒤에는 미리보기를 끌어서 위치를 옮길 수도 있습니다</p>');
       html += sec(num(), '질감 · 마감', GLOBAL.finish.map(c => control(c, g[c.key], 'g')).join(''));
+      html += sec(num(), '저장 형식', GLOBAL.save.map(c => control(c, g[c.key], 'g')).join(''));
+      html += '</div>';
     }
-    html += sec(num(), A ? '비율 · 저장' : '비율', `<div class="lab__seg">${Object.keys(RATIOS).filter(r => A || ['4:5', '9:16', '1:1'].includes(r)).map(r =>
-      `<button type="button" data-r="${r}" class="${state.ratio === r ? 'is-on' : ''}">${r}</button>`).join('')}</div>` +
-      (A ? GLOBAL.save.map(c => control(c, g[c.key], 'g')).join('') : '') +
-      `<label class="lab__check"><input type="checkbox" id="lab-mark"${state.mark ? ' checked' : ''} /> 오른쪽 아래에 designrefs.com 표시</label>`);
     html += `<div class="lab__actions">
         <button type="button" class="lab__btn lab__btn--main" id="lab-save">${g.format} 저장</button>
         <button type="button" class="lab__btn" id="lab-random" title="이 양식의 값을 무작위로">무작위</button>
         <button type="button" class="lab__btn" id="lab-reset" title="이 양식을 처음 값으로">처음으로</button>
       </div>
       <button type="button" class="lab__link" id="lab-change">다른 사진 열기</button>`;
+    // 양식 카드의 내 사진 미리보기는 패널을 다시 그려도 그대로 둡니다.
+    // 새 빈 캔버스로 바뀌면 견본 그림이 잠깐 비쳤다가 미리보기로 돌아와 깜빡여 보였습니다.
+    const live = {};
+    el.panel.querySelectorAll('.lab__style.is-live').forEach(b => { live[b.dataset.id] = b.querySelector('canvas'); });
     const y = window.scrollY;
     el.panel.innerHTML = html;
     window.scrollTo(0, y);
+    Object.entries(live).forEach(([id, cv]) => {
+      const b = el.panel.querySelector(`.lab__style[data-id="${id}"]`); if (!b) return;
+      b.querySelector('canvas').replaceWith(cv); b.classList.add('is-live');
+    });
     thumbs();
   }
 
@@ -1147,10 +1162,11 @@
 
   el.panel.addEventListener('click', e => {
     const t = e.target.closest('button'); if (!t) return;
-    if (t.dataset.mode) { state.mode = t.dataset.mode; renderPanel(); return; }
+    if (t.id === 'lab-more') { state.more = !state.more; renderPanel(); return; }
     if (t.dataset.id) { state.style = STYLES.find(x => x.id === t.dataset.id); renderPanel(); refresh(); return; }
     if (t.dataset.val !== undefined && t.dataset.key) { setVal(t.dataset.scope, t.dataset.key, t.dataset.val); renderPanel(); refresh(); return; }
-    if (t.dataset.i !== undefined) { state.pal[state.style.id] = +t.dataset.i; delete state.custom[state.style.id]; renderPanel(); refresh(); return; }
+    if (t.dataset.i !== undefined) { state.pal[state.style.id] = +t.dataset.i; delete state.custom[state.style.id]; state.picking = false; renderPanel(); refresh(); return; }
+    if (t.id === 'lab-mine') { state.picking = !state.picking || !!state.custom[state.style.id]; renderPanel(); return; }
     if (t.dataset.r) { state.ratio = t.dataset.r; renderPanel(); refresh(); return; }
     if (t.id === 'lab-save') return save(t);
     if (t.id === 'lab-change') return el.file.click();
@@ -1163,7 +1179,7 @@
       const st = state.style, v = state.vals[st.id];
       v.seed = newSeed();
       st.controls.forEach(c => {
-        if (!adv() && c.adv) return;
+        if (!state.more && c.adv) return;
         if (c.type === 'choice') v[c.key] = pick(c.options);
         else if (c.type === 'toggle') v[c.key] = Math.random() < 0.5;
         else { const steps = Math.round((c.max - c.min) / c.step); v[c.key] = +(c.min + Math.round((0.2 + Math.random() * 0.6) * steps) * c.step).toFixed(4); }
@@ -1186,6 +1202,7 @@
   el.panel.addEventListener('change', e => {
     const t = e.target;
     if (t.id === 'lab-mark') { state.mark = t.checked; refresh(); return; }
+    if (t.dataset.slot !== undefined) { renderPanel(); return; }
     if (t.type === 'checkbox' && t.dataset.key) { setVal(t.dataset.scope, t.dataset.key, t.checked); refresh(); }
     if (t.dataset.key === 'format') renderPanel();
     if (t.type === 'range' && (t.dataset.scope === 'g' || t.dataset.key === 'simplify')) thumbs();
@@ -1210,7 +1227,7 @@
     if (slackY > 1) state.g.py = clamp(drag.py - (e.clientY - drag.y) * k * 2 / slackY, -1, 1);
     refresh();
   });
-  ['pointerup', 'pointercancel'].forEach(t => el.canvas.addEventListener(t, () => { if (drag) { drag = null; if (adv()) renderPanel(); thumbs(); } }));
+  ['pointerup', 'pointercancel'].forEach(t => el.canvas.addEventListener(t, () => { if (drag) { drag = null; if (state.more) renderPanel(); thumbs(); } }));
   const showOriginal = on => { if (state.img) on ? draw(el.canvas, PREVIEW_MAX, { original: true }) : refresh(); };
   el.compare.addEventListener('pointerdown', e => { e.preventDefault(); showOriginal(true); });
   ['pointerup', 'pointerleave', 'pointercancel'].forEach(t => el.compare.addEventListener(t, () => showOriginal(false)));

@@ -898,6 +898,7 @@ html[lang="en"] .hero__posts li:first-child::before { content: "New"; }
 .lab__pal i { width: 16px; height: 16px; border-radius: 50%; margin-left: -4px; box-shadow: 0 0 0 1.5px var(--bg); }
 .lab__pal i:first-child { margin-left: 0; }
 .lab__pal.is-on { border-color: var(--ink); color: var(--ink); }
+.lab__pal i.lab__wheel { background: conic-gradient(#ff5a5f, #ffb400, #3ecf8e, #2f80ed, #a259ff, #ff5a5f); }
 .lab__input { width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--field); color: var(--ink); font: inherit; font-size: 14px; }
 .lab__check { display: flex; gap: 8px; align-items: center; margin: 18px 0 0; font-size: 12.5px; color: var(--ink-2); cursor: pointer; }
 .lab__check input { accent-color: var(--ink); }
@@ -926,10 +927,13 @@ html[lang="en"] .hero__posts li:first-child::before { content: "New"; }
 .lab__under { display: flex; align-items: center; gap: 12px; margin-top: 10px; flex-wrap: wrap; }
 .lab__under .lab__hint { margin: 0; }
 .lab__btn--sm { padding: 7px 14px; font-size: 12.5px; user-select: none; -webkit-user-select: none; touch-action: none; }
-.lab__mode { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; padding: 4px; margin-bottom: 18px; background: var(--field); border-radius: 12px; }
-.lab__mode button { padding: 8px; border: 0; border-radius: 9px; background: transparent; color: var(--ink-2); font-size: 13px; font-weight: 700; cursor: pointer; }
-.lab__mode button.is-on { background: var(--bg); color: var(--ink); box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
 .lab__sec { padding: 16px 0; border-top: 1px solid var(--line); }
+.lab__more { display: flex; align-items: center; gap: 8px; width: 100%; padding: 14px 2px; border: 0; border-top: 1px solid var(--line); background: none; color: var(--ink); font: inherit; font-size: 13.5px; font-weight: 700; text-align: left; cursor: pointer; }
+.lab__more small { flex: 1; min-width: 0; color: var(--ink-3, var(--ink-2)); font-size: 12px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.lab__more svg { width: 18px; height: 18px; flex: none; transition: transform 0.2s; }
+.lab__more[aria-expanded="true"] svg { transform: rotate(180deg); }
+.lab__more[aria-expanded="true"] small { visibility: hidden; }
+.lab__adv .lab__sec:first-child { border-top: 0; padding-top: 4px; }
 .lab__sec:first-of-type { border-top: 0; padding-top: 0; }
 .lab__sec .lab__h { margin: 0 0 12px; display: flex; align-items: baseline; gap: 8px; }
 .lab__h b { font-size: 11px; font-weight: 700; color: var(--ink-3); font-variant-numeric: tabular-nums; }
