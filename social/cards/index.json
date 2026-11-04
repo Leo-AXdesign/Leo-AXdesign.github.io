@@ -1,6 +1,19 @@
 {
   "sets": [
     {
+      "id": "article-figma-make-gemini-4-argon-model-picker",
+      "title": "폰트 하나 바꾸는 데 30크레딧, 피그마 메이크에 모델을 고르는 칸이 있다",
+      "count": 3,
+      "images": [
+        "https://designrefs.com/social/cards/article-figma-make-gemini-4-argon-model-picker/01.jpg",
+        "https://designrefs.com/social/cards/article-figma-make-gemini-4-argon-model-picker/02.jpg",
+        "https://designrefs.com/social/cards/article-figma-make-gemini-4-argon-model-picker/03.jpg"
+      ],
+      "caption": "폰트 하나 바꾸는 데 30크레딧, 피그마 메이크에 모델을 고르는 칸이 있다\n\n피그마 메이크 모델 선택기에 Gemini 4 Argon이 들어왔다. 릴리스 노트, 도움말, 구글 문서에서 확인한 사실과 확인하지 못한 크레딧 소모량, 같은 문장을 두 모델로 돌려 기록하는 방법을 적었다.\n\n📌 저장해 두고 필요할 때 꺼내 보세요\n전문과 출처는 프로필 링크(designrefs.com)에 있어요.\n\n#디자인레퍼런스 #디자이너 #AI디자인 #디자인인사이트 #UXUI",
+      "comment": "📎 이 글의 출처\n· Figma Release Notes — figma.com\n· Figma What's new — figma.com\n· How Figma AI credits work — help.figma.com\n· Manage AI credits — help.figma.com\n· Gemini 4 Argon, Gemini API 문서 — ai.google.dev\n· Google: Gemini 4 availability — blog.google\n\n전문은 여기서 읽을 수 있어요\ndesignrefs.com/articles/figma-make-gemini-4-argon-model-picker/",
+      "article": "https://designrefs.com/articles/figma-make-gemini-4-argon-model-picker/"
+    },
+    {
       "id": "article-canva-craft-text-layout-image-model",
       "title": "포스터 시안 글자가 깨져서 다시 뽑기만 반복할 때, 캔바 크래프트는 배치부터 짠다",
       "count": 3,
