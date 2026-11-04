@@ -33,6 +33,20 @@ const env = process.env;
 const log = (...a) => console.error("[designhub-social]", ...a);
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
+// ---------- 댓글 자동 답장 (실제로 보내는 일은 같은 폴더의 ig-autoreply.mjs 가 합니다) ----------
+const AUTOREPLY = path.join(os.homedir(), ".designhub", "autoreply.json");
+const AUTOREPLY_LOG = path.join(os.homedir(), ".designhub", "autoreply-log.jsonl");
+const AUTOREPLY_RUNNER = path.join(path.dirname(new URL(import.meta.url).pathname), "ig-autoreply.mjs");
+const AUTOREPLY_AGENT = path.join(os.homedir(), "Library/LaunchAgents/com.designrefs.ig-autoreply.plist");
+function autoreplyList() {
+  try { return JSON.parse(fs.readFileSync(AUTOREPLY, "utf8")).campaigns || []; } catch { return []; }
+}
+function autoreplySave(campaigns) {
+  fs.mkdirSync(path.dirname(AUTOREPLY), { recursive: true });
+  fs.writeFileSync(AUTOREPLY, JSON.stringify({ campaigns }, null, 2));
+}
+const autoreplyInstalled = () => fs.existsSync(AUTOREPLY_AGENT);
+
 // ---------- 메타 API 호출 ----------
 
 function accounts() {
@@ -389,6 +403,76 @@ const TOOLS = {
     run: async ({ comment_id, message }) => ig("POST", `/${comment_id}/replies`, { message }),
   },
 
+  ig_autoreply_on: {
+    description: "인스타 게시물 하나에 댓글 자동 답장을 켭니다. 그 게시물의 모든 새 댓글에 DM(메타의 댓글 비공개 답장)을 보내고, DM이 가면 공개 답글을 답니다. " +
+      "실제로 보내는 일은 5분마다 도는 ig-autoreply.mjs 가 합니다(setup-autoreply.sh 로 설치). DM과 답글 문구는 사용자가 확인한 뒤에만 켜세요.",
+    schema: {
+      type: "object",
+      properties: {
+        media_id: { type: "string", description: "게시물 id (ig_recent_media 의 id)" },
+        dm: { type: "string", description: "댓글 단 사람에게 보낼 DM (최대 1,000자)" },
+        replies: { type: "array", items: { type: "string" }, description: "공개 답글 후보. 매번 하나를 골라 답니다 (비우면 답글 없이 DM만)" },
+        days: { type: "number", description: "며칠 동안 켜 둘지 (기본 7, 최대 7: 메타는 7일 지난 댓글에 DM을 못 보냅니다)" },
+      },
+      required: ["media_id", "dm"],
+    },
+    run: async ({ media_id, dm, replies = [], days = 7 }) => {
+      if (!dm.trim()) throw new Error("DM 내용이 비어 있습니다.");
+      if ([...dm].length > 1000) throw new Error("DM은 1,000자까지입니다.");
+      const post = await ig("GET", `/${media_id}`, { fields: "id,permalink,caption,timestamp" });
+      const until = new Date(Date.now() + Math.min(Math.max(days, 1), 7) * 86400e3).toISOString();
+      const list = autoreplyList().filter((c) => c.media_id !== media_id);
+      list.push({ media_id, permalink: post.permalink, dm: dm.trim(), replies: replies.map((r) => r.trim()).filter(Boolean), until, paused: false });
+      autoreplySave(list);
+      return { on: true, permalink: post.permalink, until, runner: autoreplyInstalled() ? "5분마다 도는 중" : "아직 설치 안 됨: 터미널에서 tools/setup-autoreply.sh 를 실행하세요" };
+    },
+  },
+
+  ig_autoreply_off: {
+    description: "게시물의 댓글 자동 답장을 끕니다. media_id 를 비우면 전부 끕니다.",
+    schema: { type: "object", properties: { media_id: { type: "string", description: "게시물 id (비우면 전부)" } } },
+    run: async ({ media_id }) => {
+      const list = autoreplyList().map((c) => (!media_id || c.media_id === media_id ? { ...c, paused: true } : c));
+      autoreplySave(list);
+      return { off: media_id || "전부", campaigns: list };
+    },
+  },
+
+  ig_autoreply_status: {
+    description: "댓글 자동 답장이 켜진 게시물과, 지금까지 DM을 보낸 수·건너뛴 수·최근 오류를 봅니다.",
+    schema: { type: "object", properties: {} },
+    run: async () => {
+      let rows = [];
+      try { rows = fs.readFileSync(AUTOREPLY_LOG, "utf8").split("\n").filter(Boolean).map((l) => JSON.parse(l)); } catch {}
+      return {
+        runner: autoreplyInstalled() ? "5분마다 도는 중" : "설치 안 됨 (tools/setup-autoreply.sh)",
+        campaigns: autoreplyList().map((c) => {
+          const mine = rows.filter((r) => r.media_id === c.media_id);
+          return {
+            media_id: c.media_id, permalink: c.permalink, until: c.until,
+            state: c.paused ? "꺼짐" : new Date(c.until) < new Date() ? "기간 끝남" : "켜짐",
+            sent: mine.filter((r) => r.status === "sent").length,
+            skipped: mine.filter((r) => r.status === "skip").length,
+            last_error: mine.filter((r) => r.status === "error").slice(-1)[0]?.why || null,
+          };
+        }),
+      };
+    },
+  },
+
+  ig_autoreply_run: {
+    description: "댓글 자동 답장을 지금 한 번 돌립니다. dry_run 이 true 면 보내지 않고 무엇을 보낼지만 보여 줍니다 (처음엔 꼭 시험부터).",
+    schema: { type: "object", properties: { dry_run: { type: "boolean", description: "true 면 시험 (기본 true)" } } },
+    run: async ({ dry_run = true }) => new Promise((resolve, reject) => {
+      const p = spawn(process.execPath, [AUTOREPLY_RUNNER, ...(dry_run ? ["--dry-run"] : [])], { env: process.env });
+      let out = "";
+      p.stdout.on("data", (d) => (out += d));
+      p.stderr.on("data", (d) => (out += d));
+      p.on("error", reject);
+      p.on("close", (code) => resolve({ dry_run, exit_code: code, output: hide(out).trim() }));
+    }),
+  },
+
   ig_publish_limit: {
     description: "인스타그램 24시간 게시 한도와 지금까지 쓴 양을 봅니다.",
     schema: { type: "object", properties: {} },
@@ -693,7 +777,7 @@ async function handle(req) {
       return send({ id, result: {
         protocolVersion: params.protocolVersion || "2025-06-18",
         capabilities: { tools: {}, prompts: {} },
-        serverInfo: { name: "designhub-social", version: "1.7.0" },
+        serverInfo: { name: "designhub-social", version: "1.8.0" },
       } });
     }
     if (method === "ping") return send({ id, result: {} });

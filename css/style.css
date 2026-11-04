@@ -551,6 +551,17 @@ body.drawer-open { overflow: hidden; }
 .ptext a { color: var(--ink); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
 .ptext--note { margin-top: 40px; font-size: 13px; color: var(--ink-3); }
 .ptext-list { margin: 12px 0 0; padding-left: 18px; }
+/* 산문 페이지(/skills/ 등)의 명령어. 한 줄 코드는 code, 붙여 넣을 명령은 pre.pcode */
+.ptext code, .ptext-list code, .art__table code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.9em; padding: 1px 5px; border-radius: 5px; background: var(--field);
+}
+.pcode {
+  margin: 14px 0 0; padding: 14px 16px; border-radius: 10px; background: var(--field);
+  overflow-x: auto; -webkit-overflow-scrolling: touch;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13.5px; line-height: 1.6; color: var(--ink);
+}
+.pcode code { padding: 0; background: none; font-size: inherit; }
 .ptext-list li { margin-bottom: 9px; font-size: 14.5px; line-height: 1.7; color: var(--ink-2); }
 .ptext-list a { color: var(--ink); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
 

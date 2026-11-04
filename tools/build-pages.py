@@ -289,10 +289,21 @@ PRIVACY = f"""
     링크를 눌러 이동한 뒤의 개인정보 처리는 해당 사이트의 방침을 따릅니다.
     이동한 사이트에서 일어나는 일에 대해 디자인 허브는 책임지지 않습니다.</p>
 
-    <h2 class="psub">7. 문의</h2>
+    <h2 class="psub" id="instagram">7. 인스타그램·스레드 계정 운영</h2>
+    <p class="ptext">디자인 허브는 메타(Meta)의 공식 API로 인스타그램(@design_refs_hub)과 스레드 계정에 글을 올리고,
+    게시물에 달린 댓글에 답합니다. 일부 게시물은 댓글을 남긴 분께 안내 링크를 인스타그램 메시지(DM)로 한 번 보내 드립니다.</p>
+    <ul class="ptext-list">
+      <li>쓰는 정보: 댓글을 남긴 계정의 사용자 이름, 댓글 내용과 시각, 댓글 번호</li>
+      <li>쓰는 목적: 같은 분께 메시지를 두 번 보내지 않도록 보낸 기록을 남기는 데에만 씁니다</li>
+      <li>보관: 운영자의 컴퓨터에만 저장하고, 다른 곳에 넘기거나 광고에 쓰지 않습니다. 게시물 답장이 끝나고 90일이 지나면 지웁니다</li>
+    </ul>
+    <p class="ptext" id="delete">기록을 지우고 싶으시면 인스타그램 사용자 이름을 적어 <a href="mailto:nisov0924@gmail.com">nisov0924@gmail.com</a>으로 보내 주세요.
+    확인 후 7일 안에 지우고 답장 드립니다. 댓글은 인스타그램에서 직접 지우실 수 있습니다.</p>
+
+    <h2 class="psub">8. 문의</h2>
     <p class="ptext">이 방침에 대한 문의는 <a href="mailto:nisov0924@gmail.com">nisov0924@gmail.com</a> 으로 보내주세요.</p>
 
-    <p class="ptext ptext--note">시행일 2026년 9월 14일 · 개정일 2026년 9월 25일</p>
+    <p class="ptext ptext--note">시행일 2026년 9월 14일 · 개정일 2026년 11월 4일</p>
 """
 
 TALK = f"""
@@ -426,6 +437,112 @@ LAB_HTML = """
 
 LAB = lab_body()
 
+
+# ---------- 클로드 스킬 (/skills/) : 스킬 소개와 디자이너가 볼 만한 스킬 ----------
+# 설치 수는 skills.sh 에서 확인한 날짜와 함께 적습니다. 고칠 때는 SKILLS_CHECKED 도 같이 바꾸세요.
+SKILLS_CHECKED = "2026년 11월 4일"
+SKILLS_PICK = [
+    # (이름, 만든 곳, 하는 일, 설치 수)
+    ("frontend-design", "anthropics/skills", "웹 화면을 만들 때 흔한 템플릿 느낌을 피하고 글꼴·색·여백을 의도를 갖고 고르게 합니다.", "110만"),
+    ("canvas-design", "anthropics/skills", "포스터나 그래픽을 PDF·PNG 한 장으로 만듭니다. 먼저 디자인 방향을 글로 정한 뒤 그립니다.", "12.7만"),
+    ("pptx", "anthropics/skills", "파워포인트 파일을 만들고 고칩니다.", "24.8만"),
+    ("extract-design-system", "arvindrk/extract-design-system", "공개된 웹사이트 주소를 주면 색·글꼴·간격·모서리·그림자 값을 뽑아 토큰 파일로 정리합니다.", "13.1만"),
+    ("tailwind-design-system", "wshobson/agents", "테일윈드 v4 기준으로 토큰과 컴포넌트, 다크 모드 구조를 잡습니다.", "7.2만"),
+    ("accessibility", "addyosmani/web-quality-skills", "WCAG 2.2 기준으로 대비, 키보드 이동, 대체 텍스트 같은 접근성 문제를 점검합니다.", "6.7만"),
+    ("review-animations", "emilkowalski/skills", "화면 전환과 모션 코드를 검토만 합니다. 새 기능을 만들지는 않습니다.", "27.9만"),
+    ("remotion-best-practices", "remotion-dev/skills", "리모션(React로 영상을 만드는 도구)으로 영상을 만들 때의 규칙을 담았습니다.", "74.2만"),
+    ("figma-use", "figma/mcp-server-guide", "피그마 MCP가 연결돼 있을 때 피그마 파일을 직접 읽고 고칩니다. 피그마가 만든 스킬입니다.", "9,500"),
+    ("figma-generate-design", "figma/mcp-server-guide", "디자인 시스템에 올린 컴포넌트를 써서 피그마에 화면을 만듭니다. 이미지가 아니라 고칠 수 있는 레이어로 만듭니다.", "6,200"),
+]
+SKILLS_ASK = [
+    "피그마 시안을 코드로 옮기는 스킬 찾아 줘",
+    "이 사이트 주소에서 색이랑 글꼴 값을 뽑아 주는 스킬 있어?",
+    "웹 접근성 점검하는 스킬 찾아 줘. 설치 수 1만 이상만",
+    "포스터 한 장 만드는 스킬 있어?",
+    "발표 자료(PPT) 만드는 스킬 찾아서 설치까지 해 줘",
+    "테일윈드로 디자인 시스템 잡는 스킬 후보 3개 비교해 줘",
+    "버튼 눌렀을 때 움직임이 어색한지 봐 주는 스킬 있어?",
+    "리모션으로 짧은 소개 영상 만드는 스킬 찾아 줘",
+]
+
+
+def skills_body():
+    rows = "".join(
+        f'<tr><td><code>{e(n)}</code></td><td>{e(d)}</td><td>{e(o)}</td><td class="nb">{e(c)}</td></tr>'
+        for n, o, d, c in SKILLS_PICK)
+    asks = "".join(f"<li>{e(q)}</li>" for q in SKILLS_ASK)
+    return f"""
+    <p class="ptext">스킬은 클로드 코드에게 특정한 일을 하는 방법을 적어 준 설명서입니다. 폴더 하나에 <code>SKILL.md</code> 파일이 들어 있고,
+    클로드는 맡은 일이 그 설명과 맞을 때 꺼내 읽고 그대로 따릅니다. 한 번 설치해 두면 같은 부탁을 할 때마다 같은 방식으로 일합니다.</p>
+    <p class="ptext">이 사이트도 클로드 코드로 만들고 있고, 디자인 작업에 쓸 만한 스킬을 찾다가 이 페이지를 정리했습니다.
+    설치 수는 {SKILLS_CHECKED}에 <a href="https://skills.sh/" target="_blank" rel="noopener">skills.sh</a>에서 확인한 숫자입니다.</p>
+
+    <h2 class="psub">스킬을 찾아 주는 스킬부터</h2>
+    <p class="ptext">공개된 스킬은 수십만 개가 넘어서 직접 검색해 고르는 것부터 일입니다.
+    <a href="https://skills.sh/vercel-labs/skills/find-skills" target="_blank" rel="noopener">find-skills</a>는 그 검색을 클로드가 대신 하게 만드는 스킬입니다.
+    Next.js를 만든 회사 버셀(Vercel)의 실험용 저장소 vercel-labs에 들어 있고, 무료입니다(MIT).</p>
+    <p class="ptext">스킬 안에 적힌 순서는 이렇습니다.</p>
+    <ol class="ptext-list">
+      <li>무슨 일을 하려는지 파악합니다.</li>
+      <li>skills.sh 순위에서 설치 수가 많은 스킬이 있는지 먼저 봅니다.</li>
+      <li>없으면 <code>npx skills find 검색어</code>로 찾습니다.</li>
+      <li>설치 수 1천 이상, 공식 출처(vercel-labs, anthropics, microsoft 등), 저장소 별 100개 이상인지 확인합니다.</li>
+      <li>후보를 이름·설치 수·출처·설치 명령과 함께 보여 줍니다.</li>
+      <li>"설치해 줘"라고 하면 설치합니다.</li>
+    </ol>
+
+    <h2 class="psub">설치</h2>
+    <p class="ptext">터미널에 아래 한 줄을 붙여 넣습니다. Node.js가 설치돼 있어야 합니다.</p>
+    <pre class="pcode"><code>npx skills add vercel-labs/skills --skill find-skills -g -a claude-code -y</code></pre>
+    <ul class="ptext-list">
+      <li><code>-g</code>: 어느 폴더에서 클로드 코드를 열어도 쓰이게 전역으로 설치합니다(<code>~/.claude/skills</code>). 빼면 지금 폴더에만 설치됩니다.</li>
+      <li><code>-a claude-code</code>: 클로드 코드에 설치합니다. 코덱스는 <code>-a codex</code>, 커서는 <code>-a cursor</code>입니다.</li>
+      <li><code>-y</code>: 확인 질문을 건너뜁니다.</li>
+    </ul>
+    <p class="ptext">설치한 뒤에는 클로드 코드를 새로 열어야 목록에 나타납니다. 스킬은 세션을 시작할 때 읽기 때문입니다.
+    클로드 앱의 채팅 창이 아니라 클로드 코드(터미널·데스크톱 앱의 Code 탭)에서 쓰는 방법입니다.</p>
+
+    <h2 class="psub">이렇게 물어보면 됩니다</h2>
+    <p class="ptext">평소 말투로 부탁하면 됩니다. 고르는 기준을 같이 말하면 결과가 더 좁혀집니다.</p>
+    <ul class="ptext-list">{asks}</ul>
+
+    <h2 class="psub">디자이너가 볼 만한 스킬 {len(SKILLS_PICK)}개</h2>
+    <p class="ptext">디자인 작업과 가까운 것만 골랐습니다. 설치 명령은 <code>npx skills add 만든곳 --skill 이름 -g</code> 꼴입니다.</p>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th>이름</th><th>하는 일</th><th>만든 곳</th><th>설치 수</th></tr></thead>
+      <tbody>{rows}</tbody>
+    </table></div>
+    <p class="art__note">※ 출처: 각 스킬의 skills.sh 페이지, {SKILLS_CHECKED} 확인. 설치 수는 매일 바뀝니다.</p>
+
+    <h2 class="psub">설치 전에 볼 것</h2>
+    <p class="ptext">스킬은 클로드에게 주는 지시문이라, 설치하면 클로드가 가진 권한 그대로 그 지시를 따릅니다.
+    파일을 지우거나 외부로 보내라고 적혀 있어도 따를 수 있다는 뜻입니다. 그래서 아래를 확인하고 설치합니다.</p>
+    <ul class="ptext-list">
+      <li>설치 수가 100 아래인 스킬은 특히 조심합니다. 같은 이름을 베낀 저장소가 많습니다.</li>
+      <li>만든 곳을 봅니다. 앤트로픽, 피그마, 리모션처럼 도구를 만든 회사가 직접 올린 스킬이 가장 안전합니다.</li>
+      <li>설치할 때 나오는 보안 점검(Gen, Socket, Snyk)을 읽습니다. 위험 표시가 있으면 이유를 확인합니다.</li>
+      <li>설치한 뒤 <code>SKILL.md</code>를 한 번 열어 봅니다. 긴 글이 아니라 몇 분이면 읽습니다.</li>
+    </ul>
+
+    <h2 class="psub">자주 쓰는 명령</h2>
+    <ul class="ptext-list">
+      <li><code>npx skills list</code>: 설치된 스킬 보기</li>
+      <li><code>npx skills update</code>: 설치된 스킬을 최신으로</li>
+      <li><code>npx skills remove 이름</code>: 스킬 지우기</li>
+      <li><code>npx skills init 이름</code>: 내 스킬 만들기 (자주 하는 작업이 있다면)</li>
+    </ul>
+
+    <h2 class="psub">출처</h2>
+    <ul class="ptext-list">
+      <li><a href="https://skills.sh/vercel-labs/skills/find-skills" target="_blank" rel="noopener">find-skills — skills.sh</a></li>
+      <li><a href="https://github.com/vercel-labs/skills" target="_blank" rel="noopener">vercel-labs/skills — GitHub</a></li>
+      <li><a href="https://skills.sh/" target="_blank" rel="noopener">skills.sh 스킬 순위</a></li>
+    </ul>
+"""
+
+
+SKILLS = skills_body()
+
 PROSE_PAGES = [
     ("talk", "디자인 잡담",
      "디자인 이야기를 편하게 나누는 공간입니다.", TALK),
@@ -433,6 +550,8 @@ PROSE_PAGES = [
      "왜 만들었고 무엇이 들어 있는지, 사이트는 어떤 기준으로 고르는지 적어 뒀습니다.", ABOUT),
     ("lab", "스타일 현상소",
      "내 사진을 리소그래프, 팝아트, 픽셀 아트, 펑크 복사기, 구성주의, 사이버펑크, 바포웨이브, 사이키델릭, 멤피스로 바꿔 보는 무료 도구입니다. 가입이 필요 없고 사진은 기기 밖으로 나가지 않습니다.", LAB),
+    ("skills", "클로드 스킬",
+     "클로드 코드에 스킬을 설치하는 법과, 스킬을 찾아 주는 find-skills, 디자이너가 쓸 만한 스킬 10개를 설치 수와 함께 정리했습니다.", SKILLS),
     ("updates", "업데이트 기록",
      "디자인 허브에 사이트를 넣고, 옮기고, 고친 기록입니다. 날짜별로 자동으로 정리합니다.", UPDATES),
     ("privacy", "개인정보처리방침",
@@ -451,6 +570,7 @@ SHORT_DESC.update({
     "talk": "디자인 이야기를 편하게 나누는 공간",
     "updates": "사이트를 넣고 옮기고 고친 날짜별 기록",
     "lab": "사진을 디자인 양식으로 바꾸는 도구",
+    "skills": "클로드 코드에 일하는 방법을 더하는 설명서",
 })
 FOOTER = footer_links()
 # 개수를 브라우저에서 채우는 페이지 (디자인 잡담의 글 수는 서버에서 받아 옵니다)

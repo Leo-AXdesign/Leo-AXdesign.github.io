@@ -70,6 +70,7 @@ def menu(active="", lang="ko"):
     parts.append(SEP)
     if lang != "en":
         parts.append(_item("lab", "스타일 현상소", None, active, SITE + "lab/"))
+        parts.append(_item("skills", "클로드 스킬", None, active, SITE + "skills/"))
     if lang == "en":
         parts.append(_item("talk", "Design Talk", None, active, SITE + "en/talk/"))
     else:
