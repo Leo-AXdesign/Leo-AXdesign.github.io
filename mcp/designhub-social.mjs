@@ -132,12 +132,25 @@ async function waitTh(acc, id) {
   throw new Error("스레드 게시물 처리가 1분 넘게 끝나지 않았습니다.");
 }
 
-// 글 하나 올리기. reply_to_id 를 주면 그 글의 댓글(답글)로 올라갑니다
-async function thPost(acc, { text, image_url, link_attachment, reply_to_id }) {
+// 글 하나 올리기. reply_to_id 를 주면 그 글의 댓글(답글)로 올라갑니다.
+// image_urls 에 2장 이상을 주면 넘겨 보는 사진 묶음(캐러셀)으로 올라갑니다 (최대 20장)
+async function thPost(acc, { text, image_url, image_urls, link_attachment, reply_to_id }) {
   if (!text || !text.trim()) throw new Error("올릴 글이 비어 있습니다.");
   if ([...text].length > 500) throw new Error(`스레드 글은 500자까지입니다. 지금 ${[...text].length}자: "${text.slice(0, 30)}…"`);
   const uid = await thUser(acc);
-  const params = image_url
+  const imgs = (image_urls || []).filter(Boolean);
+  if (imgs.length > 20) throw new Error("사진 묶음은 20장까지입니다.");
+  if (imgs.length === 1 && !image_url) image_url = imgs[0];
+  let params;
+  if (imgs.length > 1) {
+    const children = [];
+    for (const u of imgs) {
+      const { id } = await th(acc, "POST", `/${uid}/threads`, { media_type: "IMAGE", image_url: u, is_carousel_item: "true" });
+      await waitTh(acc, id);
+      children.push(id);
+    }
+    params = { media_type: "CAROUSEL", children: children.join(","), text };
+  } else params = image_url
     ? { media_type: "IMAGE", image_url, text }
     : { media_type: "TEXT", text, ...(link_attachment ? { link_attachment } : {}) };
   if (reply_to_id) params.reply_to_id = reply_to_id;
@@ -410,13 +423,14 @@ const TOOLS = {
   },
 
   threads_publish: {
-    description: "스레드에 글 하나를 공개 게시합니다. 글만, 또는 글+사진 한 장. 링크를 넣으면 미리보기 카드가 붙습니다. 되돌릴 수 없는 공개 게시이니, 사용자가 내용을 확인한 뒤에만 쓰세요. 이어지는 글(댓글 묶음)은 threads_publish_chain 을 쓰세요.",
+    description: "스레드에 글 하나를 공개 게시합니다. 글만, 글+사진 한 장, 또는 글+사진 묶음(image_urls, 2~20장). 링크를 넣으면 미리보기 카드가 붙습니다. 되돌릴 수 없는 공개 게시이니, 사용자가 내용을 확인한 뒤에만 쓰세요. 이어지는 글(댓글 묶음)은 threads_publish_chain 을 쓰세요.",
     schema: {
       type: "object",
       properties: {
         account: ACCOUNT,
         text: { type: "string", description: "본문 (최대 500자)" },
         image_url: { type: "string", description: "선택: 공개 https 이미지 주소" },
+        image_urls: { type: "array", items: { type: "string" }, description: "선택: 넘겨 보는 사진 묶음(2~20장)의 공개 https 주소, 순서대로" },
         link_attachment: { type: "string", description: "선택: 미리보기로 붙일 링크 (글만 올릴 때)" },
       },
       required: ["text"],
@@ -433,10 +447,11 @@ const TOOLS = {
         posts: { type: "array", items: { type: "string" }, description: "첫 글부터 순서대로. 각 500자 이내, 2~10개" },
         link_attachment: { type: "string", description: "선택: 마지막 글에 미리보기로 붙일 링크" },
         image_url: { type: "string", description: "선택: 첫 글에 붙일 공개 https 이미지 주소" },
+        image_urls: { type: "array", items: { type: "string" }, description: "선택: 첫 글에 붙일 사진 묶음(2~20장)의 공개 https 주소, 순서대로" },
       },
       required: ["posts"],
     },
-    run: async ({ account, posts = [], link_attachment, image_url }) => {
+    run: async ({ account, posts = [], link_attachment, image_url, image_urls }) => {
       const acc = thAccount(account);
       posts = posts.map((t) => String(t).trim()).filter(Boolean);
       if (!posts.length) throw new Error("올릴 글이 없습니다.");
@@ -451,7 +466,8 @@ const TOOLS = {
             text: posts[i],
             reply_to_id: prev || undefined,
             image_url: i === 0 ? image_url : undefined,
-            link_attachment: last && !(i === 0 && image_url) ? link_attachment : undefined,
+            image_urls: i === 0 ? image_urls : undefined,
+            link_attachment: last && !(i === 0 && (image_url || (image_urls || []).length)) ? link_attachment : undefined,
           });
           done.push({ n: i + 1, id: r.id, permalink: r.permalink });
           prev = r.id;
@@ -677,7 +693,7 @@ async function handle(req) {
       return send({ id, result: {
         protocolVersion: params.protocolVersion || "2025-06-18",
         capabilities: { tools: {}, prompts: {} },
-        serverInfo: { name: "designhub-social", version: "1.6.0" },
+        serverInfo: { name: "designhub-social", version: "1.7.0" },
       } });
     }
     if (method === "ping") return send({ id, result: {} });
