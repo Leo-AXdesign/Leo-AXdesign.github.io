@@ -1,5 +1,6 @@
 ---
 slug: chatgpt-image-generation-ads
+index: no
 title: 챗GPT가 그림을 그리는 동안, 옆에 광고가 붙는다
 desc: 오픈AI가 10월 5일 챗GPT 이미지 생성 화면에 붙는 이미지 광고를 발표했다. 글 광고에서 이미지 광고로 넘어온 여덟 달을 짚고, 디자이너에게 새로 생기는 일과 조심할 점을 정리했다.
 date: 2026-10-05

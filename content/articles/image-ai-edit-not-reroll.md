@@ -1,5 +1,6 @@
 ---
 slug: image-ai-edit-not-reroll
+index: no
 title: 다시 뽑지 말고 고쳐 쓴다, 이미지 AI가 '편집' 쪽으로 간 한 주
 desc: 9월 30일 Ideogram 4.5, 10월 2일 FLUX 3 Image. 이번 주 나온 두 이미지 모델은 더 예쁜 그림보다 '한 군데만 고치기'를 앞세웠다. 상자로 먼저 배치하는 방식과 크기별 가격까지 그림과 숫자로 정리했다.
 date: 2026-10-03

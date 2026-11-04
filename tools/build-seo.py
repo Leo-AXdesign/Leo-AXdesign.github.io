@@ -42,13 +42,14 @@ urls = [(SITE, "1.0", today)] + [(SITE + s + "/", "0.8", today) for s in PAGE_SL
 urls.append((SITE + "articles/", "0.8", posts[0]["date"] if posts else today))
 # 매주 모으는 채용 공고 페이지 (tools/build-jobs.py 가 만든 뒤에만)
 # 주간 채용 공고(/jobs/weekly/)와 디자인 잡담(/talk/)은 noindex 라 사이트맵에 넣지 않습니다.
+# index: no 인 글(noindex)은 사이트맵에서 뺍니다.
 # 글은 고칠 때마다 날짜가 바뀌므로 각 글의 작성일을 lastmod 로 넣습니다
-urls += [(f'{SITE}articles/{x["slug"]}/', "0.7", x["updated"]) for x in posts]
+urls += [(f'{SITE}articles/{x["slug"]}/', "0.7", x["updated"]) for x in posts if x["indexed"]]
 # 영문판 글 (content/articles-en/)
 posts_en = A.load("en")
 if posts_en:
     urls.append((SITE + "en/articles/", "0.7", posts_en[0]["date"]))
-    urls += [(f'{SITE}en/articles/{x["slug"]}/', "0.6", x["updated"]) for x in posts_en]
+    urls += [(f'{SITE}en/articles/{x["slug"]}/', "0.6", x["updated"]) for x in posts_en if x["indexed"]]
 body = "\n".join(
     f"  <url>\n    <loc>{u}</loc>\n    <lastmod>{lm}</lastmod>\n"
     f"    <changefreq>weekly</changefreq>\n    <priority>{pr}</priority>\n  </url>"
@@ -79,8 +80,8 @@ def article_entry(slug, lastmod, lang):
     return f"  <url>\n    <loc>{loc}</loc>\n    <lastmod>{lastmod}</lastmod>{alts}{img}\n  </url>"
 
 
-art_entries = [article_entry(x["slug"], x["updated"], "ko") for x in posts]
-art_entries += [article_entry(x["slug"], x["updated"], "en") for x in posts_en]
+art_entries = [article_entry(x["slug"], x["updated"], "ko") for x in posts if x["indexed"]]
+art_entries += [article_entry(x["slug"], x["updated"], "en") for x in posts_en if x["indexed"]]
 sitemap_articles = ('<?xml version="1.0" encoding="UTF-8"?>\n'
                     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n'
                     '        xmlns:xhtml="http://www.w3.org/1999/xhtml"\n'

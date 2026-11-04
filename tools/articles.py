@@ -241,7 +241,7 @@ def load(lang="ko"):
             base = ko.get(meta.get("slug"))
             if not base:
                 raise SystemExit(f"articles-en/{f.name}: 같은 slug 의 한국어 글이 없습니다")
-            for k in ("date", "order", "tag"):
+            for k in ("date", "order", "tag", "index"):
                 meta.setdefault(k, base.get(k, ""))
             meta.setdefault("related", ", ".join(base.get("related", [])))
         need = {"slug", "title", "desc", "date"} - set(meta)
@@ -256,6 +256,8 @@ def load(lang="ko"):
         meta["min"] = max(1, round(meta["words"] / 230 if en else meta["chars"] / 600))
         meta["related"] = [x.strip() for x in meta.get("related", "").split(",") if x.strip()]
         meta["updated"] = meta.get("updated") or meta.get("date", "")
+        # index: no → noindex·사이트맵 제외 (2026-11-05 노출 없는 소식 글 정리). 영문판은 한국어 글 값을 따름
+        meta["indexed"] = meta.get("index", "yes").strip().lower() not in ("no", "false", "0")
         meta["file"] = f.name
         items.append(meta)
     # 최신 날짜가 위. 같은 날 올린 글은 order 값이 작은 것이 위입니다.

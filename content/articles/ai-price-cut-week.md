@@ -1,5 +1,6 @@
 ---
 slug: ai-price-cut-week
+index: no
 title: 한 주 만에 반값이 된 AI, 디자인 툴 값도 내려갈까
 desc: 9월 22일 하루에 Opus 5.5, GPT-6 Sol, Luna가 한꺼번에 나오며 가격표가 크게 바뀌었다. 디자이너가 내는 크레딧과 구독료에는 어떻게 이어질지 숫자로 짚었다.
 date: 2026-09-27

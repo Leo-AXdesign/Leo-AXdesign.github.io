@@ -1,5 +1,6 @@
 ---
 slug: muse-wonder-design-arena
+index: no
 title: 메타의 첫 최상위 모델이 디자인 투표 1위, 이 순위를 어떻게 읽을까
 desc: 메타가 10월 12일 내놓은 Muse Wonder가 사람들이 눈으로 골라 매기는 Design Arena에서 웹사이트와 UI 부문 1위에 올랐다. 투표가 어떻게 돌아가는지, 1위가 말해 주는 것과 말해 주지 않는 것을 그림과 숫자로 정리했다.
 date: 2026-10-14

@@ -1,5 +1,6 @@
 ---
 slug: protopie-mcp-prototype-ai
+index: no
 title: 프로토파이가 MCP를 열었다, AI가 프로토타입을 읽고 고치고 코드로 넘긴다
 desc: 프로토파이가 MCP 지원을 공식으로 알렸다. Studio MCP는 열어 둔 프로토타입을 AI가 읽고 고치고, Code MCP는 완성본을 코딩 에이전트에게 넘긴다. 프로토파이 공식 글과 문서로 무엇이 되고 무엇이 확인되지 않았는지 정리했다.
 date: 2026-10-17

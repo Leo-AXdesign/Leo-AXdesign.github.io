@@ -223,7 +223,8 @@ def build(lang, ko_slugs, en_slugs):
         doc = document(title=x["title"], desc=x["desc"], url=url, body=body, jsonld=jsonld, head_extra=art_meta,
                        og_type="article", menu=menu("articles", lang), og_image=og_url,
                        main_class="page__main page__main--art", footer_nav=fnav,
-                       lang=lang, alternates=alternates(x["slug"]))
+                       lang=lang, alternates=alternates(x["slug"]),
+                       **({} if x.get("indexed", True) else {"robots": "noindex, follow"}))
         out = L["dir"] / "articles" / x["slug"]
         out.mkdir(parents=True, exist_ok=True)
         (out / "index.html").write_text(doc, encoding="utf-8")
