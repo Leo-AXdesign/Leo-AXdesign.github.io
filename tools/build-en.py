@@ -15,6 +15,7 @@ build-seo.py 로 index.html 을 갱신한 다음에 돌리세요.
 import html, json, re, pathlib
 
 import sitedata as D
+from shell import sns_links
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SITE = "https://designrefs.com/"
@@ -101,8 +102,7 @@ FOOTER = f"""<footer class="footer">
       <a href="{SITE}en/talk/">Design Talk</a>
       <a href="/" hreflang="ko" lang="ko">한국어</a>
       <a href="/privacy/">Privacy (Korean)</a>
-      <a href="mailto:nisov0924@gmail.com">CONTACT : nisov0924@gmail.com</a>
-      <a href="#" id="footer-top">Back to top ↑</a>
+{sns_links()}      <a href="#" id="footer-top">Back to top ↑</a>
     </div>
   </footer>"""
 

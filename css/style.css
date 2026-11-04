@@ -738,6 +738,10 @@ body.drawer-open { overflow: hidden; }
 .footer { border-top: 1px solid var(--line); padding: 28px 0 40px; color: var(--ink-2); font-size: 12.5px; }
 .footer__inner { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 .footer a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+.footer__sns { display: inline-flex; align-items: center; gap: 14px; }
+.footer__sns a { display: inline-flex; color: var(--ink-2); }
+.footer__sns a:hover { color: var(--ink); text-decoration: none; }
+.footer__sns svg { width: 18px; height: 18px; }
 
 /* ================= Responsive ================= */
 @media (max-width: 960px) {

@@ -20,6 +20,31 @@ UP_ICON = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-wi
            'stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>')
 
 
+# 디자인 허브 SNS 계정과 메일. 푸터 아이콘으로 모든 페이지에 붙습니다 (영문 메인은 build-en.py 가 이걸 가져다 씀)
+SNS = [
+    ("Threads", "https://www.threads.com/@design_refs_hub",
+     '<path d="M19 7.5c-1.333-3-3.667-4.5-7-4.5-5 0-8 2.5-8 9s3.5 9 8 9 7-3 7-5-1-5-7-5c-2.5 0-3 1.25-3 2.5 0 1.5 1 2.5 2.5 2.5 2.5 0 3.5-1.5 3.5-5s-2-4-3-4-1.833.333-2.5 1"/>'),
+    ("Instagram", "https://www.instagram.com/design_refs_hub/",
+     '<rect x="4" y="4" width="16" height="16" rx="4"/><circle cx="12" cy="12" r="3.2"/><path d="M16.5 7.5v.01"/>'),
+    ("Facebook", "https://www.facebook.com/profile.php?id=61595236925825",
+     '<path d="M7 10v4h3v7h4v-7h3l1-4h-4V8a1 1 0 0 1 1-1h3V3h-3a5 5 0 0 0-5 5v2H7"/>'),
+]
+
+
+def sns_links(indent="      "):
+    """푸터의 SNS 아이콘 묶음."""
+    icons = "".join(
+        f'<a href="{url}" target="_blank" rel="noopener me" aria-label="{name}" title="{name}">'
+        f'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" '
+        f'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{paths}</svg></a>'
+        for name, url, paths in SNS)
+    icons += (f'<a href="mailto:{CONTACT}" aria-label="메일 {CONTACT}" title="{CONTACT}">'
+              '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" '
+              'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+              '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>')
+    return f'{indent}<span class="footer__sns">{icons}</span>\n'
+
+
 def section_head(title, count=None, desc="", level=1):
     """메인 화면의 섹션 머리(제목 · 개수 · 오른쪽 설명 · 검은 줄)와 같은 모양."""
     num = f'\n        <span class="section__count" data-count>{count}</span>' if count is not None else ""
@@ -214,8 +239,7 @@ def document(*, title, desc, url, body, jsonld, og_type="website",
   <footer class="footer">
 {footer_nav}    <div class="wrap footer__inner">
       <span>Copyright 2026. Design Hub. all rights reserved.</span>
-{foot}      <a href="mailto:{CONTACT}">CONTACT : {CONTACT}</a>
-      <a href="#" id="footer-top">{u["top"]} ↑</a>
+{foot}{sns_links()}      <a href="#" id="footer-top">{u["top"]} ↑</a>
     </div>
   </footer>
 
