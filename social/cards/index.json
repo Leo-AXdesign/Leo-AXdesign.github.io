@@ -148,6 +148,23 @@
       "comment": "🔗 소개한 곳 주소\n· find-skills — skills.sh/vercel-labs/skills/find-skills\n· 저장소 — github.com/vercel-labs/skills\n\n가이드 전체는 여기\ndesignrefs.com/skills"
     },
     {
+      "id": "claude-skills-seo",
+      "title": "만든 사이트, 검색에도 AI 답변에도 안 나온다면",
+      "count": 8,
+      "images": [
+        "https://designrefs.com/social/cards/claude-skills-seo/01.jpg",
+        "https://designrefs.com/social/cards/claude-skills-seo/02.jpg",
+        "https://designrefs.com/social/cards/claude-skills-seo/03.jpg",
+        "https://designrefs.com/social/cards/claude-skills-seo/04.jpg",
+        "https://designrefs.com/social/cards/claude-skills-seo/05.jpg",
+        "https://designrefs.com/social/cards/claude-skills-seo/06.jpg",
+        "https://designrefs.com/social/cards/claude-skills-seo/07.jpg",
+        "https://designrefs.com/social/cards/claude-skills-seo/08.jpg"
+      ],
+      "caption": "사이트를 만들었다면 저장해 두자\n\n클로드 코드 스킬 2탄. SEO·AEO·GEO를 점검해 주는 스킬을 skills.sh 설치 수 기준으로 골랐다.\n\n1. seo-audit: SEO 스킬 설치 수 1위 (24.6만)\n2. ai-seo: AI 답변에 인용되게 쓰는 법\n3. seo-geo · seo · seo-aeo-best-practices\n4. 설치는 터미널 한 줄\n\n#클로드 #클로드코드 #클로드스킬 #SEO #AI디자인",
+      "comment": "🔗 소개한 곳 주소\n· seo-audit — skills.sh/coreyhaines31/marketingskills/seo-audit\n· ai-seo — skills.sh/coreyhaines31/marketingskills/ai-seo\n\n표와 캡처는 여기\ndesignrefs.com/skills/seo"
+    },
+    {
       "id": "colors-pick",
       "title": "컬러 막힐 때 열어 볼 사이트 5",
       "count": 7,
