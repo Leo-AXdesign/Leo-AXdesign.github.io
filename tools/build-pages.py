@@ -637,8 +637,6 @@ def skills_index():
         f'          <span class="arow__tag">{x["no"]}탄</span>\n'
         f'        </a>' for x in SKILL_POSTS)
     return f"""
-    <p class="ptext">스킬은 클로드 코드에게 특정한 일을 하는 방법을 적어 준 설명서입니다. 한 번 설치해 두면 같은 부탁을 할 때마다 같은 방식으로 일합니다.
-    디자인 작업에 쓸 만한 스킬을 주제별로 한 편씩 정리합니다. 처음이라면 1탄의 설치 방법부터 보면 됩니다.</p>
       <div class="list list--insight">
 {rows}
       </div>
