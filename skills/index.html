@@ -4,14 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>클로드 스킬 | 디자인 허브</title>
-  <meta name="description" content="클로드 코드에 스킬을 설치하는 법과, 스킬을 찾아 주는 find-skills, 디자이너가 쓸 만한 스킬 10개를 설치 수와 함께 정리했습니다." />
+  <meta name="description" content="클로드 코드에 스킬을 설치하는 법과, 스킬을 찾아 주는 find-skills, 디자이너가 쓸 만한 스킬 10개, 검색과 AI 답변에 잡히게 하는 SEO·AEO·GEO 스킬을 설치 수와 함께 정리했습니다." />
   <link rel="canonical" href="https://designrefs.com/skills/" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="디자인 허브" />
   <meta property="og:locale" content="ko_KR" />
   <meta property="og:title" content="클로드 스킬 | 디자인 허브" />
-  <meta property="og:description" content="클로드 코드에 스킬을 설치하는 법과, 스킬을 찾아 주는 find-skills, 디자이너가 쓸 만한 스킬 10개를 설치 수와 함께 정리했습니다." />
+  <meta property="og:description" content="클로드 코드에 스킬을 설치하는 법과, 스킬을 찾아 주는 find-skills, 디자이너가 쓸 만한 스킬 10개, 검색과 AI 답변에 잡히게 하는 SEO·AEO·GEO 스킬을 설치 수와 함께 정리했습니다." />
   <meta property="og:url" content="https://designrefs.com/skills/" />
   <meta property="og:image" content="https://designrefs.com/og-image.png" />
   <meta property="og:image:width" content="1200" />
@@ -46,7 +46,7 @@
   "@type": "CollectionPage",
   "url": "https://designrefs.com/skills/",
   "name": "클로드 스킬",
-  "description": "클로드 코드에 스킬을 설치하는 법과, 스킬을 찾아 주는 find-skills, 디자이너가 쓸 만한 스킬 10개를 설치 수와 함께 정리했습니다.",
+  "description": "클로드 코드에 스킬을 설치하는 법과, 스킬을 찾아 주는 find-skills, 디자이너가 쓸 만한 스킬 10개, 검색과 AI 답변에 잡히게 하는 SEO·AEO·GEO 스킬을 설치 수와 함께 정리했습니다.",
   "inLanguage": "ko",
   "isPartOf": {
     "@type": "WebSite",
@@ -174,6 +174,40 @@
     </table></div>
     <p class="art__note">※ 출처: 각 스킬의 skills.sh 페이지, 2026년 11월 4일 확인. 설치 수는 매일 바뀝니다.</p>
 
+    <h2 class="psub" id="seo">검색과 AI 답변에 잡히게 하는 스킬 (SEO·AEO·GEO)</h2>
+    <p class="ptext">AI로 포트폴리오나 랜딩 페이지를 만드는 건 금방인데, 만든 다음에는 찾아오는 사람이 없습니다.
+    구글에 검색해도 안 나오고, 챗GPT에 물어봐도 내 사이트는 답에 없습니다. 요즘은 이 문제를 세 갈래로 나눠 부릅니다.</p>
+    <ul class="ptext-list">
+      <li><b>SEO</b>: 검색 결과에서 위에 나오게 합니다.</li>
+      <li><b>AEO</b>(답변 엔진 최적화): AI 답변이나 구글 AI 개요에 내 문장이 그대로 뽑히게 합니다.</li>
+      <li><b>GEO</b>(생성형 엔진 최적화): 챗GPT, 퍼플렉시티 같은 생성형 AI가 내 사이트를 출처로 달게 합니다.</li>
+    </ul>
+    <p class="ptext">사이트 폴더에서 클로드 코드를 열고 이런 스킬을 깔아 두면, "검색이랑 AI 답변에 잘 걸리게 봐 줘" 한마디로 고칠 목록이 나옵니다.
+    터미널에서 <code>npx skills find seo</code>로 찾으면 아래처럼 설치 수와 함께 나옵니다.</p>
+    <figure class="art__fig art__fig--shot">
+      <img src="https://designrefs.com/assets/skills/find-seo-terminal.webp" width="1440" height="725" loading="lazy" decoding="async"
+           alt="터미널에서 npx skills find seo를 실행한 결과. seo-audit 246.6K, ai-seo 158.4K, programmatic-seo 156.3K 같은 스킬이 설치 수와 함께 나온다">
+      <figcaption><code>npx skills find seo</code> 결과 앞부분 (2026년 11월 5일 실행)</figcaption>
+    </figure>
+    <p class="ptext">설치 수가 많은 것 가운데 쓰임새가 겹치지 않게 다섯 개를 골랐습니다.</p>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th>이름</th><th>하는 일</th><th>만든 곳</th><th>설치 수</th><th>Snyk</th></tr></thead>
+      <tbody><tr><td><code>seo-audit</code></td><td>색인, 제목·설명 태그, 제목 구조, 내부 링크, 이미지를 차례로 보고 급한 것부터 고칠 목록으로 정리합니다.</td><td>coreyhaines31/marketingskills</td><td class="nb">24.6만</td><td class="nb">주의</td></tr><tr><td><code>ai-seo</code></td><td>챗GPT, 퍼플렉시티, 구글 AI 개요에 인용되려면 글을 어떻게 쓸지 봅니다. 떼어 가기 좋은 문단, 숫자와 출처 넣기 같은 내용입니다.</td><td>coreyhaines31/marketingskills</td><td class="nb">15.8만</td><td class="nb">통과</td></tr><tr><td><code>seo-geo</code></td><td>일반 검색과 AI 검색을 한 번에 봅니다. AI 봇이 사이트에 들어올 수 있는지도 확인합니다.</td><td>resciencelab/opc-skills</td><td class="nb">5.5만</td><td class="nb">주의</td></tr><tr><td><code>seo</code></td><td>라이트하우스 SEO 점검 기준으로 봅니다. 순위 변화는 약속하지 않는다고 스킬 안에 적어 뒀습니다.</td><td>addyosmani/web-quality-skills</td><td class="nb">5.4만</td><td class="nb">주의</td></tr><tr><td><code>seo-aeo-best-practices</code></td><td>메타 태그, 사이트맵, 구조화 데이터, 추천 스니펫 대비를 원칙 위주로 정리했습니다.</td><td>sanity-io/agent-toolkit</td><td class="nb">7,500</td><td class="nb">통과</td></tr></tbody>
+    </table></div>
+    <p class="art__note">※ 출처: 각 스킬의 skills.sh 페이지, 2026년 11월 5일 확인. 'Snyk'은 skills.sh가 보여 주는 보안 점검 세 가지 중 하나입니다.</p>
+    <p class="ptext">하나만 깐다면 설치 수가 가장 많은 <code>seo-audit</code>부터 보면 됩니다. 스킬 페이지 오른쪽에 설치 수, 깃허브 별, 보안 점검 결과가 있습니다.
+    seo-audit은 세 점검 중 Snyk이 '주의(WARN)'로 떠 있습니다. 주의가 하나라도 있으면 설치한 뒤 <code>SKILL.md</code>를 열어 무엇을 시키는지 직접 확인하는 편이 좋습니다.</p>
+    <figure class="art__fig art__fig--shot">
+      <img src="https://designrefs.com/assets/skills/seo-audit-skillssh.webp" width="1440" height="1058" loading="lazy" decoding="async"
+           alt="skills.sh의 seo-audit 페이지. 설치 246.5K, 깃허브 별 58.5K, 보안 점검은 Gen Agent Trust Hub와 Socket이 PASS, Snyk이 WARN으로 표시돼 있다">
+      <figcaption>skills.sh의 seo-audit 페이지 (2026년 11월 5일 캡처)</figcaption>
+    </figure>
+    <pre class="pcode"><code>npx skills add coreyhaines31/marketingskills --skill seo-audit -g</code></pre>
+    <p class="ptext">설치한 뒤에는 이렇게 부탁하면 됩니다.</p>
+    <ul class="ptext-list"><li>이 사이트 SEO 점검해 줘. 급한 것부터</li><li>챗GPT나 퍼플렉시티가 이 페이지를 출처로 쓰기 좋은지 봐 줘</li><li>robots.txt에서 AI 봇을 막고 있는지 확인해 줘</li><li>포트폴리오 페이지마다 제목이랑 설명 태그 다시 써 줘</li></ul>
+    <p class="ptext">이름에 seo, aeo, geo가 다 들어간 스킬도 많지만 설치 수가 수백 회인 것이 대부분입니다. 이름보다 설치 수와 만든 곳을 먼저 봅니다.
+    그리고 어떤 스킬도 순위나 AI 인용을 보장하지는 않습니다. 놓친 기본기를 찾아 주는 점검표에 가깝습니다.</p>
+
     <h2 class="psub">설치 전에 볼 것</h2>
     <p class="ptext">스킬은 클로드에게 주는 지시문이라, 설치하면 클로드가 가진 권한 그대로 그 지시를 따릅니다.
     파일을 지우거나 외부로 보내라고 적혀 있어도 따를 수 있다는 뜻입니다. 그래서 아래를 확인하고 설치합니다.</p>
@@ -197,6 +231,11 @@
       <li><a href="https://skills.sh/vercel-labs/skills/find-skills" target="_blank" rel="noopener">find-skills — skills.sh</a></li>
       <li><a href="https://github.com/vercel-labs/skills" target="_blank" rel="noopener">vercel-labs/skills — GitHub</a></li>
       <li><a href="https://skills.sh/" target="_blank" rel="noopener">skills.sh 스킬 순위</a></li>
+      <li><a href="https://skills.sh/coreyhaines31/marketingskills/seo-audit" target="_blank" rel="noopener">seo-audit — skills.sh</a></li>
+      <li><a href="https://skills.sh/coreyhaines31/marketingskills/ai-seo" target="_blank" rel="noopener">ai-seo — skills.sh</a></li>
+      <li><a href="https://skills.sh/resciencelab/opc-skills/seo-geo" target="_blank" rel="noopener">seo-geo — skills.sh</a></li>
+      <li><a href="https://skills.sh/addyosmani/web-quality-skills/seo" target="_blank" rel="noopener">seo — skills.sh</a></li>
+      <li><a href="https://skills.sh/sanity-io/agent-toolkit/seo-aeo-best-practices" target="_blank" rel="noopener">seo-aeo-best-practices — skills.sh</a></li>
     </ul>
 
     </section>

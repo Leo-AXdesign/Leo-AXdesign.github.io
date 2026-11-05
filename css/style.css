@@ -602,6 +602,9 @@ body.drawer-open { overflow: hidden; }
 .art__frame { position: relative; aspect-ratio: 16 / 9; border-radius: 14px; overflow: hidden; background: #000; }
 .art__frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 :root[data-theme="dark"] .art__fig img { filter: invert(1) hue-rotate(180deg); }
+/* 실제 화면 캡처는 색을 뒤집지 않고, 밝은 배경에서도 가장자리가 보이게 테두리를 둡니다 */
+.art__fig--shot img { border: 1px solid var(--line); }
+:root[data-theme="dark"] .art__fig--shot img { filter: none; }
 
 /* 글 속 표와 출처 */
 .art__tablewrap { margin: 28px 0 0; overflow-x: auto; -webkit-overflow-scrolling: touch; }
