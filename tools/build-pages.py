@@ -483,19 +483,15 @@ SEO_ASK = [
 ]
 
 
-def skills_body():
+def skills_find_body():
     rows = "".join(
         f'<tr><td><code>{e(n)}</code></td><td>{e(d)}</td><td>{e(o)}</td><td class="nb">{e(c)}</td></tr>'
         for n, o, d, c in SKILLS_PICK)
     asks = "".join(f"<li>{e(q)}</li>" for q in SKILLS_ASK)
-    seo_rows = "".join(
-        f'<tr><td><code>{e(n)}</code></td><td>{e(d)}</td><td>{e(o)}</td><td class="nb">{e(c)}</td><td class="nb">{e(k)}</td></tr>'
-        for n, o, d, c, k in SEO_PICK)
-    seo_asks = "".join(f"<li>{e(q)}</li>" for q in SEO_ASK)
     return f"""
     <p class="ptext">스킬은 클로드 코드에게 특정한 일을 하는 방법을 적어 준 설명서입니다. 폴더 하나에 <code>SKILL.md</code> 파일이 들어 있고,
     클로드는 맡은 일이 그 설명과 맞을 때 꺼내 읽고 그대로 따릅니다. 한 번 설치해 두면 같은 부탁을 할 때마다 같은 방식으로 일합니다.</p>
-    <p class="ptext">이 사이트도 클로드 코드로 만들고 있고, 디자인 작업에 쓸 만한 스킬을 찾다가 이 페이지를 정리했습니다.
+    <p class="ptext">이 사이트도 클로드 코드로 만들고 있고, 디자인 작업에 쓸 만한 스킬을 찾다가 이 글을 정리했습니다.
     설치 수는 {SKILLS_CHECKED}에 <a href="https://skills.sh/" target="_blank" rel="noopener">skills.sh</a>에서 확인한 숫자입니다.</p>
 
     <h2 class="psub">스킬을 찾아 주는 스킬부터</h2>
@@ -535,7 +531,41 @@ def skills_body():
     </table></div>
     <p class="art__note">※ 출처: 각 스킬의 skills.sh 페이지, {SKILLS_CHECKED} 확인. 설치 수는 매일 바뀝니다.</p>
 
-    <h2 class="psub" id="seo">검색과 AI 답변에 잡히게 하는 스킬 (SEO·AEO·GEO)</h2>
+    <h2 class="psub">설치 전에 볼 것</h2>
+    <p class="ptext">스킬은 클로드에게 주는 지시문이라, 설치하면 클로드가 가진 권한 그대로 그 지시를 따릅니다.
+    파일을 지우거나 외부로 보내라고 적혀 있어도 따를 수 있다는 뜻입니다. 그래서 아래를 확인하고 설치합니다.</p>
+    <ul class="ptext-list">
+      <li>설치 수가 100 아래인 스킬은 특히 조심합니다. 같은 이름을 베낀 저장소가 많습니다.</li>
+      <li>만든 곳을 봅니다. 앤트로픽, 피그마, 리모션처럼 도구를 만든 회사가 직접 올린 스킬이 가장 안전합니다.</li>
+      <li>설치할 때 나오는 보안 점검(Gen, Socket, Snyk)을 읽습니다. 위험 표시가 있으면 이유를 확인합니다.</li>
+      <li>설치한 뒤 <code>SKILL.md</code>를 한 번 열어 봅니다. 긴 글이 아니라 몇 분이면 읽습니다.</li>
+    </ul>
+
+    <h2 class="psub">자주 쓰는 명령</h2>
+    <ul class="ptext-list">
+      <li><code>npx skills list</code>: 설치된 스킬 보기</li>
+      <li><code>npx skills update</code>: 설치된 스킬을 최신으로</li>
+      <li><code>npx skills remove 이름</code>: 스킬 지우기</li>
+      <li><code>npx skills init 이름</code>: 내 스킬 만들기 (자주 하는 작업이 있다면)</li>
+    </ul>
+
+    <h2 class="psub">출처</h2>
+    <ul class="ptext-list">
+      <li><a href="https://skills.sh/vercel-labs/skills/find-skills" target="_blank" rel="noopener">find-skills — skills.sh</a></li>
+      <li><a href="https://github.com/vercel-labs/skills" target="_blank" rel="noopener">vercel-labs/skills — GitHub</a></li>
+      <li><a href="https://skills.sh/" target="_blank" rel="noopener">skills.sh 스킬 순위</a></li>
+    </ul>
+"""
+
+
+
+
+def skills_seo_body():
+    seo_rows = "".join(
+        f'<tr><td><code>{e(n)}</code></td><td>{e(d)}</td><td>{e(o)}</td><td class="nb">{e(c)}</td><td class="nb">{e(k)}</td></tr>'
+        for n, o, d, c, k in SEO_PICK)
+    seo_asks = "".join(f"<li>{e(q)}</li>" for q in SEO_ASK)
+    return f"""
     <p class="ptext">AI로 포트폴리오나 랜딩 페이지를 만드는 건 금방인데, 만든 다음에는 찾아오는 사람이 없습니다.
     구글에 검색해도 안 나오고, 챗GPT에 물어봐도 내 사이트는 답에 없습니다. 요즘은 이 문제를 세 갈래로 나눠 부릅니다.</p>
     <ul class="ptext-list">
@@ -543,6 +573,7 @@ def skills_body():
       <li><b>AEO</b>(답변 엔진 최적화): AI 답변이나 구글 AI 개요에 내 문장이 그대로 뽑히게 합니다.</li>
       <li><b>GEO</b>(생성형 엔진 최적화): 챗GPT, 퍼플렉시티 같은 생성형 AI가 내 사이트를 출처로 달게 합니다.</li>
     </ul>
+    <p class="ptext">스킬이 처음이라면 <a href="{SITE}skills/find-skills/">1탄</a>에서 스킬이 무엇인지, 어떻게 까는지부터 보고 오면 됩니다.</p>
     <p class="ptext">사이트 폴더에서 클로드 코드를 열고 이런 스킬을 깔아 두면, "검색이랑 AI 답변에 잘 걸리게 봐 줘" 한마디로 고칠 목록이 나옵니다.
     터미널에서 <code>npx skills find seo</code>로 찾으면 아래처럼 설치 수와 함께 나옵니다.</p>
     <figure class="art__fig art__fig--shot">
@@ -569,29 +600,10 @@ def skills_body():
     <p class="ptext">이름에 seo, aeo, geo가 다 들어간 스킬도 많지만 설치 수가 수백 회인 것이 대부분입니다. 이름보다 설치 수와 만든 곳을 먼저 봅니다.
     그리고 어떤 스킬도 순위나 AI 인용을 보장하지는 않습니다. 놓친 기본기를 찾아 주는 점검표에 가깝습니다.</p>
 
-    <h2 class="psub">설치 전에 볼 것</h2>
-    <p class="ptext">스킬은 클로드에게 주는 지시문이라, 설치하면 클로드가 가진 권한 그대로 그 지시를 따릅니다.
-    파일을 지우거나 외부로 보내라고 적혀 있어도 따를 수 있다는 뜻입니다. 그래서 아래를 확인하고 설치합니다.</p>
-    <ul class="ptext-list">
-      <li>설치 수가 100 아래인 스킬은 특히 조심합니다. 같은 이름을 베낀 저장소가 많습니다.</li>
-      <li>만든 곳을 봅니다. 앤트로픽, 피그마, 리모션처럼 도구를 만든 회사가 직접 올린 스킬이 가장 안전합니다.</li>
-      <li>설치할 때 나오는 보안 점검(Gen, Socket, Snyk)을 읽습니다. 위험 표시가 있으면 이유를 확인합니다.</li>
-      <li>설치한 뒤 <code>SKILL.md</code>를 한 번 열어 봅니다. 긴 글이 아니라 몇 분이면 읽습니다.</li>
-    </ul>
-
-    <h2 class="psub">자주 쓰는 명령</h2>
-    <ul class="ptext-list">
-      <li><code>npx skills list</code>: 설치된 스킬 보기</li>
-      <li><code>npx skills update</code>: 설치된 스킬을 최신으로</li>
-      <li><code>npx skills remove 이름</code>: 스킬 지우기</li>
-      <li><code>npx skills init 이름</code>: 내 스킬 만들기 (자주 하는 작업이 있다면)</li>
-    </ul>
+    <p class="ptext">설치 전에 확인할 것과 자주 쓰는 명령은 <a href="{SITE}skills/find-skills/">1탄</a>에 정리해 뒀습니다.</p>
 
     <h2 class="psub">출처</h2>
     <ul class="ptext-list">
-      <li><a href="https://skills.sh/vercel-labs/skills/find-skills" target="_blank" rel="noopener">find-skills — skills.sh</a></li>
-      <li><a href="https://github.com/vercel-labs/skills" target="_blank" rel="noopener">vercel-labs/skills — GitHub</a></li>
-      <li><a href="https://skills.sh/" target="_blank" rel="noopener">skills.sh 스킬 순위</a></li>
       <li><a href="https://skills.sh/coreyhaines31/marketingskills/seo-audit" target="_blank" rel="noopener">seo-audit — skills.sh</a></li>
       <li><a href="https://skills.sh/coreyhaines31/marketingskills/ai-seo" target="_blank" rel="noopener">ai-seo — skills.sh</a></li>
       <li><a href="https://skills.sh/resciencelab/opc-skills/seo-geo" target="_blank" rel="noopener">seo-geo — skills.sh</a></li>
@@ -601,7 +613,40 @@ def skills_body():
 """
 
 
-SKILLS = skills_body()
+# 클로드 스킬은 한 편씩 따로 봅니다 (/skills/ 는 목록, /skills/<slug>/ 가 글). 최신 글이 앞.
+SKILL_POSTS = [
+    {"slug": "seo", "no": 2, "date": "2026-11-05",
+     "title": "SEO·AEO·GEO 스킬 5개, 검색과 AI 답변에 잡히는 사이트 만들기",
+     "desc": "AI로 만든 사이트가 구글에도, 챗GPT 답변에도 안 나올 때 클로드 코드에 깔아 둘 스킬 5개를 설치 수와 보안 점검 결과와 함께 정리했습니다.",
+     "body": skills_seo_body()},
+    {"slug": "find-skills", "no": 1, "date": "2026-11-04",
+     "title": "스킬을 찾아 주는 스킬 find-skills, 디자이너가 볼 만한 스킬 10개",
+     "desc": "클로드 코드에 스킬을 설치하는 법과, 스킬 검색을 클로드에 맡기는 find-skills, 디자인 작업에 가까운 스킬 10개를 설치 수와 함께 정리했습니다.",
+     "body": skills_find_body()},
+]
+
+
+def skills_index():
+    rows = "\n".join(
+        f'        <a class="arow" href="{SITE}skills/{x["slug"]}/">\n'
+        f'          <span class="arow__date">{x["date"].replace("-", ". ")}</span>\n'
+        f'          <span class="arow__main">\n'
+        f'            <span class="arow__title">{e(x["title"])}</span>\n'
+        f'            <p class="arow__desc">{e(x["desc"])}</p>\n'
+        f'          </span>\n'
+        f'          <span class="arow__tag">{x["no"]}탄</span>\n'
+        f'        </a>' for x in SKILL_POSTS)
+    return f"""
+    <p class="ptext">스킬은 클로드 코드에게 특정한 일을 하는 방법을 적어 준 설명서입니다. 한 번 설치해 두면 같은 부탁을 할 때마다 같은 방식으로 일합니다.
+    디자인 작업에 쓸 만한 스킬을 주제별로 한 편씩 정리합니다. 처음이라면 1탄의 설치 방법부터 보면 됩니다.</p>
+      <div class="list list--insight">
+{rows}
+      </div>
+    <script>if (location.hash === "#seo") location.replace("{SITE}skills/seo/");</script>
+"""
+
+
+SKILLS = skills_index()
 
 PROSE_PAGES = [
     ("talk", "디자인 잡담",
@@ -611,7 +656,7 @@ PROSE_PAGES = [
     ("lab", "스타일 현상소",
      "내 사진을 리소그래프, 팝아트, 픽셀 아트, 펑크 복사기, 구성주의, 사이버펑크, 바포웨이브, 사이키델릭, 멤피스로 바꿔 보는 무료 도구입니다. 가입이 필요 없고 사진은 기기 밖으로 나가지 않습니다.", LAB),
     ("skills", "클로드 스킬",
-     "클로드 코드에 스킬을 설치하는 법과, 스킬을 찾아 주는 find-skills, 디자이너가 쓸 만한 스킬 10개, 검색과 AI 답변에 잡히게 하는 SEO·AEO·GEO 스킬을 설치 수와 함께 정리했습니다.", SKILLS),
+     "클로드 코드에 넣어 쓰는 스킬을 주제별로 한 편씩 정리합니다. 스킬 설치법과 find-skills(1탄), 검색과 AI 답변에 잡히게 하는 SEO·AEO·GEO 스킬(2탄).", SKILLS),
     ("updates", "업데이트 기록",
      "디자인 허브에 사이트를 넣고, 옮기고, 고친 기록입니다. 날짜별로 자동으로 정리합니다.", UPDATES),
     ("privacy", "개인정보처리방침",
@@ -705,6 +750,44 @@ for slug, title, intro, body, n, names, navlabel in pages:
     d = ROOT / slug
     d.mkdir(exist_ok=True)
     (d / "index.html").write_text(doc, encoding="utf-8")
+
+# ---------- 클로드 스킬 글 (/skills/<slug>/) ----------
+# 목록(/skills/)은 위 PROSE_PAGES 가 만들고, 글은 읽을거리 글과 같은 틀로 한 편씩 씁니다.
+SK_LIST = f"{SITE}skills/"
+for i, x in enumerate(SKILL_POSTS):
+    url = f"{SK_LIST}{x['slug']}/"
+    y, m, d = (int(v) for v in x["date"].split("-"))
+    newer = SKILL_POSTS[i - 1] if i > 0 else None
+    older = SKILL_POSTS[i + 1] if i + 1 < len(SKILL_POSTS) else None
+    cell = lambda o, label, cls: (f'<a class="art__pn-a {cls}" href="{SK_LIST}{o["slug"]}/" rel="{"prev" if cls == "is-prev" else "next"}">'
+                                  f'<span class="art__pn-l">{label}</span><span class="art__pn-t">{o["no"]}탄 · {e(o["title"])}</span></a>'
+                                  if o else '<span></span>')
+    pn = f'      <nav class="art__pn">{cell(older, "← 이전 글", "is-prev")}{cell(newer, "다음 글 →", "is-next")}</nav>\n'
+    body = f"""    <article class="art">
+      <p class="art__kicker"><a href="{SK_LIST}">클로드 스킬</a> · {x["no"]}탄</p>
+      <h1 class="page__title">{e(x["title"])}</h1>
+      <p class="page__intro">{e(x["desc"])}</p>
+      <p class="art__meta"><time datetime="{x["date"]}">{y}년 {m}월 {d}일</time></p>
+{x["body"]}
+    </article>
+    <section class="section">
+{pn}      <p class="art__all"><a href="{SK_LIST}">클로드 스킬 전체 {len(SKILL_POSTS)}편 →</a></p>
+    </section>"""
+    jsonld = {"@context": "https://schema.org", "@graph": [
+        {"@type": "Article", "headline": x["title"], "description": x["desc"], "url": url,
+         "datePublished": x["date"], "dateModified": x["date"], "inLanguage": "ko",
+         "author": {"@type": "Organization", "name": "디자인 허브", "url": SITE},
+         "publisher": {"@type": "Organization", "name": "디자인 허브", "url": SITE}},
+        {"@type": "BreadcrumbList", "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "디자인 허브", "item": SITE},
+            {"@type": "ListItem", "position": 2, "name": "클로드 스킬", "item": SK_LIST},
+            {"@type": "ListItem", "position": 3, "name": x["title"], "item": url}]},
+    ]}
+    doc = document(title=x["title"], desc=x["desc"], url=url, body=body, jsonld=jsonld, og_type="article",
+                   main_class="page__main page__main--art", menu=menu("skills"), footer_nav=FOOTER)
+    out = ROOT / "skills" / x["slug"]
+    out.mkdir(parents=True, exist_ok=True)
+    (out / "index.html").write_text(doc, encoding="utf-8")
 
 # ---------- 404 (없는 주소) ----------
 # GitHub Pages 는 없는 주소로 오면 /404.html 을 보여 줍니다. 한국어·영어를 같이 적고, 갈 곳을 안내합니다.
