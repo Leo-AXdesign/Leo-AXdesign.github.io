@@ -59,18 +59,16 @@ TEXT = [
     ('<a class="top__lang" href="/en/" hreflang="en" lang="en" title="English">EN</a>',
      '<a class="top__lang" href="/" hreflang="ko" lang="ko" title="한국어">KO</a>'),
     ('placeholder="사이트 검색"', 'placeholder="Search sites"'),
-    ('aria-label="테마 전환" title="라이트 / 다크 전환"', 'aria-label="Toggle theme" title="Light / Dark"'),
+    ('id="theme-toggle" class="top__btn" type="button" aria-label="테마 전환" title="라이트 / 다크 전환"',
+     'id="theme-toggle" class="top__btn" type="button" aria-label="Toggle theme" title="Light / Dark"'),
+    ('id="drawer-theme" class="drawer__close drawer__theme" type="button" aria-label="테마 전환" title="라이트 / 다크 전환"',
+     'id="drawer-theme" class="drawer__close drawer__theme" type="button" aria-label="Toggle theme" title="Light / Dark"'),
     ('aria-label="메뉴 열기"', 'aria-label="Open menu"'),
     # 모바일 메뉴
     ('aria-label="전체 메뉴">', 'aria-label="Menu">'),
     ('<span class="drawer__title">전체 메뉴</span>', '<span class="drawer__title">Menu</span>'),
     ('aria-label="메뉴 닫기"', 'aria-label="Close menu"'),
     ('<nav class="nav" id="drawer-nav" aria-label="카테고리">', '<nav class="nav" id="drawer-nav" aria-label="Categories">'),
-    ('<p class="nav__group">태그 필터</p>', '<p class="nav__group">Filter</p>'),
-    ('<p class="nav__group">보기</p>', '<p class="nav__group">View</p>'),
-    ('type="button">테마 전환</button>', 'type="button">Theme</button>'),
-    ('data-view="list" type="button">목록</button>', 'data-view="list" type="button">List</button>'),
-    ('data-view="grid" type="button">격자</button>', 'data-view="grid" type="button">Grid</button>'),
     ('<nav class="nav" id="nav" aria-label="카테고리">', '<nav class="nav" id="nav" aria-label="Categories">'),
     # 본문
     ('<p class="hero__sub">디자이너를 위한 레퍼런스 사이트 모음.</p>',
@@ -102,7 +100,7 @@ FOOTER = f"""<footer class="footer">
       <a href="{SITE}en/talk/">Design Talk</a>
       <a href="/" hreflang="ko" lang="ko">한국어</a>
       <a href="/privacy/">Privacy (Korean)</a>
-{sns_links()}      <a href="#" id="footer-top">Back to top ↑</a>
+{sns_links(lang="en")}      <a href="#" id="footer-top">Back to top ↑</a>
     </div>
   </footer>"""
 

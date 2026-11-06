@@ -159,7 +159,7 @@ def build(lang, ko_slugs, en_slugs):
                                           if o else '<span></span>')
             pn = (f'\n      <nav class="art__pn">{cell(older, "← " + L["prev"], "is-prev")}'
                   f'{cell(newer, L["next"] + " →", "is-next")}</nav>')
-        allink = f'\n      <p class="art__all"><a href="{list_url}">{L["all"](len(items))} →</a></p>'
+        allink = f'\n      <p class="art__all"><a href="{list_url}">{L["all"](len(items))}</a></p>'
         head = section_head(L["more"], None, level=2) if rel else ""
         body = f'      <div class="list list--insight">\n{rows}\n      </div>' if rel else ""
         return f'<section class="section">\n{head}\n{body}{pn}{allink}\n    </section>'

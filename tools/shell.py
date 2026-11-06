@@ -31,14 +31,15 @@ SNS = [
 ]
 
 
-def sns_links(indent="      "):
+def sns_links(indent="      ", lang="ko"):
     """푸터의 SNS 아이콘 묶음."""
     icons = "".join(
         f'<a href="{url}" target="_blank" rel="noopener me" aria-label="{name}" title="{name}">'
         f'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" '
         f'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{paths}</svg></a>'
         for name, url, paths in SNS)
-    icons += (f'<a href="mailto:{CONTACT}" aria-label="메일 {CONTACT}" title="{CONTACT}">'
+    mail = "Email" if lang == "en" else "메일"
+    icons += (f'<a href="mailto:{CONTACT}" aria-label="{mail} {CONTACT}" title="{CONTACT}">'
               '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" '
               'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
               '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>')
@@ -74,7 +75,7 @@ UI = {
 
 
 def drawer_extras(lang="ko"):
-    """메인 화면 모바일 메뉴의 아래쪽 두 묶음을 정적 페이지에도 똑같이 둡니다.
+    """정적 페이지 모바일 메뉴의 태그 필터. 메뉴 목록 위에 둬서 스크롤 없이 보이게 합니다.
     태그를 누르면 메인 화면으로 가서 그 필터가 걸린 채로 열립니다."""
     from urllib.parse import quote
     u = UI[lang]
@@ -82,17 +83,9 @@ def drawer_extras(lang="ko"):
         f'<a class="pill{" is-active" if not tid else ""}" href="{u["home"]}{"?tag=" + quote(tid) if tid else ""}">'
         f'{TAGS_EN[tid] if lang == "en" else label}</a>'
         for tid, label in TAGS)
-    return ('        <div class="drawer__section">\n'
+    return ('        <div class="drawer__section drawer__section--top">\n'
             f'          <p class="nav__group">{u["filter"]}</p>\n'
             f'          <div class="pills pills--tags">{pills}</div>\n'
-            '        </div>\n'
-            '        <div class="drawer__section">\n'
-            f'          <p class="nav__group">{u["view"]}</p>\n'
-            '          <div class="drawer__row">\n'
-            f'            <button class="drawer__opt" id="drawer-theme" type="button">{u["theme"]}</button>\n'
-            f'            <button class="drawer__opt" data-view="list" type="button">{u["list"]}</button>\n'
-            f'            <button class="drawer__opt" data-view="grid" type="button">{u["grid"]}</button>\n'
-            '          </div>\n'
             '        </div>\n')
 
 
@@ -149,12 +142,13 @@ def document(*, title, desc, url, body, jsonld, og_type="website",
                   f'    <aside class="drawer__panel" role="dialog" aria-modal="true" aria-label="{u["menu"]}">\n'
                   '      <header class="drawer__head">\n'
                   f'        <span class="drawer__title">{u["menu"]}</span>\n'
+                  f'        <button id="drawer-theme" class="drawer__close drawer__theme" type="button" aria-label="{u["theme"]}" title="{u["theme_title"]}"><span class="dot"></span></button>\n'
                   f'        <button id="menu-close" class="drawer__close" type="button" aria-label="{u["close"]}">'
                   + CLOSE_ICON + '</button>\n'
                   '      </header>\n'
                   '      <div class="drawer__body">\n'
-                  f'        <nav class="nav" aria-label="{u["nav"]}">' + menu + '</nav>\n'
                   + drawer_extras(lang) +
+                  f'        <nav class="nav" aria-label="{u["nav"]}">' + menu + '</nav>\n' 
                   '      </div>\n'
                   '    </aside>\n'
                   '  </div>\n')
@@ -239,7 +233,7 @@ def document(*, title, desc, url, body, jsonld, og_type="website",
   <footer class="footer">
 {footer_nav}    <div class="wrap footer__inner">
       <span>Copyright 2026. Design Hub. all rights reserved.</span>
-{foot}{sns_links()}      <a href="#" id="footer-top">{u["top"]} ↑</a>
+{foot}{sns_links(lang=lang)}      <a href="#" id="footer-top">{u["top"]} ↑</a>
     </div>
   </footer>
 

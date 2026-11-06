@@ -257,7 +257,7 @@
     els.tagFilters.innerHTML = html;
     if (els.drawerTags) els.drawerTags.innerHTML = html;
     // 필터가 걸려 있으면 햄버거 버튼에 표시를 남긴다
-    if (els.menuDot) els.menuDot.hidden = !state.tag;
+    if (els.menuDot) els.menuDot.hidden = !els.drawerTags || !state.tag;   // 필터가 메뉴 안에 있을 때만 표시
     document.querySelectorAll('.drawer__opt[data-view]').forEach(b =>
       b.classList.toggle('is-active', b.dataset.view === state.view));
   }
@@ -290,7 +290,8 @@
     const initial = escapeHtml((site.name || '?').trim().charAt(0).toUpperCase());
     const parts = [];
     if (showCat) parts.push(`<b>${escapeHtml(cat.label)}</b>`);
-    if (site.sub && (showCat || state.cat !== site.cat)) parts.push(escapeHtml(subLabel(site.sub)));
+    // 소분류는 묶음 제목으로 이미 보이므로, 묶지 않고 늘어놓는 목록(검색·즐겨찾기)에서만 붙입니다
+    if (site.sub && showCat) parts.push(escapeHtml(subLabel(site.sub)));
     (site.tags || []).forEach(t => parts.push(escapeHtml(tagLabel(t))));
     return `
       <a class="row" href="${escapeHtml(site.url)}" target="_blank" rel="noopener noreferrer" data-url="${escapeHtml(site.url)}">
@@ -335,7 +336,7 @@
   function renderSection(cat, sites, showCat = false) {
     if (!sites.length) return '';
     const guide = !showCat && LANG !== 'en' && state.cat === cat.id && CAT_PAGE[cat.id]
-      ? `<p class="section__guide"><a href="${CAT_PAGE[cat.id]}/#guide">이 분야는 이렇게 고릅니다 →</a></p>` : '';
+      ? `<p class="section__guide"><a href="${CAT_PAGE[cat.id]}/#guide">이 분야는 이렇게 고릅니다</a></p>` : '';
     return `
       <section class="section" id="cat-${cat.id}">
         <header class="section__head">
@@ -734,7 +735,7 @@
       closeDrawer();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
-    els.drawerTags.addEventListener('click', e => {
+    if (els.drawerTags) els.drawerTags.addEventListener('click', e => {
       const btn = e.target.closest('.pill');
       if (!btn) return;
       state.tag = btn.dataset.tag;

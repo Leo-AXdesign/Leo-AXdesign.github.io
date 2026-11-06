@@ -226,24 +226,13 @@
     <aside class="drawer__panel" role="dialog" aria-modal="true" aria-label="전체 메뉴">
       <header class="drawer__head">
         <span class="drawer__title">전체 메뉴</span>
+        <button id="drawer-theme" class="drawer__close drawer__theme" type="button" aria-label="테마 전환" title="라이트 / 다크 전환"><span class="dot"></span></button>
         <button id="menu-close" class="drawer__close" type="button" aria-label="메뉴 닫기">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
         </button>
       </header>
       <div class="drawer__body">
         <nav class="nav" id="drawer-nav" aria-label="카테고리"></nav>
-        <div class="drawer__section">
-          <p class="nav__group">태그 필터</p>
-          <div class="pills pills--tags" id="drawer-tags"></div>
-        </div>
-        <div class="drawer__section">
-          <p class="nav__group">보기</p>
-          <div class="drawer__row">
-            <button class="drawer__opt" id="drawer-theme" type="button">테마 전환</button>
-            <button class="drawer__opt" data-view="list" type="button">목록</button>
-            <button class="drawer__opt" data-view="grid" type="button">격자</button>
-          </div>
-        </div>
       </div>
     </aside>
   </div>

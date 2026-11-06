@@ -734,7 +734,7 @@ for slug, title, intro, body, n, names, navlabel in pages:
     # 목록 페이지는 검색으로 들어온 사람을 위해 긴 소개를 한 줄 더 둡니다.
     intro_html = f'      <p class="page__intro">{e(intro)}</p>\n' if n else ""
     if slug == "jobs":   # 매주 모으는 채용 공고 (tools/build-jobs.py)
-        intro_html += (f'      <p class="ptext"><a href="{SITE}jobs/weekly/">이번 주 디자이너 채용 공고 보기 →</a> '
+        intro_html += (f'      <p class="ptext"><a href="{SITE}jobs/weekly/">이번 주 디자이너 채용 공고 보기</a> '
                        '국내·해외 원격 공고를 매주 월요일 모아 둡니다.</p>\n')
     body_full = f"""    <section class="section">
 {section_head(navlabel, n or ("" if slug in COUNT_BY_JS else None), SHORT_DESC.get(slug, ""))}
@@ -769,7 +769,7 @@ for i, x in enumerate(SKILL_POSTS):
 {x["body"]}
     </article>
     <section class="section">
-{pn}      <p class="art__all"><a href="{SK_LIST}">클로드 스킬 전체 {len(SKILL_POSTS)}편 →</a></p>
+{pn}      <p class="art__all"><a href="{SK_LIST}">클로드 스킬 전체 {len(SKILL_POSTS)}편</a></p>
     </section>"""
     jsonld = {"@context": "https://schema.org", "@graph": [
         {"@type": "Article", "headline": x["title"], "description": x["desc"], "url": url,

@@ -1,6 +1,25 @@
 {
   "sets": [
     {
+      "id": "ai-deja-vu",
+      "title": "AI가 만든 사이트, 왜 다 어디서 본 것 같을까",
+      "count": 10,
+      "images": [
+        "https://designrefs.com/social/cards/ai-deja-vu/01.jpg",
+        "https://designrefs.com/social/cards/ai-deja-vu/02.jpg",
+        "https://designrefs.com/social/cards/ai-deja-vu/03.jpg",
+        "https://designrefs.com/social/cards/ai-deja-vu/04.jpg",
+        "https://designrefs.com/social/cards/ai-deja-vu/05.jpg",
+        "https://designrefs.com/social/cards/ai-deja-vu/06.jpg",
+        "https://designrefs.com/social/cards/ai-deja-vu/07.jpg",
+        "https://designrefs.com/social/cards/ai-deja-vu/08.jpg",
+        "https://designrefs.com/social/cards/ai-deja-vu/09.jpg",
+        "https://designrefs.com/social/cards/ai-deja-vu/10.jpg"
+      ],
+      "caption": "AI로 화면 만든다면 저장해 두자\n\nAI가 만든 디자인이 다 비슷해 보이는 데는 이유가 있다. 클로드가 디자인할 때 읽는 앤트로픽 공식 스킬(frontend-design)에 AI 디자인의 기본값 목록이 적혀 있다.\n\n1. 크림 배경 + 세리프 + 테라코타\n2. 검정 배경 + 형광색 포인트\n3. 신문 같은 단, 각진 모서리\n4. 똑같은 카드와 그림자\n5. 주제와 상관없이 붙는 장식 라벨\n\n#AI디자인 #클로드 #웹디자인 #UI디자인 #디자이너",
+      "comment": "🔗 출처\n· frontend-design 스킬 — github.com/anthropics/skills\n\n설치법은 여기\ndesignrefs.com/skills/find-skills"
+    },
+    {
       "id": "ai-ui-tools",
       "title": "프롬프트로 화면 시안 뽑는 AI 툴 5",
       "count": 7,
