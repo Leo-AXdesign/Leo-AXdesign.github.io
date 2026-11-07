@@ -585,7 +585,8 @@ def split_posts(text):
 
 
 def th_publish(text, link, step, account="", reply_to=None):
-    """글 하나, 또는 '---' 로 나눈 묶음(첫 글 + 이어지는 댓글)을 올립니다. 링크는 마지막 글에 붙입니다."""
+    """글 하나, 또는 '---' 로 나눈 묶음(본문 + 댓글)을 올립니다. 링크는 마지막 글에 붙입니다.
+    댓글은 바로 앞 글에 이어서 답니다(이어쓰기). 모두 본문에 바로 달면 앱에서 순서가 섞여 보입니다 (2026-11-06 확인)."""
     th = th_token(account)
     posts = split_posts(text)
     if not posts:

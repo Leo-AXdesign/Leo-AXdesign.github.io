@@ -633,7 +633,7 @@ const TOOLS = {
   },
 
   threads_publish_chain: {
-    description: "후킹하는 첫 글을 올리고, 이어지는 글을 차례로 그 아래 댓글로 답니다 (첫 글 → 댓글 1 → 댓글 2 …, 각 댓글은 바로 앞 글에 달림). 되돌릴 수 없는 공개 게시이니, 사용자가 전체 내용을 확인한 뒤에만 쓰세요. 중간에 실패하면 거기까지 올린 글과 마지막 글 id 를 돌려줍니다 (threads_reply 로 이어서 달 수 있음).",
+    description: "후킹하는 첫 글(본문)을 먼저 올리고, 나머지 글을 차례로 댓글로 답니다. 기본은 바로 앞 글에 이어서 다는 '이어쓰기'(mode: chain)입니다. 모든 댓글을 본문에 바로 다는 mode: comments 도 있지만, 앱에서 댓글 순서가 섞여 보여서(1 → 마지막 → … → 2) 쓰지 않습니다 (2026-11-06 확인). 되돌릴 수 없는 공개 게시이니, 사용자가 전체 내용을 확인한 뒤에만 쓰세요. 중간에 실패하면 거기까지 올린 글과 본문 id 를 돌려줍니다 (threads_reply 로 이어서 달 수 있음).",
     schema: {
       type: "object",
       properties: {
@@ -642,35 +642,38 @@ const TOOLS = {
         link_attachment: { type: "string", description: "선택: 마지막 글에 미리보기로 붙일 링크" },
         image_url: { type: "string", description: "선택: 첫 글에 붙일 공개 https 이미지 주소" },
         image_urls: { type: "array", items: { type: "string" }, description: "선택: 첫 글에 붙일 사진 묶음(2~20장)의 공개 https 주소, 순서대로" },
+        mode: { type: "string", enum: ["comments", "chain"], description: "chain(기본): 바로 앞 글에 이어서 담(이어쓰기). comments: 모든 댓글을 본문에 바로 담 (앱에서 순서가 섞여 보임)" },
       },
       required: ["posts"],
     },
-    run: async ({ account, posts = [], link_attachment, image_url, image_urls }) => {
+    run: async ({ account, posts = [], link_attachment, image_url, image_urls, mode = "chain" }) => {
       const acc = thAccount(account);
       posts = posts.map((t) => String(t).trim()).filter(Boolean);
       if (!posts.length) throw new Error("올릴 글이 없습니다.");
       if (posts.length > 10) throw new Error("한 번에 10개까지만 올립니다.");
       posts.forEach((t, i) => { if ([...t].length > 500) throw new Error(`${i + 1}번째 글이 500자를 넘습니다 (${[...t].length}자).`); });
       const done = [];
-      let prev = null;
+      let prev = null, root = null;
       for (let i = 0; i < posts.length; i++) {
         const last = i === posts.length - 1;
         try {
           const r = await thPost(acc, {
             text: posts[i],
-            reply_to_id: prev || undefined,
+            reply_to_id: (mode === "chain" ? prev : root) || undefined,
             image_url: i === 0 ? image_url : undefined,
             image_urls: i === 0 ? image_urls : undefined,
             link_attachment: last && !(i === 0 && (image_url || (image_urls || []).length)) ? link_attachment : undefined,
           });
           done.push({ n: i + 1, id: r.id, permalink: r.permalink });
           prev = r.id;
+          if (i === 0) root = r.id;
         } catch (e) {
-          return { ok: false, account: acc.name, posted: done, failed_at: i + 1, error: hide(e.message), last_id: prev,
-            next: prev ? "threads_reply 에 reply_to_id=last_id 로 남은 글을 이어서 달 수 있어요." : "첫 글부터 올리지 못했습니다." };
+          const to = mode === "chain" ? prev : root;
+          return { ok: false, account: acc.name, mode, posted: done, failed_at: i + 1, error: hide(e.message), reply_to_id: to,
+            next: to ? "threads_reply 에 이 reply_to_id 로 남은 글을 차례로 달 수 있어요." : "첫 글부터 올리지 못했습니다." };
         }
       }
-      return { ok: true, account: acc.name, permalink: done[0].permalink, posted: done };
+      return { ok: true, account: acc.name, mode, permalink: done[0].permalink, posted: done };
     },
   },
 
@@ -887,7 +890,7 @@ async function handle(req) {
       return send({ id, result: {
         protocolVersion: params.protocolVersion || "2025-06-18",
         capabilities: { tools: {}, prompts: {} },
-        serverInfo: { name: "designhub-social", version: "1.10.0" },
+        serverInfo: { name: "designhub-social", version: "1.12.0" },
       } });
     }
     if (method === "ping") return send({ id, result: {} });

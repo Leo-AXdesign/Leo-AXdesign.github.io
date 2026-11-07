@@ -613,8 +613,121 @@ def skills_seo_body():
 """
 
 
+# hallmark (3탄). 저장소의 SKILL.md, references/gates.md, scripts/ 를 읽고 정리했습니다.
+HM_CHECKED = "2026년 11월 7일"
+HM_FLOOR = [
+    "색과 글꼴은 모두 맨 위에 선언한 토큰으로만 씁니다. 중간에 색 코드를 직접 쓰지 않습니다.",
+    "<code>transition: all</code>을 쓰지 않고, 너비·높이·위치를 움직이는 애니메이션도 쓰지 않습니다.",
+    "제목 안에서 한 단어만 기울이지 않습니다.",
+    "제목 위에 붙는 작은 라벨(아이브로우)을 쓰지 않고, 라벨을 자간 넓힌 대문자로 쓰지 않습니다.",
+    "가운뎃점으로 이은 메타 줄, 링크 글자 끝에 붙인 화살표, 장식용 상태 점을 쓰지 않습니다.",
+    "보라에서 파랑으로 가는 그라데이션, 카드 안의 카드, 아이콘 대신 쓴 이모지, 손으로 그린 브라우저 창을 쓰지 않습니다.",
+    "숫자, 후기, 로고, 사례 수를 지어내지 않습니다.",
+    "첫 화면(1280×800)에서 스크롤 없이 제목, 한 문장, 주요 버튼이 다 보여야 합니다.",
+    "한 화면에 들어가는 글은 80단어 안팎까지입니다.",
+    "모든 버튼과 링크에 키보드 포커스 표시가 있고, 움직임을 줄이는 설정을 켠 사람에게는 애니메이션을 끕니다.",
+]
+HM_STEPS = [
+    ("미리 읽기", "묻기 전에 프로젝트부터 봅니다. <code>design.md</code>가 있으면 그게 모든 규칙보다 앞서고, 없으면 쓰던 글꼴, 색, 간격, 프레임워크를 읽어 둡니다."),
+    ("한 번만 묻기", "보여 줄 재료(스크린샷, 사진, 실제 숫자), 누구를 위한 페이지인지, 페이지가 이끌어야 할 행동 하나, 톤을 한 메시지로 묻습니다. '깔끔하고 모던하게'는 톤이 아니라고 적혀 있고, 그냥 진행하라고 하면 알아서 정한 뒤 무엇을 골랐는지 알려 줍니다."),
+    ("모양 잡기", "방문자가 와서 할 일(예약, 구매, 구독)을 먼저 정하고, 같은 업종의 실제 사이트가 그 버튼을 어디에 두는지에 맞춰 섹션을 짭니다. 페이지 구성은 21가지 틀 중에서 고릅니다."),
+    ("방향 뽑기", "테마 50개 중 프롬프트에 맞는 3개를 뽑고 하나를 고릅니다. 지난 작업 기록(<code>.hallmark/log.json</code>)과 겹치는 조합은 피해서, 같은 부탁을 두 번 해도 다른 페이지가 나오게 합니다."),
+    ("선택 정리", "모양, 테마, 첫 화면 구성, 기억에 남길 한 가지, 있는 재료와 없는 재료를 한 블록으로 보여 줍니다. 방향을 바꿀 마지막 기회입니다."),
+    ("첫 화면부터", "메뉴와 첫 화면만 먼저 만들고 바로 검사합니다. 제목은 일곱 단어 이하, 문장 하나, 버튼 한두 개. 여기를 통과해야 아래 섹션을 만듭니다."),
+    ("검사", "sloplint로 다시 검사하고, 작업 내용을 모르는 새 에이전트가 화면을 보고 판정합니다. 열린 실패가 하나라도 있으면 넘기지 않습니다."),
+]
+
+
+def skills_hallmark_body():
+    floor = "".join(f"<li>{x}</li>" for x in HM_FLOOR)
+    steps = "".join(f"<li><b>{e(a)}</b>: {b}</li>" for a, b in HM_STEPS)
+    return f"""
+    <p class="ptext"><a href="{SITE}skills/find-skills/">1탄</a>에서 스킬 까는 법을, <a href="{SITE}skills/seo/">2탄</a>에서 검색 점검 스킬을 다뤘습니다.
+    이번에는 AI가 만든 화면에서 나는 '어디서 본 것 같은' 티를 막는 디자인 스킬입니다.</p>
+    <p class="ptext"><a href="https://github.com/Nutlope/hallmark" target="_blank" rel="noopener">hallmark</a>는 AI 회사 투게더 AI(Together AI)가 만들어 무료(MIT)로 푼 스킬입니다.
+    클로드 코드, 코덱스, 커서, 오픈코드에서 쓸 수 있습니다. {HM_CHECKED} 기준으로 깃허브 주간 트렌딩 5위에 올라 있었고, 그 주에만 별을 6,900개 받았습니다.</p>
+    <figure class="art__fig art__fig--shot">
+      <img src="{SITE}assets/skills/hallmark-trending.webp" width="1440" height="906" loading="lazy" decoding="async"
+           alt="깃허브 주간 트렌딩 목록. Nutlope/hallmark가 worktrunk와 anthropics/skills 사이에 있고, 전체 별 49,675개, 이번 주 별 6,900개로 표시돼 있다">
+      <figcaption>깃허브 주간 트렌딩 ({HM_CHECKED} 캡처). 테두리 친 줄이 hallmark</figcaption>
+    </figure>
+
+    <h2 class="psub">규칙을 세 단계로 나눈다</h2>
+    <p class="ptext">스킬 안에는 AI가 습관처럼 내놓는 모양을 하나하나 번호를 붙여 적은 목록이 있고, 규칙마다 얼마나 엄격한지가 정해져 있습니다.</p>
+    <ul class="ptext-list">
+      <li><b>바닥</b>(Floor): 어떤 이유로도 넘어갈 수 없습니다. 명도 대비, 키보드 포커스, 휴대폰에서 깨지는 레이아웃, 지어낸 숫자 같은 것들입니다.</li>
+      <li><b>습관</b>(Reflex): 모델이 기본값으로 빠지기 쉬운 모양입니다. 이 페이지에서 그렇게 해야 하는 이유를 적으면 넘어갈 수 있습니다.</li>
+      <li><b>마감</b>(Finish): 멀리서는 안 보이는 디테일입니다. 알려 주기만 하고 막지는 않습니다.</li>
+    </ul>
+
+    <h2 class="psub">절대 못 넘기는 바닥 규칙</h2>
+    <p class="ptext">SKILL.md 맨 앞에 16개가 적혀 있습니다. 디자이너 눈으로 볼 만한 것만 추렸습니다.</p>
+    <ul class="ptext-list">{floor}</ul>
+    <p class="ptext">라벨, 가운뎃점, 화살표는 원래 습관 정도로 볼 만한 것들인데 hallmark는 이걸 '집 규칙'이라 부르며 바닥으로 올려 뒀습니다.
+    너무 확실하게 기계가 만든 티가 나서 다른 곳보다 엄격하게 본다는 설명입니다.</p>
+
+    <h2 class="psub">돌아가는 순서</h2>
+    <p class="ptext">클로드 코드에서 <code>/hallmark 랜딩 페이지 만들어 줘</code>처럼 부르면 아래 순서로 일합니다.</p>
+    <ol class="ptext-list">{steps}</ol>
+
+    <h2 class="psub">검사는 진짜 브라우저로 한다</h2>
+    <p class="ptext">함께 들어 있는 <code>sloplint</code>는 만든 페이지를 크롬에 띄워 화면 폭 여덟 가지(320, 375, 414, 768, 1024, 1280, 1440, 1920)로 재 봅니다.
+    가로 스크롤이 생기는지, 첫 화면에 제목과 버튼이 다 들어오는지, 한 화면에 글이 너무 많은지 같은 것을 숫자로 판정하고, 결과를 실패, 습관, 경고로 나눠 보여 줍니다.</p>
+    <p class="ptext">그다음은 사람이 아니라 다른 에이전트가 봅니다. 페이지를 만든 대화 내용을 넘기지 않은 새 에이전트에게 스크린샷과 코드만 주고,
+    첫 단어로 다시 찍기, 다시 만들기, 고치기, 내보내기 중 하나를 고르게 합니다. 만든 쪽이 자기 작업을 가장 너그럽게 본다는 이유에서입니다.</p>
+
+    <h2 class="psub">습관 규칙은 이유를 적으면 넘어간다</h2>
+    <p class="ptext">예외를 둘 때는 CSS 맨 위 주석에 규칙 번호, 근거, 이유를 적습니다. 이유가 너무 짧거나 다른 데서 복사한 문장이면 받아 주지 않고,
+    같은 규칙을 세 번 연속 예외로 두면 예외가 아니라 그 브랜드의 스타일이니 <code>design.md</code>에 적으라고 합니다.</p>
+    <p class="ptext">재미있는 건 hallmark 공식 사이트입니다. 크림색 바탕에 굵은 세리프 제목, 주황 포인트를 썼는데, 이 조합은 스킬 안에서 습관 규칙 65번 '이름 붙은 그 모양'으로 따로 적혀 있습니다.
+    습관 규칙이니 이유가 있으면 써도 된다는 뜻이고, 금지 목록이라기보다 '알고 고르라'는 쪽에 가깝다는 걸 사이트가 직접 보여 줍니다.</p>
+    <figure class="art__fig art__fig--shot">
+      <img src="{SITE}assets/skills/hallmark-site.webp" width="1440" height="900" loading="lazy" decoding="async"
+           alt="hallmark 공식 사이트 첫 화면. 크림색 바탕에 'The design skill that ends AI slop.'이라는 큰 세리프 제목과 설치 명령, 테마로 만든 페이지 예시들이 놓여 있다">
+      <figcaption>usehallmark.com 첫 화면 ({HM_CHECKED} 캡처)</figcaption>
+    </figure>
+
+    <h2 class="psub">설치와 쓰는 법</h2>
+    <pre class="pcode"><code>npx skills add nutlope/hallmark -g --agent claude-code</code></pre>
+    <ul class="ptext-list">
+      <li><code>/hallmark 만들 페이지 설명</code>: 새 페이지를 만듭니다. 테마 없이 프롬프트만으로 만들고 싶으면 '커스텀으로'라고 덧붙입니다.</li>
+      <li><code>/hallmark redesign 경로</code>: 내용과 연결은 두고 디자인만 새로 만듭니다.</li>
+      <li><code>/hallmark audit 경로</code>: 고치지 않고 점검 결과만 받습니다. 이미 만든 사이트라면 이것부터 해 보면 됩니다.</li>
+    </ul>
+    <p class="ptext">Node 18 이상이 필요하고, 브라우저 검사까지 하려면 크롬과 <code>puppeteer-core</code>가 있어야 합니다(<code>npm i -g puppeteer-core</code>). 없으면 코드만 보는 검사가 돕니다.
+    이미 있는 디자인은 hallmark라고 이름을 불러야만 손댄다고 적혀 있어서, 설치해 둔다고 기존 작업이 갑자기 바뀌지는 않습니다.</p>
+
+    <h2 class="psub">깔기 전에 볼 것</h2>
+    <p class="ptext">skills.sh 설치 수는 {HM_CHECKED} 기준 9.4만 회입니다. 보안 점검 세 가지 중 Socket과 Snyk은 통과, Gen Agent Trust Hub는 '주의(WARN)'입니다.
+    스크립트를 여럿 실행하는 스킬이라 그런 것으로 보이지만, 이유가 따로 적혀 있지는 않으니 <code>SKILL.md</code>와 <code>scripts</code> 폴더를 한 번 열어 보고 까는 편이 좋습니다.</p>
+    <figure class="art__fig art__fig--shot">
+      <img src="{SITE}assets/skills/hallmark-skillssh.webp" width="1440" height="997" loading="lazy" decoding="async"
+           alt="skills.sh의 hallmark 페이지. 설치 94.5K, 깃허브 별 48.9K, 보안 점검은 Gen Agent Trust Hub WARN, Socket과 Snyk PASS로 표시돼 있다">
+      <figcaption>skills.sh의 hallmark 페이지 ({HM_CHECKED} 캡처)</figcaption>
+    </figure>
+    <ul class="ptext-list">
+      <li>파일을 저장할 때마다 자동으로 검사하는 훅은 기본 설치에 들어 있지 않습니다. 따로 <code>install-hook.mjs</code>를 실행해야 <code>.claude/settings.json</code>에 추가되고, 막지는 않고 조언만 합니다.</li>
+      <li><code>TOGETHER_API_KEY</code>가 설정돼 있으면 코드를 짜기 전에 첫 화면 시안 이미지를 투게더 AI로 두세 장 생성해 봅니다. 키가 없으면 이 단계는 건너뜁니다.</li>
+      <li>사진이 없으면 위키미디어 공용의 공개 라이선스 사진 755장 중에서 골라 넣고, 페이지 아래에 출처를 답니다. 나중에 내 사진으로 바꾸라는 자리 표시입니다.</li>
+    </ul>
+    <p class="ptext">설치 수 확인과 자주 쓰는 명령은 <a href="{SITE}skills/find-skills/">1탄</a>에 정리해 뒀습니다.</p>
+
+    <h2 class="psub">출처</h2>
+    <ul class="ptext-list">
+      <li><a href="https://github.com/Nutlope/hallmark" target="_blank" rel="noopener">Nutlope/hallmark — GitHub</a> (SKILL.md, references/gates.md, scripts/)</li>
+      <li><a href="https://skills.sh/nutlope/hallmark/hallmark" target="_blank" rel="noopener">hallmark — skills.sh</a></li>
+      <li><a href="https://www.usehallmark.com" target="_blank" rel="noopener">usehallmark.com</a></li>
+      <li><a href="https://github.com/trending?since=weekly" target="_blank" rel="noopener">GitHub 주간 트렌딩</a></li>
+    </ul>
+"""
+
+
 # 클로드 스킬은 한 편씩 따로 봅니다 (/skills/ 는 목록, /skills/<slug>/ 가 글). 최신 글이 앞.
 SKILL_POSTS = [
+    {"slug": "hallmark", "no": 3, "date": "2026-11-07",
+     "title": "AI 티 나는 디자인을 막는 스킬 hallmark, 어떻게 돌아가나",
+     "desc": "깃허브 트렌딩에 오른 디자인 스킬 hallmark가 AI 화면의 습관을 어떤 규칙으로 막고, 어떤 순서로 만들고 검사하는지 저장소 원문을 읽고 정리했습니다.",
+     "body": skills_hallmark_body()},
     {"slug": "seo", "no": 2, "date": "2026-11-05",
      "title": "SEO·AEO·GEO 스킬 5개, 검색과 AI 답변에 잡히는 사이트 만들기",
      "desc": "AI로 만든 사이트가 구글에도, 챗GPT 답변에도 안 나올 때 클로드 코드에 깔아 둘 스킬 5개를 설치 수와 보안 점검 결과와 함께 정리했습니다.",
@@ -654,7 +767,7 @@ PROSE_PAGES = [
     ("lab", "스타일 현상소",
      "내 사진을 리소그래프, 팝아트, 픽셀 아트, 펑크 복사기, 구성주의, 사이버펑크, 바포웨이브, 사이키델릭, 멤피스로 바꿔 보는 무료 도구입니다. 가입이 필요 없고 사진은 기기 밖으로 나가지 않습니다.", LAB),
     ("skills", "클로드 스킬",
-     "클로드 코드에 넣어 쓰는 스킬을 주제별로 한 편씩 정리합니다. 스킬 설치법과 find-skills(1탄), 검색과 AI 답변에 잡히게 하는 SEO·AEO·GEO 스킬(2탄).", SKILLS),
+     "클로드 코드에 넣어 쓰는 스킬을 주제별로 한 편씩 정리합니다. 스킬 설치법과 find-skills(1탄), 검색과 AI 답변에 잡히게 하는 SEO·AEO·GEO 스킬(2탄), AI 티 나는 디자인을 막는 hallmark(3탄).", SKILLS),
     ("updates", "업데이트 기록",
      "디자인 허브에 사이트를 넣고, 옮기고, 고친 기록입니다. 날짜별로 자동으로 정리합니다.", UPDATES),
     ("privacy", "개인정보처리방침",

@@ -167,6 +167,26 @@
       "comment": "🔗 소개한 곳 주소\n· find-skills — skills.sh/vercel-labs/skills/find-skills\n· 저장소 — github.com/vercel-labs/skills\n\n가이드 전체는 여기\ndesignrefs.com/skills"
     },
     {
+      "id": "claude-skills-hallmark",
+      "title": "AI 티 잡아 주는 스킬, hallmark",
+      "count": 11,
+      "images": [
+        "https://designrefs.com/social/cards/claude-skills-hallmark/01.jpg",
+        "https://designrefs.com/social/cards/claude-skills-hallmark/02.jpg",
+        "https://designrefs.com/social/cards/claude-skills-hallmark/03.jpg",
+        "https://designrefs.com/social/cards/claude-skills-hallmark/04.jpg",
+        "https://designrefs.com/social/cards/claude-skills-hallmark/05.jpg",
+        "https://designrefs.com/social/cards/claude-skills-hallmark/06.jpg",
+        "https://designrefs.com/social/cards/claude-skills-hallmark/07.jpg",
+        "https://designrefs.com/social/cards/claude-skills-hallmark/08.jpg",
+        "https://designrefs.com/social/cards/claude-skills-hallmark/09.jpg",
+        "https://designrefs.com/social/cards/claude-skills-hallmark/10.jpg",
+        "https://designrefs.com/social/cards/claude-skills-hallmark/11.jpg"
+      ],
+      "caption": "AI로 화면 만든다면 저장해 두자\n\n클로드 코드 스킬 3탄. 이번 주 깃허브 트렌딩 5위에 오른 디자인 스킬 hallmark가 어떻게 돌아가는지 정리했다.\n\n1. 만들기 전에 프로젝트부터 읽고 딱 한 번 묻는다\n2. 테마 50개 중 3개를 뽑아 방향을 정한다\n3. 바닥 규칙, 습관, 마감 세 단계로 검사한다\n4. 설치는 터미널 한 줄\n\n#클로드 #클로드코드 #클로드스킬 #AI디자인 #웹디자인",
+      "comment": "출처\ngithub.com/Nutlope/hallmark\nskills.sh/nutlope/hallmark/hallmark\n\n작동 방식 정리는 여기\ndesignrefs.com/skills/hallmark"
+    },
+    {
       "id": "claude-skills-seo",
       "title": "만든 사이트, 검색에도 AI 답변에도 안 나온다면",
       "count": 8,
