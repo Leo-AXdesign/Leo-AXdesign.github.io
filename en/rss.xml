@@ -6,7 +6,77 @@
     <atom:link href="https://designrefs.com/en/rss.xml" rel="self" type="application/rss+xml" />
     <description>Notes from a designer in Korea: working with AI, putting style into words, collecting references and design communities. Translated from Korean.</description>
     <language>en</language>
-    <lastBuildDate>Tue, 03 Nov 2026 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 07 Nov 2026 09:00:00 +0900</lastBuildDate>
+    <item>
+      <title>A one-page proposal, straight from the chat window: Claude Design closes its standalone site on December 14</title>
+      <link>https://designrefs.com/en/articles/claude-design-moves-into-chat-and-claude-code/</link>
+      <guid isPermaLink="true">https://designrefs.com/en/articles/claude-design-moves-into-chat-and-claude-code/</guid>
+      <pubDate>Sat, 07 Nov 2026 09:00:00 +0900</pubDate>
+      <category>AI Design</category>
+      <description>Claude Design now works inside any Claude conversation, Claude Code and the mobile apps, and the standalone claude.ai/design site closes on December 14. Based on Anthropic&#x27;s own help page and product page: where to start, plans, exports, and what to move first.</description>
+      <content:encoded><![CDATA[    <p class="ptext">Type &quot;Make this proposal into a one-page document&quot; into a Claude chat, and a canvas opens beside the conversation with the result on it. That is the first example sentence in Anthropic&#x27;s official Claude Design getting-started guide.</p>
+    <p class="ptext">Before, doing this meant going to a separate address, claude.ai/design. Now it works inside the Claude conversation you already use. In Claude Code you call it with <code>/design</code>, and the phone apps can request designs too. In exchange, the standalone site closes on December 14, 2026. Anyone who built a design system there (a bundle of color, type and component rules) has to move it before then.</p>
+    <p class="ptext">This piece relays only what Anthropic&#x27;s getting-started guide and product page said when I opened them on November 6. I could not build and compare outputs myself, so I do not judge design quality. This site is built in conversation with Claude Code, which is worth knowing when reading Claude coverage.</p>
+    <figure class="art__fig">
+      <img src="https://designrefs.com/articles/img/claude-design-moves-into-chat-and-claude-code-shot1.webp" alt="Claude Design product page (source: https://claude.com/product/design, captured 2026-11-06)" loading="lazy" decoding="async" />
+      <figcaption>Claude Design product page (source: https://claude.com/product/design, captured 2026-11-06)</figcaption>
+    </figure>
+    <h2 class="psub" id="s1">Four ways in</h2>
+    <p class="ptext">The starting paths from the official guide:</p>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th>Where</th><th>How</th><th>Confirmed</th></tr></thead>
+      <tbody>
+        <tr><td>Chat</td><td>Pick Output &gt; Design in the input box, or just ask</td><td>Result appears on a canvas beside the chat</td></tr>
+        <tr><td>Artifacts tab</td><td>Choose the Design template</td><td>Same canvas</td></tr>
+        <tr><td>Claude Code</td><td><code>/design</code> to create, edit and sync</td><td>Design systems via <code>/design-sync</code></td></tr>
+        <tr><td>iOS and Android apps</td><td>Request in a chat, review later</td><td>Sharing settings only on web or desktop</td></tr>
+      </tbody>
+    </table></div>
+    <p class="art__note">Source: <a href="https://support.claude.com/en/articles/14604416-get-started-with-claude-design" target="_blank" rel="noopener">Claude Help Center: Get started with Claude Design</a> (checked 2026-11-06)</p>
+    <p class="ptext">The product page describes the flow this way: you describe the visual, Claude builds a first version, and you refine, share or hand it off. Commenting on elements, editing text directly, adjustment sliders, and dragging to resize and align all happen on the same canvas.</p>
+    <h2 class="psub" id="s2">Set your rules once and they follow you</h2>
+    <p class="ptext">This is the part designers will notice first. According to the guide, a new project automatically inherits your organization&#x27;s design system, so brand colors, fonts and components apply from the start. The product page says Claude checks its output against that system before showing it to you.</p>
+    <p class="ptext">You can import a design system from four places:</p>
+    <ul class="ptext-list">
+      <li>A GitHub repository</li>
+      <li>Design files</li>
+      <li>Materials you upload</li>
+      <li>A local codebase</li>
+    </ul>
+    <p class="ptext">Inside Claude Code, <code>/design-sync</code> does this. At team level, admins can lock a team to one approved system, and on Enterprise they can restrict who publishes, changes defaults or deletes.</p>
+    <p class="ptext">This reads as the same problem we covered in <a href="https://designrefs.com/articles/design-md-for-ai/">our DESIGN.md article</a>, solved from another side. Instead of a single file that spells out your rules, the rules live inside the product. Neither official page compares which one keeps results steadier.</p>
+    <h2 class="psub" id="s3">Plans: the Free plan is included, officially</h2>
+    <p class="ptext">The product page says:</p>
+    <ul class="ptext-list">
+      <li>Claude Design, Slides and Docs are included in every plan, including Free.</li>
+      <li>Dashboards is in beta on paid plans.</li>
+      <li>Motion is in beta on Team and Enterprise.</li>
+      <li>Larger designs use more of your usage limit.</li>
+    </ul>
+    <p class="ptext">The guide is more specific. Claude Design draws on the same usage limit as other work such as Claude Code, with no separate quota. When you hit the limit, you wait for it to reset, unless you have turned on usage credits.</p>
+    <p class="ptext">So a day of heavy mockup iteration leaves less for coding. The guide says projects with many revisions use more, so asking for one change at a time is likely cheaper. That last part is my inference from the guide, not something it states.</p>
+    <p class="ptext">One third-party blog said the Free plan is not covered, then said elsewhere in the same article that it is. I followed only the official pages. For Enterprise, the feature turned on by default on October 15, 2026.</p>
+    <h2 class="psub" id="s4">Exports: files, slides, dev tools</h2>
+    <p class="ptext">The Export button at the top right offers these, combining the guide and the product page:</p>
+    <ul class="ptext-list">
+      <li>Files: ZIP, PDF, PPTX, standalone HTML, and Google Slides</li>
+      <li>Design and document tools: Canva, Adobe, Gamma, Miro</li>
+      <li>Build and deploy tools: Vercel, Netlify, Lovable, v0, Replit, Wix</li>
+      <li>Hand-off to Claude Code: a local coding agent or Claude Code on the web</li>
+    </ul>
+    <p class="ptext">Import works too. The product page says you can bring in DOCX, PPTX and XLSX files, so you can start by opening an existing deck.</p>
+    <p class="ptext">Share links are private by default, and you can grant view, comment or edit access. A direct export to a Figma file appears in neither official source. Third-party posts disagree on it, so teams centered on Figma should click through and check for themselves.</p>
+    <h2 class="psub" id="s5">For vibe coders: mockup to code in one conversation</h2>
+    <p class="ptext">For people building screens with Claude Code, <code>/design</code> stands out. The official description has you make a screen in words, fix what you dislike directly on the canvas, and hand it to code in the same environment. If <code>/design-sync</code> reads a design system from your own code folder, it may help with the problem of every AI-made screen looking the same. No figure on how much it helps appears in the official material.</p>
+    <p class="ptext">For designers, the picture splits. If your day runs on Figma files, the missing Figma entry in the export list matters. If more of your work goes to Canva, slides or code, there are plenty of routes. As in our <a href="https://designrefs.com/articles/figma-agent-ai-credits-ga/">Figma agent credits article</a>, any tool that uses AI for mockups ties usage limits to credits.</p>
+    <h2 class="psub" id="s6">Before December 14, one thing at a time</h2>
+    <p class="ptext"><strong>1. Move design systems from the old site.</strong> The guide says design systems built on claude.ai/design can be moved over, and that the standalone version ends on December 14, 2026, so move them before then. The product page gives the same date. The sources have no steps for carrying over the mockups themselves. For any file you need, download a PDF or HTML now to be safe.</p>
+    <p class="ptext"><strong>2. Pick one home for the rules.</strong> For the same design system to follow you in chat and in Claude Code, keep one source of truth. Choose the GitHub repository or the design file, and pull everything else from it. Not knowing which copy is newest is the first problem that will show up.</p>
+    <p class="ptext"><strong>3. Start with a small job to gauge the limit.</strong> Begin with something like a one-page document and see how much of your usage it takes. Here is an example sentence; I have not run it.</p>
+    <p class="ptext"><code>Make a one-page proposal using our brand colors and fonts. Keep the title to one line and use no images.</code></p>
+    <p class="ptext">Saying both what to include and what to leave out makes the results easier to compare.</p>
+    <p class="art__note">Sources: <a href="https://support.claude.com/en/articles/14604416-get-started-with-claude-design" target="_blank" rel="noopener">Claude Help Center: Get started with Claude Design</a>, <a href="https://claude.com/product/design" target="_blank" rel="noopener">Anthropic: Claude Design</a> (both checked 2026-11-06). The April research-preview launch and the timing of the Claude Code commands come from the third-party explainer <a href="https://blog.mean.ceo/claude-design-news-november-2026/" target="_blank" rel="noopener">Mean CEO</a> and could not be confirmed on official pages.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Animated backgrounds freeze when you export to PNG. Figma shaders now export up to 4096px and carry over to code layers</title>
       <link>https://designrefs.com/en/articles/figma-shaders-4096-export-code-layers/</link>

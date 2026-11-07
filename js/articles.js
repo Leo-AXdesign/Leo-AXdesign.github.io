@@ -1,6 +1,7 @@
 // 이 파일은 tools/build-articles.py 가 만듭니다. 직접 고치지 마세요.
 // 글은 content/articles/*.md 에서 고칩니다.
 const ARTICLES = [
+  { slug: "claude-design-moves-into-chat-and-claude-code", title: "한 장짜리 제안서를 대화창에서 바로 디자인으로, Claude Design은 12월 14일에 별도 사이트를 닫는다", desc: "Claude Design이 모든 Claude 대화와 Claude Code, 모바일 앱 안으로 들어왔고, 단독 사이트 claude.ai/design은 12월 14일에 닫힌다. 공식 도움말과 제품 페이지에서 확인한 시작 방법, 요금제, 내보내기, 옮겨 둘 것을 적었다.", date: "2026-11-07", tag: "AI 디자인", min: 5, views: ["ai", "tool", "uiux"] },
   { slug: "figma-shaders-4096-export-code-layers", title: "움직이는 배경을 PNG로 내보내면 멈춘다, 피그마 셰이더는 4096px까지 뽑고 코드 레이어로도 넘어간다", desc: "11월 2일자 피그마 릴리스 노트와 도움말 두 편에서 확인한 것을 적었다. 셰이더 정식 제공, 최대 4096px 내보내기, 코드 레이어에서 재생 버튼을 눌러야 하는 이유. 브라우저 조건이 두 문서에서 다르게 적힌 부분과 11월 4일 이후 크레딧도 함께 적었다.", date: "2026-11-03", tag: "AI 디자인", min: 5, views: ["tool", "uiux", "graphic"] },
   { slug: "canva-brush-edit-existing-design", title: "열두 장짜리 발표 자료의 제목을 한 줄로 줄여 달라는 메일, 캔바 브러시는 새로 만들지 않고 고친다", desc: "캔바가 10월 29~30일 발표한 Brush는 이미 만든 시안을 말로 고치는 모델이다. Pro 구독자에게 먼저 열렸고, 보도에서 확인된 것과 공식 페이지를 열지 못해 비어 있는 부분, 써 보기 전에 해 둘 일을 적었다.", date: "2026-11-03", tag: "AI 디자인", min: 5, views: ["ai", "tool", "graphic"] },
   { slug: "figma-mcp-weave-models-credits", title: "시안 옆에 5초짜리 움직이는 버전을 붙여 달라고 할 때, 피그마 MCP로 Weave 모델을 부르면 크레딧은 어디서 나갈까", desc: "피그마 릴리스 노트에 10월 26일, 외부 AI 에이전트가 Figma MCP로 Weave의 영상·이미지 모델(Seedance, Kling, Nano Banana)을 쓸 수 있다는 항목이 올라왔다. 공식 페이지에서 확인한 조건, Weave 요금표로 어림한 1회 비용, 아직 확인되지 않은 부분을 적었다.", date: "2026-11-02", tag: "AI 디자인", min: 6, views: ["ai", "tool", "uiux"] },
