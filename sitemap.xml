@@ -158,9 +158,15 @@
   </url>
   <url>
     <loc>https://designrefs.com/articles/</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://designrefs.com/articles/figma-agent-google-drive-connector/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://designrefs.com/articles/claude-design-moves-into-chat-and-claude-code/</loc>
@@ -344,9 +350,15 @@
   </url>
   <url>
     <loc>https://designrefs.com/en/articles/</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://designrefs.com/en/articles/figma-agent-google-drive-connector/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://designrefs.com/en/articles/claude-design-moves-into-chat-and-claude-code/</loc>

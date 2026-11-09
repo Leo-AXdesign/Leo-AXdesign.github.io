@@ -6,7 +6,93 @@
     <atom:link href="https://designrefs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>디자인하면서 생각한 것들을 적습니다. AI와 같이 일하는 법, 스타일을 말로 옮기는 법, 레퍼런스와 커뮤니티 이야기.</description>
     <language>ko</language>
-    <lastBuildDate>Sat, 07 Nov 2026 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 09 Nov 2026 09:00:00 +0900</lastBuildDate>
+    <item>
+      <title>브리프는 드라이브에, 시안은 피그마에. 에이전트가 그 사이를 오가기 시작했다</title>
+      <link>https://designrefs.com/articles/figma-agent-google-drive-connector/</link>
+      <guid isPermaLink="true">https://designrefs.com/articles/figma-agent-google-drive-connector/</guid>
+      <pubDate>Mon, 09 Nov 2026 09:00:00 +0900</pubDate>
+      <category>AI 디자인</category>
+      <description>10월 30일 피그마 릴리스 노트에 구글 드라이브 커넥터가 올라왔다. 모든 플랜에서 에이전트와 메이크가 드라이브 파일을 읽고 새 파일도 만든다. 릴리스 노트와 도움말에서 확인된 연결 순서와 권한, 쓰기 도구 기본값, 비어 있는 부분을 적었다.</description>
+      <content:encoded><![CDATA[    <p class="ptext">클라이언트 메일은 이런 식으로 온다. &quot;설문 결과는 드라이브 폴더에 올려 뒀어요. 거기 나온 불만 순서대로 첫 화면에 반영해 주세요.&quot;</p>
+    <p class="ptext">폴더를 열고, 시트를 읽고, 요약을 메모에 옮기고, 그제야 피그마로 돌아온다. (가정해서 그린 장면이다. 내가 받은 메일은 아니다.)</p>
+    <p class="ptext">10월 30일 피그마 릴리스 노트에 이 왕복을 줄이는 항목이 올라왔다. 제목은 &quot;Connect Google Drive to the Figma agent, available on all plans&quot;다.</p>
+    <p class="ptext">이 글은 직접 써 본 후기가 아니다. 릴리스 노트와 피그마 도움말을 열어 확인한 내용만 적었다. 내 계정에서 커넥터를 연결해 본 적은 없다. 그래서 Drive의 어떤 파일 형식까지 읽는지처럼 문서에 없는 부분은 비워 두었다.</p>
+    <figure class="art__fig">
+      <img src="https://designrefs.com/articles/img/figma-agent-google-drive-connector-shot1.webp" alt="피그마 릴리스 노트의 10월 30일 항목 (출처: https://www.figma.com/release-notes/, 캡처일 2026-10-31)" loading="lazy" decoding="async" />
+      <figcaption>피그마 릴리스 노트의 10월 30일 항목 (출처: https://www.figma.com/release-notes/, 캡처일 2026-10-31)</figcaption>
+    </figure>
+    <h2 class="psub" id="s1">릴리스 노트에 적힌 것</h2>
+    <p class="ptext">본문은 짧다. 구글 드라이브를 피그마 에이전트와 메이크에 연결하면 이미 있는 파일의 맥락을 피그마로 가져온다. 피그마 파일을 떠나지 않고 드라이브에 새 파일을 만드는 것도 된다. 노트가 든 예는 세 가지다. 리서치 인사이트 요약하기, 실제 데이터를 참고하기, 캔버스에서 고칠 에셋 가져오기.</p>
+    <p class="ptext">그리고 커넥터는 스타터를 포함한 모든 플랜에서 쓴다고 적혀 있다. 추가하는 곳은 프롬프트 입력창의 + 메뉴다.</p>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th>항목</th><th>확인된 내용</th></tr></thead>
+      <tbody>
+        <tr><td>날짜</td><td>2026년 10월 30일</td></tr>
+        <tr><td>대상</td><td>피그마 에이전트, 피그마 메이크</td></tr>
+        <tr><td>되는 일</td><td>드라이브 파일 읽기, 새 드라이브 파일 만들기</td></tr>
+        <tr><td>플랜</td><td>스타터 포함 모든 플랜</td></tr>
+        <tr><td>추가하는 곳</td><td>프롬프트 입력창의 + 메뉴(도움말에는 &quot;Add context&quot; → Connectors)</td></tr>
+        <tr><td>크레딧</td><td>언급 없음</td></tr>
+      </tbody>
+    </table></div>
+    <p class="art__note">출처: <a href="https://www.figma.com/release-notes/" target="_blank" rel="noopener">Figma Release Notes</a> (2026-10-31 확인), <a href="https://help.figma.com/hc/en-us/articles/35440096186007-Use-verified-partner-MCP-connectors-with-the-Figma-agent-and-Figma-Make" target="_blank" rel="noopener">Figma 도움말: 커넥터</a>. 표의 &#x27;언급 없음&#x27;은 두 문서에 해당 내용이 없다는 뜻이다.</p>
+    <h2 class="psub" id="s2">드라이브는 커넥터 스물두 개 중 하나다</h2>
+    <p class="ptext">도움말을 열어 보니 드라이브는 이번에 처음 생긴 것이 아니라, 피그마가 보안·개인정보 기준을 확인했다는 &quot;추천 커넥터&quot; 22개 중 하나였다. 목록은 이렇다.</p>
+    <p class="ptext">Amplitude, Asana, Askable, Atlassian, Box, Contentsquare, Dovetail, Google Drive, Granola, GitHub, Hex, Linear, Mapbox, Marvin, Mobbin, monday.com, Notion, Slack, Sprig, Twilio, Zapier, zeroheight.</p>
+    <p class="ptext">디자이너에게 눈에 띄는 이름이 몇 있다. 레퍼런스 앱 화면을 모아 둔 Mobbin, 사용자 인터뷰를 정리하는 Dovetail, 디자인 시스템 문서를 다루는 zeroheight, 회의 메모 Granola. 직접 만든 연결 주소를 붙이는 커스텀 MCP 커넥터도 있다. 다만 커스텀은 유료 플랜이 필요하다고 한다.</p>
+    <p class="ptext">여기서 MCP는 &quot;AI가 밖의 도구를 부르는 연결 규격&quot;이라고 풀어 두면 된다. 도움말은 방향을 이렇게 구분한다. 피그마 MCP 서버는 내 피그마 파일을 다른 AI 도구가 읽게 해 주고, 커넥터는 반대로 피그마의 에이전트가 바깥 도구를 부른다.</p>
+    <h2 class="psub" id="s3">연결하는 순서</h2>
+    <p class="ptext">도움말에 적힌 순서는 네 단계다.</p>
+    <ol class="ptext-list">
+      <li>채팅창에서 &quot;Add context&quot;를 누르고 Connectors를 고른다.</li>
+      <li>목록에서 원하는 것을 찾아 Connect를 누른다.</li>
+      <li>해당 서비스의 OAuth 로그인(구글 계정으로 허용하는 화면)을 마친다.</li>
+      <li>&quot;Add context&quot;를 다시 눌러 커넥터가 나타나는지 확인한다.</li>
+    </ol>
+    <p class="ptext">로그인 창이 뜨지 않으면 팝업 차단이 원인일 수 있으니 피그마에서 팝업을 허용하라고 한다.</p>
+    <h2 class="psub" id="s4">읽기는 바로, 쓰기는 직접 켠다</h2>
+    <p class="ptext">도움말에서 가장 실무적인 대목이 여기다.</p>
+    <ul class="ptext-list">
+      <li>커넥터의 도구는 읽기 도구와 쓰기 도구로 나뉜다. 노션 페이지를 가져오거나 슬랙을 검색하는 것이 읽기, 노션 문서나 지라 이슈를 만들어 보내는 것이 쓰기다.</li>
+      <li>쓰기 도구는 기본값이 꺼짐이다. 켜려면 직접 설정해야 한다.</li>
+      <li>도구마다 &quot;Ask to run&quot;(실행 전에 물어봄), &quot;Always run&quot;(묻지 않고 실행), &quot;Never run&quot;(실행 안 함) 중에서 고른다.</li>
+      <li>연결을 끊지 않고 지금 대화에서만 끌 수도 있다.</li>
+      <li>연결을 끊어도 외부 도구에 이미 있는 데이터는 지워지지 않는다.</li>
+    </ul>
+    <p class="ptext">드라이브 커넥터가 읽기와 쓰기 중 정확히 어떤 도구를 내놓는지는 내가 연 문서에 나오지 않았다. 릴리스 노트가 &quot;새 드라이브 파일을 만든다&quot;고 했으니 쓰기 도구가 있을 것으로 보이지만, 이름과 범위는 확인하지 못했다.</p>
+    <h2 class="psub" id="s5">누가 쓰고, 누가 막을 수 있나</h2>
+    <ul class="ptext-list">
+      <li>각자 자기 계정으로 커넥터를 추가하고 로그인해야 한다. 팀 한 명이 연결해 둔다고 다 같이 쓰는 구조가 아니다.</li>
+      <li>조직 관리자가 이 기능을 끌 수 있다. 메뉴에 Connectors가 안 보이면 이 때문일 수 있다.</li>
+      <li>파일 편집 권한이 필요하다. 풀 시트(Full seat)는 디자인·메이크 파일에서 에이전트와 대화하고, 보기·개발·협업 시트는 초안(Drafts)에서 써 볼 수 있다고 적혀 있다.</li>
+      <li>구글 드라이브는 Governance+ 애드온과 함께 쓸 수 없다고 따로 적혀 있다.</li>
+      <li>외부 서비스에 내 계정이 있어야 하고, 그쪽 플랜·역할에 따라 쓸 수 있는 범위가 달라질 수 있다.</li>
+    </ul>
+    <figure class="art__fig">
+      <img src="https://designrefs.com/articles/img/figma-agent-google-drive-connector-shot2.webp" alt="피그마 도움말의 커넥터 문서 (출처: 피그마 도움말, 캡처일 2026-10-31)" loading="lazy" decoding="async" />
+      <figcaption>피그마 도움말의 커넥터 문서 (출처: 피그마 도움말, 캡처일 2026-10-31)</figcaption>
+    </figure>
+    <h2 class="psub" id="s6">16MB와 프롬프트 주입, 도움말이 직접 적은 주의</h2>
+    <p class="ptext">도움말에는 두 가지 주의가 있다.</p>
+    <p class="ptext">하나는 크기다. 도구를 &quot;Always run&quot;으로 두면 응답이 16MB를 넘을 때 파일 내려받기가 실패할 수 있다. 인코딩하면 크기가 늘어서 5~6MB쯤 되는 큰 이미지도 걸릴 수 있다. 그럴 땐 &quot;Ask to run&quot;으로 바꿔 다시 시도하라고 한다.</p>
+    <p class="ptext">다른 하나는 프롬프트 주입이다. 외부에서 가져온 글 안에 AI에게 내리는 지시문이 숨어 있으면 에이전트가 따를 위험이 있다는 경고가 도움말에 있다. 클라이언트가 보낸 문서는 대개 안전하겠지만, 출처를 모르는 사람이 편집할 수 있는 공유 폴더라면 한 번 더 생각해 볼 일이다. 이 부분은 문서의 경고를 풀어 쓴 것이고, 드라이브 커넥터에서 실제로 그런 일이 있었다는 보고는 보지 못했다.</p>
+    <h2 class="psub" id="s7">아직 모르는 것</h2>
+    <ul class="ptext-list">
+      <li><strong>읽는 파일 형식.</strong> 구글 문서, 시트, 슬라이드, PDF, 이미지 중 무엇을 읽는지 문서에 없다.</li>
+      <li><strong>공유 드라이브.</strong> 내 드라이브만 되는지, 팀 공유 드라이브도 되는지 확인하지 못했다.</li>
+      <li><strong>크레딧.</strong> 도움말에 크레딧 이야기가 없다. 드라이브 파일을 읽을 때 얼마가 빠지는지 알 수 없다. 에이전트 크레딧의 기본 구조는 <a href="https://designrefs.com/articles/figma-agent-ai-credits-ga/">피그마 에이전트 크레딧</a>에서 정리했다.</li>
+      <li><strong>Mobbin 등 개별 커넥터의 조건.</strong> 목록에 이름이 있다는 것까지만 확인했다. 해당 서비스의 유료 플랜이 필요한지는 그쪽 문서를 봐야 한다.</li>
+      <li><strong>내 계정 적용 여부.</strong> 노트에 &quot;순차 적용&quot; 문구는 없었지만, 실제로 메뉴에 보이는지는 확인하지 못했다.</li>
+    </ul>
+    <h2 class="psub" id="s8">그래서 지금은</h2>
+    <p class="ptext"><strong>드라이브 폴더 이름부터 정리한다.</strong> 에이전트에게 &quot;그 설문 파일&quot;이라고 하면 못 찾는다. 프로젝트마다 폴더 하나에 브리프, 리서치, 에셋을 모으고 파일 이름에 날짜와 내용을 적어 두면 맥락을 부를 때 덜 헤맨다.</p>
+    <p class="ptext"><strong>처음에는 &quot;Ask to run&quot;으로 둔다.</strong> 쓰기 도구는 꺼져 있는 것이 기본이니 켜는 순간 무엇이 드라이브에 만들어지는지 눈으로 본다. 익숙해진 뒤에 &quot;Always run&quot;으로 바꿔도 늦지 않다. 큰 파일은 위의 16MB 한계 때문에 어차피 &quot;Ask to run&quot;이 낫다.</p>
+    <p class="ptext"><strong>요청은 읽기와 만들기를 나눠 시킨다.</strong> 예를 들면 이렇게 보낸다.</p>
+    <blockquote class="art__quote">드라이브의 &#x27;○○ 리뉴얼&#x27; 폴더에서 설문 요약을 읽고, 불만 상위 세 가지를 첫 화면 개선 메모로 정리해 줘. 아직 파일은 만들지 마.</blockquote>
+    <p class="ptext">메모가 마음에 들면 그다음에 &quot;이 내용을 드라이브에 새 문서로 저장해 줘&quot;를 시킨다. 한 번에 시키는 것보다 어디서 틀어졌는지 찾기 쉽다. 맥락을 마크다운 한 장으로 건네는 방법은 <a href="https://designrefs.com/articles/figma-specs-markdown-context/">피그마 Specs</a>에서, 모델을 고르는 칸은 <a href="https://designrefs.com/articles/figma-make-gemini-4-argon-model-picker/">메이크의 모델 선택기</a>에서 이어서 볼 수 있다.</p>
+    <p class="art__note">출처: <a href="https://www.figma.com/release-notes/" target="_blank" rel="noopener">Figma Release Notes</a>, <a href="https://help.figma.com/hc/en-us/articles/35440096186007-Use-verified-partner-MCP-connectors-with-the-Figma-agent-and-Figma-Make" target="_blank" rel="noopener">Figma 도움말: Use verified partner MCP connectors with the Figma agent and Figma Make</a></p>]]></content:encoded>
+    </item>
     <item>
       <title>한 장짜리 제안서를 대화창에서 바로 디자인으로, Claude Design은 12월 14일에 별도 사이트를 닫는다</title>
       <link>https://designrefs.com/articles/claude-design-moves-into-chat-and-claude-code/</link>

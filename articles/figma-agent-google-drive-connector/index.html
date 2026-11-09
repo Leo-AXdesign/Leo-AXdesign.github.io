@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>브리프는 드라이브에, 시안은 피그마에. 에이전트가 그 사이를 오가기 시작했다 | 디자인 허브</title>
+  <meta name="description" content="10월 30일 피그마 릴리스 노트에 구글 드라이브 커넥터가 올라왔다. 모든 플랜에서 에이전트와 메이크가 드라이브 파일을 읽고 새 파일도 만든다. 릴리스 노트와 도움말에서 확인된 연결 순서와 권한, 쓰기 도구 기본값, 비어 있는 부분을 적었다." />
+  <link rel="canonical" href="https://designrefs.com/articles/figma-agent-google-drive-connector/" />
+  <link rel="alternate" hreflang="ko" href="https://designrefs.com/articles/figma-agent-google-drive-connector/" />
+  <link rel="alternate" hreflang="en" href="https://designrefs.com/en/articles/figma-agent-google-drive-connector/" />
+  <link rel="alternate" hreflang="x-default" href="https://designrefs.com/articles/figma-agent-google-drive-connector/" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="디자인 허브" />
+  <meta property="og:locale" content="ko_KR" />
+  <meta property="og:title" content="브리프는 드라이브에, 시안은 피그마에. 에이전트가 그 사이를 오가기 시작했다 | 디자인 허브" />
+  <meta property="og:description" content="10월 30일 피그마 릴리스 노트에 구글 드라이브 커넥터가 올라왔다. 모든 플랜에서 에이전트와 메이크가 드라이브 파일을 읽고 새 파일도 만든다. 릴리스 노트와 도움말에서 확인된 연결 순서와 권한, 쓰기 도구 기본값, 비어 있는 부분을 적었다." />
+  <meta property="og:url" content="https://designrefs.com/articles/figma-agent-google-drive-connector/" />
+  <meta property="og:image" content="https://designrefs.com/og/figma-agent-google-drive-connector.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="alternate" type="application/rss+xml" title="디자인 허브 읽을거리" href="https://designrefs.com/rss.xml" />
+  <link rel="icon" href="https://designrefs.com/favicon.ico" sizes="32x32" />
+  <link rel="icon" type="image/svg+xml" href="https://designrefs.com/favicon.svg" />
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+  <link rel="stylesheet" href="https://designrefs.com/css/style.css" />
+  <!-- 구글 애드센스 -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5831827822584395" crossorigin="anonymous"></script>
+
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q7QVVHSLQ6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Q7QVVHSLQ6');
+  </script>
+  <script>
+    // 메인에서 고른 테마를 그대로 따릅니다.
+    try {
+      var t = localStorage.getItem('designhub:theme') || 'light';
+      if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+    } catch (e) {}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://designrefs.com/articles/figma-agent-google-drive-connector/#post",
+      "url": "https://designrefs.com/articles/figma-agent-google-drive-connector/",
+      "mainEntityOfPage": "https://designrefs.com/articles/figma-agent-google-drive-connector/",
+      "headline": "브리프는 드라이브에, 시안은 피그마에. 에이전트가 그 사이를 오가기 시작했다",
+      "description": "10월 30일 피그마 릴리스 노트에 구글 드라이브 커넥터가 올라왔다. 모든 플랜에서 에이전트와 메이크가 드라이브 파일을 읽고 새 파일도 만든다. 릴리스 노트와 도움말에서 확인된 연결 순서와 권한, 쓰기 도구 기본값, 비어 있는 부분을 적었다.",
+      "articleSection": "AI 디자인",
+      "datePublished": "2026-11-09",
+      "dateModified": "2026-11-09",
+      "inLanguage": "ko",
+      "wordCount": 3182,
+      "timeRequired": "PT5M",
+      "image": "https://designrefs.com/og/figma-agent-google-drive-connector.png",
+      "author": {
+        "@type": "Organization",
+        "name": "디자인 허브",
+        "url": "https://designrefs.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "디자인 허브",
+        "url": "https://designrefs.com/"
+      },
+      "isPartOf": {
+        "@type": "Blog",
+        "@id": "https://designrefs.com/articles/#blog",
+        "name": "디자인 허브 읽을거리"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "디자인 허브",
+          "item": "https://designrefs.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "읽을거리",
+          "item": "https://designrefs.com/articles/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "브리프는 드라이브에, 시안은 피그마에. 에이전트가 그 사이를 오가기 시작했다",
+          "item": "https://designrefs.com/articles/figma-agent-google-drive-connector/"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <meta property="article:published_time" content="2026-11-09T09:00:00+09:00" />
+  <meta property="article:modified_time" content="2026-11-09T09:00:00+09:00" />
+  <meta property="article:section" content="AI 디자인" />
+  <meta property="article:tag" content="AI 디자인" />
+  <meta property="article:tag" content="AI 디자인 툴" />
+  <meta property="article:tag" content="디자인 툴" />
+  <meta property="article:tag" content="UI/UX 레퍼런스" />
+</head>
+<body class="page">
+  <header class="top">
+    <div class="wrap top__inner">
+      <a class="logo" href="https://designrefs.com/">d<span>.</span></a>
+
+      <!-- 검색어를 넣고 엔터를 치면 메인 화면에서 검색 결과가 열립니다 (?q=) -->
+      <form class="search" action="https://designrefs.com/" method="get" role="search">
+        <svg class="search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+        <input id="search" class="search__input" type="search" name="q" placeholder="사이트 검색" autocomplete="off" />
+        <kbd class="search__kbd">/</kbd>
+      </form>
+
+      <div class="top__actions">
+        <a class="top__lang" href="https://designrefs.com/en/articles/figma-agent-google-drive-connector/" hreflang="en" lang="en" title="English">EN</a>
+        <button id="theme-toggle" class="top__btn" type="button" aria-label="테마 전환" title="라이트 / 다크 전환">
+          <span class="dot"></span>
+        </button>
+        <button id="menu-open" class="top__btn top__btn--menu" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="drawer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 모바일 전체 메뉴 -->
+  <div class="drawer" id="drawer" hidden>
+    <div class="drawer__backdrop" id="drawer-backdrop"></div>
+    <aside class="drawer__panel" role="dialog" aria-modal="true" aria-label="전체 메뉴">
+      <header class="drawer__head">
+        <span class="drawer__title">전체 메뉴</span>
+        <button id="drawer-theme" class="drawer__close drawer__theme" type="button" aria-label="테마 전환" title="라이트 / 다크 전환"><span class="dot"></span></button>
+        <button id="menu-close" class="drawer__close" type="button" aria-label="메뉴 닫기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      </header>
+      <div class="drawer__body">
+        <div class="drawer__section drawer__section--top">
+          <p class="nav__group">태그 필터</p>
+          <div class="pills pills--tags"><a class="pill is-active" href="https://designrefs.com/">전체</a><a class="pill" href="https://designrefs.com/?tag=%ED%95%9C%EA%B5%AD">한국</a><a class="pill" href="https://designrefs.com/?tag=%EB%AC%B4%EB%A3%8C">무료</a><a class="pill" href="https://designrefs.com/?tag=%EC%9C%A0%EB%A3%8C">유료</a><a class="pill" href="https://designrefs.com/?tag=AI">AI</a></div>
+        </div>
+        <nav class="nav" aria-label="메뉴"><a class="nav__item" href="https://designrefs.com/"><span class="nav__label">전체</span><span class="nav__count">441</span></a><a class="nav__item" href="https://designrefs.com/#bookmarks"><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="m12 2.5 2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8Z"/></svg><span class="nav__label">즐겨찾기</span><span class="nav__count" data-bm-count>0</span></a><hr class="nav__sep" /><a class="nav__item" href="https://designrefs.com/#uiux"><span class="nav__label">UI/UX 레퍼런스</span><span class="nav__count">40</span></a><a class="nav__item" href="https://designrefs.com/#graphic"><span class="nav__label">그래픽 / 브랜딩</span><span class="nav__count">29</span></a><a class="nav__item" href="https://designrefs.com/#color"><span class="nav__label">컬러 가이드</span><span class="nav__count">28</span></a><a class="nav__item" href="https://designrefs.com/#typo"><span class="nav__label">타이포 / 폰트</span><span class="nav__count">30</span></a><a class="nav__item" href="https://designrefs.com/#asset"><span class="nav__label">아이콘 / 에셋</span><span class="nav__count">33</span></a><a class="nav__item" href="https://designrefs.com/#mockup"><span class="nav__label">목업</span><span class="nav__count">23</span></a><a class="nav__item" href="https://designrefs.com/#tool"><span class="nav__label">디자인 툴</span><span class="nav__count">32</span></a><a class="nav__item" href="https://designrefs.com/#ai"><span class="nav__label">AI</span><span class="nav__count">61</span></a><a class="nav__item" href="https://designrefs.com/#dev"><span class="nav__label">디자인 개발</span><span class="nav__count">36</span></a><a class="nav__item" href="https://designrefs.com/#community"><span class="nav__label">커뮤니티 / 매거진</span><span class="nav__count">31</span></a><a class="nav__item" href="https://designrefs.com/#creator"><span class="nav__label">크리에이터 / 채널</span><span class="nav__count">56</span></a><a class="nav__item" href="https://designrefs.com/#freelance"><span class="nav__label">외주 / 프리랜서</span><span class="nav__count">17</span></a><a class="nav__item" href="https://designrefs.com/#job"><span class="nav__label">채용공고</span><span class="nav__count">25</span></a><hr class="nav__sep" /><a class="nav__item is-active" href="https://designrefs.com/#articles"><span class="nav__label">읽을거리</span><span class="nav__count">45</span></a><a class="nav__item" href="https://designrefs.com/#styles"><span class="nav__label">스타일 사전</span><span class="nav__count">34</span></a><a class="nav__item" href="https://designrefs.com/#trends"><span class="nav__label">2026 트렌드</span><span class="nav__count">31</span></a><a class="nav__item" href="https://designrefs.com/#glossary"><span class="nav__label">용어 사전</span><span class="nav__count">155</span></a><hr class="nav__sep" /><a class="nav__item" href="https://designrefs.com/lab/"><span class="nav__label">스타일 현상소</span></a><a class="nav__item" href="https://designrefs.com/skills/"><span class="nav__label">클로드 스킬</span></a><a class="nav__item" href="https://designrefs.com/talk/"><span class="nav__label">디자인 잡담</span></a></nav>
+      </div>
+    </aside>
+  </div>
+
+  <div class="wrap layout">
+    <aside class="sidebar">
+      <nav class="nav" aria-label="메뉴"><a class="nav__item" href="https://designrefs.com/"><span class="nav__label">전체</span><span class="nav__count">441</span></a><a class="nav__item" href="https://designrefs.com/#bookmarks"><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="m12 2.5 2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8Z"/></svg><span class="nav__label">즐겨찾기</span><span class="nav__count" data-bm-count>0</span></a><hr class="nav__sep" /><a class="nav__item" href="https://designrefs.com/#uiux"><span class="nav__label">UI/UX 레퍼런스</span><span class="nav__count">40</span></a><a class="nav__item" href="https://designrefs.com/#graphic"><span class="nav__label">그래픽 / 브랜딩</span><span class="nav__count">29</span></a><a class="nav__item" href="https://designrefs.com/#color"><span class="nav__label">컬러 가이드</span><span class="nav__count">28</span></a><a class="nav__item" href="https://designrefs.com/#typo"><span class="nav__label">타이포 / 폰트</span><span class="nav__count">30</span></a><a class="nav__item" href="https://designrefs.com/#asset"><span class="nav__label">아이콘 / 에셋</span><span class="nav__count">33</span></a><a class="nav__item" href="https://designrefs.com/#mockup"><span class="nav__label">목업</span><span class="nav__count">23</span></a><a class="nav__item" href="https://designrefs.com/#tool"><span class="nav__label">디자인 툴</span><span class="nav__count">32</span></a><a class="nav__item" href="https://designrefs.com/#ai"><span class="nav__label">AI</span><span class="nav__count">61</span></a><a class="nav__item" href="https://designrefs.com/#dev"><span class="nav__label">디자인 개발</span><span class="nav__count">36</span></a><a class="nav__item" href="https://designrefs.com/#community"><span class="nav__label">커뮤니티 / 매거진</span><span class="nav__count">31</span></a><a class="nav__item" href="https://designrefs.com/#creator"><span class="nav__label">크리에이터 / 채널</span><span class="nav__count">56</span></a><a class="nav__item" href="https://designrefs.com/#freelance"><span class="nav__label">외주 / 프리랜서</span><span class="nav__count">17</span></a><a class="nav__item" href="https://designrefs.com/#job"><span class="nav__label">채용공고</span><span class="nav__count">25</span></a><hr class="nav__sep" /><a class="nav__item is-active" href="https://designrefs.com/#articles"><span class="nav__label">읽을거리</span><span class="nav__count">45</span></a><a class="nav__item" href="https://designrefs.com/#styles"><span class="nav__label">스타일 사전</span><span class="nav__count">34</span></a><a class="nav__item" href="https://designrefs.com/#trends"><span class="nav__label">2026 트렌드</span><span class="nav__count">31</span></a><a class="nav__item" href="https://designrefs.com/#glossary"><span class="nav__label">용어 사전</span><span class="nav__count">155</span></a><hr class="nav__sep" /><a class="nav__item" href="https://designrefs.com/lab/"><span class="nav__label">스타일 현상소</span></a><a class="nav__item" href="https://designrefs.com/skills/"><span class="nav__label">클로드 스킬</span></a><a class="nav__item" href="https://designrefs.com/talk/"><span class="nav__label">디자인 잡담</span></a></nav>
+    </aside>
+    <main class="main page__main page__main--art">
+    <article class="art">
+      <p class="art__kicker"><a href="https://designrefs.com/articles/">읽을거리</a> · AI 디자인</p>
+      <h1 class="page__title">브리프는 드라이브에, 시안은 피그마에. 에이전트가 그 사이를 오가기 시작했다</h1>
+      <p class="page__intro">10월 30일 피그마 릴리스 노트에 구글 드라이브 커넥터가 올라왔다. 모든 플랜에서 에이전트와 메이크가 드라이브 파일을 읽고 새 파일도 만든다. 릴리스 노트와 도움말에서 확인된 연결 순서와 권한, 쓰기 도구 기본값, 비어 있는 부분을 적었다.</p>
+      <p class="art__meta"><time datetime="2026-11-09">2026년 11월 9일</time> · 읽는 데 약 5분<span data-views hidden></span></p>
+      <nav class="art__toc" aria-label="이 글의 차례"><p class="art__toc-t">이 글의 차례</p><ol><li><a href="#s1">릴리스 노트에 적힌 것</a></li><li><a href="#s2">드라이브는 커넥터 스물두 개 중 하나다</a></li><li><a href="#s3">연결하는 순서</a></li><li><a href="#s4">읽기는 바로, 쓰기는 직접 켠다</a></li><li><a href="#s5">누가 쓰고, 누가 막을 수 있나</a></li><li><a href="#s6">16MB와 프롬프트 주입, 도움말이 직접 적은 주의</a></li><li><a href="#s7">아직 모르는 것</a></li><li><a href="#s8">그래서 지금은</a></li></ol></nav>
+    <p class="ptext">클라이언트 메일은 이런 식으로 온다. &quot;설문 결과는 드라이브 폴더에 올려 뒀어요. 거기 나온 불만 순서대로 첫 화면에 반영해 주세요.&quot;</p>
+    <p class="ptext">폴더를 열고, 시트를 읽고, 요약을 메모에 옮기고, 그제야 피그마로 돌아온다. (가정해서 그린 장면이다. 내가 받은 메일은 아니다.)</p>
+    <p class="ptext">10월 30일 피그마 릴리스 노트에 이 왕복을 줄이는 항목이 올라왔다. 제목은 &quot;Connect Google Drive to the Figma agent, available on all plans&quot;다.</p>
+    <p class="ptext">이 글은 직접 써 본 후기가 아니다. 릴리스 노트와 피그마 도움말을 열어 확인한 내용만 적었다. 내 계정에서 커넥터를 연결해 본 적은 없다. 그래서 Drive의 어떤 파일 형식까지 읽는지처럼 문서에 없는 부분은 비워 두었다.</p>
+    <figure class="art__fig">
+      <img src="https://designrefs.com/articles/img/figma-agent-google-drive-connector-shot1.webp" alt="피그마 릴리스 노트의 10월 30일 항목 (출처: https://www.figma.com/release-notes/, 캡처일 2026-10-31)" loading="lazy" decoding="async" />
+      <figcaption>피그마 릴리스 노트의 10월 30일 항목 (출처: https://www.figma.com/release-notes/, 캡처일 2026-10-31)</figcaption>
+    </figure>
+    <h2 class="psub" id="s1">릴리스 노트에 적힌 것</h2>
+    <p class="ptext">본문은 짧다. 구글 드라이브를 피그마 에이전트와 메이크에 연결하면 이미 있는 파일의 맥락을 피그마로 가져온다. 피그마 파일을 떠나지 않고 드라이브에 새 파일을 만드는 것도 된다. 노트가 든 예는 세 가지다. 리서치 인사이트 요약하기, 실제 데이터를 참고하기, 캔버스에서 고칠 에셋 가져오기.</p>
+    <p class="ptext">그리고 커넥터는 스타터를 포함한 모든 플랜에서 쓴다고 적혀 있다. 추가하는 곳은 프롬프트 입력창의 + 메뉴다.</p>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th>항목</th><th>확인된 내용</th></tr></thead>
+      <tbody>
+        <tr><td>날짜</td><td>2026년 10월 30일</td></tr>
+        <tr><td>대상</td><td>피그마 에이전트, 피그마 메이크</td></tr>
+        <tr><td>되는 일</td><td>드라이브 파일 읽기, 새 드라이브 파일 만들기</td></tr>
+        <tr><td>플랜</td><td>스타터 포함 모든 플랜</td></tr>
+        <tr><td>추가하는 곳</td><td>프롬프트 입력창의 + 메뉴(도움말에는 &quot;Add context&quot; → Connectors)</td></tr>
+        <tr><td>크레딧</td><td>언급 없음</td></tr>
+      </tbody>
+    </table></div>
+    <p class="art__note">출처: <a href="https://www.figma.com/release-notes/" target="_blank" rel="noopener">Figma Release Notes</a> (2026-10-31 확인), <a href="https://help.figma.com/hc/en-us/articles/35440096186007-Use-verified-partner-MCP-connectors-with-the-Figma-agent-and-Figma-Make" target="_blank" rel="noopener">Figma 도움말: 커넥터</a>. 표의 &#x27;언급 없음&#x27;은 두 문서에 해당 내용이 없다는 뜻이다.</p>
+    <h2 class="psub" id="s2">드라이브는 커넥터 스물두 개 중 하나다</h2>
+    <p class="ptext">도움말을 열어 보니 드라이브는 이번에 처음 생긴 것이 아니라, 피그마가 보안·개인정보 기준을 확인했다는 &quot;추천 커넥터&quot; 22개 중 하나였다. 목록은 이렇다.</p>
+    <p class="ptext">Amplitude, Asana, Askable, Atlassian, Box, Contentsquare, Dovetail, Google Drive, Granola, GitHub, Hex, Linear, Mapbox, Marvin, Mobbin, monday.com, Notion, Slack, Sprig, Twilio, Zapier, zeroheight.</p>
+    <p class="ptext">디자이너에게 눈에 띄는 이름이 몇 있다. 레퍼런스 앱 화면을 모아 둔 Mobbin, 사용자 인터뷰를 정리하는 Dovetail, 디자인 시스템 문서를 다루는 zeroheight, 회의 메모 Granola. 직접 만든 연결 주소를 붙이는 커스텀 MCP 커넥터도 있다. 다만 커스텀은 유료 플랜이 필요하다고 한다.</p>
+    <p class="ptext">여기서 MCP는 &quot;AI가 밖의 도구를 부르는 연결 규격&quot;이라고 풀어 두면 된다. 도움말은 방향을 이렇게 구분한다. 피그마 MCP 서버는 내 피그마 파일을 다른 AI 도구가 읽게 해 주고, 커넥터는 반대로 피그마의 에이전트가 바깥 도구를 부른다.</p>
+    <h2 class="psub" id="s3">연결하는 순서</h2>
+    <p class="ptext">도움말에 적힌 순서는 네 단계다.</p>
+    <ol class="ptext-list">
+      <li>채팅창에서 &quot;Add context&quot;를 누르고 Connectors를 고른다.</li>
+      <li>목록에서 원하는 것을 찾아 Connect를 누른다.</li>
+      <li>해당 서비스의 OAuth 로그인(구글 계정으로 허용하는 화면)을 마친다.</li>
+      <li>&quot;Add context&quot;를 다시 눌러 커넥터가 나타나는지 확인한다.</li>
+    </ol>
+    <p class="ptext">로그인 창이 뜨지 않으면 팝업 차단이 원인일 수 있으니 피그마에서 팝업을 허용하라고 한다.</p>
+    <h2 class="psub" id="s4">읽기는 바로, 쓰기는 직접 켠다</h2>
+    <p class="ptext">도움말에서 가장 실무적인 대목이 여기다.</p>
+    <ul class="ptext-list">
+      <li>커넥터의 도구는 읽기 도구와 쓰기 도구로 나뉜다. 노션 페이지를 가져오거나 슬랙을 검색하는 것이 읽기, 노션 문서나 지라 이슈를 만들어 보내는 것이 쓰기다.</li>
+      <li>쓰기 도구는 기본값이 꺼짐이다. 켜려면 직접 설정해야 한다.</li>
+      <li>도구마다 &quot;Ask to run&quot;(실행 전에 물어봄), &quot;Always run&quot;(묻지 않고 실행), &quot;Never run&quot;(실행 안 함) 중에서 고른다.</li>
+      <li>연결을 끊지 않고 지금 대화에서만 끌 수도 있다.</li>
+      <li>연결을 끊어도 외부 도구에 이미 있는 데이터는 지워지지 않는다.</li>
+    </ul>
+    <p class="ptext">드라이브 커넥터가 읽기와 쓰기 중 정확히 어떤 도구를 내놓는지는 내가 연 문서에 나오지 않았다. 릴리스 노트가 &quot;새 드라이브 파일을 만든다&quot;고 했으니 쓰기 도구가 있을 것으로 보이지만, 이름과 범위는 확인하지 못했다.</p>
+    <h2 class="psub" id="s5">누가 쓰고, 누가 막을 수 있나</h2>
+    <ul class="ptext-list">
+      <li>각자 자기 계정으로 커넥터를 추가하고 로그인해야 한다. 팀 한 명이 연결해 둔다고 다 같이 쓰는 구조가 아니다.</li>
+      <li>조직 관리자가 이 기능을 끌 수 있다. 메뉴에 Connectors가 안 보이면 이 때문일 수 있다.</li>
+      <li>파일 편집 권한이 필요하다. 풀 시트(Full seat)는 디자인·메이크 파일에서 에이전트와 대화하고, 보기·개발·협업 시트는 초안(Drafts)에서 써 볼 수 있다고 적혀 있다.</li>
+      <li>구글 드라이브는 Governance+ 애드온과 함께 쓸 수 없다고 따로 적혀 있다.</li>
+      <li>외부 서비스에 내 계정이 있어야 하고, 그쪽 플랜·역할에 따라 쓸 수 있는 범위가 달라질 수 있다.</li>
+    </ul>
+    <figure class="art__fig">
+      <img src="https://designrefs.com/articles/img/figma-agent-google-drive-connector-shot2.webp" alt="피그마 도움말의 커넥터 문서 (출처: 피그마 도움말, 캡처일 2026-10-31)" loading="lazy" decoding="async" />
+      <figcaption>피그마 도움말의 커넥터 문서 (출처: 피그마 도움말, 캡처일 2026-10-31)</figcaption>
+    </figure>
+    <h2 class="psub" id="s6">16MB와 프롬프트 주입, 도움말이 직접 적은 주의</h2>
+    <p class="ptext">도움말에는 두 가지 주의가 있다.</p>
+    <p class="ptext">하나는 크기다. 도구를 &quot;Always run&quot;으로 두면 응답이 16MB를 넘을 때 파일 내려받기가 실패할 수 있다. 인코딩하면 크기가 늘어서 5~6MB쯤 되는 큰 이미지도 걸릴 수 있다. 그럴 땐 &quot;Ask to run&quot;으로 바꿔 다시 시도하라고 한다.</p>
+    <p class="ptext">다른 하나는 프롬프트 주입이다. 외부에서 가져온 글 안에 AI에게 내리는 지시문이 숨어 있으면 에이전트가 따를 위험이 있다는 경고가 도움말에 있다. 클라이언트가 보낸 문서는 대개 안전하겠지만, 출처를 모르는 사람이 편집할 수 있는 공유 폴더라면 한 번 더 생각해 볼 일이다. 이 부분은 문서의 경고를 풀어 쓴 것이고, 드라이브 커넥터에서 실제로 그런 일이 있었다는 보고는 보지 못했다.</p>
+    <h2 class="psub" id="s7">아직 모르는 것</h2>
+    <ul class="ptext-list">
+      <li><strong>읽는 파일 형식.</strong> 구글 문서, 시트, 슬라이드, PDF, 이미지 중 무엇을 읽는지 문서에 없다.</li>
+      <li><strong>공유 드라이브.</strong> 내 드라이브만 되는지, 팀 공유 드라이브도 되는지 확인하지 못했다.</li>
+      <li><strong>크레딧.</strong> 도움말에 크레딧 이야기가 없다. 드라이브 파일을 읽을 때 얼마가 빠지는지 알 수 없다. 에이전트 크레딧의 기본 구조는 <a href="https://designrefs.com/articles/figma-agent-ai-credits-ga/">피그마 에이전트 크레딧</a>에서 정리했다.</li>
+      <li><strong>Mobbin 등 개별 커넥터의 조건.</strong> 목록에 이름이 있다는 것까지만 확인했다. 해당 서비스의 유료 플랜이 필요한지는 그쪽 문서를 봐야 한다.</li>
+      <li><strong>내 계정 적용 여부.</strong> 노트에 &quot;순차 적용&quot; 문구는 없었지만, 실제로 메뉴에 보이는지는 확인하지 못했다.</li>
+    </ul>
+    <h2 class="psub" id="s8">그래서 지금은</h2>
+    <p class="ptext"><strong>드라이브 폴더 이름부터 정리한다.</strong> 에이전트에게 &quot;그 설문 파일&quot;이라고 하면 못 찾는다. 프로젝트마다 폴더 하나에 브리프, 리서치, 에셋을 모으고 파일 이름에 날짜와 내용을 적어 두면 맥락을 부를 때 덜 헤맨다.</p>
+    <p class="ptext"><strong>처음에는 &quot;Ask to run&quot;으로 둔다.</strong> 쓰기 도구는 꺼져 있는 것이 기본이니 켜는 순간 무엇이 드라이브에 만들어지는지 눈으로 본다. 익숙해진 뒤에 &quot;Always run&quot;으로 바꿔도 늦지 않다. 큰 파일은 위의 16MB 한계 때문에 어차피 &quot;Ask to run&quot;이 낫다.</p>
+    <p class="ptext"><strong>요청은 읽기와 만들기를 나눠 시킨다.</strong> 예를 들면 이렇게 보낸다.</p>
+    <blockquote class="art__quote">드라이브의 &#x27;○○ 리뉴얼&#x27; 폴더에서 설문 요약을 읽고, 불만 상위 세 가지를 첫 화면 개선 메모로 정리해 줘. 아직 파일은 만들지 마.</blockquote>
+    <p class="ptext">메모가 마음에 들면 그다음에 &quot;이 내용을 드라이브에 새 문서로 저장해 줘&quot;를 시킨다. 한 번에 시키는 것보다 어디서 틀어졌는지 찾기 쉽다. 맥락을 마크다운 한 장으로 건네는 방법은 <a href="https://designrefs.com/articles/figma-specs-markdown-context/">피그마 Specs</a>에서, 모델을 고르는 칸은 <a href="https://designrefs.com/articles/figma-make-gemini-4-argon-model-picker/">메이크의 모델 선택기</a>에서 이어서 볼 수 있다.</p>
+    <p class="art__note">출처: <a href="https://www.figma.com/release-notes/" target="_blank" rel="noopener">Figma Release Notes</a>, <a href="https://help.figma.com/hc/en-us/articles/35440096186007-Use-verified-partner-MCP-connectors-with-the-Figma-agent-and-Figma-Make" target="_blank" rel="noopener">Figma 도움말: Use verified partner MCP connectors with the Figma agent and Figma Make</a></p>
+      <div class="share">
+        <button class="share__btn" type="button" data-share>공유하기</button>
+        <button class="share__btn" type="button" data-copy>링크 복사</button>
+        <span class="share__msg" role="status"></span>
+      </div>
+    </article>
+    <script src="https://designrefs.com/js/views.js" defer></script>
+
+    <nav class="page__nav">
+      <h2 class="psub">이어서 볼 목록</h2>
+      <div class="page__navlinks"><a href="https://designrefs.com/#ai">AI 디자인 툴</a><a href="https://designrefs.com/#tool">디자인 툴</a><a href="https://designrefs.com/#uiux">UI/UX 레퍼런스</a></div>
+    </nav>
+
+    <section class="section">
+      <header class="section__head">
+        <h2 class="section__title">함께 읽으면 좋은 글</h2>
+      </header>
+      <div class="list list--insight">
+        <a class="arow" href="https://designrefs.com/articles/claude-design-moves-into-chat-and-claude-code/" data-tag="AI 디자인">
+          <span class="arow__date">2026. 11. 07</span>
+          <span class="arow__main">
+            <span class="arow__title">한 장짜리 제안서를 대화창에서 바로 디자인으로, Claude Design은 12월 14일에 별도 사이트를 닫는다</span>
+            <p class="arow__desc">Claude Design이 모든 Claude 대화와 Claude Code, 모바일 앱 안으로 들어왔고, 단독 사이트 claude.ai/design은 12월 14일에 닫힌다. 공식 도움말과 제품 페이지에서 확인한 시작 방법, 요금제, 내보내기, 옮겨 둘 것을 적었다.</p>
+          </span>
+          <span class="arow__tag">AI 디자인 · 5분</span>
+        </a>
+        <a class="arow" href="https://designrefs.com/articles/figma-mcp-weave-models-credits/" data-tag="AI 디자인">
+          <span class="arow__date">2026. 11. 02</span>
+          <span class="arow__main">
+            <span class="arow__title">시안 옆에 5초짜리 움직이는 버전을 붙여 달라고 할 때, 피그마 MCP로 Weave 모델을 부르면 크레딧은 어디서 나갈까</span>
+            <p class="arow__desc">피그마 릴리스 노트에 10월 26일, 외부 AI 에이전트가 Figma MCP로 Weave의 영상·이미지 모델(Seedance, Kling, Nano Banana)을 쓸 수 있다는 항목이 올라왔다. 공식 페이지에서 확인한 조건, Weave 요금표로 어림한 1회 비용, 아직 확인되지 않은 부분을 적었다.</p>
+          </span>
+          <span class="arow__tag">AI 디자인 · 6분</span>
+        </a>
+        <a class="arow" href="https://designrefs.com/articles/figma-shader-plugin-version-restore/" data-tag="AI 디자인">
+          <span class="arow__date">2026. 10. 30</span>
+          <span class="arow__main">
+            <span class="arow__title">&quot;아까 효과가 더 나았어요&quot; 메일 한 통, 피그마 셰이더와 생성 플러그인에 버전 기록이 생겼다</span>
+            <p class="arow__desc">피그마 에이전트가 만든 셰이더와 생성 플러그인을 고치면 이제 이전 버전이 남고, 되돌릴 수 있다. 10월 27일 릴리스 노트와 개발자 문서에서 확인된 것, 화면에서 어디서 보는지 같은 비어 있는 부분, 수정 전에 해 둘 일을 적었다.</p>
+          </span>
+          <span class="arow__tag">AI 디자인 · 6분</span>
+        </a>
+      </div>
+      <nav class="art__pn"><a class="art__pn-a is-prev" href="https://designrefs.com/articles/claude-design-moves-into-chat-and-claude-code/" rel="prev"><span class="art__pn-l">← 이전 글</span><span class="art__pn-t">한 장짜리 제안서를 대화창에서 바로 디자인으로, Claude Design은 12월 14일에 별도 사이트를 닫는다</span></a><span></span></nav>
+      <p class="art__all"><a href="https://designrefs.com/articles/">읽을거리 전체 보기 (45편)</a></p>
+    </section>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <div class="wrap">
+      <nav class="footer__nav"><div class="footer__navgroup"><a href="https://designrefs.com/ui-ux/">UI/UX 레퍼런스</a><a href="https://designrefs.com/graphic/">그래픽 / 브랜딩</a><a href="https://designrefs.com/color/">컬러 가이드</a><a href="https://designrefs.com/font/">타이포 / 폰트</a><a href="https://designrefs.com/assets/">아이콘 / 에셋</a><a href="https://designrefs.com/mockups/">목업</a><a href="https://designrefs.com/tools/">디자인 툴</a><a href="https://designrefs.com/ai/">AI</a><a href="https://designrefs.com/dev/">디자인 개발</a><a href="https://designrefs.com/community/">커뮤니티 / 매거진</a><a href="https://designrefs.com/creators/">크리에이터 / 채널</a><a href="https://designrefs.com/freelance/">외주 / 프리랜서</a><a href="https://designrefs.com/jobs/">채용공고</a></div><div class="footer__navgroup"><a href="https://designrefs.com/articles/">읽을거리</a><a href="https://designrefs.com/styles/">스타일 사전</a><a href="https://designrefs.com/trends/">2026 트렌드</a><a href="https://designrefs.com/glossary/">용어 사전</a><a href="https://designrefs.com/updates/">업데이트 기록</a></div></nav>
+    </div>
+    <div class="wrap footer__inner">
+      <span>Copyright 2026. Design Hub. all rights reserved.</span>
+      <a href="https://designrefs.com/about/">소개</a>
+      <a href="https://designrefs.com/articles/">읽을거리</a>
+      <a href="https://designrefs.com/talk/">디자인 잡담</a>
+      <a href="https://designrefs.com/privacy/">개인정보처리방침</a>
+      <span class="footer__sns"><a href="https://www.threads.com/@design_refs_hub" target="_blank" rel="noopener me" aria-label="Threads" title="Threads"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 7.5c-1.333-3-3.667-4.5-7-4.5-5 0-8 2.5-8 9s3.5 9 8 9 7-3 7-5-1-5-7-5c-2.5 0-3 1.25-3 2.5 0 1.5 1 2.5 2.5 2.5 2.5 0 3.5-1.5 3.5-5s-2-4-3-4-1.833.333-2.5 1"/></svg></a><a href="https://www.instagram.com/design_refs_hub/" target="_blank" rel="noopener me" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4"/><circle cx="12" cy="12" r="3.2"/><path d="M16.5 7.5v.01"/></svg></a><a href="https://www.facebook.com/profile.php?id=61595236925825" target="_blank" rel="noopener me" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 10v4h3v7h4v-7h3l1-4h-4V8a1 1 0 0 1 1-1h3V3h-3a5 5 0 0 0-5 5v2H7"/></svg></a><a href="mailto:nisov0924@gmail.com" aria-label="메일 nisov0924@gmail.com" title="nisov0924@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a></span>
+      <a href="#" id="footer-top">맨 위로 ↑</a>
+    </div>
+  </footer>
+
+  <button id="to-top" class="to-top" type="button" aria-label="맨 위로"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg></button>
+  <script src="https://designrefs.com/js/page.js" defer></script>
+</body>
+</html>

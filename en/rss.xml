@@ -6,7 +6,93 @@
     <atom:link href="https://designrefs.com/en/rss.xml" rel="self" type="application/rss+xml" />
     <description>Notes from a designer in Korea: working with AI, putting style into words, collecting references and design communities. Translated from Korean.</description>
     <language>en</language>
-    <lastBuildDate>Sat, 07 Nov 2026 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 09 Nov 2026 09:00:00 +0900</lastBuildDate>
+    <item>
+      <title>The brief lives in Drive, the design lives in Figma. The agent now travels between them</title>
+      <link>https://designrefs.com/en/articles/figma-agent-google-drive-connector/</link>
+      <guid isPermaLink="true">https://designrefs.com/en/articles/figma-agent-google-drive-connector/</guid>
+      <pubDate>Mon, 09 Nov 2026 09:00:00 +0900</pubDate>
+      <category>AI Design</category>
+      <description>Figma&#x27;s October 30 release notes added a Google Drive connector for the Figma agent and Make, on all plans. What the release note and help page confirm about setup, permissions, write-tool defaults and file-size limits, and what they leave out.</description>
+      <content:encoded><![CDATA[    <p class="ptext">The client&#x27;s email goes like this. &quot;The survey results are in the Drive folder. Please reflect the complaints on the first screen, in the order they appear.&quot;</p>
+    <p class="ptext">You open the folder, read the sheet, copy a summary into your notes, and only then go back to Figma. (This is an imagined scene, not an email I received.)</p>
+    <p class="ptext">On October 30, Figma&#x27;s release notes added an entry that shortens that round trip. It is titled &quot;Connect Google Drive to the Figma agent, available on all plans.&quot;</p>
+    <p class="ptext">This is not a hands-on review. It is based on the release notes and Figma&#x27;s help page. I have not connected the connector in my own account, so anything the documents don&#x27;t say, such as which Drive file types it reads, is left open.</p>
+    <figure class="art__fig">
+      <img src="https://designrefs.com/articles/img/figma-agent-google-drive-connector-shot1.webp" alt="Figma release notes, October 30 entry (source: https://www.figma.com/release-notes/, captured 2026-10-31)" loading="lazy" decoding="async" />
+      <figcaption>Figma release notes, October 30 entry (source: https://www.figma.com/release-notes/, captured 2026-10-31)</figcaption>
+    </figure>
+    <h2 class="psub" id="s1">What the release note says</h2>
+    <p class="ptext">The body is short. Connect Google Drive to the Figma agent and Make to bring the context of existing files into Figma. You can also create new Drive files without leaving your Figma file. The examples are summarizing research insights, referencing real data, and pulling in assets to edit on the canvas.</p>
+    <p class="ptext">Connectors are available on all plans, including Starter. You add them from the plus menu in the prompt box.</p>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th>Item</th><th>What is confirmed</th></tr></thead>
+      <tbody>
+        <tr><td>Date</td><td>October 30, 2026</td></tr>
+        <tr><td>Applies to</td><td>Figma agent, Figma Make</td></tr>
+        <tr><td>What it does</td><td>Read Drive files, create new Drive files</td></tr>
+        <tr><td>Plans</td><td>All plans, including Starter</td></tr>
+        <tr><td>Where to add it</td><td>Plus menu in the prompt box (the help page says &quot;Add context&quot; → Connectors)</td></tr>
+        <tr><td>Credits</td><td>Not mentioned</td></tr>
+      </tbody>
+    </table></div>
+    <p class="art__note">Source: <a href="https://www.figma.com/release-notes/" target="_blank" rel="noopener">Figma Release Notes</a> (checked 2026-10-31), <a href="https://help.figma.com/hc/en-us/articles/35440096186007-Use-verified-partner-MCP-connectors-with-the-Figma-agent-and-Figma-Make" target="_blank" rel="noopener">Figma Help: connectors</a>. &quot;Not mentioned&quot; means neither document says anything about it.</p>
+    <h2 class="psub" id="s2">Drive is one of 22 featured connectors</h2>
+    <p class="ptext">The help page shows Drive is not new in kind. It is one of 22 featured connectors that Figma says it has vetted for security and privacy:</p>
+    <p class="ptext">Amplitude, Asana, Askable, Atlassian, Box, Contentsquare, Dovetail, Google Drive, Granola, GitHub, Hex, Linear, Mapbox, Marvin, Mobbin, monday.com, Notion, Slack, Sprig, Twilio, Zapier, zeroheight.</p>
+    <p class="ptext">A few stand out for designers: Mobbin for app screen references, Dovetail for user-interview synthesis, zeroheight for design-system docs, Granola for meeting notes. Custom MCP connectors exist too, but they need a paid plan.</p>
+    <p class="ptext">MCP here means a standard way for AI to call outside tools. The help page separates two directions. The Figma MCP server lets other AI tools read your Figma files. Connectors are the reverse: Figma&#x27;s agent calls external tools.</p>
+    <h2 class="psub" id="s3">How to connect</h2>
+    <p class="ptext">The help page lists four steps.</p>
+    <ol class="ptext-list">
+      <li>Click &quot;Add context&quot; in the chat box and choose Connectors.</li>
+      <li>Find the one you want and click Connect.</li>
+      <li>Finish the service&#x27;s OAuth sign-in (the Google permission screen).</li>
+      <li>Click &quot;Add context&quot; again to confirm the connector appears.</li>
+    </ol>
+    <p class="ptext">If no sign-in window opens, a popup blocker may be the cause, so allow popups for Figma.</p>
+    <h2 class="psub" id="s4">Reading is open, writing you turn on yourself</h2>
+    <p class="ptext">This is the most practical part of the help page.</p>
+    <ul class="ptext-list">
+      <li>Tools are split into read tools and write tools. Pulling a Notion page or searching Slack is reading. Creating a Notion doc or a Jira issue is writing.</li>
+      <li>Write tools are off by default. You have to enable them.</li>
+      <li>Each tool can be set to &quot;Ask to run,&quot; &quot;Always run,&quot; or &quot;Never run.&quot;</li>
+      <li>You can switch a connector off for the current conversation without disconnecting it.</li>
+      <li>Disconnecting does not delete data that already sits in the external tool.</li>
+    </ul>
+    <p class="ptext">I could not find which tools the Drive connector exposes. The release note says it creates new Drive files, so a write tool presumably exists, but its name and scope are unconfirmed.</p>
+    <h2 class="psub" id="s5">Who can use it, and who can block it</h2>
+    <ul class="ptext-list">
+      <li>Each person adds and signs in to their own connectors. One teammate connecting it does not give it to everyone.</li>
+      <li>An organization admin can turn the feature off. If Connectors is missing from your menu, that may be why.</li>
+      <li>Edit access to the file is required. Full seats can chat with the agent in Design and Make files. View, Dev and Collab seats can try it in Drafts.</li>
+      <li>The help page says Google Drive is not available with the Governance+ add-on.</li>
+      <li>You need an account with the external service, and what you can reach may depend on your plan or role there.</li>
+    </ul>
+    <figure class="art__fig">
+      <img src="https://designrefs.com/articles/img/figma-agent-google-drive-connector-shot2.webp" alt="Figma&#x27;s help page on connectors (source: Figma Help, captured 2026-10-31)" loading="lazy" decoding="async" />
+      <figcaption>Figma&#x27;s help page on connectors (source: Figma Help, captured 2026-10-31)</figcaption>
+    </figure>
+    <h2 class="psub" id="s6">16 MB and prompt injection: the cautions the help page gives itself</h2>
+    <p class="ptext">There are two.</p>
+    <p class="ptext">The first is size. With a tool set to &quot;Always run,&quot; file downloads can fail when the response exceeds 16 MB. Encoding inflates size, so images of roughly 5 to 6 MB can hit it. The page suggests switching to &quot;Ask to run&quot; and retrying.</p>
+    <p class="ptext">The second is prompt injection. If text pulled from an outside source hides instructions aimed at the AI, the agent may follow them, and the help page warns about this. A client&#x27;s own documents are probably fine, but a shared folder that people you don&#x27;t know can edit deserves a second thought. That reading is my paraphrase of the warning. I did not see any report of this happening with the Drive connector.</p>
+    <h2 class="psub" id="s7">What is still unknown</h2>
+    <ul class="ptext-list">
+      <li><strong>File types it reads.</strong> Docs, Sheets, Slides, PDFs, images: the documents don&#x27;t say.</li>
+      <li><strong>Shared drives.</strong> I could not confirm whether only My Drive works or team shared drives too.</li>
+      <li><strong>Credits.</strong> The help page says nothing about them, so the cost of reading a Drive file is unknown. The basic structure of agent credits is covered in <a href="https://designrefs.com/articles/figma-agent-ai-credits-ga/">Figma agent credits</a>.</li>
+      <li><strong>Conditions for individual connectors like Mobbin.</strong> I only confirmed the name is on the list. Whether the other service needs a paid plan is a question for its own documentation.</li>
+      <li><strong>Whether it shows in your account.</strong> The note has no &quot;rolling out&quot; line, but I could not confirm the menu appears for everyone.</li>
+    </ul>
+    <h2 class="psub" id="s8">Before you try it</h2>
+    <p class="ptext"><strong>Tidy the Drive folder names first.</strong> Tell the agent &quot;that survey file&quot; and it will not find it. Keep one folder per project with the brief, research and assets, and put the date and content in the file names so the agent has less to guess.</p>
+    <p class="ptext"><strong>Start with &quot;Ask to run.&quot;</strong> Write tools are off by default, so watch what actually gets created in Drive the moment you turn one on. Switch to &quot;Always run&quot; once you are used to it. For large files, &quot;Ask to run&quot; is better anyway because of the 16 MB limit.</p>
+    <p class="ptext"><strong>Ask for reading and creating separately.</strong> For example:</p>
+    <blockquote class="art__quote">Read the survey summary in the Drive folder &#x27;○○ redesign&#x27; and write notes on the top three complaints as first-screen improvements. Don&#x27;t create any files yet.</blockquote>
+    <p class="ptext">If the notes look right, follow with &quot;Save this as a new doc in Drive.&quot; It is easier to find where things went wrong than with one big request. For passing context as a single markdown page, see <a href="https://designrefs.com/articles/figma-specs-markdown-context/">Figma Specs</a>. For the model picker, see <a href="https://designrefs.com/articles/figma-make-gemini-4-argon-model-picker/">Make&#x27;s model picker</a>.</p>
+    <p class="art__note">Sources: <a href="https://www.figma.com/release-notes/" target="_blank" rel="noopener">Figma Release Notes</a>, <a href="https://help.figma.com/hc/en-us/articles/35440096186007-Use-verified-partner-MCP-connectors-with-the-Figma-agent-and-Figma-Make" target="_blank" rel="noopener">Figma Help: Use verified partner MCP connectors with the Figma agent and Figma Make</a></p>]]></content:encoded>
+    </item>
     <item>
       <title>A one-page proposal, straight from the chat window: Claude Design closes its standalone site on December 14</title>
       <link>https://designrefs.com/en/articles/claude-design-moves-into-chat-and-claude-code/</link>
