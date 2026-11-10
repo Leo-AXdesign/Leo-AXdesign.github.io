@@ -6,7 +6,84 @@
     <atom:link href="https://designrefs.com/en/rss.xml" rel="self" type="application/rss+xml" />
     <description>Notes from a designer in Korea: working with AI, putting style into words, collecting references and design communities. Translated from Korean.</description>
     <language>en</language>
-    <lastBuildDate>Mon, 09 Nov 2026 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 10 Nov 2026 09:00:00 +0900</lastBuildDate>
+    <item>
+      <title>When you only want to thin an icon stroke by 0.5, Figma&#x27;s agent now draws lines as strokes, not fills</title>
+      <link>https://designrefs.com/en/articles/figma-agent-vector-icons-strokes-not-fills/</link>
+      <guid isPermaLink="true">https://designrefs.com/en/articles/figma-agent-vector-icons-strokes-not-fills/</guid>
+      <pubDate>Tue, 10 Nov 2026 09:00:00 +0900</pubDate>
+      <category>AI Design</category>
+      <description>Figma&#x27;s November 5 release notes list four improvements to vector illustrations and icons made by the agent: strokes for line work, layers grouped by function, existing art as a style reference, and a structure ready for Figma Motion. Includes where Figma&#x27;s own pages disagree.</description>
+      <content:encoded><![CDATA[    <p class="ptext">A line appeared in Figma&#x27;s release notes on November 5. Vector illustrations and icons made by the Figma agent got better, and the first item is: &quot;strokes, not fills, for line work.&quot;</p>
+    <p class="ptext">You know the moment when a set of twelve icons is done and one of them looks heavier than the rest. If an icon is drawn with a stroke, you change one number. If it is drawn as a filled shape, the outline is geometry, and changing the thickness means redrawing it. This update applies that difference to what the agent produces.</p>
+    <p class="ptext">I opened the release notes, the help center and Figma&#x27;s icon page on November 9 and wrote down only what they say. I did not generate icons with the agent myself, so I make no call on output quality. What the documents say and what they leave out are kept apart below.</p>
+    <figure class="art__fig">
+      <img src="https://designrefs.com/articles/img/figma-agent-vector-icons-strokes-not-fills-shot1.webp" alt="Figma release notes (source: https://www.figma.com/release-notes/, captured 2026-11-09)" loading="lazy" decoding="async" />
+      <figcaption>Figma release notes (source: https://www.figma.com/release-notes/, captured 2026-11-09)</figcaption>
+    </figure>
+    <h2 class="psub" id="s1">Four improvements in the release note</h2>
+    <p class="ptext">The November 5 entry says vectors from the agent are now easier to edit, to match to a style, and to animate. In plain terms:</p>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th>Improvement</th><th>What it is for</th></tr></thead>
+      <tbody>
+        <tr><td>Independent layers grouped by function</td><td>Pick and edit just the eye, the mouth or the background</td></tr>
+        <tr><td>Existing illustrations as style references</td><td>Generate more parts or icons in the same hand</td></tr>
+        <tr><td>Strokes for line work, not fills</td><td>Change weight and end caps without redrawing</td></tr>
+        <tr><td>Clean layer structure</td><td>Ready to animate in Figma Motion</td></tr>
+      </tbody>
+    </table></div>
+    <p class="art__note">Source: <a href="https://www.figma.com/release-notes/" target="_blank" rel="noopener">Figma Release Notes</a>, entry dated 2026-11-05 (checked 2026-11-09). The entry does not list plans or steps.</p>
+    <p class="ptext">The next day, a November 6 entry covers Select area, the AI image editing tool. You can now click an object and it selects it automatically, with no tracing by hand. It is listed for the macOS desktop app only.</p>
+    <h2 class="psub" id="s2">Stroke versus fill</h2>
+    <p class="ptext">There are two ways to build a vector icon: draw a line and give it a weight, or build the thick shape as a closed path and fill it.</p>
+    <ul class="ptext-list">
+      <li>Stroke: weight, end caps and corner rounding are numbers. Matching weight across a set is easy.</li>
+      <li>Fill: scaling the icon scales the line with it. Changing weight alone means editing the shape.</li>
+    </ul>
+    <p class="ptext">That is why icon sets are usually easier to manage as strokes, and why the release note singles out line work. The documents do not say whether the agent always draws strokes, or what happens when you need a filled glyph style.</p>
+    <h2 class="psub" id="s3">Style reference: paste in what you already have</h2>
+    <p class="ptext">The second item uses art you already own as the guide. The help center explains how to attach files to the agent: in the prompt box choose Attach Figma files, paste a design URL, add several designs, or drag and paste images and files. You can also paste frames and images straight into the chat.</p>
+    <p class="ptext">The icon page&#x27;s steps are short:</p>
+    <ol class="ptext-list">
+      <li>Choose Agents in the left rail or press CMD + Enter, and add a frame for the icons.</li>
+      <li>Describe the icon and mention your design library so it uses your real styles.</li>
+      <li>Review on the canvas and refine in the same thread, or open a parallel thread for another direction.</li>
+      <li>Prompt again to change stroke weight, scale or style. The icons stay editable vector layers, so you can adjust them by hand.</li>
+    </ol>
+    <p class="ptext">Pointing at a library makes the agent apply your stroke weights, corner radii and style tokens (the color, type and size rules) rather than generic defaults, according to the page. Export works in any format Figma supports; SVG, PNG and PDF are the examples given.</p>
+    <figure class="art__fig">
+      <img src="https://designrefs.com/articles/img/figma-agent-vector-icons-strokes-not-fills-shot2.webp" alt="Figma AI icon generator page (source: https://www.figma.com/solutions/ai-icon-generator/, captured 2026-11-09)" loading="lazy" decoding="async" />
+      <figcaption>Figma AI icon generator page (source: https://www.figma.com/solutions/ai-icon-generator/, captured 2026-11-09)</figcaption>
+    </figure>
+    <h2 class="psub" id="s4">Where Figma&#x27;s own pages disagree</h2>
+    <p class="ptext">Stop here, because the documents contradict each other.</p>
+    <ul class="ptext-list">
+      <li>The agent help page (Work with the Figma agent in design files) marks both &quot;Vector editing and Draw tools&quot; (create or edit vector illustrations, icons, paths, points, shapes or boolean operations) and &quot;Create icons&quot; (generate icons, modify geometry, create icon sets) as Coming soon. What it lists as supported is turning static images into editable vector layers.</li>
+      <li>The icon page describes the agent creating icons, step by step.</li>
+      <li>That page also says the agent does not use AI credits during the open beta. The agent&#x27;s move to paid credits was covered in <a href="https://designrefs.com/articles/figma-agent-ai-credits-ga/">our October 18 piece</a>, so that sentence is probably out of date. I could not confirm it.</li>
+    </ul>
+    <p class="ptext">A release note dated November 5 announcing improvements suggests the feature is live, but it is unclear whether the Coming soon label on the help page is stale or only part of it has shipped. The fastest check is to open the agent in your own account and try it. The help page gives no credit amounts for vector tasks either; it says usage varies with task complexity.</p>
+    <h2 class="psub" id="s5">The image-to-vector feature that is documented as working</h2>
+    <p class="ptext">What the help center clearly lists as supported is converting images to vectors, for hand-drawn symbols, lettering, photos and illustrations:</p>
+    <ol class="ptext-list">
+      <li>Select an image layer.</li>
+      <li>In Figma Design, Draw or Slides, click More &gt; Vectorize in the secondary toolbar. In Figma Buzz, use Edit &gt; Vectorize in the inline toolbar.</li>
+      <li>Refine with Recolor: Full color (number of colors), Grayscale (number of grays) or Black and white (threshold).</li>
+      <li>Click the checkmark in the secondary toolbar to save.</li>
+    </ol>
+    <p class="ptext">Complex or low-resolution images may not convert well; the page suggests Remove background or Boost resolution first. It works on Starter, Professional, Education (not K-12), Organization and Enterprise plans, and you need edit access. The page does not say whether the result is strokes or fills, so treat it as separate from the November 5 improvement.</p>
+    <h2 class="psub" id="s6">For vibe coders who need icons</h2>
+    <p class="ptext">Icons are usually the first thing that looks off in a screen built with Lovable or Claude Code, because icons pulled one by one from different sets carry different line weights. If the agent draws icons as strokes, you could export SVG and set one stroke-width value in code to even out the whole set. That is my inference from how SVG works, not something the documents state. Open an exported file and check that the lines survive as strokes.</p>
+    <p class="ptext">Figma also has a path onward into code, as in our <a href="https://designrefs.com/articles/figma-shaders-4096-export-code-layers/">shaders and code layers piece</a>, but nothing in these sources links icon SVGs to that flow.</p>
+    <h2 class="psub" id="s7">A sequence to try today</h2>
+    <p class="ptext">Do not ask for twelve icons at once. This order also saves credits.</p>
+    <p class="ptext"><strong>1. Put two reference icons in the file.</strong> Paste two icons you already use into a frame. They become the style reference.</p>
+    <p class="ptext"><strong>2. Ask for one.</strong> A sample prompt, which I have not run:</p>
+    <p class="ptext"><code>Draw one settings icon with the same line weight and end caps as the two attached icons. No fills.</code></p>
+    <p class="ptext"><strong>3. Open the result.</strong> In the layers panel check that it is a stroke and that the weight number matches your reference. If it came out as a fill, stop and ask once more. This work spends credits.</p>
+    <p class="ptext"><strong>4. Widen to a set.</strong> Ask for the rest in the same thread and fix the one that still looks heavier by hand.</p>
+    <p class="art__note">Sources: <a href="https://www.figma.com/release-notes/" target="_blank" rel="noopener">Figma Release Notes</a>, <a href="https://help.figma.com/hc/en-us/articles/37998629035799" target="_blank" rel="noopener">Work with the Figma agent in design files</a>, <a href="https://help.figma.com/hc/en-us/articles/38031452710807-Convert-static-images-to-vector-layers" target="_blank" rel="noopener">Convert static images to vector layers</a>, <a href="https://www.figma.com/solutions/ai-icon-generator/" target="_blank" rel="noopener">Figma: AI icon generator</a> (all checked 2026-11-09).</p>]]></content:encoded>
+    </item>
     <item>
       <title>The brief lives in Drive, the design lives in Figma. The agent now travels between them</title>
       <link>https://designrefs.com/en/articles/figma-agent-google-drive-connector/</link>
