@@ -6,7 +6,92 @@
     <atom:link href="https://designrefs.com/en/rss.xml" rel="self" type="application/rss+xml" />
     <description>Notes from a designer in Korea: working with AI, putting style into words, collecting references and design communities. Translated from Korean.</description>
     <language>en</language>
-    <lastBuildDate>Tue, 10 Nov 2026 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 13 Nov 2026 09:00:00 +0900</lastBuildDate>
+    <item>
+      <title>Figma says undo clicks on its agent dropped 60%. What the number does and doesn&#x27;t tell you</title>
+      <link>https://designrefs.com/en/articles/figma-editing-model-undo-60-percent/</link>
+      <guid isPermaLink="true">https://designrefs.com/en/articles/figma-editing-model-undo-60-percent/</guid>
+      <pubDate>Fri, 13 Nov 2026 09:00:00 +0900</pubDate>
+      <category>AI Design</category>
+      <description>On October 29 Figma published how it trains its own editing model, plus post-launch numbers for its agent: 20% faster, 33% higher ratings, 60% fewer undos. We read what each figure is measured against, what the 62% match-or-beat rate leaves out, and what the post doesn&#x27;t say.</description>
+      <content:encoded><![CDATA[    <p class="ptext">Ask an agent to tidy the spacing, look at the result, and sometimes you hit Cmd+Z right away. Once is fine. By the third undo on the same screen, you start calculating that fixing it by hand would have been faster.</p>
+    <p class="ptext">Figma&#x27;s October 29 blog post includes exactly this undo number. It is written by the people who build the agent, about how they trained their own model, and it compares the agent&#x27;s beta with its generally available version. The author is Josh Clemm, Figma&#x27;s VP of software engineering.</p>
+    <figure class="art__fig">
+      <img src="https://designrefs.com/articles/img/figma-editing-model-undo-60-percent-shot1.webp" alt="Figma blog post &#x27;How we&#x27;re training a Figma-fluent editing model&#x27; (source: https://www.figma.com/blog/training-a-figma-fluent-editing-model/, captured 2026-11-04)" loading="lazy" decoding="async" />
+      <figcaption>Figma blog post &#x27;How we&#x27;re training a Figma-fluent editing model&#x27; (source: https://www.figma.com/blog/training-a-figma-fluent-editing-model/, captured 2026-11-04)</figcaption>
+    </figure>
+    <p class="ptext">This piece is built from Figma&#x27;s post itself and one explainer (FourWeekMBA). Every figure below is Figma&#x27;s own measurement, and none of it was checked by using the agent.</p>
+    <h2 class="psub" id="s1">One model just for editing</h2>
+    <p class="ptext">According to the post, Figma splits the work inside its agent across models. Precise, iterative edits to what is already on the canvas go to its own editing model: adjusting spacing, changing colors, reworking a layout. Image generation, vectors and new design explorations go to leading third-party models.</p>
+    <p class="ptext">The post names two goals: be better at design, and be faster at those edits, because slow edits interrupt a designer&#x27;s flow.</p>
+    <p class="ptext">It also says where things stood at the start. When the work began, frontier models could not understand Figma&#x27;s file syntax. Another reason was cost: asking an outside model to take long instructions every time burns many tokens. No cost figure accompanies that.</p>
+    <h2 class="psub" id="s2">The first model: 250,000 examples</h2>
+    <p class="ptext">Training has two stages. The first is imitation learning. Each example has three parts:</p>
+    <ul class="ptext-list">
+      <li>a starting design</li>
+      <li>an edit request (synthetic)</li>
+      <li>a successful edit that fulfils the request</li>
+    </ul>
+    <p class="ptext">All of it is in Figma&#x27;s native file format. Larger teacher models proposed the edits, and deterministic validators plus visual model judges filtered them. A step let the pipeline revise edits using evaluator feedback.</p>
+    <p class="ptext">Figma says an earlier model, based on Llama 3.3 70B and trained on more than 250,000 examples, became competitive with top models of the time on editing tasks. That is the only training-size number in the post. Example counts for later models and for the reinforcement-learning stage are not given.</p>
+    <h2 class="psub" id="s3">Where imitation runs out, and why reinforcement learning follows</h2>
+    <p class="ptext">The post states the weakness of imitation learning plainly. The model learns to produce designs very close to what it saw, it generalizes less well, and it is less efficient with examples.</p>
+    <p class="ptext">So the latest recipe adds reinforcement learning: the model gets a score for its result and is trained toward higher scores. Figma says it is working on design-specific training environments, more varied examples, shaping the reward model, and criteria written by experts. No reinforcement-learning results are reported. The post describes it as ongoing work.</p>
+    <p class="ptext">The base models changed too. After Llama 3.3 70B, the post mentions Qwen models, Muse Spark Open, Inkling and others, and its evaluation chart refers to a model post-trained on Qwen 3.8 27B. Which of these runs in the agent today is not specified.</p>
+    <h2 class="psub" id="s4">Five numbers after general availability</h2>
+    <p class="ptext">The agent opened to all users earlier in the same month. The post compares the beta agent with the current one:</p>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th>Item</th><th>Change Figma reports</th><th>What to keep in mind</th></tr></thead>
+      <tbody>
+        <tr><td>Task speed</td><td>Typical tasks about 20% faster</td><td>&quot;About&quot;; task mix not disclosed</td></tr>
+        <tr><td>Expert designer comparison</td><td>Beats or matches the previous agent 62% of the time</td><td>The other 38% is where it did worse</td></tr>
+        <tr><td>User ratings</td><td>33% higher</td><td>Scale and number of responses not disclosed</td></tr>
+        <tr><td>Undo</td><td>Users undo the agent&#x27;s work 60% less often</td><td>Baseline undo count not disclosed</td></tr>
+        <tr><td>Share of own model</td><td>Work powered by Figma&#x27;s model more than doubled</td><td>Share of total not disclosed</td></tr>
+      </tbody>
+    </table></div>
+    <p class="art__note">Source: <a href="https://www.figma.com/blog/training-a-figma-fluent-editing-model/" target="_blank" rel="noopener">Figma Blog, How we&#x27;re training a Figma-fluent editing model</a> (published 2026-10-29, checked 2026-11-04). The comparison in every row is against the previous beta agent.</p>
+    <p class="ptext">Cost is mentioned only as lower average cost per message, with no amount or percentage. The post also says the gains come from models, tools and the harness together, not from the editing model alone.</p>
+    <h2 class="psub" id="s5">Reading &quot;60% fewer undos&quot; against your own work</h2>
+    <p class="ptext">The post does not say whether the 60% compares the same users doing the same tasks. Beta users and post-launch users may be different people, and the kind of work they hand to the agent may have changed.</p>
+    <p class="ptext">There is a second way to read it. Undo count is a proxy for &quot;I didn&#x27;t like that result,&quot; but not having undone something doesn&#x27;t mean it was accepted as is. Someone who keeps a slightly-off result and finishes it by hand never presses undo, and that case doesn&#x27;t show up in the number.</p>
+    <p class="ptext">The 62% needs the same treatment. Expert designers judged the new agent equal or better 62% of the time, which leaves 38% where the new one did worse. That doesn&#x27;t make the new version bad. But &quot;better overall&quot; and &quot;in nearly four cases out of ten, the new one did worse&quot; come from the same figure.</p>
+    <h2 class="psub" id="s6">Set beside Canva&#x27;s Brush, announced the same day</h2>
+    <p class="ptext">Canva announced Brush, its own model for editing existing designs, the same day. We covered it in <a href="https://designrefs.com/articles/canva-brush-edit-existing-design/">our Canva Brush article</a>. One explainer (FourWeekMBA) calculated that the two announcements were posted 34 minutes apart and that neither mentions the other. That gap is the writer&#x27;s arithmetic, not something I verified.</p>
+    <p class="ptext">The two companies disclosed opposite things.</p>
+    <div class="art__tablewrap"><table class="art__table">
+      <thead><tr><th></th><th>Figma</th><th>Canva Brush</th></tr></thead>
+      <tbody>
+        <tr><td>Disclosed</td><td>Training method, earlier model&#x27;s example count (250,000+)</td><td>Up to 69% faster, 46% cheaper per edit</td></tr>
+        <tr><td>Compared against</td><td>Its own beta agent</td><td>Its own previous design agent</td></tr>
+        <tr><td>Left out</td><td>Current base model, cost figure</td><td>Training data size, measurement conditions</td></tr>
+      </tbody>
+    </table></div>
+    <p class="art__note">Sources: <a href="https://www.figma.com/blog/training-a-figma-fluent-editing-model/" target="_blank" rel="noopener">Figma Blog</a>, <a href="https://fourweekmba.com/ai-figma-trained-llama-on-250000-examples-as-canva-ships-brush/" target="_blank" rel="noopener">FourWeekMBA</a>; Canva figures follow the reports summarized in <a href="https://designrefs.com/articles/canva-brush-edit-existing-design/">our Brush article</a>.</p>
+    <p class="ptext">Both compare against their own earlier version rather than an outside frontier model. So &quot;Figma is faster&quot; or &quot;Canva is cheaper&quot; cannot be concluded. That would take running both tools on the same file.</p>
+    <p class="ptext">One chart in the post deserves a note. It shows an unreleased Figma model, &quot;Figma design edits v3,&quot; at 77.8% next to a model called &quot;Sol 6.1&quot; at 76.9%. What the metric measures, how many tasks it covers, and the error margin are not stated. A 0.9-point gap means little without that. The post itself calls the evaluation one input among many for choosing models.</p>
+    <h2 class="psub" id="s7">What is still missing</h2>
+    <p class="ptext">Things I could not confirm from what I read:</p>
+    <ul class="ptext-list">
+      <li>Which requests go to Figma&#x27;s own editing model and which are handed to third-party models</li>
+      <li>Whether credit use differs between the two. Credits are covered in <a href="https://designrefs.com/articles/figma-agent-ai-credits-ga/">our Figma agent credits article</a>, but model-by-model differences are not in that piece either</li>
+      <li>The sample size and period behind the 60% undo reduction</li>
+      <li>How well it follows Korean instructions</li>
+      <li>Whether users&#x27; own files are used in training. The post mentions synthetic examples and expert-written criteria, not user files</li>
+    </ul>
+    <h2 class="psub" id="s8">Three things to try next week</h2>
+    <p class="ptext"><strong>Count your own undos.</strong> For a week, note each edit you hand to the agent and each undo in a notes app with tally marks. That is the only way to learn whether Figma&#x27;s 60% holds for your files. A week of data also shows which kinds of requests get undone.</p>
+    <p class="ptext"><strong>Keep edit requests narrow and say what to leave alone.</strong> The editing model is described as built for &quot;fixing,&quot; so limit the scope of the request. The line below is an example I have not tried.</p>
+    <p class="ptext"><code>Only fix the vertical spacing in this card list to an 8px grid. Leave colors, type and images as they are.</code></p>
+    <p class="ptext"><strong>Hand the agent your rules first.</strong> Figma also posted a piece on October 23 about putting a design system to work with the agent. When color and type-size rules live in the file, a request like &quot;just fix the spacing&quot; is less likely to bring in stray colors. I did not read that post; if you need it, find it in the Figma blog index.</p>
+    <p class="ptext">That the agent got better and that it got better on your file are different statements. Figma&#x27;s numbers speak to the first. A week of undo tallies speaks to the second.</p>
+    <p class="art__note">Sources</p>
+    <ul class="ptext-list">
+      <li><a href="https://www.figma.com/blog/training-a-figma-fluent-editing-model/" target="_blank" rel="noopener">Figma Blog: How we&#x27;re training a Figma-fluent editing model</a> (2026-10-29)</li>
+      <li><a href="https://fourweekmba.com/ai-figma-trained-llama-on-250000-examples-as-canva-ships-brush/" target="_blank" rel="noopener">FourWeekMBA: Figma Trained Llama on 250,000 Examples as Canva Ships Brush</a></li>
+      <li><a href="https://www.figma.com/blog/" target="_blank" rel="noopener">Figma Blog index</a> (post dates checked 2026-11-04)</li>
+    </ul>]]></content:encoded>
+    </item>
     <item>
       <title>When you only want to thin an icon stroke by 0.5, Figma&#x27;s agent now draws lines as strokes, not fills</title>
       <link>https://designrefs.com/en/articles/figma-agent-vector-icons-strokes-not-fills/</link>
