@@ -1,6 +1,7 @@
 // 이 파일은 tools/build-articles.py 가 만듭니다. 직접 고치지 마세요.
 // 글은 content/articles/*.md 에서 고칩니다.
 const ARTICLES = [
+  { slug: "adobe-max-2026-beta-sorted-for-designers", title: "베타 딱지가 일곱 개 넘게 붙은 어도비 MAX, 오늘 열어 볼 것과 2027년까지 기다릴 것", desc: "어도비가 11월 10일 MAX에서 Creative Agent를 Illustrator·InDesign으로 넓히고 Firefly Design 베타와 로컬 MCP 프리뷰를 내놓았다. 발표문의 정식·베타·비공개 베타 표시대로 항목을 나누고, 가격과 크레딧처럼 발표문에 없는 것도 따로 적었다.", date: "2026-11-19", tag: "AI 디자인", min: 6, views: ["ai", "tool", "graphic"] },
   { slug: "figma-editing-model-undo-60-percent", title: "에이전트가 한 일을 되돌리는 횟수가 60% 줄었다는 피그마, 그 숫자를 열어 보니", desc: "피그마가 10월 29일 자체 편집 모델의 학습 방식과 에이전트 정식 출시 뒤 수치를 공개했다. 속도 20%, 사용자 평점 33%, 되돌리기 60% 감소가 무엇을 기준으로 잰 것인지, 비교 시안에서 이전 에이전트와 같거나 나았다는 62%의 나머지 38%는 무엇인지, 글에 빠져 있는 정보와 함께 읽었다.", date: "2026-11-13", tag: "AI 디자인", min: 6, views: ["ai", "tool", "uiux"] },
   { slug: "figma-agent-vector-icons-strokes-not-fills", title: "아이콘 두께를 0.5만 줄이고 싶을 때, 피그마 에이전트는 이제 선을 면이 아니라 선으로 그린다", desc: "11월 5일 피그마 릴리스 노트에 에이전트가 만드는 벡터 일러스트와 아이콘의 개선 네 가지가 올랐다. 선 작업은 stroke, 기능별 레이어 묶음, 기존 그림을 스타일 참조로 쓰는 방법을 적고, 도움말과 소개 페이지가 서로 다르게 말하는 부분도 따로 짚었다.", date: "2026-11-10", tag: "AI 디자인", min: 6, views: ["ai", "tool", "uiux"] },
   { slug: "figma-agent-google-drive-connector", title: "브리프는 드라이브에, 시안은 피그마에. 에이전트가 그 사이를 오가기 시작했다", desc: "10월 30일 피그마 릴리스 노트에 구글 드라이브 커넥터가 올라왔다. 모든 플랜에서 에이전트와 메이크가 드라이브 파일을 읽고 새 파일도 만든다. 릴리스 노트와 도움말에서 확인된 연결 순서와 권한, 쓰기 도구 기본값, 비어 있는 부분을 적었다.", date: "2026-11-09", tag: "AI 디자인", min: 5, views: ["ai", "tool", "uiux"] },

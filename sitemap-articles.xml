@@ -3,6 +3,14 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
+    <loc>https://designrefs.com/articles/adobe-max-2026-beta-sorted-for-designers/</loc>
+    <lastmod>2026-11-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://designrefs.com/articles/adobe-max-2026-beta-sorted-for-designers/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://designrefs.com/en/articles/adobe-max-2026-beta-sorted-for-designers/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://designrefs.com/articles/adobe-max-2026-beta-sorted-for-designers/"/>
+    <image:image><image:loc>https://designrefs.com/og/adobe-max-2026-beta-sorted-for-designers.png</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://designrefs.com/articles/figma-editing-model-undo-60-percent/</loc>
     <lastmod>2026-11-13</lastmod>
     <xhtml:link rel="alternate" hreflang="ko" href="https://designrefs.com/articles/figma-editing-model-undo-60-percent/"/>
@@ -265,6 +273,14 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://designrefs.com/en/articles/ai-image-commercial-use/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://designrefs.com/articles/ai-image-commercial-use/"/>
     <image:image><image:loc>https://designrefs.com/og/ai-image-commercial-use.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://designrefs.com/en/articles/adobe-max-2026-beta-sorted-for-designers/</loc>
+    <lastmod>2026-11-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://designrefs.com/articles/adobe-max-2026-beta-sorted-for-designers/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://designrefs.com/en/articles/adobe-max-2026-beta-sorted-for-designers/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://designrefs.com/articles/adobe-max-2026-beta-sorted-for-designers/"/>
+    <image:image><image:loc>https://designrefs.com/og/en/adobe-max-2026-beta-sorted-for-designers.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://designrefs.com/en/articles/figma-editing-model-undo-60-percent/</loc>
