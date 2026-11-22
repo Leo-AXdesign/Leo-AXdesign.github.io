@@ -22,6 +22,7 @@
 
 ## 읽을거리 (직접 쓴 글)
 
+- [캔바 설정에서 생성 AI를 끄면 숨는 도구와 끝까지 남는 두 개](https://designrefs.com/articles/canva-ai-controls-switch-off-generative/): 캔바가 11월 19일 Free·Pro 계정에 생성 AI 전체 스위치와 라이브러리의 AI 생성물 줄이기 설정을 열었다. 꺼지는 것, 남는 것, 메타데이터 표시, 설정 위치를 보도 기준으로 나누고 직접 확인해 볼 항목을 적었다. (2026-11-22, 약 5분)
 - [베타 딱지가 일곱 개 넘게 붙은 어도비 MAX, 오늘 열어 볼 것과 2027년까지 기다릴 것](https://designrefs.com/articles/adobe-max-2026-beta-sorted-for-designers/): 어도비가 11월 10일 MAX에서 Creative Agent를 Illustrator·InDesign으로 넓히고 Firefly Design 베타와 로컬 MCP 프리뷰를 내놓았다. 발표문의 정식·베타·비공개 베타 표시대로 항목을 나누고, 가격과 크레딧처럼 발표문에 없는 것도 따로 적었다. (2026-11-19, 약 6분)
 - [에이전트가 한 일을 되돌리는 횟수가 60% 줄었다는 피그마, 그 숫자를 열어 보니](https://designrefs.com/articles/figma-editing-model-undo-60-percent/): 피그마가 10월 29일 자체 편집 모델의 학습 방식과 에이전트 정식 출시 뒤 수치를 공개했다. 속도 20%, 사용자 평점 33%, 되돌리기 60% 감소가 무엇을 기준으로 잰 것인지, 비교 시안에서 이전 에이전트와 같거나 나았다는 62%의 나머지 38%는 무엇인지, 글에 빠져 있는 정보와 함께 읽었다. (2026-11-13, 약 6분)
 - [아이콘 두께를 0.5만 줄이고 싶을 때, 피그마 에이전트는 이제 선을 면이 아니라 선으로 그린다](https://designrefs.com/articles/figma-agent-vector-icons-strokes-not-fills/): 11월 5일 피그마 릴리스 노트에 에이전트가 만드는 벡터 일러스트와 아이콘의 개선 네 가지가 올랐다. 선 작업은 stroke, 기능별 레이어 묶음, 기존 그림을 스타일 참조로 쓰는 방법을 적고, 도움말과 소개 페이지가 서로 다르게 말하는 부분도 따로 짚었다. (2026-11-10, 약 6분)
@@ -76,7 +77,7 @@
 - [디자인 스타일 사전](https://designrefs.com/styles/): 아르누보부터 글래스모피즘까지 34가지 그래픽 디자인 양식. 시대, 특징, 대표 인물
 - [디자인 용어 사전](https://designrefs.com/glossary/): 타이포그래피, 편집·인쇄, 컬러, UI 설계, UX 리서치, 개발 협업 용어 155개
 - [2026 디자인 트렌드](https://designrefs.com/trends/): 올해 디자인 트렌드 키워드 31가지
-- [읽을거리 목록](https://designrefs.com/articles/): 디자인·AI 디자인·커뮤니티에 대해 직접 쓴 글 48편
+- [읽을거리 목록](https://designrefs.com/articles/): 디자인·AI 디자인·커뮤니티에 대해 직접 쓴 글 49편
 - [전체 내용](https://designrefs.com/llms-full.txt): 위의 모든 목록과 설명, 글 본문을 마크다운 한 파일로
 
 ## Optional
