@@ -16,6 +16,7 @@ on:
 
 permissions:
   contents: write
+  actions: write   # 끝나고 deploy.yml 을 부르기 위해
 
 concurrency:
   group: build-reels-${{ inputs.targets }}
@@ -45,6 +46,7 @@ jobs:
           TARGETS: ${{ inputs.targets }}
         run: python3 tools/build-reels.py $TARGETS
       - name: Commit
+        id: commit
         env:
           TARGETS: ${{ inputs.targets }}
         run: |
@@ -54,6 +56,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "바뀐 것이 없습니다."
           else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
             git commit -m "릴스 영상 갱신: $TARGETS"
             # 같은 영상을 만드는 작업이 겹쳐도 실패하지 않게: 충돌하면 방금 만든 쪽을 씁니다
             for i in 1 2 3; do
@@ -62,3 +65,8 @@ jobs:
               sleep 5
             done
           fi
+      - name: Deploy site
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy.yml --ref main
