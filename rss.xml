@@ -1343,10 +1343,6 @@
       <description>Krea가 10월 15일 이미지 편집 모델 Krea 3을 공개했다. 제품의 라벨과 로고는 두고 주변 장면만 바꾼다는 모델이다. 공식 블로그·가격 페이지로 확인한 속도, 값, 쓰는 법과 아직 검증되지 않은 부분을 정리했다.</description>
       <content:encoded><![CDATA[    <p class="ptext">제품 사진의 배경만 따뜻한 나무 선반으로 바꾸면 되는 일이 있다. 그런데 이미지 AI에 맡기면 배경은 그럴듯한데 병 라벨의 글자가 흐물흐물해지고 로고 모양이 달라지는 일이 흔하다. 그러면 결과를 고치는 데 처음부터 새로 찍는 시간이 든다.</p>
     <p class="ptext">이미지 AI 업체 Krea가 10월 15일 &#x27;Krea 3&#x27;을 공개했다. 만들어 주는 모델이 아니라 이미 있는 이미지를 고치는 편집 모델이다. 공식 소개 글의 첫 번째 약속이 &quot;바꾸라고 하지 않은 것은 그대로 둔다&quot;이다. 이 글은 Krea 공식 블로그와 가격 페이지를 직접 열어 확인한 내용만 옮긴다.</p>
-    <figure class="art__fig">
-      <img src="https://designrefs.com/articles/img/krea-blog-v2.webp" alt="Krea 블로그 &#x27;Introducing Krea 3&#x27; 화면. 출처: krea.ai/blog/introducing-krea-3 (캡처일 2026-10-21)" loading="lazy" decoding="async" />
-      <figcaption>Krea 블로그 &#x27;Introducing Krea 3&#x27; 화면. 출처: krea.ai/blog/introducing-krea-3 (캡처일 2026-10-21)</figcaption>
-    </figure>
     <p class="ptext">속도와 값, 품질은 모두 크레아가 직접 밝힌 숫자다. 비교 상대는 나노 바나나 프로와 GPT Image 2였고, 다른 곳에서 같은 조건으로 재현한 자료는 찾지 못했다. 글자가 많은 포장이나 복잡한 로고에서 얼마나 버티는지도 아직 사례가 없다. 요금제별 한도는 가격 페이지 표기가 엇갈려 뒤에서 따로 적었다.</p>
     <h2 class="psub" id="s1">소개 글이 약속한 것</h2>
     <p class="ptext">Krea 3의 블로그 글은 편집 동작을 이렇게 설명한다.</p>
@@ -1397,15 +1393,7 @@
     <p class="ptext">바꿀 것보다 지킬 것을 먼저 쓰는 순서가 눈에 띈다. 편집 모델이 &quot;어디를 건드려도 되는지&quot;를 문장에서 읽기 때문일 것이다. 이 해석은 내 추측이다.</p>
     <h2 class="psub" id="s4">krea.ai, API, 요금제 세 가지</h2>
     <p class="ptext">소개 글에 따르면 Krea 3은 krea.ai에서 바로 쓸 수 있고(Krea는 사용자 3천만 명이라고 밝혔다), Krea API로도 열려 있다. fal, Hedra, Together AI, Nous Research, OpenRouter, Replicate 같은 외부 서비스에도 올라가 있다. 기업 팀은 Krea에 따로 문의하면 된다.</p>
-    <figure class="art__fig">
-      <img src="https://designrefs.com/articles/img/krea-home.webp" alt="Krea 첫 화면. 출처: krea.ai (캡처일 2026-10-21)" loading="lazy" decoding="async" />
-      <figcaption>Krea 첫 화면. 출처: krea.ai (캡처일 2026-10-21)</figcaption>
-    </figure>
     <p class="ptext">Krea 가격 페이지에서 확인한 요금제는 이렇다. 월 가격은 연간 결제 기준으로 보이는 값이고, 페이지에 취소선으로 함께 적힌 값(Basic 9달러, Pro 35달러, Max 105달러, Business 200달러)이 월 결제 가격으로 추정된다. 페이지가 이를 명확히 밝히지는 않았다.</p>
-    <figure class="art__fig">
-      <img src="https://designrefs.com/articles/img/krea-pricing.webp" alt="Krea 가격 페이지 요금제 영역. 연간 결제 할인가 기준이며 가격은 바뀔 수 있다. 출처: krea.ai/pricing (캡처일 2026-10-21)" loading="lazy" decoding="async" />
-      <figcaption>Krea 가격 페이지 요금제 영역. 연간 결제 할인가 기준이며 가격은 바뀔 수 있다. 출처: krea.ai/pricing (캡처일 2026-10-21)</figcaption>
-    </figure>
     <div class="art__tablewrap"><table class="art__table">
       <thead><tr><th>요금제</th><th>월 가격(연간 결제로 보이는 값)</th><th>사용량</th></tr></thead>
       <tbody>

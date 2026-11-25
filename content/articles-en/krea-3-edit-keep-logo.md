@@ -9,8 +9,6 @@ Sometimes a product photo needs nothing more than a warm wooden shelf behind it.
 
 On October 15, the image AI company Krea released Krea 3. It is an editing model: it changes an image you already have instead of generating one from scratch. The first promise in its launch post is that whatever you don't ask it to change stays as it was. This piece repeats only what I verified on Krea's blog and pricing page.
 
-![Krea blog 'Introducing Krea 3'. Source: krea.ai/blog/introducing-krea-3 (captured 2026-10-21)](https://designrefs.com/articles/img/krea-blog-v2.webp)
-
 Speed, price and quality are all Krea's own numbers. It compared against Nano Banana Pro and GPT Image 2, and I found no third-party reproduction under the same conditions. How it holds up on text-heavy packaging or complex logos has no examples yet. Plan limits are inconsistent on the pricing page, so I cover them separately later.
 
 ## What the launch post promises
@@ -69,11 +67,7 @@ Putting what to protect before what to change stands out. Presumably the model r
 
 According to the post, Krea 3 is live on krea.ai (Krea says it has 30 million users) and in the Krea API. It is also available through fal, Hedra, Together AI, Nous Research, OpenRouter and Replicate. Enterprise teams can contact Krea.
 
-![Krea home page. Source: krea.ai (captured 2026-10-21)](https://designrefs.com/articles/img/krea-home.webp)
-
 Plans on Krea's pricing page. The monthly prices look like annual-billing rates; the page also shows struck-through prices (Basic $9, Pro $35, Max $105, Business $200) that are probably the month-to-month prices, though the page doesn't label them.
-
-![Plans on Krea's pricing page, yearly-billing prices; prices may change. Source: krea.ai/pricing (captured 2026-10-21)](https://designrefs.com/articles/img/krea-pricing.webp)
 
 | Plan | Monthly price (appears to be annual billing) | Allowance |
 |---|---|---|

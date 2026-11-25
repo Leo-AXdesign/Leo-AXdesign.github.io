@@ -29,6 +29,8 @@ jobs:
       SARAMIN_KEY: ${{ secrets.SARAMIN_KEY }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # 업데이트 기록(tools/updates.py)이 git 기록 전체를 읽습니다
       - name: Collect this week's design jobs
         run: python3 tools/build-jobs.py
       - name: Update sitemap and menu pages

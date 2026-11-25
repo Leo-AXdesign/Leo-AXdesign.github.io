@@ -1,6 +1,6 @@
 # 디자인 허브 (Design Hub) 전체 내용
 
-> 출처: https://designrefs.com/ · 사이트 441개, 스타일 34가지, 트렌드 31가지, 용어 155개
+> 출처: https://designrefs.com/ · 사이트 500개, 스타일 34가지, 트렌드 31가지, 용어 155개
 
 ## UI/UX 레퍼런스
 
@@ -13,16 +13,16 @@
 - [Mobbin](https://mobbin.com): 실제 서비스 앱·웹 화면과 플로우를 통째로 모아둔 UI 아카이브. 화면 단위 검색이 강력합니다.
 - [Refero](https://refero.design): 실제 프로덕트의 UI 패턴을 컴포넌트·페이지 유형별로 검색할 수 있는 레퍼런스 툴.
 - [Page Flows](https://pageflows.com): 온보딩, 결제 등 유저 플로우를 영상으로 기록해 둔 사이트.
-- [UX Archive](https://uxarchive.com): 모바일 앱 유저 플로우를 단계별 스크린샷으로 정리.
 - [Pttrns](https://www.pttrns.com): 모바일 앱 UI 패턴 레퍼런스의 고전.
 - [ScreensDesign](https://screensdesign.com): 앱스토어 스크린샷과 실제 앱 UI 플로우를 모아둔 사이트.
 - [Nicelydone](https://nicelydone.club): SaaS 프로덕트의 UI 패턴·플로우를 모아둔 레퍼런스.
 - [Really Good UX](https://goodux.appcues.com): 온보딩·엠프티 스테이트 등 잘 만든 UX 사례 모음.
 - [Collect UI](https://collectui.com): Dribbble 샷을 UI 요소(로그인, 404, 대시보드 등)별로 분류한 갤러리.
+- [SaaSFrame](https://www.saasframe.io): SaaS 제품의 화면과 플로우를 모은 레퍼런스. 대시보드·설정·온보딩 같은 웹앱 화면을 찾을 때 씁니다.
 
 ### 웹 · 랜딩
 
-- [Nook](https://nook.ai.kr): 국내·해외 웹사이트를 화장품·패션·IT 같은 업종과 쇼핑몰·랜딩 같은 목적별로 모은 레퍼런스. 색상·국가 필터와 북마크·팀 폴더가 있습니다.
+- [Nook](https://nookref.com): 국내·해외 웹사이트를 화장품·패션·IT 같은 업종과 쇼핑몰·랜딩 같은 목적별로 모은 레퍼런스. 색상·국가 필터와 북마크·팀 폴더가 있습니다.
 - [Land-book](https://land-book.com): 랜딩페이지 갤러리. 산업·스타일·컬러별 필터가 잘 되어 있습니다.
 - [Lapa Ninja](https://www.lapa.ninja): 랜딩페이지 인스피레이션 모음. 무료 UI 킷·북도 함께 제공합니다.
 - [SaaS Landing Page](https://saaslandingpage.com): SaaS 랜딩페이지 예시를 섹션·유형별로 정리한 사이트.
@@ -34,6 +34,7 @@
 - [Httpster](https://httpster.net): 트렌디하고 실험적인 웹사이트를 모아둔 갤러리.
 - [Curated Design](https://www.curated.design): 트렌디한 웹 디자인 큐레이션. 타입·스타일별 필터 제공.
 - [Muzli](https://muz.li): 디자인 인스피레이션 피드. 크롬 확장 프로그램으로 새 탭에서 바로 볼 수 있습니다.
+- [Really Good Emails](https://reallygoodemails.com): 잘 만든 이메일 디자인을 유형별로 모은 갤러리. 뉴스레터·온보딩·프로모션 메일 레퍼런스.
 
 ### 어워드 · 큐레이션
 
@@ -52,6 +53,8 @@
 - [Design Spells](https://www.designspells.com): 사용자를 미소 짓게 하는 UI 디테일·인터랙션 모음.
 - [Ripplix](https://www.ripplix.com): 실제 앱·웹에서 모은 UI 애니메이션과 마이크로 인터랙션 7,000여 개. 요소·업종·서비스별로 찾아볼 수 있습니다.
 - [Bento Grids](https://bentogrids.com): 벤토 그리드 레이아웃 레퍼런스 모음.
+- [60fps](https://60fps.design): iOS 앱의 UI 애니메이션을 짧은 클립으로 모은 레퍼런스. 앱과 패턴별로 찾아봅니다.
+- [Spotted in Prod](https://www.spottedinprod.com): 실제 출시된 iOS 앱에서 찾은 인터랙션과 모션 디테일을 영상으로 모았습니다.
 
 ### UX 이론
 
@@ -60,6 +63,9 @@
 - [Growth.design](https://growth.design): 유명 서비스의 UX를 만화 형식으로 분석한 케이스 스터디.
 - [UI Patterns](https://ui-patterns.com): UI 패턴을 문제·해결 관점에서 정리한 패턴 라이브러리.
 - [Checklist Design](https://www.checklist.design): 페이지·컴포넌트별 디자인 체크리스트.
+- [Built for Mars](https://builtformars.com): 실제 서비스의 사용 흐름을 한 단계씩 뜯어보는 UX 케이스 스터디.
+- [Baymard Institute](https://baymard.com): 대규모 사용성 조사를 바탕으로 한 이커머스 UX 가이드라인과 아티클.
+- [Deceptive Patterns](https://deceptive.design): 다크 패턴의 유형과 관련 법, 제재 사례를 정리한 사이트.
 
 ## 그래픽 / 브랜딩
 
@@ -94,6 +100,13 @@
 - [The Brand Identity](https://the-brandidentity.com): 해외 브랜딩·그래픽 작업을 골라 소개하는 큐레이션 매체.
 - [World Brand Design Society](https://worldbranddesign.com): 세계 각국의 패키지와 브랜드 디자인 사례 모음.
 - [Letterform Archive](https://letterformarchive.org): 레터링·타이포그래피·그래픽 원본 자료를 온라인으로 공개하는 아카이브.
+- [Rebrand Gallery](https://www.rebrand.gallery): 최근 리브랜딩 사례를 전후 비교와 공개 영상으로 모은 갤러리.
+- [Logosystem](https://logosystem.co): 로고와 워드마크, 움직이는 로고까지 모은 아카이브.
+- [Identity Designed](https://identitydesigned.com): 전 세계 스튜디오의 브랜드 아이덴티티 작업을 소개하는 쇼케이스.
+- [Design Reviewed](https://designreviewed.com): 지난 150년의 인쇄물을 모은 그래픽 디자인사 아카이브.
+- [People's Graphic Design Archive](https://peoplesgdarchive.org): 누구나 자료를 올려 함께 만드는 그래픽 디자인 아카이브.
+- [Brands in Motion](https://www.brandsinmotion.xyz): 모션까지 설계한 브랜드 아이덴티티 사례와 인터뷰.
+- [OGQ 그라폴리오](https://grafolio.ogq.me): 일러스트 작가들이 작품을 올리는 국내 창작자 커뮤니티.
 
 ## 컬러 가이드
 
@@ -127,6 +140,11 @@
 - [Accessible Palette](https://accessiblepalette.com): 명도와 대비를 맞춘 UI 컬러 단계를 만드는 도구.
 - [와다 산조 배색 사전](https://sanzo-wada.dmbk.io): 와다 산조의 고전 배색집에 실린 348가지 조합을 웹에서 봅니다.
 - [WhoCanUse](https://www.whocanuse.com): 색 조합이 시각 특성별로 어떻게 보이는지, 대비 기준을 넘는지 확인합니다.
+- [Atmos](https://atmos.style): LCH·OKLCH 기준으로 팔레트와 단계별 셰이드를 만들고 대비를 확인하는 도구.
+- [InclusiveColors](https://www.inclusivecolors.com): 대비 기준 통과 여부를 보면서 팔레트를 짜고 Tailwind·CSS·Figma용으로 내보냅니다.
+- [APCA Contrast Calculator](https://apcacontrast.com): 차세대 대비 기준인 APCA 방식으로 글자와 배경의 대비를 계산합니다.
+- [uiGradients](https://uigradients.com): 이름 붙은 그라디언트 프리셋을 넘겨 보며 CSS로 복사합니다.
+- [BrandColors](https://www.brandcolors.net): 유명 브랜드의 공식 컬러 값을 모아 둔 사이트.
 
 ## 타이포 / 폰트
 
@@ -162,6 +180,11 @@
 - [Future Fonts](https://www.futurefonts.com): 다듬는 중인 서체를 먼저 싸게 사고 업데이트를 받는 폰트 마켓.
 - [Collletttivo](https://www.collletttivo.it): 이탈리아 디자이너들이 함께 만드는 오픈소스 서체 모음.
 - [Wakamai Fondue](https://wakamaifondue.com): 폰트 파일을 올리면 지원 글자와 OpenType 기능을 보여 줍니다.
+- [SUIT](https://sun.fo/suit/): UI에 맞춰 다듬은 한글 산세리프. 가변 폰트를 지원하고 상업적으로 쓸 수 있습니다.
+- [Wanted Sans](https://github.com/wanteddev/wanted-sans): 원티드랩이 만든 한글 산세리프. 7가지 굵기와 가변 폰트, 상업적 사용 가능.
+- [LINE Seed](https://seed.line.me): LINE의 브랜드 서체. 한글을 포함하고 상업적으로 쓸 수 있습니다.
+- [마켓히읗](https://markethiut.com): 독립 디자이너의 한글 폰트를 사는 스토어.
+- [Open Foundry](https://open-foundry.com): 쓸 만한 오픈소스 서체만 골라 소개합니다.
 
 ## 아이콘 / 에셋
 
@@ -200,6 +223,16 @@
 - [UI8](https://ui8.net): 프리미엄 UI 킷·아이콘·3D 에셋 마켓.
 - [Envato Elements](https://elements.envato.com): 구독 하나로 템플릿·폰트·영상·음악을 무제한 사용.
 - [Craftwork](https://craftwork.design): 일러스트·UI 킷·3D 에셋 번들.
+- [Hugeicons](https://hugeicons.com): 여러 스타일로 제공되는 대형 아이콘 세트.
+- [토스페이스](https://toss.im/tossface): 토스가 만든 이모지 폰트. 쓰기 전에 사용 조건을 확인하세요.
+- [SVGL](https://svgl.app): 브랜드 로고를 SVG로 바로 복사해 쓰는 라이브러리.
+- [Simple Icons](https://simpleicons.org): 브랜드 아이콘을 단색 SVG로 모은 오픈소스 세트.
+- [fffuel](https://www.fffuel.co): 패턴·그라디언트·텍스처 같은 SVG 배경을 만드는 생성기 모음.
+- [Texturelabs](https://texturelabs.org): 그래픽 작업에 쓰는 무료 텍스처와 튜토리얼.
+- [Public Domain Image Archive](https://pdimagearchive.org): Public Domain Review가 고른 퍼블릭 도메인 이미지 아카이브.
+- [Artvee](https://artvee.com): 퍼블릭 도메인 회화·일러스트·포스터를 고해상도로 내려받습니다.
+- [공공누리](https://www.kogl.or.kr): 공공기관이 개방한 이미지·영상·글꼴을 찾는 곳. 유형별 이용 조건이 붙습니다.
+- [Design Minis](https://www.designminis.com): 하프톤·그라디언트·모션처럼 한 가지 일만 하는 작은 웹 디자인 도구를 모은 디렉터리.
 
 ## 목업
 
@@ -228,6 +261,10 @@
 - [Dynamic Mockups](https://dynamicmockups.com): 내 PSD 목업에 디자인을 한꺼번에 입혀 여러 장을 뽑는 목업 생성기. API도 있습니다.
 - [Pika](https://pika.style): 스크린샷에 배경과 기기 프레임을 씌워 보기 좋게 다듬는 도구.
 - [MockUPhone](https://mockuphone.com): 앱 화면을 올리면 휴대폰·태블릿 목업 이미지로 바꿔 줍니다.
+- [Mockup Maison](https://mockup.maison): 실제로 촬영해 만든 브랜딩·인쇄물 목업.
+- [Mr.Mockup](https://mrmockup.com): 브랜딩과 인쇄물 중심의 PSD 목업.
+- [AppMockUp Studio](https://app-mockup.com): App Store와 Google Play용 스크린샷 이미지를 만드는 도구.
+- [Templatemaker](https://www.templatemaker.nl/en/): 치수를 넣으면 상자·봉투 같은 패키지 전개도를 PDF·SVG로 만들어 줍니다.
 
 ## 디자인 툴
 
@@ -265,6 +302,9 @@
 - [Loom](https://www.loom.com): 화면 녹화로 디자인 설명 영상을 빠르게 공유.
 - [미리캔버스](https://www.miricanvas.com): 국내 템플릿으로 SNS 이미지와 인쇄물을 빠르게 만드는 웹 툴.
 - [망고보드](https://www.mangoboard.net): 카드뉴스, 상세페이지, 영상 템플릿을 편집하는 국내 웹 툴.
+- [Cavalry](https://cavalry.studio): 2D 모션그래픽과 애니메이션을 만드는 데스크톱 앱. Canva 인수 뒤 무료로 풀렸습니다.
+- [Eagle](https://eagle.cool): 레퍼런스 이미지와 에셋을 모으고 태그로 정리하는 데스크톱 앱.
+- [Unicorn Studio](https://www.unicorn.studio): 셰이더·3D·모션 효과를 코드 없이 만들어 Framer·Webflow에 넣는 WebGL 도구.
 
 ## AI
 
@@ -287,7 +327,7 @@
 ### 이미지 생성
 
 - [Midjourney](https://www.midjourney.com): 가장 널리 쓰이는 이미지 생성 AI. 스타일 레퍼런스 기능이 강력.
-- [Adobe Firefly](https://firefly.adobe.com): 상업적 사용이 안전한 어도비 생성형 AI.
+- [Adobe Firefly](https://firefly.adobe.com): 상업적 사용을 고려해 만든 어도비 생성형 AI. 타사 모델도 함께 쓸 수 있습니다.
 - [Ideogram](https://ideogram.ai): 텍스트 렌더링에 강한 이미지 생성 AI. 포스터·로고 시안.
 - [Recraft](https://www.recraft.ai): 벡터·브랜드 스타일 일관성에 특화된 이미지 생성 AI.
 - [Leonardo.Ai](https://leonardo.ai): 게임·컨셉 아트에 강한 이미지 생성 플랫폼.
@@ -300,7 +340,10 @@
 - [Playground](https://playgroundai.com): 로고·포스터·SNS 그래픽을 템플릿 기반으로 생성하는 AI 디자인 툴.
 - [ComfyUI](https://www.comfy.org): 노드 기반 오픈소스 이미지·영상 생성 워크플로 툴. 로컬에서 실행.
 - [Kittl](https://www.kittl.com): AI 기능이 통합된 브라우저 그래픽 디자인 툴. 로고·티셔츠·포스터.
-- [Freepik AI Suite](https://www.freepik.com/ai): 프리픽의 AI 이미지·영상 생성 모음. 여러 모델을 한곳에서.
+- [Freepik AI Suite](https://www.freepik.com/ai): 프리픽의 AI 이미지·영상 생성 모음. 여러 모델을 한곳에서. 회사는 2026년 4월 Magnific으로 이름을 바꿨습니다.
+- [Lovart](https://www.lovart.ai): 대화로 로고·패키지·SNS 이미지·영상 광고까지 만드는 디자인 에이전트.
+- [FLORA](https://flora.ai): 여러 이미지·영상 모델을 한 캔버스에서 이어 쓰는 생성형 AI 작업 공간.
+- [Figma Weave](https://weave.figma.com): 이미지·영상 모델과 편집 도구를 노드로 이어 쓰는 Figma의 생성 워크플로 도구.
 
 ### 이미지 편집 · 업스케일
 
@@ -312,29 +355,33 @@
 ### 영상 생성 · 편집
 
 - [Runway](https://runway.com): 영상 생성·편집 AI의 선두주자.
-- [Luma Dream Machine](https://lumalabs.ai): 이미지·영상 생성 AI.
+- [Luma](https://lumalabs.ai): 이미지·영상 생성 AI. 지금은 제작 에이전트를 앞세워 운영합니다.
 - [Kling](https://kling.ai): 고품질 영상 생성 AI.
-- [Google Flow (Veo)](https://labs.google/fx/tools/flow): 구글 Veo 모델로 영상을 만드는 AI 영화 제작 툴.
-- [Pika](https://pika.art): 짧은 영상 생성·편집 AI. 효과와 립싱크 기능.
+- [Google Flow](https://flow.google.com): 구글의 AI 영상·이미지 제작 스튜디오. Veo 모델을 씁니다.
+- [Pika](https://pika.art): 영상·이미지 생성 AI. 자체 모델 외에 여러 회사 모델을 골라 쓸 수 있습니다.
 - [Hailuo](https://hailuoai.video): MiniMax의 영상 생성 AI. 자연스러운 인물 동작.
-- [Higgsfield](https://higgsfield.ai): 카메라 무빙 프리셋으로 시네마틱 영상을 만드는 AI.
+- [Higgsfield](https://higgsfield.ai): 이미지·영상·음성을 함께 다루는 AI 제작 도구. 카메라 무빙 프리셋으로 알려졌습니다.
 - [HeyGen](https://www.heygen.com): AI 아바타·더빙 영상 생성. 다국어 립싱크.
 - [Synthesia](https://www.synthesia.io): 기업용 AI 아바타 영상 제작 플랫폼.
 - [CapCut](https://www.capcut.com): AI 자막·배경 제거·템플릿이 강한 영상 편집기. 모바일·데스크톱.
 - [Descript](https://www.descript.com): 텍스트를 고치듯 영상·팟캐스트를 편집하는 AI 편집기.
 - [Swishy](https://www.swishy.ai): 말로 설명하면 텍스트·로고·UI 애니메이션을 만들어 주는 AI 모션 디자이너.
+- [Dreamina](https://dreamina.capcut.com): 바이트댄스의 이미지·영상 생성 플랫폼. Seedream과 Seedance 모델을 씁니다.
+- [Vrew](https://vrew.ai): 자막을 자동으로 만들고 글자를 고치듯 영상을 편집하는 국산 편집기.
 
 ### 오디오 · 음성
 
 - [ElevenLabs](https://elevenlabs.io): AI 음성 합성. 영상·프로토타입 내레이션.
 - [Suno](https://suno.com): AI 음악 생성.
-- [Udio](https://www.udio.com): AI 음악 생성. Suno와 양대 산맥.
+- [Udio](https://www.udio.com): AI 음악 생성 서비스. 2025년 말부터 만든 곡의 다운로드가 제한돼 있어 쓰기 전에 확인이 필요합니다.
+- [Typecast](https://typecast.ai): 글을 넣으면 AI 성우 목소리로 읽어 주는 국산 음성 서비스.
+- [Google Flow Music](https://www.flowmusic.app): 구글의 AI 음악 생성·리믹스 도구.
 
 ### UI · 코드 생성
 
-- [Google Stitch](https://stitch.withgoogle.com): 프롬프트로 UI 화면을 생성하고 Figma로 내보내는 구글 툴.
+- [Google Stitch](https://stitch.google.com): 프롬프트로 UI 화면을 만드는 구글의 디자인 에이전트. DESIGN.md와 MCP를 지원합니다.
 - [Uizard](https://uizard.io): 텍스트·스케치로 UI 프로토타입 생성.
-- [Relume](https://www.relume.ai): AI로 사이트맵·와이어프레임을 만들고 Figma·Webflow로 내보내기.
+- [Relume](https://www.relume.ai): AI 웹사이트 빌더. 만든 사이트를 Figma·Webflow·React로 내보낼 수 있습니다.
 - [Figma Make](https://www.figma.com/make/): 프롬프트로 동작하는 프로토타입을 만드는 Figma의 AI 기능.
 - [v0](https://v0.app): Vercel의 UI 코드 생성 AI. React·Tailwind 컴포넌트 생성.
 - [Lovable](https://lovable.dev): 대화로 풀스택 웹 앱을 만드는 AI 빌더.
@@ -343,6 +390,9 @@
 - [Claude Code](https://claude.com/product/claude-code): 터미널·데스크톱에서 코드를 작성·수정하는 Anthropic의 에이전트.
 - [Replit](https://replit.com): 브라우저에서 AI 에이전트로 앱을 만들고 바로 배포.
 - [GitHub Copilot](https://github.com/features/copilot): 가장 널리 쓰이는 AI 코딩 어시스턴트. VS Code 등에 통합.
+- [Paper](https://paper.design): 코딩 에이전트가 MCP로 직접 읽고 고치는 디자인 캔버스.
+- [pen.dev](https://www.pen.dev): AI 에이전트와 캔버스에서 디자인하고 HTML·Tailwind로 내보냅니다. Pencil에서 이름이 바뀌었습니다.
+- [Onlook](https://www.onlook.com): 실제 코드베이스 위에 캔버스를 얹어 화면을 고치는 오픈소스 도구.
 
 ### 문서 · 프레젠테이션
 
@@ -352,8 +402,9 @@
 ### 리서치 · 모델 허브
 
 - [Perplexity](https://www.perplexity.ai): 출처를 함께 보여주는 AI 검색.
-- [NotebookLM](https://notebook.google.com): 자료를 올리면 요약·질문·팟캐스트로 정리해 주는 구글 AI.
+- [Gemini Notebook (구 NotebookLM)](https://notebook.google.com): 자료를 올리면 요약·질문·팟캐스트로 정리해 주는 구글 AI. 2026년 7월 NotebookLM에서 이름이 바뀌었습니다.
 - [Hugging Face](https://huggingface.co): 오픈소스 AI 모델·데모 허브.
+- [Design Arena](https://www.designarena.ai): AI 모델이 만든 웹사이트·UI·로고를 투표로 겨루는 디자인 리더보드.
 
 ## 디자인 개발
 
@@ -368,7 +419,7 @@
 - [SEED Design (당근)](https://seed-design.io): 당근이 공개한 디자인 시스템. 컴포넌트와 토큰 문서를 볼 수 있습니다.
 - [Montage (원티드)](https://montage.wanted.co.kr): 원티드가 공개한 디자인 시스템 가이드.
 - [Atlassian Design System](https://atlassian.design): 문서화가 잘 된 디자인 시스템의 교과서.
-- [Shopify Polaris](https://shopify.dev/docs/api/polaris): 쇼피파이 디자인 시스템. 콘텐츠 가이드가 특히 좋습니다.
+- [Shopify Polaris](https://shopify.dev/docs/api/polaris): 쇼피파이 디자인 시스템. 지금은 웹 컴포넌트 기반 UI 프레임워크 문서로 제공됩니다.
 - [IBM Carbon](https://carbondesignsystem.com): IBM의 오픈소스 디자인 시스템.
 - [Ant Design](https://ant.design): 엔터프라이즈 UI 디자인 언어와 React 컴포넌트.
 - [Design Systems Repo](https://designsystemsrepo.com): 공개된 디자인 시스템 모음.
@@ -376,6 +427,8 @@
 - [Zeroheight](https://zeroheight.com): 디자인 시스템 문서화 플랫폼.
 - [Supernova](https://www.supernova.io): 디자인 토큰 관리와 코드 동기화.
 - [Zeplin](https://zeplin.io): 디자인-개발 핸드오프 툴.
+- [Fluent 2](https://fluent2.microsoft.design): 마이크로소프트의 디자인 시스템.
+- [토스 디자인 시스템 (TDS)](https://tossmini-docs.toss.im/tds-mobile/): 토스 디자인 시스템의 모바일 컴포넌트 문서.
 
 ### 컴포넌트 · 프레임워크
 
@@ -385,6 +438,8 @@
 - [Storybook](https://storybook.js.org): UI 컴포넌트를 독립적으로 개발·문서화하는 툴.
 - [Bootstrap](https://getbootstrap.com): 가장 오래 쓰인 CSS 프레임워크. 반응형 그리드와 컴포넌트.
 - [Uiverse](https://uiverse.io): 커뮤니티가 만든 오픈소스 CSS 버튼·로더·카드 모음.
+- [Base UI](https://base-ui.com): 스타일이 없는 접근성 중심 React 컴포넌트. shadcn/ui의 새 기본 바탕입니다.
+- [React Bits](https://reactbits.dev): 움직이는 텍스트·배경·카드를 복사해 쓰는 React 컴포넌트 모음.
 
 ### 애니메이션 · 인터랙션
 
@@ -397,6 +452,7 @@
 - [Easings.net](https://easings.net): 이징 함수 치트시트.
 - [cubic-bezier.com](https://cubic-bezier.com): CSS 베지어 이징 커브 시각 편집기.
 - [Animista](https://animista.net): CSS 애니메이션을 눌러보며 골라 코드 복사.
+- [Lenis](https://lenis.dev): 부드러운 스크롤을 구현하는 가벼운 라이브러리.
 
 ### 문서 · 접근성 · 실습
 
@@ -417,7 +473,7 @@
 - [서핏](https://www.surfit.io): 디자이너·개발자 아티클 큐레이션. 새 탭 확장 프로그램 제공.
 - [요즘IT](https://yozm.wishket.com): 위시켓의 IT·디자인 아티클 매거진.
 - [디스콰이엇](https://disquiet.io): 프로덕트 메이커 커뮤니티. 사이드 프로젝트 공유.
-- [커리어리](https://careerly.co.kr): 현직자 인사이트를 공유하는 커리어 SNS.
+- [커리어리](https://careerly.co.kr): 현직자 인사이트를 공유하는 커리어 커뮤니티. 최근에는 AI 에이전트 기능을 앞세웁니다.
 - [브런치](https://brunch.co.kr): 디자이너들의 에세이·회고가 많은 글 플랫폼.
 - [토스 기술 블로그](https://toss.tech): 토스의 디자인·개발 아티클.
 - [디자인베이스](https://designbase.co.kr): 디자인 툴 강의·아티클. 입문자에게 좋습니다.
@@ -432,7 +488,7 @@
 - [UX Planet](https://uxplanet.org): UX 아티클 퍼블리케이션.
 - [Smashing Magazine](https://www.smashingmagazine.com): 웹 디자인·프론트엔드 심층 아티클.
 - [Figma Blog](https://www.figma.com/blog/): Figma의 디자인·프로덕트 아티클.
-- [Eye on Design](https://eyeondesign.aiga.org): AIGA의 그래픽 디자인 매거진.
+- [Eye on Design](https://eyeondesign.aiga.org): AIGA의 그래픽 디자인 매거진. 2024년에 발행을 멈췄고 지난 글은 그대로 볼 수 있습니다.
 - [Creative Boom](https://www.creativeboom.com): 크리에이티브 산업 뉴스·인터뷰.
 - [Dezeen](https://www.dezeen.com): 건축·인테리어·제품 디자인 매거진.
 - [Design Milk](https://design-milk.com): 모던 디자인·아트·인테리어 매거진.
@@ -441,7 +497,9 @@
 - [Dense Discovery](https://www.densediscovery.com): 디자인·테크·문화를 다루는 주간 뉴스레터.
 - [퍼블리](https://publy.co): 실무자 인사이트 아티클 구독 서비스.
 - [서울디자인페스티벌](https://seoul.designfestival.co.kr): 월간 디자인이 2002년부터 열어 온 국내 디자인 행사.
-- [레이디러너 디자인 뉴스레터](https://maily.so/theladylearner): 디자인 트렌드와 인사이트를 매달 정리해 보내는 뉴스레터.
+- [레이디러너](https://theladylearner.com): 디자인 트렌드와 레퍼런스를 정리하는 매거진. 뉴스레터도 함께 보냅니다.
+- [팁스터](https://maily.so/tipster): 제품을 만드는 사람들의 인터뷰와 도구 이야기를 보내는 뉴스레터.
+- [오픈패스](https://openpath.kr): Figma·UI 컴포넌트·AI 활용을 다루는 디자이너 교육 플랫폼.
 
 ## 크리에이터 / 채널
 
@@ -488,7 +546,6 @@
 - [디자이너지인](https://www.youtube.com/@designer_jiin): 로고 제작과 리브랜딩 과정을 처음부터 끝까지 보여 주는 채널.
 - [디자인하는AI](https://www.youtube.com/@designingi): AI 도구로 그래픽과 2D 모션을 만드는 방법을 다룹니다.
 - [디자이너 덕디](https://www.youtube.com/@DeokDi): 게임 광고 디자이너가 AI 이미지·영상 도구를 직접 써 보고 비교합니다.
-- [DESIGNSORI](https://www.youtube.com/@designsory): 세계의 좋은 디자인과 디자이너를 소개하는 채널. 업로드는 드문 편입니다.
 - [Gobird (Instagram)](https://www.instagram.com/gobirdmasterclass/): 디자인 스타일과 원칙을 카드·릴스로 정리하는 계정.
 - [Posterlad](https://www.instagram.com/posterlad/): 모하메드 사미르의 매일 포스터 프로젝트.
 - [Typo/Graphic Posters](https://www.instagram.com/typo_graphic_posters/): 타이포그래피 포스터 아카이브 계정.
@@ -503,6 +560,8 @@
 - [디자인정글 (Instagram)](https://www.instagram.com/designjungle/): 디자인 뉴스와 전시 소식.
 - [Design Matters (Debbie Millman)](https://www.designmattersmedia.com): 가장 오래된 디자인 팟캐스트. 디자이너·작가 인터뷰.
 - [Design Details](https://designdetails.fm): 프로덕트 디자이너 두 명의 실무 이야기 팟캐스트.
+- [Dive Club](https://www.dive.club): 현업 디자이너를 인터뷰하는 팟캐스트. 작업 과정을 깊게 묻습니다.
+- [연정's Figma](https://www.youtube.com/@yeonjung-figma): 피그마 기능과 실무 사용법을 알려 주는 채널.
 
 ## 외주 / 프리랜서
 
@@ -2438,8 +2497,6 @@ Figma Make 같은 AI 디자인 도구는 AI 디자인 툴에 쓰임별로 모아
 
 이미지 AI 업체 Krea가 10월 15일 'Krea 3'을 공개했다. 만들어 주는 모델이 아니라 이미 있는 이미지를 고치는 편집 모델이다. 공식 소개 글의 첫 번째 약속이 "바꾸라고 하지 않은 것은 그대로 둔다"이다. 이 글은 Krea 공식 블로그와 가격 페이지를 직접 열어 확인한 내용만 옮긴다.
 
-(그림: Krea 블로그 'Introducing Krea 3' 화면. 출처: krea.ai/blog/introducing-krea-3 (캡처일 2026-10-21))
-
 속도와 값, 품질은 모두 크레아가 직접 밝힌 숫자다. 비교 상대는 나노 바나나 프로와 GPT Image 2였고, 다른 곳에서 같은 조건으로 재현한 자료는 찾지 못했다. 글자가 많은 포장이나 복잡한 로고에서 얼마나 버티는지도 아직 사례가 없다. 요금제별 한도는 가격 페이지 표기가 엇갈려 뒤에서 따로 적었다.
 
 ## 소개 글이 약속한 것
@@ -2500,11 +2557,7 @@ Krea가 소개 글에 적은 요령은 네 가지다.
 
 소개 글에 따르면 Krea 3은 krea.ai에서 바로 쓸 수 있고(Krea는 사용자 3천만 명이라고 밝혔다), Krea API로도 열려 있다. fal, Hedra, Together AI, Nous Research, OpenRouter, Replicate 같은 외부 서비스에도 올라가 있다. 기업 팀은 Krea에 따로 문의하면 된다.
 
-(그림: Krea 첫 화면. 출처: krea.ai (캡처일 2026-10-21))
-
 Krea 가격 페이지에서 확인한 요금제는 이렇다. 월 가격은 연간 결제 기준으로 보이는 값이고, 페이지에 취소선으로 함께 적힌 값(Basic 9달러, Pro 35달러, Max 105달러, Business 200달러)이 월 결제 가격으로 추정된다. 페이지가 이를 명확히 밝히지는 않았다.
-
-(그림: Krea 가격 페이지 요금제 영역. 연간 결제 할인가 기준이며 가격은 바뀔 수 있다. 출처: krea.ai/pricing (캡처일 2026-10-21))
 
 | 요금제 | 월 가격(연간 결제로 보이는 값) | 사용량 |
 |---|---|---|

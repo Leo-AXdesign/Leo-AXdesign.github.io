@@ -13,8 +13,6 @@ related: ai, tools, graphic
 
 이미지 AI 업체 Krea가 10월 15일 'Krea 3'을 공개했다. 만들어 주는 모델이 아니라 이미 있는 이미지를 고치는 편집 모델이다. 공식 소개 글의 첫 번째 약속이 "바꾸라고 하지 않은 것은 그대로 둔다"이다. 이 글은 Krea 공식 블로그와 가격 페이지를 직접 열어 확인한 내용만 옮긴다.
 
-![Krea 블로그 'Introducing Krea 3' 화면. 출처: krea.ai/blog/introducing-krea-3 (캡처일 2026-10-21)](https://designrefs.com/articles/img/krea-blog-v2.webp)
-
 속도와 값, 품질은 모두 크레아가 직접 밝힌 숫자다. 비교 상대는 나노 바나나 프로와 GPT Image 2였고, 다른 곳에서 같은 조건으로 재현한 자료는 찾지 못했다. 글자가 많은 포장이나 복잡한 로고에서 얼마나 버티는지도 아직 사례가 없다. 요금제별 한도는 가격 페이지 표기가 엇갈려 뒤에서 따로 적었다.
 
 ## 소개 글이 약속한 것
@@ -75,11 +73,7 @@ Krea가 소개 글에 적은 요령은 네 가지다.
 
 소개 글에 따르면 Krea 3은 krea.ai에서 바로 쓸 수 있고(Krea는 사용자 3천만 명이라고 밝혔다), Krea API로도 열려 있다. fal, Hedra, Together AI, Nous Research, OpenRouter, Replicate 같은 외부 서비스에도 올라가 있다. 기업 팀은 Krea에 따로 문의하면 된다.
 
-![Krea 첫 화면. 출처: krea.ai (캡처일 2026-10-21)](https://designrefs.com/articles/img/krea-home.webp)
-
 Krea 가격 페이지에서 확인한 요금제는 이렇다. 월 가격은 연간 결제 기준으로 보이는 값이고, 페이지에 취소선으로 함께 적힌 값(Basic 9달러, Pro 35달러, Max 105달러, Business 200달러)이 월 결제 가격으로 추정된다. 페이지가 이를 명확히 밝히지는 않았다.
-
-![Krea 가격 페이지 요금제 영역. 연간 결제 할인가 기준이며 가격은 바뀔 수 있다. 출처: krea.ai/pricing (캡처일 2026-10-21)](https://designrefs.com/articles/img/krea-pricing.webp)
 
 | 요금제 | 월 가격(연간 결제로 보이는 값) | 사용량 |
 |---|---|---|
