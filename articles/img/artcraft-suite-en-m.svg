@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 968" role="img" aria-labelledby="t d">
+  <title id="t">Seven AI-rebuilt apps, today</title>
+  <desc id="d">ArtCraft&#x27;s seven apps. PhotoCraft (Photoshop) and PrintCraft (Acrobat) are in early alpha; the five replacing Illustrator, InDesign, Lightroom, Premiere and After Effects are in development.</desc>
+  <rect width="600" height="968" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="32" y="66" font-size="30" font-weight="800" fill="#111111" text-anchor="start">Seven AI-rebuilt apps, today</text>
+    <text x="32" y="99" font-size="21" font-weight="400" fill="#6B6B6B" text-anchor="start">Per repositories and coverage, Oct 9.</text>
+    <text x="32" y="130" font-size="21" font-weight="400" fill="#6B6B6B" text-anchor="start">Status changes often</text>
+    <rect x="32.0" y="164" width="261.0" height="168" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="2.5" stroke-dasharray="0"/>
+    <text x="50.0" y="200" font-size="22" font-weight="800" fill="#111111" text-anchor="start">PhotoCraft</text>
+    <text x="50.0" y="228" font-size="17" font-weight="400" fill="#6B6B6B" text-anchor="start">replaces Photoshop</text>
+    <rect x="50.0" y="244" width="132.45999999999998" height="31" rx="15.5" fill="#111111" stroke="#111111" stroke-width="1.5"/>
+    <text x="62.0" y="264" font-size="17" font-weight="700" fill="#FFFFFF" text-anchor="start">Early alpha</text>
+    <text x="50.0" y="314" font-size="16" font-weight="400" fill="#444444" text-anchor="start">Opens and saves PSD/PSB</text>
+    <rect x="307.0" y="164" width="261.0" height="168" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="1.5" stroke-dasharray="6 5"/>
+    <text x="325.0" y="200" font-size="22" font-weight="800" fill="#111111" text-anchor="start">VectorCraft</text>
+    <text x="325.0" y="228" font-size="17" font-weight="400" fill="#6B6B6B" text-anchor="start">replaces Illustrator</text>
+    <rect x="325.0" y="244" width="162.04" height="31" rx="15.5" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <text x="337.0" y="264" font-size="17" font-weight="700" fill="#111111" text-anchor="start">In development</text>
+    <rect x="32.0" y="346" width="261.0" height="168" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="1.5" stroke-dasharray="6 5"/>
+    <text x="50.0" y="382" font-size="22" font-weight="800" fill="#111111" text-anchor="start">DesignCraft</text>
+    <text x="50.0" y="410" font-size="17" font-weight="400" fill="#6B6B6B" text-anchor="start">replaces InDesign</text>
+    <rect x="50.0" y="426" width="162.04" height="31" rx="15.5" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <text x="62.0" y="446" font-size="17" font-weight="700" fill="#111111" text-anchor="start">In development</text>
+    <rect x="307.0" y="346" width="261.0" height="168" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="1.5" stroke-dasharray="6 5"/>
+    <text x="325.0" y="382" font-size="22" font-weight="800" fill="#111111" text-anchor="start">LightCraft</text>
+    <text x="325.0" y="410" font-size="17" font-weight="400" fill="#6B6B6B" text-anchor="start">replaces Lightroom</text>
+    <rect x="325.0" y="426" width="162.04" height="31" rx="15.5" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <text x="337.0" y="446" font-size="17" font-weight="700" fill="#111111" text-anchor="start">In development</text>
+    <rect x="32.0" y="528" width="261.0" height="168" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="1.5" stroke-dasharray="6 5"/>
+    <text x="50.0" y="564" font-size="22" font-weight="800" fill="#111111" text-anchor="start">FilmCraft</text>
+    <text x="50.0" y="592" font-size="17" font-weight="400" fill="#6B6B6B" text-anchor="start">replaces Premiere</text>
+    <rect x="50.0" y="608" width="162.04" height="31" rx="15.5" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <text x="62.0" y="628" font-size="17" font-weight="700" fill="#111111" text-anchor="start">In development</text>
+    <rect x="307.0" y="528" width="261.0" height="168" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="1.5" stroke-dasharray="6 5"/>
+    <text x="325.0" y="564" font-size="22" font-weight="800" fill="#111111" text-anchor="start">EffectCraft</text>
+    <text x="325.0" y="592" font-size="17" font-weight="400" fill="#6B6B6B" text-anchor="start">replaces After Effects</text>
+    <rect x="325.0" y="608" width="162.04" height="31" rx="15.5" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <text x="337.0" y="628" font-size="17" font-weight="700" fill="#111111" text-anchor="start">In development</text>
+    <text x="325.0" y="678" font-size="16" font-weight="400" fill="#444444" text-anchor="start">Can&#x27;t open AEP files</text>
+    <rect x="32.0" y="710" width="261.0" height="168" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="2.5" stroke-dasharray="0"/>
+    <text x="50.0" y="746" font-size="22" font-weight="800" fill="#111111" text-anchor="start">PrintCraft</text>
+    <text x="50.0" y="774" font-size="17" font-weight="400" fill="#6B6B6B" text-anchor="start">replaces Acrobat</text>
+    <rect x="50.0" y="790" width="132.45999999999998" height="31" rx="15.5" fill="#111111" stroke="#111111" stroke-width="1.5"/>
+    <text x="62.0" y="810" font-size="17" font-weight="700" fill="#FFFFFF" text-anchor="start">Early alpha</text>
+    <text x="50.0" y="860" font-size="16" font-weight="400" fill="#444444" text-anchor="start">Some reports: PDFCraft</text>
+    <line x1="32" y1="908" x2="568" y2="908" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="32" y="936" font-size="15" font-weight="400" fill="#6B6B6B" text-anchor="start">Sources: ArtCraft repos, Windows Forum, GIGAZINE, Cybernews</text>
+  </g>
+</svg>

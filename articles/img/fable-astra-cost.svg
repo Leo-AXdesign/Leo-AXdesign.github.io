@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 459" role="img" aria-labelledby="t d">
+  <title id="t">같은 점수, 다른 비용</title>
+  <desc id="d">종합 지수는 Claude Fable 5.1과 GPT-6 아스트라 모두 53점. 과제 하나당 비용은 Fable 5.1 7.63달러, 아스트라 3.26달러. 과제 하나당 출력 토큰은 Fable 5.1 약 7만 8천 개, 아스트라 약 2만 7천 개.</desc>
+  <rect width="1200" height="459" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="40" y="70" font-size="30" font-weight="800" fill="#111111" letter-spacing="-0.5">같은 점수, 다른 비용</text>
+    <text x="40" y="101" font-size="19" fill="#6B6B6B">Artificial Analysis 종합 지수 v4.3 · 두 모델 모두 최대 추론 설정</text>
+    <text x="40.0" y="165" font-size="24" font-weight="700" fill="#111111">종합 지수</text>
+    <text x="40.0" y="193" font-size="18" fill="#6B6B6B">높을수록 좋음</text>
+    <text x="40.0" y="237" font-size="18" fill="#444444">Claude Fable 5.1</text>
+    <path d="M40.0 247H270.3333333333333A7 7 0 0 1 277.3333333333333 254V270A7 7 0 0 1 270.3333333333333 277H40.0Z" fill="#111111"/>
+    <text x="289.3333333333333" y="269.92" font-size="22" font-weight="700" fill="#111111">53</text>
+    <text x="40.0" y="315" font-size="18" fill="#444444">GPT-6 아스트라</text>
+    <path d="M40.0 325H270.3333333333333A7 7 0 0 1 277.3333333333333 332V348A7 7 0 0 1 270.3333333333333 355H40.0Z" fill="#111111"/>
+    <text x="289.3333333333333" y="347.92" font-size="22" font-weight="700" fill="#111111">53</text>
+    <line x1="40.0" y1="219" x2="40.0" y2="375" stroke="#D9D9D9" stroke-width="1.6"/>
+    <text x="433.3333333333333" y="165" font-size="24" font-weight="700" fill="#111111">과제당 비용</text>
+    <text x="433.3333333333333" y="193" font-size="18" fill="#6B6B6B">낮을수록 좋음</text>
+    <text x="433.3333333333333" y="237" font-size="18" fill="#444444">Claude Fable 5.1</text>
+    <path d="M433.3333333333333 247H663.6666666666666A7 7 0 0 1 670.6666666666666 254V270A7 7 0 0 1 663.6666666666666 277H433.3333333333333Z" fill="#111111"/>
+    <text x="682.6666666666666" y="269.92" font-size="22" font-weight="700" fill="#111111">$7.63</text>
+    <text x="433.3333333333333" y="315" font-size="18" fill="#444444">GPT-6 아스트라</text>
+    <path d="M433.3333333333333 325H527.7365661861074A7 7 0 0 1 534.7365661861074 332V348A7 7 0 0 1 527.7365661861074 355H433.3333333333333Z" fill="#111111"/>
+    <text x="546.7365661861074" y="347.92" font-size="22" font-weight="700" fill="#111111">$3.26</text>
+    <line x1="433.3333333333333" y1="219" x2="433.3333333333333" y2="375" stroke="#D9D9D9" stroke-width="1.6"/>
+    <text x="826.6666666666666" y="165" font-size="24" font-weight="700" fill="#111111">과제당 출력 토큰</text>
+    <text x="826.6666666666666" y="193" font-size="18" fill="#6B6B6B">낮을수록 좋음</text>
+    <text x="826.6666666666666" y="237" font-size="18" fill="#444444">Claude Fable 5.1</text>
+    <path d="M826.6666666666666 247H1057.0A7 7 0 0 1 1064.0 254V270A7 7 0 0 1 1057.0 277H826.6666666666666Z" fill="#111111"/>
+    <text x="1076.0" y="269.92" font-size="22" font-weight="700" fill="#111111">7.8만</text>
+    <text x="826.6666666666666" y="315" font-size="18" fill="#444444">GPT-6 아스트라</text>
+    <path d="M826.6666666666666 325H901.8205128205128A7 7 0 0 1 908.8205128205128 332V348A7 7 0 0 1 901.8205128205128 355H826.6666666666666Z" fill="#111111"/>
+    <text x="920.8205128205128" y="347.92" font-size="22" font-weight="700" fill="#111111">2.7만</text>
+    <line x1="826.6666666666666" y1="219" x2="826.6666666666666" y2="375" stroke="#D9D9D9" stroke-width="1.6"/>
+    <line x1="40" y1="397" x2="1160" y2="397" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="40" y="423" font-size="16" fill="#6B6B6B">출처: Artificial Analysis (2026. 9. 9). 비용과 토큰은 지수 과제 하나당 평균.</text>
+  </g>
+</svg>

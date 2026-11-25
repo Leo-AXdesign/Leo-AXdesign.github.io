@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 623" role="img" aria-labelledby="t d">
+  <title id="t">AI draws the screen. Whose rules does it follow?</title>
+  <desc id="d">ChatGPT Intelligent UI assembles OpenAI&#x27;s component library per question into an answer screen. The Figma agent reads your team&#x27;s design library and guideline markdown files every time and works inside your file.</desc>
+  <rect width="1200" height="623" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="40" y="70" font-size="30" font-weight="800" fill="#111111" text-anchor="start">AI draws the screen. Whose rules does it follow?</text>
+    <text x="40" y="101" font-size="19" font-weight="400" fill="#6B6B6B" text-anchor="start">Two features from the same week, side by side</text>
+    <text x="40.0" y="145" font-size="22" font-weight="800" fill="#111111" text-anchor="start">ChatGPT Intelligent UI</text>
+    <rect x="40.0" y="159" width="219.39999999999998" height="30" rx="15" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <text x="54.0" y="179" font-size="15" font-weight="700" fill="#111111" text-anchor="start">Rules owned by: OpenAI</text>
+    <rect x="40.0" y="209" width="540.0" height="84" rx="12" fill="#F2F2F2" stroke="#111111" stroke-width="2"/>
+    <text x="60.0" y="245" font-size="18" font-weight="700" fill="#111111" text-anchor="start">OpenAI&#x27;s component library</text>
+    <text x="60.0" y="273" font-size="15" font-weight="400" fill="#6B6B6B" text-anchor="start">buttons · forms · charts · small tools</text>
+    <line x1="310.0" y1="297" x2="310.0" y2="319" stroke="#111111" stroke-width="2"/>
+    <path d="M303.0 313 L310.0 323 L317.0 313" fill="none" stroke="#111111" stroke-width="2"/>
+    <rect x="40.0" y="327" width="540.0" height="84" rx="12" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <text x="60.0" y="363" font-size="18" font-weight="700" fill="#111111" text-anchor="start">GPT-6 assembles per question</text>
+    <text x="60.0" y="391" font-size="15" font-weight="400" fill="#6B6B6B" text-anchor="start">the model decides what fits</text>
+    <line x1="310.0" y1="415" x2="310.0" y2="437" stroke="#111111" stroke-width="2"/>
+    <path d="M303.0 431 L310.0 441 L317.0 431" fill="none" stroke="#111111" stroke-width="2"/>
+    <rect x="40.0" y="445" width="540.0" height="84" rx="12" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <text x="60.0" y="481" font-size="18" font-weight="700" fill="#111111" text-anchor="start">An answer screen in the chat</text>
+    <text x="60.0" y="509" font-size="15" font-weight="400" fill="#6B6B6B" text-anchor="start">same design for every user</text>
+    <text x="620.0" y="145" font-size="22" font-weight="800" fill="#111111" text-anchor="start">Figma agent</text>
+    <rect x="620.0" y="159" width="245.49999999999997" height="30" rx="15" fill="#111111" stroke="#111111" stroke-width="1.5"/>
+    <text x="634.0" y="179" font-size="15" font-weight="700" fill="#FFFFFF" text-anchor="start">Rules owned by: your team</text>
+    <rect x="620.0" y="209" width="540.0" height="84" rx="12" fill="#F2F2F2" stroke="#111111" stroke-width="2"/>
+    <text x="640.0" y="245" font-size="18" font-weight="700" fill="#111111" text-anchor="start">Your team&#x27;s design library</text>
+    <text x="640.0" y="273" font-size="15" font-weight="400" fill="#6B6B6B" text-anchor="start">+ guideline markdown files</text>
+    <line x1="890.0" y1="297" x2="890.0" y2="319" stroke="#111111" stroke-width="2"/>
+    <path d="M883.0 313 L890.0 323 L897.0 313" fill="none" stroke="#111111" stroke-width="2"/>
+    <rect x="620.0" y="327" width="540.0" height="84" rx="12" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <text x="640.0" y="363" font-size="18" font-weight="700" fill="#111111" text-anchor="start">The agent reads them every time</text>
+    <text x="640.0" y="391" font-size="15" font-weight="400" fill="#6B6B6B" text-anchor="start">rules · best practices · antipatterns</text>
+    <line x1="890.0" y1="415" x2="890.0" y2="437" stroke="#111111" stroke-width="2"/>
+    <path d="M883.0 431 L890.0 441 L897.0 431" fill="none" stroke="#111111" stroke-width="2"/>
+    <rect x="620.0" y="445" width="540.0" height="84" rx="12" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <text x="640.0" y="481" font-size="18" font-weight="700" fill="#111111" text-anchor="start">Screens in your file</text>
+    <text x="640.0" y="509" font-size="15" font-weight="400" fill="#6B6B6B" text-anchor="start">your brand&#x27;s design</text>
+    <line x1="40" y1="559" x2="1160" y2="559" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="40" y="583" font-size="16" font-weight="400" fill="#6B6B6B" text-anchor="start">Sources: OpenAI (Oct 7, 2026), Figma release notes (Oct 6, 2026)</text>
+  </g>
+</svg>

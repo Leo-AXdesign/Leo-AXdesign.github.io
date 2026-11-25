@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 644" role="img" aria-labelledby="t d">
+  <title id="t">Same question, two kinds of answer</title>
+  <desc id="d">Answered in text, the reply is paragraphs. Answered with Intelligent UI, it includes sliders for hours and rate, an estimate, experience-level buttons and a button to draft the quote.</desc>
+  <rect width="1200" height="644" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="40" y="70" font-size="30" font-weight="800" fill="#111111" text-anchor="start">Same question, two kinds of answer</text>
+    <text x="40" y="101" font-size="19" font-weight="400" fill="#6B6B6B" text-anchor="start">An illustration. Actual ChatGPT answers may differ.</text>
+    <rect x="624.4499999999999" y="135" width="535.5500000000001" height="43" rx="21.5" fill="#111111"/>
+    <text x="644.4499999999999" y="159" font-size="17" font-weight="600" fill="#FFFFFF" text-anchor="start">How much should I charge per hour for freelance work?</text>
+    <text x="40" y="202" font-size="17" font-weight="700" fill="#111111" text-anchor="start">Answer in text</text>
+    <rect x="40" y="220" width="546.0" height="330" rx="14" fill="#FFFFFF" stroke="#D9D9D9" stroke-width="1.5"/>
+    <rect x="62" y="246" width="461.84000000000003" height="10" rx="5" fill="#D9D9D9"/>
+    <rect x="62" y="270" width="431.71999999999997" height="10" rx="5" fill="#F2F2F2"/>
+    <rect x="62" y="294" width="451.8" height="10" rx="5" fill="#F2F2F2"/>
+    <rect x="62" y="318" width="276.1" height="10" rx="5" fill="#F2F2F2"/>
+    <rect x="62" y="366" width="441.76" height="10" rx="5" fill="#D9D9D9"/>
+    <rect x="62" y="390" width="466.86" height="10" rx="5" fill="#F2F2F2"/>
+    <rect x="62" y="414" width="401.6" height="10" rx="5" fill="#F2F2F2"/>
+    <rect x="62" y="438" width="311.24" height="10" rx="5" fill="#F2F2F2"/>
+    <rect x="62" y="486" width="451.8" height="10" rx="5" fill="#D9D9D9"/>
+    <rect x="62" y="510" width="351.4" height="10" rx="5" fill="#F2F2F2"/>
+    <text x="614.0" y="202" font-size="17" font-weight="700" fill="#111111" text-anchor="start">Answer as an interface (Intelligent UI)</text>
+    <rect x="614.0" y="220" width="546.0" height="330" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="2"/>
+    <text x="638.0" y="260" font-size="15" font-weight="400" fill="#444444" text-anchor="start">Hours</text>
+    <text x="1136.0" y="260" font-size="15" font-weight="700" fill="#111111" text-anchor="end">40 h</text>
+    <rect x="638.0" y="274" width="498.0" height="6" rx="3" fill="#D9D9D9"/>
+    <rect x="638.0" y="274" width="273.90000000000003" height="6" rx="3" fill="#111111"/>
+    <circle cx="911.9000000000001" cy="277" r="10" fill="#FFFFFF" stroke="#111111" stroke-width="2.5"/>
+    <text x="638.0" y="324" font-size="15" font-weight="400" fill="#444444" text-anchor="start">Hourly rate</text>
+    <text x="1136.0" y="324" font-size="15" font-weight="700" fill="#111111" text-anchor="end">$40</text>
+    <rect x="638.0" y="338" width="498.0" height="6" rx="3" fill="#D9D9D9"/>
+    <rect x="638.0" y="338" width="273.90000000000003" height="6" rx="3" fill="#111111"/>
+    <circle cx="911.9000000000001" cy="341" r="10" fill="#FFFFFF" stroke="#111111" stroke-width="2.5"/>
+    <text x="638.0" y="394" font-size="15" font-weight="400" fill="#6B6B6B" text-anchor="start">Estimate</text>
+    <text x="638.0" y="440" font-size="40" font-weight="800" fill="#111111" text-anchor="start">$1,600</text>
+    <rect x="638.0" y="470" width="85.8" height="32" rx="16" fill="#FFFFFF" stroke="#D9D9D9" stroke-width="1.5"/>
+    <text x="680.9" y="491" font-size="14" font-weight="600" fill="#444444" text-anchor="middle">Junior</text>
+    <rect x="731.8" y="470" width="57.9" height="32" rx="16" fill="#111111" stroke="#111111" stroke-width="1.5"/>
+    <text x="760.75" y="491" font-size="14" font-weight="600" fill="#FFFFFF" text-anchor="middle">Mid</text>
+    <rect x="797.6999999999999" y="470" width="85.8" height="32" rx="16" fill="#FFFFFF" stroke="#D9D9D9" stroke-width="1.5"/>
+    <text x="840.5999999999999" y="491" font-size="14" font-weight="600" fill="#444444" text-anchor="middle">Senior</text>
+    <rect x="961.0" y="470" width="175.0" height="32" rx="8" fill="#F2F2F2" stroke="#111111" stroke-width="1.5"/>
+    <text x="1048.5" y="491" font-size="14" font-weight="700" fill="#111111" text-anchor="middle">Draft the quote</text>
+    <line x1="40" y1="580" x2="1160" y2="580" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="40" y="604" font-size="16" font-weight="400" fill="#6B6B6B" text-anchor="start">Component types (buttons, forms, charts, small tools) per OpenAI, Oct 7, 2026</text>
+  </g>
+</svg>

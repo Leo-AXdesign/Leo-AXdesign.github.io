@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 459" role="img" aria-labelledby="t d">
+  <title id="t">Designers and AI, one year on</title>
+  <desc id="d">Designers using AI weekly rose from 54% in 2025 to 91% in 2026. AI tools used regularly rose from 3 to 7 on average. Most-used models: Claude 78%, ChatGPT 65%.</desc>
+  <rect width="1200" height="459" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="40" y="70" font-size="30" font-weight="800" fill="#111111" letter-spacing="-0.5">Designers and AI, one year on</text>
+    <text x="40" y="101" font-size="19" fill="#6B6B6B">AI in Design Report 2026 · 900+ designers, 60+ countries</text>
+    <text x="40.0" y="165" font-size="24" font-weight="700" fill="#111111">Use AI weekly</text>
+    <text x="40.0" y="193" font-size="18" fill="#6B6B6B">share of designers</text>
+    <text x="40.0" y="237" font-size="18" fill="#444444">2025</text>
+    <path d="M40.0 247H173.83516483516482A7 7 0 0 1 180.83516483516482 254V270A7 7 0 0 1 173.83516483516482 277H40.0Z" fill="#111111"/>
+    <text x="192.83516483516482" y="269.92" font-size="22" font-weight="700" fill="#111111">54%</text>
+    <text x="40.0" y="315" font-size="18" fill="#444444">2026</text>
+    <path d="M40.0 325H270.3333333333333A7 7 0 0 1 277.3333333333333 332V348A7 7 0 0 1 270.3333333333333 355H40.0Z" fill="#111111"/>
+    <text x="289.3333333333333" y="347.92" font-size="22" font-weight="700" fill="#111111">91%</text>
+    <line x1="40.0" y1="219" x2="40.0" y2="375" stroke="#D9D9D9" stroke-width="1.6"/>
+    <text x="433.3333333333333" y="165" font-size="24" font-weight="700" fill="#111111">AI tools in regular use</text>
+    <text x="433.3333333333333" y="193" font-size="18" fill="#6B6B6B">average count</text>
+    <text x="433.3333333333333" y="237" font-size="18" fill="#444444">2025</text>
+    <path d="M433.3333333333333 247H528.047619047619A7 7 0 0 1 535.047619047619 254V270A7 7 0 0 1 528.047619047619 277H433.3333333333333Z" fill="#111111"/>
+    <text x="547.047619047619" y="269.92" font-size="22" font-weight="700" fill="#111111">3</text>
+    <text x="433.3333333333333" y="315" font-size="18" fill="#444444">2026</text>
+    <path d="M433.3333333333333 325H663.6666666666666A7 7 0 0 1 670.6666666666666 332V348A7 7 0 0 1 663.6666666666666 355H433.3333333333333Z" fill="#111111"/>
+    <text x="682.6666666666666" y="347.92" font-size="22" font-weight="700" fill="#111111">7</text>
+    <line x1="433.3333333333333" y1="219" x2="433.3333333333333" y2="375" stroke="#D9D9D9" stroke-width="1.6"/>
+    <text x="826.6666666666666" y="165" font-size="24" font-weight="700" fill="#111111">Models used (2026)</text>
+    <text x="826.6666666666666" y="193" font-size="18" fill="#6B6B6B">share of designers</text>
+    <text x="826.6666666666666" y="237" font-size="18" fill="#444444">Claude</text>
+    <path d="M826.6666666666666 247H1057.0A7 7 0 0 1 1064.0 254V270A7 7 0 0 1 1057.0 277H826.6666666666666Z" fill="#111111"/>
+    <text x="1076.0" y="269.92" font-size="22" font-weight="700" fill="#111111">78%</text>
+    <text x="826.6666666666666" y="315" font-size="18" fill="#444444">ChatGPT</text>
+    <path d="M826.6666666666666 325H1017.4444444444443A7 7 0 0 1 1024.4444444444443 332V348A7 7 0 0 1 1017.4444444444443 355H826.6666666666666Z" fill="#111111"/>
+    <text x="1036.4444444444443" y="347.92" font-size="22" font-weight="700" fill="#111111">65%</text>
+    <line x1="826.6666666666666" y1="219" x2="826.6666666666666" y2="375" stroke="#D9D9D9" stroke-width="1.6"/>
+    <line x1="40" y1="397" x2="1160" y2="397" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="40" y="423" font-size="16" fill="#6B6B6B">Source: AI in Design Report 2026 (May 20, 2026). Usage is the share of designers who said they use each tool.</text>
+  </g>
+</svg>

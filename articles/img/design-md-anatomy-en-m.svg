@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 814" role="img" aria-labelledby="t d">
+  <title id="t">What a DESIGN.md file looks like</title>
+  <desc id="d">A DESIGN.md file lists tokens such as colors, type, corner radius and components as YAML between --- fences at the top, and explains why those values exist in markdown prose below.</desc>
+  <rect width="600" height="814" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="32" y="66" font-size="34" font-weight="800" fill="#111111" text-anchor="start">What a DESIGN.md file looks like</text>
+    <text x="32" y="99" font-size="21" font-weight="400" fill="#6B6B6B" text-anchor="start">This site&#x27;s rules as an example, trimmed.</text>
+    <rect x="32" y="135" width="536" height="497" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="2"/>
+    <line x1="32" y1="173" x2="568" y2="173" stroke="#D9D9D9" stroke-width="1.5"/>
+    <text x="52" y="160" font-size="15" font-weight="700" fill="#111111" text-anchor="start">DESIGN.md</text>
+    <rect x="34" y="183" width="532" height="325" fill="#F2F2F2"/>
+    <text x="52" y="202" font-size="15" font-weight="400" fill="#6B6B6B" font-family="'SF Mono', Menlo, Consolas, 'D2Coding', monospace" xml:space="preserve">---</text>
+    <text x="52" y="227" font-size="15" font-weight="700" fill="#111111" font-family="'SF Mono', Menlo, Consolas, 'D2Coding', monospace" xml:space="preserve">name: Design Hub</text>
+    <text x="52" y="252" font-size="15" font-weight="700" fill="#111111" font-family="'SF Mono', Menlo, Consolas, 'D2Coding', monospace" xml:space="preserve">colors:</text>
+    <text x="52" y="277" font-size="15" font-weight="400" fill="#444444" font-family="'SF Mono', Menlo, Consolas, 'D2Coding', monospace" xml:space="preserve">  ink: &quot;#111111&quot;</text>
+    <text x="52" y="302" font-size="15" font-weight="400" fill="#444444" font-family="'SF Mono', Menlo, Consolas, 'D2Coding', monospace" xml:space="preserve">  muted: &quot;#6B6B6B&quot;</text>
+    <text x="52" y="327" font-size="15" font-weight="400" fill="#444444" font-family="'SF Mono', Menlo, Consolas, 'D2Coding', monospace" xml:space="preserve">  faint: &quot;#A3A3A3&quot;</text>
+    <text x="52" y="352" font-size="15" font-weight="700" fill="#111111" font-family="'SF Mono', Menlo, Consolas, 'D2Coding', monospace" xml:space="preserve">typography:</text>
+    <text x="52" y="377" font-size="15" font-weight="400" fill="#444444" font-family="'SF Mono', Menlo, Consolas, 'D2Coding', monospace" xml:space="preserve">  caption: { fontSize: 12px }</text>
+    <text x="52" y="402" font-size="15" font-weight="700" fill="#111111" font-family="'SF Mono', Menlo, Consolas, 'D2Coding', monospace" xml:space="preserve">rounded:</text>
+    <text x="52" y="427" font-size="15" font-weight="400" fill="#444444" font-family="'SF Mono', Menlo, Consolas, 'D2Coding', monospace" xml:space="preserve">  md: 8px</text>
+    <text x="52" y="452" font-size="15" font-weight="700" fill="#111111" font-family="'SF Mono', Menlo, Consolas, 'D2Coding', monospace" xml:space="preserve">components:</text>
+    <text x="52" y="477" font-size="15" font-weight="400" fill="#444444" font-family="'SF Mono', Menlo, Consolas, 'D2Coding', monospace" xml:space="preserve">  row-tags: &quot;{colors.faint}&quot;</text>
+    <text x="52" y="502" font-size="15" font-weight="400" fill="#6B6B6B" font-family="'SF Mono', Menlo, Consolas, 'D2Coding', monospace" xml:space="preserve">---</text>
+    <text x="52" y="527" font-size="16" font-weight="700" fill="#111111" font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif" xml:space="preserve">## Overview</text>
+    <text x="52" y="552" font-size="16" font-weight="400" fill="#444444" font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif" xml:space="preserve">Black and white only. Emphasis by weight and fill, not color.</text>
+    <text x="52" y="577" font-size="16" font-weight="700" fill="#111111" font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif" xml:space="preserve">## Do&#x27;s and Don&#x27;ts</text>
+    <text x="52" y="602" font-size="16" font-weight="400" fill="#444444" font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif" xml:space="preserve">- Never use color to favor one side.</text>
+    <rect x="32" y="652" width="22" height="22" rx="4" fill="#F2F2F2" stroke="#111111" stroke-width="1.5"/>
+    <text x="66" y="672" font-size="20" font-weight="800" fill="#111111" text-anchor="start">Tokens</text>
+    <text x="154.4" y="672" font-size="19" font-weight="400" fill="#444444" text-anchor="start">Exact values. YAML for machines.</text>
+    <rect x="32" y="692" width="22" height="22" rx="4" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <text x="66" y="712" font-size="20" font-weight="800" fill="#111111" text-anchor="start">Rationale</text>
+    <text x="191.6" y="712" font-size="19" font-weight="400" fill="#444444" text-anchor="start">Why those values. Prose for people too.</text>
+    <line x1="32" y1="754" x2="568" y2="754" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="32" y="782" font-size="17" font-weight="400" fill="#6B6B6B" text-anchor="start">Format: google-labs-code/design.md (alpha, Apache 2.0)</text>
+  </g>
+</svg>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 615" role="img" aria-labelledby="t d">
+  <title id="t">Monthly AI credits per Figma plan</title>
+  <desc id="d">Monthly AI credits for a Full seat are 500 on Starter, 3,000 on Professional, 3,500 on Organization and 4,250 on Enterprise.</desc>
+  <rect width="1200" height="615" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="40" y="70" font-size="30" font-weight="800" fill="#111111" letter-spacing="-0.5">Monthly AI credits per Figma plan</text>
+    <text x="40" y="101" font-size="19" fill="#6B6B6B">Full seat · Starter shows monthly cap</text>
+    <text x="40.0" y="165" font-size="24" font-weight="700" fill="#111111">Monthly AI credits, Full seat</text>
+    <text x="40.0" y="193" font-size="18" fill="#6B6B6B">Higher means more</text>
+    <text x="40.0" y="237" font-size="18" fill="#444444">Starter</text>
+    <path d="M40.0 247H153.47058823529412A7 7 0 0 1 160.47058823529412 254V270A7 7 0 0 1 153.47058823529412 277H40.0Z" fill="#111111"/>
+    <text x="172.47058823529412" y="269.92" font-size="22" font-weight="700" fill="#111111">500</text>
+    <text x="40.0" y="315" font-size="18" fill="#444444">Professional</text>
+    <path d="M40.0 325H755.8235294117648A7 7 0 0 1 762.8235294117648 332V348A7 7 0 0 1 755.8235294117648 355H40.0Z" fill="#111111"/>
+    <text x="774.8235294117648" y="347.92" font-size="22" font-weight="700" fill="#111111">3,000</text>
+    <text x="40.0" y="393" font-size="18" fill="#444444">Organization</text>
+    <path d="M40.0 403H876.2941176470588A7 7 0 0 1 883.2941176470588 410V426A7 7 0 0 1 876.2941176470588 433H40.0Z" fill="#111111"/>
+    <text x="895.2941176470588" y="425.92" font-size="22" font-weight="700" fill="#111111">3,500</text>
+    <text x="40.0" y="471" font-size="18" fill="#444444">Enterprise</text>
+    <path d="M40.0 481H1057.0A7 7 0 0 1 1064.0 488V504A7 7 0 0 1 1057.0 511H40.0Z" fill="#111111"/>
+    <text x="1076.0" y="503.92" font-size="22" font-weight="700" fill="#111111">4,250</text>
+    <line x1="40.0" y1="219" x2="40.0" y2="531" stroke="#D9D9D9" stroke-width="1.6"/>
+    <line x1="40" y1="553" x2="1160" y2="553" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="40" y="579" font-size="16" fill="#6B6B6B">Source: Figma pricing page (checked 2026-10-18). Dev and Collab seats get 500 per month on every plan.</text>
+  </g>
+</svg>

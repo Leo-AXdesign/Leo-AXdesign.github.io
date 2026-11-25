@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 651" role="img" aria-labelledby="t d">
+  <title id="t">챗GPT 광고, 여덟 달 사이</title>
+  <desc id="d">챗GPT 광고는 2월 9일 미국 무료·Go 요금제에서 글 광고로 시작했고, 5월 5일 광고 관리자가 열렸다. 10월 5일 그림을 만들 때 붙는 이미지 광고를 발표했고, 10월 말 일부 광고주와 시험을 시작한다.</desc>
+  <rect width="600" height="651" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="32" y="66" font-size="34" font-weight="800" fill="#111111" text-anchor="start">챗GPT 광고, 여덟 달 사이</text>
+    <text x="32" y="99" font-size="21" font-weight="400" fill="#6B6B6B" text-anchor="start">미국 기준. 글 광고에서 이미지 광고로</text>
+    <circle cx="44" cy="155" r="10" fill="#FFFFFF" stroke="#111111" stroke-width="2.5"/>
+    <line x1="44" y1="167" x2="44" y2="253" stroke="#111111" stroke-width="2"/>
+    <text x="72" y="141" font-size="19" font-weight="700" fill="#6B6B6B" text-anchor="start">2. 9</text>
+    <text x="72" y="174" font-size="23" font-weight="800" fill="#111111" text-anchor="start">글 광고 시작</text>
+    <text x="72" y="203" font-size="19" font-weight="400" fill="#444444" text-anchor="start">무료·Go 요금제</text>
+    <circle cx="44" cy="265" r="10" fill="#FFFFFF" stroke="#111111" stroke-width="2.5"/>
+    <line x1="44" y1="277" x2="44" y2="363" stroke="#111111" stroke-width="2"/>
+    <text x="72" y="251" font-size="19" font-weight="700" fill="#6B6B6B" text-anchor="start">5. 5</text>
+    <text x="72" y="284" font-size="23" font-weight="800" fill="#111111" text-anchor="start">광고 관리자 공개</text>
+    <text x="72" y="313" font-size="19" font-weight="400" fill="#444444" text-anchor="start">누구나 직접 집행</text>
+    <circle cx="44" cy="375" r="10" fill="#111111" stroke="#111111" stroke-width="2.5"/>
+    <line x1="44" y1="387" x2="44" y2="473" stroke="#111111" stroke-width="2"/>
+    <text x="72" y="361" font-size="19" font-weight="700" fill="#6B6B6B" text-anchor="start">10. 5</text>
+    <text x="72" y="394" font-size="23" font-weight="800" fill="#111111" text-anchor="start">이미지 광고 발표</text>
+    <text x="72" y="423" font-size="19" font-weight="400" fill="#444444" text-anchor="start">그림 만들 때</text>
+    <circle cx="44" cy="485" r="10" fill="#111111" stroke="#111111" stroke-width="2.5"/>
+    <text x="72" y="471" font-size="19" font-weight="700" fill="#6B6B6B" text-anchor="start">10월 말</text>
+    <text x="72" y="504" font-size="23" font-weight="800" fill="#111111" text-anchor="start">시험 시작</text>
+    <text x="72" y="533" font-size="19" font-weight="400" fill="#444444" text-anchor="start">일부 광고주</text>
+    <line x1="32" y1="591" x2="568" y2="591" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="32" y="619" font-size="17" font-weight="400" fill="#6B6B6B" text-anchor="start">출처: OpenAI 발표, TechCrunch, 업계 정리 (2026)</text>
+  </g>
+</svg>

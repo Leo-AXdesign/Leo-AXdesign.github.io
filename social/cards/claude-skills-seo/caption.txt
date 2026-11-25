@@ -1,0 +1,10 @@
+사이트를 만들었다면 저장해 두자
+
+클로드 코드 스킬 2탄. SEO·AEO·GEO를 점검해 주는 스킬을 skills.sh 설치 수 기준으로 골랐다.
+
+1. seo-audit: SEO 스킬 설치 수 1위 (24.6만)
+2. ai-seo: AI 답변에 인용되게 쓰는 법
+3. seo-geo · seo · seo-aeo-best-practices
+4. 설치는 터미널 한 줄
+
+#클로드 #클로드코드 #클로드스킬 #SEO #AI디자인

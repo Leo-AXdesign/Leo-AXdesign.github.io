@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 1445" role="img" aria-labelledby="t d">
+  <title id="t">Price per 1M tokens, as of Sep 29</title>
+  <desc id="d">Input: Sonnet 5.5 and GPT-6 Sol $2, Opus 5.5 $4, Fable 5.1 and GPT-6 Astra $10. Output: $10, $20 and $50 respectively.</desc>
+  <rect width="600" height="1445" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="32" y="68" font-size="36" font-weight="800" fill="#111111" letter-spacing="-0.5">Price per 1M tokens, as of Sep 29</text>
+    <text x="32" y="102" font-size="22" fill="#6B6B6B">List prices from each company</text>
+    <text x="32" y="136" font-size="22" fill="#6B6B6B">shorter bar is cheaper</text>
+    <text x="32" y="206" font-size="30" font-weight="700" fill="#111111">Input</text>
+    <text x="32" y="238" font-size="22" fill="#6B6B6B">reading</text>
+    <text x="32" y="291" font-size="23" fill="#444444">Claude Sonnet 5.5</text>
+    <path d="M32 303H108.2A7 7 0 0 1 115.2 310V332A7 7 0 0 1 108.2 339H32Z" fill="#111111"/>
+    <text x="129.2" y="331.08" font-size="28" font-weight="700" fill="#111111">$2</text>
+    <text x="32" y="385" font-size="23" fill="#444444">GPT-6 Sol</text>
+    <path d="M32 397H108.2A7 7 0 0 1 115.2 404V426A7 7 0 0 1 108.2 433H32Z" fill="#111111"/>
+    <text x="129.2" y="425.08" font-size="28" font-weight="700" fill="#111111">$2</text>
+    <text x="32" y="479" font-size="23" fill="#444444">Claude Opus 5.5</text>
+    <path d="M32 491H191.4A7 7 0 0 1 198.4 498V520A7 7 0 0 1 191.4 527H32Z" fill="#111111"/>
+    <text x="212.4" y="519.08" font-size="28" font-weight="700" fill="#111111">$4</text>
+    <text x="32" y="573" font-size="23" fill="#444444">Claude Fable 5.1</text>
+    <path d="M32 585H441.0A7 7 0 0 1 448.0 592V614A7 7 0 0 1 441.0 621H32Z" fill="#111111"/>
+    <text x="462.0" y="613.08" font-size="28" font-weight="700" fill="#111111">$10</text>
+    <text x="32" y="667" font-size="23" fill="#444444">GPT-6 Astra</text>
+    <path d="M32 679H441.0A7 7 0 0 1 448.0 686V708A7 7 0 0 1 441.0 715H32Z" fill="#111111"/>
+    <text x="462.0" y="707.08" font-size="28" font-weight="700" fill="#111111">$10</text>
+    <line x1="32" y1="268" x2="32" y2="738" stroke="#D9D9D9" stroke-width="1.8"/>
+    <text x="32" y="812" font-size="30" font-weight="700" fill="#111111">Output</text>
+    <text x="32" y="844" font-size="22" fill="#6B6B6B">writing</text>
+    <text x="32" y="897" font-size="23" fill="#444444">Claude Sonnet 5.5</text>
+    <path d="M32 909H108.2A7 7 0 0 1 115.2 916V938A7 7 0 0 1 108.2 945H32Z" fill="#111111"/>
+    <text x="129.2" y="937.08" font-size="28" font-weight="700" fill="#111111">$10</text>
+    <text x="32" y="991" font-size="23" fill="#444444">GPT-6 Sol</text>
+    <path d="M32 1003H108.2A7 7 0 0 1 115.2 1010V1032A7 7 0 0 1 108.2 1039H32Z" fill="#111111"/>
+    <text x="129.2" y="1031.08" font-size="28" font-weight="700" fill="#111111">$10</text>
+    <text x="32" y="1085" font-size="23" fill="#444444">Claude Opus 5.5</text>
+    <path d="M32 1097H191.4A7 7 0 0 1 198.4 1104V1126A7 7 0 0 1 191.4 1133H32Z" fill="#111111"/>
+    <text x="212.4" y="1125.08" font-size="28" font-weight="700" fill="#111111">$20</text>
+    <text x="32" y="1179" font-size="23" fill="#444444">Claude Fable 5.1</text>
+    <path d="M32 1191H441.0A7 7 0 0 1 448.0 1198V1220A7 7 0 0 1 441.0 1227H32Z" fill="#111111"/>
+    <text x="462.0" y="1219.08" font-size="28" font-weight="700" fill="#111111">$50</text>
+    <text x="32" y="1273" font-size="23" fill="#444444">GPT-6 Astra</text>
+    <path d="M32 1285H441.0A7 7 0 0 1 448.0 1292V1314A7 7 0 0 1 441.0 1321H32Z" fill="#111111"/>
+    <text x="462.0" y="1313.08" font-size="28" font-weight="700" fill="#111111">$50</text>
+    <line x1="32" y1="874" x2="32" y2="1344" stroke="#D9D9D9" stroke-width="1.8"/>
+    <line x1="32" y1="1362" x2="568" y2="1362" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="32" y="1388" font-size="19" fill="#6B6B6B">Sources: Anthropic and OpenAI announcements.</text>
+    <text x="32" y="1417" font-size="19" fill="#6B6B6B">Base prices, excluding cache and discounts.</text>
+  </g>
+</svg>

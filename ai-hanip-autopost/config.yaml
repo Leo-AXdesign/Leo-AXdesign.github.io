@@ -1,0 +1,21 @@
+blog_url: https://ai-hanip.blogspot.com/
+
+# 글 생성
+writer: cli                 # cli = 설치된 Claude Code로 작성(구독 사용량, 키 불필요) / api = API 키(유료)
+model: claude-sonnet-5-5
+use_web_search: true        # 글 쓰기 전에 최신 정보 확인 (화면·요금 변경 대응)
+
+# 업로드 방식: false = 바로 발행 + 구글 사이트맵 제출 / true = 임시저장(검토 후 직접 발행)
+draft: false
+
+# 캡처/영상
+browser_profile: browser_profile   # 로그인 상태 저장 폴더
+headless: true
+viewport: {width: 1280, height: 800}
+video_max_seconds: 20
+
+# 미디어 호스팅 (공개 GitHub 저장소 → jsDelivr CDN)
+github:
+  owner: Leo-AXdesign
+  repo: ai-hanip-media
+  branch: main

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 1069" role="img" aria-labelledby="t d">
+  <title id="t">Krea 3 편집 비용과 속도 (Krea 발표 기준)</title>
+  <desc id="d">편집 10만 번 정가 기준 비용은 Krea 3 6,000달러, 나노 바나나 프로 13,500달러, GPT Image 2 22,000달러다. 편집 한 건 시간은 Krea 3이 대부분 8초 안, 나노 바나나 프로 33초, GPT Image 2 90초다.</desc>
+  <rect width="600" height="1069" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="32" y="68" font-size="36" font-weight="800" fill="#111111" letter-spacing="-0.5">Krea 3 편집 비용과 속도 (Krea 발표 기준)</text>
+    <text x="32" y="102" font-size="22" fill="#6B6B6B">편집 10만 번 정가</text>
+    <text x="32" y="136" font-size="22" fill="#6B6B6B">편집 한 건 중간 시간</text>
+    <text x="32" y="206" font-size="30" font-weight="700" fill="#111111">편집 10만 번 비용 (달러)</text>
+    <text x="32" y="238" font-size="22" fill="#6B6B6B">낮을수록 좋음</text>
+    <text x="32" y="291" font-size="23" fill="#444444">Krea 3</text>
+    <path d="M32 303H138.45454545454544A7 7 0 0 1 145.45454545454544 310V332A7 7 0 0 1 138.45454545454544 339H32Z" fill="#111111"/>
+    <text x="159.45454545454544" y="331.08" font-size="28" font-weight="700" fill="#111111">6,000달러</text>
+    <text x="32" y="385" font-size="23" fill="#444444">나노 바나나 프로</text>
+    <path d="M32 397H280.27272727272725A7 7 0 0 1 287.27272727272725 404V426A7 7 0 0 1 280.27272727272725 433H32Z" fill="#111111"/>
+    <text x="301.27272727272725" y="425.08" font-size="28" font-weight="700" fill="#111111">13,500달러</text>
+    <text x="32" y="479" font-size="23" fill="#444444">GPT Image 2</text>
+    <path d="M32 491H441.0A7 7 0 0 1 448.0 498V520A7 7 0 0 1 441.0 527H32Z" fill="#111111"/>
+    <text x="462.0" y="519.08" font-size="28" font-weight="700" fill="#111111">22,000달러</text>
+    <line x1="32" y1="268" x2="32" y2="550" stroke="#D9D9D9" stroke-width="1.8"/>
+    <text x="32" y="624" font-size="30" font-weight="700" fill="#111111">편집 한 건 시간 (초)</text>
+    <text x="32" y="656" font-size="22" fill="#6B6B6B">낮을수록 좋음</text>
+    <text x="32" y="709" font-size="23" fill="#444444">Krea 3</text>
+    <path d="M32 721H61.977777777777774A7 7 0 0 1 68.97777777777777 728V750A7 7 0 0 1 61.977777777777774 757H32Z" fill="#111111"/>
+    <text x="82.97777777777777" y="749.08" font-size="28" font-weight="700" fill="#111111">8초 안</text>
+    <text x="32" y="803" font-size="23" fill="#444444">나노 바나나 프로</text>
+    <path d="M32 815H177.53333333333333A7 7 0 0 1 184.53333333333333 822V844A7 7 0 0 1 177.53333333333333 851H32Z" fill="#111111"/>
+    <text x="198.53333333333333" y="843.08" font-size="28" font-weight="700" fill="#111111">33초</text>
+    <text x="32" y="897" font-size="23" fill="#444444">GPT Image 2</text>
+    <path d="M32 909H441.0A7 7 0 0 1 448.0 916V938A7 7 0 0 1 441.0 945H32Z" fill="#111111"/>
+    <text x="462.0" y="937.08" font-size="28" font-weight="700" fill="#111111">90초</text>
+    <line x1="32" y1="686" x2="32" y2="968" stroke="#D9D9D9" stroke-width="1.8"/>
+    <line x1="32" y1="986" x2="568" y2="986" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="32" y="1012" font-size="19" fill="#6B6B6B">출처: Krea 블로그 &#x27;Introducing Krea 3&#x27; (2026-10-15).</text>
+    <text x="32" y="1041" font-size="19" fill="#6B6B6B">시간은 Krea가 2026-09-24~10-01 측정한 중간값(대기 시간 포함). Krea 3은 &#x27;대부분 8초 안&#x27;이라는 상한 표기. 제작사 자체 비교.</text>
+  </g>
+</svg>

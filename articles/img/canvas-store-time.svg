@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 459" role="img" aria-labelledby="t d">
+  <title id="t">가게 하나를 여는 데 걸린 시간</title>
+  <desc id="d">벤 셀은 12년 전 코딩을 할 줄 알면서도 Kotn 가게의 기본 모습을 만드는 데 2주가 걸렸고, 지금은 캔버스로 완전히 맞춤형 가게를 20분 만에 만든다고 말했다.</desc>
+  <rect width="1200" height="459" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="40" y="70" font-size="30" font-weight="800" fill="#111111" letter-spacing="-0.5">가게 하나를 여는 데 걸린 시간</text>
+    <text x="40" y="101" font-size="19" fill="#6B6B6B">쇼피파이 프로덕트 디렉터 벤 셀의 말 · 같은 가게를 같은 조건으로 잰 기록은 아님</text>
+    <text x="40.0" y="165" font-size="24" font-weight="700" fill="#111111">걸린 시간</text>
+    <text x="40.0" y="193" font-size="18" fill="#6B6B6B">분으로 바꿔 같은 축에</text>
+    <text x="40.0" y="237" font-size="18" fill="#444444">2014년, Kotn 직접 코딩</text>
+    <path d="M40.0 247H1057.0A7 7 0 0 1 1064.0 254V270A7 7 0 0 1 1057.0 277H40.0Z" fill="#111111"/>
+    <text x="1076.0" y="269.92" font-size="22" font-weight="700" fill="#111111">약 2주</text>
+    <text x="40.0" y="315" font-size="18" fill="#444444">2026년, 캔버스와 사이드킥</text>
+    <path d="M40.0 325H63.0A7 7 0 0 1 70.0 332V348A7 7 0 0 1 63.0 355H40.0Z" fill="#111111"/>
+    <text x="82.0" y="347.92" font-size="22" font-weight="700" fill="#111111">약 20분</text>
+    <line x1="40.0" y1="219" x2="40.0" y2="375" stroke="#D9D9D9" stroke-width="1.6"/>
+    <line x1="40" y1="397" x2="1160" y2="397" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="40" y="423" font-size="16" fill="#6B6B6B">출처: Shopify 캔버스 발표(2026. 10. 1), TechCrunch 인용. 2주는 달력으로 14일(2만 160분)로 계산.</text>
+  </g>
+</svg>

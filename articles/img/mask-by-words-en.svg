@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 475" role="img" aria-labelledby="t d">
+  <title id="t">Asking for a partial edit in words</title>
+  <desc id="d">Nano Banana 2.1 is better at editing a region you describe in words, but its model card says it sometimes confuses positions like left and right. So instead of &#x27;the text at top left&#x27; or &#x27;the person on the right&#x27;, name the object: the word SALE, the person in the hat.</desc>
+  <rect width="1200" height="475" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="40" y="70" font-size="30" font-weight="800" fill="#111111" text-anchor="start">Asking for a partial edit in words</text>
+    <text x="40" y="101" font-size="19" font-weight="400" fill="#6B6B6B" text-anchor="start">A weakness the model card admits: mixing up left and right</text>
+    <rect x="40" y="141" width="300" height="240" rx="10" fill="#F2F2F2" stroke="#111111" stroke-width="1.5"/>
+    <text x="58" y="185" font-size="32" font-weight="900" fill="#111111" text-anchor="start">SALE</text>
+    <text x="58" y="213" font-size="15" font-weight="600" fill="#444444" text-anchor="start">Fall arrivals</text>
+    <circle cx="154.0" cy="289" r="17" fill="#D9D9D9"/>
+    <path d="M124.0 367q0 -48 30 -48q30 0 30 48z" fill="#D9D9D9"/>
+    <circle cx="256.0" cy="289" r="17" fill="#D9D9D9"/>
+    <path d="M226.0 367q0 -48 30 -48q30 0 30 48z" fill="#D9D9D9"/>
+    <path d="M232.0 279h48M242.0 279v-16h28v16" fill="#111111" stroke="#111111" stroke-width="5" stroke-linejoin="round"/>
+    <text x="380" y="165" font-size="21" font-weight="800" fill="#111111" text-anchor="start">By position</text>
+    <rect x="380" y="187" width="375.0" height="44" rx="22.0" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <text x="400" y="215.48" font-size="18" font-weight="600" fill="#111111" text-anchor="start">Change the text at top left</text>
+    <rect x="380" y="243" width="375.0" height="44" rx="22.0" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <text x="400" y="271.48" font-size="18" font-weight="600" fill="#111111" text-anchor="start">Remove the person on the right</text>
+    <text x="380" y="317" font-size="17" font-weight="400" fill="#6B6B6B" text-anchor="start">✕ The wrong spot may change</text>
+    <text x="785.0" y="165" font-size="21" font-weight="800" fill="#111111" text-anchor="start">By object</text>
+    <rect x="785.0" y="187" width="375.0" height="44" rx="22.0" fill="#111111" stroke="#111111" stroke-width="1.5"/>
+    <text x="805.0" y="215.48" font-size="18" font-weight="600" fill="#FFFFFF" text-anchor="start">Change ‘SALE’ to ‘50% OFF’</text>
+    <rect x="785.0" y="243" width="375.0" height="44" rx="22.0" fill="#111111" stroke="#111111" stroke-width="1.5"/>
+    <text x="805.0" y="271.48" font-size="18" font-weight="600" fill="#FFFFFF" text-anchor="start">Remove the person in the hat</text>
+    <text x="785.0" y="317" font-size="17" font-weight="700" fill="#111111" text-anchor="start">✓ Only one thing fits the description</text>
+    <line x1="40" y1="407" x2="1160" y2="407" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="40" y="435" font-size="16" font-weight="400" fill="#6B6B6B" text-anchor="start">Source: limitations in the Nano Banana 2.1 model card. Prompts are examples.</text>
+  </g>
+</svg>

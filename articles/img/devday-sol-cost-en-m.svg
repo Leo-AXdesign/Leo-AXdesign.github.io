@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 1035" role="img" aria-labelledby="t d">
+  <title id="t">A similar score at a fifth of the price</title>
+  <desc id="d">Index score: Claude Opus 5.5 58, GPT-6 Astra 53, GPT-6.1 Sol 52. Cost per task: $5.98, $3.26, $0.72.</desc>
+  <rect width="600" height="1035" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="32" y="68" font-size="36" font-weight="800" fill="#111111" letter-spacing="-0.5">A similar score at a fifth of the price</text>
+    <text x="32" y="102" font-size="22" fill="#6B6B6B">Artificial Analysis Intelligence Index and cost per index task</text>
+    <text x="32" y="172" font-size="30" font-weight="700" fill="#111111">Intelligence Index</text>
+    <text x="32" y="204" font-size="22" fill="#6B6B6B">higher is better</text>
+    <text x="32" y="257" font-size="23" fill="#444444">Claude Opus 5.5</text>
+    <path d="M32 269H441.0A7 7 0 0 1 448.0 276V298A7 7 0 0 1 441.0 305H32Z" fill="#111111"/>
+    <text x="462.0" y="297.08" font-size="28" font-weight="700" fill="#111111">58</text>
+    <text x="32" y="351" font-size="23" fill="#444444">GPT-6 Astra</text>
+    <path d="M32 363H405.13793103448273A7 7 0 0 1 412.13793103448273 370V392A7 7 0 0 1 405.13793103448273 399H32Z" fill="#111111"/>
+    <text x="426.13793103448273" y="391.08" font-size="28" font-weight="700" fill="#111111">53</text>
+    <text x="32" y="445" font-size="23" fill="#444444">GPT-6.1 Sol</text>
+    <path d="M32 457H397.9655172413793A7 7 0 0 1 404.9655172413793 464V486A7 7 0 0 1 397.9655172413793 493H32Z" fill="#111111"/>
+    <text x="418.9655172413793" y="485.08" font-size="28" font-weight="700" fill="#111111">52</text>
+    <line x1="32" y1="234" x2="32" y2="516" stroke="#D9D9D9" stroke-width="1.8"/>
+    <text x="32" y="590" font-size="30" font-weight="700" fill="#111111">Cost per task</text>
+    <text x="32" y="622" font-size="22" fill="#6B6B6B">lower is better</text>
+    <text x="32" y="675" font-size="23" fill="#444444">Claude Opus 5.5</text>
+    <path d="M32 687H441.0A7 7 0 0 1 448.0 694V716A7 7 0 0 1 441.0 723H32Z" fill="#111111"/>
+    <text x="462.0" y="715.08" font-size="28" font-weight="700" fill="#111111">$5.98</text>
+    <text x="32" y="769" font-size="23" fill="#444444">GPT-6 Astra</text>
+    <path d="M32 781H251.78260869565213A7 7 0 0 1 258.78260869565213 788V810A7 7 0 0 1 251.78260869565213 817H32Z" fill="#111111"/>
+    <text x="272.78260869565213" y="809.08" font-size="28" font-weight="700" fill="#111111">$3.26</text>
+    <text x="32" y="863" font-size="23" fill="#444444">GPT-6.1 Sol</text>
+    <path d="M32 875H75.08695652173913A7 7 0 0 1 82.08695652173913 882V904A7 7 0 0 1 75.08695652173913 911H32Z" fill="#111111"/>
+    <text x="96.08695652173913" y="903.08" font-size="28" font-weight="700" fill="#111111">$0.72</text>
+    <line x1="32" y1="652" x2="32" y2="934" stroke="#D9D9D9" stroke-width="1.8"/>
+    <line x1="32" y1="952" x2="568" y2="952" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="32" y="978" font-size="19" fill="#6B6B6B">Source: Artificial Analysis figures (as compiled in a DevDay roundup on DEV Community).</text>
+    <text x="32" y="1007" font-size="19" fill="#6B6B6B">As of Sep 29. The index is revised often.</text>
+  </g>
+</svg>

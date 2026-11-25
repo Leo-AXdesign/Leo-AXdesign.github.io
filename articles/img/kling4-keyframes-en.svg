@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 511" role="img" aria-labelledby="t d">
+  <title id="t">Two frames become ten</title>
+  <desc id="d">With Kling 3.0, you gave a first and last frame and the AI filled up to 15 seconds between. Kling 4.0 lets you pin up to 10 keyframes across up to 30 seconds to set the flow of a scene.</desc>
+  <rect width="1200" height="511" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="40" y="70" font-size="30" font-weight="800" fill="#111111" text-anchor="start">Two frames become ten</text>
+    <text x="40" y="101" font-size="19" font-weight="400" fill="#6B6B6B" text-anchor="start">A conceptual sketch based on Kling&#x27;s published specs</text>
+    <text x="40" y="153" font-size="21" font-weight="800" fill="#111111" text-anchor="start">Kling 3.0</text>
+    <text x="170" y="153" font-size="16" font-weight="400" fill="#444444" text-anchor="start">First and last frame · up to 15 s</text>
+    <rect x="40" y="198.0" width="560.0" height="6" rx="3" fill="#D9D9D9"/>
+    <rect x="40.00000000000001" y="175" width="72.8" height="52" rx="5" fill="#111111"/>
+    <circle cx="65.48" cy="203.6" r="8.32" fill="#FFFFFF"/>
+    <rect x="527.2" y="175" width="72.8" height="52" rx="5" fill="#111111"/>
+    <circle cx="552.6800000000001" cy="203.6" r="8.32" fill="#FFFFFF"/>
+    <text x="320.0" y="191.0" font-size="15" font-weight="400" fill="#6B6B6B" text-anchor="middle">AI fills in between</text>
+    <text x="40.0" y="259" font-size="13" font-weight="400" fill="#6B6B6B" text-anchor="start">0s</text>
+    <text x="226.66666666666666" y="259" font-size="13" font-weight="400" fill="#6B6B6B" text-anchor="middle">5s</text>
+    <text x="413.3333333333333" y="259" font-size="13" font-weight="400" fill="#6B6B6B" text-anchor="middle">10s</text>
+    <text x="600.0" y="259" font-size="13" font-weight="400" fill="#6B6B6B" text-anchor="middle">15s</text>
+    <text x="40" y="305" font-size="21" font-weight="800" fill="#111111" text-anchor="start">Kling 4.0</text>
+    <text x="170" y="305" font-size="16" font-weight="400" fill="#444444" text-anchor="start">Up to 10 keyframes · up to 30 s</text>
+    <rect x="40" y="350.0" width="1120.0" height="6" rx="3" fill="#D9D9D9"/>
+    <rect x="40.00000000000001" y="327" width="72.8" height="52" rx="5" fill="#111111"/>
+    <circle cx="65.48" cy="355.6" r="8.32" fill="#FFFFFF"/>
+    <rect x="156.35555555555555" y="327" width="72.8" height="52" rx="5" fill="#111111"/>
+    <circle cx="181.83555555555557" cy="355.6" r="8.32" fill="#FFFFFF"/>
+    <rect x="272.7111111111111" y="327" width="72.8" height="52" rx="5" fill="#111111"/>
+    <circle cx="298.19111111111107" cy="355.6" r="8.32" fill="#FFFFFF"/>
+    <rect x="389.0666666666667" y="327" width="72.8" height="52" rx="5" fill="#111111"/>
+    <circle cx="414.5466666666667" cy="355.6" r="8.32" fill="#FFFFFF"/>
+    <rect x="505.4222222222222" y="327" width="72.8" height="52" rx="5" fill="#111111"/>
+    <circle cx="530.9022222222222" cy="355.6" r="8.32" fill="#FFFFFF"/>
+    <rect x="621.7777777777778" y="327" width="72.8" height="52" rx="5" fill="#111111"/>
+    <circle cx="647.2577777777778" cy="355.6" r="8.32" fill="#FFFFFF"/>
+    <rect x="738.1333333333334" y="327" width="72.8" height="52" rx="5" fill="#111111"/>
+    <circle cx="763.6133333333335" cy="355.6" r="8.32" fill="#FFFFFF"/>
+    <rect x="854.4888888888889" y="327" width="72.8" height="52" rx="5" fill="#111111"/>
+    <circle cx="879.968888888889" cy="355.6" r="8.32" fill="#FFFFFF"/>
+    <rect x="970.8444444444444" y="327" width="72.8" height="52" rx="5" fill="#111111"/>
+    <circle cx="996.3244444444445" cy="355.6" r="8.32" fill="#FFFFFF"/>
+    <rect x="1087.2" y="327" width="72.8" height="52" rx="5" fill="#111111"/>
+    <circle cx="1112.68" cy="355.6" r="8.32" fill="#FFFFFF"/>
+    <text x="40.0" y="411" font-size="13" font-weight="400" fill="#6B6B6B" text-anchor="start">0s</text>
+    <text x="226.66666666666666" y="411" font-size="13" font-weight="400" fill="#6B6B6B" text-anchor="middle">5s</text>
+    <text x="413.3333333333333" y="411" font-size="13" font-weight="400" fill="#6B6B6B" text-anchor="middle">10s</text>
+    <text x="600.0" y="411" font-size="13" font-weight="400" fill="#6B6B6B" text-anchor="middle">15s</text>
+    <text x="786.6666666666666" y="411" font-size="13" font-weight="400" fill="#6B6B6B" text-anchor="middle">20s</text>
+    <text x="973.3333333333334" y="411" font-size="13" font-weight="400" fill="#6B6B6B" text-anchor="middle">25s</text>
+    <text x="1160.0" y="411" font-size="13" font-weight="400" fill="#6B6B6B" text-anchor="end">30s</text>
+    <line x1="40" y1="443" x2="1160" y2="443" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="40" y="471" font-size="16" font-weight="400" fill="#6B6B6B" text-anchor="start">Sources: Kling 4.0 spec sheet (Sep 28, 2026), industry coverage</text>
+  </g>
+</svg>

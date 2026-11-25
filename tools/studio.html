@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex" />
+<title>디자인 허브 스튜디오</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+<style>
+  /* 사이트·관리자와 같은 흑백 톤 */
+  :root { --ink: #111; --body: #444; --muted: #6b6b6b; --line: #e5e5e5; --soft: #f5f5f5; --ok: #1a7f37; --bad: #c62828; }
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  html, body { margin: 0; background: #fff; color: var(--ink); }
+  body { font-family: "Pretendard Variable", Pretendard, -apple-system, sans-serif; font-size: 15px; -webkit-font-smoothing: antialiased; }
+  button, input, textarea, select { font: inherit; color: inherit; }
+
+  .bar { position: sticky; top: 0; z-index: 5; background: rgba(255,255,255,.94); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+  .bar__in { max-width: 1280px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; gap: 16px; }
+  .logo { font-size: 24px; font-weight: 800; letter-spacing: -.04em; }
+  .logo span { color: #a3a3a3; } .logo small { font-size: 14px; font-weight: 700; color: var(--muted); margin-left: 6px; letter-spacing: 0; }
+  .chips { margin-left: auto; display: flex; gap: 8px; flex-wrap: wrap; }
+  .chip { font-size: 13px; font-weight: 600; padding: 6px 12px; border-radius: 999px; background: var(--soft); color: var(--muted); }
+  .chip.on { background: #e9f5ec; color: var(--ok); } .chip.off { background: #fdecec; color: var(--bad); }
+
+  .wrap { max-width: 1280px; margin: 0 auto; padding: 24px; display: grid; grid-template-columns: 400px minmax(0, 1fr); gap: 28px; align-items: start; }
+  @media (max-width: 900px) { .wrap { grid-template-columns: 1fr; } }
+  .col { display: flex; flex-direction: column; gap: 18px; }
+  .h { font-size: 13px; font-weight: 800; color: var(--muted); letter-spacing: .02em; margin: 0 0 10px; }
+
+  .reco { background: var(--ink); color: #fff; border-radius: 18px; padding: 20px 22px; }
+  .reco__label { font-size: 13px; font-weight: 700; color: #a3a3a3; }
+  .reco__title { margin-top: 8px; font-size: 21px; font-weight: 800; letter-spacing: -.02em; line-height: 1.35; }
+  .reco__note { margin-top: 8px; font-size: 14px; color: #cfcfcf; line-height: 1.5; }
+  .reco .btn { margin-top: 16px; background: #fff; color: var(--ink); border-color: #fff; }
+
+  .seg { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .seg button { border: 2px solid var(--line); background: #fff; border-radius: 14px; padding: 14px 8px; cursor: pointer; text-align: center; }
+  .seg button b { display: block; font-size: 17px; font-weight: 800; }
+  .seg button span { display: block; margin-top: 4px; font-size: 12px; color: var(--muted); }
+  .seg button.on { border-color: var(--ink); background: var(--ink); color: #fff; }
+  .seg button.on span { color: #bdbdbd; }
+
+  .subtabs { display: flex; gap: 6px; margin-bottom: 10px; }
+  .subtabs button { border: 0; background: var(--soft); padding: 7px 12px; border-radius: 999px; font-size: 13px; font-weight: 700; cursor: pointer; color: var(--muted); }
+  .subtabs button.on { background: var(--ink); color: #fff; }
+  .list { border: 1px solid var(--line); border-radius: 14px; max-height: 420px; overflow: auto; }
+  .li { display: block; width: 100%; text-align: left; border: 0; border-bottom: 1px solid var(--line); background: #fff; padding: 12px 14px; cursor: pointer; }
+  .li:last-child { border-bottom: 0; } .li:hover { background: var(--soft); }
+  .li.on { background: var(--ink); color: #fff; } .li.on .li__s { color: #bdbdbd; }
+  .li__t { font-weight: 700; line-height: 1.4; display: flex; gap: 6px; align-items: baseline; }
+  .li__s { margin-top: 3px; font-size: 12px; color: var(--muted); }
+  .badge { flex: none; font-size: 11px; font-weight: 800; padding: 2px 8px; border-radius: 999px; background: var(--soft); color: var(--muted); }
+  .li.on .badge { background: #333; color: #ddd; }
+
+  .btn { border: 1px solid var(--line); background: #fff; padding: 11px 18px; border-radius: 999px; font-weight: 700; cursor: pointer; white-space: nowrap; }
+  .btn:hover { border-color: var(--ink); }
+  .btn--dark { background: var(--ink); border-color: var(--ink); color: #fff; } .btn--dark:hover { background: #333; }
+  .btn--big { width: 100%; padding: 16px; font-size: 17px; border-radius: 14px; }
+  .btn[disabled] { opacity: .4; pointer-events: none; }
+  .row { display: flex; gap: 10px; align-items: center; }
+  .check { display: flex; gap: 8px; align-items: center; font-size: 14px; color: var(--body); cursor: pointer; }
+
+  .panel { border: 1px solid var(--line); border-radius: 18px; padding: 22px; }
+  .empty { color: var(--muted); text-align: center; padding: 80px 20px; line-height: 1.7; }
+  .pv-title { font-size: 22px; font-weight: 800; letter-spacing: -.02em; margin: 0 0 4px; }
+  .pv-meta { font-size: 13px; color: var(--muted); margin-bottom: 16px; }
+  .strip { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 8px; scroll-snap-type: x mandatory; }
+  .strip img { width: 240px; aspect-ratio: 4 / 5; border-radius: 10px; border: 1px solid var(--line); flex: none; scroll-snap-align: start; background: var(--soft); }
+  video { width: 270px; aspect-ratio: 9 / 16; border-radius: 14px; background: #000; display: block; }
+  label.f { display: block; font-size: 13px; font-weight: 800; color: var(--muted); margin: 18px 0 8px; }
+  textarea, input.inp { width: 100%; border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; line-height: 1.6; outline: none; background: #fff; }
+  textarea:focus, input.inp:focus { border-color: var(--ink); }
+  textarea { min-height: 200px; resize: vertical; }
+  .count { text-align: right; font-size: 12px; color: var(--muted); margin-top: 4px; }
+  .count.over { color: var(--bad); font-weight: 700; }
+  .warn { margin-top: 10px; font-size: 13px; color: var(--bad); }
+  .also { margin-top: 18px; padding: 14px 16px; background: var(--soft); border-radius: 14px; }
+  .also textarea { min-height: 120px; margin-top: 10px; }
+
+  .steps { margin: 16px 0 0; padding: 0; list-style: none; font-size: 14px; line-height: 1.7; }
+  .steps li::before { content: "· "; color: var(--muted); }
+  .result { margin-top: 14px; padding: 14px 16px; border-radius: 14px; font-weight: 700; line-height: 1.6; white-space: pre-wrap; }
+  .result.ok { background: #e9f5ec; color: var(--ok); } .result.bad { background: #fdecec; color: var(--bad); }
+  .result a { color: inherit; }
+  details.log { margin-top: 10px; font-size: 12px; color: var(--muted); }
+  details.log pre { white-space: pre-wrap; max-height: 200px; overflow: auto; background: var(--soft); padding: 10px; border-radius: 10px; }
+
+  .pbar { width: 260px; height: 8px; border-radius: 9px; background: var(--line); overflow: hidden; margin: 14px auto 8px; }
+  .pbar div { height: 100%; background: var(--ink); transition: width .4s; }
+  .pbar .indet { width: 35% !important; animation: indet 1.2s ease-in-out infinite; }
+  @keyframes indet { from { transform: translateX(-100%); } to { transform: translateX(290%); } }
+  .libgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 18px; margin-top: 20px; }
+  .lcard { border: 1px solid var(--line); border-radius: 16px; overflow: hidden; background: #fff; display: flex; flex-direction: column; }
+  .lthumb { aspect-ratio: 4 / 5; background: var(--soft); display: block; width: 100%; object-fit: cover; border: 0; cursor: pointer; }
+  .lthumb.v { aspect-ratio: 9 / 16; }
+  .lplay { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 56px; height: 56px; border-radius: 99px;
+           background: rgba(17,17,17,.75); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 20px; pointer-events: none; }
+  .ltext { aspect-ratio: 4 / 5; padding: 16px; font-size: 13px; line-height: 1.6; color: var(--body); white-space: pre-wrap; overflow: hidden;
+           background: var(--soft); -webkit-mask-image: linear-gradient(#000 75%, transparent); }
+  .lbody { padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+  .lbody b { font-size: 14px; line-height: 1.4; }
+  .lmeta { font-size: 12px; color: var(--muted); }
+  .lmeta a { color: var(--ink); }
+  .lbtns { display: flex; gap: 6px; flex-wrap: wrap; margin-top: auto; padding-top: 8px; }
+  .lbtns .btn { padding: 7px 11px; font-size: 12px; }
+  .hist { font-size: 13px; }
+  .hist div { display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--line); }
+  .hist time { color: var(--muted); flex: none; width: 110px; }
+  .hist a { color: var(--ink); }
+  .btn--sm { padding: 6px 12px; font-size: 12px; }
+  .hist .cm { border: 0; background: none; padding: 0; font: inherit; font-size: 12px; color: var(--muted); text-decoration: underline; cursor: pointer; }
+  .hist .cmbox { display: block; border: 0; padding: 4px 0 10px; }
+  .hist .cmbox textarea { min-height: 90px; }
+  .tabs { display: flex; gap: 4px; margin-left: 12px; }
+  .tab { border: 0; background: none; padding: 8px 14px; border-radius: 999px; font-weight: 700; color: var(--muted); cursor: pointer; }
+  .tab.on { background: var(--ink); color: #fff; }
+  .sug { border: 1px solid var(--line); border-radius: 16px; padding: 18px; margin-top: 14px; }
+  .sug.done { opacity: .55; }
+  .sug__h { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  .sug__h b { font-size: 17px; }
+  .tag { font-size: 12px; font-weight: 800; padding: 3px 9px; border-radius: 999px; background: var(--soft); color: var(--body); }
+  .tag.hi { background: var(--ink); color: #fff; }
+  .sug p { margin: 10px 0 0; line-height: 1.6; color: var(--body); }
+  .diff { margin-top: 12px; display: grid; gap: 8px; font-size: 14px; line-height: 1.6; }
+  .diff div { padding: 10px 12px; border-radius: 10px; white-space: pre-wrap; }
+  .diff .del { background: #fdecec; text-decoration: line-through; color: #8a2a2a; }
+  .diff .add { background: #e9f5ec; color: #14532d; }
+  .diff .at { background: var(--soft); color: var(--muted); }
+  .src { margin-top: 8px; font-size: 12px; } .src a { color: var(--muted); margin-right: 10px; }
+  .ai { margin-top: 10px; padding: 14px 16px; border-radius: 14px; background: #f3f3ff; font-size: 14px; line-height: 1.6; }
+  .ai ul { margin: 6px 0 10px; padding-left: 18px; }
+  .ask { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+  .ask .inp { flex: 1 1 260px; }
+  .spin { display: inline-block; width: 14px; height: 14px; border: 2px solid #ccc; border-top-color: var(--ink); border-radius: 50%; animation: s .8s linear infinite; vertical-align: -2px; margin-right: 6px; }
+  @keyframes s { to { transform: rotate(360deg); } }
+  .office-link { font-size: 13px; color: var(--ink); text-decoration: none; border: 1px solid var(--line, #ddd); border-radius: 999px; padding: 6px 12px; white-space: nowrap; }
+  .office-link:hover { background: #f4f4f4; }
+</style>
+</head>
+<body>
+<header class="bar"><div class="bar__in">
+  <div class="logo">d<span>.</span><small>스튜디오</small></div>
+  <nav class="tabs"><button class="tab on" data-view="sns">SNS 발행</button><button class="tab" data-view="lib">보관함</button><button class="tab" data-view="coach">AI 편집장</button></nav>
+  <a class="office-link" href="http://127.0.0.1:8740/" target="ai-office" rel="noopener">AI 사무실</a>
+  <div class="chips" id="chips"></div>
+</div></header>
+
+<main class="wrap" id="v-sns">
+  <section class="col">
+    <div id="reco"></div>
+
+    <div>
+      <p class="h">1. 무엇을 올릴까요</p>
+      <div class="seg" id="seg">
+        <button data-type="carousel"><b>캐러셀</b><span>넘겨 보는 카드</span></button>
+        <button data-type="reel"><b>릴스</b><span>세로 영상</span></button>
+        <button data-type="thread"><b>스레드</b><span>담담한 글</span></button>
+      </div>
+    </div>
+
+    <div>
+      <p class="h">2. 재료 고르기</p>
+      <div class="subtabs" id="subtabs"></div>
+      <div class="list" id="list"><div class="empty" style="padding:30px">위에서 종류를 먼저 골라 주세요.</div></div>
+      <div class="row" style="margin-top:12px">
+        <button class="btn btn--dark" id="make" disabled>만들기</button>
+        <label class="check"><input type="checkbox" id="rebuild" /> 다시 만들기</label>
+        <button class="btn" id="tour" hidden>투어 만들기</button>
+      </div>
+    </div>
+
+    <div>
+      <p class="h">최근 발행</p>
+      <div class="hist" id="hist"></div>
+    </div>
+  </section>
+
+  <section class="panel" id="preview"><div class="empty">왼쪽에서 고르고 <b>만들기</b>를 누르면<br />여기에 미리보기와 캡션이 나옵니다.</div></section>
+</main>
+
+<main id="v-lib" hidden style="max-width:1240px;margin:0 auto;padding:28px 24px 80px">
+  <div class="row" style="justify-content:space-between;flex-wrap:wrap;gap:12px">
+    <div class="subtabs" id="libtabs" style="margin:0"></div>
+    <span style="font-size:13px;color:var(--muted)" id="libcount"></span>
+  </div>
+  <div class="libgrid" id="libgrid"><div class="empty">불러오는 중…</div></div>
+</main>
+
+<main class="wrap" id="v-coach" hidden>
+  <section class="col">
+    <div class="reco">
+      <div class="reco__label">무료로 하기 · Claude 구독 안에서</div>
+      <div class="reco__note">Claude 데스크톱 앱 입력창의 <b>+</b> → <b>designhub</b> → <b>review_article</b> 을 고르고 글 주소를 넣으면,
+        같은 기준으로 검토하고 고른 제안만 고쳐서 사이트에 반영까지 해 줍니다. 추가 요금이 없어요.</div>
+      <button class="btn" id="copyp">이 글 검토 문장 복사</button>
+    </div>
+    <div class="reco" style="background:#f5f5f5;color:var(--ink)">
+      <div class="reco__label" style="color:var(--muted)">여기서 바로 하기 · API 요금이 들어요</div>
+      <div class="reco__note" style="color:var(--body)">발행된 글을 Claude 가 다시 읽고, 발행 뒤 바뀐 소식을 웹에서 찾아<br />고칠 점과 더할 점을 제안합니다. 마음에 드는 제안만 [적용]하세요.</div>
+      <div id="ckey" style="margin-top:14px"></div>
+    </div>
+    <div>
+      <p class="h">검토할 글</p>
+      <div class="list" id="clist"></div>
+      <div class="row" style="margin-top:12px;flex-wrap:wrap">
+        <select class="inp" id="cmode" style="width:auto"></select>
+        <label class="check"><input type="checkbox" id="cweb" checked /> 최신 소식 웹 검색 (최대 3회)</label>
+      </div>
+      <div class="row" style="margin-top:10px"><button class="btn btn--dark" id="crun" disabled>검토 받기</button>
+        <span style="font-size:13px;color:var(--muted)" id="ccost"></span></div>
+    </div>
+    <div>
+      <p class="h">원하는 대로 고치기</p>
+      <textarea id="creq" style="min-height:110px" placeholder="예) '그래서 지금은' 2번 팁을 더 구체적으로, 첫 문단은 두 문장으로 줄여 줘"></textarea>
+      <div class="row" style="margin-top:10px;flex-wrap:wrap"><button class="btn btn--dark" id="cedit" disabled>수정본 받기</button>
+        <button class="btn" id="ccopyedit">데스크톱에 보낼 문장 복사 (무료)</button></div>
+    </div>
+  </section>
+  <section class="panel" id="cview"><div class="empty">왼쪽에서 글을 고르고 <b>검토 받기</b>를 누르세요.</div></section>
+</main>
+
+<script>
+const TOKEN = "__TOKEN__";
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+let S = null, type = null, sub = null, source = null, made = null;
+
+async function api(name, body = {}) {
+  const r = await fetch("/api/" + name, { method: "POST", headers: { "X-Studio-Token": TOKEN, "Content-Type": "application/json" }, body: JSON.stringify(body) });
+  const j = await r.json().catch(() => ({ ok: false, message: "응답을 읽지 못했습니다." }));
+  if (!j.ok) throw new Error(j.message || "오류가 났습니다.");
+  return j;
+}
+
+async function load() {
+  S = await api("state");
+  const t = S.tokens;
+  $("#chips").innerHTML =
+    `<span class="chip ${t.instagram ? "on" : "off"}">인스타그램 ${t.instagram ? "연결됨" : "토큰 없음"}</span>` +
+    `<span class="chip ${t.threads ? "on" : "off"}">스레드 ${t.threads ? "연결됨" : "토큰 없음"}</span>` +
+    S.accounts.filter((a) => a.id !== "designhub").map((a) => `<span class="chip ${a.connected ? "on" : "off"}">${esc(a.label)} 연결됨</span>`).join("") +
+    `<span class="chip ${S.tools.ffmpeg ? "on" : ""}">${S.tools.ffmpeg ? "영상 도구 있음" : "영상 도구 없음 (brew install ffmpeg)"}</span>`;
+  const r = S.recommend;
+  $("#reco").innerHTML = `<div class="reco"><div class="reco__label">오늘의 추천 · ${esc(r.label)}</div>` +
+    (r.type ? `<div class="reco__title">${esc(r.title)}</div><button class="btn" id="go">이걸로 만들기</button>`
+            : `<div class="reco__note">${esc(r.note)}</div>`) + `</div>`;
+  if (r.type) $("#go").onclick = () => { pick(r.type, r.source); doMake(); };
+  $("#hist").innerHTML = S.history.length ? S.history.slice(0, 12).map((h, i) =>
+    `<div><time>${esc(h.at.replace("T", " "))}</time><span>${esc({ carousel: "캐러셀", reel: "릴스", thread: "스레드" }[h.type])} · ${esc(h.title)} ` +
+    Object.entries(h.links || {}).map(([k, v]) => v ? `<a href="${esc(v)}" target="_blank">${k === "instagram" ? "인스타" : "스레드"} ↗</a>` +
+      ((h.ids || {})[k] ? ` <button class="cm" data-i="${i}" data-p="${k}">댓글</button>` : "") : "").join(" ") +
+    `</span></div><div class="cmbox" id="cm-${i}" hidden></div>`).join("") : `<div style="color:var(--muted)">아직 없습니다.</div>`;
+  document.querySelectorAll(".hist .cm").forEach((b) => b.onclick = () => openComment(+b.dataset.i, b.dataset.p));
+  if (type) renderList();
+}
+
+const isDone = (key) => S.published.includes(key);
+
+function openComment(i, plat) {
+  const box = $("#cm-" + i), name = plat === "instagram" ? "인스타그램" : "스레드";
+  box.hidden = false;
+  box.innerHTML = `<textarea placeholder="${name} 게시물에 달 댓글${plat === "threads" ? " — '---' 한 줄로 나누면 차례로 이어 달아요" : ""}"></textarea>` +
+    `<div class="row" style="margin-top:6px"><button class="btn btn--dark btn--sm">${name}에 댓글 달기</button><button class="btn btn--sm">닫기</button><span class="msg" style="font-size:12px;color:var(--muted)"></span></div>`;
+  const [send, close] = box.querySelectorAll("button"), ta = box.querySelector("textarea"), msg = box.querySelector(".msg");
+  ta.focus();
+  close.onclick = () => { box.hidden = true; box.innerHTML = ""; };
+  send.onclick = async () => {
+    if (!ta.value.trim()) return;
+    if (!confirm(`${name}에 공개 댓글로 답니다. 달면 되돌릴 수 없어요. 계속할까요?`)) return;
+    send.disabled = true; msg.textContent = "다는 중…";
+    try {
+      const r = await api("comment", { index: i, platform: plat, text: ta.value });
+      msg.innerHTML = `${esc(r.message)} ${r.link ? `<a href="${esc(r.link)}" target="_blank">보기 ↗</a>` : ""}`;
+      ta.value = "";
+    } catch (e) { msg.textContent = e.message; }
+    send.disabled = false;
+  };
+}
+
+function options() {
+  if (type === "carousel") {
+    if (sub === "article") return S.articles.map((a) => ({ src: "article:" + a.slug, t: a.title, s: a.date + " · 읽을거리", done: isDone("carousel:article-" + a.slug) }));
+    return S.refs.map((r) => ({ src: r.id, t: r.title, s: r.kicker, done: isDone("carousel:" + r.id) }));
+  }
+  if (type === "reel") return S.reels.map((r) => ({ src: r.id, t: r.title,
+    s: (r.id.endsWith("-motion") ? "모션 + 음악 (1분 안팎)" : r.id.endsWith("-tour") ? "사이트 투어" : "카드 넘김") + (r.seconds ? ` · ${r.seconds}초` : " · 새로 만들기"), done: isDone("reel:" + r.id) }));
+  if (sub === "article") return S.articles.map((a) => ({ src: "article:" + a.slug, t: a.title, s: a.date + (S.drafts.some((d) => d.id === "art-" + a.slug) ? " · 다듬은 풀어쓰기 있음" : " · 첫 글 + 댓글로 풀어쓰기 + 원문 링크"), done: isDone("thread:article:" + a.slug) }));
+  if (sub === "custom") return [{ src: "custom", t: "빈 글에서 시작", s: "직접 쓰기" }];
+  const mine = sub === "mine";
+  return S.drafts.filter((d) => Boolean(d.account) === mine).map((d) => ({ src: "draft:" + d.id, t: d.label,
+    s: (d.text.includes("\n---\n") ? `첫 글 + 댓글 ${d.text.split("\n---\n").length - 1}개 · ` : "") + d.text.split("\n")[0].slice(0, 40) + "…",
+    done: isDone("thread:draft:" + d.id) }));
+}
+
+function renderList() {
+  document.querySelectorAll("#seg button").forEach((b) => b.classList.toggle("on", b.dataset.type === type));
+  const tabs = type === "carousel" ? [["ref", "레퍼런스·용어"], ["article", "읽을거리"]]
+             : type === "thread" ? [["draft", "디자인 허브 초안"], ["mine", "내 계정 초안"], ["article", "읽을거리 풀어쓰기"], ["custom", "직접 쓰기"]] : [];
+  if (tabs.length && !tabs.some(([k]) => k === sub)) sub = tabs[0][0];
+  $("#subtabs").innerHTML = tabs.map(([k, l]) => `<button data-sub="${k}" class="${k === sub ? "on" : ""}">${l}</button>`).join("");
+  $("#subtabs").querySelectorAll("button").forEach((b) => b.onclick = () => { sub = b.dataset.sub; source = null; renderList(); });
+  const opts = options();
+  $("#list").innerHTML = opts.map((o) => `<button class="li ${o.src === source ? "on" : ""}" data-src="${esc(o.src)}">` +
+    `<div class="li__t">${esc(o.t)} ${o.done ? '<span class="badge">올림</span>' : ""}</div><div class="li__s">${esc(o.s)}</div></button>`).join("");
+  $("#list").querySelectorAll(".li").forEach((b) => b.onclick = () => { source = b.dataset.src; renderList(); });
+  $("#make").disabled = !source;
+  $("#tour").hidden = !(type === "reel" && source && !source.endsWith("-tour") && !source.startsWith("article-"));
+}
+
+function pick(t, src) {
+  type = t; source = src || null;
+  const draftSub = (id) => (S.drafts.find((d) => "draft:" + d.id === id) || {}).account ? "mine" : "draft";
+  if (src && t !== "reel") sub = src.startsWith("article:") ? "article" : src.startsWith("draft:") ? draftSub(src) : src === "custom" ? "custom" : "ref";
+  renderList();
+}
+document.querySelectorAll("#seg button").forEach((b) => b.onclick = () => pick(b.dataset.type));
+
+$("#tour").onclick = () => doMake("tour", { source: source.replace(/-(cards|motion)$/, "") });
+
+async function doMake(endpoint = "make_start", body = null) {
+  const t0 = Date.now();
+  const draw = (j) => {
+    const sec = Math.round((Date.now() - t0) / 1000), el = sec >= 60 ? `${Math.floor(sec / 60)}분 ${sec % 60}초` : `${sec}초`;
+    const pct = j && j.progress != null ? j.progress : null;
+    $("#preview").innerHTML = `<div class="empty"><span class="spin"></span>${esc((j && j.stage) || "만드는 중…")}` +
+      `<div class="pbar"><div style="width:${pct ?? 0}%" class="${pct == null ? "indet" : ""}"></div></div>` +
+      `<div style="font-size:13px;color:var(--muted)">${pct != null ? pct + "% · " : ""}${el} 지남</div></div>`;
+  };
+  draw(null);
+  try {
+    $("#make").disabled = $("#tour").disabled = true;   // 두 번 눌러 같은 작업이 겹치지 않게
+    const r = await api(endpoint, body || { type, source, rebuild: $("#rebuild").checked });
+    if (!r.job) { $("#preview").innerHTML = `<div class="result">${esc(r.message || "")}</div>`; return; }
+    const j = await waitJob(r.job, draw);
+    made = j.data;
+    showPreview();
+  } catch (e) {
+    $("#preview").innerHTML = `<div class="result bad">${esc(e.message)}</div>`;
+  } finally {
+    renderList();   // 버튼 다시 켜기 (목록 상태에 맞게)
+  }
+}
+$("#make").onclick = () => doMake();
+
+function counter(el, max, out) {
+  const f = () => { out.textContent = `${el.value.length} / ${max}`; out.classList.toggle("over", el.value.length > max); };
+  el.addEventListener("input", f); f();
+}
+
+function showPreview() {
+  const m = made, isIG = m.type !== "thread";
+  let media = "";
+  if (m.type === "carousel") media = `<div class="strip">${m.images.map((u) => `<img src="${esc(u)}" alt="" />`).join("")}</div>`;
+  if (m.type === "reel") media = `<video src="${esc(m.video)}" poster="${esc(m.cover)}" controls playsinline></video>`;
+  const kindName = { carousel: "인스타그램 캐러셀", reel: "인스타그램 릴스", thread: "스레드" }[m.type];
+  const thDefault = m.type === "thread" ? m.text : `${m.title}\n\n인스타에 카드로 정리해 뒀다.`;
+  $("#preview").innerHTML =
+    `<h2 class="pv-title">${esc(m.title)}</h2><div class="pv-meta">${kindName}${m.images ? ` · ${m.images.length}장` : ""}${m.seconds ? ` · ${m.seconds}초` : ""}` +
+    `${m.published ? " · <b>이미 올린 적 있음</b>" : ""}</div>${media}` +
+    (isIG ? `<div class="row" style="margin-top:12px;flex-wrap:wrap;gap:8px"><button class="btn" id="save">내 맥에 저장 (다운로드 폴더)</button>` +
+            (m.video ? `<a class="btn" style="text-decoration:none;color:inherit" href="${esc(m.video)}" download="${esc(m.id)}.mp4">영상만 받기</a>` : "") +
+            `<span id="savemsg" style="font-size:13px;color:var(--muted)"></span></div>` : "") +
+    (isIG ? `<label class="f">인스타 캡션</label><textarea id="cap">${esc(m.caption)}</textarea><div class="count" id="capc"></div>` +
+            `<div class="ask"><input class="inp" id="req-caption" placeholder="수정 요청: 예) 첫 줄을 질문으로, 해시태그는 3개만" /><button class="btn btn--dark" data-edit="caption">수정본 받기</button><button class="btn" data-copy="caption">데스크톱에 보낼 문장 복사 (무료)</button></div><div id="ai-caption"></div>` +
+            `<label class="f">첫 댓글 <span style="font-weight:400;color:var(--muted)">— 캡션의 링크는 눌리지 않아서 주소·출처를 댓글로 따로 달아요. 비우면 달지 않아요</span></label>` +
+            `<textarea id="cmt" style="min-height:140px">${esc(m.comment || "")}</textarea><div class="count" id="cmtc"></div>` +
+            `<div class="also"><label class="check"><input type="checkbox" id="also" /> 스레드에도 함께 알리기 (링크 미리보기 포함)</label>` +
+            `<textarea id="thtext" hidden>${esc(thDefault)}</textarea><div class="count" id="thc" hidden></div></div>`
+          : `<label class="f">올릴 계정</label><select class="inp" id="acct" style="width:auto">${S.accounts.filter((a) => a.connected).map((a) =>
+              `<option value="${esc(a.id)}" ${a.id === (m.account || "designhub") ? "selected" : ""}>${esc(a.label)}</option>`).join("")}</select>` +
+            `<label class="f">스레드 글 <span style="font-weight:400;color:var(--muted)">— <code>---</code> 한 줄로 나누면 첫 글 아래 댓글로 차례로 이어 올라가요</span></label>` +
+            `<textarea id="thtext" style="min-height:260px">${esc(m.text)}</textarea><div class="count" id="thc"></div>` +
+            `<div class="ask"><input class="inp" id="req-thread" placeholder="수정 요청: 예) 둘째 문단을 한 문장으로 줄이고 끝을 질문으로" /><button class="btn btn--dark" data-edit="thread">수정본 받기</button><button class="btn" data-copy="thread">데스크톱에 보낼 문장 복사 (무료)</button></div><div id="ai-thread"></div>` +
+            `<label class="f">함께 붙일 링크 (선택)</label><input class="inp" id="link" value="${esc(m.link || "")}" placeholder="https://designrefs.com/..." />`) +
+    `<div class="warn" id="warn"></div>` +
+    `<div style="margin-top:20px"><button class="btn btn--dark btn--big" id="pub">발행</button></div>` +
+    `<ul class="steps" id="steps"></ul><div id="res"></div>`;
+  if (isIG) {
+    counter($("#cap"), 2200, $("#capc"));
+    counter($("#cmt"), 2200, $("#cmtc"));
+    $("#also").onchange = () => { $("#thtext").hidden = $("#thc").hidden = !$("#also").checked; };
+  }
+  if (isIG) counter($("#thtext"), 500, $("#thc"));
+  else {
+    const f = () => {
+      const parts = splitPosts($("#thtext").value), max = Math.max(0, ...parts.map((x) => x.length));
+      $("#thc").textContent = parts.length > 1 ? `첫 글 + 댓글 ${parts.length - 1}개 · 가장 긴 글 ${max} / 500` : `${max} / 500`;
+      $("#thc").classList.toggle("over", max > 500 || parts.length > 10);
+    };
+    $("#thtext").addEventListener("input", f); f();
+  }
+  const warn = () => { const t = $("#thtext").value; $("#warn").textContent = /\[[^\]]*\]/.test(t) && (!isIG || $("#also").checked)
+    ? "[ ] 로 비워 둔 자리가 있어요. 실제 경험으로 바꾸거나 지워야 발행할 수 있습니다." : ""; };
+  $("#thtext").addEventListener("input", warn); warn();
+  $("#pub").onclick = doPublish;
+  if ($("#save")) $("#save").onclick = async () => {
+    $("#savemsg").textContent = "저장하는 중…";
+    try {
+      const r = await api("export", { type: m.type, id: m.id, caption: $("#cap").value, comment: $("#cmt") ? $("#cmt").value : "" });
+      $("#savemsg").textContent = r.message;
+    } catch (e) { $("#savemsg").textContent = e.message; }
+  };
+  document.querySelectorAll("[data-edit]").forEach((btn) => btn.onclick = () => editPost(btn.dataset.edit, btn));
+  document.querySelectorAll("[data-copy]").forEach((btn) => btn.onclick = () => {
+    const kind = btn.dataset.copy, ta = kind === "caption" ? $("#cap") : $("#thtext"), req = $("#req-" + kind).value.trim();
+    if (!req) { alert("어떻게 고칠지 먼저 적어 주세요."); return; }
+    copyText(`designhub 의 edit_post 순서대로 아래 ${kind === "caption" ? "인스타 캡션" : "스레드 글"}을 고쳐 줘.\n\n요청: ${req}\n\n글:\n${ta.value}`);
+  });
+}
+
+function splitPosts(text) {
+  return text.split(/\n[ \t]*---[ \t]*(?:\n|$)/).map((x) => x.trim()).filter(Boolean);
+}
+
+async function waitJob(job, onStep) {
+  for (;;) {
+    await new Promise((r) => setTimeout(r, 2000));
+    const j = await api("job", { job });
+    if (onStep) onStep(j);
+    if (j.done) { if (!j.success) throw new Error(j.message || "오류가 났습니다."); return j; }
+  }
+}
+
+async function copyText(text) {
+  try { await navigator.clipboard.writeText(text); alert("복사했습니다. Claude 데스크톱에 붙여 넣으면 무료로 고쳐 줍니다.\n\n" + text.slice(0, 300)); }
+  catch { prompt("아래 문장을 복사해 Claude 데스크톱에 붙여 넣으세요.", text); }
+}
+
+async function editPost(kind, btn) {
+  const box = $("#ai-" + kind), ta = kind === "caption" ? $("#cap") : $("#thtext"), req = $("#req-" + kind).value.trim();
+  if (!req) { alert("어떻게 고칠지 먼저 적어 주세요."); return; }
+  btn.disabled = true;
+  box.innerHTML = `<div class="ai"><span class="spin"></span>요청대로 고치는 중… (20~40초)</div>`;
+  try {
+    const { job } = await api("coach_edit_post", { kind, text: ta.value, request: req });
+    const d = (await waitJob(job)).data;
+    box.innerHTML = `<div class="ai"><b>${esc(d.summary || "")}</b><ul>${(d.points || []).map((x) => `<li>${esc(x)}</li>`).join("")}</ul>` +
+      `<textarea id="rev-${kind}">${esc(d.revised || "")}</textarea><div class="row" style="margin-top:8px">` +
+      `<button class="btn btn--dark" id="use-${kind}">이걸로 바꾸기</button><button class="btn" id="drop-${kind}">닫기</button></div></div>`;
+    $("#use-" + kind).onclick = () => { ta.value = $("#rev-" + kind).value; ta.dispatchEvent(new Event("input")); box.innerHTML = ""; };
+    $("#drop-" + kind).onclick = () => { box.innerHTML = ""; };
+  } catch (e) {
+    box.innerHTML = `<div class="result bad">${esc(e.message)}</div>`;
+  }
+  btn.disabled = false;
+}
+
+async function doPublish() {
+  const m = made, isIG = m.type !== "thread";
+  let what = { carousel: "인스타그램에 캐러셀을", reel: "인스타그램에 릴스를", thread: "스레드에 글을" }[m.type];
+  if (!isIG) {
+    const n = splitPosts($("#thtext").value).length, acct = $("#acct");
+    what = `스레드(${acct.options[acct.selectedIndex]?.text || "디자인 허브"})에 ${n > 1 ? `첫 글 + 댓글 ${n - 1}개를` : "글을"}`;
+  }
+  if (!confirm(`${what} 공개로 올립니다. 올리면 되돌릴 수 없어요. 발행할까요?`)) return;
+  const body = { type: m.type, id: m.id, title: m.title, link: isIG ? m.link : $("#link").value.trim(), draft: m.draft };
+  if (isIG) Object.assign(body, { caption: $("#cap").value, comment: $("#cmt").value, also_thread: $("#also").checked, thread_text: $("#thtext").value });
+  else Object.assign(body, { text: $("#thtext").value, account: $("#acct").value });
+  $("#pub").disabled = true;
+  $("#steps").innerHTML = `<li><span class="spin"></span>시작합니다…</li>`;
+  try {
+    const { job } = await api("publish", body);
+    for (;;) {
+      await new Promise((r) => setTimeout(r, 2000));
+      const j = await api("job", { job });
+      $("#steps").innerHTML = j.steps.map((s) => `<li>${esc(s)}</li>`).join("") + (j.done ? "" : `<li><span class="spin"></span>진행 중…</li>`);
+      if (j.done) {
+        const links = Object.entries(j.links || {}).map(([k, v]) => v ? `<a href="${esc(v)}" target="_blank">${k === "instagram" ? "인스타그램에서 보기" : "스레드에서 보기"} ↗</a>` : "").join("\n");
+        $("#res").innerHTML = `<div class="result ${j.success ? "ok" : "bad"}">${esc(j.message)}${links ? "\n" + links : ""}</div>` +
+          (j.log ? `<details class="log"><summary>기록 보기</summary><pre>${esc(j.log)}</pre></details>` : "");
+        if (!j.success) $("#pub").disabled = false;
+        load();
+        break;
+      }
+    }
+  } catch (e) {
+    $("#res").innerHTML = `<div class="result bad">${esc(e.message)}</div>`;
+    $("#pub").disabled = false;
+  }
+}
+
+// ---------- 탭 ----------
+document.querySelectorAll(".tab").forEach((t) => t.onclick = () => {
+  document.querySelectorAll(".tab").forEach((x) => x.classList.toggle("on", x === t));
+  $("#v-sns").hidden = t.dataset.view !== "sns";
+  $("#v-coach").hidden = t.dataset.view !== "coach";
+  $("#v-lib").hidden = t.dataset.view !== "lib";
+  if (t.dataset.view === "lib") libLoad();
+  if (t.dataset.view === "coach") coachLoad();
+});
+
+// ---------- 보관함 ----------
+let LIB = [], libFilter = "all";
+const LIBTABS = [["all", "전체"], ["pub", "발행한 것"], ["reel", "릴스"], ["carousel", "캐러셀"], ["thread", "스레드"]];
+
+async function libLoad() {
+  try { LIB = (await api("library")).items; } catch (e) { $("#libgrid").innerHTML = `<div class="result bad">${esc(e.message)}</div>`; return; }
+  libRender();
+}
+
+function libRender() {
+  $("#libtabs").innerHTML = LIBTABS.map(([k, l]) => `<button data-k="${k}" class="${k === libFilter ? "on" : ""}">${l}</button>`).join("");
+  $("#libtabs").querySelectorAll("button").forEach((b) => b.onclick = () => { libFilter = b.dataset.k; libRender(); });
+  const list = LIB.filter((it) => libFilter === "all" || (libFilter === "pub" ? it.pubs.length : it.type === libFilter));
+  $("#libcount").textContent = `${list.length}개`;
+  if (!list.length) { $("#libgrid").innerHTML = `<div class="empty" style="grid-column:1/-1">아직 없어요.</div>`; return; }
+  $("#libgrid").innerHTML = list.map((it, i) => {
+    const media = it.type === "thread" ? `<div class="ltext">${esc(it.text || "(글 내용은 이번 업데이트 뒤 발행분부터 저장돼요)")}</div>`
+      : it.video ? `<div style="position:relative"><img class="lthumb v" data-play="${i}" src="${esc(it.thumb)}" alt="" loading="lazy" />` +
+                   `<span class="lplay">▶</span></div>`
+      : `<img class="lthumb" src="${esc(it.thumb)}" alt="" loading="lazy" />`;
+    const pubs = it.pubs.map((p) => `${esc(p.at.replace("T", " "))} ` + Object.entries(p.links || {}).map(([k, v]) => v
+      ? `<a href="${esc(v)}" target="_blank">${k === "instagram" ? "인스타" : "스레드"} ↗</a>` : "").join(" ")).join("<br>");
+    const canComment = it.pubs.some((p) => Object.keys(p.ids || {}).length);
+    return `<div class="lcard">${media}<div class="lbody"><b>${esc(it.title)}</b>` +
+      `<div class="lmeta">${esc(it.sub)}${it.pubs.length ? "" : " · 아직 안 올림"}</div>` + (pubs ? `<div class="lmeta">${pubs}</div>` : "") +
+      `<div class="lbtns"><button class="btn btn--dark" data-act="open" data-i="${i}">열어서 편집</button>` +
+      (it.type !== "thread" ? `<button class="btn" data-act="save" data-i="${i}">내려받기</button>` : `<button class="btn" data-act="copy" data-i="${i}">글 복사</button>`) +
+      (canComment ? `<button class="btn" data-act="comment" data-i="${i}">댓글 달기</button>` : "") +
+      `</div><div class="lmeta" id="lmsg-${i}"></div></div></div>`;
+  }).join("");
+  $("#libgrid").querySelectorAll("[data-play]").forEach((img) => img.onclick = () => {
+    const it = list[+img.dataset.play];
+    img.parentElement.innerHTML = `<video class="lthumb v" src="${esc(it.video)}" autoplay controls playsinline></video>`;
+  });
+  $("#libgrid").querySelectorAll("[data-act]").forEach((b) => b.onclick = () => libAct(b.dataset.act, list[+b.dataset.i], +b.dataset.i));
+}
+
+async function libAct(act, it, i) {
+  const msg = $("#lmsg-" + i);
+  if (act === "open") {
+    document.querySelector('.tab[data-view="sns"]').click();
+    if (it.type === "thread" && !/^(draft|article):/.test(it.source)) {
+      type = "thread"; sub = "custom"; source = "custom"; renderList();
+      made = { type: "thread", id: "custom:" + Date.now(), title: it.title, text: it.text || "", link: "", published: false };
+      showPreview();
+    } else { pick(it.type, it.source); doMake(); }
+    window.scrollTo(0, 0);
+  } else if (act === "save") {
+    msg.textContent = "저장하는 중…";
+    try { msg.textContent = (await api("export", { type: it.type, id: it.id })).message; } catch (e) { msg.textContent = e.message; }
+  } else if (act === "copy") {
+    copyText(it.text || "");
+  } else if (act === "comment") {
+    const p = it.pubs.find((x) => Object.keys(x.ids || {}).length);
+    const plat = (p.ids || {}).instagram ? "instagram" : "threads";
+    const text = prompt(`${plat === "instagram" ? "인스타그램" : "스레드"} 게시물에 달 댓글 (스레드는 '---' 로 나누면 차례로 이어 달아요)`);
+    if (!text || !text.trim()) return;
+    msg.textContent = "다는 중…";
+    try { msg.textContent = (await api("comment", { index: p.index, platform: plat, text })).message; } catch (e) { msg.textContent = e.message; }
+  }
+}
+
+// ---------- AI 편집장 ----------
+let cslug = null, creview = null, capplied = 0;
+
+async function coachLoad() {
+  const st = await api("coach_state");
+  const sel = $("#cmode");
+  if (!sel.options.length) {
+    sel.innerHTML = Object.entries(st.modes).map(([k, l]) => `<option value="${k}" ${k === st.default.article ? "selected" : ""}>${esc(l)}</option>`).join("");
+    const cost = () => {
+      const base = { haiku: 5, sonnet: 100, opus: 200 }[sel.value], web = $("#cweb").checked ? 40 : 0;
+      $("#ccost").textContent = `1~3분 · 약 ${base + web}원`;
+    };
+    sel.onchange = cost; $("#cweb").onchange = cost; cost();
+  }
+  const k = $("#ckey");
+  if (!st.sdk) {
+    k.innerHTML = `<div class="warn">먼저 설치가 필요해요. 터미널에서: <code>python3 -m pip install --user anthropic</code></div>`;
+  } else if (!st.key) {
+    k.innerHTML = `<div style="font-size:13px;color:var(--body);margin-bottom:8px">Anthropic API 키를 넣어 주세요 (console.anthropic.com → API Keys). 이 맥에만 저장됩니다.</div>` +
+      `<div class="row"><input class="inp" id="kin" type="password" placeholder="sk-ant-..." /><button class="btn btn--dark" id="ksave">저장</button></div>`;
+    $("#ksave").onclick = async () => { try { await api("coach_key", { key: $("#kin").value }); coachLoad(); } catch (e) { alert(e.message); } };
+  } else {
+    k.innerHTML = `<span class="chip on">API 키 ${st.key === "saved" ? "저장됨" : "환경 변수 사용"}</span>` +
+      (st.key === "saved" ? ` <button class="btn btn--sm" id="kdel" style="padding:5px 10px;font-size:12px">키 지우기</button>` : "");
+    if ($("#kdel")) $("#kdel").onclick = async () => { if (confirm("저장한 키를 지울까요?")) { await api("coach_forget"); coachLoad(); } };
+  }
+  $("#clist").innerHTML = S.articles.map((a) => `<button class="li ${a.slug === cslug ? "on" : ""}" data-slug="${esc(a.slug)}">` +
+    `<div class="li__t">${esc(a.title)}</div><div class="li__s">${esc(a.date)}</div></button>`).join("");
+  $("#clist").querySelectorAll(".li").forEach((b) => b.onclick = () => { cslug = b.dataset.slug; coachLoad(); });
+  $("#crun").disabled = !(cslug && st.sdk && st.key);
+  $("#cedit").disabled = !(cslug && st.sdk && st.key);
+}
+
+$("#copyp").onclick = async () => {
+  const slug = cslug || (S.articles[0] || {}).slug || "";
+  const text = `designhub 의 review_article 순서대로 '${slug}' 글을 검토해 줘. editor_guide 기준으로, 제안은 번호를 붙여 보여 주고 내가 고른 것만 article_edit 로 적용해 줘.`;
+  try { await navigator.clipboard.writeText(text); alert("복사했습니다. Claude 데스크톱에 붙여 넣으세요.\n\n" + text); }
+  catch { prompt("아래 문장을 복사해 Claude 데스크톱에 붙여 넣으세요.", text); }
+};
+
+$("#ccopyedit").onclick = () => {
+  const req = $("#creq").value.trim();
+  if (!cslug || !req) { alert("글을 고르고, 어떻게 고칠지 적어 주세요."); return; }
+  copyText(`designhub 의 edit_article 순서대로 '${cslug}' 글을 고쳐 줘.\n\n요청: ${req}`);
+};
+
+$("#cedit").onclick = async () => {
+  const req = $("#creq").value.trim(), title = S.articles.find((a) => a.slug === cslug).title;
+  if (!req) { alert("어떻게 고칠지 적어 주세요."); return; }
+  capplied = 0;
+  $("#cview").innerHTML = `<h2 class="pv-title">${esc(title)}</h2><div class="empty"><span class="spin"></span>요청대로 고칠 곳을 찾는 중… (30초~1분)</div>`;
+  $("#cedit").disabled = true;
+  try {
+    const { job } = await api("coach_edit_article", { slug: cslug, request: req, mode: $("#cmode").value });
+    creview = (await waitJob(job)).data;
+    renderReview(title);
+  } catch (e) {
+    $("#cview").innerHTML = `<div class="result bad">${esc(e.message)}</div>`;
+  }
+  $("#cedit").disabled = false;
+};
+
+$("#crun").onclick = async () => {
+  const title = S.articles.find((a) => a.slug === cslug).title;
+  capplied = 0;
+  $("#cview").innerHTML = `<h2 class="pv-title">${esc(title)}</h2><div class="empty"><span class="spin"></span>AI 편집장이 글을 읽고, 발행 뒤 바뀐 소식을 찾는 중이에요… (1~3분)</div>`;
+  $("#crun").disabled = true;
+  try {
+    const { job } = await api("coach_article", { slug: cslug, mode: $("#cmode").value, web: $("#cweb").checked ? 3 : 0 });
+    creview = (await waitJob(job)).data;
+    renderReview(title);
+  } catch (e) {
+    $("#cview").innerHTML = `<div class="result bad">${esc(e.message)}</div>`;
+  }
+  $("#crun").disabled = false;
+};
+
+function renderReview(title) {
+  const d = creview;
+  const sugs = (d.suggestions || []).map((x) => {
+    const diff = x.before ? `<div class="diff"><div class="del">${esc(x.before)}</div>${x.after ? `<div class="add">${esc(x.after)}</div>` : ""}</div>`
+               : x.anchor ? `<div class="diff"><div class="at">… ${esc(x.anchor)}</div><div class="add">${esc(x.after)}</div></div>`
+               : x.after ? `<div class="diff"><div class="add">${esc(x.after)}</div></div>` : "";
+    const src = (x.sources || []).map((u) => `<a href="${esc(u)}" target="_blank">${esc(u.replace(/^https?:\/\//, "").slice(0, 40))} ↗</a>`).join("");
+    return `<div class="sug" id="sug-${x.id}"><div class="sug__h"><span class="tag ${x.priority === "높음" ? "hi" : ""}">${esc(x.type)} · ${esc(x.priority || "")}</span><b>${esc(x.title)}</b></div>` +
+      `<p>${esc(x.reason)}</p>${diff}${src ? `<div class="src">${src}</div>` : ""}` +
+      `<div class="row" style="margin-top:12px">${x.applicable ? `<button class="btn btn--dark" data-apply="${x.id}">적용</button>` : `<span style="font-size:13px;color:var(--muted)">본문을 직접 고치는 제안이 아니에요</span>`}</div></div>`;
+  }).join("");
+  const sns = d.sns && d.sns.thread ? `<div class="sug"><div class="sug__h"><span class="tag">SNS</span><b>이 글로 스레드 쓰기</b></div><p style="white-space:pre-wrap">${esc(d.sns.thread)}</p>` +
+    (d.sns.hook ? `<p>인스타 첫 줄 후보: <b>${esc(d.sns.hook)}</b></p>` : "") + `<div class="row" style="margin-top:12px"><button class="btn" id="tothread">스레드 발행 화면으로</button></div></div>` : "";
+  $("#cview").innerHTML = `<h2 class="pv-title">${esc(title)}</h2><div class="pv-meta">AI 편집장 검토 · 제안 ${(d.suggestions || []).length}개 · 웹에서 확인한 자료 ${(d.searched || []).length}건</div>` +
+    `<div class="ai" style="background:var(--soft)">${esc(d.summary || "")}</div>${sugs}${sns}` +
+    `<div style="margin-top:20px"><button class="btn btn--dark btn--big" id="cpub" disabled>고친 내용을 사이트에 반영</button></div><div id="cres"></div>`;
+  document.querySelectorAll("[data-apply]").forEach((b) => b.onclick = async () => {
+    const x = d.suggestions[+b.dataset.apply];
+    try {
+      await api("coach_apply", { slug: cslug, suggestion: x });
+      $("#sug-" + x.id).classList.add("done"); b.outerHTML = `<span class="chip on">적용함</span>`;
+      capplied++; $("#cpub").disabled = false;
+    } catch (e) { alert(e.message); }
+  });
+  if ($("#tothread")) $("#tothread").onclick = () => {
+    document.querySelector('.tab[data-view="sns"]').click();
+    pick("thread", "article:" + cslug);
+    made = { type: "thread", id: "article:" + cslug, title, text: d.sns.thread, link: S.articles.find((a) => a.slug === cslug).url, published: false };
+    showPreview();
+  };
+  $("#cpub").onclick = async () => {
+    if (!confirm(`적용한 ${capplied}개를 사이트에 반영할까요? (빌드 후 GitHub 에 올립니다)`)) return;
+    $("#cpub").disabled = true;
+    $("#cres").innerHTML = `<div class="ai"><span class="spin"></span>빌드하고 올리는 중… (1분쯤)</div>`;
+    try {
+      const j = await waitJob((await api("site_publish", { slug: cslug })).job);
+      $("#cres").innerHTML = `<div class="result ok">${esc(j.message || "반영했습니다.")}</div>`;
+    } catch (e) {
+      $("#cres").innerHTML = `<div class="result bad">${esc(e.message)}</div>`; $("#cpub").disabled = false;
+    }
+  };
+}
+
+load().catch((e) => { $("#preview").innerHTML = `<div class="result bad">${esc(e.message)}</div>`; });
+</script>
+</body>
+</html>

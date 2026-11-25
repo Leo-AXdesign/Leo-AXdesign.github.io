@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 693" role="img" aria-labelledby="t d">
+  <title id="t">Text contrast on white</title>
+  <desc id="d">Contrast on white: #111111 18.9, #2C2C2C 14.0, #6B6B6B 5.3, #767676 4.5, #A3A3A3 2.5. Only #A3A3A3 falls below 4.5.</desc>
+  <rect width="1200" height="693" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="40" y="70" font-size="30" font-weight="800" fill="#111111" letter-spacing="-0.5">Text contrast on white</text>
+    <text x="40" y="101" font-size="19" fill="#6B6B6B">Four grays on this site plus one candidate · body text needs 4.5 : 1 or more to pass WCAG AA</text>
+    <text x="40.0" y="165" font-size="24" font-weight="700" fill="#111111">Contrast ratio</text>
+    <text x="40.0" y="193" font-size="18" fill="#6B6B6B">higher is easier to read</text>
+    <text x="40.0" y="237" font-size="18" fill="#444444">#111111 headings</text>
+    <path d="M40.0 247H1057.0A7 7 0 0 1 1064.0 254V270A7 7 0 0 1 1057.0 277H40.0Z" fill="#111111"/>
+    <text x="1076.0" y="269.92" font-size="22" font-weight="700" fill="#111111">18.9</text>
+    <text x="40.0" y="315" font-size="18" fill="#444444">#2C2C2C body</text>
+    <path d="M40.0 325H790.6949152542373A7 7 0 0 1 797.6949152542373 332V348A7 7 0 0 1 790.6949152542373 355H40.0Z" fill="#111111"/>
+    <text x="809.6949152542373" y="347.92" font-size="22" font-weight="700" fill="#111111">14.0</text>
+    <text x="40.0" y="393" font-size="18" fill="#444444">#6B6B6B descriptions</text>
+    <path d="M40.0 403H322.08474576271186A7 7 0 0 1 329.08474576271186 410V426A7 7 0 0 1 322.08474576271186 433H40.0Z" fill="#111111"/>
+    <text x="341.08474576271186" y="425.92" font-size="22" font-weight="700" fill="#111111">5.3</text>
+    <text x="40.0" y="471" font-size="18" fill="#444444">#767676 candidate</text>
+    <path d="M40.0 481H279.23728813559325A7 7 0 0 1 286.23728813559325 488V504A7 7 0 0 1 279.23728813559325 511H40.0Z" fill="#111111"/>
+    <text x="298.23728813559325" y="503.92" font-size="22" font-weight="700" fill="#111111">4.5</text>
+    <text x="40.0" y="549" font-size="18" fill="#444444">#A3A3A3 domains, tags</text>
+    <path d="M40.0 559H169.67796610169492A7 7 0 0 1 176.67796610169492 566V582A7 7 0 0 1 169.67796610169492 589H40.0Z" fill="#111111"/>
+    <text x="188.67796610169492" y="581.92" font-size="22" font-weight="700" fill="#111111">2.5 ✕</text>
+    <line x1="40.0" y1="219" x2="40.0" y2="609" stroke="#D9D9D9" stroke-width="1.6"/>
+    <line x1="40" y1="631" x2="1160" y2="631" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="40" y="657" font-size="16" fill="#6B6B6B">Checked with design.md lint 0.4.0. Values are WCAG contrast ratios. #767676 is a candidate replacement.</text>
+  </g>
+</svg>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 557" role="img" aria-labelledby="t d">
+  <title id="t">PSD를 열었다 다시 저장하면</title>
+  <desc id="d">PhotoCraft로 psd-tools 시험 파일 309개를 열었다 다시 저장했을 때, 307개는 제대로 그려졌고 2개는 그렇지 않았다.</desc>
+  <rect width="600" height="557" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="32" y="68" font-size="36" font-weight="800" fill="#111111" letter-spacing="-0.5">PSD를 열었다 다시 저장하면</text>
+    <text x="32" y="102" font-size="22" fill="#6B6B6B">PhotoCraft 저장소의 자체 시험</text>
+    <text x="32" y="136" font-size="22" fill="#6B6B6B">psd-tools 시험 파일 309개</text>
+    <text x="32" y="206" font-size="30" font-weight="700" fill="#111111">다시 저장한 뒤</text>
+    <text x="32" y="238" font-size="22" fill="#6B6B6B">파일 개수</text>
+    <text x="32" y="291" font-size="23" fill="#444444">제대로 그려짐</text>
+    <path d="M32 303H441.0A7 7 0 0 1 448.0 310V332A7 7 0 0 1 441.0 339H32Z" fill="#111111"/>
+    <text x="462.0" y="331.08" font-size="28" font-weight="700" fill="#111111">307개</text>
+    <text x="32" y="385" font-size="23" fill="#444444">문제 있음</text>
+    <path d="M32 397H61A7 7 0 0 1 68 404V426A7 7 0 0 1 61 433H32Z" fill="#111111"/>
+    <text x="82" y="425.08" font-size="28" font-weight="700" fill="#111111">2개</text>
+    <line x1="32" y1="268" x2="32" y2="456" stroke="#D9D9D9" stroke-width="1.8"/>
+    <line x1="32" y1="474" x2="568" y2="474" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="32" y="500" font-size="19" fill="#6B6B6B">출처: PhotoCraft 저장소 README (2026. 10).</text>
+    <text x="32" y="529" font-size="19" fill="#6B6B6B">개발자 자체 시험. 실제 작업 파일과는 다를 수 있다.</text>
+  </g>
+</svg>

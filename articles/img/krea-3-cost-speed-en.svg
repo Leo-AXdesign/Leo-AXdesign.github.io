@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 537" role="img" aria-labelledby="t d">
+  <title id="t">Krea 3 edit cost and speed (per Krea)</title>
+  <desc id="d">Cost for 100,000 edits at list price: Krea 3 $6,000, Nano Banana Pro $13,500, GPT Image 2 $22,000. Time per edit: Krea 3 mostly under 8 seconds, Nano Banana Pro 33 seconds, GPT Image 2 90 seconds.</desc>
+  <rect width="1200" height="537" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="40" y="70" font-size="30" font-weight="800" fill="#111111" letter-spacing="-0.5">Krea 3 edit cost and speed (per Krea)</text>
+    <text x="40" y="101" font-size="19" fill="#6B6B6B">Cost of 100,000 edits at list price · Time per edit</text>
+    <text x="40.0" y="165" font-size="24" font-weight="700" fill="#111111">Cost of 100,000 edits (USD)</text>
+    <text x="40.0" y="193" font-size="18" fill="#6B6B6B">Lower is better</text>
+    <text x="40.0" y="237" font-size="18" fill="#444444">Krea 3</text>
+    <path d="M40.0 247H151.36363636363637A7 7 0 0 1 158.36363636363637 254V270A7 7 0 0 1 151.36363636363637 277H40.0Z" fill="#111111"/>
+    <text x="170.36363636363637" y="269.92" font-size="22" font-weight="700" fill="#111111">$6,000</text>
+    <text x="40.0" y="315" font-size="18" fill="#444444">Nano Banana Pro</text>
+    <path d="M40.0 325H299.3181818181818A7 7 0 0 1 306.3181818181818 332V348A7 7 0 0 1 299.3181818181818 355H40.0Z" fill="#111111"/>
+    <text x="318.3181818181818" y="347.92" font-size="22" font-weight="700" fill="#111111">$13,500</text>
+    <text x="40.0" y="393" font-size="18" fill="#444444">GPT Image 2</text>
+    <path d="M40.0 403H467.0A7 7 0 0 1 474.0 410V426A7 7 0 0 1 467.0 433H40.0Z" fill="#111111"/>
+    <text x="486.0" y="425.92" font-size="22" font-weight="700" fill="#111111">$22,000</text>
+    <line x1="40.0" y1="219" x2="40.0" y2="453" stroke="#D9D9D9" stroke-width="1.6"/>
+    <text x="630.0" y="165" font-size="24" font-weight="700" fill="#111111">Time per edit (seconds)</text>
+    <text x="630.0" y="193" font-size="18" fill="#6B6B6B">Lower is better</text>
+    <text x="630.0" y="237" font-size="18" fill="#444444">Krea 3</text>
+    <path d="M630.0 247H661.5777777777778A7 7 0 0 1 668.5777777777778 254V270A7 7 0 0 1 661.5777777777778 277H630.0Z" fill="#111111"/>
+    <text x="680.5777777777778" y="269.92" font-size="22" font-weight="700" fill="#111111">under 8 s</text>
+    <text x="630.0" y="315" font-size="18" fill="#444444">Nano Banana Pro</text>
+    <path d="M630.0 325H782.1333333333333A7 7 0 0 1 789.1333333333333 332V348A7 7 0 0 1 782.1333333333333 355H630.0Z" fill="#111111"/>
+    <text x="801.1333333333333" y="347.92" font-size="22" font-weight="700" fill="#111111">33 s</text>
+    <text x="630.0" y="393" font-size="18" fill="#444444">GPT Image 2</text>
+    <path d="M630.0 403H1057.0A7 7 0 0 1 1064.0 410V426A7 7 0 0 1 1057.0 433H630.0Z" fill="#111111"/>
+    <text x="1076.0" y="425.92" font-size="22" font-weight="700" fill="#111111">90 s</text>
+    <line x1="630.0" y1="219" x2="630.0" y2="453" stroke="#D9D9D9" stroke-width="1.6"/>
+    <line x1="40" y1="475" x2="1160" y2="475" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="40" y="501" font-size="16" fill="#6B6B6B">Source: Krea blog, &#x27;Introducing Krea 3&#x27; (2026-10-15). Times are medians Krea measured Sep 24 – Oct 1, 2026 (queue time included). Krea 3 is shown as the &#x27;under 8 seconds&#x27; upper bound. Maker&#x27;s own comparison.</text>
+  </g>
+</svg>

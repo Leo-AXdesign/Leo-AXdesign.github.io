@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 1049" role="img" aria-labelledby="t d">
+  <title id="t">같은 질문, 두 가지 답</title>
+  <desc id="d">같은 질문에 글로만 답하면 문단이 이어지고, Intelligent UI로 답하면 작업 시간과 단가를 조절하는 슬라이더, 예상 견적 숫자, 경력 단계 버튼, 견적서 문구 버튼이 함께 나온다.</desc>
+  <rect width="600" height="1049" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="32" y="66" font-size="34" font-weight="800" fill="#111111" text-anchor="start">같은 질문, 두 가지 답</text>
+    <text x="32" y="99" font-size="21" font-weight="400" fill="#6B6B6B" text-anchor="start">설명을 위한 예시예요. 실제 챗GPT의 답과는 다를 수 있습니다.</text>
+    <rect x="96.80000000000001" y="133" width="471.2" height="46" rx="23.0" fill="#111111"/>
+    <text x="116.80000000000001" y="160" font-size="20" font-weight="600" fill="#FFFFFF" text-anchor="start">외주 견적, 시간당 얼마로 잡아야 할까?</text>
+    <text x="32" y="223" font-size="20" font-weight="700" fill="#111111" text-anchor="start">글로 된 답</text>
+    <rect x="32" y="241" width="536" height="330" rx="14" fill="#FFFFFF" stroke="#D9D9D9" stroke-width="1.5"/>
+    <rect x="54" y="267" width="452.64000000000004" height="10" rx="5" fill="#D9D9D9"/>
+    <rect x="54" y="291" width="423.12" height="10" rx="5" fill="#F2F2F2"/>
+    <rect x="54" y="315" width="442.8" height="10" rx="5" fill="#F2F2F2"/>
+    <rect x="54" y="339" width="270.6" height="10" rx="5" fill="#F2F2F2"/>
+    <rect x="54" y="387" width="432.96" height="10" rx="5" fill="#D9D9D9"/>
+    <rect x="54" y="411" width="457.56" height="10" rx="5" fill="#F2F2F2"/>
+    <rect x="54" y="435" width="393.6" height="10" rx="5" fill="#F2F2F2"/>
+    <rect x="54" y="459" width="305.04" height="10" rx="5" fill="#F2F2F2"/>
+    <rect x="54" y="507" width="442.8" height="10" rx="5" fill="#D9D9D9"/>
+    <rect x="54" y="531" width="344.4" height="10" rx="5" fill="#F2F2F2"/>
+    <text x="32" y="615" font-size="20" font-weight="700" fill="#111111" text-anchor="start">화면으로 된 답 (Intelligent UI)</text>
+    <rect x="32" y="633" width="536" height="330" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="2"/>
+    <text x="56" y="673" font-size="18" font-weight="400" fill="#444444" text-anchor="start">작업 시간</text>
+    <text x="544" y="673" font-size="18" font-weight="700" fill="#111111" text-anchor="end">40시간</text>
+    <rect x="56" y="687" width="488" height="6" rx="3" fill="#D9D9D9"/>
+    <rect x="56" y="687" width="268.40000000000003" height="6" rx="3" fill="#111111"/>
+    <circle cx="324.40000000000003" cy="690" r="10" fill="#FFFFFF" stroke="#111111" stroke-width="2.5"/>
+    <text x="56" y="737" font-size="18" font-weight="400" fill="#444444" text-anchor="start">시간당 단가</text>
+    <text x="544" y="737" font-size="18" font-weight="700" fill="#111111" text-anchor="end">5만 원</text>
+    <rect x="56" y="751" width="488" height="6" rx="3" fill="#D9D9D9"/>
+    <rect x="56" y="751" width="268.40000000000003" height="6" rx="3" fill="#111111"/>
+    <circle cx="324.40000000000003" cy="754" r="10" fill="#FFFFFF" stroke="#111111" stroke-width="2.5"/>
+    <text x="56" y="807" font-size="18" font-weight="400" fill="#6B6B6B" text-anchor="start">예상 견적</text>
+    <text x="56" y="853" font-size="44" font-weight="800" fill="#111111" text-anchor="start">200만 원</text>
+    <rect x="56" y="883" width="84.0" height="32" rx="16" fill="#FFFFFF" stroke="#D9D9D9" stroke-width="1.5"/>
+    <text x="98.0" y="904" font-size="17" font-weight="600" fill="#444444" text-anchor="middle">주니어</text>
+    <rect x="148.0" y="883" width="66.0" height="32" rx="16" fill="#111111" stroke="#111111" stroke-width="1.5"/>
+    <text x="181.0" y="904" font-size="17" font-weight="600" fill="#FFFFFF" text-anchor="middle">미드</text>
+    <rect x="222.0" y="883" width="84.0" height="32" rx="16" fill="#FFFFFF" stroke="#D9D9D9" stroke-width="1.5"/>
+    <text x="264.0" y="904" font-size="17" font-weight="600" fill="#444444" text-anchor="middle">시니어</text>
+    <rect x="324.0" y="883" width="220.0" height="32" rx="8" fill="#F2F2F2" stroke="#111111" stroke-width="1.5"/>
+    <text x="434.0" y="904" font-size="17" font-weight="700" fill="#111111" text-anchor="middle">견적서 문구 만들기</text>
+    <line x1="32" y1="993" x2="568" y2="993" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="32" y="1017" font-size="16" font-weight="400" fill="#6B6B6B" text-anchor="start">구성 요소(버튼·폼·차트·작은 도구)는 OpenAI 발표 기준 · 2026. 10. 7</text>
+  </g>
+</svg>

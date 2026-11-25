@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 655" role="img" aria-labelledby="t d">
+  <title id="t">Same store, two workbenches</title>
+  <desc id="d">The old theme editor opens one page at a time and edits it through a settings column on the left. Canvas lays out every page of the store at once; you click an element to edit it or ask Sidekick in chat.</desc>
+  <rect width="1200" height="655" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="40" y="70" font-size="30" font-weight="800" fill="#111111" text-anchor="start">Same store, two workbenches</text>
+    <text x="40" y="101" font-size="19" font-weight="400" fill="#6B6B6B" text-anchor="start">A diagram based on the announcement. Not the actual interface.</text>
+    <text x="40" y="145" font-size="22" font-weight="800" fill="#111111" text-anchor="start">Until now: the theme editor</text>
+    <rect x="40" y="167" width="536.0" height="330" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="2"/>
+    <line x1="40" y1="201" x2="576.0" y2="201" stroke="#D9D9D9" stroke-width="1.5"/>
+    <circle cx="60" cy="184" r="4.5" fill="#D9D9D9"/>
+    <circle cx="76" cy="184" r="4.5" fill="#D9D9D9"/>
+    <circle cx="92" cy="184" r="4.5" fill="#D9D9D9"/>
+    <line x1="222.24" y1="201" x2="222.24" y2="497" stroke="#D9D9D9" stroke-width="1.5"/>
+    <rect x="52" y="219" width="158.24" height="32" rx="6" fill="#F2F2F2"/>
+    <text x="64" y="240" font-size="14" font-weight="400" fill="#444444" text-anchor="start">Header</text>
+    <rect x="52" y="261" width="158.24" height="32" rx="6" fill="#F2F2F2"/>
+    <text x="64" y="282" font-size="14" font-weight="400" fill="#444444" text-anchor="start">Image banner</text>
+    <rect x="52" y="303" width="158.24" height="32" rx="6" fill="#111111"/>
+    <text x="64" y="324" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="start">Featured products</text>
+    <rect x="52" y="345" width="158.24" height="32" rx="6" fill="#F2F2F2"/>
+    <text x="64" y="366" font-size="14" font-weight="400" fill="#444444" text-anchor="start">Newsletter</text>
+    <rect x="52" y="387" width="158.24" height="32" rx="6" fill="#F2F2F2"/>
+    <text x="64" y="408" font-size="14" font-weight="400" fill="#444444" text-anchor="start">Footer</text>
+    <rect x="246.24" y="223" width="305.76" height="220" rx="6" fill="#FFFFFF" stroke="#111111" stroke-width="2.5"/>
+    <rect x="254.24" y="231" width="289.76" height="6" rx="3" fill="#D9D9D9"/>
+    <rect x="254.24" y="243" width="289.76" height="92.39999999999999" rx="3" fill="#F2F2F2"/>
+    <rect x="254.24" y="343.4" width="202.832" height="5" rx="2.5" fill="#D9D9D9"/>
+    <rect x="254.24" y="353.4" width="130.392" height="5" rx="2.5" fill="#D9D9D9"/>
+    <text x="246.24" y="463" font-size="14" font-weight="700" fill="#111111" text-anchor="start">Home</text>
+    <text x="40" y="527" font-size="17" font-weight="400" fill="#444444" text-anchor="start">One page at a time.</text>
+    <text x="40" y="554" font-size="17" font-weight="400" fill="#444444" text-anchor="start">Open settings on the left, one by one.</text>
+    <text x="624.0" y="145" font-size="22" font-weight="800" fill="#111111" text-anchor="start">Canvas</text>
+    <rect x="624.0" y="167" width="536.0" height="330" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="2"/>
+    <line x1="624.0" y1="201" x2="1160.0" y2="201" stroke="#D9D9D9" stroke-width="1.5"/>
+    <circle cx="644.0" cy="184" r="4.5" fill="#D9D9D9"/>
+    <circle cx="660.0" cy="184" r="4.5" fill="#D9D9D9"/>
+    <circle cx="676.0" cy="184" r="4.5" fill="#D9D9D9"/>
+    <rect x="640.0" y="217.0" width="94.34666666666668" height="97.0" rx="6" fill="#FFFFFF" stroke="#D9D9D9" stroke-width="1.2"/>
+    <rect x="648.0" y="225.0" width="78.34666666666668" height="6" rx="3" fill="#D9D9D9"/>
+    <rect x="648.0" y="237.0" width="78.34666666666668" height="40.74" rx="3" fill="#F2F2F2"/>
+    <rect x="648.0" y="285.74" width="54.84266666666667" height="5" rx="2.5" fill="#D9D9D9"/>
+    <rect x="648.0" y="295.74" width="35.25600000000001" height="5" rx="2.5" fill="#D9D9D9"/>
+    <text x="640.0" y="333.0" font-size="13" font-weight="400" fill="#6B6B6B" text-anchor="start">Home</text>
+    <rect x="748.3466666666667" y="217.0" width="94.34666666666668" height="97.0" rx="6" fill="#FFFFFF" stroke="#111111" stroke-width="2.5"/>
+    <rect x="756.3466666666667" y="225.0" width="78.34666666666668" height="6" rx="3" fill="#D9D9D9"/>
+    <rect x="756.3466666666667" y="237.0" width="78.34666666666668" height="40.74" rx="3" fill="#F2F2F2"/>
+    <rect x="756.3466666666667" y="285.74" width="54.84266666666667" height="5" rx="2.5" fill="#D9D9D9"/>
+    <rect x="756.3466666666667" y="295.74" width="35.25600000000001" height="5" rx="2.5" fill="#D9D9D9"/>
+    <text x="748.3466666666667" y="333.0" font-size="13" font-weight="700" fill="#111111" text-anchor="start">Product</text>
+    <rect x="856.6933333333334" y="217.0" width="94.34666666666668" height="97.0" rx="6" fill="#FFFFFF" stroke="#D9D9D9" stroke-width="1.2"/>
+    <rect x="864.6933333333334" y="225.0" width="78.34666666666668" height="6" rx="3" fill="#D9D9D9"/>
+    <rect x="864.6933333333334" y="237.0" width="78.34666666666668" height="40.74" rx="3" fill="#F2F2F2"/>
+    <rect x="864.6933333333334" y="285.74" width="54.84266666666667" height="5" rx="2.5" fill="#D9D9D9"/>
+    <rect x="864.6933333333334" y="295.74" width="35.25600000000001" height="5" rx="2.5" fill="#D9D9D9"/>
+    <text x="856.6933333333334" y="333.0" font-size="13" font-weight="400" fill="#6B6B6B" text-anchor="start">Collection</text>
+    <rect x="640.0" y="354.0" width="94.34666666666668" height="97.0" rx="6" fill="#FFFFFF" stroke="#D9D9D9" stroke-width="1.2"/>
+    <rect x="648.0" y="362.0" width="78.34666666666668" height="6" rx="3" fill="#D9D9D9"/>
+    <rect x="648.0" y="374.0" width="78.34666666666668" height="40.74" rx="3" fill="#F2F2F2"/>
+    <rect x="648.0" y="422.74" width="54.84266666666667" height="5" rx="2.5" fill="#D9D9D9"/>
+    <rect x="648.0" y="432.74" width="35.25600000000001" height="5" rx="2.5" fill="#D9D9D9"/>
+    <text x="640.0" y="470.0" font-size="13" font-weight="400" fill="#6B6B6B" text-anchor="start">Cart</text>
+    <rect x="748.3466666666667" y="354.0" width="94.34666666666668" height="97.0" rx="6" fill="#FFFFFF" stroke="#D9D9D9" stroke-width="1.2"/>
+    <rect x="756.3466666666667" y="362.0" width="78.34666666666668" height="6" rx="3" fill="#D9D9D9"/>
+    <rect x="756.3466666666667" y="374.0" width="78.34666666666668" height="40.74" rx="3" fill="#F2F2F2"/>
+    <rect x="756.3466666666667" y="422.74" width="54.84266666666667" height="5" rx="2.5" fill="#D9D9D9"/>
+    <rect x="756.3466666666667" y="432.74" width="35.25600000000001" height="5" rx="2.5" fill="#D9D9D9"/>
+    <text x="748.3466666666667" y="470.0" font-size="13" font-weight="400" fill="#6B6B6B" text-anchor="start">About</text>
+    <rect x="856.6933333333334" y="354.0" width="94.34666666666668" height="97.0" rx="6" fill="#FFFFFF" stroke="#D9D9D9" stroke-width="1.2"/>
+    <rect x="864.6933333333334" y="362.0" width="78.34666666666668" height="6" rx="3" fill="#D9D9D9"/>
+    <rect x="864.6933333333334" y="374.0" width="78.34666666666668" height="40.74" rx="3" fill="#F2F2F2"/>
+    <rect x="864.6933333333334" y="422.74" width="54.84266666666667" height="5" rx="2.5" fill="#D9D9D9"/>
+    <rect x="864.6933333333334" y="432.74" width="35.25600000000001" height="5" rx="2.5" fill="#D9D9D9"/>
+    <text x="856.6933333333334" y="470.0" font-size="13" font-weight="400" fill="#6B6B6B" text-anchor="start">FAQ</text>
+    <path d="M804.9546666666668 260.65l0 22l6-6l5 10l4-2l-5-10l8 0z" fill="#111111" stroke="#FFFFFF" stroke-width="1.5"/>
+    <line x1="967.04" y1="201" x2="967.04" y2="497" stroke="#D9D9D9" stroke-width="1.5"/>
+    <text x="981.04" y="227" font-size="14" font-weight="800" fill="#111111" text-anchor="start">Sidekick</text>
+    <rect x="979.04" y="245" width="168.95999999999998" height="60" rx="10" fill="#111111"/>
+    <text x="991.04" y="273" font-size="13" font-weight="400" fill="#FFFFFF" text-anchor="start">Bigger product photos,</text>
+    <text x="991.04" y="295" font-size="13" font-weight="400" fill="#FFFFFF" text-anchor="start">black buttons</text>
+    <rect x="979.04" y="319" width="168.95999999999998" height="36" rx="10" fill="#F2F2F2"/>
+    <text x="991.04" y="339" font-size="13" font-weight="400" fill="#444444" text-anchor="start">Applied to 6 pages</text>
+    <rect x="979.04" y="447" width="168.95999999999998" height="34" rx="17" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <text x="624.0" y="527" font-size="17" font-weight="400" fill="#444444" text-anchor="start">Every page laid out at once.</text>
+    <text x="624.0" y="554" font-size="17" font-weight="400" fill="#444444" text-anchor="start">Click to edit, or tell Sidekick.</text>
+    <line x1="40" y1="587" x2="1160" y2="587" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="40" y="615" font-size="16" font-weight="400" fill="#6B6B6B" text-anchor="start">Sources: Shopify announcement and changelog, TechCrunch (Oct 1, 2026)</text>
+  </g>
+</svg>

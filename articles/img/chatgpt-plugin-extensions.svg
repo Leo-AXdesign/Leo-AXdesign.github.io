@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="t d">
+  <title id="t">플러그인이 들어가는 세 자리</title>
+  <desc id="d">챗GPT 화면에서 플러그인 익스텐션이 들어가는 세 자리. 대화 옆 사이드 패널(예: 캔바), 파일을 여는 파일 뷰어(예: 어도비 애크로뱃·포토샵), 입력창의 @호출(예: 피그마 파일 검색).</desc>
+  <rect width="1200" height="760" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="40" y="70" font-size="30" font-weight="800" fill="#111111" text-anchor="start">플러그인이 들어가는 세 자리</text>
+    <text x="40" y="101" font-size="19" font-weight="400" fill="#6B6B6B" text-anchor="start">발표 내용을 바탕으로 그린 구조도예요. 실제 화면과는 다릅니다.</text>
+    <rect x="40" y="133" width="1120" height="420" rx="16" fill="#FFFFFF" stroke="#111111" stroke-width="2"/>
+    <line x1="40" y1="173" x2="1160" y2="173" stroke="#D9D9D9" stroke-width="1.5"/>
+    <circle cx="64" cy="153" r="5" fill="#D9D9D9"/>
+    <circle cx="82" cy="153" r="5" fill="#D9D9D9"/>
+    <circle cx="100" cy="153" r="5" fill="#D9D9D9"/>
+    <text x="600.0" y="159" font-size="15" font-weight="700" fill="#6B6B6B" text-anchor="middle">ChatGPT</text>
+    <rect x="360.5" y="197" width="285.9" height="39" rx="19.5" fill="#111111"/>
+    <text x="378.5" y="219" font-size="17" font-weight="400" fill="#FFFFFF" text-anchor="start">배너 시안 세 개만 뽑아 줘</text>
+    <rect x="64" y="248" width="302.56" height="39" rx="19.5" fill="#F2F2F2"/>
+    <text x="82" y="270" font-size="17" font-weight="400" fill="#444444" text-anchor="start">세 가지 방향으로 만들었어요.</text>
+    <rect x="64" y="299" width="385.86" height="39" rx="19.5" fill="#F2F2F2"/>
+    <text x="82" y="321" font-size="17" font-weight="400" fill="#444444" text-anchor="start">오른쪽 패널에서 바로 고칠 수 있어요.</text>
+    <rect x="64" y="354" width="300" height="56" rx="10" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <rect x="76" y="366" width="32" height="32" rx="6" fill="#F2F2F2" stroke="#D9D9D9"/>
+    <text x="120" y="379" font-size="16" font-weight="700" fill="#111111" text-anchor="start">banner-a.psd</text>
+    <text x="120" y="400" font-size="14" font-weight="400" fill="#6B6B6B" text-anchor="start">파일 뷰어 →</text>
+    <circle cx="358" cy="356" r="15" fill="#111111"/><text x="358" y="362.12" font-size="17" font-weight="800" fill="#FFFFFF" text-anchor="middle">2</text>
+    <rect x="64" y="489" width="582.4" height="44" rx="22" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <rect x="74" y="498" width="83.24000000000001" height="26" rx="13" fill="#111111"/>
+    <text x="84" y="517" font-size="15" font-weight="700" fill="#FFFFFF" text-anchor="start">@Figma</text>
+    <text x="169.24" y="517" font-size="15" font-weight="400" fill="#444444" text-anchor="start">지난주 랜딩 시안 찾아 줘</text>
+    <circle cx="66" cy="491" r="15" fill="#111111"/><text x="66" y="497.12" font-size="17" font-weight="800" fill="#FFFFFF" text-anchor="middle">3</text>
+    <rect x="667.2" y="189" width="472.8" height="348" rx="12" fill="#F2F2F2" stroke="#111111" stroke-width="1.5"/>
+    <text x="687.2" y="223" font-size="18" font-weight="800" fill="#111111" text-anchor="start">사이드 패널</text>
+    <text x="687.2" y="247" font-size="15" font-weight="400" fill="#6B6B6B" text-anchor="start">예: 캔바 편집 도구</text>
+    <rect x="687.2" y="265" width="388.8" height="252" rx="8" fill="#FFFFFF" stroke="#D9D9D9"/>
+    <rect x="703.2" y="281" width="213.84000000000003" height="40.32" rx="4" fill="#111111"/>
+    <rect x="703.2" y="327.32" width="147.744" height="8" rx="4" fill="#D9D9D9"/>
+    <circle cx="967.136" cy="421.24" r="50.400000000000006" fill="#D9D9D9"/>
+    <rect x="1088.0" y="265" width="28" height="28" rx="6" fill="#FFFFFF" stroke="#D9D9D9"/>
+    <rect x="1088.0" y="301" width="28" height="28" rx="6" fill="#FFFFFF" stroke="#D9D9D9"/>
+    <rect x="1088.0" y="337" width="28" height="28" rx="6" fill="#FFFFFF" stroke="#D9D9D9"/>
+    <rect x="1088.0" y="373" width="28" height="28" rx="6" fill="#FFFFFF" stroke="#D9D9D9"/>
+    <circle cx="1136.0" cy="193" r="15" fill="#111111"/><text x="1136.0" y="199.12" font-size="17" font-weight="800" fill="#FFFFFF" text-anchor="middle">1</text>
+    <circle cx="55" cy="586.88" r="14" fill="#111111"/><text x="55" y="592.64" font-size="16" font-weight="800" fill="#FFFFFF" text-anchor="middle">1</text>
+    <text x="80" y="593" font-size="17" font-weight="700" fill="#111111" text-anchor="start">사이드 패널</text>
+    <text x="230" y="593" font-size="17" font-weight="400" fill="#444444" text-anchor="start">대화 옆에 앱 화면을 띄움. 캔바가 디자인 도구를 여기에 넣었다.</text>
+    <circle cx="55" cy="621.88" r="14" fill="#111111"/><text x="55" y="627.64" font-size="16" font-weight="800" fill="#FFFFFF" text-anchor="middle">2</text>
+    <text x="80" y="628" font-size="17" font-weight="700" fill="#111111" text-anchor="start">파일 뷰어</text>
+    <text x="230" y="628" font-size="17" font-weight="400" fill="#444444" text-anchor="start">대화 속 파일을 앱으로 연다. 어도비는 PDF를 애크로뱃, 이미지를 포토샵으로.</text>
+    <circle cx="55" cy="656.88" r="14" fill="#111111"/><text x="55" y="662.64" font-size="16" font-weight="800" fill="#FFFFFF" text-anchor="middle">3</text>
+    <text x="80" y="663" font-size="17" font-weight="700" fill="#111111" text-anchor="start">@호출</text>
+    <text x="230" y="663" font-size="17" font-weight="400" fill="#444444" text-anchor="start">입력창에서 앱을 부른다. 피그마는 파일 검색을 여기에 넣었다.</text>
+    <line x1="40" y1="696" x2="1160" y2="696" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="40" y="720" font-size="16" font-weight="400" fill="#6B6B6B" text-anchor="start">출처: OpenAI 데브데이 발표, the-decoder, antihype.com.br</text>
+  </g>
+</svg>

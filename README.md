@@ -1,0 +1,310 @@
+# 디자인 허브
+
+디자인 레퍼런스 사이트 주소모음. 빌드 없이 `index.html`을 열면 바로 동작하는 정적 사이트입니다.
+
+## 구조
+
+```
+.
+├── index.html                    # 마크업
+├── css/style.css                 # 스타일 (라이트/다크 테마)
+├── js/
+│   ├── data.js                   # ★ 사이트 · 스타일 · 트렌드 · 용어 데이터 (여기만 수정하면 됨)
+│   ├── articles.js               # 읽을거리 목록 (자동 생성)
+│   └── app.js                    # 검색 · 필터 · 즐겨찾기 · 테마 · 호버 미리보기
+├── content/articles/*.md         # ★ 읽을거리 글 원본 (여기서 글을 씁니다)
+├── favicon.svg, favicon.ico      # 파비콘
+├── og-image.png                  # 공유 미리보기 이미지 (1200×630)
+├── robots.txt, sitemap.xml       # 검색엔진 수집용
+├── llms.txt, llms-full.txt       # AI 검색용 안내 파일 (자동 생성)
+├── ui-ux/, ai/, font/ ...        # 카테고리별 정적 페이지 (자동 생성, 직접 수정하지 마세요)
+├── articles/                     # 읽을거리 페이지 (자동 생성)
+├── talk/                         # 이야기 나누는 곳 (자동 생성)
+├── js/talk.js                    # 이야기 페이지의 글 목록·입력칸
+├── worker/                       # 댓글 서버 (Cloudflare Worker) — 설정은 worker/README.md
+├── tools/shell.py                # 정적 페이지 공통 껍데기 (head · 상단바 · 푸터)
+├── tools/articles.py             # 글 원본을 읽는 부분 (빌드 스크립트가 같이 씁니다)
+├── tools/build-seo.py            # sitemap, JSON-LD, noscript 생성
+├── tools/build-pages.py          # 카테고리별 정적 페이지 생성
+├── tools/build-articles.py       # 읽을거리 페이지 생성
+├── tools/admin.py + admin.html    # 관리자 화면 (python3 tools/admin.py)
+├── content/articles-en/*.md      # 읽을거리 영문판 (파일 이름이 한국어 글과 같아야 짝이 됨)
+├── tools/build-en.py             # 영문판 첫 화면 en/index.html 생성 (번역 빠진 항목도 알려 줌)
+├── js/data.en.js                 # ★ 영문판 번역 (사이트를 추가하면 여기에도 한 줄)
+├── tools/build-og.py             # 글별 공유 이미지 og/<slug>.png (크롬 필요)
+├── tools/build-cards.py          # 인스타 카드뉴스 → 저장소 밖 홍보자료/cards/ (크롬 필요)
+├── tools/charts.py               # 글 속 비교 차트 SVG (넓은 판 + 폰 판 -m)
+├── tools/snap.py                 # 위 두 스크립트가 쓰는 크롬 캡처
+├── og/                           # 글별 공유 이미지
+├── rss.xml                       # 읽을거리 피드 (자동 생성)
+├── tools/indexnow.py             # Bing·네이버 등에 변경 사항 즉시 알림
+├── .nojekyll                     # GitHub Pages 가 Jekyll 처리를 건너뛰도록
+└── .github/workflows/deploy.yml  # main 에 push 하면 Pages 로 자동 배포
+```
+
+## 사이트 추가하기
+
+`js/data.js`의 `SITES` 배열에 객체를 추가합니다.
+
+```js
+{ name: '사이트 이름', url: 'https://example.com', desc: '한 줄 설명', cat: 'uiux', tags: ['한국', '무료'] },
+```
+
+- `cat`: `CATEGORIES`의 `id` 중 하나 (`uiux`, `graphic`, `color`, `typo`, `asset`, `dev`, `tool`, `freelance`, `job`, `ai`, `community`, `creator`)
+- `tags`: `한국`, `무료`, `유료`, `AI` 를 조합 (상단 필터 칩과 연동됨)
+
+카테고리를 추가하려면 `CATEGORIES` 배열에 `{ id, label, desc }`를 추가하면 필터 필과 섹션이 자동으로 생깁니다.
+
+## 인사이트 (스타일 사전 · 2026 트렌드)
+
+사이드바 "인사이트" 그룹에서 볼 수 있습니다. 데이터는 모두 `js/data.js`에 있습니다.
+
+- `STYLES`: 유명 그래픽 디자인 양식 34개. `{ name, en, era, desc, traits, people?, q, wiki?, img?, imgTitle? }` — `q`는 핀터레스트 검색어이며 이름 클릭 시 열립니다. `img`는 대표 이미지(위키미디어 공용의 퍼블릭 도메인·CC 이미지), `imgTitle`은 출처 표기로 마우스를 올리면 보입니다. 이미지가 없으면 스타일 이름 타일이 대신 표시됩니다.
+- `GLOSSARY`: 용어 사전 155개. `{ term, en, group, desc }` — `group`은 `GLOSSARY_GROUPS`의 id(타이포그래피, 편집·인쇄, 컬러, 그래픽·브랜딩, UI 설계, UX·리서치, 개발 협업). 페이지 상단 필로 그룹을 골라 볼 수 있습니다.
+- `TRENDS`: 2026 트렌드 키워드 15개. `{ name, area, desc, q, link? }` — 해마다 갱신하세요.
+- `TREND_SOURCES`: 트렌드 페이지 하단에 표시되는 참고 리포트 링크.
+- 검색창에 입력하면 사이트뿐 아니라 스타일·트렌드도 함께 검색됩니다.
+- `#styles`, `#trends`, `#glossary`, `#uiux` 처럼 URL 해시로 특정 화면에 바로 접근할 수 있습니다.
+- `index.html`을 서버 없이 더블클릭(`file://`)으로 열어도 모든 화면 전환이 동작합니다.
+
+## 크리에이터 / 채널
+
+`SITES`에 `cat: 'creator'`로 등록된 유튜브·인스타그램·팟캐스트 47개. 태그로 `유튜브`, `인스타그램`, `팟캐스트`, `한국`을 씁니다. 모든 채널 주소는 등록 시점에 실제 존재 여부를 확인했습니다.
+
+## 로컬 실행
+
+```bash
+python3 -m http.server 5173
+```
+
+이후 http://localhost:5173 접속. 파일을 직접 더블클릭해서 열어도 됩니다.
+
+## GitHub Pages 배포
+
+빌드가 필요 없는 정적 사이트라 저장소에 올리기만 하면 됩니다. `.github/workflows/deploy.yml`이 들어 있어 `main` 브랜치에 push 하면 자동 배포됩니다.
+
+**1. GitHub에서 빈 저장소를 만듭니다** (README·.gitignore 추가 없이). 이름은 예를 들어 `design-hub`.
+
+**2. 이 폴더에서 원격 저장소를 연결하고 push 합니다.** `<깃허브아이디>`와 저장소 이름을 본인 것으로 바꾸세요.
+
+```bash
+git remote add origin https://github.com/<깃허브아이디>/design-hub.git
+git push -u origin main
+```
+
+**3. 저장소 → Settings → Pages → Build and deployment → Source 를 "GitHub Actions" 로 바꿉니다.**
+
+**4. 1~2분 뒤 아래 주소에서 열립니다.**
+
+```
+https://<깃허브아이디>.github.io/design-hub/
+```
+
+이후에는 파일을 고치고 `git add . && git commit -m "메시지" && git push` 하면 자동으로 다시 배포됩니다.
+
+### 배포 후 한 번만 손볼 것
+
+- `index.html` 상단의 `og:url`, `og:image`에 있는 `USERNAME`을 본인 깃허브 아이디로 바꾸면 카카오톡·슬랙 공유 시 미리보기 이미지(`og-image.png`)가 뜹니다.
+- 커밋 작성자 정보는 이 저장소에만 적용해 두었습니다. 바꾸려면:
+
+```bash
+git config user.name "이름" && git config user.email "메일주소"
+```
+
+### 다른 배포 방법
+
+- **Netlify · Vercel · Cloudflare Pages**: 저장소를 연결하고 빌드 명령은 비워 둔 채 배포 디렉터리만 루트(`.`)로 지정하면 됩니다.
+- **직접 열기**: 서버 없이 `index.html`을 더블클릭해도 모든 기능이 동작합니다.
+
+## 검색엔진 등록 (구글 · 네이버)
+
+`robots.txt`, `sitemap.xml`, 구조화 데이터(JSON-LD), 자바스크립트 미실행 환경용 목록이 들어 있습니다. 등록은 아래 두 단계만 직접 하시면 됩니다.
+
+### 1. 구글
+
+1. https://search.google.com/search-console 접속 → 속성 추가 → **URL 접두어**를 고르고 `https://designrefs.com/` 입력
+2. 소유권 확인에서 **HTML 태그**를 고르면 `content="..."` 값이 나옵니다
+3. `index.html` 의 아래 줄에서 주석을 풀고 값을 넣은 뒤 push
+   ```html
+   <meta name="google-site-verification" content="받은_코드" />
+   ```
+4. 확인이 끝나면 좌측 **Sitemaps** 에서 `sitemap.xml` 제출
+   - 읽을거리만 따로 보려면 `sitemap-articles.xml` 도 함께 제출하세요. 페이지 색인 보고서에서 사이트맵을 이것으로 골라 글들의 색인 상태만 볼 수 있습니다.
+5. **URL 검사** 에 사이트 주소를 넣고 "색인 생성 요청" 을 누르면 더 빨리 수집됩니다
+
+### 2. 네이버
+
+1. https://searchadvisor.naver.com 접속 → 웹마스터 도구 → 사이트 등록
+2. **HTML 태그** 방식을 고르고 받은 값을 `index.html` 의 `naver-site-verification` 줄에 넣고 push
+3. 요청 → **사이트맵 제출** 에 `https://designrefs.com/sitemap.xml` 입력
+4. 요청 → **웹 페이지 수집** 에 사이트 주소 입력
+
+### 데이터를 고친 뒤에는
+
+사이트를 추가·수정했다면 아래 두 줄을 실행해 검색엔진용 파일과 카테고리 페이지를 다시 만든 다음 push 하세요.
+
+```bash
+python3 tools/build-pages.py && python3 tools/build-articles.py && python3 tools/build-seo.py && python3 tools/build-en.py
+```
+
+`js/data.js` 와 `content/articles/` 기준으로 카테고리 페이지, 읽을거리 페이지, `sitemap.xml`, JSON-LD, `llms.txt` 가 모두 갱신됩니다. 순서가 있습니다. `build-seo.py` 를 마지막에 돌려야 새 글이 sitemap 에 들어갑니다.
+
+## 관리자 화면 (사이트 추가 · 글 발행)
+
+코드를 열지 않고 사이트를 넣고 글을 쓰려면 관리자 화면을 씁니다. 이 맥에서만 열립니다.
+
+```bash
+python3 tools/admin.py
+```
+
+바탕화면 `클로드코드` 폴더의 **디자인허브 관리자.command** 를 두 번 눌러도 됩니다.
+
+- **사이트**: 이름·주소·분야·태그·설명(한국어/영어)을 적고 저장. '주소 확인'으로 링크가 살아 있는지 봅니다.
+- **읽을거리**: 제목·주소·요약·날짜·태그와 본문(마크다운)을 적고 저장. 오른쪽에 실제 모양으로 미리보기가 나오고, '그림 올리기'로 본문에 그림을 넣습니다. '영문판' 탭에 영어를 채우면 /en/articles/ 에도 발행됩니다.
+- **사이트에 올리기**: GitHub 최신 내용을 먼저 받아 온 뒤 페이지를 다시 만들고 커밋·푸시까지 한 번에. 1~2분 뒤 사이트에 보이고, 검색엔진 알림은 배포 뒤 자동으로 나갑니다.
+- 저장만 하면 이 맥의 파일만 바뀝니다. '올리기'를 눌러야 사이트에 나갑니다.
+- **디자인 잡담**: 게시판 글을 고치고, 숨기고, 지웁니다. 처음 한 번 운영자 열쇠(`wrangler secret put ADMIN_TOKEN` 때 정한 값)를 넣어야 하고, '이 맥에 기억'을 고르면 `~/.config/designhub/talk-admin-token` 에만 저장됩니다. 이쪽은 누르는 즉시 사이트에 반영됩니다.
+
+## 글 쓰기 (읽을거리)
+
+`content/articles/` 에 `.md` 파일을 하나 만들면 글이 한 편 늘어납니다. 맨 위 정보 칸은 이렇게 씁니다.
+
+```
+---
+slug: ai-design-tools-in-practice     # 주소가 됩니다 (/articles/<slug>/). 영문 소문자와 -
+title: AI 디자인 툴, 실무에서 갈리는 지점
+desc: 목록과 검색 결과에 그대로 보이는 한 줄 요약
+date: 2026-09-25
+order: 1                              # 같은 날짜 안에서의 순서. 작을수록 위
+tag: AI 디자인                         # 분류 이름표
+related: ai, tools                    # 글 아래에 걸어 둘 목록 페이지
+---
+```
+
+본문에서 쓸 수 있는 문법은 아래가 전부입니다. 표나 이미지는 아직 지원하지 않습니다.
+
+- `## 중간 제목`, `### 작은 제목`
+- `- 목록`, `1. 번호 목록`
+- `> 인용`
+- `**굵게**`, `[링크](https://...)`, `` `코드` ``
+- `| 표 | 머리 |` + `|---|---|` 구분선 + 내용 줄 → 표 (폰에서는 옆으로 밀어서 봄)
+- `※ 출처` → 작은 회색 한 줄
+- `![캡션](https://designrefs.com/articles/img/파일.svg)` → 그림. 같은 폴더에 `파일-m.svg` 가 있으면 폰에서는 그걸 씀
+
+글을 쓴 뒤 `python3 tools/build-og.py && python3 tools/build-articles.py && python3 tools/build-seo.py` 를 실행하면 공유 이미지, 글 페이지, 목록 페이지, 메인 화면의 읽을거리, RSS, sitemap, llms.txt 가 한 번에 갱신됩니다. 읽는 시간은 글자 수에서 자동으로 계산합니다(분당 600자 기준).
+
+### 카테고리별 정적 페이지
+
+`#ai` 같은 해시 주소는 검색엔진이 별도 페이지로 보지 않아, 그대로 두면 색인되는 주소가 하나뿐입니다. 그래서 카테고리마다 진짜 주소를 따로 만들어 검색 노출을 늘렸습니다.
+
+| 주소 | 내용 |
+|---|---|
+| `/ui-ux/` `/graphic/` `/color/` `/font/` `/assets/` | 분야별 사이트 목록 |
+| `/dev/` `/tools/` `/freelance/` `/jobs/` `/ai/` | |
+| `/community/` `/creators/` | |
+| `/styles/` `/trends/` `/glossary/` | 스타일 사전 · 트렌드 · 용어 사전 |
+| `/articles/` `/articles/<slug>/` | 읽을거리 목록과 글 (BlogPosting 구조화 데이터 포함) |
+| `/talk/` | 이야기 나누는 곳 (댓글) |
+| `/about/` `/privacy/` | 소개 · 개인정보처리방침 |
+
+각 폴더는 `tools/build-pages.py` 가 만들어 냅니다. 직접 고치면 다음 실행 때 덮어쓰이니, 내용은 `js/data.js` 에서 고치세요. 주소 슬러그와 페이지 제목은 스크립트 상단의 `PAGE_META` 에서 바꿉니다.
+
+### 알아둘 점
+
+- 화면은 자바스크립트로 그려지므로, 검색엔진이 본문을 놓치지 않도록 `<noscript>` 안에 전체 목록을 함께 넣어 두었습니다. 화면에는 보이지 않습니다.
+- `#styles` 같은 해시 주소는 검색엔진이 별도 페이지로 보지 않습니다. 색인되는 주소는 대표 주소 하나입니다.
+- 새 사이트가 검색 결과에 나타나기까지 구글은 며칠, 네이버는 몇 주가 걸릴 수 있습니다.
+
+## 이야기 나누는 곳 (댓글)
+
+`/talk/` 에서 방문자가 가입 없이 이름과 내용만 적어 글을 남깁니다.
+깃허브 페이지에는 서버가 없어서, 글을 받는 부분만 Cloudflare Worker 로 따로 띄웁니다.
+
+- 서버 코드와 설정 방법: `worker/README.md`
+- 화면 쪽 코드: `js/talk.js` (맨 위 `TALK_API` 에 워커 주소를 넣어야 작동합니다)
+- 워커 주소를 넣기 전에는 "준비하고 있습니다" 문구와 메일 주소만 보입니다
+
+스팸은 숨은 입력칸, 작성 시간, 링크 개수, 같은 사람 연속 작성으로 거릅니다.
+접속 IP 는 해시로 바꿔서만 저장하고, 이 내용은 개인정보처리방침에도 적어 두었습니다.
+
+## 방문자 분석
+
+Google Analytics(GA4)를 메인과 카테고리 페이지 전체에 넣어 두었습니다. 측정 ID는 `G-Q7QVVHSLQ6` 이고, https://analytics.google.com 에서 방문자 수와 인기 페이지를 볼 수 있습니다.
+
+ID를 바꾸려면 두 곳을 고치세요.
+
+- `index.html` 의 `<!-- Google Analytics (GA4) -->` 블록
+- `tools/build-pages.py` 안의 같은 블록 (카테고리 페이지에 적용됨)
+
+쿠키를 사용하므로, 방문자가 늘어나면 개인정보 처리방침 문구를 두는 편이 안전합니다.
+
+## 광고 (구글 애드센스)
+
+신청 전 준비는 끝나 있습니다. 승인 후 아래 두 곳의 주석을 풀고 `ca-pub-` 번호를 채우면 전체 페이지에 적용됩니다.
+
+- `index.html` 의 `<!-- 구글 애드센스 -->` 주석
+- `tools/build-pages.py` 의 같은 자리 (카테고리·산문 페이지에 반영)
+
+승인 후에는 사이트 루트에 `ads.txt` 도 올려야 합니다. 애드센스 화면에서 알려주는 한 줄을 그대로 저장하세요.
+
+```
+google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
+```
+
+관련 페이지: [소개](about/), [개인정보처리방침](privacy/) — 둘 다 `tools/build-pages.py` 의 `ABOUT` · `PRIVACY` 변수에서 내용을 고칩니다.
+
+## AI 검색 대응 (ChatGPT · Claude · Perplexity · Gemini)
+
+AI 크롤러는 대부분 자바스크립트를 실행하지 않습니다. 그래서 화면과 별개로 AI가 읽을 수 있는 경로를 마련해 두었습니다.
+
+| 파일 | 역할 |
+|---|---|
+| `llms.txt` | AI용 사이트 안내 ([llmstxt.org](https://llmstxt.org) 규격). 분야별 페이지 링크와 요약 |
+| `llms-full.txt` | 사이트, 스타일, 트렌드, 용어 전체를 마크다운 한 파일로 |
+| `index.html` 의 noscript | 메인에서 AI가 읽는 요약 본문. 분야별 설명과 대표 사이트 이름 |
+| `robots.txt` | AI 검색·학습 크롤러를 이름으로 명시해 허용 |
+| `/glossary/` 구조화 데이터 | 용어 155개를 schema.org `DefinedTermSet` 으로 표시 |
+
+`llms.txt` 와 `llms-full.txt` 는 `tools/build-seo.py` 가 `js/data.js` 로부터 만듭니다.
+
+AI 학습에 쓰이는 것을 원하지 않으면 `robots.txt` 의 "AI 학습" 구역에서 `Allow` 를 `Disallow` 로 바꾸세요. 검색·답변용 크롤러는 그대로 두어야 AI 답변에 사이트가 인용됩니다.
+
+### IndexNow
+
+Bing, 네이버 등에 바뀐 주소를 바로 알리는 방법입니다. `main` 에 push 하면 배포가 끝난 직후 GitHub Actions(`deploy.yml` 의 `indexnow` 단계)가 자동으로 실행하므로 따로 할 일은 없습니다. 손으로 다시 보내고 싶을 때만 배포가 반영된 뒤 아래를 실행하세요.
+
+```bash
+python3 tools/indexnow.py
+```
+
+루트의 `fac1ebe51d5f2cbef4f356705c5fc430.txt` 는 IndexNow 키 파일이라 지우면 안 됩니다.
+
+## 이번 주 디자이너 채용 공고 (/jobs/weekly/)
+
+`tools/build-jobs.py` 가 매주 월요일 오전 9시에 디자이너 채용 공고를 모아 `/jobs/weekly/` 를 새로 만듭니다.
+GitHub Actions(`.github/workflows/jobs-weekly.yml`)가 자동으로 돌리고, 끝나면 배포와 검색엔진 알림까지 이어집니다.
+
+- 해외 원격 공고: Remotive, We Work Remotely, Remote OK 의 공개 API·RSS. 키 없이 바로 됩니다.
+- 국내 공고: 사람인 오픈 API. https://oapi.saramin.co.kr 에서 키를 받아 저장소 → Settings → Secrets and variables → Actions 에 `SARAMIN_KEY` 로 넣으면 다음 실행부터 나옵니다.
+- 원티드·잡코리아처럼 약관으로 자동 수집을 막은 곳은 쓰지 않습니다. 공고는 제목·회사·지역·날짜와 원문 링크만 싣습니다.
+- 바로 돌리려면 GitHub 저장소 → Actions → Weekly design jobs → Run workflow.
+- 매주 가져온 목록은 `data/jobs/<연도>-W<주>.json` 에 남습니다.
+
+## 읽을거리 조회수
+
+글 페이지 날짜 옆에 "조회 123" 이 나옵니다. `js/views.js` 가 댓글 서버(`worker/`)의 `/views` 로 셉니다.
+같은 사람이 하루에 같은 글을 여러 번 열어도 한 번만 셉니다(IP 는 해시로만, 이틀 뒤 삭제).
+
+- 처음 한 번: `cd worker && npx wrangler deploy` (표는 서버가 알아서 만듭니다)
+- 모든 글의 조회수 보기: https://designrefs-talk.designrefs-talk.workers.dev/views
+- 방문자 전체 흐름은 구글 애널리틱스 → 보고서 → 참여도 → 페이지 및 화면에서 `/articles/` 로 걸러 봅니다.
+
+## 기능
+
+- 카테고리별 탐색, 사이트명·설명·도메인·태그 통합 검색 (`/` 키로 검색창 포커스)
+- 한국 / 무료 / 유료 / AI 태그 필터
+- ★ 즐겨찾기 (localStorage 저장)
+- 라이트 / 다크 테마, 목록 / 격자 보기. 기본값은 라이트 + 격자이고, 방문자가 바꾸면 그 선택이 저장됩니다
+- 모바일: 햄버거 전체 메뉴(카테고리 · 태그 필터 · 테마 · 보기), 섹션 제목 상단 고정, 맨 위로 버튼
+- 파비콘은 Google Favicon 서비스에서 자동 로드
+- 스타일 사전 대표 이미지는 Wikimedia Commons에서 불러오며, 각 이미지의 출처·라이선스는 `imgTitle`에 기록되어 있습니다.

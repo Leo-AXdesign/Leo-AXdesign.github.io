@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 511" role="img" aria-labelledby="t d">
+  <title id="t">Where AI answers find brands</title>
+  <desc id="d">AI reads site text, image descriptions, reviews and articles, and structured data, then answers with summaries, lists and cited links. Brands measure how often and how accurately they appear.</desc>
+  <rect width="1200" height="511" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="40" y="70" font-size="30" font-weight="800" fill="#111111" text-anchor="start">Where AI answers find brands</text>
+    <text x="40" y="101" font-size="19" font-weight="400" fill="#6B6B6B" text-anchor="start">When an AI answer becomes the first screen. A sketch</text>
+    <rect x="40" y="141" width="330" height="232" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <text x="62" y="179" font-size="20" font-weight="800" fill="#111111" text-anchor="start">What AI reads</text>
+    <rect x="60" y="199" width="290" height="33" rx="8" fill="#F2F2F2"/>
+    <text x="74" y="219" font-size="16" font-weight="400" fill="#444444" text-anchor="start">Text on the official site</text>
+    <rect x="60" y="242" width="290" height="33" rx="8" fill="#F2F2F2"/>
+    <text x="74" y="262" font-size="16" font-weight="400" fill="#444444" text-anchor="start">Image descriptions (alt)</text>
+    <rect x="60" y="285" width="290" height="33" rx="8" fill="#F2F2F2"/>
+    <text x="74" y="305" font-size="16" font-weight="400" fill="#444444" text-anchor="start">Reviews, articles, forums</text>
+    <rect x="60" y="328" width="290" height="33" rx="8" fill="#F2F2F2"/>
+    <text x="74" y="348" font-size="16" font-weight="400" fill="#444444" text-anchor="start">Structured data</text>
+    <rect x="430" y="197.0" width="340" height="120" rx="60" fill="#111111"/>
+    <text x="600.0" y="253.0" font-size="28" font-weight="800" fill="#FFFFFF" text-anchor="middle">AI</text>
+    <text x="600.0" y="285.0" font-size="13" font-weight="400" fill="#FFFFFF" text-anchor="middle">ChatGPT · Copilot</text>
+    <text x="600.0" y="305.0" font-size="13" font-weight="400" fill="#FFFFFF" text-anchor="middle">Perplexity · Google AI Mode</text>
+    <path d="M378 257.0H422m-9 -8l9 8l-9 8" fill="none" stroke="#111111" stroke-width="2"/>
+    <path d="M778 257.0H822m-9 -8l9 8l-9 8" fill="none" stroke="#111111" stroke-width="2"/>
+    <rect x="830" y="141" width="330" height="232" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <text x="852" y="179" font-size="20" font-weight="800" fill="#111111" text-anchor="start">What users see</text>
+    <text x="852" y="219" font-size="16" font-weight="400" fill="#444444" text-anchor="start">· A one- or two-line summary</text>
+    <text x="852" y="262" font-size="16" font-weight="400" fill="#444444" text-anchor="start">· A name in a list</text>
+    <text x="852" y="305" font-size="16" font-weight="400" fill="#444444" text-anchor="start">· A few cited links</text>
+    <text x="40" y="413" font-size="16" font-weight="700" fill="#111111" text-anchor="start">What brands measure: how often, and how accurately, they&#x27;re mentioned</text>
+    <line x1="40" y1="443" x2="1160" y2="443" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="40" y="471" font-size="16" font-weight="400" fill="#6B6B6B" text-anchor="start">Sources: Adobe and Heathrow (Oct 8, 2026), CMSWire, The Next Web</text>
+  </g>
+</svg>

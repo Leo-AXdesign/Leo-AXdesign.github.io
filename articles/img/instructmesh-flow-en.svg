@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 545" role="img" aria-labelledby="t d">
+  <title id="t">Fixing an AI 3D model before you print it</title>
+  <desc id="d">With InstructMesh, you generate a 3D model from text or a photo, paint the region with a problem, then thicken it, open or seal holes by describing the fix or using sliders. Only that region changes before printing.</desc>
+  <rect width="1200" height="545" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="40" y="70" font-size="30" font-weight="800" fill="#111111" text-anchor="start">Fixing an AI 3D model before you print it</text>
+    <text x="40" y="101" font-size="19" font-weight="400" fill="#6B6B6B" text-anchor="start">MIT CSAIL&#x27;s InstructMesh, summarized from the paper and announcement.</text>
+    <rect x="40.0" y="141" width="247.0" height="300" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <circle cx="66.0" cy="169" r="15" fill="#111111"/><text x="66.0" y="175.12" font-size="17" font-weight="800" fill="#FFFFFF" text-anchor="middle">1</text>
+    <text x="90.0" y="175" font-size="20" font-weight="800" fill="#111111" text-anchor="start">Generate</text>
+    <rect x="114.0" y="205" width="68.2" height="88.0" rx="8.8" fill="#F2F2F2" stroke="#111111" stroke-width="2"/>
+    <path d="M182.2 227.0 C218.5 227.0 218.5 271.0 182.2 271.0" fill="none" stroke="#111111" stroke-width="3" stroke-linecap="round"/>
+    <text x="60.0" y="355" font-size="16" font-weight="400" fill="#444444" text-anchor="start">A 3D model from</text>
+    <text x="60.0" y="379" font-size="16" font-weight="400" fill="#444444" text-anchor="start">text or a photo</text>
+    <text x="60.0" y="403" font-size="16" font-weight="400" fill="#444444" text-anchor="start">(TRELLIS)</text>
+    <path d="M295.0 291.0h26m-8 -7l8 7l-8 7" fill="none" stroke="#111111" stroke-width="2"/>
+    <rect x="331.0" y="141" width="247.0" height="300" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <circle cx="357.0" cy="169" r="15" fill="#111111"/><text x="357.0" y="175.12" font-size="17" font-weight="800" fill="#FFFFFF" text-anchor="middle">2</text>
+    <text x="381.0" y="175" font-size="20" font-weight="800" fill="#111111" text-anchor="start">Paint the spot</text>
+    <rect x="405.0" y="205" width="68.2" height="88.0" rx="8.8" fill="#F2F2F2" stroke="#111111" stroke-width="2"/>
+    <path d="M473.2 227.0 C509.5 227.0 509.5 271.0 473.2 271.0" fill="none" stroke="#111111" stroke-width="3" stroke-linecap="round"/>
+    <ellipse cx="493.0" cy="249.0" rx="24.2" ry="33.0" fill="none" stroke="#111111" stroke-width="2" stroke-dasharray="5 4"/>
+    <text x="351.0" y="355" font-size="16" font-weight="400" fill="#444444" text-anchor="start">Select only the</text>
+    <text x="351.0" y="379" font-size="16" font-weight="400" fill="#444444" text-anchor="start">region with a problem</text>
+    <path d="M586.0 291.0h26m-8 -7l8 7l-8 7" fill="none" stroke="#111111" stroke-width="2"/>
+    <rect x="622.0" y="141" width="247.0" height="300" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <circle cx="648.0" cy="169" r="15" fill="#111111"/><text x="648.0" y="175.12" font-size="17" font-weight="800" fill="#FFFFFF" text-anchor="middle">3</text>
+    <text x="672.0" y="175" font-size="20" font-weight="800" fill="#111111" text-anchor="start">Say the fix</text>
+    <rect x="696.0" y="205" width="68.2" height="88.0" rx="8.8" fill="#F2F2F2" stroke="#111111" stroke-width="2"/>
+    <path d="M764.2 227.0 C800.5 227.0 800.5 271.0 764.2 271.0" fill="none" stroke="#111111" stroke-width="9" stroke-linecap="round"/>
+    <text x="642.0" y="355" font-size="16" font-weight="400" fill="#444444" text-anchor="start">&quot;Thicken the handle&quot;</text>
+    <text x="642.0" y="379" font-size="16" font-weight="400" fill="#444444" text-anchor="start">Open or seal holes,</text>
+    <text x="642.0" y="403" font-size="16" font-weight="400" fill="#444444" text-anchor="start">sliders for thickness</text>
+    <path d="M877.0 291.0h26m-8 -7l8 7l-8 7" fill="none" stroke="#111111" stroke-width="2"/>
+    <rect x="913.0" y="141" width="247.0" height="300" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <circle cx="939.0" cy="169" r="15" fill="#111111"/><text x="939.0" y="175.12" font-size="17" font-weight="800" fill="#FFFFFF" text-anchor="middle">4</text>
+    <text x="963.0" y="175" font-size="20" font-weight="800" fill="#111111" text-anchor="start">Print</text>
+    <rect x="987.0" y="205" width="68.2" height="88.0" rx="8.8" fill="#F2F2F2" stroke="#111111" stroke-width="2"/>
+    <path d="M1055.2 227.0 C1091.5 227.0 1091.5 271.0 1055.2 271.0" fill="none" stroke="#111111" stroke-width="9" stroke-linecap="round"/>
+    <text x="933.0" y="355" font-size="16" font-weight="400" fill="#444444" text-anchor="start">Only the fixed part</text>
+    <text x="933.0" y="379" font-size="16" font-weight="400" fill="#444444" text-anchor="start">changes; the rest stays</text>
+    <line x1="40" y1="477" x2="1160" y2="477" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="40" y="505" font-size="16" font-weight="400" fill="#6B6B6B" text-anchor="start">Sources: MIT News (Oct 1, 2026), arXiv 2608.28534</text>
+  </g>
+</svg>

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 1171" role="img" aria-labelledby="t d">
+  <title id="t">Same brand, mixed numbers</title>
+  <desc id="d">In Zappi testing, Fanta&#x27;s Halloween products scored 85% on distinctiveness vs. a 71% norm and 62% on advantage vs. 47%. In a Gen Z survey, 74% reacted negatively to AI-made marketing.</desc>
+  <rect width="600" height="1171" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="32" y="68" font-size="36" font-weight="800" fill="#111111" letter-spacing="-0.5">Same brand, mixed numbers</text>
+    <text x="32" y="102" font-size="22" fill="#6B6B6B">The product lands well; wariness of AI ads runs high</text>
+    <text x="32" y="172" font-size="30" font-weight="700" fill="#111111">Product feels distinct</text>
+    <text x="32" y="204" font-size="22" fill="#6B6B6B">Zappi · Fanta Halloween</text>
+    <text x="32" y="257" font-size="23" fill="#444444">Fanta</text>
+    <path d="M32 269H441.0A7 7 0 0 1 448.0 276V298A7 7 0 0 1 441.0 305H32Z" fill="#111111"/>
+    <text x="462.0" y="297.08" font-size="28" font-weight="700" fill="#111111">85%</text>
+    <text x="32" y="351" font-size="23" fill="#444444">Norm</text>
+    <path d="M32 363H372.4823529411765A7 7 0 0 1 379.4823529411765 370V392A7 7 0 0 1 372.4823529411765 399H32Z" fill="#111111"/>
+    <text x="393.4823529411765" y="391.08" font-size="28" font-weight="700" fill="#111111">71%</text>
+    <line x1="32" y1="234" x2="32" y2="422" stroke="#D9D9D9" stroke-width="1.8"/>
+    <text x="32" y="496" font-size="30" font-weight="700" fill="#111111">Feels better</text>
+    <text x="32" y="528" font-size="22" fill="#6B6B6B">Zappi · Fanta Halloween</text>
+    <text x="32" y="581" font-size="23" fill="#444444">Fanta</text>
+    <path d="M32 593H441.0A7 7 0 0 1 448.0 600V622A7 7 0 0 1 441.0 629H32Z" fill="#111111"/>
+    <text x="462.0" y="621.08" font-size="28" font-weight="700" fill="#111111">62%</text>
+    <text x="32" y="675" font-size="23" fill="#444444">Norm</text>
+    <path d="M32 687H340.35483870967744A7 7 0 0 1 347.35483870967744 694V716A7 7 0 0 1 340.35483870967744 723H32Z" fill="#111111"/>
+    <text x="361.35483870967744" y="715.08" font-size="28" font-weight="700" fill="#111111">47%</text>
+    <line x1="32" y1="558" x2="32" y2="746" stroke="#D9D9D9" stroke-width="1.8"/>
+    <text x="32" y="820" font-size="30" font-weight="700" fill="#111111">Negative on AI marketing</text>
+    <text x="32" y="852" font-size="22" fill="#6B6B6B">Gen Z · Rival Technologies</text>
+    <text x="32" y="905" font-size="23" fill="#444444">React negatively</text>
+    <path d="M32 917H441.0A7 7 0 0 1 448.0 924V946A7 7 0 0 1 441.0 953H32Z" fill="#111111"/>
+    <text x="462.0" y="945.08" font-size="28" font-weight="700" fill="#111111">74%</text>
+    <text x="32" y="999" font-size="23" fill="#444444">Took action</text>
+    <path d="M32 1011H429.7567567567568A7 7 0 0 1 436.7567567567568 1018V1040A7 7 0 0 1 429.7567567567568 1047H32Z" fill="#111111"/>
+    <text x="450.7567567567568" y="1039.08" font-size="28" font-weight="700" fill="#111111">72%</text>
+    <line x1="32" y1="882" x2="32" y2="1070" stroke="#D9D9D9" stroke-width="1.8"/>
+    <line x1="32" y1="1088" x2="568" y2="1088" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="32" y="1114" font-size="19" fill="#6B6B6B">Sources: Zappi; Rival Technologies (via eMarketer).</text>
+    <text x="32" y="1143" font-size="19" fill="#6B6B6B">The surveys differ in audience and questions.</text>
+  </g>
+</svg>

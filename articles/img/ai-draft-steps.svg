@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 445" role="img" aria-labelledby="t d">
+  <title id="t">AI 시안을 받았을 때, 네 단계</title>
+  <desc id="d">클라이언트가 AI 시안을 보내면 먼저 어느 AI로 만들었는지와 상업적 이용 가능 여부를 확인하고, 살릴 것과 다시 할 것을 나누고, 남은 일 목록으로 견적을 낸 뒤, 주고받은 내용을 기록으로 남긴다.</desc>
+  <rect width="1200" height="445" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="40" y="70" font-size="30" font-weight="800" fill="#111111" text-anchor="start">AI 시안을 받았을 때, 네 단계</text>
+    <text x="40" y="101" font-size="19" font-weight="400" fill="#6B6B6B" text-anchor="start">견적을 내기 전에 정리해 두면 좋은 순서</text>
+    <rect x="40.0" y="141" width="247.0" height="200" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <circle cx="66.0" cy="171" r="15" fill="#111111"/><text x="66.0" y="177.12" font-size="17" font-weight="800" fill="#FFFFFF" text-anchor="middle">1</text>
+    <text x="90.0" y="178" font-size="21" font-weight="800" fill="#111111" text-anchor="start">확인</text>
+    <text x="62.0" y="225" font-size="16" font-weight="400" fill="#444444" text-anchor="start">어느 AI로 만들었나</text>
+    <text x="62.0" y="255" font-size="16" font-weight="400" fill="#444444" text-anchor="start">상업적 이용이 되나</text>
+    <text x="62.0" y="285" font-size="16" font-weight="400" fill="#444444" text-anchor="start">닮은 게 없나</text>
+    <path d="M295.0 241.0h26m-8 -7l8 7l-8 7" fill="none" stroke="#111111" stroke-width="2"/>
+    <rect x="331.0" y="141" width="247.0" height="200" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <circle cx="357.0" cy="171" r="15" fill="#111111"/><text x="357.0" y="177.12" font-size="17" font-weight="800" fill="#FFFFFF" text-anchor="middle">2</text>
+    <text x="381.0" y="178" font-size="21" font-weight="800" fill="#111111" text-anchor="start">나누기</text>
+    <text x="353.0" y="225" font-size="16" font-weight="400" fill="#444444" text-anchor="start">살릴 것: 방향·분위기</text>
+    <text x="353.0" y="255" font-size="16" font-weight="400" fill="#444444" text-anchor="start">다시 할 것: 글자·로고</text>
+    <text x="353.0" y="285" font-size="16" font-weight="400" fill="#444444" text-anchor="start">새로 할 것: 파일·매체</text>
+    <path d="M586.0 241.0h26m-8 -7l8 7l-8 7" fill="none" stroke="#111111" stroke-width="2"/>
+    <rect x="622.0" y="141" width="247.0" height="200" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <circle cx="648.0" cy="171" r="15" fill="#111111"/><text x="648.0" y="177.12" font-size="17" font-weight="800" fill="#FFFFFF" text-anchor="middle">3</text>
+    <text x="672.0" y="178" font-size="21" font-weight="800" fill="#111111" text-anchor="start">견적</text>
+    <text x="644.0" y="225" font-size="16" font-weight="400" fill="#444444" text-anchor="start">시간이 아니라</text>
+    <text x="644.0" y="255" font-size="16" font-weight="400" fill="#444444" text-anchor="start">남은 일 목록으로</text>
+    <text x="644.0" y="285" font-size="16" font-weight="400" fill="#444444" text-anchor="start">수정 횟수도 적기</text>
+    <path d="M877.0 241.0h26m-8 -7l8 7l-8 7" fill="none" stroke="#111111" stroke-width="2"/>
+    <rect x="913.0" y="141" width="247.0" height="200" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <circle cx="939.0" cy="171" r="15" fill="#111111"/><text x="939.0" y="177.12" font-size="17" font-weight="800" fill="#FFFFFF" text-anchor="middle">4</text>
+    <text x="963.0" y="178" font-size="21" font-weight="800" fill="#111111" text-anchor="start">기록</text>
+    <text x="935.0" y="225" font-size="16" font-weight="400" fill="#444444" text-anchor="start">무엇을 받아</text>
+    <text x="935.0" y="255" font-size="16" font-weight="400" fill="#444444" text-anchor="start">무엇을 만들었는지</text>
+    <text x="935.0" y="285" font-size="16" font-weight="400" fill="#444444" text-anchor="start">메일 한 통으로 남기기</text>
+    <line x1="40" y1="377" x2="1160" y2="377" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="40" y="405" font-size="16" font-weight="400" fill="#6B6B6B" text-anchor="start">이 글에서 정리한 순서</text>
+  </g>
+</svg>

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 544" role="img" aria-labelledby="t d">
+  <title id="t">Boxes first, then the picture</title>
+  <desc id="d">FLUX 3 Image lets you set each element&#x27;s position and size with a box before generating. A headline, product, model and sale badge are placed as boxes, with up to ten reference images attached.</desc>
+  <rect width="1200" height="544" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="40" y="70" font-size="30" font-weight="800" fill="#111111" text-anchor="start">Boxes first, then the picture</text>
+    <text x="40" y="101" font-size="19" font-weight="400" fill="#6B6B6B" text-anchor="start">Bounding-box layout in FLUX 3 Image. An illustrative example; the real format may differ.</text>
+    <rect x="40" y="137" width="560.0" height="204" rx="12" fill="#F2F2F2" stroke="#111111" stroke-width="1.5"/>
+    <text x="58" y="165" font-size="15" font-weight="700" fill="#111111" text-anchor="start">Layout (JSON)</text>
+    <text x="58" y="201" font-size="14" fill="#444444" font-family="'SF Mono', Menlo, Consolas, 'D2Coding', monospace" xml:space="preserve">[</text>
+    <text x="58" y="225" font-size="14" fill="#444444" font-family="'SF Mono', Menlo, Consolas, 'D2Coding', monospace" xml:space="preserve">  { &quot;id&quot;: &quot;headline&quot;, &quot;box&quot;: [0.06, 0.08, 0.60, 0.16] },</text>
+    <text x="58" y="249" font-size="14" fill="#444444" font-family="'SF Mono', Menlo, Consolas, 'D2Coding', monospace" xml:space="preserve">  { &quot;id&quot;: &quot;product&quot;, &quot;box&quot;: [0.60, 0.30, 0.30, 0.60] },</text>
+    <text x="58" y="273" font-size="14" fill="#444444" font-family="'SF Mono', Menlo, Consolas, 'D2Coding', monospace" xml:space="preserve">  { &quot;id&quot;: &quot;model&quot;, &quot;box&quot;: [0.08, 0.32, 0.40, 0.60] },</text>
+    <text x="58" y="297" font-size="14" fill="#444444" font-family="'SF Mono', Menlo, Consolas, 'D2Coding', monospace" xml:space="preserve">  { &quot;id&quot;: &quot;badge&quot;, &quot;box&quot;: [0.72, 0.06, 0.20, 0.18] }</text>
+    <text x="58" y="321" font-size="14" fill="#444444" font-family="'SF Mono', Menlo, Consolas, 'D2Coding', monospace" xml:space="preserve">]</text>
+    <rect x="640.0" y="137" width="520.0" height="292.7859237536657" rx="10" fill="#FFFFFF" stroke="#111111" stroke-width="2"/>
+    <rect x="671.2" y="160.42287390029327" width="312.0" height="46.845747800586516" rx="6" fill="#FFFFFF" stroke="#111111" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="681.2" y="184.42287390029327" font-size="15" font-weight="700" fill="#111111" text-anchor="start">Headline</text>
+    <rect x="952.0" y="224.8357771260997" width="156.0" height="175.67155425219943" rx="6" fill="#F2F2F2" stroke="#111111" stroke-width="2" stroke-dasharray="0"/>
+    <text x="962.0" y="248.8357771260997" font-size="15" font-weight="700" fill="#111111" text-anchor="start">Product (ref. 1)</text>
+    <rect x="681.6" y="230.69149560117302" width="208.0" height="175.67155425219943" rx="6" fill="#F2F2F2" stroke="#111111" stroke-width="2" stroke-dasharray="0"/>
+    <text x="691.6" y="254.69149560117302" font-size="15" font-weight="700" fill="#111111" text-anchor="start">Model (ref. 2)</text>
+    <rect x="1014.4" y="154.56715542521994" width="104.0" height="52.701466275659826" rx="6" fill="#FFFFFF" stroke="#111111" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="1024.4" y="178.56715542521994" font-size="15" font-weight="700" fill="#111111" text-anchor="start">Sale badge</text>
+    <text x="640.0" y="457.7859237536657" font-size="14" font-weight="400" fill="#6B6B6B" text-anchor="start">4K canvas · 5456 × 3072</text>
+    <line x1="40" y1="475.7859237536657" x2="1160" y2="475.7859237536657" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="40" y="503.7859237536657" font-size="16" font-weight="400" fill="#6B6B6B" text-anchor="start">Sources: Black Forest Labs, the-decoder, Tech Times (Oct 2, 2026)</text>
+  </g>
+</svg>

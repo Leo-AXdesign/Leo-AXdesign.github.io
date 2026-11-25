@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 537" role="img" aria-labelledby="t d">
+  <title id="t">같은 페이지를 만드는 데 든 것</title>
+  <desc id="d">같은 과제에 든 비용은 Opus 5.5 1.94달러, Sonnet 5.5 1.35달러, Sonnet 5 1.08달러. 시간은 9분, 8분, 6분. 출력 토큰은 4만 5천, 5만 8천, 2만 5천 개.</desc>
+  <rect width="1200" height="537" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="40" y="70" font-size="30" font-weight="800" fill="#111111" letter-spacing="-0.5">같은 페이지를 만드는 데 든 것</text>
+    <text x="40" y="101" font-size="19" fill="#6B6B6B">한 페이지짜리 행사 사이트 &#x27;Low Tide&#x27; · Claude Code, 높은 노력 설정 · 결과 순위: Opus 5.5 → Sonnet 5.5 → Sonnet 5</text>
+    <text x="40.0" y="165" font-size="24" font-weight="700" fill="#111111">비용</text>
+    <text x="40.0" y="193" font-size="18" fill="#6B6B6B">낮을수록 좋음</text>
+    <text x="40.0" y="237" font-size="18" fill="#444444">Opus 5.5</text>
+    <path d="M40.0 247H270.3333333333333A7 7 0 0 1 277.3333333333333 254V270A7 7 0 0 1 270.3333333333333 277H40.0Z" fill="#111111"/>
+    <text x="289.3333333333333" y="269.92" font-size="22" font-weight="700" fill="#111111">$1.94</text>
+    <text x="40.0" y="315" font-size="18" fill="#444444">Sonnet 5.5</text>
+    <path d="M40.0 325H198.15463917525773A7 7 0 0 1 205.15463917525773 332V348A7 7 0 0 1 198.15463917525773 355H40.0Z" fill="#111111"/>
+    <text x="217.15463917525773" y="347.92" font-size="22" font-weight="700" fill="#111111">$1.35</text>
+    <text x="40.0" y="393" font-size="18" fill="#444444">Sonnet 5</text>
+    <path d="M40.0 403H165.1237113402062A7 7 0 0 1 172.1237113402062 410V426A7 7 0 0 1 165.1237113402062 433H40.0Z" fill="#111111"/>
+    <text x="184.1237113402062" y="425.92" font-size="22" font-weight="700" fill="#111111">$1.08</text>
+    <line x1="40.0" y1="219" x2="40.0" y2="453" stroke="#D9D9D9" stroke-width="1.6"/>
+    <text x="433.3333333333333" y="165" font-size="24" font-weight="700" fill="#111111">걸린 시간</text>
+    <text x="433.3333333333333" y="193" font-size="18" fill="#6B6B6B">낮을수록 좋음</text>
+    <text x="433.3333333333333" y="237" font-size="18" fill="#444444">Opus 5.5</text>
+    <path d="M433.3333333333333 247H663.6666666666666A7 7 0 0 1 670.6666666666666 254V270A7 7 0 0 1 663.6666666666666 277H433.3333333333333Z" fill="#111111"/>
+    <text x="682.6666666666666" y="269.92" font-size="22" font-weight="700" fill="#111111">9분</text>
+    <text x="433.3333333333333" y="315" font-size="18" fill="#444444">Sonnet 5.5</text>
+    <path d="M433.3333333333333 325H637.2962962962963A7 7 0 0 1 644.2962962962963 332V348A7 7 0 0 1 637.2962962962963 355H433.3333333333333Z" fill="#111111"/>
+    <text x="656.2962962962963" y="347.92" font-size="22" font-weight="700" fill="#111111">8분</text>
+    <text x="433.3333333333333" y="393" font-size="18" fill="#444444">Sonnet 5</text>
+    <path d="M433.3333333333333 403H584.5555555555555A7 7 0 0 1 591.5555555555555 410V426A7 7 0 0 1 584.5555555555555 433H433.3333333333333Z" fill="#111111"/>
+    <text x="603.5555555555555" y="425.92" font-size="22" font-weight="700" fill="#111111">6분</text>
+    <line x1="433.3333333333333" y1="219" x2="433.3333333333333" y2="453" stroke="#D9D9D9" stroke-width="1.6"/>
+    <text x="826.6666666666666" y="165" font-size="24" font-weight="700" fill="#111111">출력 토큰</text>
+    <text x="826.6666666666666" y="193" font-size="18" fill="#6B6B6B">말의 양</text>
+    <text x="826.6666666666666" y="237" font-size="18" fill="#444444">Opus 5.5</text>
+    <path d="M826.6666666666666 247H1004.8523644752019A7 7 0 0 1 1011.8523644752019 254V270A7 7 0 0 1 1004.8523644752019 277H826.6666666666666Z" fill="#111111"/>
+    <text x="1023.8523644752019" y="269.92" font-size="22" font-weight="700" fill="#111111">4.5만</text>
+    <text x="826.6666666666666" y="315" font-size="18" fill="#444444">Sonnet 5.5</text>
+    <path d="M826.6666666666666 325H1057.0A7 7 0 0 1 1064.0 332V348A7 7 0 0 1 1057.0 355H826.6666666666666Z" fill="#111111"/>
+    <text x="1076.0" y="347.92" font-size="22" font-weight="700" fill="#111111">5.8만</text>
+    <text x="826.6666666666666" y="393" font-size="18" fill="#444444">Sonnet 5</text>
+    <path d="M826.6666666666666 403H922.3194925028835A7 7 0 0 1 929.3194925028835 410V426A7 7 0 0 1 922.3194925028835 433H826.6666666666666Z" fill="#111111"/>
+    <text x="941.3194925028835" y="425.92" font-size="22" font-weight="700" fill="#111111">2.5만</text>
+    <line x1="826.6666666666666" y1="219" x2="826.6666666666666" y2="453" stroke="#D9D9D9" stroke-width="1.6"/>
+    <line x1="40" y1="475" x2="1160" y2="475" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="40" y="501" font-size="16" fill="#6B6B6B">출처: Thomas Wiegold 블로그의 Sonnet 5.5 리뷰. 과제 한 번씩 돌린 개인 시험이라 참고용.</text>
+  </g>
+</svg>

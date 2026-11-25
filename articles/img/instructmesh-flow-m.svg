@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 937" role="img" aria-labelledby="t d">
+  <title id="t">AI 3D 모델을 출력하기 전에 고치는 순서</title>
+  <desc id="d">InstructMesh는 글이나 사진으로 3D 모델을 만든 뒤, 문제가 보이는 부위만 칠해 고르고, 말이나 슬라이더로 두께를 바꾸거나 구멍을 열고 막는다. 고친 부위만 바뀐 채로 출력한다.</desc>
+  <rect width="600" height="937" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="32" y="66" font-size="34" font-weight="800" fill="#111111" text-anchor="start">AI 3D 모델을 출력하기 전에 고치는 순서</text>
+    <text x="32" y="99" font-size="21" font-weight="400" fill="#6B6B6B" text-anchor="start">MIT CSAIL의 InstructMesh. 논문과 발표를 바탕으로 정리했다.</text>
+    <rect x="32" y="139" width="536" height="150" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <circle cx="60" cy="169" r="15" fill="#111111"/><text x="60" y="175.12" font-size="17" font-weight="800" fill="#FFFFFF" text-anchor="middle">1</text>
+    <text x="86" y="177" font-size="24" font-weight="800" fill="#111111" text-anchor="start">만든다</text>
+    <text x="58" y="215" font-size="19" font-weight="400" fill="#444444" text-anchor="start">글이나 사진으로</text>
+    <text x="58" y="242" font-size="19" font-weight="400" fill="#444444" text-anchor="start">3D 모델 생성</text>
+    <text x="58" y="269" font-size="19" font-weight="400" fill="#444444" text-anchor="start">(TRELLIS)</text>
+    <rect x="418" y="163" width="62.0" height="80.0" rx="8.0" fill="#F2F2F2" stroke="#111111" stroke-width="2"/>
+    <path d="M480.0 183.0 C513.0 183.0 513.0 223.0 480.0 223.0" fill="none" stroke="#111111" stroke-width="3" stroke-linecap="round"/>
+    <path d="M300.0 295v22m-7 -8l7 8l7 -8" fill="none" stroke="#111111" stroke-width="2"/>
+    <rect x="32" y="323" width="536" height="150" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <circle cx="60" cy="353" r="15" fill="#111111"/><text x="60" y="359.12" font-size="17" font-weight="800" fill="#FFFFFF" text-anchor="middle">2</text>
+    <text x="86" y="361" font-size="24" font-weight="800" fill="#111111" text-anchor="start">고를 곳을 칠한다</text>
+    <text x="58" y="399" font-size="19" font-weight="400" fill="#444444" text-anchor="start">문제가 보이는</text>
+    <text x="58" y="426" font-size="19" font-weight="400" fill="#444444" text-anchor="start">부위만 선택</text>
+    <rect x="418" y="347" width="62.0" height="80.0" rx="8.0" fill="#F2F2F2" stroke="#111111" stroke-width="2"/>
+    <path d="M480.0 367.0 C513.0 367.0 513.0 407.0 480.0 407.0" fill="none" stroke="#111111" stroke-width="3" stroke-linecap="round"/>
+    <ellipse cx="498.0" cy="387.0" rx="22.0" ry="30.0" fill="none" stroke="#111111" stroke-width="2" stroke-dasharray="5 4"/>
+    <path d="M300.0 479v22m-7 -8l7 8l7 -8" fill="none" stroke="#111111" stroke-width="2"/>
+    <rect x="32" y="507" width="536" height="150" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <circle cx="60" cy="537" r="15" fill="#111111"/><text x="60" y="543.12" font-size="17" font-weight="800" fill="#FFFFFF" text-anchor="middle">3</text>
+    <text x="86" y="545" font-size="24" font-weight="800" fill="#111111" text-anchor="start">말로 고친다</text>
+    <text x="58" y="583" font-size="19" font-weight="400" fill="#444444" text-anchor="start">&quot;손잡이를 두껍게&quot;</text>
+    <text x="58" y="610" font-size="19" font-weight="400" fill="#444444" text-anchor="start">구멍 열기·막기,</text>
+    <text x="58" y="637" font-size="19" font-weight="400" fill="#444444" text-anchor="start">슬라이더로 두께</text>
+    <rect x="418" y="531" width="62.0" height="80.0" rx="8.0" fill="#F2F2F2" stroke="#111111" stroke-width="2"/>
+    <path d="M480.0 551.0 C513.0 551.0 513.0 591.0 480.0 591.0" fill="none" stroke="#111111" stroke-width="9" stroke-linecap="round"/>
+    <path d="M300.0 663v22m-7 -8l7 8l7 -8" fill="none" stroke="#111111" stroke-width="2"/>
+    <rect x="32" y="691" width="536" height="150" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <circle cx="60" cy="721" r="15" fill="#111111"/><text x="60" y="727.12" font-size="17" font-weight="800" fill="#FFFFFF" text-anchor="middle">4</text>
+    <text x="86" y="729" font-size="24" font-weight="800" fill="#111111" text-anchor="start">출력한다</text>
+    <text x="58" y="767" font-size="19" font-weight="400" fill="#444444" text-anchor="start">고친 부위만 바뀌고</text>
+    <text x="58" y="794" font-size="19" font-weight="400" fill="#444444" text-anchor="start">나머지는 그대로</text>
+    <rect x="418" y="715" width="62.0" height="80.0" rx="8.0" fill="#F2F2F2" stroke="#111111" stroke-width="2"/>
+    <path d="M480.0 735.0 C513.0 735.0 513.0 775.0 480.0 775.0" fill="none" stroke="#111111" stroke-width="9" stroke-linecap="round"/>
+    <line x1="32" y1="877" x2="568" y2="877" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="32" y="905" font-size="17" font-weight="400" fill="#6B6B6B" text-anchor="start">출처: MIT News(2026. 10. 1), arXiv 2608.28534</text>
+  </g>
+</svg>

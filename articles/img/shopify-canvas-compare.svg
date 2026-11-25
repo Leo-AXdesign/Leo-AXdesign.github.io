@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 655" role="img" aria-labelledby="t d">
+  <title id="t">같은 가게, 두 가지 작업대</title>
+  <desc id="d">기존 테마 편집기는 한 번에 한 페이지를 열고 왼쪽 설정 칸에서 고친다. 캔버스는 가게의 모든 페이지를 한 판에 펼쳐 놓고, 요소를 눌러 직접 고치거나 사이드킥에게 말로 시킨다.</desc>
+  <rect width="1200" height="655" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="40" y="70" font-size="30" font-weight="800" fill="#111111" text-anchor="start">같은 가게, 두 가지 작업대</text>
+    <text x="40" y="101" font-size="19" font-weight="400" fill="#6B6B6B" text-anchor="start">발표를 바탕으로 그린 구조도. 실제 화면과는 다르다.</text>
+    <text x="40" y="145" font-size="22" font-weight="800" fill="#111111" text-anchor="start">지금까지: 테마 편집기</text>
+    <rect x="40" y="167" width="536.0" height="330" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="2"/>
+    <line x1="40" y1="201" x2="576.0" y2="201" stroke="#D9D9D9" stroke-width="1.5"/>
+    <circle cx="60" cy="184" r="4.5" fill="#D9D9D9"/>
+    <circle cx="76" cy="184" r="4.5" fill="#D9D9D9"/>
+    <circle cx="92" cy="184" r="4.5" fill="#D9D9D9"/>
+    <line x1="222.24" y1="201" x2="222.24" y2="497" stroke="#D9D9D9" stroke-width="1.5"/>
+    <rect x="52" y="219" width="158.24" height="32" rx="6" fill="#F2F2F2"/>
+    <text x="64" y="240" font-size="14" font-weight="400" fill="#444444" text-anchor="start">헤더</text>
+    <rect x="52" y="261" width="158.24" height="32" rx="6" fill="#F2F2F2"/>
+    <text x="64" y="282" font-size="14" font-weight="400" fill="#444444" text-anchor="start">이미지 배너</text>
+    <rect x="52" y="303" width="158.24" height="32" rx="6" fill="#111111"/>
+    <text x="64" y="324" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="start">추천 상품</text>
+    <rect x="52" y="345" width="158.24" height="32" rx="6" fill="#F2F2F2"/>
+    <text x="64" y="366" font-size="14" font-weight="400" fill="#444444" text-anchor="start">뉴스레터</text>
+    <rect x="52" y="387" width="158.24" height="32" rx="6" fill="#F2F2F2"/>
+    <text x="64" y="408" font-size="14" font-weight="400" fill="#444444" text-anchor="start">푸터</text>
+    <rect x="246.24" y="223" width="305.76" height="220" rx="6" fill="#FFFFFF" stroke="#111111" stroke-width="2.5"/>
+    <rect x="254.24" y="231" width="289.76" height="6" rx="3" fill="#D9D9D9"/>
+    <rect x="254.24" y="243" width="289.76" height="92.39999999999999" rx="3" fill="#F2F2F2"/>
+    <rect x="254.24" y="343.4" width="202.832" height="5" rx="2.5" fill="#D9D9D9"/>
+    <rect x="254.24" y="353.4" width="130.392" height="5" rx="2.5" fill="#D9D9D9"/>
+    <text x="246.24" y="463" font-size="14" font-weight="700" fill="#111111" text-anchor="start">홈</text>
+    <text x="40" y="527" font-size="17" font-weight="400" fill="#444444" text-anchor="start">한 번에 한 페이지.</text>
+    <text x="40" y="554" font-size="17" font-weight="400" fill="#444444" text-anchor="start">왼쪽 설정 칸을 하나씩 열어 고친다.</text>
+    <text x="624.0" y="145" font-size="22" font-weight="800" fill="#111111" text-anchor="start">캔버스</text>
+    <rect x="624.0" y="167" width="536.0" height="330" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="2"/>
+    <line x1="624.0" y1="201" x2="1160.0" y2="201" stroke="#D9D9D9" stroke-width="1.5"/>
+    <circle cx="644.0" cy="184" r="4.5" fill="#D9D9D9"/>
+    <circle cx="660.0" cy="184" r="4.5" fill="#D9D9D9"/>
+    <circle cx="676.0" cy="184" r="4.5" fill="#D9D9D9"/>
+    <rect x="640.0" y="217.0" width="94.34666666666668" height="97.0" rx="6" fill="#FFFFFF" stroke="#D9D9D9" stroke-width="1.2"/>
+    <rect x="648.0" y="225.0" width="78.34666666666668" height="6" rx="3" fill="#D9D9D9"/>
+    <rect x="648.0" y="237.0" width="78.34666666666668" height="40.74" rx="3" fill="#F2F2F2"/>
+    <rect x="648.0" y="285.74" width="54.84266666666667" height="5" rx="2.5" fill="#D9D9D9"/>
+    <rect x="648.0" y="295.74" width="35.25600000000001" height="5" rx="2.5" fill="#D9D9D9"/>
+    <text x="640.0" y="333.0" font-size="13" font-weight="400" fill="#6B6B6B" text-anchor="start">홈</text>
+    <rect x="748.3466666666667" y="217.0" width="94.34666666666668" height="97.0" rx="6" fill="#FFFFFF" stroke="#111111" stroke-width="2.5"/>
+    <rect x="756.3466666666667" y="225.0" width="78.34666666666668" height="6" rx="3" fill="#D9D9D9"/>
+    <rect x="756.3466666666667" y="237.0" width="78.34666666666668" height="40.74" rx="3" fill="#F2F2F2"/>
+    <rect x="756.3466666666667" y="285.74" width="54.84266666666667" height="5" rx="2.5" fill="#D9D9D9"/>
+    <rect x="756.3466666666667" y="295.74" width="35.25600000000001" height="5" rx="2.5" fill="#D9D9D9"/>
+    <text x="748.3466666666667" y="333.0" font-size="13" font-weight="700" fill="#111111" text-anchor="start">상품</text>
+    <rect x="856.6933333333334" y="217.0" width="94.34666666666668" height="97.0" rx="6" fill="#FFFFFF" stroke="#D9D9D9" stroke-width="1.2"/>
+    <rect x="864.6933333333334" y="225.0" width="78.34666666666668" height="6" rx="3" fill="#D9D9D9"/>
+    <rect x="864.6933333333334" y="237.0" width="78.34666666666668" height="40.74" rx="3" fill="#F2F2F2"/>
+    <rect x="864.6933333333334" y="285.74" width="54.84266666666667" height="5" rx="2.5" fill="#D9D9D9"/>
+    <rect x="864.6933333333334" y="295.74" width="35.25600000000001" height="5" rx="2.5" fill="#D9D9D9"/>
+    <text x="856.6933333333334" y="333.0" font-size="13" font-weight="400" fill="#6B6B6B" text-anchor="start">컬렉션</text>
+    <rect x="640.0" y="354.0" width="94.34666666666668" height="97.0" rx="6" fill="#FFFFFF" stroke="#D9D9D9" stroke-width="1.2"/>
+    <rect x="648.0" y="362.0" width="78.34666666666668" height="6" rx="3" fill="#D9D9D9"/>
+    <rect x="648.0" y="374.0" width="78.34666666666668" height="40.74" rx="3" fill="#F2F2F2"/>
+    <rect x="648.0" y="422.74" width="54.84266666666667" height="5" rx="2.5" fill="#D9D9D9"/>
+    <rect x="648.0" y="432.74" width="35.25600000000001" height="5" rx="2.5" fill="#D9D9D9"/>
+    <text x="640.0" y="470.0" font-size="13" font-weight="400" fill="#6B6B6B" text-anchor="start">장바구니</text>
+    <rect x="748.3466666666667" y="354.0" width="94.34666666666668" height="97.0" rx="6" fill="#FFFFFF" stroke="#D9D9D9" stroke-width="1.2"/>
+    <rect x="756.3466666666667" y="362.0" width="78.34666666666668" height="6" rx="3" fill="#D9D9D9"/>
+    <rect x="756.3466666666667" y="374.0" width="78.34666666666668" height="40.74" rx="3" fill="#F2F2F2"/>
+    <rect x="756.3466666666667" y="422.74" width="54.84266666666667" height="5" rx="2.5" fill="#D9D9D9"/>
+    <rect x="756.3466666666667" y="432.74" width="35.25600000000001" height="5" rx="2.5" fill="#D9D9D9"/>
+    <text x="748.3466666666667" y="470.0" font-size="13" font-weight="400" fill="#6B6B6B" text-anchor="start">소개</text>
+    <rect x="856.6933333333334" y="354.0" width="94.34666666666668" height="97.0" rx="6" fill="#FFFFFF" stroke="#D9D9D9" stroke-width="1.2"/>
+    <rect x="864.6933333333334" y="362.0" width="78.34666666666668" height="6" rx="3" fill="#D9D9D9"/>
+    <rect x="864.6933333333334" y="374.0" width="78.34666666666668" height="40.74" rx="3" fill="#F2F2F2"/>
+    <rect x="864.6933333333334" y="422.74" width="54.84266666666667" height="5" rx="2.5" fill="#D9D9D9"/>
+    <rect x="864.6933333333334" y="432.74" width="35.25600000000001" height="5" rx="2.5" fill="#D9D9D9"/>
+    <text x="856.6933333333334" y="470.0" font-size="13" font-weight="400" fill="#6B6B6B" text-anchor="start">FAQ</text>
+    <path d="M804.9546666666668 260.65l0 22l6-6l5 10l4-2l-5-10l8 0z" fill="#111111" stroke="#FFFFFF" stroke-width="1.5"/>
+    <line x1="967.04" y1="201" x2="967.04" y2="497" stroke="#D9D9D9" stroke-width="1.5"/>
+    <text x="981.04" y="227" font-size="14" font-weight="800" fill="#111111" text-anchor="start">Sidekick</text>
+    <rect x="979.04" y="245" width="168.95999999999998" height="60" rx="10" fill="#111111"/>
+    <text x="991.04" y="273" font-size="13" font-weight="400" fill="#FFFFFF" text-anchor="start">상품 사진을 더 크게,</text>
+    <text x="991.04" y="295" font-size="13" font-weight="400" fill="#FFFFFF" text-anchor="start">버튼은 검정으로</text>
+    <rect x="979.04" y="319" width="168.95999999999998" height="36" rx="10" fill="#F2F2F2"/>
+    <text x="991.04" y="339" font-size="13" font-weight="400" fill="#444444" text-anchor="start">6개 페이지에 반영했어요</text>
+    <rect x="979.04" y="447" width="168.95999999999998" height="34" rx="17" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <text x="624.0" y="527" font-size="17" font-weight="400" fill="#444444" text-anchor="start">모든 페이지를 한 판에 펼친다.</text>
+    <text x="624.0" y="554" font-size="17" font-weight="400" fill="#444444" text-anchor="start">눌러서 고치거나 사이드킥에게 말한다.</text>
+    <line x1="40" y1="587" x2="1160" y2="587" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="40" y="615" font-size="16" font-weight="400" fill="#6B6B6B" text-anchor="start">출처: Shopify 발표·변경 기록, TechCrunch (2026. 10. 1)</text>
+  </g>
+</svg>

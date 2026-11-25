@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 623" role="img" aria-labelledby="t d">
+  <title id="t">AI가 그리는 화면, 규칙은 어디서 오나</title>
+  <desc id="d">챗GPT Intelligent UI는 오픈AI의 부품 모음을 GPT-6가 질문마다 조립해 대화 속 화면을 만든다. 피그마 에이전트는 팀의 디자인 라이브러리와 가이드라인 마크다운 파일을 매번 읽고 팀 파일 안에서 작업한다.</desc>
+  <rect width="1200" height="623" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="40" y="70" font-size="30" font-weight="800" fill="#111111" text-anchor="start">AI가 그리는 화면, 규칙은 어디서 오나</text>
+    <text x="40" y="101" font-size="19" font-weight="400" fill="#6B6B6B" text-anchor="start">같은 주에 나온 두 기능의 구조 비교</text>
+    <text x="40.0" y="145" font-size="22" font-weight="800" fill="#111111" text-anchor="start">챗GPT Intelligent UI</text>
+    <rect x="40.0" y="159" width="193.0" height="30" rx="15" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <text x="54.0" y="179" font-size="15" font-weight="700" fill="#111111" text-anchor="start">규칙 주인: 오픈AI</text>
+    <rect x="40.0" y="209" width="540.0" height="84" rx="12" fill="#F2F2F2" stroke="#111111" stroke-width="2"/>
+    <text x="60.0" y="245" font-size="18" font-weight="700" fill="#111111" text-anchor="start">오픈AI가 만든 부품 모음</text>
+    <text x="60.0" y="273" font-size="15" font-weight="400" fill="#6B6B6B" text-anchor="start">버튼 · 폼 · 차트 · 작은 도구</text>
+    <line x1="310.0" y1="297" x2="310.0" y2="319" stroke="#111111" stroke-width="2"/>
+    <path d="M303.0 313 L310.0 323 L317.0 313" fill="none" stroke="#111111" stroke-width="2"/>
+    <rect x="40.0" y="327" width="540.0" height="84" rx="12" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <text x="60.0" y="363" font-size="18" font-weight="700" fill="#111111" text-anchor="start">GPT-6가 질문마다 조립</text>
+    <text x="60.0" y="391" font-size="15" font-weight="400" fill="#6B6B6B" text-anchor="start">어떤 모양이 맞을지 모델이 판단</text>
+    <line x1="310.0" y1="415" x2="310.0" y2="437" stroke="#111111" stroke-width="2"/>
+    <path d="M303.0 431 L310.0 441 L317.0 431" fill="none" stroke="#111111" stroke-width="2"/>
+    <rect x="40.0" y="445" width="540.0" height="84" rx="12" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <text x="60.0" y="481" font-size="18" font-weight="700" fill="#111111" text-anchor="start">대화 속 답 화면</text>
+    <text x="60.0" y="509" font-size="15" font-weight="400" fill="#6B6B6B" text-anchor="start">모든 사용자에게 같은 디자인</text>
+    <text x="620.0" y="145" font-size="22" font-weight="800" fill="#111111" text-anchor="start">피그마 에이전트</text>
+    <rect x="620.0" y="159" width="193.0" height="30" rx="15" fill="#111111" stroke="#111111" stroke-width="1.5"/>
+    <text x="634.0" y="179" font-size="15" font-weight="700" fill="#FFFFFF" text-anchor="start">규칙 주인: 우리 팀</text>
+    <rect x="620.0" y="209" width="540.0" height="84" rx="12" fill="#F2F2F2" stroke="#111111" stroke-width="2"/>
+    <text x="640.0" y="245" font-size="18" font-weight="700" fill="#111111" text-anchor="start">우리 팀 디자인 라이브러리</text>
+    <text x="640.0" y="273" font-size="15" font-weight="400" fill="#6B6B6B" text-anchor="start">+ 가이드라인 마크다운 파일</text>
+    <line x1="890.0" y1="297" x2="890.0" y2="319" stroke="#111111" stroke-width="2"/>
+    <path d="M883.0 313 L890.0 323 L897.0 313" fill="none" stroke="#111111" stroke-width="2"/>
+    <rect x="620.0" y="327" width="540.0" height="84" rx="12" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <text x="640.0" y="363" font-size="18" font-weight="700" fill="#111111" text-anchor="start">에이전트가 매번 읽고 작업</text>
+    <text x="640.0" y="391" font-size="15" font-weight="400" fill="#6B6B6B" text-anchor="start">규칙 · 모범 사례 · 금지 사례</text>
+    <line x1="890.0" y1="415" x2="890.0" y2="437" stroke="#111111" stroke-width="2"/>
+    <path d="M883.0 431 L890.0 441 L897.0 431" fill="none" stroke="#111111" stroke-width="2"/>
+    <rect x="620.0" y="445" width="540.0" height="84" rx="12" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <text x="640.0" y="481" font-size="18" font-weight="700" fill="#111111" text-anchor="start">우리 파일 속 화면</text>
+    <text x="640.0" y="509" font-size="15" font-weight="400" fill="#6B6B6B" text-anchor="start">우리 브랜드 디자인</text>
+    <line x1="40" y1="559" x2="1160" y2="559" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="40" y="583" font-size="16" font-weight="400" fill="#6B6B6B" text-anchor="start">출처: OpenAI 발표(2026. 10. 7), 피그마 릴리스 노트(2026. 10. 6)</text>
+  </g>
+</svg>

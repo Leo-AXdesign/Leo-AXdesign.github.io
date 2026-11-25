@@ -1,0 +1,357 @@
+#!/usr/bin/env python3
+"""
+content/articles/*.md 와 content/articles-en/*.md 로 블로그 페이지를 만듭니다.
+
+  python3 tools/build-articles.py
+
+만들어지는 것 (한국어)
+- /articles/            글 목록
+- /articles/<slug>/     글 하나 (BlogPosting 구조화 데이터 포함)
+- js/articles.js        메인 화면 '읽을거리' 목록용 데이터
+- rss.xml               새 글 알림용 피드 (네이버 서치어드바이저·피드 구독기)
+
+만들어지는 것 (영문판, content/articles-en/ 에 번역이 있는 글만)
+- /en/articles/, /en/articles/<slug>/, js/articles.en.js, en/rss.xml
+  한국어 글과 영문 글은 서로 hreflang 으로 이어지고, 머리글의 EN/KO 버튼이 짝 글로 갑니다.
+
+글별 공유 이미지(og/<slug>.png, og/en/<slug>.png)는 tools/build-og.py 가 따로 만듭니다.
+
+글을 추가하려면 content/articles/ 에 .md 파일을 하나 더 만들고 이 스크립트를 실행하세요.
+그다음 tools/build-seo.py 를 돌려야 sitemap 과 llms.txt 에도 반영됩니다.
+"""
+import json, pathlib, datetime, email.utils, shutil
+
+import articles as A
+import sitedata as D
+from nav import menu, footer_links
+from shell import document, section_head, SITE, e
+
+ROOT = pathlib.Path(__file__).resolve().parent.parent
+MONTHS = ["January", "February", "March", "April", "May", "June", "July",
+          "August", "September", "October", "November", "December"]
+
+# 언어마다 다른 것들
+LANG = {
+    "ko": {
+        "base": SITE, "dir": ROOT, "og": ROOT / "og", "og_url": SITE + "og/",
+        "brand": "디자인 허브", "blog": "디자인 허브 읽을거리", "list": "읽을거리",
+        "list_title": lambda n: f"읽을거리 — 디자인·AI 디자인 글 {n}편",
+        "list_head": "디자인하면서 생각한 것들",
+        "list_desc": ("디자인하면서 생각한 것들을 적습니다. "
+                      "AI와 같이 일하는 법, 스타일을 말로 옮기는 법, 레퍼런스와 커뮤니티 이야기."),
+        "date": lambda y, m, d: f"{y}년 {m}월 {d}일",
+        "read": lambda n: f"읽는 데 약 {n}분", "min": "분",
+        "share": "공유하기", "copy": "링크 복사", "more": "함께 읽으면 좋은 글", "related": "이어서 볼 목록",
+        "toc": "이 글의 차례", "prev": "이전 글", "next": "다음 글", "all": lambda n: f"읽을거리 전체 보기 ({n}편)",
+        "every": "전체", "locale": "ko_KR",
+        "labels": A.RELATED_LABEL, "js": "articles.js", "rss": "rss.xml", "rss_lang": "ko",
+        "note": "",
+    },
+    "en": {
+        "base": SITE + "en/", "dir": ROOT / "en", "og": ROOT / "og" / "en", "og_url": SITE + "og/en/",
+        "brand": "Design Hub", "blog": "Design Hub Articles", "list": "Articles",
+        "list_title": lambda n: f"Articles — {n} pieces on design and AI design",
+        "list_head": "Notes from designing, translated from Korean",
+        "list_desc": ("Notes from a designer in Korea: working with AI, putting style into words, "
+                      "collecting references and design communities. Translated from Korean."),
+        "date": lambda y, m, d: f"{MONTHS[m - 1]} {d}, {y}",
+        "read": lambda n: f"{n} min read", "min": " min",
+        "share": "Share", "copy": "Copy link", "more": "Read next", "related": "Keep exploring",
+        "toc": "In this article", "prev": "Previous", "next": "Next", "all": lambda n: f"All articles ({n})",
+        "every": "All", "locale": "en_US",
+        "labels": A.RELATED_LABEL_EN, "js": "articles.en.js", "rss": "en/rss.xml", "rss_lang": "en",
+        "note": '      <p class="art__note">Translated from the Korean original. '
+                '<a href="{ko}" hreflang="ko" lang="ko">Read in Korean</a></p>\n',
+    },
+}
+
+# 정적 페이지 슬러그 -> 메인 화면의 화면 이름 (#uiux 처럼)
+APP_VIEW = {slug: cid for cid, slug in D.CAT_SLUG.items()}
+APP_VIEW.update({"styles": "styles", "trends": "trends", "glossary": "glossary"})
+
+KST = datetime.timezone(datetime.timedelta(hours=9))
+
+
+def crumbs(items):
+    return {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": i + 1, "name": n, "item": u}
+            for i, (n, u) in enumerate(items)
+        ],
+    }
+
+
+def rfc822(d):
+    y, m, day = (int(v) for v in d.split("-"))
+    return email.utils.format_datetime(datetime.datetime(y, m, day, 9, 0, tzinfo=KST))
+
+
+def build(lang, ko_slugs, en_slugs):
+    L = LANG[lang]
+    items = A.load(lang)
+    if not items:
+        if lang == "ko":
+            raise SystemExit("content/articles/ 에 글이 없습니다")
+        return items
+    base = L["base"]
+    list_url = base + "articles/"
+    fnav = footer_links(lang)
+
+    def art_url(slug, lg=lang):
+        return LANG[lg]["base"] + f"articles/{slug}/"
+
+    def alternates(slug):
+        """같은 글의 한국어판·영문판 주소. 짝이 없으면 비워 둡니다."""
+        if slug in ko_slugs and slug in en_slugs:
+            return {"ko": art_url(slug, "ko"), "en": art_url(slug, "en")}
+        return None
+
+    def related_links(slugs):
+        """글 아래 '이어서 볼 목록'. 사이트 안에서 움직일 때는 메인 화면의 같은 화면으로 보냅니다."""
+        out = [f'<a href="{base}#{APP_VIEW.get(s, s)}">{e(L["labels"][s])}</a>'
+               for s in slugs if s in L["labels"]]
+        if not out:
+            return ""
+        return (f'<nav class="page__nav">\n      <h2 class="psub">{L["related"]}</h2>\n'
+                f'      <div class="page__navlinks">{"".join(out)}</div>\n    </nav>')
+
+    def arow(x):
+        """메인 화면 '읽을거리' 목록의 한 줄과 같은 모양 (js/app.js renderArticleRow)."""
+        y, m, d = x["date"].split("-")
+        return (f'        <a class="arow" href="{art_url(x["slug"])}" data-tag="{e(x.get("tag", ""))}">\n'
+                f'          <span class="arow__date">{y}. {m}. {d}</span>\n'
+                f'          <span class="arow__main">\n'
+                f'            <span class="arow__title">{e(x["title"])}</span>\n'
+                f'            <p class="arow__desc">{e(x["desc"])}</p>\n'
+                f'          </span>\n'
+                f'          <span class="arow__tag">{e(x.get("tag", ""))} · {x["min"]}{L["min"]}</span>\n'
+                f'        </a>')
+
+    def pick_related(x, n=3):
+        """이어 읽을 글 고르기: 연결 목록이 겹칠수록, 태그가 같을수록, 날짜가 가까울수록 앞에."""
+        def score(o):
+            shared = len(set(o.get("related", [])) & set(x.get("related", [])))
+            same = 1 if o.get("tag") == x.get("tag") else 0
+            gap = abs(datetime.date.fromisoformat(o["date"]) - datetime.date.fromisoformat(x["date"])).days
+            return (-(shared * 2 + same), gap)
+        return sorted((o for o in items if o["slug"] != x["slug"]), key=score)[:n]
+
+    def toc_block(x):
+        """중간 제목이 셋 이상이면 글 위에 차례를 둡니다. 누르면 그 제목으로 바로 갑니다."""
+        if len(x["toc"]) < 3:
+            return ""
+        li = "".join(f'<li><a href="#{i}">{e(t)}</a></li>' for i, t in x["toc"])
+        return (f'      <nav class="art__toc" aria-label="{L["toc"]}"><p class="art__toc-t">{L["toc"]}</p>'
+                f'<ol>{li}</ol></nav>\n')
+
+    def next_block(x):
+        """글 아래: 함께 읽으면 좋은 글 3편 + 이전·다음 글 + 전체 목록."""
+        rel = pick_related(x)
+        rows = "\n".join(arow(o) for o in rel)
+        i = next(k for k, o in enumerate(items) if o["slug"] == x["slug"])
+        newer = items[i - 1] if i > 0 else None          # 목록은 최신 글이 앞
+        older = items[i + 1] if i + 1 < len(items) else None
+        pn = ""
+        if newer or older:
+            cell = lambda o, label, cls: (f'<a class="art__pn-a {cls}" href="{art_url(o["slug"])}" rel="{"prev" if cls == "is-prev" else "next"}">'
+                                          f'<span class="art__pn-l">{label}</span><span class="art__pn-t">{e(o["title"])}</span></a>'
+                                          if o else '<span></span>')
+            pn = (f'\n      <nav class="art__pn">{cell(older, "← " + L["prev"], "is-prev")}'
+                  f'{cell(newer, L["next"] + " →", "is-next")}</nav>')
+        allink = f'\n      <p class="art__all"><a href="{list_url}">{L["all"](len(items))}</a></p>'
+        head = section_head(L["more"], None, level=2) if rel else ""
+        body = f'      <div class="list list--insight">\n{rows}\n      </div>' if rel else ""
+        return f'<section class="section">\n{head}\n{body}{pn}{allink}\n    </section>'
+
+    # ---------- 글 하나씩 ----------
+    for x in items:
+        url = art_url(x["slug"])
+        og = L["og"] / f"{x['slug']}.png"
+        og_url = f'{L["og_url"]}{x["slug"]}.png' if og.exists() else None
+        jsonld = {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "BlogPosting",
+                    "@id": url + "#post",
+                    "url": url,
+                    "mainEntityOfPage": url,
+                    "headline": x["title"],
+                    "description": x["desc"],
+                    "articleSection": x.get("tag", ""),
+                    "datePublished": x["date"],
+                    "dateModified": x["updated"],
+                    "inLanguage": lang,
+                    "wordCount": x["words"] if lang == "en" else x["chars"],
+                    "timeRequired": f"PT{x['min']}M",
+                    "image": og_url or SITE + "og-image.png",
+                    "author": {"@type": "Organization", "name": L["brand"], "url": base},
+                    "publisher": {"@type": "Organization", "name": L["brand"], "url": base},
+                    "isPartOf": {"@type": "Blog", "@id": list_url + "#blog", "name": L["blog"]},
+                },
+                crumbs([(L["brand"], base), (L["list"], list_url), (x["title"], url)]),
+            ],
+        }
+        if lang == "en":
+            jsonld["@graph"][0]["translationOfWork"] = {"@id": art_url(x["slug"], "ko") + "#post"}
+        y, m, d = (int(v) for v in x["date"].split("-"))
+        note = L["note"].format(ko=art_url(x["slug"], "ko")) if L["note"] else ""
+        body = f"""    <article class="art">
+      <p class="art__kicker"><a href="{list_url}">{L["list"]}</a>{f' · {e(x["tag"])}' if x.get("tag") else ''}</p>
+      <h1 class="page__title">{A.nobreak(e(x["title"]))}</h1>
+      <p class="page__intro">{e(x["desc"])}</p>
+      <p class="art__meta"><time datetime="{x["date"]}">{L["date"](y, m, d)}</time> · {L["read"](x["min"])}<span data-views hidden></span></p>
+{note}{toc_block(x)}{x["body"]}
+      <div class="share">
+        <button class="share__btn" type="button" data-share>{L["share"]}</button>
+        <button class="share__btn" type="button" data-copy>{L["copy"]}</button>
+        <span class="share__msg" role="status"></span>
+      </div>
+    </article>
+    <script src="{SITE}js/views.js" defer></script>
+
+    {related_links(x.get("related", []))}
+
+    {next_block(x)}"""
+        # 카톡·페이스북·네이버가 읽는 글 정보 (발행일, 수정일, 분류, 태그)
+        tags = [x.get("tag", "")] + [L["labels"][s] for s in x.get("related", []) if s in L["labels"]]
+        art_meta = (f'\n  <meta property="article:published_time" content="{x["date"]}T09:00:00+09:00" />'
+                    f'\n  <meta property="article:modified_time" content="{x["updated"]}T09:00:00+09:00" />'
+                    f'\n  <meta property="article:section" content="{e(x.get("tag", ""))}" />'
+                    + "".join(f'\n  <meta property="article:tag" content="{e(t)}" />' for t in tags if t))
+        doc = document(title=x["title"], desc=x["desc"], url=url, body=body, jsonld=jsonld, head_extra=art_meta,
+                       og_type="article", menu=menu("articles", lang), og_image=og_url,
+                       main_class="page__main page__main--art", footer_nav=fnav,
+                       lang=lang, alternates=alternates(x["slug"]),
+                       **({} if x.get("indexed", True) else {"robots": "noindex, follow"}))
+        out = L["dir"] / "articles" / x["slug"]
+        out.mkdir(parents=True, exist_ok=True)
+        (out / "index.html").write_text(doc, encoding="utf-8")
+
+    # ---------- 목록 페이지 ----------
+    # 태그로 골라 보기 (js/page.js 가 목록을 거릅니다)
+    tag_n = {}
+    for x in items:
+        tag_n[x.get("tag", "")] = tag_n.get(x.get("tag", ""), 0) + 1
+    chips = (f'<button class="pill is-active" type="button" data-atag="">{L["every"]} <span class="pill__count">{len(items)}</span></button>'
+             + "".join(f'<button class="pill" type="button" data-atag="{e(t)}">{e(t)} <span class="pill__count">{n}</span></button>'
+                       for t, n in sorted(tag_n.items(), key=lambda kv: -kv[1]) if t))
+    list_body = f"""    <section class="section">
+{section_head(L["list"], len(items), L["list_head"])}
+      <div class="gfilter pills" role="group" aria-label="tag">{chips}</div>
+      <div class="list list--insight">
+{chr(10).join(arow(x) for x in items)}
+      </div>
+    </section>"""
+    list_jsonld = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Blog",
+                "@id": list_url + "#blog",
+                "url": list_url,
+                "name": L["blog"],
+                "description": L["list_desc"],
+                "inLanguage": lang,
+                "isPartOf": {"@type": "WebSite", "url": base, "name": L["brand"]},
+                "blogPost": [
+                    {
+                        "@type": "BlogPosting",
+                        "@id": f"{art_url(x['slug'])}#post",
+                        "url": art_url(x["slug"]),
+                        "headline": x["title"],
+                        "description": x["desc"],
+                        "datePublished": x["date"],
+                        "author": {"@type": "Organization", "name": L["brand"]},
+                    }
+                    for x in items
+                ],
+            },
+            crumbs([(L["brand"], base), (L["list"], list_url)]),
+        ],
+    }
+    both = {"ko": SITE + "articles/", "en": SITE + "en/articles/"} if en_slugs else None
+    doc = document(title=L["list_title"](len(items)), desc=L["list_desc"],
+                   url=list_url, body=list_body, jsonld=list_jsonld,
+                   footer_nav=fnav, menu=menu("articles", lang), lang=lang, alternates=both)
+    (L["dir"] / "articles").mkdir(parents=True, exist_ok=True)
+    (L["dir"] / "articles" / "index.html").write_text(doc, encoding="utf-8")
+
+    # ---------- RSS ----------
+    rss_items = []
+    for x in items:
+        link = art_url(x["slug"])
+        rss_items.append(f"""    <item>
+      <title>{e(x["title"])}</title>
+      <link>{link}</link>
+      <guid isPermaLink="true">{link}</guid>
+      <pubDate>{rfc822(x["date"])}</pubDate>
+      <category>{e(x.get("tag", ""))}</category>
+      <description>{e(x["desc"])}</description>
+      <content:encoded><![CDATA[{x["body"]}]]></content:encoded>
+    </item>""")
+    rss = f"""<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{e(L["blog"])}</title>
+    <link>{list_url}</link>
+    <atom:link href="{SITE}{L["rss"]}" rel="self" type="application/rss+xml" />
+    <description>{e(L["list_desc"])}</description>
+    <language>{L["rss_lang"]}</language>
+    <lastBuildDate>{rfc822(items[0]["date"])}</lastBuildDate>
+{chr(10).join(rss_items)}
+  </channel>
+</rss>
+"""
+    (ROOT / L["rss"]).write_text(rss, encoding="utf-8")
+
+    # ---------- 메인 화면용 데이터 ----------
+    js = ["// 이 파일은 tools/build-articles.py 가 만듭니다. 직접 고치지 마세요.",
+          f"// 글은 content/{'articles-en' if lang == 'en' else 'articles'}/*.md 에서 고칩니다.",
+          "const ARTICLES = ["]
+    for x in items:
+        js.append("  { " + ", ".join([
+            f"slug: {json.dumps(x['slug'], ensure_ascii=False)}",
+            f"title: {json.dumps(x['title'], ensure_ascii=False)}",
+            f"desc: {json.dumps(x['desc'], ensure_ascii=False)}",
+            f"date: {json.dumps(x['date'], ensure_ascii=False)}",
+            f"tag: {json.dumps(x.get('tag', ''), ensure_ascii=False)}",
+            f"min: {x['min']}",
+            f"views: {json.dumps([APP_VIEW.get(s, s) for s in x.get('related', [])])}",
+        ]) + " },")
+    js += ["];", ""]
+    (ROOT / "js" / L["js"]).write_text("\n".join(js), encoding="utf-8")
+    prune(L, {x["slug"] for x in items})
+    return items
+
+
+def prune(L, slugs):
+    """지우거나 주소를 바꾼 글의 옛 페이지와 공유 이미지를 치웁니다.
+    손으로 만든 이동 안내 페이지(meta refresh)는 남겨 둡니다."""
+    for d in (L["dir"] / "articles").iterdir():
+        page = d / "index.html"
+        if not d.is_dir() or d.name == "img" or d.name in slugs:
+            continue
+        if page.exists() and 'http-equiv="refresh"' in page.read_text(encoding="utf-8"):
+            continue
+        shutil.rmtree(d)
+        print(f"  지운 글 페이지 정리: {d.relative_to(ROOT)}/")
+    if L["og"].exists():
+        for f in L["og"].glob("*.png"):
+            if f.stem not in slugs:
+                f.unlink()
+
+
+ko_slugs = {x["slug"] for x in A.load("ko")}
+en_slugs = {x["slug"] for x in A.load("en")}
+ko = build("ko", ko_slugs, en_slugs)
+en = build("en", ko_slugs, en_slugs)
+
+print(f"글 {len(ko)}편: /articles/ + " + ", ".join(f"/articles/{x['slug']}/" for x in ko))
+if en:
+    print(f"영문 {len(en)}편: /en/articles/ + " + ", ".join(f"/en/articles/{x['slug']}/" for x in en))
+missing = sorted(ko_slugs - en_slugs)
+if missing:
+    print("  영문 번역이 없는 글 (content/articles-en/ 에 같은 이름으로 만들면 됩니다):", ", ".join(missing))
+print(f"(오늘 {datetime.date.today().isoformat()} · js/articles.js, rss.xml 갱신)")

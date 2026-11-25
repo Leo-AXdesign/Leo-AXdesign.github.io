@@ -1,0 +1,244 @@
+#!/usr/bin/env python3
+"""
+정적 페이지의 공통 껍데기(head, 상단바, 푸터)를 한곳에서 만듭니다.
+
+build-pages.py 와 build-articles.py 가 같이 씁니다.
+애널리틱스 ID, 애드센스 코드, 푸터 문구는 이 파일만 고치면 모든 페이지에 반영됩니다.
+"""
+import json, html
+
+SITE = "https://designrefs.com/"
+GA_ID = "G-Q7QVVHSLQ6"
+CONTACT = "nisov0924@gmail.com"
+e = html.escape
+
+
+SEARCH_ICON = ('<svg class="search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
+               'stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'
+               '<circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>')
+UP_ICON = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" '
+           'stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>')
+
+
+# 디자인 허브 SNS 계정과 메일. 푸터 아이콘으로 모든 페이지에 붙습니다 (영문 메인은 build-en.py 가 이걸 가져다 씀)
+SNS = [
+    ("Threads", "https://www.threads.com/@design_refs_hub",
+     '<path d="M19 7.5c-1.333-3-3.667-4.5-7-4.5-5 0-8 2.5-8 9s3.5 9 8 9 7-3 7-5-1-5-7-5c-2.5 0-3 1.25-3 2.5 0 1.5 1 2.5 2.5 2.5 2.5 0 3.5-1.5 3.5-5s-2-4-3-4-1.833.333-2.5 1"/>'),
+    ("Instagram", "https://www.instagram.com/design_refs_hub/",
+     '<rect x="4" y="4" width="16" height="16" rx="4"/><circle cx="12" cy="12" r="3.2"/><path d="M16.5 7.5v.01"/>'),
+    ("Facebook", "https://www.facebook.com/profile.php?id=61595236925825",
+     '<path d="M7 10v4h3v7h4v-7h3l1-4h-4V8a1 1 0 0 1 1-1h3V3h-3a5 5 0 0 0-5 5v2H7"/>'),
+]
+
+
+def sns_links(indent="      ", lang="ko"):
+    """푸터의 SNS 아이콘 묶음."""
+    icons = "".join(
+        f'<a href="{url}" target="_blank" rel="noopener me" aria-label="{name}" title="{name}">'
+        f'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" '
+        f'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{paths}</svg></a>'
+        for name, url, paths in SNS)
+    mail = "Email" if lang == "en" else "메일"
+    icons += (f'<a href="mailto:{CONTACT}" aria-label="{mail} {CONTACT}" title="{CONTACT}">'
+              '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" '
+              'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+              '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>')
+    return f'{indent}<span class="footer__sns">{icons}</span>\n'
+
+
+def section_head(title, count=None, desc="", level=1):
+    """메인 화면의 섹션 머리(제목 · 개수 · 오른쪽 설명 · 검은 줄)와 같은 모양."""
+    num = f'\n        <span class="section__count" data-count>{count}</span>' if count is not None else ""
+    d = f'\n        <p class="section__desc">{e(desc)}</p>' if desc else ""
+    return (f'      <header class="section__head">\n'
+            f'        <h{level} class="section__title">{e(title)}</h{level}>{num}{d}\n'
+            f'      </header>')
+
+
+MENU_ICON = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" '
+             'stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>')
+# 메인 화면의 태그 필터와 같은 순서 (js/app.js 의 TAG_FILTERS)
+TAGS = [("", "전체"), ("한국", "한국"), ("무료", "무료"), ("유료", "유료"), ("AI", "AI")]
+TAGS_EN = {"": "All", "한국": "Korean", "무료": "Free", "유료": "Paid", "AI": "AI"}
+
+# 페이지 틀에 들어가는 문구. 영문판(/en/...) 페이지는 lang="en" 으로 만듭니다.
+UI = {
+    "ko": {"home": SITE, "brand": "디자인 허브", "search": "사이트 검색", "theme": "테마 전환",
+           "theme_title": "라이트 / 다크 전환", "open": "메뉴 열기", "close": "메뉴 닫기", "menu": "전체 메뉴",
+           "nav": "메뉴", "filter": "태그 필터", "view": "보기", "list": "목록", "grid": "격자",
+           "top": "맨 위로", "rss": "디자인 허브 읽을거리", "rss_url": SITE + "rss.xml"},
+    "en": {"home": SITE + "en/", "brand": "Design Hub", "search": "Search sites", "theme": "Theme",
+           "theme_title": "Light / Dark", "open": "Open menu", "close": "Close menu", "menu": "Menu",
+           "nav": "Menu", "filter": "Filter", "view": "View", "list": "List", "grid": "Grid",
+           "top": "Back to top", "rss": "Design Hub Articles", "rss_url": SITE + "en/rss.xml"},
+}
+
+
+def drawer_extras(lang="ko"):
+    """정적 페이지 모바일 메뉴의 태그 필터. 메뉴 목록 위에 둬서 스크롤 없이 보이게 합니다.
+    태그를 누르면 메인 화면으로 가서 그 필터가 걸린 채로 열립니다."""
+    from urllib.parse import quote
+    u = UI[lang]
+    pills = "".join(
+        f'<a class="pill{" is-active" if not tid else ""}" href="{u["home"]}{"?tag=" + quote(tid) if tid else ""}">'
+        f'{TAGS_EN[tid] if lang == "en" else label}</a>'
+        for tid, label in TAGS)
+    return ('        <div class="drawer__section drawer__section--top">\n'
+            f'          <p class="nav__group">{u["filter"]}</p>\n'
+            f'          <div class="pills pills--tags">{pills}</div>\n'
+            '        </div>\n')
+
+
+CLOSE_ICON = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" '
+              'stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>')
+
+
+def document(*, title, desc, url, body, jsonld, og_type="website",
+             head_extra="", main_class="page__main", footer_nav="", menu="",
+             og_image=None, lang="ko", alternates=None, robots="index, follow, max-image-preview:large"):
+    """페이지 하나의 HTML 전체를 돌려줍니다.
+
+    title      : <title> 과 og:title 에 쓰는 제목 (사이트 이름은 여기서 붙입니다)
+    desc       : meta description
+    url        : canonical 주소 (끝에 / 포함)
+    body       : <main> 안에 들어갈 HTML
+    jsonld     : 구조화 데이터 dict
+    footer_nav : 푸터 위에 붙일 링크 묶음 HTML
+    og_image   : 카톡·SNS 미리보기 이미지 주소. 비우면 사이트 기본 이미지
+    menu       : 메뉴 항목 HTML (tools/nav.py 의 menu()). 넓은 화면에서는 왼쪽에,
+                 좁은 화면에서는 햄버거 버튼을 누르면 서랍으로 나옵니다. 비우면 메뉴 없이 나옵니다.
+    lang       : "ko" 또는 "en". 페이지 틀의 문구와 로고·검색이 가는 곳이 바뀝니다.
+    robots     : 검색엔진 지시. 404 처럼 검색 결과에 나오면 안 되는 페이지는 "noindex, follow"
+    alternates : {"ko": 주소, "en": 주소} 같은 페이지의 다른 언어판. 있으면 hreflang 을 달고,
+                 머리글의 EN/KO 버튼이 그 주소로 갑니다. 없으면 버튼은 다른 언어의 첫 화면으로 갑니다.
+    """
+    u = UI[lang]
+    alternates = alternates or {}
+    other = "en" if lang == "ko" else "ko"
+    other_url = alternates.get(other) or UI[other]["home"]
+    lang_btn = (f'<a class="top__lang" href="{other_url}" hreflang="{other}" lang="{other}" '
+                f'title="{"English" if other == "en" else "한국어"}">{other.upper()}</a>')
+    hreflang = "".join(f'\n  <link rel="alternate" hreflang="{k}" href="{v}" />' for k, v in alternates.items())
+    if "ko" in alternates:
+        hreflang += f'\n  <link rel="alternate" hreflang="x-default" href="{alternates["ko"]}" />'
+    if lang == "en":
+        foot = (f'      <a href="{SITE}en/articles/">Articles</a>\n'
+                f'      <a href="{SITE}en/talk/">Design Talk</a>\n'
+                f'      <a href="{SITE}" hreflang="ko" lang="ko">한국어</a>\n'
+                f'      <a href="{SITE}privacy/">Privacy (Korean)</a>\n')
+    else:
+        foot = (f'      <a href="{SITE}about/">소개</a>\n'
+                f'      <a href="{SITE}articles/">읽을거리</a>\n'
+                f'      <a href="{SITE}talk/">디자인 잡담</a>\n'
+                f'      <a href="{SITE}privacy/">개인정보처리방침</a>\n')
+    menu_btn = drawer = aside = ""
+    if menu:
+        menu_btn = ('<button id="menu-open" class="top__btn top__btn--menu" type="button" '
+                    f'aria-label="{u["open"]}" aria-expanded="false" aria-controls="drawer">'
+                    + MENU_ICON + '</button>')
+        drawer = ('\n  <!-- 모바일 전체 메뉴 -->\n'
+                  '  <div class="drawer" id="drawer" hidden>\n'
+                  '    <div class="drawer__backdrop" id="drawer-backdrop"></div>\n'
+                  f'    <aside class="drawer__panel" role="dialog" aria-modal="true" aria-label="{u["menu"]}">\n'
+                  '      <header class="drawer__head">\n'
+                  f'        <span class="drawer__title">{u["menu"]}</span>\n'
+                  f'        <button id="drawer-theme" class="drawer__close drawer__theme" type="button" aria-label="{u["theme"]}" title="{u["theme_title"]}"><span class="dot"></span></button>\n'
+                  f'        <button id="menu-close" class="drawer__close" type="button" aria-label="{u["close"]}">'
+                  + CLOSE_ICON + '</button>\n'
+                  '      </header>\n'
+                  '      <div class="drawer__body">\n'
+                  + drawer_extras(lang) +
+                  f'        <nav class="nav" aria-label="{u["nav"]}">' + menu + '</nav>\n' 
+                  '      </div>\n'
+                  '    </aside>\n'
+                  '  </div>\n')
+        aside = ('    <aside class="sidebar">\n'
+                 f'      <nav class="nav" aria-label="{u["nav"]}">' + menu + '</nav>\n'
+                 '    </aside>')
+    return f"""<!DOCTYPE html>
+<html lang="{lang}">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{e(title)} | {u["brand"]}</title>
+  <meta name="description" content="{e(desc)}" />
+  {f'<link rel="canonical" href="{url}" />' if robots.startswith("index") else ""}{hreflang}
+  <meta name="robots" content="{robots}" />
+  <meta property="og:type" content="{og_type}" />
+  <meta property="og:site_name" content="{u["brand"]}" />
+  <meta property="og:locale" content="{"en_US" if lang == "en" else "ko_KR"}" />
+  <meta property="og:title" content="{e(title)} | {u["brand"]}" />
+  <meta property="og:description" content="{e(desc)}" />
+  <meta property="og:url" content="{url}" />
+  <meta property="og:image" content="{og_image or SITE + 'og-image.png'}" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="alternate" type="application/rss+xml" title="{u["rss"]}" href="{u["rss_url"]}" />
+  <link rel="icon" href="{SITE}favicon.ico" sizes="32x32" />
+  <link rel="icon" type="image/svg+xml" href="{SITE}favicon.svg" />
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+  <link rel="stylesheet" href="{SITE}css/style.css" />
+  <!-- 구글 애드센스 -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5831827822584395" crossorigin="anonymous"></script>
+
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){{dataLayer.push(arguments);}}
+    gtag('js', new Date());
+    gtag('config', '{GA_ID}');
+  </script>
+  <script>
+    // 메인에서 고른 테마를 그대로 따릅니다.
+    try {{
+      var t = localStorage.getItem('designhub:theme') || 'light';
+      if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+    }} catch (e) {{}}
+  </script>
+  <script type="application/ld+json">
+{json.dumps(jsonld, ensure_ascii=False, indent=2)}
+  </script>{head_extra}
+</head>
+<body class="page">
+  <header class="top">
+    <div class="wrap top__inner">
+      <a class="logo" href="{u["home"]}">d<span>.</span></a>
+
+      <!-- 검색어를 넣고 엔터를 치면 메인 화면에서 검색 결과가 열립니다 (?q=) -->
+      <form class="search" action="{u["home"]}" method="get" role="search">
+        {SEARCH_ICON}
+        <input id="search" class="search__input" type="search" name="q" placeholder="{u["search"]}" autocomplete="off" />
+        <kbd class="search__kbd">/</kbd>
+      </form>
+
+      <div class="top__actions">
+        {lang_btn}
+        <button id="theme-toggle" class="top__btn" type="button" aria-label="{u["theme"]}" title="{u["theme_title"]}">
+          <span class="dot"></span>
+        </button>
+        {menu_btn}
+      </div>
+    </div>
+  </header>
+{drawer}
+  <div class="wrap layout">
+{aside}
+    <main class="main {main_class}">
+{body}
+    </main>
+  </div>
+
+  <footer class="footer">
+{footer_nav}    <div class="wrap footer__inner">
+      <span>Copyright 2026. Design Hub. all rights reserved.</span>
+{foot}{sns_links(lang=lang)}      <a href="#" id="footer-top">{u["top"]} ↑</a>
+    </div>
+  </footer>
+
+  <button id="to-top" class="to-top" type="button" aria-label="{u["top"]}">{UP_ICON}</button>
+  <script src="{SITE}js/page.js" defer></script>
+</body>
+</html>
+"""

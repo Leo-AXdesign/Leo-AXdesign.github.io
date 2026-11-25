@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 1115" role="img" aria-labelledby="t d">
+  <title id="t">What sits under &quot;just polish this&quot;</title>
+  <desc id="d">An AI draft from a client shows only part of the finished work. Below it: checking rights, rebuilding as an editable file, resetting type, matching the brand, preparing files per medium, and handling revisions.</desc>
+  <rect width="600" height="1115" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="32" y="66" font-size="28" font-weight="800" fill="#111111" text-anchor="start">What sits under &quot;just polish this&quot;</text>
+    <text x="32" y="99" font-size="21" font-weight="400" fill="#6B6B6B" text-anchor="start">When a client sends an AI-made draft. A sketch</text>
+    <text x="32" y="159" font-size="23" font-weight="800" fill="#111111" text-anchor="start">What you see</text>
+    <rect x="150.0" y="175" width="300" height="110" rx="10" fill="#F2F2F2" stroke="#111111" stroke-width="2"/>
+    <circle cx="384.0" cy="210.2" r="14.3" fill="#D9D9D9"/>
+    <path d="M152.0 283L255.0 224.5L315.0 252.0L366.0 235.5L448.0 283Z" fill="#D9D9D9"/>
+    <text x="300.0" y="317" font-size="20" font-weight="700" fill="#444444" text-anchor="middle">One AI-generated image</text>
+    <path d="M32 345q15 -8 30 0q15 -8 30 0q15 -8 30 0q15 -8 30 0q15 -8 30 0q15 -8 30 0q15 -8 30 0q15 -8 30 0q15 -8 30 0q15 -8 30 0q15 -8 30 0q15 -8 30 0q15 -8 30 0q15 -8 30 0q15 -8 30 0q15 -8 30 0q15 -8 30 0" fill="none" stroke="#111111" stroke-width="2"/>
+    <text x="568" y="335" font-size="15" font-weight="400" fill="#6B6B6B" text-anchor="end">Waterline</text>
+    <text x="32" y="395" font-size="23" font-weight="800" fill="#111111" text-anchor="start">The work that&#x27;s left</text>
+    <rect x="32.0" y="415" width="536.0" height="92" rx="12" fill="#111111"/>
+    <text x="52.0" y="451" font-size="20" font-weight="800" fill="#FFFFFF" text-anchor="start">Rights check</text>
+    <text x="52.0" y="479" font-size="16" font-weight="400" fill="#D9D9D9" text-anchor="start">Can it be used commercially? Lookalike logos or people?</text>
+    <rect x="32.0" y="519" width="536.0" height="92" rx="12" fill="#111111"/>
+    <text x="52.0" y="555" font-size="20" font-weight="800" fill="#FFFFFF" text-anchor="start">Rebuild</text>
+    <text x="52.0" y="583" font-size="16" font-weight="400" fill="#D9D9D9" text-anchor="start">Resolution, vectors, layers. An editable file</text>
+    <rect x="32.0" y="623" width="536.0" height="92" rx="12" fill="#111111"/>
+    <text x="52.0" y="659" font-size="20" font-weight="800" fill="#FFFFFF" text-anchor="start">Reset the type</text>
+    <text x="52.0" y="687" font-size="16" font-weight="400" fill="#D9D9D9" text-anchor="start">AI-drawn lettering is usually unusable</text>
+    <rect x="32.0" y="727" width="536.0" height="92" rx="12" fill="#111111"/>
+    <text x="52.0" y="763" font-size="20" font-weight="800" fill="#FFFFFF" text-anchor="start">Match the brand</text>
+    <text x="52.0" y="791" font-size="16" font-weight="400" fill="#D9D9D9" text-anchor="start">Color, type and spacing per the guide</text>
+    <rect x="32.0" y="831" width="536.0" height="92" rx="12" fill="#111111"/>
+    <text x="52.0" y="867" font-size="20" font-weight="800" fill="#FFFFFF" text-anchor="start">Files per medium</text>
+    <text x="52.0" y="895" font-size="16" font-weight="400" fill="#D9D9D9" text-anchor="start">Print, web and social sizes and formats</text>
+    <rect x="32.0" y="935" width="536.0" height="92" rx="12" fill="#111111"/>
+    <text x="52.0" y="971" font-size="20" font-weight="800" fill="#FFFFFF" text-anchor="start">Revisions</text>
+    <text x="52.0" y="999" font-size="16" font-weight="400" fill="#D9D9D9" text-anchor="start">How many rounds of &quot;just a bit more&quot;</text>
+    <line x1="32" y1="1055" x2="568" y2="1055" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="32" y="1083" font-size="15" font-weight="400" fill="#6B6B6B" text-anchor="start">Source: based on designer interviews in Fast Company (Oct 12, 2026)</text>
+  </g>
+</svg>

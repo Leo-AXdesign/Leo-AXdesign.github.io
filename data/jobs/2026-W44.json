@@ -1,0 +1,366 @@
+{
+ "updated": "2026-10-26T11:03:16.002691+09:00",
+ "since": "2026-10-19T11:03:16.002691+09:00",
+ "report": [
+  "사람인: 건너뜀 (키 없음)",
+  "Remotive: 0건 중 0건",
+  "We Work Remotely: 4건 중 4건",
+  "Remote OK: 0건 중 0건",
+  "Himalayas: 0건 중 0건",
+  "Jobicy: 35건 중 35건"
+ ],
+ "kr": [],
+ "global": [
+  {
+   "source": "Jobicy",
+   "title": "Senior Product Designer II",
+   "company": "Wrapbook",
+   "url": "https://jobicy.com/jobs/157027-senior-product-designer-ii",
+   "posted": "2026-10-26T02:57:18+09:00",
+   "location": "Canada, USA",
+   "deadline": ""
+  },
+  {
+   "source": "Jobicy",
+   "title": "Staff Design Engineer",
+   "company": "Juniper Square",
+   "url": "https://jobicy.com/jobs/156955-staff-design-engineer-2",
+   "posted": "2026-10-25T19:46:41+09:00",
+   "location": "Canada, USA",
+   "deadline": ""
+  },
+  {
+   "source": "Jobicy",
+   "title": "Staff Product Designer - Platform Design",
+   "company": "Spotify",
+   "url": "https://jobicy.com/jobs/156935-staff-product-designer-platform-design",
+   "posted": "2026-10-25T19:40:03+09:00",
+   "location": "Sweden, UK",
+   "deadline": ""
+  },
+  {
+   "source": "Jobicy",
+   "title": "Senior Product Designer (Fully Remote)",
+   "company": "PadSplit",
+   "url": "https://jobicy.com/jobs/156914-senior-product-designer-fully-remote",
+   "posted": "2026-10-25T19:37:07+09:00",
+   "location": "USA",
+   "deadline": ""
+  },
+  {
+   "source": "Jobicy",
+   "title": "Lead Brand Designer",
+   "company": "ClickUp",
+   "url": "https://jobicy.com/jobs/156886-lead-brand-designer",
+   "posted": "2026-10-25T17:33:30+09:00",
+   "location": "USA",
+   "deadline": ""
+  },
+  {
+   "source": "Jobicy",
+   "title": "Design Engineer - EU",
+   "company": "Ashby",
+   "url": "https://jobicy.com/jobs/154021-design-engineer-eu",
+   "posted": "2026-10-25T13:25:05+09:00",
+   "location": "Croatia, Estonia, Germany, Ireland, Italy, Portugal, Romania, Spain, Sweden, Switzerland",
+   "deadline": ""
+  },
+  {
+   "source": "Jobicy",
+   "title": "Senior Product Designer",
+   "company": "TrustedHousesitters",
+   "url": "https://jobicy.com/jobs/154008-senior-product-designer-14",
+   "posted": "2026-10-25T13:15:35+09:00",
+   "location": "UK",
+   "deadline": ""
+  },
+  {
+   "source": "Jobicy",
+   "title": "Product Design Lead",
+   "company": "Carrot",
+   "url": "https://jobicy.com/jobs/153996-product-design-lead",
+   "posted": "2026-10-25T13:15:29+09:00",
+   "location": "USA",
+   "deadline": ""
+  },
+  {
+   "source": "Jobicy",
+   "title": "Design Engineer - UK",
+   "company": "Ashby",
+   "url": "https://jobicy.com/jobs/154023-design-engineer-uk",
+   "posted": "2026-10-25T13:15:13+09:00",
+   "location": "UK",
+   "deadline": ""
+  },
+  {
+   "source": "Jobicy",
+   "title": "Design Engineer - Canada",
+   "company": "Ashby",
+   "url": "https://jobicy.com/jobs/156861-design-engineer-canada",
+   "posted": "2026-10-25T05:22:12+09:00",
+   "location": "Canada",
+   "deadline": ""
+  },
+  {
+   "source": "Jobicy",
+   "title": "Design Engineer - Americas",
+   "company": "Ashby",
+   "url": "https://jobicy.com/jobs/156857-design-engineer-americas",
+   "posted": "2026-10-25T05:22:11+09:00",
+   "location": "USA",
+   "deadline": ""
+  },
+  {
+   "source": "Jobicy",
+   "title": "Product Designer, AI-Native Products (Staff-Level / L6)",
+   "company": "Synthesia",
+   "url": "https://jobicy.com/jobs/156776-product-designer-ai-native-products-staff-level-l6",
+   "posted": "2026-10-25T01:15:08+09:00",
+   "location": "Europe",
+   "deadline": ""
+  },
+  {
+   "source": "We Work Remotely",
+   "title": "Senior Product Design Manager, Payroll",
+   "company": "Gusto, Inc.",
+   "url": "https://weworkremotely.com/remote-jobs/gusto-inc-senior-product-design-manager-payroll",
+   "posted": "2026-10-24T16:31:04+09:00",
+   "location": "Anywhere in the World",
+   "deadline": ""
+  },
+  {
+   "source": "Jobicy",
+   "title": "Senior Product Designer",
+   "company": "RevenueCat",
+   "url": "https://jobicy.com/jobs/153973-senior-product-designer-13",
+   "posted": "2026-10-24T12:50:11+09:00",
+   "location": "EMEA, LATAM, Canada, USA",
+   "deadline": ""
+  },
+  {
+   "source": "Jobicy",
+   "title": "UI Artist for Games",
+   "company": "Playson",
+   "url": "https://jobicy.com/jobs/149504-ui-artist-for-games",
+   "posted": "2026-10-24T12:40:04+09:00",
+   "location": "Europe",
+   "deadline": ""
+  },
+  {
+   "source": "Jobicy",
+   "title": "Staff Product Designer",
+   "company": "Medium",
+   "url": "https://jobicy.com/jobs/156685-staff-product-designer-6",
+   "posted": "2026-10-24T03:57:34+09:00",
+   "location": "USA",
+   "deadline": ""
+  },
+  {
+   "source": "Jobicy",
+   "title": "Senior Product Designer (Fully Remote - anywhere in South America)",
+   "company": "PadSplit",
+   "url": "https://jobicy.com/jobs/156673-senior-product-designer-fully-remote-anywhere-in-south-america",
+   "posted": "2026-10-24T03:01:17+09:00",
+   "location": "LATAM",
+   "deadline": ""
+  },
+  {
+   "source": "Jobicy",
+   "title": "Content Designer II (Remote Eligible - Costa Rica)",
+   "company": "Smartsheet",
+   "url": "https://jobicy.com/jobs/156653-content-designer-ii-remote-eligible-costa-rica",
+   "posted": "2026-10-24T02:56:32+09:00",
+   "location": "Costa Rica",
+   "deadline": ""
+  },
+  {
+   "source": "Jobicy",
+   "title": "Senior Manager, Visual Design",
+   "company": "Dandy",
+   "url": "https://jobicy.com/jobs/156636-senior-manager-visual-design",
+   "posted": "2026-10-24T02:54:39+09:00",
+   "location": "USA",
+   "deadline": ""
+  },
+  {
+   "source": "Jobicy",
+   "title": "Senior Product Designer - Growth",
+   "company": "TrustedHousesitters",
+   "url": "https://jobicy.com/jobs/156555-senior-product-designer-growth",
+   "posted": "2026-10-23T18:13:23+09:00",
+   "location": "UK",
+   "deadline": ""
+  },
+  {
+   "source": "Jobicy",
+   "title": "Lead Product Designer",
+   "company": "Monzo",
+   "url": "https://jobicy.com/jobs/156508-lead-product-designer",
+   "posted": "2026-10-23T16:06:49+09:00",
+   "location": "UK",
+   "deadline": ""
+  },
+  {
+   "source": "Jobicy",
+   "title": "Senior Product Designer",
+   "company": "Nextiva",
+   "url": "https://jobicy.com/jobs/156503-senior-product-designer-16",
+   "posted": "2026-10-23T16:05:34+09:00",
+   "location": "USA",
+   "deadline": ""
+  },
+  {
+   "source": "Jobicy",
+   "title": "Senior Marketing Design Manager",
+   "company": "Imprint",
+   "url": "https://jobicy.com/jobs/156427-senior-marketing-design-manager",
+   "posted": "2026-10-23T00:45:51+09:00",
+   "location": "USA",
+   "deadline": ""
+  },
+  {
+   "source": "Jobicy",
+   "title": "Sr. Marketing Designer",
+   "company": "Imprint",
+   "url": "https://jobicy.com/jobs/156423-sr-marketing-designer",
+   "posted": "2026-10-23T00:45:49+09:00",
+   "location": "USA",
+   "deadline": ""
+  },
+  {
+   "source": "Jobicy",
+   "title": "Director of Brand and Creative",
+   "company": "Proof",
+   "url": "https://jobicy.com/jobs/156395-director-of-brand-and-creative",
+   "posted": "2026-10-22T22:26:39+09:00",
+   "location": "USA",
+   "deadline": ""
+  },
+  {
+   "source": "Jobicy",
+   "title": "Senior/Staff Product Designer",
+   "company": "AlphaSense",
+   "url": "https://jobicy.com/jobs/156358-senior-staff-product-designer",
+   "posted": "2026-10-22T19:30:32+09:00",
+   "location": "UK",
+   "deadline": ""
+  },
+  {
+   "source": "Jobicy",
+   "title": "Creative (Motion Design)",
+   "company": "Superside",
+   "url": "https://jobicy.com/jobs/153812-creative-motion-design",
+   "posted": "2026-10-22T15:25:10+09:00",
+   "location": "Anywhere",
+   "deadline": ""
+  },
+  {
+   "source": "Jobicy",
+   "title": "Creative (Graphic Designer)",
+   "company": "Superside",
+   "url": "https://jobicy.com/jobs/153808-creative-graphic-designer",
+   "posted": "2026-10-22T13:40:20+09:00",
+   "location": "LATAM",
+   "deadline": ""
+  },
+  {
+   "source": "Jobicy",
+   "title": "Senior Product Designer II, Revenue Experimentation",
+   "company": "Life360",
+   "url": "https://jobicy.com/jobs/156212-senior-product-designer-ii-revenue-experimentation",
+   "posted": "2026-10-22T01:10:54+09:00",
+   "location": "Canada, USA",
+   "deadline": ""
+  },
+  {
+   "source": "We Work Remotely",
+   "title": "Graphic Designer",
+   "company": "Cata-Kor",
+   "url": "https://weworkremotely.com/remote-jobs/cata-kor-graphic-designer",
+   "posted": "2026-10-21T21:51:00+09:00",
+   "location": "Anywhere in the World",
+   "deadline": ""
+  },
+  {
+   "source": "Jobicy",
+   "title": "Product Designer - Visual Craft & AI",
+   "company": "Envato",
+   "url": "https://jobicy.com/jobs/156135-product-designer-visual-craft-ai",
+   "posted": "2026-10-21T17:48:29+09:00",
+   "location": "Australia, New Zealand",
+   "deadline": ""
+  },
+  {
+   "source": "Jobicy",
+   "title": "AI Lead Creative",
+   "company": "Superside",
+   "url": "https://jobicy.com/jobs/151211-ai-lead-creative",
+   "posted": "2026-10-21T11:59:30+09:00",
+   "location": "LATAM, Argentina",
+   "deadline": ""
+  },
+  {
+   "source": "Jobicy",
+   "title": "AI Creative Director / AI Associate Creative Director",
+   "company": "Superside",
+   "url": "https://jobicy.com/jobs/151207-ai-creative-director-ai-associate-creative-director",
+   "posted": "2026-10-21T11:59:27+09:00",
+   "location": "LATAM, Argentina",
+   "deadline": ""
+  },
+  {
+   "source": "Jobicy",
+   "title": "Creative (Illustrator)",
+   "company": "Superside",
+   "url": "https://jobicy.com/jobs/156077-creative-illustrator",
+   "posted": "2026-10-21T04:18:49+09:00",
+   "location": "LATAM",
+   "deadline": ""
+  },
+  {
+   "source": "We Work Remotely",
+   "title": "Principal Experience Designer - Visual Design & Design Systems",
+   "company": "Workiva",
+   "url": "https://weworkremotely.com/remote-jobs/workiva-principal-experience-designer-visual-design-design-systems",
+   "posted": "2026-10-21T02:02:28+09:00",
+   "location": "Anywhere in the World",
+   "deadline": ""
+  },
+  {
+   "source": "Jobicy",
+   "title": "Creative Marketing Manager",
+   "company": "Happy Money",
+   "url": "https://jobicy.com/jobs/155826-creative-marketing-manager",
+   "posted": "2026-10-19T21:24:26+09:00",
+   "location": "USA",
+   "deadline": ""
+  },
+  {
+   "source": "We Work Remotely",
+   "title": "Senior Product Designer (Webflow) Temp to Perm",
+   "company": "Current",
+   "url": "https://weworkremotely.com/remote-jobs/current-senior-product-designer-webflow-temp-to-perm",
+   "posted": "2026-10-19T16:31:25+09:00",
+   "location": "Anywhere in the World",
+   "deadline": ""
+  },
+  {
+   "source": "Jobicy",
+   "title": "Conceptual Art Director",
+   "company": "Superside",
+   "url": "https://jobicy.com/jobs/153608-conceptual-art-director",
+   "posted": "2026-10-19T11:50:20+09:00",
+   "location": "Anywhere",
+   "deadline": ""
+  },
+  {
+   "source": "Jobicy",
+   "title": "Product Designer",
+   "company": "WorkWave",
+   "url": "https://jobicy.com/jobs/153554-product-designer-2",
+   "posted": "2026-10-19T11:40:20+09:00",
+   "location": "UK",
+   "deadline": ""
+  }
+ ]
+}

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 937" role="img" aria-labelledby="t d">
+  <title id="t">AI 시안을 받았을 때, 네 단계</title>
+  <desc id="d">클라이언트가 AI 시안을 보내면 먼저 어느 AI로 만들었는지와 상업적 이용 가능 여부를 확인하고, 살릴 것과 다시 할 것을 나누고, 남은 일 목록으로 견적을 낸 뒤, 주고받은 내용을 기록으로 남긴다.</desc>
+  <rect width="600" height="937" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="32" y="66" font-size="34" font-weight="800" fill="#111111" text-anchor="start">AI 시안을 받았을 때, 네 단계</text>
+    <text x="32" y="99" font-size="21" font-weight="400" fill="#6B6B6B" text-anchor="start">견적을 내기 전에 정리해 두면 좋은 순서</text>
+    <rect x="32" y="139" width="536" height="150" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <circle cx="60" cy="169" r="15" fill="#111111"/><text x="60" y="175.12" font-size="17" font-weight="800" fill="#FFFFFF" text-anchor="middle">1</text>
+    <text x="86" y="177" font-size="24" font-weight="800" fill="#111111" text-anchor="start">확인</text>
+    <text x="58" y="213" font-size="19" font-weight="400" fill="#444444" text-anchor="start">어느 AI로 만들었나</text>
+    <text x="58" y="240" font-size="19" font-weight="400" fill="#444444" text-anchor="start">상업적 이용이 되나</text>
+    <text x="58" y="267" font-size="19" font-weight="400" fill="#444444" text-anchor="start">닮은 게 없나</text>
+    <path d="M300.0 295v22m-7 -8l7 8l7 -8" fill="none" stroke="#111111" stroke-width="2"/>
+    <rect x="32" y="323" width="536" height="150" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <circle cx="60" cy="353" r="15" fill="#111111"/><text x="60" y="359.12" font-size="17" font-weight="800" fill="#FFFFFF" text-anchor="middle">2</text>
+    <text x="86" y="361" font-size="24" font-weight="800" fill="#111111" text-anchor="start">나누기</text>
+    <text x="58" y="397" font-size="19" font-weight="400" fill="#444444" text-anchor="start">살릴 것: 방향·분위기</text>
+    <text x="58" y="424" font-size="19" font-weight="400" fill="#444444" text-anchor="start">다시 할 것: 글자·로고</text>
+    <text x="58" y="451" font-size="19" font-weight="400" fill="#444444" text-anchor="start">새로 할 것: 파일·매체</text>
+    <path d="M300.0 479v22m-7 -8l7 8l7 -8" fill="none" stroke="#111111" stroke-width="2"/>
+    <rect x="32" y="507" width="536" height="150" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <circle cx="60" cy="537" r="15" fill="#111111"/><text x="60" y="543.12" font-size="17" font-weight="800" fill="#FFFFFF" text-anchor="middle">3</text>
+    <text x="86" y="545" font-size="24" font-weight="800" fill="#111111" text-anchor="start">견적</text>
+    <text x="58" y="581" font-size="19" font-weight="400" fill="#444444" text-anchor="start">시간이 아니라</text>
+    <text x="58" y="608" font-size="19" font-weight="400" fill="#444444" text-anchor="start">남은 일 목록으로</text>
+    <text x="58" y="635" font-size="19" font-weight="400" fill="#444444" text-anchor="start">수정 횟수도 적기</text>
+    <path d="M300.0 663v22m-7 -8l7 8l7 -8" fill="none" stroke="#111111" stroke-width="2"/>
+    <rect x="32" y="691" width="536" height="150" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <circle cx="60" cy="721" r="15" fill="#111111"/><text x="60" y="727.12" font-size="17" font-weight="800" fill="#FFFFFF" text-anchor="middle">4</text>
+    <text x="86" y="729" font-size="24" font-weight="800" fill="#111111" text-anchor="start">기록</text>
+    <text x="58" y="765" font-size="19" font-weight="400" fill="#444444" text-anchor="start">무엇을 받아</text>
+    <text x="58" y="792" font-size="19" font-weight="400" fill="#444444" text-anchor="start">무엇을 만들었는지</text>
+    <text x="58" y="819" font-size="19" font-weight="400" fill="#444444" text-anchor="start">메일 한 통으로 남기기</text>
+    <line x1="32" y1="877" x2="568" y2="877" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="32" y="905" font-size="17" font-weight="400" fill="#6B6B6B" text-anchor="start">이 글에서 정리한 순서</text>
+  </g>
+</svg>

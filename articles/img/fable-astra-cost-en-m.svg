@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 1205" role="img" aria-labelledby="t d">
+  <title id="t">Same score, different cost</title>
+  <desc id="d">Both Claude Fable 5.1 and GPT-6 Astra score 53 on the index. Cost per task: Fable 5.1 $7.63, Astra $3.26. Output tokens per task: Fable 5.1 about 78,000, Astra about 27,000.</desc>
+  <rect width="600" height="1205" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="32" y="68" font-size="36" font-weight="800" fill="#111111" letter-spacing="-0.5">Same score, different cost</text>
+    <text x="32" y="102" font-size="22" fill="#6B6B6B">Artificial Analysis Intelligence Index v4.3</text>
+    <text x="32" y="136" font-size="22" fill="#6B6B6B">both at maximum reasoning</text>
+    <text x="32" y="206" font-size="30" font-weight="700" fill="#111111">Intelligence Index</text>
+    <text x="32" y="238" font-size="22" fill="#6B6B6B">higher is better</text>
+    <text x="32" y="291" font-size="23" fill="#444444">Claude Fable 5.1</text>
+    <path d="M32 303H441.0A7 7 0 0 1 448.0 310V332A7 7 0 0 1 441.0 339H32Z" fill="#111111"/>
+    <text x="462.0" y="331.08" font-size="28" font-weight="700" fill="#111111">53</text>
+    <text x="32" y="385" font-size="23" fill="#444444">GPT-6 Astra</text>
+    <path d="M32 397H441.0A7 7 0 0 1 448.0 404V426A7 7 0 0 1 441.0 433H32Z" fill="#111111"/>
+    <text x="462.0" y="425.08" font-size="28" font-weight="700" fill="#111111">53</text>
+    <line x1="32" y1="268" x2="32" y2="456" stroke="#D9D9D9" stroke-width="1.8"/>
+    <text x="32" y="530" font-size="30" font-weight="700" fill="#111111">Cost per task</text>
+    <text x="32" y="562" font-size="22" fill="#6B6B6B">lower is better</text>
+    <text x="32" y="615" font-size="23" fill="#444444">Claude Fable 5.1</text>
+    <path d="M32 627H441.0A7 7 0 0 1 448.0 634V656A7 7 0 0 1 441.0 663H32Z" fill="#111111"/>
+    <text x="462.0" y="655.08" font-size="28" font-weight="700" fill="#111111">$7.63</text>
+    <text x="32" y="709" font-size="23" fill="#444444">GPT-6 Astra</text>
+    <path d="M32 721H202.740498034076A7 7 0 0 1 209.740498034076 728V750A7 7 0 0 1 202.740498034076 757H32Z" fill="#111111"/>
+    <text x="223.740498034076" y="749.08" font-size="28" font-weight="700" fill="#111111">$3.26</text>
+    <line x1="32" y1="592" x2="32" y2="780" stroke="#D9D9D9" stroke-width="1.8"/>
+    <text x="32" y="854" font-size="30" font-weight="700" fill="#111111">Output tokens per task</text>
+    <text x="32" y="886" font-size="22" fill="#6B6B6B">lower is better</text>
+    <text x="32" y="939" font-size="23" fill="#444444">Claude Fable 5.1</text>
+    <path d="M32 951H441.0A7 7 0 0 1 448.0 958V980A7 7 0 0 1 441.0 987H32Z" fill="#111111"/>
+    <text x="462.0" y="979.08" font-size="28" font-weight="700" fill="#111111">78k</text>
+    <text x="32" y="1033" font-size="23" fill="#444444">GPT-6 Astra</text>
+    <path d="M32 1045H169.0A7 7 0 0 1 176.0 1052V1074A7 7 0 0 1 169.0 1081H32Z" fill="#111111"/>
+    <text x="190.0" y="1073.08" font-size="28" font-weight="700" fill="#111111">27k</text>
+    <line x1="32" y1="916" x2="32" y2="1104" stroke="#D9D9D9" stroke-width="1.8"/>
+    <line x1="32" y1="1122" x2="568" y2="1122" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="32" y="1148" font-size="19" fill="#6B6B6B">Source: Artificial Analysis (Sep 9, 2026).</text>
+    <text x="32" y="1177" font-size="19" fill="#6B6B6B">Cost and tokens are averages per index task.</text>
+  </g>
+</svg>

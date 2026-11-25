@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 511" role="img" aria-labelledby="t d">
+  <title id="t">AI 답변 속 브랜드는 어디서 오나</title>
+  <desc id="d">AI는 공식 사이트의 글, 그림 설명, 리뷰와 기사, 구조화된 정보를 읽고 요약, 추천 목록, 인용 링크로 답한다. 브랜드는 그 답에 얼마나 자주, 정확히 언급되는지 잰다.</desc>
+  <rect width="1200" height="511" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="40" y="70" font-size="30" font-weight="800" fill="#111111" text-anchor="start">AI 답변 속 브랜드는 어디서 오나</text>
+    <text x="40" y="101" font-size="19" font-weight="400" fill="#6B6B6B" text-anchor="start">검색 결과 대신 AI의 답이 첫 화면이 될 때. 개념도</text>
+    <rect x="40" y="141" width="330" height="232" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <text x="62" y="179" font-size="20" font-weight="800" fill="#111111" text-anchor="start">AI가 읽는 것</text>
+    <rect x="60" y="199" width="290" height="33" rx="8" fill="#F2F2F2"/>
+    <text x="74" y="219" font-size="16" font-weight="400" fill="#444444" text-anchor="start">공식 사이트의 글</text>
+    <rect x="60" y="242" width="290" height="33" rx="8" fill="#F2F2F2"/>
+    <text x="74" y="262" font-size="16" font-weight="400" fill="#444444" text-anchor="start">그림 설명(alt)</text>
+    <rect x="60" y="285" width="290" height="33" rx="8" fill="#F2F2F2"/>
+    <text x="74" y="305" font-size="16" font-weight="400" fill="#444444" text-anchor="start">리뷰·기사·커뮤니티</text>
+    <rect x="60" y="328" width="290" height="33" rx="8" fill="#F2F2F2"/>
+    <text x="74" y="348" font-size="16" font-weight="400" fill="#444444" text-anchor="start">구조화된 정보</text>
+    <rect x="430" y="197.0" width="340" height="120" rx="60" fill="#111111"/>
+    <text x="600.0" y="253.0" font-size="28" font-weight="800" fill="#FFFFFF" text-anchor="middle">AI</text>
+    <text x="600.0" y="285.0" font-size="13" font-weight="400" fill="#FFFFFF" text-anchor="middle">ChatGPT · Copilot</text>
+    <text x="600.0" y="305.0" font-size="13" font-weight="400" fill="#FFFFFF" text-anchor="middle">Perplexity · Google AI 모드</text>
+    <path d="M378 257.0H422m-9 -8l9 8l-9 8" fill="none" stroke="#111111" stroke-width="2"/>
+    <path d="M778 257.0H822m-9 -8l9 8l-9 8" fill="none" stroke="#111111" stroke-width="2"/>
+    <rect x="830" y="141" width="330" height="232" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <text x="852" y="179" font-size="20" font-weight="800" fill="#111111" text-anchor="start">사용자가 보는 것</text>
+    <text x="852" y="219" font-size="16" font-weight="400" fill="#444444" text-anchor="start">· 한두 문장의 요약</text>
+    <text x="852" y="262" font-size="16" font-weight="400" fill="#444444" text-anchor="start">· 추천 목록 속 이름</text>
+    <text x="852" y="305" font-size="16" font-weight="400" fill="#444444" text-anchor="start">· 인용된 링크 몇 개</text>
+    <text x="40" y="413" font-size="16" font-weight="700" fill="#111111" text-anchor="start">브랜드 쪽에서 재는 것: 얼마나 자주, 얼마나 정확히 언급되나</text>
+    <line x1="40" y1="443" x2="1160" y2="443" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="40" y="471" font-size="16" font-weight="400" fill="#6B6B6B" text-anchor="start">출처: Adobe·Heathrow 발표(2026. 10. 8), CMSWire, The Next Web</text>
+  </g>
+</svg>

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 1521" role="img" aria-labelledby="t d">
+  <title id="t">What it took to build the same page</title>
+  <desc id="d">Cost for the same task: Opus 5.5 $1.94, Sonnet 5.5 $1.35, Sonnet 5 $1.08. Time: 9, 8 and 6 minutes. Output tokens: 45k, 58k, 25k.</desc>
+  <rect width="600" height="1521" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="32" y="68" font-size="36" font-weight="800" fill="#111111" letter-spacing="-0.5">What it took to build the same page</text>
+    <text x="32" y="102" font-size="22" fill="#6B6B6B">One-page event site &#x27;Low Tide&#x27;</text>
+    <text x="32" y="136" font-size="22" fill="#6B6B6B">Claude Code, high effort</text>
+    <text x="32" y="170" font-size="22" fill="#6B6B6B">Ranking: Opus 5.5 → Sonnet 5.5 → Sonnet 5</text>
+    <text x="32" y="240" font-size="30" font-weight="700" fill="#111111">Cost</text>
+    <text x="32" y="272" font-size="22" fill="#6B6B6B">lower is better</text>
+    <text x="32" y="325" font-size="23" fill="#444444">Opus 5.5</text>
+    <path d="M32 337H441.0A7 7 0 0 1 448.0 344V366A7 7 0 0 1 441.0 373H32Z" fill="#111111"/>
+    <text x="462.0" y="365.08" font-size="28" font-weight="700" fill="#111111">$1.94</text>
+    <text x="32" y="419" font-size="23" fill="#444444">Sonnet 5.5</text>
+    <path d="M32 431H314.4845360824742A7 7 0 0 1 321.4845360824742 438V460A7 7 0 0 1 314.4845360824742 467H32Z" fill="#111111"/>
+    <text x="335.4845360824742" y="459.08" font-size="28" font-weight="700" fill="#111111">$1.35</text>
+    <text x="32" y="513" font-size="23" fill="#444444">Sonnet 5</text>
+    <path d="M32 525H256.5876288659794A7 7 0 0 1 263.5876288659794 532V554A7 7 0 0 1 256.5876288659794 561H32Z" fill="#111111"/>
+    <text x="277.5876288659794" y="553.08" font-size="28" font-weight="700" fill="#111111">$1.08</text>
+    <line x1="32" y1="302" x2="32" y2="584" stroke="#D9D9D9" stroke-width="1.8"/>
+    <text x="32" y="658" font-size="30" font-weight="700" fill="#111111">Time</text>
+    <text x="32" y="690" font-size="22" fill="#6B6B6B">lower is better</text>
+    <text x="32" y="743" font-size="23" fill="#444444">Opus 5.5</text>
+    <path d="M32 755H441.0A7 7 0 0 1 448.0 762V784A7 7 0 0 1 441.0 791H32Z" fill="#111111"/>
+    <text x="462.0" y="783.08" font-size="28" font-weight="700" fill="#111111">9 min</text>
+    <text x="32" y="837" font-size="23" fill="#444444">Sonnet 5.5</text>
+    <path d="M32 849H394.77777777777777A7 7 0 0 1 401.77777777777777 856V878A7 7 0 0 1 394.77777777777777 885H32Z" fill="#111111"/>
+    <text x="415.77777777777777" y="877.08" font-size="28" font-weight="700" fill="#111111">8 min</text>
+    <text x="32" y="931" font-size="23" fill="#444444">Sonnet 5</text>
+    <path d="M32 943H302.3333333333333A7 7 0 0 1 309.3333333333333 950V972A7 7 0 0 1 302.3333333333333 979H32Z" fill="#111111"/>
+    <text x="323.3333333333333" y="971.08" font-size="28" font-weight="700" fill="#111111">6 min</text>
+    <line x1="32" y1="720" x2="32" y2="1002" stroke="#D9D9D9" stroke-width="1.8"/>
+    <text x="32" y="1076" font-size="30" font-weight="700" fill="#111111">Output tokens</text>
+    <text x="32" y="1108" font-size="22" fill="#6B6B6B">how much it said</text>
+    <text x="32" y="1161" font-size="23" fill="#444444">Opus 5.5</text>
+    <path d="M32 1173H349.59515570934263A7 7 0 0 1 356.59515570934263 1180V1202A7 7 0 0 1 349.59515570934263 1209H32Z" fill="#111111"/>
+    <text x="370.59515570934263" y="1201.08" font-size="28" font-weight="700" fill="#111111">45k</text>
+    <text x="32" y="1255" font-size="23" fill="#444444">Sonnet 5.5</text>
+    <path d="M32 1267H441.0A7 7 0 0 1 448.0 1274V1296A7 7 0 0 1 441.0 1303H32Z" fill="#111111"/>
+    <text x="462.0" y="1295.08" font-size="28" font-weight="700" fill="#111111">58k</text>
+    <text x="32" y="1349" font-size="23" fill="#444444">Sonnet 5</text>
+    <path d="M32 1361H204.9307958477509A7 7 0 0 1 211.9307958477509 1368V1390A7 7 0 0 1 204.9307958477509 1397H32Z" fill="#111111"/>
+    <text x="225.9307958477509" y="1389.08" font-size="28" font-weight="700" fill="#111111">25k</text>
+    <line x1="32" y1="1138" x2="32" y2="1420" stroke="#D9D9D9" stroke-width="1.8"/>
+    <line x1="32" y1="1438" x2="568" y2="1438" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="32" y="1464" font-size="19" fill="#6B6B6B">Source: Thomas Wiegold&#x27;s Sonnet 5.5 review.</text>
+    <text x="32" y="1493" font-size="19" fill="#6B6B6B">A personal test, one run each. For reference only.</text>
+  </g>
+</svg>

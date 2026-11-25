@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 609" role="img" aria-labelledby="t d">
+  <title id="t">Last week: what you now decide</title>
+  <desc id="d">Six stories from last week. Shopify Canvas covers the whole store, DESIGN.md the rules, Ideogram 4.5 and FLUX 3 what to edit, InstructMesh which 3D part to fix, ChatGPT image ads a new ad slot, and Kling 4.0 the order of shots.</desc>
+  <rect width="1200" height="609" rx="20" fill="#FFFFFF"/>
+  <g font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+    <text x="40" y="70" font-size="30" font-weight="800" fill="#111111" text-anchor="start">Last week: what you now decide</text>
+    <text x="40" y="101" font-size="19" font-weight="400" fill="#6B6B6B" text-anchor="start">Sep 30 – Oct 6. From leaving it to luck to deciding it yourself</text>
+    <rect x="40.0" y="137" width="357.3333333333333" height="170" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <text x="60.0" y="169" font-size="15" font-weight="700" fill="#6B6B6B" text-anchor="start">Oct 1</text>
+    <text x="60.0" y="197" font-size="18" font-weight="700" fill="#111111" text-anchor="start">Shopify Canvas</text>
+    <rect x="60.0" y="213" width="242.40000000000003" height="42" rx="21.0" fill="#111111"/>
+    <text x="72.0" y="241" font-size="26" font-weight="800" fill="#FFFFFF" text-anchor="start">The whole store</text>
+    <text x="60.0" y="287" font-size="16" font-weight="400" fill="#444444" text-anchor="start">Lay it all out and edit</text>
+    <rect x="421.3333333333333" y="137" width="357.3333333333333" height="170" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <text x="441.3333333333333" y="169" font-size="15" font-weight="700" fill="#6B6B6B" text-anchor="start">Oct 2</text>
+    <text x="441.3333333333333" y="197" font-size="18" font-weight="700" fill="#111111" text-anchor="start">DESIGN.md</text>
+    <rect x="441.3333333333333" y="213" width="155.04000000000002" height="42" rx="21.0" fill="#111111"/>
+    <text x="453.3333333333333" y="241" font-size="26" font-weight="800" fill="#FFFFFF" text-anchor="start">The rules</text>
+    <text x="441.3333333333333" y="287" font-size="16" font-weight="400" fill="#444444" text-anchor="start">One file of design rules for AI</text>
+    <rect x="802.6666666666666" y="137" width="357.3333333333333" height="170" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <text x="822.6666666666666" y="169" font-size="15" font-weight="700" fill="#6B6B6B" text-anchor="start">Sep 30 · Oct 2</text>
+    <text x="822.6666666666666" y="197" font-size="18" font-weight="700" fill="#111111" text-anchor="start">Ideogram 4.5 · FLUX 3</text>
+    <rect x="822.6666666666666" y="213" width="198.72000000000003" height="42" rx="21.0" fill="#111111"/>
+    <text x="834.6666666666666" y="241" font-size="26" font-weight="800" fill="#FFFFFF" text-anchor="start">What to edit</text>
+    <text x="822.6666666666666" y="287" font-size="16" font-weight="400" fill="#444444" text-anchor="start">Only the chosen spot changes</text>
+    <rect x="40.0" y="331" width="357.3333333333333" height="170" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <text x="60.0" y="363" font-size="15" font-weight="700" fill="#6B6B6B" text-anchor="start">Oct 1</text>
+    <text x="60.0" y="391" font-size="18" font-weight="700" fill="#111111" text-anchor="start">InstructMesh</text>
+    <rect x="60.0" y="407" width="271.52" height="42" rx="21.0" fill="#111111"/>
+    <text x="72.0" y="435" font-size="26" font-weight="800" fill="#FFFFFF" text-anchor="start">Which part to fix</text>
+    <text x="60.0" y="481" font-size="16" font-weight="400" fill="#444444" text-anchor="start">Fix only the flawed part of a 3D model</text>
+    <rect x="421.3333333333333" y="331" width="357.3333333333333" height="170" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <text x="441.3333333333333" y="363" font-size="15" font-weight="700" fill="#6B6B6B" text-anchor="start">Oct 5</text>
+    <text x="441.3333333333333" y="391" font-size="18" font-weight="700" fill="#111111" text-anchor="start">ChatGPT image ads</text>
+    <rect x="441.3333333333333" y="407" width="169.60000000000002" height="42" rx="21.0" fill="#111111"/>
+    <text x="453.3333333333333" y="435" font-size="26" font-weight="800" fill="#FFFFFF" text-anchor="start">An ad slot</text>
+    <text x="441.3333333333333" y="481" font-size="16" font-weight="400" fill="#444444" text-anchor="start">A new placement beside images</text>
+    <rect x="802.6666666666666" y="331" width="357.3333333333333" height="170" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+    <text x="822.6666666666666" y="363" font-size="15" font-weight="700" fill="#6B6B6B" text-anchor="start">Sep 28 –</text>
+    <text x="822.6666666666666" y="391" font-size="18" font-weight="700" fill="#111111" text-anchor="start">Kling 4.0</text>
+    <rect x="822.6666666666666" y="407" width="169.60000000000002" height="42" rx="21.0" fill="#111111"/>
+    <text x="834.6666666666666" y="435" font-size="26" font-weight="800" fill="#FFFFFF" text-anchor="start">Shot order</text>
+    <text x="822.6666666666666" y="481" font-size="16" font-weight="400" fill="#444444" text-anchor="start">Hand over a ten-frame storyboard</text>
+    <line x1="40" y1="541" x2="1160" y2="541" stroke="#D9D9D9" stroke-width="1"/>
+    <text x="40" y="569" font-size="16" font-weight="400" fill="#6B6B6B" text-anchor="start">Source: this site&#x27;s articles, Oct 1–6</text>
+  </g>
+</svg>
