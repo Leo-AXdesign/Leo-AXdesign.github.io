@@ -42,6 +42,10 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: .
+      # 업로드 직후 배포 단계가 방금 올린 파일을 못 찾는 일이 있어 잠깐 기다립니다
+      # (2026-11-16·11-23·11-25 세 번 "No artifacts named github-pages", 업로드 0.5초 뒤 조회에서 0개)
+      - name: Wait for artifact to be listed
+        run: sleep 20
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
