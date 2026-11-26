@@ -1,6 +1,7 @@
 // 이 파일은 tools/build-articles.py 가 만듭니다. 직접 고치지 마세요.
 // 글은 content/articles/*.md 에서 고칩니다.
 const ARTICLES = [
+  { slug: "figma-agent-figjam-slides-ga-board-to-deck", title: "스티커 더미를 스펙 한 장으로, 스펙을 발표 초안으로. 피그마 에이전트가 피그잼과 슬라이드로 들어왔다", desc: "피그마가 11월 23일 에이전트를 피그잼과 슬라이드에서 모든 유료 플랜에 정식으로 열었다. 보드 정리, 스펙 요약, 스크립트에서 슬라이드 뼈대 만들기까지 공식 글에 적힌 쓰임을 옮기고, 크레딧처럼 아직 적혀 있지 않은 것을 따로 짚었다.", date: "2026-11-26", tag: "AI 디자인", min: 5, views: ["ai", "tool", "uiux"] },
   { slug: "canva-ai-controls-switch-off-generative", title: "캔바 설정에서 생성 AI를 끄면 숨는 도구와 끝까지 남는 두 개", desc: "캔바가 11월 19일 Free·Pro 계정에 생성 AI 전체 스위치와 라이브러리의 AI 생성물 줄이기 설정을 열었다. 꺼지는 것, 남는 것, 메타데이터 표시, 설정 위치를 보도 기준으로 나누고 직접 확인해 볼 항목을 적었다.", date: "2026-11-22", tag: "AI 디자인", min: 5, views: ["ai", "tool", "graphic"] },
   { slug: "adobe-max-2026-beta-sorted-for-designers", title: "베타 딱지가 일곱 개 넘게 붙은 어도비 MAX, 오늘 열어 볼 것과 2027년까지 기다릴 것", desc: "어도비가 11월 10일 MAX에서 Creative Agent를 Illustrator·InDesign으로 넓히고 Firefly Design 베타와 로컬 MCP 프리뷰를 내놓았다. 발표문의 정식·베타·비공개 베타 표시대로 항목을 나누고, 가격과 크레딧처럼 발표문에 없는 것도 따로 적었다.", date: "2026-11-19", tag: "AI 디자인", min: 6, views: ["ai", "tool", "graphic"] },
   { slug: "figma-editing-model-undo-60-percent", title: "에이전트가 한 일을 되돌리는 횟수가 60% 줄었다는 피그마, 그 숫자를 열어 보니", desc: "피그마가 10월 29일 자체 편집 모델의 학습 방식과 에이전트 정식 출시 뒤 수치를 공개했다. 속도 20%, 사용자 평점 33%, 되돌리기 60% 감소가 무엇을 기준으로 잰 것인지, 비교 시안에서 이전 에이전트와 같거나 나았다는 62%의 나머지 38%는 무엇인지, 글에 빠져 있는 정보와 함께 읽었다.", date: "2026-11-13", tag: "AI 디자인", min: 6, views: ["ai", "tool", "uiux"] },
